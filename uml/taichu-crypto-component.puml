@@ -1,0 +1,39 @@
+@startuml
+header DLTDOJO
+footer https://github.com/dltdojo/taichu-crypto
+title taichu-crypto-component-1907-1
+skinparam handwritten false
+left to right direction
+
+package "Docker Container" {
+    folder "Code Server container"{
+      [Code\nServer] as CS #Yellow
+      [Your\nproject]
+    }
+}
+
+package "Cloud"{
+  cloud Github
+  cloud Dockerhub
+}
+
+package "Kubernetes" {
+  folder "microk8s" {
+	[DNS]
+	[Registry]
+	[Storage]
+  }
+  folder "Gitops"{
+    [GIT gogs] as GIT #Green
+    [CI drone] as CI #Blue
+    [CD argo] as CD #Red
+  }
+}
+
+CS --> GIT : 1. push
+GIT -> CI : 2. build and test
+CI --> Registry : 3. push
+CD <-- Registry : 4. pull image
+GIT -> CD : 5. deployment
+
+@enduml
