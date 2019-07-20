@@ -1,0 +1,44 @@
+# ┌-------------------┐
+# ┆ requirement gogs  ┆
+# └-------------------┘
+# gogs
+# https://github.com/helm/charts/tree/master/incubator/gogs
+# https://github.com/helm/charts/blob/master/incubator/gogs/values.yaml
+# https://github.com/helm/helm/blob/master/docs/chart_template_guide/subcharts_and_globals.md#overriding-values-of-a-child-chart
+gogs:
+  service:
+    httpNodePort: 30521
+    sshNodePort: 30522
+    gogs:
+      serviceEnableCaptcha: false
+  postgresql:
+    persistence:
+      enabled: false
+# ┌--------------------┐
+# ┆ requirement drone  ┆
+# └--------------------┘
+# https://github.com/helm/charts/tree/master/stable/drone
+drone:
+  service:
+    type: NodePort
+    nodePort: 30531
+  sourceControl:
+    provider: gogs
+    gogs:
+      server: http://mad-white-1907-gogs.default.svc.cluster.local
+# ┌----------------------------┐
+# ┆ DLTDOJO TAICHU-CRYPTO 2019 ┆
+# └----------------------------┘
+nginx:
+  replicaCount: 1
+  image:
+    repository: nginx
+    tag: 1.17-alpine
+  service:
+    type: NodePort
+    port: 8080
+    targetPort: 80
+    nodePort: 30520
+  htmlDir: /usr/share/nginx/html
+
+

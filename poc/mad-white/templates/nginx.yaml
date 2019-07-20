@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy-tc101
+spec:
+  selector:
+    matchLabels:
+      app: app-nginx
+  replicas: {{ .Values.nginx.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: app-nginx
+    spec:
+      containers:
+      - name: app
+        image: "{{ .Values.nginx.image.repository }}:{{ .Values.nginx.image.tag }}"
+        ports:
+        - containerPort: {{ .Values.nginx.service.targetPort }}
+        volumeMounts:
+        - name: vol-html
+          mountPath: /usr/share/nginx/html
+      volumes:
+        - name: vol-html
+          hostPath:
+            path: "{{ .Values.nginx.htmlDir }}"
+            type: Directory
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-srv-tc101
+spec:
+  type: {{ .Values.nginx.service.type }}
+  selector:
+    app: app-nginx
+  ports:
+  - protocol: TCP
+    port: {{ .Values.nginx.service.port }}
+    targetPort: {{ .Values.nginx.service.targetPort }}
+    nodePort: {{ .Values.nginx.service.nodePort }}
