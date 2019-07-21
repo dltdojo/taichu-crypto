@@ -8,6 +8,8 @@ cd "$(dirname "$0")"
 TESTID=mad-white-1907
 KCTL=microk8s.kubectl
 K8S_NS=default
+CS_IMG=taichu-crypto-cs-vscext
+TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 
 # ┌----------------------┐
 # ┆ Generate an password ┆
@@ -46,6 +48,10 @@ dep_update(){
    helm dependency update
 }
 
+build(){
+   docker build -f Dockerfile -t ${CS_IMG} . 
+}
+
 start(){
    helm upgrade ${TESTID} . --install --namespace=${K8S_NS} \
      --set nginx.htmlDir=${PWD}/html --render-subchart-notes
@@ -62,6 +68,7 @@ test(){
 }
 
 case "$1" in
+   build) shift; build $@ ;;
    start) shift; start $@ ;;
    stop) shift; stop $@ ;;
    depup) shift; dep_update $@ ;;

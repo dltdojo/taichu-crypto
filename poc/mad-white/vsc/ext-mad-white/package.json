@@ -1,10 +1,11 @@
 {
 	"name": "vsc-mad-white",
 	"displayName": "vsc-mad-white",
+	"publisher": "taichu-publisher",
 	"description": "visual studio code extension for mad white",
 	"version": "0.0.1",
 	"engines": {
-		"vscode": "^1.36.0"
+		"vscode": "^1.33.0"
 	},
 	"categories": [
 		"Other"
@@ -23,10 +24,10 @@
 		"menus": {
 			"editor/context": [
 				{
-				  "command": "extension.helloMadWhite",
-				  "group": "YourGroup@1"
+					"command": "extension.helloMadWhite",
+					"group": "YourGroup@1"
 				}
-			  ]
+			]
 		}
 	},
 	"scripts": {
@@ -36,7 +37,7 @@
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^5.2.6",
 		"@types/node": "^10.12.21",
-		"@types/vscode": "^1.36.0",
+		"@types/vscode": "^1.33.0",
 		"eslint": "^5.13.0",
 		"glob": "^7.1.4",
 		"mocha": "^6.1.4",
