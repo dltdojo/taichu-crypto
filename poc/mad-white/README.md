@@ -11,3 +11,10 @@ bash run.sh start|stop|info
 - register alice@gogs and create a new project
 - drone url http://127.0.0.1:30531
 - login drone with alice@gogs's password
+
+
+# 圖說
+
+組件圖
+
+![](uml/mad-white-component-1907-1.svg)
