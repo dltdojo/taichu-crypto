@@ -6,6 +6,7 @@
 # https://github.com/helm/charts/blob/master/incubator/gogs/values.yaml
 # https://github.com/helm/helm/blob/master/docs/chart_template_guide/subcharts_and_globals.md#overriding-values-of-a-child-chart
 gogs:
+  enabled: false
   service:
     httpNodePort: 30521
     sshNodePort: 30522
@@ -19,6 +20,7 @@ gogs:
 # └--------------------┘
 # https://github.com/helm/charts/tree/master/stable/drone
 drone:
+  enabled: false
   service:
     type: NodePort
     nodePort: 30531
@@ -26,6 +28,12 @@ drone:
     provider: gogs
     gogs:
       server: http://mad-white-1907-gogs.default.svc.cluster.local
+# ┌--------------------------┐
+# ┆ registry: microk8s addon ┆
+# └--------------------------┘
+registry:
+  urlInKubernetes: registry.container-registry.svc.cluster.local:5000
+  urlInHost: localhost:32000
 # ┌----------------------------┐
 # ┆ DLTDOJO TAICHU-CRYPTO 2019 ┆
 # └----------------------------┘
@@ -40,5 +48,17 @@ nginx:
     targetPort: 80
     nodePort: 30520
   htmlDir: /usr/share/nginx/html
+# ┌-----------------------┐
+# ┆ jsonld.org playground ┆
+# └-----------------------┘
+jsonld:
+  enabled: true
+  image:
+    name: mad-white-jsonld
+    tag: 0.1.2
+  service:
+    type: NodePort
+    port: 8081
+    targetPort: 80
 
 

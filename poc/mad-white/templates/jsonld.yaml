@@ -1,0 +1,36 @@
+{{- if .Values.jsonld.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jsonld-nginx
+spec:
+  selector:
+    matchLabels:
+      app: jsonld-nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jsonld-nginx
+    spec:
+      containers:
+      - name: app
+        image: {{ .Values.registry.urlInHost}}/{{ .Values.jsonld.image.name }}:{{ .Values.jsonld.image.tag }}
+        ports:
+        - containerPort: {{ .Values.jsonld.service.targetPort }}
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: jsonld-nginx
+spec:
+  type: {{ .Values.jsonld.service.type }}
+  selector:
+    app: jsonld-nginx
+  ports:
+  - protocol: TCP
+    port: {{ .Values.jsonld.service.port }}
+    targetPort: {{ .Values.jsonld.service.targetPort }}
+    nodePort: {{ .Values.jsonld.service.nodePort }}
+{{- end }}

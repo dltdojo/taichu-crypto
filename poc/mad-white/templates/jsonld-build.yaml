@@ -1,0 +1,30 @@
+{{- if .Values.jsonld.enabled }}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{.Release.Name}}-build-jsonld
+  annotations:
+    "helm.sh/hook": "pre-install"
+    "helm.sh/hook-delete-policy": "before-hook-creation"
+spec:
+  containers:
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:latest
+    volumeMounts:
+    - name: dockerfiles
+      subPath: Dockerfile.jsonld
+      mountPath: /build/Dockerfile
+    args:
+    - --dockerfile=/build/Dockerfile
+    - --destination={{ .Values.registry.urlInKubernetes}}/{{ .Values.jsonld.image.name }}:{{ .Values.jsonld.image.tag }}
+    - --context=/build
+    - --insecure
+    - --verbosity=debug
+  restartPolicy: Never
+  dnsPolicy: ClusterFirst
+  volumes:
+  - configMap:
+      name: cm-dockerfiles
+    name: dockerfiles
+{{- end }}

@@ -1,7 +1,7 @@
 # Getting Started
 
 ```
-bash run.sh start|stop|info
+bash mad-white.sh install|delete|info
 ```
 
 ## Steps

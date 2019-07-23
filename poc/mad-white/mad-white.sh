@@ -8,7 +8,6 @@ cd "$(dirname "$0")"
 TESTID=mad-white-1907
 KCTL=microk8s.kubectl
 K8S_NS=default
-CS_IMG=taichu-crypto-cs-vscext
 TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 
 # ┌----------------------┐
@@ -20,6 +19,30 @@ gen_passwd(){
   else
     echo $(head -c 32 /dev/random | base64 -)
   fi
+}
+
+
+jsonld_info(){
+  echo ┌---------------------┐
+  echo │ jsonld Service Info │
+  echo └---------------------┘
+  JL_NODE_PORT=$(kubectl get --namespace ${K8S_NS} -o jsonpath="{.spec.ports[0].nodePort}" services jsonld-nginx)
+  # POD_NAME=$(kubectl get pods --namespace ${K8S_NS} -l "app=jsonld-nginx" -o jsonpath="{.items[0].metadata.name}")
+  echo jsonld.org playground url http://127.0.0.1:$JL_NODE_PORT
+}
+
+dep_update(){
+   # helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
+   helm dependency update
+}
+
+install(){
+   helm upgrade ${TESTID} . --install --namespace=${K8S_NS} \
+     --set nginx.htmlDir=${PWD}/html --render-subchart-notes
+}
+
+delete(){
+   helm delete ${TESTID} --purge
 }
 
 info(){
@@ -41,40 +64,15 @@ info(){
    echo "╰----------------╯"
    echo "url http://127.0.0.1:30520"
    echo "dns url http://nginx-srv-tc101.default.svc.cluster.local"
-}
-
-dep_update(){
-   # helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
-   helm dependency update
-}
-
-build(){
-   docker build -f Dockerfile -t ${CS_IMG} . 
-}
-
-start(){
-   helm upgrade ${TESTID} . --install --namespace=${K8S_NS} \
-     --set nginx.htmlDir=${PWD}/html --render-subchart-notes
-   sleep 3
-   info
-}
-
-stop(){
-   helm delete ${TESTID} --purge
-}
-
-test(){
-   echo todo
+   jsonld_info
 }
 
 case "$1" in
-   build) shift; build $@ ;;
-   start) shift; start $@ ;;
-   stop) shift; stop $@ ;;
+   install) shift; install $@ ;;
+   delete) shift; delete $@ ;;
    depup) shift; dep_update $@ ;;
    info) shift; info $@ ;;
-   test) shift; test $@ ;;
-   *) echo "usage: $0 test|info" >&2
+   *) echo "usage: $0 install|delete|info" >&2
       exit 1
       ;;
 esac

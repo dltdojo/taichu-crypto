@@ -1,0 +1,19 @@
+    FROM alpine as cloner
+    RUN apk --update add curl unzip && \
+      rm -rf /var/lib/apt/lists/* && \
+      rm /var/cache/apk/*
+    RUN mkdir -p /git/
+    WORKDIR /git/
+    ARG GIT_ZIP=https://github.com/json-ld/json-ld.org/archive/master.zip
+    ARG GIT_DIR=json-ld.org
+    RUN curl -SL ${GIT_ZIP} -o /tmp/git.zip && \  
+      unzip /tmp/git.zip -d . && mv ${GIT_DIR}-master ${GIT_DIR}
+    #
+    # STAGE deployment
+    # 
+    FROM nginx:1.17-alpine
+    ARG GIT_DIR=json-ld.org
+    RUN rm -rf /usr/share/nginx/html
+    COPY --from=cloner /git/${GIT_DIR} /usr/share/nginx/html
+    RUN ls -al /usr/share/nginx/html
+    CMD ["nginx", "-g", "daemon off;"]

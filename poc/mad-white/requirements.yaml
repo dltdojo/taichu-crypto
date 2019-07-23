@@ -2,6 +2,8 @@ dependencies:
 - name: gogs
   repository: "@incubator"
   version: ^0.2.0
+  condition: gogs.enabled
 - name: drone
   repository: "@stable"
   version: ^2.0.0
+  condition: drone.enabled
