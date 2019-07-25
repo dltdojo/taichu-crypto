@@ -1,0 +1,119 @@
+NOTES
+
+DLTDOJO Service : code-server, Gogs, Drone, json-ld playground, PlantUML Server
+
+#----csplit-line----
+#!/bin/bash
+echo ┌---------------------┐
+echo ┆ Post Install Script ┆
+echo └---------------------┘
+CHART_RELEASE_NAME={{ .Release.Name }}
+CHART_NAME={{ .Chart.Name }}
+CHART_VER={{ .Chart.Version }}
+TEMPDIR=$1
+echo install temp dir: ${TEMPDIR}
+echo helm release : ${CHART_RELEASE_NAME}
+echo helm chart name : ${CHART_NAME}
+echo helm chart version: ${CHART_VER}
+MAIN_SCRIPT=${CHART_RELEASE_NAME}-${CHART_NAME}-${CHART_VER}.sh
+mkdir -p ~/.local/bin
+pushd ~/.local/bin
+cp -f ${TEMPDIR}/madwhite02 ${MAIN_SCRIPT}
+cp -f ${MAIN_SCRIPT} madwhite
+chmod +x madwhite
+popd
+echo ┌----------------┐
+echo ┆ madwhite ready ┆
+echo └----------------┘
+
+#----csplit-line----
+#!/bin/bash
+CHART_RELEASE_NAME={{ .Release.Name }}
+CHART_NAME={{ .Chart.Name }}
+CHART_VER={{ .Chart.Version }}
+MAIN_SCRIPT=${CHART_RELEASE_NAME}-${CHART_NAME}-${CHART_VER}.sh
+HOSTIP=127.0.0.1
+
+codeserver_info(){
+  nodeport_info "Code Server" https vsc-srv
+  CS_POD_NAME=$(pod_id_from_app_label vsc-srv)
+  # removing colors from code-server output
+  kubectl logs ${CS_POD_NAME} | sed 's/\x1B\[[0-9;]\+[A-Za-z]//g' | grep -A1 -B1 "Password"
+  echo 
+}
+
+plantuml_info(){
+  nodeport_info "PlantUML Server" http plantuml-server
+  # PS_POD_NAME=$(pod_id_from_app_label plantuml-server)
+}
+
+nodeport_info(){
+  THE_NODE_PORT=$(kubectl get -n {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services $3)
+  echo ┌---------------------------------------┐
+  echo "      Service: ${1}" 
+  echo "  " $2://${HOSTIP}:$THE_NODE_PORT
+  echo └---------------------------------------┘
+  echo $1 DNS url $2://$3.{{ .Release.Namespace }}.svc.cluster.local
+  echo 
+}
+
+jsonld_info(){
+  nodeport_info "json-ld.org playground Server" http jsonld-nginx
+}
+
+swagger_info(){
+  nodeport_info "Swagger UI Server" http swagger-ui-nginx
+}
+
+pod_id_from_app_label(){
+  kubectl get pods -n {{ .Release.Namespace }} -l "app=${1}" -o jsonpath="{.items[0].metadata.name}"
+}
+
+vault_info(){
+  nodeport_info "Vault Dev Server" http {{ .Release.Name }}-vault
+  VAULT_POD_NAME=$(pod_id_from_app_label vault)
+  # logs dev mode output example
+  # Unseal Key: VnOPe8aPzjYEkRmj+Q5/QlkMtO7oZMc5jKzxlQi76bg=
+  # Root Token: s.I1A9M7JfLDZa3v5WdUu9LUNa
+  kubectl logs ${VAULT_POD_NAME} | grep -A2 -B2 "Root Token"
+  echo
+}
+
+info(){
+  HOSTIP="${1:-$HOSTIP}"
+  helm status {{ .Release.Name }} -o json | jq -r .info.status.resources
+  codeserver_info
+  nodeport_info "HTTP Nginx Server" http nginx-srv-tc101
+  {{- if .Values.swaggerUi.enabled }}
+  swagger_info
+  {{- end }}
+  {{- if .Values.vault.enabled }}
+  vault_info
+  {{- end }}
+  {{- if .Values.plantUMLServer.enabled }}
+  plantuml_info
+  {{- end }}
+}
+
+delete(){
+  helm delete {{ .Release.Name }} --purge
+  pushd ~/.local/bin
+  rm -f madwhite ${MAIN_SCRIPT}
+  echo ┌------------------┐
+  echo ┆ madwhite deleted ┆
+  echo └------------------┘
+  popd
+}
+
+raw(){
+  cat ~/.local/bin/madwhite
+}
+
+case "$1" in
+   info) shift; info $@ ;;
+   raw) shift; raw $@ ;;
+   delete) shift; delete $@ ;;
+   *) echo "usage: $0 info|delete|raw|help" >&2
+      exit 1
+      ;;
+esac

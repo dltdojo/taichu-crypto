@@ -1,0 +1,9 @@
+{
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "plantuml.exportSubFolder": false,
+    "plantuml.exportOutDir": ".",
+    "files.associations": {
+        "[Dd]ockerfile*": "dockerfile",
+        "docker-compose*": "yaml"
+    }
+}

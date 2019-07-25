@@ -1,0 +1,57 @@
+{{- if .Values.jsonld.enabled }}
+---
+apiVersion: v1
+data:
+  Dockerfile: |-
+    FROM alpine as cloner
+    RUN apk --update add curl unzip && \
+      rm -rf /var/lib/apt/lists/* && \
+      rm /var/cache/apk/*
+    RUN mkdir -p /git/
+    WORKDIR /git/
+    ARG GIT_ZIP=https://github.com/json-ld/json-ld.org/archive/master.zip
+    ARG GIT_DIR=json-ld.org
+    RUN curl -SL ${GIT_ZIP} -o /tmp/git.zip && \  
+      unzip /tmp/git.zip -d . && mv ${GIT_DIR}-master ${GIT_DIR}
+    #
+    # STAGE deployment
+    # 
+    FROM nginx:1.17-alpine
+    ARG GIT_DIR=json-ld.org
+    RUN rm -rf /usr/share/nginx/html
+    COPY --from=cloner /git/${GIT_DIR} /usr/share/nginx/html
+    RUN ls -al /usr/share/nginx/html
+    CMD ["nginx", "-g", "daemon off;"]
+kind: ConfigMap
+metadata:
+  name: dockerfile-jsonld-1907
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{.Release.Name}}-build-jsonld
+  annotations:
+    "helm.sh/hook": "pre-install"
+    "helm.sh/hook-delete-policy": "before-hook-creation"
+spec:
+  volumes:
+  containers:
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:latest
+    volumeMounts:
+    - name: dockerfile
+      mountPath: /build/Dockerfile
+      subPath: Dockerfile
+    args:
+    - --dockerfile=/build/Dockerfile
+    - --destination={{ .Values.registry.urlInK8s}}/{{ .Values.jsonld.image.name }}:{{ .Values.jsonld.image.tag }}
+    - --context=/build
+    - --insecure
+    - --verbosity=debug
+  restartPolicy: Never
+  dnsPolicy: {{ .Values.kaniko.dnsPolicy}}
+  volumes:
+  - configMap:
+      name: dockerfile-jsonld-1907
+    name: dockerfile
+{{- end }}

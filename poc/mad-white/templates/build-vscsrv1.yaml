@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{.Release.Name}}-build-vscsrv1
+  annotations: 
+    "helm.sh/hook": "pre-install"
+    "helm.sh/hook-delete-policy": "before-hook-creation"
+spec:
+#
+# Kubernetes config map symlinks (..data/) : is there a way to avoid them?
+# https://stackoverflow.com/questions/50685385/kubernetes-config-map-symlinks-data-is-there-a-way-to-avoid-them/
+# 
+  initContainers:
+  - name: copy-config
+    image: busybox
+    command: ['sh', '-c', 'cp /configmap/* /configs']
+    volumeMounts:
+    - name: dockerfile-dir
+      mountPath: /configmap
+    - name: config
+      mountPath: /configs
+  containers:
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:latest
+    volumeMounts:
+    - name: config
+      mountPath: /build
+    args:
+    - --dockerfile=/build/Dockerfile
+    - --destination={{ .Values.registry.urlInK8s}}/{{ .Values.codeServer.image.name }}:{{ .Values.codeServer.image.tag }}
+    - --context=/build
+    - --insecure
+    - --cache=true
+    - --reproducible
+    - --verbosity=info
+  restartPolicy: Never
+  dnsPolicy: {{ .Values.kaniko.dnsPolicy}}
+  volumes:
+  - name: config
+    emptyDir: {}
+  - name: dockerfile-dir
+    configMap:
+      name: cm-vscsrv1

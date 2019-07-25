@@ -28,12 +28,16 @@ drone:
     provider: gogs
     gogs:
       server: http://mad-white-1907-gogs.default.svc.cluster.local
-# ┌--------------------------┐
-# ┆ registry: microk8s addon ┆
-# └--------------------------┘
-registry:
-  urlInKubernetes: registry.container-registry.svc.cluster.local:5000
-  urlInHost: localhost:32000
+# ┌----------------┐
+# ┆ vault dev mode ┆
+# └----------------┘
+vault:
+  enabled: true
+  image:
+    tag: 1.1.3
+  replicaCount: 1
+  service:
+    type: NodePort
 # ┌----------------------------┐
 # ┆ DLTDOJO TAICHU-CRYPTO 2019 ┆
 # └----------------------------┘
@@ -48,6 +52,18 @@ nginx:
     targetPort: 80
     nodePort: 30520
   htmlDir: /usr/share/nginx/html
+# ┌----------┐
+# ┆ registry ┆
+# └----------┘
+registry:
+  urlInK8s: registry.container-registry.svc.cluster.local:5000
+  urlInHost: localhost:32000
+# ┌--------┐
+# ┆ kaniko ┆
+# └--------┘
+kaniko:
+  # dnsPolicy: Default
+  dnsPolicy: ClusterFirst
 # ┌-----------------------┐
 # ┆ jsonld.org playground ┆
 # └-----------------------┘
@@ -55,10 +71,47 @@ jsonld:
   enabled: true
   image:
     name: mad-white-jsonld
-    tag: 0.1.2
+    tag: 0.2.5
   service:
     type: NodePort
     port: 8081
     targetPort: 80
+# ┌------------------------┐
+# ┆ swagger-api/swagger-ui ┆
+# └------------------------┘
+swaggerUi:
+  enabled: true
+  image:
+    name: mad-white-swapi
+    tag: 0.0.1
+  service:
+    type: NodePort
+    port: 8082
+    targetPort: 80
+# ┌-------------┐
+# ┆ code server ┆
+# └-------------┘
+codeServer:
+  enabled: true
+  dir: /tmp
+  image:
+    name: mad-white-vscsrv
+    tag: 0.1.1
+  service:
+    type: NodePort
+    port: 8083
+    targetPort: 8443
+# ┌-----------------┐
+# ┆ PlantUML server ┆
+# └-----------------┘
+plantUMLServer:
+  enabled: true
+  image:
+    name: plantuml/plantuml-server
+    tag: jetty
+  service:
+    type: NodePort
+    port: 8084
+    targetPort: 8080
 
 

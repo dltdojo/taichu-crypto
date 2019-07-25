@@ -1,0 +1,36 @@
+{{- if .Values.plantUMLServer.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plantuml-server
+spec:
+  selector:
+    matchLabels:
+      app: plantuml-server
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: plantuml-server
+    spec:
+      containers:
+      - name: app
+        image: {{ .Values.plantUMLServer.image.name }}:{{ .Values.plantUMLServer.image.tag }}
+        ports:
+        - containerPort: {{ .Values.plantUMLServer.service.targetPort }}
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: plantuml-server
+spec:
+  type: {{ .Values.plantUMLServer.service.type }}
+  selector:
+    app: plantuml-server
+  ports:
+  - protocol: TCP
+    port: {{ .Values.plantUMLServer.service.port }}
+    targetPort: {{ .Values.plantUMLServer.service.targetPort }}
+    nodePort: {{ .Values.plantUMLServer.service.nodePort }}
+{{- end }}

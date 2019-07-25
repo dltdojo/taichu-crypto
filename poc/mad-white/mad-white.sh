@@ -1,12 +1,13 @@
 #!/bin/bash
-#
-# ┌----------------------------┐
-# ┆ DLTDOJO TAICHU-CRYPTO 2019 ┆
-# └----------------------------┘
+# ┌--------------------------------------------------------------------┐
+#            DLTDOJO TAICHU-CRYPTO POC MAD WHITE 2019 
+#   curl https://dltdojo.org/sh/mad-white -sfSL | sh -s -- check
+#   curl https://dltdojo.org/sh/mad-white -sfSL | sh -s -- install
+# └--------------------------------------------------------------------┘
 #
 cd "$(dirname "$0")"
-TESTID=mad-white-1907
-KCTL=microk8s.kubectl
+cd "$(dirname "$0")"
+RELEASE_ID=mad-white-1907
 K8S_NS=default
 TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 
@@ -21,58 +22,78 @@ gen_passwd(){
   fi
 }
 
-
-jsonld_info(){
-  echo ┌---------------------┐
-  echo │ jsonld Service Info │
-  echo └---------------------┘
-  JL_NODE_PORT=$(kubectl get --namespace ${K8S_NS} -o jsonpath="{.spec.ports[0].nodePort}" services jsonld-nginx)
-  # POD_NAME=$(kubectl get pods --namespace ${K8S_NS} -l "app=jsonld-nginx" -o jsonpath="{.items[0].metadata.name}")
-  echo jsonld.org playground url http://127.0.0.1:$JL_NODE_PORT
+need_cmd() {
+    if ! check_cmd "$1"; then
+        err "need '$1' (command not found)"
+    fi
 }
 
-dep_update(){
-   # helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
-   helm dependency update
+check_cmd() {
+    command -v "$1" > /dev/null 2>&1
 }
 
-install(){
-   helm upgrade ${TESTID} . --install --namespace=${K8S_NS} \
-     --set nginx.htmlDir=${PWD}/html --render-subchart-notes
+err() {
+    say "$1" >&2
+    exit 1
 }
 
-delete(){
-   helm delete ${TESTID} --purge
+say() {
+    printf "${RELEASE_ID}: %s\n" "$1"
 }
 
-info(){
-   helm status ${TESTID}
-   # my-svc.my-namespace.svc.cluster.local
-   echo "╭---------------------╮"
-   echo "│ mad-white/gogs info │"
-   echo "╰---------------------╯"
-   echo "NOTE: gogs started must wait at least 3-5 mins."
-   echo "gogs url http://127.0.0.1:30521"
-   echo "gogs dns url http://${TESTID}-gogs.default.svc.cluster.local"
-   echo "╭----------------------╮"
-   echo "│ mad-white/drone info │"
-   echo "╰----------------------╯"
-   echo "drone url http://127.0.0.1:30531"
-   echo "drone dns url http://${TESTID}-drone.default.svc.cluster.local"
-   echo "╭----------------╮"
-   echo "│ mad-white info │"
-   echo "╰----------------╯"
-   echo "url http://127.0.0.1:30520"
-   echo "dns url http://nginx-srv-tc101.default.svc.cluster.local"
-   jsonld_info
+
+check_all(){
+  need_cmd bash
+  need_cmd docker
+  need_cmd kubectl
+  need_cmd helm
+  need_cmd sleep
+  need_cmd csplit
+  need_cmd git
+  need_cmd mktemp
+  say "commands at the ready"
+}
+
+install_git(){
+  check_all
+  GITDIR=/tmp/git-mad-white-${TIMESTAMP}
+  rm -rf ${GITDIR}
+  git clone --depth=1 https://github.com/dltdojo/taichu-crypto.git ${GITDIR}
+  pushd ${GITDIR}/poc/mad-white
+  helm dependency update
+  install_chart
+  popd
+}
+
+install_chart(){
+  DIR_DOC_HTML=${PWD}/html
+  DIR_CODE_SERVER_PROJECT=${PWD}/html
+  helm upgrade ${RELEASE_ID} . --install --namespace=${K8S_NS} \
+     --set nginx.htmlDir=${DIR_DOC_HTML} --set codeServer.dir=${DIR_CODE_SERVER_PROJECT} --render-subchart-notes
+  sleep 5
+  post_install
+  sleep 5
+  madwhite info > ${DIR_DOC_HTML}/SERVICES-${TIMESTAMP}.txt
+}
+
+post_install(){
+  TMPDIR=$(mktemp -d) 
+  pushd ${TMPDIR}
+  helm status -o json ${RELEASE_ID} | jq -r .info.status.notes > NOTES.txt
+  csplit -zf madwhite NOTES.txt '/^#----csplit-line----$/' '{*}'
+  #
+  # csplit create madwhite00, madwhite01, madwhite02
+  #
+  bash madwhite01 ${TMPDIR}
+  popd
+  rm -rf ${TMPDIR}
 }
 
 case "$1" in
-   install) shift; install $@ ;;
-   delete) shift; delete $@ ;;
-   depup) shift; dep_update $@ ;;
-   info) shift; info $@ ;;
-   *) echo "usage: $0 install|delete|info" >&2
-      exit 1
-      ;;
+  check) shift; check_all $@ ;;
+  install) shift; install_git $@ ;;
+  install-chart) shift; install_chart $@ ;;
+  *) echo "usage: $0 install|install-chart" >&2
+     exit 1
+     ;;
 esac

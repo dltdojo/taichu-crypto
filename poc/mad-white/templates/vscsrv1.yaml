@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vsc-srv
+spec:
+  selector:
+    matchLabels:
+      app: vsc-srv
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: vsc-srv
+    spec:
+      containers:
+      - name: app
+        image: {{ .Values.registry.urlInHost }}/{{ .Values.codeServer.image.name }}:{{ .Values.codeServer.image.tag }}
+        ports:
+        - containerPort: {{ .Values.codeServer.service.targetPort }}
+        volumeMounts:
+        - name: vol-project
+          mountPath: /home/coder/project
+      volumes:
+        - name: vol-project
+          hostPath:
+            path: "{{ .Values.codeServer.dir }}"
+            type: Directory
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: vsc-srv
+spec:
+  type: {{ .Values.codeServer.service.type }}
+  selector:
+    app: vsc-srv
+  ports:
+  - protocol: TCP
+    port: {{ .Values.codeServer.service.port }}
+    targetPort: {{ .Values.codeServer.service.targetPort }}
+    nodePort: {{ .Values.codeServer.service.nodePort }}

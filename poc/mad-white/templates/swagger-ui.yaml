@@ -1,0 +1,49 @@
+{{- if .Values.swaggerUi.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swagger-ui-nginx
+spec:
+  selector:
+    matchLabels:
+      app: swagger-ui-nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: swagger-ui-nginx
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/cm-demo-api.yaml") . | sha256sum }}
+    spec:
+      volumes:
+      - name: cm-demo-api
+        configMap:
+          name: cm-demo-api
+      containers:
+      - name: app
+        image: {{ .Values.registry.urlInHost}}/{{ .Values.swaggerUi.image.name }}:{{ .Values.swaggerUi.image.tag }}
+        ports:
+        - containerPort: {{ .Values.swaggerUi.service.targetPort }}
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html/index.html
+          name: cm-demo-api
+          subPath: index.html
+        - mountPath: /usr/share/nginx/html/petstore.yaml
+          name: cm-demo-api
+          subPath: petstore.yaml
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: swagger-ui-nginx
+spec:
+  type: {{ .Values.swaggerUi.service.type }}
+  selector:
+    app: swagger-ui-nginx
+  ports:
+  - protocol: TCP
+    port: {{ .Values.swaggerUi.service.port }}
+    targetPort: {{ .Values.swaggerUi.service.targetPort }}
+    nodePort: {{ .Values.swaggerUi.service.nodePort }}
+{{- end }}

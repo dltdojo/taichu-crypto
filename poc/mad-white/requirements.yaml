@@ -7,3 +7,8 @@ dependencies:
   repository: "@stable"
   version: ^2.0.0
   condition: drone.enabled
+- name: vault
+  repository: "@incubator"
+  version: ^0.18.0
+  condition: vault.enabled
+
