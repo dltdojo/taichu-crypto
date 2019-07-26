@@ -82,8 +82,10 @@ vault_info(){
 info(){
   HOSTIP="${1:-$HOSTIP}"
   helm status {{ .Release.Name }} -o json | jq -r .info.status.resources
-  codeserver_info
   nodeport_info "HTTP Nginx Server" http nginx-srv-tc101
+  {{- if .Values.codeServer.enabled }}
+  codeserver_info
+  {{- end }}
   {{- if .Values.swaggerUi.enabled }}
   swagger_info
   {{- end }}
@@ -109,11 +111,46 @@ raw(){
   cat ~/.local/bin/madwhite
 }
 
+raw_notes(){
+  helm status {{ .Release.Name }} -o json | jq -r .info.status.notes
+}
+
+get_values(){
+  helm get {{ .Release.Name }} values
+}
+
+usage() {
+    cat 1>&2 <<EOF
+The installer for madwhite
+
+USAGE:
+    bash mad-white.sh [FLAGS] [OPTIONS]
+
+FLAGS:
+    -d, --delete            Delete installed chart
+    -i, --info              Prints chart info
+    -n, --notes             Prints chart's NOTES.txt 
+        --get-values        Prints helm get release values
+    -r, --raw               Prints madwhite script 
+    -h, --help              Prints help information
+    -v, --version           Prints version information
+
+OPTIONS: 
+        --default-host <default-host>  Choose host 
+EOF
+}
+
 case "$1" in
-   info) shift; info $@ ;;
-   raw) shift; raw $@ ;;
-   delete) shift; delete $@ ;;
-   *) echo "usage: $0 info|delete|raw|help" >&2
-      exit 1
+  -d| --delete) shift; delete $@ ;;
+  -i| --info) shift; info $@ ;;
+  -r| --raw) shift; raw $@ ;;
+  -n| --notes) shift; raw_notes $@ ;;
+  --get-values) shift; get_values $@ ;;
+  -h|--help)
+      usage
+      exit 0
       ;;
+  *) usage
+     exit 0
+     ;;
 esac

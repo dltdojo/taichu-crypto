@@ -38,9 +38,9 @@ vault:
   replicaCount: 1
   service:
     type: NodePort
-# ┌----------------------------┐
-# ┆ DLTDOJO TAICHU-CRYPTO 2019 ┆
-# └----------------------------┘
+# ┌---------------------┐
+# ┆ Local nginx service ┆
+# └---------------------┘
 nginx:
   replicaCount: 1
   image:
@@ -68,7 +68,7 @@ kaniko:
 # ┆ jsonld.org playground ┆
 # └-----------------------┘
 jsonld:
-  enabled: true
+  enabled: false
   image:
     name: mad-white-jsonld
     tag: 0.2.5
@@ -80,7 +80,7 @@ jsonld:
 # ┆ swagger-api/swagger-ui ┆
 # └------------------------┘
 swaggerUi:
-  enabled: true
+  enabled: false
   image:
     name: mad-white-swapi
     tag: 0.0.1
@@ -92,7 +92,7 @@ swaggerUi:
 # ┆ code server ┆
 # └-------------┘
 codeServer:
-  enabled: true
+  enabled: false
   dir: /tmp
   image:
     name: mad-white-vscsrv
@@ -105,7 +105,7 @@ codeServer:
 # ┆ PlantUML server ┆
 # └-----------------┘
 plantUMLServer:
-  enabled: true
+  enabled: false
   image:
     name: plantuml/plantuml-server
     tag: jetty

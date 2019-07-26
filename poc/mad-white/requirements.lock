@@ -4,6 +4,9 @@ dependencies:
   version: 0.7.10
 - name: drone
   repository: https://kubernetes-charts.storage.googleapis.com
-  version: 2.0.5
-digest: sha256:e531e8298f73ec834dab62e6743b06122e63a913bb50f3f8d6107c8fa883c0a9
-generated: "2019-07-19T15:36:07.260892842+08:00"
+  version: 2.0.6
+- name: vault
+  repository: https://kubernetes-charts-incubator.storage.googleapis.com/
+  version: 0.18.14
+digest: sha256:f8a00f36ed78730ec9c9c43e0a44162a89f83490cd310fa158e972dca41c12b9
+generated: "2019-07-26T13:32:44.899844421Z"

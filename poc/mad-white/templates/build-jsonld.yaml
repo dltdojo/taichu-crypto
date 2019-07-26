@@ -1,5 +1,4 @@
 {{- if .Values.jsonld.enabled }}
----
 apiVersion: v1
 data:
   Dockerfile: |-

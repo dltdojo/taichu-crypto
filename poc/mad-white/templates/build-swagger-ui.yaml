@@ -1,5 +1,4 @@
 {{- if .Values.swaggerUi.enabled }}
----
 apiVersion: v1
 data:
   Dockerfile: |-

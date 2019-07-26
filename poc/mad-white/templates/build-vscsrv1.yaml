@@ -1,3 +1,4 @@
+{{- if .Values.codeServer.enabled }}
 apiVersion: v1
 kind: Pod
 metadata:
@@ -41,3 +42,4 @@ spec:
   - name: dockerfile-dir
     configMap:
       name: cm-vscsrv1
+{{- end}}

@@ -1,6 +1,8 @@
+{{- if .Values.codeServer.enabled }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: cm-vscsrv1
 data:
   {{- (.Files.Glob "files/dockerfiles/vscsrv1/*").AsConfig | nindent 2 }}
+{{- end }}

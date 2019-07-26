@@ -1,13 +1,12 @@
 #!/bin/bash
 # ┌--------------------------------------------------------------------┐
 #            DLTDOJO TAICHU-CRYPTO POC MAD WHITE 2019 
-#   curl https://dltdojo.org/sh/mad-white -sfSL | sh -s -- check
-#   curl https://dltdojo.org/sh/mad-white -sfSL | sh -s -- install
+#   curl https://dltdojo.org/sh/mad-white -sfSL | sh -s -- -c
+#   curl https://dltdojo.org/sh/mad-white -sfSL | sh -s -- -g
 # └--------------------------------------------------------------------┘
 #
 cd "$(dirname "$0")"
-cd "$(dirname "$0")"
-RELEASE_ID=mad-white-1907
+RELEASE_ID=fan-cow
 K8S_NS=default
 TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 
@@ -60,6 +59,7 @@ install_git(){
   rm -rf ${GITDIR}
   git clone --depth=1 https://github.com/dltdojo/taichu-crypto.git ${GITDIR}
   pushd ${GITDIR}/poc/mad-white
+  helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
   helm dependency update
   install_chart
   popd
@@ -89,11 +89,36 @@ post_install(){
   rm -rf ${TMPDIR}
 }
 
+
+usage() {
+    cat 1>&2 <<EOF
+The installer for madwhite
+
+USAGE:
+    bash mad-white.sh [FLAGS] [OPTIONS]
+
+FLAGS:
+    -l, --install-local     install from local pwd path
+    -i, --install-git       install from github
+    -c, --check             check need commands
+    -h, --help              Prints help information
+    -v, --version           Prints version information
+
+OPTIONS: 
+       --host <default-host>              Choose host 
+EOF
+}
+
+
 case "$1" in
-  check) shift; check_all $@ ;;
-  install) shift; install_git $@ ;;
-  install-chart) shift; install_chart $@ ;;
-  *) echo "usage: $0 install|install-chart" >&2
-     exit 1
+  -c| --check) shift; check_all $@ ;;
+  -g| --install-git) shift; install_git $@ ;;
+  -l| --install-local) shift; install_chart $@ ;;
+  -h|--help)
+      usage
+      exit 0
+      ;;
+  *) usage
+     exit 0
      ;;
 esac

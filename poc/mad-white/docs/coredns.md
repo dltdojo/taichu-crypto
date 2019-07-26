@@ -1,0 +1,3 @@
+- https://github.com/helm/charts/blob/master/stable/coredns/values.yaml
+- https://coredns.io/2017/05/08/custom-dns-entries-for-kubernetes/
+- https://dev.to/robbmanes/running-coredns-as-a-dns-server-in-a-container-1d0

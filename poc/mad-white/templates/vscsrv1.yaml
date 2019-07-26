@@ -1,3 +1,4 @@
+{{- if .Values.codeServer.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -40,3 +41,4 @@ spec:
     port: {{ .Values.codeServer.service.port }}
     targetPort: {{ .Values.codeServer.service.targetPort }}
     nodePort: {{ .Values.codeServer.service.nodePort }}
+{{- end}}
