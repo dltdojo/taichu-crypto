@@ -1,12 +1,16 @@
 dependencies:
-- name: gogs
-  repository: "@incubator"
-  version: ^0.2.0
-  condition: gogs.enabled
+- name: coredns
+  version: "1.2.*"
+  repository: "@stable"
+  condition: coredns.enabled
 - name: drone
   repository: "@stable"
   version: ^2.0.0
   condition: drone.enabled
+- name: gogs
+  repository: "@incubator"
+  version: ^0.2.0
+  condition: gogs.enabled
 - name: vault
   repository: "@incubator"
   version: ^0.18.0

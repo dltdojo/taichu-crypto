@@ -1,5 +1,38 @@
+# ┌----------------------┐
+#   requirement coredns  
+# └----------------------┘
+# https://github.com/helm/charts/tree/master/stable/coredns
+coredns:
+  enabled: true
+  isClusterService: false
+  serviceType: NodePort
+  servers:
+  - zones:
+    - zone: .
+    port: 53
+    plugins:
+    - name: cache
+      parameters: 30
+    - name: errors
+    - name: health
+    - name: kubernetes
+      parameters: cluster.local
+    - name: file
+      parameters: /etc/coredns/mw-dltdojo.db mw.dltdojo
+    - name: forward
+      parameters: . /etc/resolv.conf
+  zoneFiles: 
+  - filename: mw-dltdojo.db
+    domain: mw.dltdojo
+    contents: |
+      mw.dltdojo.   IN   SOA     sns.dns.icann.org. noc.dns.icann.org. 2015082541 7200 3600 1209600 3600
+      mw.dltdojo.   IN   NS      b.iana-servers.net.
+      mw.dltdojo.   IN   NS      a.iana-servers.net.
+      mw.dltdojo.   IN   A   192.168.99.102
+      foo.mw.dltdojo. IN A   192.168.99.103
+      *.mw.dltdojo. IN   A   192.168.99.102
 # ┌-------------------┐
-# ┆ requirement gogs  ┆
+#   requirement gogs  
 # └-------------------┘
 # gogs
 # https://github.com/helm/charts/tree/master/incubator/gogs

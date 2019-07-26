@@ -5,7 +5,7 @@ DLTDOJO Service : code-server, Gogs, Drone, json-ld playground, PlantUML Server
 #----csplit-line----
 #!/bin/bash
 echo ┌---------------------┐
-echo ┆ Post Install Script ┆
+echo   Post Install Script 
 echo └---------------------┘
 CHART_RELEASE_NAME={{ .Release.Name }}
 CHART_NAME={{ .Chart.Name }}
@@ -23,7 +23,7 @@ cp -f ${MAIN_SCRIPT} madwhite
 chmod +x madwhite
 popd
 echo ┌----------------┐
-echo ┆ madwhite ready ┆
+echo   madwhite ready 
 echo └----------------┘
 
 #----csplit-line----
@@ -69,6 +69,20 @@ pod_id_from_app_label(){
   kubectl get pods -n {{ .Release.Namespace }} -l "app=${1}" -o jsonpath="{.items[0].metadata.name}"
 }
 
+dig_dltdojo_dns(){
+  SVC_COREDNS={{ .Release.Name }}-coredns 
+  THE_NODE_PORT=$(kubectl get -n {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services ${SVC_COREDNS})
+  dig @127.0.0.1 -p ${THE_NODE_PORT} mw.dltdojo
+  dig @127.0.0.1 -p ${THE_NODE_PORT} foo.mw.dltdojo
+  dig @127.0.0.1 -p ${THE_NODE_PORT} vault.mw.dltdojo
+}
+
+dnstools(){
+  helm status {{ .Release.Name }} -o json | jq -r .info.status.resources
+  echo "Run infoblox/dnstools .."
+  kubectl run -it --rm --restart=Never --image=infoblox/dnstools dnstools
+}
+
 vault_info(){
   nodeport_info "Vault Dev Server" http {{ .Release.Name }}-vault
   VAULT_POD_NAME=$(pod_id_from_app_label vault)
@@ -101,10 +115,10 @@ delete(){
   helm delete {{ .Release.Name }} --purge
   pushd ~/.local/bin
   rm -f madwhite ${MAIN_SCRIPT}
-  echo ┌------------------┐
-  echo ┆ madwhite deleted ┆
-  echo └------------------┘
   popd
+  echo ┌---------------------┐
+  echo     madwhite deleted 
+  echo └---------------------┘
 }
 
 raw(){
@@ -131,6 +145,8 @@ FLAGS:
     -i, --info              Prints chart info
     -n, --notes             Prints chart's NOTES.txt 
         --get-values        Prints helm get release values
+        --dnstools          Debug dns host info
+        --dig-dltdojo-dns   Debug dltdojo test domain name info
     -r, --raw               Prints madwhite script 
     -h, --help              Prints help information
     -v, --version           Prints version information
@@ -146,6 +162,8 @@ case "$1" in
   -r| --raw) shift; raw $@ ;;
   -n| --notes) shift; raw_notes $@ ;;
   --get-values) shift; get_values $@ ;;
+  --dnstools) shift; dnstools $@ ;;
+  --dig-dltdojo-dns) shift; dig_dltdojo_dns $@ ;;
   -h|--help)
       usage
       exit 0
