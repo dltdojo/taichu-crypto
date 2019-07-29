@@ -1,0 +1,65 @@
+{{- if .Values.myCoreDns.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-dns
+spec:
+  selector:
+    matchLabels:
+      app: demo-dns
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: demo-dns
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/cm-coredns.yaml") . | sha256sum }}
+    spec:
+      containers:
+      - name: dns-app
+        image:  coredns/coredns:1.6.0
+        args: [ "-conf", "/etc/coredns/Corefile" ]
+        ports:
+        - containerPort: 53
+          protocol: UDP
+          name: dns
+        - containerPort: 53
+          protocol: TCP
+          name: dns-tcp
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/coredns
+          readOnly: true
+      volumes:
+      - name: config-volume
+        configMap:
+          name: cm-coredns
+          items:
+          - key: Corefile
+            path: Corefile
+          - key: example.db
+            path: example.db
+---
+
+ apiVersion: v1
+kind: Service
+metadata:
+  name: demo-dns
+spec:
+  type: NodePort
+  selector:
+    app: demo-dns
+  ports:
+  - protocol: TCP
+    name: dns-tcp
+    port: 53
+    targetPort: 53
+    nodePort: 30053
+  - protocol: UDP
+    name: dns
+    port: 53
+    targetPort: 53
+    nodePort: 30053
+  externalIPs: 
+  - {{ .Values.myCoreDns.extIp }}
+{{- end }} 

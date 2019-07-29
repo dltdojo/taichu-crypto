@@ -1,0 +1,27 @@
+{{- if .Values.myCoreDns.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name:  cm-coredns
+data:
+  Corefile: |
+    .:53 {
+        errors
+        log
+        health
+        rewrite name foo.example.com foo.default.svc.cluster.local
+        file /etc/coredns/example.db example.org
+        cache 30
+    }
+  example.db: |
+    ; example.org test file
+    example.org.            IN      SOA     sns.dns.icann.org. noc.dns.icann.org. 2015082541 7200 3600 1209600 3600
+    example.org.            IN      NS      b.iana-servers.net.
+    example.org.            IN      NS      a.iana-servers.net.
+    example.org.            IN      A       127.0.0.1
+    a.b.c.w.example.org.    IN      TXT     "Not a wildcard"
+    cname.example.org.      IN      CNAME   www.example.net.
+    foo.example.org.        IN      A       192.168.99.1
+    *.foo.example.org.      IN      A       {{ .Values.myCoreDns.extIp }}
+    service.example.org.    IN      SRV     8080 10 10 example.org.
+{{- end }} 
