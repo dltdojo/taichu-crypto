@@ -1,10 +1,20 @@
 # Getting Started
 
+## Docker
+
+dltdojo/ddj3base:mad-white https://hub.docker.com/r/dltdojo/ddj3base/tags
+
+```
+docker run -it --rm -p 8443:8443 -v "${PWD}:/home/coder/project" dltdojo/ddj3base:mad-white --allow-http --no-auth 
+```
+
+## Kubernetes 
+
 ```
 bash mad-white.sh install|delete|info
 ```
 
-## Steps
+###  WIP Steps
 
 - gogs must wait at least 3 mins
 - gogs url http://127.0.0.1:30521
@@ -13,7 +23,7 @@ bash mad-white.sh install|delete|info
 - login drone with alice@gogs's password
 
 
-# 圖說
+### WIP 圖說
 
 組件圖
 
