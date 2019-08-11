@@ -20,8 +20,14 @@ ENV PATH /usr/games:$PATH
 # /usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 RUN sudo chown -R coder.coder /home/coder && \
     sudo chmod +x /usr/local/bin/trier && \
-	echo -e '\nexport PATH="/usr/games:$PATH"' >> /home/coder/.bashrc && \
-	trier --check
-#
+	echo '\nexport PATH="/usr/games:$PATH"' >> /home/coder/.bashrc
+# WORKDIR is /home/coder/project
 RUN trier --enable nodejs10
-# docker run -it -p 127.0.0.1:8443:8443 -v "${PWD}:/home/coder/project" codercom/code-server --allow-http --no-auth
+COPY dojos /home/coder/dojos
+RUN pwd && tree /home/coder/dojos && \
+    sudo chown -R coder.coder /home/coder
+# TEST build
+# TODO mktemp -d permission issue
+# docker build -t foo .
+# mkdir -p ~/test/foo
+# docker run -it -p 8443:8443 -v "${HOME}/test/foo:/home/coder/project" foo --allow-http --no-auth

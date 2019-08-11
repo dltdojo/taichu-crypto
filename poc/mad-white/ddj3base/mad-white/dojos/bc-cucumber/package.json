@@ -1,0 +1,22 @@
+{
+  "name": "ddj3base-bc-cucumber",
+  "version": "1.0.0",
+  "description": "bc-cucumber",
+  "main": "index.js",
+  "scripts": {
+    "bdd": "cucumber-js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cucumber": "^5.1.0",
+    "mocha": "^6.2.0"
+  },
+  "dependencies": {
+    "request": "^2.88.0",
+    "secp256k1": "^3.7.1"
+  }
+}
