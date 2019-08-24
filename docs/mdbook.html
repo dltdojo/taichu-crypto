@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><ol class="section"><li><a href="mad-white/index.html"><strong aria-hidden="true">2.1.</strong> MAD-WHITE</a></li></ol></li><li><a href="veloren/index.html"><strong aria-hidden="true">3.</strong> Veloren</a></li><li><ol class="section"><li><a href="veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">3.1.</strong> 聊天測試 BIP39</a></li><li><a href="veloren/vox/index.html"><strong aria-hidden="true">3.2.</strong> MagicaVoxel</a></li></ol></li><li><a href="mdbook.html" class="active"><strong aria-hidden="true">4.</strong> mdbook</a></li><li><a href="appendix.html"><strong aria-hidden="true">5.</strong> 附錄</a></li><li><ol class="section"><li><a href="testpage.html"><strong aria-hidden="true">5.1.</strong> 測試頁面</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><ol class="section"><li><a href="mad-white/index.html"><strong aria-hidden="true">2.1.</strong> MAD-WHITE</a></li></ol></li><li><a href="veloren/index.html"><strong aria-hidden="true">3.</strong> Veloren</a></li><li><ol class="section"><li><a href="veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">3.1.</strong> 聊天測試 BIP39</a></li><li><a href="veloren/vox/index.html"><strong aria-hidden="true">3.2.</strong> MagicaVoxel</a></li></ol></li><li><a href="appendix.html"><strong aria-hidden="true">4.</strong> 附錄</a></li><li><ol class="section"><li><a href="mdbook.html" class="active"><strong aria-hidden="true">4.1.</strong> mdbook</a></li><li><a href="cmd-help.html"><strong aria-hidden="true">4.2.</strong> 命令列說明</a></li><li><a href="license.html"><strong aria-hidden="true">4.3.</strong> 授權條款</a></li><li><a href="testpage.html"><strong aria-hidden="true">4.4.</strong> 測試頁面</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -146,6 +146,13 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#mdbook" id="mdbook">mdbook</a></h1>
+<h2><a class="header" href="#如何編譯本書" id="如何編譯本書">如何編譯本書</a></h2>
+<p>需要先安裝 mdbook</p>
+<pre><code class="language-shell">bash tc.sh --build-book
+</code></pre>
+<p>編輯階段建議使用 serve 模式並開啟瀏覽器到 localhost:3000 加快開發。</p>
+<pre><code class="language-shell">bash tc.sh --serve-book
+</code></pre>
 <h2><a class="header" href="#playgen-and-rust-playground" id="playgen-and-rust-playground">playgen and Rust Playground</a></h2>
 <p>playpen 有限制 crate 列表如下，要支援 BIP39 之類工具包可能要 fork 出 rust-playground 來跑。 </p>
 <ul>
@@ -165,13 +172,13 @@ fn main() {
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="veloren/vox/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="appendix.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="appendix.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="cmd-help.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -183,13 +190,13 @@ fn main() {
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="veloren/vox/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="appendix.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="appendix.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="cmd-help.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

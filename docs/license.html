@@ -3,9 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>DLTDOJO3 第三新熵熱踢道場</title>
-        
-        <meta name="robots" content="noindex" />
+        <title>授權條款 - DLTDOJO3 第三新熵熱踢道場</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -80,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><ol class="section"><li><a href="mad-white/index.html"><strong aria-hidden="true">2.1.</strong> MAD-WHITE</a></li></ol></li><li><a href="veloren/index.html"><strong aria-hidden="true">3.</strong> Veloren</a></li><li><ol class="section"><li><a href="veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">3.1.</strong> 聊天測試 BIP39</a></li><li><a href="veloren/vox/index.html"><strong aria-hidden="true">3.2.</strong> MagicaVoxel</a></li></ol></li><li><a href="appendix.html"><strong aria-hidden="true">4.</strong> 附錄</a></li><li><ol class="section"><li><a href="mdbook.html"><strong aria-hidden="true">4.1.</strong> mdbook</a></li><li><a href="cmd-help.html"><strong aria-hidden="true">4.2.</strong> 命令列說明</a></li><li><a href="license.html"><strong aria-hidden="true">4.3.</strong> 授權條款</a></li><li><a href="testpage.html"><strong aria-hidden="true">4.4.</strong> 測試頁面</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><ol class="section"><li><a href="mad-white/index.html"><strong aria-hidden="true">2.1.</strong> MAD-WHITE</a></li></ol></li><li><a href="veloren/index.html"><strong aria-hidden="true">3.</strong> Veloren</a></li><li><ol class="section"><li><a href="veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">3.1.</strong> 聊天測試 BIP39</a></li><li><a href="veloren/vox/index.html"><strong aria-hidden="true">3.2.</strong> MagicaVoxel</a></li></ol></li><li><a href="appendix.html"><strong aria-hidden="true">4.</strong> 附錄</a></li><li><ol class="section"><li><a href="mdbook.html"><strong aria-hidden="true">4.1.</strong> mdbook</a></li><li><a href="cmd-help.html"><strong aria-hidden="true">4.2.</strong> 命令列說明</a></li><li><a href="license.html" class="active"><strong aria-hidden="true">4.3.</strong> 授權條款</a></li><li><a href="testpage.html"><strong aria-hidden="true">4.4.</strong> 測試頁面</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -147,198 +145,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#第三新熵熱踢道場-taichu-crypto-專案簡介" id="第三新熵熱踢道場-taichu-crypto-專案簡介">第三新熵熱踢道場 (taichu-crypto) 專案簡介</a></h1>
-<p>目前版本 v0.0.2-20190825 </p>
-<p>道場專案預期做個分散式帳本技術的練習場所，第一次嘗試於 16 年使用 ssh 連線遠端 ubuntu 機器操作指令模式(下稱 SSH-ONLY)，不過界面不易入門學習曲線太高，後來加入 Visual Studio Code@Windows 掛 samba-file-server@ubuntu 來編輯，執行指令還是用 ssh 連接機器模式（下稱 SSH-SMB），由於 IDE 支援 SSH-SMB 學習效率有所增加，不過設定使用方式需要雙協定還是太複雜，隨著 code-server 專案的逐漸成熟，道場練習場設置改為 HTTP-ONLY 模式，學習端只用瀏覽器，不須下載其他軟體安裝或是開啟其他連線工具即可開始進行學習活動。</p>
-<ul>
-<li>SSH-ONLY, SSH-SMB, HTTP-ONLY</li>
-<li>https://code.visualstudio.com/</li>
-<li>https://github.com/cdr/code-server</li>
-</ul>
-<h1><a class="header" href="#圖說" id="圖說">圖說</a></h1>
-<p>序列圖</p>
-<p><img src="puml/dltdojo-taichu-crypto-1907-1.svg" alt="" /></p>
-<p>組件圖</p>
-<p><img src="puml/taichu-crypto-component-1907-1.svg" alt="" /></p>
-<ul>
-<li>CS cdr/code-server: Run VS Code on a remote server. https://github.com/cdr/code-server</li>
-<li>K8S ubuntu/microk8s: A kubernetes cluster in a snap https://github.com/ubuntu/microk8s</li>
-</ul>
-<p>每次活動開啟 VM 建置 microk8s 環境，配置每個練習者一個 CS 環境取得密碼與對外連線 URL，練習者瀏覽器登入後執行練習任務。</p>
-<h2><a class="header" href="#vm-環境與預算" id="vm-環境與預算">VM 環境與預算</a></h2>
-<p>估算基礎單次練習約五人兩小時。</p>
-<h3><a class="header" href="#digital-ocean" id="digital-ocean">Digital Ocean</a></h3>
-<pre><code>MEMORY  VCPUS   SSD DISK    TRANSFER  PRICE
-64GB    16      1,280 GB    9TB	      $0.476/hr
-</code></pre>
-<h1><a class="header" href="#體驗" id="體驗">體驗</a></h1>
-<h2><a class="header" href="#web-10" id="web-10">Web 1.0</a></h2>
-<ul>
-<li>apache http server</li>
-<li>html</li>
-<li>build </li>
-<li>test</li>
-<li>deploy</li>
-</ul>
-<h1><a class="header" href="#poc-概念驗證" id="poc-概念驗證">POC 概念驗證</a></h1>
-<h2><a class="header" href="#mad-white" id="mad-white">MAD WHITE</a></h2>
-<h1><a class="header" href="#getting-started" id="getting-started">Getting Started</a></h1>
-<h2><a class="header" href="#docker" id="docker">Docker</a></h2>
-<p>dltdojo/ddj3base:mad-white https://hub.docker.com/r/dltdojo/ddj3base/tags</p>
-<pre><code>docker run -it --rm -p 8443:8443 -v &quot;${PWD}:/home/coder/project&quot; dltdojo/ddj3base:mad-white --allow-http --no-auth 
-</code></pre>
-<h2><a class="header" href="#kubernetes" id="kubernetes">Kubernetes</a></h2>
-<pre><code>bash mad-white.sh install|delete|info
-</code></pre>
-<h3><a class="header" href="#wip-steps" id="wip-steps">WIP Steps</a></h3>
-<ul>
-<li>gogs must wait at least 3 mins</li>
-<li>gogs url http://127.0.0.1:30521</li>
-<li>register alice@gogs and create a new project</li>
-<li>drone url http://127.0.0.1:30531</li>
-<li>login drone with alice@gogs's password</li>
-</ul>
-<h3><a class="header" href="#wip-圖說" id="wip-圖說">WIP 圖說</a></h3>
-<p>組件圖</p>
-<p><img src="mad-white/puml/mad-white-component-1907-1.png" alt="x" /></p>
-<h1><a class="header" href="#veloren" id="veloren">Veloren</a></h1>
-<p>Veloren is a multiplayer voxel RPG written in Rust. It is inspired by games such as Cube World, Legend of Zelda: Breath of the Wild, Dwarf Fortress and Minecraft. - https://gitlab.com/veloren/veloren</p>
-<h1><a class="header" href="#veloren-新增聊天指令-dltdojo-產生-bip-39-中文助記詞" id="veloren-新增聊天指令-dltdojo-產生-bip-39-中文助記詞">Veloren 新增聊天指令 /dltdojo 產生 bip 39 中文助記詞</a></h1>
-<p>截圖</p>
-<p><img src="veloren/chat-dltdojo-bip39/sc-chat-bip39-font-GSGTW.png" alt="" /></p>
-<h2><a class="header" href="#git-diff" id="git-diff">git diff</a></h2>
-<pre><code class="language-diff">diff --git a/server/Cargo.toml b/server/Cargo.toml
-index 2affc8e..7efc93c 100644
---- a/server/Cargo.toml
-+++ b/server/Cargo.toml
-@@ -21,3 +21,4 @@ rand = &quot;0.7.0&quot;
- chrono = &quot;0.4.7&quot;
- hashbrown = { version = &quot;0.5.0&quot;, features = [&quot;serde&quot;, &quot;nightly&quot;] }
- crossbeam = &quot;0.7.2&quot;
-+tiny-bip39 = &quot;0.6.2&quot;
-\ No newline at end of file
-diff --git a/server/src/cmd.rs b/server/src/cmd.rs
-index 5305b8f..5384f87 100644
---- a/server/src/cmd.rs
-+++ b/server/src/cmd.rs
-@@ -18,6 +18,8 @@ use vek::*;
- use lazy_static::lazy_static;
- use scan_fmt::{scan_fmt, scan_fmt_some};
- 
-+use bip39::{Mnemonic, MnemonicType, Language};
-+
- /// Struct representing a command that a user can run from server chat.
- pub struct ChatCommand {
-     /// The keyword used to invoke the command, omitting the leading '/'.
-@@ -137,6 +139,8 @@ lazy_static! {
-         ChatCommand::new(
-             &quot;help&quot;, &quot;&quot;, &quot;/help: Display this message&quot;, false, handle_help),
-         ChatCommand::new(
-+            &quot;dltdojo&quot;, &quot;&quot;, &quot;/dltdojo: Display dltdojo message&quot;, false, handle_dltdojo),
-+        ChatCommand::new(
-             &quot;health&quot;,
-             &quot;{}&quot;,
-             &quot;/health : Set your current health&quot;,
-@@ -489,6 +493,20 @@ fn handle_help(server: &amp;mut Server, entity: EcsEntity, _args: String, _action: &amp;
-     }
- }
- 
-+
-+//
-+// add test chat command /dltdojo
-+//
-+fn handle_dltdojo(server: &amp;mut Server, entity: EcsEntity, _args: String, _action: &amp;ChatCommand) {
-+    // create a new randomly generated mnemonic phrase, default lang is Language::English
-+    let mnemonic = Mnemonic::new(MnemonicType::Words12, Language::ChineseTraditional);
-+    let phrase: &amp;str = mnemonic.phrase();
-+      server.clients.notify( entity,
-+            ServerMsg::private(String::from(&quot;[DLTDOJO] MNEMONIC BIP39:&quot;)),
-+        );
-+    server.clients.notify(entity, ServerMsg::private(phrase.to_string()));
-+}
-+
- fn alignment_to_agent(alignment: &amp;str, target: EcsEntity) -&gt; Option&lt;comp::Agent&gt; {
-     match alignment {
-         &quot;hostile&quot; =&gt; Some(comp::Agent::enemy()),
-</code></pre>
-<h2><a class="header" href="#copy-gensekigothictw-regularttf" id="copy-gensekigothictw-regularttf">Copy GenSekiGothicTW-Regular.ttf</a></h2>
-<p>from the ButTaiwan/genseki-font into assets/voxygen/font/</p>
-<ul>
-<li>GenSekiGothicTW-Regular.ttf  https://github.com/ButTaiwan/genseki-font</li>
-<li>TW-Kai-98_1.ttf CNS11643中文標準交換碼全字庫(簡稱全字庫) https://data.gov.tw/dataset/5961</li>
-<li>https://gitlab.com/veloren/veloren/blob/master/voxygen/src/hud/chat.rs</li>
-<li>https://gitlab.com/veloren/veloren/blob/master/voxygen/src/menu/char_selection/ui.rs#L191</li>
-<li>https://gitlab.com/search?utf8=%E2%9C%93&amp;snippets=&amp;scope=&amp;repository_ref=master&amp;search=opensans&amp;project_id=10174980</li>
-<li>Source Han Sans | 思源黑体 | 思源黑體 | 思源黑體 香港 | 源ノ角ゴシック | 본고딕 只有 OTF font 載入有問題  https://github.com/adobe-fonts/source-han-sans</li>
-</ul>
-<pre><code class="language-shell">$ cd assets/voxygen/font
-$ mv OpenSans-Regular.ttf OpenSans-Regular-bak.ttf
-$ cp GenSekiGothicTW-Regular.ttf OpenSans-Regular.ttf
-$ tree
-
-.
-├── Metamorphous-Regular.ttf
-├── OFL.txt
-├── OpenSans-Regular-bak.ttf
-├── OpenSans-Regular.ttf
-└── GenSekiGothicTW-Regular.ttf
-
-$ cd git_project_root
-$ cargo run --bin veloren-server-cli
-$ cargo run --bin veloren-voxygen
-</code></pre>
-<h2><a class="header" href="#references" id="references">References</a></h2>
-<ul>
-<li>https://freemasen.github.io/wiredforge-wasmer-plugin-code/part_1.html</li>
-<li>https://book.veloren.net/compile/troubleshooting.html#additional-required-libraries</li>
-<li>https://gitlab.com/veloren/veloren/merge_requests/33</li>
-<li>Basic ModLoader Implementation https://gitlab.com/veloren/veloren/commit/e5d9f34898e322a1d71e2e5df6180f99dd3f84b5</li>
-<li>A typescript bitcoin library, including WASM versions of secp256k1, ripemd160, sha256, sha512, and sha1 https://github.com/bitauth/bitcoin-ts</li>
-<li>https://docs.rs/wasmer-runtime/0.6.0/wasmer_runtime/</li>
-<li>https://github.com/jakubtyrcha/webasm_scripting/blob/master/src/vm.rs</li>
-<li>https://github.com/search?l=Rust&amp;q=wasmer_runtime+instantiate+call&amp;type=Code</li>
-</ul>
-<h1><a class="header" href="#magicavoxel" id="magicavoxel">MagicaVoxel</a></h1>
-<h2><a class="header" href="#道場模型-40x40x40" id="道場模型-40x40x40">道場模型 40x40x40</a></h2>
-<p><img src="veloren/vox/snap2019-08-24-13-37-30.png" alt="snap" /></p>
-<h1><a class="header" href="#附錄" id="附錄">附錄</a></h1>
-<h1><a class="header" href="#mdbook" id="mdbook">mdbook</a></h1>
-<h2><a class="header" href="#如何編譯本書" id="如何編譯本書">如何編譯本書</a></h2>
-<p>需要先安裝 mdbook</p>
-<pre><code class="language-shell">bash tc.sh --build-book
-</code></pre>
-<p>編輯階段建議使用 serve 模式並開啟瀏覽器到 localhost:3000 加快開發。</p>
-<pre><code class="language-shell">bash tc.sh --serve-book
-</code></pre>
-<h2><a class="header" href="#playgen-and-rust-playground" id="playgen-and-rust-playground">playgen and Rust Playground</a></h2>
-<p>playpen 有限制 crate 列表如下，要支援 BIP39 之類工具包可能要 fork 出 rust-playground 來跑。 </p>
-<ul>
-<li>https://github.com/integer32llc/rust-playground/blob/master/compiler/base/Cargo.toml</li>
-</ul>
-<pre><pre class="playpen"><code class="language-rust">extern crate chrono;
-use chrono::Local;
-
-fn main() {
-    let date = Local::now();
-    println!(&quot;{}&quot;, date.format(&quot;%Y-%m-%d %H:%M:%S&quot;));
-}
-</code></pre></pre>
-<h1><a class="header" href="#命令列說明" id="命令列說明">命令列說明</a></h1>
-<h2><a class="header" href="#tcsh-說明" id="tcsh-說明">tc.sh 說明</a></h2>
-<pre><code>DLTDOJO CLI Tool
-
-USAGE:
-    bash tc.sh [FLAGS] [OPTIONS]
-
-FLAGS:
-    --build-book            使用 mdbook 編譯本書    
-    --serve-book            使用 mdbook 啟動同步編輯網頁服務    
-    -c, --check             check need commands
-    -h, --help              Prints help information
-    -v, --version           Prints version information
-
-</code></pre>
-<h1><a class="header" href="#授權條款" id="授權條款">授權條款</a></h1>
+                        <h1><a class="header" href="#授權條款" id="授權條款">授權條款</a></h1>
 <ul>
 <li>https://en.wikipedia.org/wiki/Apache_License</li>
 </ul>
@@ -545,15 +352,21 @@ FLAGS:
    limitations under the License.
 
 </code></pre>
-<h1><a class="header" href="#測試頁面" id="測試頁面">測試頁面</a></h1>
-<h2><a class="header" href="#testpage" id="testpage">TESTPAGE</a></h2>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="cmd-help.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
+                        
+                            <a rel="next" href="testpage.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -563,7 +376,15 @@ FLAGS:
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a href="cmd-help.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
+                
+                    <a href="testpage.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
@@ -588,14 +409,6 @@ FLAGS:
         <!-- Custom JS scripts -->
         
 
-        
-        
-        <script type="text/javascript">
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
-        
         
 
     </body>

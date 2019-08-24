@@ -26,13 +26,14 @@ check_all(){
 }
 
 build_book(){
+    usage &> mdbook/src/cmd-help.txt
     pushd mdbook
     mdbook build --dest-dir ../docs 
     popd
 }
 
 
-watch_book(){
+serve_book(){
     pushd mdbook
     mdbook serve
     popd
@@ -40,25 +41,24 @@ watch_book(){
 
 usage() {
     cat 1>&2 <<EOF
-The installer for DLTDOJO
+DLTDOJO CLI Tool
 
 USAGE:
-    trier [FLAGS] [OPTIONS]
+    bash tc.sh [FLAGS] [OPTIONS]
 
 FLAGS:
+    --build-book            使用 mdbook 編譯本書    
+    --serve-book            使用 mdbook 啟動同步編輯網頁服務    
     -c, --check             check need commands
     -h, --help              Prints help information
     -v, --version           Prints version information
-
-OPTIONS: 
-       --host <default-host>           WIP:Choose host 
 EOF
 }
 
 
 case "$1" in
   --build-book) shift; build_book $@ ;;
-  --watch-book) shift; watch_book $@ ;;
+  --serve-book) shift; serve_book $@ ;;
   -h|--help)
       usage
       exit 0
