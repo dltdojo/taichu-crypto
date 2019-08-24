@@ -1,4 +1,4 @@
-# 第三新熵熱踢道場 (taichu-crypto) 專案簡介
+# (WIP) 第三新熵熱踢道場 (taichu-crypto) 
 
 目前版本 {{#include ../../VERSION}} 
 
@@ -8,15 +8,19 @@
 - https://code.visualstudio.com/
 - https://github.com/cdr/code-server
 
-# 圖說
+# UML 圖
 
-序列圖
+## DLTDOJO1-2 序列圖
 
-![](puml/dltdojo-taichu-crypto-1907-1.svg)
+![](puml/dltdojo1-seq.png)
 
-組件圖
+## DLTDOJO3 序列圖
 
-![](puml/taichu-crypto-component-1907-1.svg)
+![](puml/dltdojo-taichu-crypto-1907-1.png)
+
+## DLTDOHJO3 組件圖
+
+![](puml/taichu-crypto-component-1907-1.png)
 
 
 - CS cdr/code-server: Run VS Code on a remote server. https://github.com/cdr/code-server
@@ -44,3 +48,15 @@ MEMORY  VCPUS   SSD DISK    TRANSFER  PRICE
 - build 
 - test
 - deploy
+
+## Web 2.0
+
+- JavaScript
+- ajax
+
+## Web 3.0
+
+- blockchain
+- hyperledger 
+- bitcoin
+- ethereum

@@ -1,5 +1,5 @@
 @startuml
-header DLTDOJO
+header DLTDOJO3
 footer https://github.com/dltdojo/taichu-crypto
 title taichu-crypto-component-1907-1
 skinparam handwritten false

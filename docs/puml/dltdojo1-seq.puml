@@ -1,0 +1,25 @@
+@startuml
+header DLTDOJO1
+footer https://github.com/dltdojo/taichu-crypto
+title dltdojo1-seq
+autonumber 101
+skinparam handwritten false
+actor "場管" as GUY #red
+participant "虛機\nVM"  as VM
+collections "區塊鏈\nBlockchain" as BC
+actor "練習者" as STUDENT #GreenYellow
+== DLTDOJO1 備場 ==
+GUY -> VM : 開虛機後建場
+note right
+建場管帳號
+安裝軟體
+啟動ssh服務
+end note
+STUDENT -> VM : ssh 連線
+VM -> BC : Dapp
+== DLTDOJO2 使用 VS Code IDE ==
+autonumber 201
+GUY -> VM : smb 設定
+STUDENT -> VM : 掛載 smb 目錄後開啟 VS Code 練習 
+VM -> BC : Dapp
+@enduml
