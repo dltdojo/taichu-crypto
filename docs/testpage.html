@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>簡介 - DLTDOJO3 第三新熵熱踢道場</title>
+        <title>測試頁面 - DLTDOJO3 第三新熵熱踢道場</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><ol class="section"><li><a href="mad-white/index.html"><strong aria-hidden="true">2.1.</strong> MAD-WHITE</a></li></ol></li><li><a href="veloren/index.html"><strong aria-hidden="true">3.</strong> Veloren</a></li><li><ol class="section"><li><a href="veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">3.1.</strong> 聊天測試 BIP39</a></li><li><a href="veloren/vox/index.html"><strong aria-hidden="true">3.2.</strong> MagicaVoxel</a></li></ol></li><li><a href="mdbook.html"><strong aria-hidden="true">4.</strong> mdbook</a></li><li><a href="appendix.html"><strong aria-hidden="true">5.</strong> 附錄</a></li><li><ol class="section"><li><a href="testpage.html"><strong aria-hidden="true">5.1.</strong> 測試頁面</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><ol class="section"><li><a href="mad-white/index.html"><strong aria-hidden="true">2.1.</strong> MAD-WHITE</a></li></ol></li><li><a href="veloren/index.html"><strong aria-hidden="true">3.</strong> Veloren</a></li><li><ol class="section"><li><a href="veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">3.1.</strong> 聊天測試 BIP39</a></li><li><a href="veloren/vox/index.html"><strong aria-hidden="true">3.2.</strong> MagicaVoxel</a></li></ol></li><li><a href="mdbook.html"><strong aria-hidden="true">4.</strong> mdbook</a></li><li><a href="appendix.html"><strong aria-hidden="true">5.</strong> 附錄</a></li><li><ol class="section"><li><a href="testpage.html" class="active"><strong aria-hidden="true">5.1.</strong> 測試頁面</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -145,44 +145,16 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#第三新熵熱踢道場-taichu-crypto-專案簡介" id="第三新熵熱踢道場-taichu-crypto-專案簡介">第三新熵熱踢道場 (taichu-crypto) 專案簡介</a></h1>
-<p>目前版本 v0.0.1 </p>
-<p>道場專案預期做個分散式帳本技術的練習場所，第一次嘗試於 16 年使用 ssh 連線遠端 ubuntu 機器操作指令模式(下稱 SSH-ONLY)，不過界面不易入門學習曲線太高，後來加入 Visual Studio Code@Windows 掛 samba-file-server@ubuntu 來編輯，執行指令還是用 ssh 連接機器模式（下稱 SSH-SMB），由於 IDE 支援 SSH-SMB 學習效率有所增加，不過設定使用方式需要雙協定還是太複雜，隨著 code-server 專案的逐漸成熟，道場練習場設置改為 HTTP-ONLY 模式，學習端只用瀏覽器，不須下載其他軟體安裝或是開啟其他連線工具即可開始進行學習活動。</p>
-<ul>
-<li>SSH-ONLY, SSH-SMB, HTTP-ONLY</li>
-<li>https://code.visualstudio.com/</li>
-<li>https://github.com/cdr/code-server</li>
-</ul>
-<h1><a class="header" href="#圖說" id="圖說">圖說</a></h1>
-<p>序列圖</p>
-<p><img src="puml/dltdojo-taichu-crypto-1907-1.svg" alt="" /></p>
-<p>組件圖</p>
-<p><img src="puml/taichu-crypto-component-1907-1.svg" alt="" /></p>
-<ul>
-<li>CS cdr/code-server: Run VS Code on a remote server. https://github.com/cdr/code-server</li>
-<li>K8S ubuntu/microk8s: A kubernetes cluster in a snap https://github.com/ubuntu/microk8s</li>
-</ul>
-<p>每次活動開啟 VM 建置 microk8s 環境，配置每個練習者一個 CS 環境取得密碼與對外連線 URL，練習者瀏覽器登入後執行練習任務。</p>
-<h2><a class="header" href="#vm-環境與預算" id="vm-環境與預算">VM 環境與預算</a></h2>
-<p>估算基礎單次練習約五人兩小時。</p>
-<h3><a class="header" href="#digital-ocean" id="digital-ocean">Digital Ocean</a></h3>
-<pre><code>MEMORY  VCPUS   SSD DISK    TRANSFER  PRICE
-64GB    16      1,280 GB    9TB	      $0.476/hr
-</code></pre>
-<h1><a class="header" href="#體驗" id="體驗">體驗</a></h1>
-<h2><a class="header" href="#web-10" id="web-10">Web 1.0</a></h2>
-<ul>
-<li>apache http server</li>
-<li>html</li>
-<li>build </li>
-<li>test</li>
-<li>deploy</li>
-</ul>
+                        <h1><a class="header" href="#測試頁面" id="測試頁面">測試頁面</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="appendix.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
                         
 
                         
@@ -193,6 +165,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="appendix.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
                 
 
                 

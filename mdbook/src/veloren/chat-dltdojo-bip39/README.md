@@ -75,7 +75,7 @@ from the ButTaiwan/genseki-font into assets/voxygen/font/
 - Source Han Sans | 思源黑体 | 思源黑體 | 思源黑體 香港 | 源ノ角ゴシック | 본고딕 只有 OTF font 載入有問題  https://github.com/adobe-fonts/source-han-sans
 
 
-```
+```shell
 $ cd assets/voxygen/font
 $ mv OpenSans-Regular.ttf OpenSans-Regular-bak.ttf
 $ cp GenSekiGothicTW-Regular.ttf OpenSans-Regular.ttf

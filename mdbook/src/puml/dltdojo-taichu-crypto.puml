@@ -1,0 +1,40 @@
+@startuml
+header DLTDOJO
+footer https://github.com/dltdojo/taichu-crypto
+title dltdojo-taichu-crypto-1907-1
+autonumber
+skinparam handwritten true
+actor "場管" as GUY #red
+database "虛機服務\nVM Service" as VMS
+participant "虛機\nVM"  as VM
+control "場服\nCode-Server"  as CS
+collections "區塊鏈\nBlockchain" as BC
+actor "練習生" as STUDENT #GreenYellow
+actor "教練" as COACH #Blue
+== 備場 ==
+GUY -> VMS : 開虛機
+GUY -> VM : 建場 taichu init
+note right
+建場管帳號
+安裝軟體
+啟動 Gitops 服務
+end note
+GUY -> VM : 建立場用 Gitops 專案
+note right
+建使用者
+建立專案
+end note
+GUY -> CS : start code-server
+== 公告 ==
+GUY -> STUDENT : 發送 CS url and password
+GUY -> COACH : 發送 CS url and password
+STUDENT -> CS : 登入 CS 設定 gitops 
+COACH -> CS : 登入 CS
+== 開練 ==
+STUDENT -> CS : coding and commit/push
+COACH -> CS : gitops
+== 測驗 ==
+STUDENT -> CS : ci/cd
+== 紀錄 ==
+GUY -> BC : 紀錄
+@enduml

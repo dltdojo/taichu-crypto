@@ -1,0 +1,9 @@
+[book]
+authors = ["y12studio"]
+language = "zh-TW"
+multilingual = false
+src = "src"
+title = "DLTDOJO3 第三新熵熱踢道場"
+
+[output.html.playpen]
+editable = false

@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>聊天測試 BIP39 - DLTDOJO3 第三新熵熱踢道場</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="../../intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="../../poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><ol class="section"><li><a href="../../mad-white/index.html"><strong aria-hidden="true">2.1.</strong> MAD-WHITE</a></li></ol></li><li><a href="../../veloren/index.html"><strong aria-hidden="true">3.</strong> Veloren</a></li><li><ol class="section"><li><a href="../../veloren/chat-dltdojo-bip39/index.html" class="active"><strong aria-hidden="true">3.1.</strong> 聊天測試 BIP39</a></li><li><a href="../../veloren/vox/index.html"><strong aria-hidden="true">3.2.</strong> MagicaVoxel</a></li></ol></li><li><a href="../../mdbook.html"><strong aria-hidden="true">4.</strong> mdbook</a></li><li><a href="../../appendix.html"><strong aria-hidden="true">5.</strong> 附錄</a></li><li><ol class="section"><li><a href="../../testpage.html"><strong aria-hidden="true">5.1.</strong> 測試頁面</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">DLTDOJO3 第三新熵熱踢道場</h1>
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#veloren-新增聊天指令-dltdojo-產生-bip-39-中文助記詞" id="veloren-新增聊天指令-dltdojo-產生-bip-39-中文助記詞">Veloren 新增聊天指令 /dltdojo 產生 bip 39 中文助記詞</a></h1>
+<p>截圖</p>
+<p><img src="sc-chat-bip39-font-GSGTW.png" alt="" /></p>
+<h2><a class="header" href="#git-diff" id="git-diff">git diff</a></h2>
+<pre><code class="language-diff">diff --git a/server/Cargo.toml b/server/Cargo.toml
+index 2affc8e..7efc93c 100644
+--- a/server/Cargo.toml
++++ b/server/Cargo.toml
+@@ -21,3 +21,4 @@ rand = &quot;0.7.0&quot;
+ chrono = &quot;0.4.7&quot;
+ hashbrown = { version = &quot;0.5.0&quot;, features = [&quot;serde&quot;, &quot;nightly&quot;] }
+ crossbeam = &quot;0.7.2&quot;
++tiny-bip39 = &quot;0.6.2&quot;
+\ No newline at end of file
+diff --git a/server/src/cmd.rs b/server/src/cmd.rs
+index 5305b8f..5384f87 100644
+--- a/server/src/cmd.rs
++++ b/server/src/cmd.rs
+@@ -18,6 +18,8 @@ use vek::*;
+ use lazy_static::lazy_static;
+ use scan_fmt::{scan_fmt, scan_fmt_some};
+ 
++use bip39::{Mnemonic, MnemonicType, Language};
++
+ /// Struct representing a command that a user can run from server chat.
+ pub struct ChatCommand {
+     /// The keyword used to invoke the command, omitting the leading '/'.
+@@ -137,6 +139,8 @@ lazy_static! {
+         ChatCommand::new(
+             &quot;help&quot;, &quot;&quot;, &quot;/help: Display this message&quot;, false, handle_help),
+         ChatCommand::new(
++            &quot;dltdojo&quot;, &quot;&quot;, &quot;/dltdojo: Display dltdojo message&quot;, false, handle_dltdojo),
++        ChatCommand::new(
+             &quot;health&quot;,
+             &quot;{}&quot;,
+             &quot;/health : Set your current health&quot;,
+@@ -489,6 +493,20 @@ fn handle_help(server: &amp;mut Server, entity: EcsEntity, _args: String, _action: &amp;
+     }
+ }
+ 
++
++//
++// add test chat command /dltdojo
++//
++fn handle_dltdojo(server: &amp;mut Server, entity: EcsEntity, _args: String, _action: &amp;ChatCommand) {
++    // create a new randomly generated mnemonic phrase, default lang is Language::English
++    let mnemonic = Mnemonic::new(MnemonicType::Words12, Language::ChineseTraditional);
++    let phrase: &amp;str = mnemonic.phrase();
++      server.clients.notify( entity,
++            ServerMsg::private(String::from(&quot;[DLTDOJO] MNEMONIC BIP39:&quot;)),
++        );
++    server.clients.notify(entity, ServerMsg::private(phrase.to_string()));
++}
++
+ fn alignment_to_agent(alignment: &amp;str, target: EcsEntity) -&gt; Option&lt;comp::Agent&gt; {
+     match alignment {
+         &quot;hostile&quot; =&gt; Some(comp::Agent::enemy()),
+</code></pre>
+<h2><a class="header" href="#copy-gensekigothictw-regularttf" id="copy-gensekigothictw-regularttf">Copy GenSekiGothicTW-Regular.ttf</a></h2>
+<p>from the ButTaiwan/genseki-font into assets/voxygen/font/</p>
+<ul>
+<li>GenSekiGothicTW-Regular.ttf  https://github.com/ButTaiwan/genseki-font</li>
+<li>TW-Kai-98_1.ttf CNS11643中文標準交換碼全字庫(簡稱全字庫) https://data.gov.tw/dataset/5961</li>
+<li>https://gitlab.com/veloren/veloren/blob/master/voxygen/src/hud/chat.rs</li>
+<li>https://gitlab.com/veloren/veloren/blob/master/voxygen/src/menu/char_selection/ui.rs#L191</li>
+<li>https://gitlab.com/search?utf8=%E2%9C%93&amp;snippets=&amp;scope=&amp;repository_ref=master&amp;search=opensans&amp;project_id=10174980</li>
+<li>Source Han Sans | 思源黑体 | 思源黑體 | 思源黑體 香港 | 源ノ角ゴシック | 본고딕 只有 OTF font 載入有問題  https://github.com/adobe-fonts/source-han-sans</li>
+</ul>
+<pre><code class="language-shell">$ cd assets/voxygen/font
+$ mv OpenSans-Regular.ttf OpenSans-Regular-bak.ttf
+$ cp GenSekiGothicTW-Regular.ttf OpenSans-Regular.ttf
+$ tree
+
+.
+├── Metamorphous-Regular.ttf
+├── OFL.txt
+├── OpenSans-Regular-bak.ttf
+├── OpenSans-Regular.ttf
+└── GenSekiGothicTW-Regular.ttf
+
+$ cd git_project_root
+$ cargo run --bin veloren-server-cli
+$ cargo run --bin veloren-voxygen
+</code></pre>
+<h2><a class="header" href="#references" id="references">References</a></h2>
+<ul>
+<li>https://freemasen.github.io/wiredforge-wasmer-plugin-code/part_1.html</li>
+<li>https://book.veloren.net/compile/troubleshooting.html#additional-required-libraries</li>
+<li>https://gitlab.com/veloren/veloren/merge_requests/33</li>
+<li>Basic ModLoader Implementation https://gitlab.com/veloren/veloren/commit/e5d9f34898e322a1d71e2e5df6180f99dd3f84b5</li>
+<li>A typescript bitcoin library, including WASM versions of secp256k1, ripemd160, sha256, sha512, and sha1 https://github.com/bitauth/bitcoin-ts</li>
+<li>https://docs.rs/wasmer-runtime/0.6.0/wasmer_runtime/</li>
+<li>https://github.com/jakubtyrcha/webasm_scripting/blob/master/src/vm.rs</li>
+<li>https://github.com/search?l=Rust&amp;q=wasmer_runtime+instantiate+call&amp;type=Code</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../veloren/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../veloren/vox/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../veloren/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../veloren/vox/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
