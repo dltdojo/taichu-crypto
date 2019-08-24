@@ -1,16 +1,31 @@
 # Getting Started
 
-## Docker
+## 如何使用 docker image 啟動
 
-dltdojo/ddj3base:mad-white https://hub.docker.com/r/dltdojo/ddj3base/tags
+Docker 標籤為 dltdojo/ddj3base:mad-white
 
+- https://hub.docker.com/r/dltdojo/ddj3base/tags
+
+```shell
+bash tc.sh --drun
 ```
-docker run -it --rm -p 8443:8443 -v "${PWD}:/home/coder/project" dltdojo/ddj3base:mad-white --allow-http --no-auth 
+
+or 
+
+```shell
+docker run -it --rm -p 8443:8443 -v "${PWD}:/home/coder/project" \
+  dltdojo/ddj3base:mad-white --allow-http --no-auth 
+```
+
+Dockerfile 繼承自 codercom/code-server 再加上練習所需工具。
+
+```docker
+{{#include ../../../poc/mad-white/ddj3base/mad-white/Dockerfile}}
 ```
 
 ## Kubernetes 
 
-```
+```shell
 bash mad-white.sh install|delete|info
 ```
 

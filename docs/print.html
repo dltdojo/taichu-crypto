@@ -148,7 +148,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#wip-第三新熵熱踢道場-taichu-crypto" id="wip-第三新熵熱踢道場-taichu-crypto">(WIP) 第三新熵熱踢道場 (taichu-crypto)</a></h1>
-<p>目前版本 v0.0.3-20190825 </p>
+<p>目前版本 v0.0.4-20190825 </p>
 <p>道場專案預期做個分散式帳本技術的練習場所，第一次嘗試於 16 年使用 ssh 連線遠端 ubuntu 機器操作指令模式(下稱 SSH-ONLY)，不過界面不易入門學習曲線太高，後來加入 Visual Studio Code@Windows 掛 samba-file-server@ubuntu 來編輯，執行指令還是用 ssh 連接機器模式（下稱 SSH-SMB），由於 IDE 支援 SSH-SMB 學習效率有所增加，不過設定使用方式需要雙協定還是太複雜，隨著 code-server 專案的逐漸成熟，道場練習場設置改為 HTTP-ONLY 模式，學習端只用瀏覽器，不須下載其他軟體安裝或是開啟其他連線工具即可開始進行學習活動。</p>
 <ul>
 <li>SSH-ONLY, SSH-SMB, HTTP-ONLY</li>
@@ -197,12 +197,54 @@
 <h1><a class="header" href="#poc-概念驗證" id="poc-概念驗證">POC 概念驗證</a></h1>
 <h2><a class="header" href="#mad-white" id="mad-white">MAD WHITE</a></h2>
 <h1><a class="header" href="#getting-started" id="getting-started">Getting Started</a></h1>
-<h2><a class="header" href="#docker" id="docker">Docker</a></h2>
-<p>dltdojo/ddj3base:mad-white https://hub.docker.com/r/dltdojo/ddj3base/tags</p>
-<pre><code>docker run -it --rm -p 8443:8443 -v &quot;${PWD}:/home/coder/project&quot; dltdojo/ddj3base:mad-white --allow-http --no-auth 
+<h2><a class="header" href="#如何使用-docker-image-啟動" id="如何使用-docker-image-啟動">如何使用 docker image 啟動</a></h2>
+<p>Docker 標籤為 dltdojo/ddj3base:mad-white</p>
+<ul>
+<li>https://hub.docker.com/r/dltdojo/ddj3base/tags</li>
+</ul>
+<pre><code class="language-shell">bash tc.sh --drun
+</code></pre>
+<p>or </p>
+<pre><code class="language-shell">docker run -it --rm -p 8443:8443 -v &quot;${PWD}:/home/coder/project&quot; \
+  dltdojo/ddj3base:mad-white --allow-http --no-auth 
+</code></pre>
+<p>Dockerfile 繼承自 codercom/code-server 再加上練習所需工具。</p>
+<pre><code class="language-docker">#
+# https://hub.docker.com/r/codercom/code-server/tags
+#
+ARG CS_VER=1.1156-vsc1.33.1
+FROM codercom/code-server:${CS_VER}
+USER root
+# NOTE: upgrade all packages for kaniko build
+# Must remove all files in /var/lib/apt/lists to avoid caching mechanism
+RUN apt-get clean &amp;&amp; rm -rf /var/lib/apt/lists/* &amp;&amp; apt-get update &amp;&amp; apt-get upgrade -y
+RUN apt-get install -y git tree jq software-properties-common curl gpg-agent cowsay openssl
+RUN add-apt-repository ppa:rmescandon/yq &amp;&amp; apt-get update &amp;&amp; apt-get install -y yq
+USER coder
+RUN set -eux  &amp;&amp; \
+    code-server --install-extension cssho.vscode-svgviewer
+ARG PATH_SETTINGS=/home/coder/.local/share/code-server/User/settings.json
+COPY settings.json ${PATH_SETTINGS}
+COPY trier.sh /usr/local/bin/trier
+#  /usr/games/cowsay
+ENV PATH /usr/games:$PATH
+# /usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+RUN sudo chown -R coder.coder /home/coder &amp;&amp; \
+    sudo chmod +x /usr/local/bin/trier &amp;&amp; \
+	echo '\nexport PATH=&quot;/usr/games:$PATH&quot;' &gt;&gt; /home/coder/.bashrc
+# WORKDIR is /home/coder/project
+RUN trier --enable nodejs10
+COPY dojos /home/coder/dojos
+RUN pwd &amp;&amp; tree /home/coder/dojos &amp;&amp; \
+    sudo chown -R coder.coder /home/coder
+# TEST build
+# TODO mktemp -d permission issue
+# docker build -t foo .
+# mkdir -p ~/test/foo
+# docker run -it -p 8443:8443 -v &quot;${HOME}/test/foo:/home/coder/project&quot; foo --allow-http --no-auth
 </code></pre>
 <h2><a class="header" href="#kubernetes" id="kubernetes">Kubernetes</a></h2>
-<pre><code>bash mad-white.sh install|delete|info
+<pre><code class="language-shell">bash mad-white.sh install|delete|info
 </code></pre>
 <h3><a class="header" href="#wip-steps" id="wip-steps">WIP Steps</a></h3>
 <ul>
@@ -345,8 +387,9 @@ USAGE:
     bash tc.sh [FLAGS] [OPTIONS]
 
 FLAGS:
+    --drun                  啟動 ddj3base 容器服務
     --build-book            使用 mdbook 編譯本書    
-    --serve-book            使用 mdbook 啟動同步編輯網頁服務    
+    --serve-book            使用 mdbook 啟動同步編輯網頁服務
     -c, --check             check need commands
     -h, --help              Prints help information
     -v, --version           Prints version information

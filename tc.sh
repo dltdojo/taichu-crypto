@@ -19,6 +19,9 @@ say() {
     printf "TRIER: %s\n" "$1"
 }
 
+drun_ddj3base(){
+  docker run -it --rm -p 8443:8443 -v "${PWD}:/home/coder/project" dltdojo/ddj3base:mad-white --allow-http --no-auth 
+}
 
 check_all(){
   need_cmd jq
@@ -47,8 +50,9 @@ USAGE:
     bash tc.sh [FLAGS] [OPTIONS]
 
 FLAGS:
+    --drun                  啟動 ddj3base 容器服務
     --build-book            使用 mdbook 編譯本書    
-    --serve-book            使用 mdbook 啟動同步編輯網頁服務    
+    --serve-book            使用 mdbook 啟動同步編輯網頁服務
     -c, --check             check need commands
     -h, --help              Prints help information
     -v, --version           Prints version information
@@ -57,6 +61,7 @@ EOF
 
 
 case "$1" in
+  --drun) shift; drun_ddj3base $@ ;;
   --build-book) shift; build_book $@ ;;
   --serve-book) shift; serve_book $@ ;;
   -h|--help)
