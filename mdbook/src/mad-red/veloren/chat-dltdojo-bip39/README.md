@@ -1,9 +1,8 @@
-# Veloren 新增聊天指令 /dltdojo 產生 bip 39 中文助記詞
+# Veloren 新增聊天指令 /dltdojo 
 
-截圖
+訊息傳到 server 端後產生 bip 39 中文助記詞，截圖如下
 
 ![](sc-chat-bip39-font-GSGTW.png)
-
 
 ## git diff
 

@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>MagicaVoxel 組件 - DLTDOJO3 第三新熵熱踢道場</title>
+        <title>Voxel 組件開發編輯 - DLTDOJO3 第三新熵熱踢道場</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="../../../intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="../../../poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><a href="../../../mad-white/index.html"><strong aria-hidden="true">3.</strong> POC MAD-WHITE</a></li><li><a href="../../../mad-red/index.html"><strong aria-hidden="true">4.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="../../../mad-red/veloren/index.html"><strong aria-hidden="true">4.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="../../../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">4.2.</strong> 聊天測試 BIP39</a></li><li><a href="../../../mad-red/veloren/vox/index.html" class="active"><strong aria-hidden="true">4.3.</strong> MagicaVoxel 組件</a></li></ol></li><li><a href="../../../appendix.html"><strong aria-hidden="true">5.</strong> 附錄</a></li><li><ol class="section"><li><a href="../../../mdbook.html"><strong aria-hidden="true">5.1.</strong> mdbook</a></li><li><a href="../../../cmd-help.html"><strong aria-hidden="true">5.2.</strong> 命令列說明</a></li><li><a href="../../../license.html"><strong aria-hidden="true">5.3.</strong> 授權條款</a></li><li><a href="../../../testpage.html"><strong aria-hidden="true">5.4.</strong> 測試頁面</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="../../../intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="../../../poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><a href="../../../mad-white/index.html"><strong aria-hidden="true">3.</strong> POC MAD-WHITE</a></li><li><a href="../../../mad-red/index.html"><strong aria-hidden="true">4.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="../../../mad-red/veloren/index.html"><strong aria-hidden="true">4.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="../../../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">4.2.</strong> 聊天測試 BIP39</a></li><li><a href="../../../mad-red/veloren/vox/index.html" class="active"><strong aria-hidden="true">4.3.</strong> Voxel 組件開發編輯</a></li></ol></li><li><a href="../../../appendix.html"><strong aria-hidden="true">5.</strong> 附錄</a></li><li><ol class="section"><li><a href="../../../mdbook.html"><strong aria-hidden="true">5.1.</strong> mdbook</a></li><li><a href="../../../cmd-help.html"><strong aria-hidden="true">5.2.</strong> 命令列說明</a></li><li><a href="../../../license.html"><strong aria-hidden="true">5.3.</strong> 授權條款</a></li><li><a href="../../../testpage.html"><strong aria-hidden="true">5.4.</strong> 測試頁面</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -145,23 +145,54 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#magicavoxelmv" id="magicavoxelmv">MagicaVoxel(MV)</a></h1>
-<p>MagicaVoxel 是可製作體素遊戲組件 vox 檔的工具</p>
+                        <h1><a class="header" href="#vox-組件開發編輯" id="vox-組件開發編輯">Vox 組件開發編輯</a></h1>
+<p>veloren 的組件為 vox 檔，可使用 MagicaVoxel 或是 Goxel 編輯體素遊戲組件 vox 檔。</p>
+<ul>
+<li><a href="https://ephtracy.github.io/">MagicaVoxel @ ephtracy (Win/Mac)</a></li>
+<li><a href="https://github.com/guillaumechereau/goxel">Goxel: Free and Open Source 3D Voxel Editor (Win/Mac/Linux/Android) </a></li>
+</ul>
+<h1><a class="header" href="#magicvoxel" id="magicvoxel">MagicVoxel</a></h1>
 <h2><a class="header" href="#道場示意模型-40x40x40" id="道場示意模型-40x40x40">道場示意模型 40x40x40</a></h2>
 <p><img src="snap2019-08-24-13-37-30.png" alt="snap" /></p>
 <h2><a class="header" href="#mv-vox-組件庫" id="mv-vox-組件庫">MV vox 組件庫</a></h2>
-<h3><a class="header" href="#cc-by-姓名標示-creative-commons-attribution" id="cc-by-姓名標示-creative-commons-attribution">CC BY 姓名標示 (Creative Commons Attribution)</a></h3>
+<p>CC BY 姓名標示 (Creative Commons Attribution)</p>
 <p><a href="https://github.com/mikelovesrobots/mmmm">Mini Mike's Metro Minis 城市物件</a></p>
-<h3><a class="header" href="#商業" id="商業">商業</a></h3>
+<p>商業</p>
 <p><a href="https://sketchfab.com/tags/voxelmodel">voxelmodel tag - Sketchfab</a></p>
+<h1><a class="header" href="#goxel" id="goxel">Goxel</a></h1>
+<p>輸入 vox 檔編輯</p>
+<p><img src="goxel-dltdojo-190825.png" alt="goxel dltdojo 190825" /></p>
+<h1><a class="header" href="#3d-model-viewer" id="3d-model-viewer">3D Model Viewer</a></h1>
+<p>匯出 glTF (GL Transmission Format) 不過不能匯入，匯出後 glTF 檔案可由 3D Viewer App 開啟。</p>
+<p><img src="app-3d-viewer-win10.png" alt="goxel glTF export and app 3d viewer win10" /></p>
+<p><a href="https://github.com/donmccurdy/three-gltf-viewer">Drag-and-drop preview for glTF 2.0 models in WebGL using three.js.</a></p>
+<p><img src="js-gltf-viewer.png" alt="js glTF viewer" /></p>
+<p><a href="https://github.com/hujiulong/vue-3d-model">hujiulong/vue-3d-model</a> 單頁展示</p>
+<pre><code class="language-html">&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;model-gltf 
+            src=&quot;static/models/gltf/Duck/glTF/Duck.gltf&quot;
+            @on-mousemove=&quot;onMouseMove&quot;&gt;
+        &lt;/model-gltf&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;vue-3d-model.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        new Vue({
+            el: '#app'
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
 <h2><a class="header" href="#參考連結" id="參考連結">參考連結</a></h2>
 <ul>
 <li><a href="https://sketchfab.com/blogs/community/complete-guide-importing-magicavoxel-sketchfab/">A complete guide to importing from MagicaVoxel to Sketchfab</a></li>
-<li><a href="ngokevin/aframe-magicavoxel-projects">aframe and magicavoxel </a></li>
+<li><a href="https://github.com/ngokevin/aframe-magicavoxel-projects">aframe and magicavoxel </a></li>
 <li><a href="https://www.youtube.com/playlist?list=PLj0OweJfMlSGY0fqztkTmNLyj741_2Ufu">MagicaVoxel 教 &amp; 玩| 三米 SamMi</a></li>
 <li><a href="https://github.com/search?q=magicavoxel">magicavoxel - github</a></li>
 <li><a href="https://twitter.com/hashtag/magicavoxel">magicavoxel - twitter</a></li>
 <li><a href="https://ook.dev/posts/2019/magicavoxel/">用 MagicaVoxel 做点小东西</a></li>
+<li><a href="https://aotu.io/notes/2018/10/18/cannonjs/index.html">十分钟打造 3D 物理世界</a></li>
 </ul>
 
                     </main>
