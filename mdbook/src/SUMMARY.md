@@ -8,6 +8,7 @@
   - [聊天測試 BIP39](./mad-red/veloren/chat-dltdojo-bip39/README.md)
   - [Voxel 組件開發編輯](./mad-red/veloren/vox/README.md)
 - [附錄](./appendix.md)
+  - [學習資源](./resources.md)
   - [mdbook](./mdbook.md)
   - [命令列說明](./cmd-help.md)
   - [授權條款](./license.md)

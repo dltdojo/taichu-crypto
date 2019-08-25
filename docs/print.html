@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><a href="mad-white/index.html"><strong aria-hidden="true">3.</strong> POC MAD-WHITE</a></li><li><a href="mad-red/index.html"><strong aria-hidden="true">4.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="mad-red/veloren/index.html"><strong aria-hidden="true">4.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">4.2.</strong> 聊天測試 BIP39</a></li><li><a href="mad-red/veloren/vox/index.html"><strong aria-hidden="true">4.3.</strong> Voxel 組件開發編輯</a></li></ol></li><li><a href="appendix.html"><strong aria-hidden="true">5.</strong> 附錄</a></li><li><ol class="section"><li><a href="mdbook.html"><strong aria-hidden="true">5.1.</strong> mdbook</a></li><li><a href="cmd-help.html"><strong aria-hidden="true">5.2.</strong> 命令列說明</a></li><li><a href="license.html"><strong aria-hidden="true">5.3.</strong> 授權條款</a></li><li><a href="testpage.html"><strong aria-hidden="true">5.4.</strong> 測試頁面</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><a href="mad-white/index.html"><strong aria-hidden="true">3.</strong> POC MAD-WHITE</a></li><li><a href="mad-red/index.html"><strong aria-hidden="true">4.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="mad-red/veloren/index.html"><strong aria-hidden="true">4.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">4.2.</strong> 聊天測試 BIP39</a></li><li><a href="mad-red/veloren/vox/index.html"><strong aria-hidden="true">4.3.</strong> Voxel 組件開發編輯</a></li></ol></li><li><a href="appendix.html"><strong aria-hidden="true">5.</strong> 附錄</a></li><li><ol class="section"><li><a href="resources.html"><strong aria-hidden="true">5.1.</strong> 學習資源</a></li><li><a href="mdbook.html"><strong aria-hidden="true">5.2.</strong> mdbook</a></li><li><a href="cmd-help.html"><strong aria-hidden="true">5.3.</strong> 命令列說明</a></li><li><a href="license.html"><strong aria-hidden="true">5.4.</strong> 授權條款</a></li><li><a href="testpage.html"><strong aria-hidden="true">5.5.</strong> 測試頁面</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -148,7 +148,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#wip-第三新熵熱踢道場-taichu-crypto" id="wip-第三新熵熱踢道場-taichu-crypto">(WIP) 第三新熵熱踢道場 (taichu-crypto)</a></h1>
-<p>目前版本 v0.0.6-201908 </p>
+<p>目前版本 v0.0.7-201908 </p>
 <p>道場專案預期做個分散式帳本技術的練習場所，第一次嘗試於 16 年使用 ssh 連線遠端 ubuntu 機器操作指令模式(下稱 SSH-ONLY)，不過界面不易入門學習曲線太高，後來加入 Visual Studio Code@Windows 掛 samba-file-server@ubuntu 來編輯，執行指令還是用 ssh 連接機器模式（下稱 SSH-SMB），由於 IDE 支援 SSH-SMB 學習效率有所增加，不過設定使用方式需要雙協定還是太複雜，隨著 code-server 專案的逐漸成熟，道場練習場設置改為 HTTP-ONLY 模式，學習端只用瀏覽器，不須下載其他軟體安裝或是開啟其他連線工具即可開始進行學習活動。</p>
 <ul>
 <li>SSH-ONLY, SSH-SMB, HTTP-ONLY</li>
@@ -410,6 +410,72 @@ $ cargo run --bin veloren-voxygen
 <li><a href="https://aotu.io/notes/2018/10/18/cannonjs/index.html">十分钟打造 3D 物理世界</a></li>
 </ul>
 <h1><a class="header" href="#附錄" id="附錄">附錄</a></h1>
+<h1><a class="header" href="#學習資源" id="學習資源">學習資源</a></h1>
+<h2><a class="header" href="#書籍" id="書籍">書籍</a></h2>
+<ul>
+<li><a href="https://github.com/bitcoinbook/bitcoinbook">Mastering Bitcoin 2nd Edition - Programming the Open Blockchain</a></li>
+<li><a href="https://github.com/ethereumbook/ethereumbook">Mastering Ethereum, by Andreas M. Antonopoulos, Gavin Wood</a></li>
+<li><a href="https://github.com/jimmysong/programmingbitcoin">Programming Bitcoin</a></li>
+<li><a href="https://cryptobook.nakov.com/asymmetric-key-ciphers/elliptic-curve-cryptography-ecc">Elliptic Curve Cryptography (ECC) · Practical Cryptography for Developers</a></li>
+<li><a href="https://whitepaper.coinspice.io/">Bitcoin White Paper Webcomic | CoinSpice</a></li>
+</ul>
+<h2><a class="header" href="#線上教學" id="線上教學">線上教學</a></h2>
+<ul>
+<li><a href="https://github.com/hyperledger/education-cryptomoji">hyperledger/education-cryptomoji</a></li>
+<li><a href="https://github.com/ChristopherA/Learning-Bitcoin-from-the-Command-Line">ChristopherA/Learning-Bitcoin-from-the-Command-Line</a></li>
+<li><a href="https://www.forbes.com/sites/rogerhuang/2019/08/12/eleven-free-courses-to-learn-bitcoin-blockchain-and-cryptocurrencies/">Eleven Free Courses To Learn Bitcoin, Blockchain And Cryptocurrencies</a></li>
+<li><a href="https://github.com/mycoralhealth/blockchain-tutorial">mycoralhealth/blockchain-tutorial: Write and publish your own blockchain in less than 200 lines of Go</a></li>
+<li><a href="https://github.com/sodium-friends/learntocrypto">sodium-friends/learntocrypto: Learn to crypto workshop</a></li>
+</ul>
+<h2><a class="header" href="#githubgitlab-專案" id="githubgitlab-專案">Github/Gitlab 專案</a></h2>
+<ul>
+<li><a href="https://github.com/bitcoin">bitcoin</a></li>
+<li><a href="https://github.com/ethereum">ethereum</a></li>
+<li><a href="https://github.com/hyperledger">hyperledger</a></li>
+<li><a href="https://github.com/mimblewimble">mimblewimble</a></li>
+<li><a href="https://github.com/btcsuite">Bitcoin in Go</a></li>
+<li><a href="https://github.com/paritytech">paritytech</a></li>
+<li><a href="https://github.com/trufflesuite">Truffle Suite</a></li>
+<li><a href="https://github.com/MetaMask">MetaMask</a></li>
+<li><a href="https://github.com/aragon">Aragon</a></li>
+<li><a href="https://github.com/cosmos">COSMOS</a></li>
+<li><a href="https://github.com/libra">Libra</a></li>
+<li><a href="https://github.com/EOSIO">EOS</a></li>
+<li><a href="https://github.com/corda">Corda</a></li>
+<li><a href="https://github.com/stellar">Stellar</a></li>
+<li><a href="https://github.com/bitpay">Bitpay</a></li>
+<li><a href="https://github.com/lightninglabs">Lightning Labs</a></li>
+<li><a href="https://github.com/decentralized-identity">Decentralized Identity Foundation</a></li>
+<li><a href="https://github.com/w3f">Web 3 Foundation</a></li>
+<li><a href="https://github.com/WebOfTrustInfo">RebootingWebOfTrust</a></li>
+<li><a href="https://github.com/kudelskisecurity/fumblechain">kudelskisecurity/fumblechain: A Purposefully Vulnerable Blockchain</a></li>
+<li><a href="https://github.com/provable-things">Provable</a></li>
+<li><a href="https://github.com/OpenBazaar">OpenBazaar</a></li>
+<li><a href="https://github.com/blockchain-etl">Blockchain ETL</a></li>
+<li><a href="https://github.com/uport-project">uPort</a></li>
+<li><a href="https://github.com/zcash">ZCash</a></li>
+<li><a href="https://github.com/monero-project">Monero</a></li>
+</ul>
+<p>其他</p>
+<ul>
+<li><a href="https://github.com/w3c">W3C</a></li>
+<li><a href="https://github.com/cdr/code-server">Run VS Code on a remote server</a></li>
+<li><a href="https://github.com/plantuml">plantuml</a></li>
+<li><a href="https://github.com/hashicorp">HashiCorp</a></li>
+</ul>
+<h2><a class="header" href="#遊戲" id="遊戲">遊戲</a></h2>
+<ul>
+<li><a href="https://hackernoon.com/what-the-bl-ck-is-blockchain-614d87258d8a">What the Bl*ck is Blockchain?</a></li>
+</ul>
+<h2><a class="header" href="#報告" id="報告">報告</a></h2>
+<ul>
+<li><a href="https://www.jbs.cam.ac.uk/faculty-research/centres/alternative-finance/publications/distributed-ledger-technology-systems/">Cambridge Judge Business School: Distributed Ledger Technology Systems</a></li>
+</ul>
+<h2><a class="header" href="#test-faucet" id="test-faucet">Test Faucet</a></h2>
+<p>幣圈測試練功難免缺水，缺測試盤纏時通常前往開發社群留言打個招呼並不缺，不過自助水龍頭對一般人還是比較方便，可惜幣圈變化快，這類自助水龍頭壽命往往不長。</p>
+<ul>
+<li><a href="https://faucets.blockxlabs.com/">My Faucet by BlockX Labs</a></li>
+</ul>
 <h1><a class="header" href="#mdbook" id="mdbook">mdbook</a></h1>
 <h2><a class="header" href="#如何編譯本書" id="如何編譯本書">如何編譯本書</a></h2>
 <p>需要先安裝 mdbook</p>
