@@ -1,5 +1,8 @@
 # Veloren 新增聊天指令 /dltdojo 
 
+將 BIP39 這類工具包放進 Veloren 開源像素類遊戲專案裡面只要幾行，雖然 Veloren 還不太能夠玩，不過跟過去 BitQuest 改 Java 服務端加錢包比起來有兩個較為明顯的差異。一是 Veloren 可用 Rust 區塊鏈類工具包資源生態相對豐富，畢竟 Hyperledger/Substrate/Libra 等開源專案正在對這生態系持續注水，另一則是 BitQuest 是後端改作，採用過去 minecraft 的 GPL 程式碼修正改作，這類改作或下載某些既有資源檔等要面對的智財議題本來就多，更何況後來該遊戲還被微軟大公司買下。
+
+
 訊息傳到 server 端後產生 bip 39 中文助記詞，截圖如下
 
 ![](sc-chat-bip39-font-GSGTW.png)

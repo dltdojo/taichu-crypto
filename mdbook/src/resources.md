@@ -62,15 +62,17 @@
 - [ZCash](https://github.com/zcash)
 - [Monero](https://github.com/monero-project)
 
+## cdr/code-server
 
-其他
+- [Run VS Code on a remote server](https://github.com/cdr/code-server)
+
+[microsoft/WebTemplateStudio](https://github.com/microsoft/WebTemplateStudio/) 工具步驟 4 雖是選配倒是關鍵，快速建站模板後面應該會有人會寫 firebase 之類擴充，另外 cdr/code-server 是否能跑要找時間測試。
+
+## 其他
 
 - [W3C](https://github.com/w3c)
-- [Run VS Code on a remote server](https://github.com/cdr/code-server)
 - [plantuml](https://github.com/plantuml)
 - [HashiCorp](https://github.com/hashicorp)
-
-
 
 ## 網路資源
 
@@ -78,6 +80,7 @@
 - [CoinDesk - Leader in blockchain news](https://www.coindesk.com/)
 - [Cryptocurrency Market Capitalizations | CoinMarketCap](https://coinmarketcap.com/)
 - [Bitcoin - The Currency of the Internet](https://www.reddit.com/r/Bitcoin/)
+- [Decrypt](https://decrypt.co/)
 - [Cypherpunks Taiwan 密碼龐克](https://cypherpunks.tech/)
 - [區塊客 - 全球中文區塊鏈加密幣資訊網站](https://blockcast.it)
 - [快讯 | Odaily星球日报](https://www.odaily.com/newsflash)
@@ -86,7 +89,17 @@
 
 ## 遊戲
 
+- [bitquest](https://github.com/bitquest)
+- [Cryptovoxels](https://github.com/cryptovoxels)
+- [porobov/million-ether-homepage-2-contract](https://github.com/porobov/million-ether-homepage-2-contract)
+- [Pixel-Map](https://github.com/Pixel-Map/pixelmap.io)
 - [What the Bl*ck is Blockchain?](https://hackernoon.com/what-the-bl-ck-is-blockchain-614d87258d8a)
+- [从 Gambit 到 Motocoin，细数第一代区块链游戏的成败](https://www.chainnews.com/articles/352718414788.htm)
+
+
+## 交易市集
+
+- [OpenSea 市集](https://github.com/ProjectOpenSea)
 
 ## 報告
 
@@ -98,3 +111,13 @@
 幣圈測試練功難免缺水，缺測試盤纏時通常前往開發社群留言打個招呼並不缺，不過自助水龍頭對一般人還是比較方便，可惜幣圈變化快，這類自助水龍頭壽命往往不長。
 
 - [My Faucet by BlockX Labs](https://faucets.blockxlabs.com/)
+
+
+## Voxel
+
+- [Veloren - gitlab ](https://gitlab.com/veloren/veloren)
+- [MagicaVoxel @ ephtracy (Win/Mac)](https://ephtracy.github.io/)
+- [Goxel: Free and Open Source 3D Voxel Editor (Win/Mac/Linux/Android) ](https://github.com/guillaumechereau/goxel)
+- [Mini Mike's Metro Minis 城市物件 CC BY](https://github.com/mikelovesrobots/mmmm)
+- [hujiulong/vue-3d-model](https://github.com/hujiulong/vue-3d-model)
+- [Cryptovoxels](https://github.com/cryptovoxels)

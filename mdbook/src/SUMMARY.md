@@ -1,13 +1,15 @@
 # 第三新熵熱踢道場 
 
 - [簡介](./intro.md)
+- [學習資源](./resources.md)
 - [POC 概念驗證](./poc.md)
 - [POC MAD-WHITE](./mad-white/README.md)
 - [POC MAD-RED](./mad-red/README.md)
   - [Veloren 多人RPG體素遊戲](./mad-red/veloren/README.md)
   - [聊天測試 BIP39](./mad-red/veloren/chat-dltdojo-bip39/README.md)
   - [Voxel 組件開發編輯](./mad-red/veloren/vox/README.md)
-- [學習資源](./resources.md)
+  - [Voxel 相關專案](./mad-red/veloren/vox/projects.md)
+- [WebAuthn](./webauthn.md)
 - [附錄](./appendix.md)
   - [mdbook](./mdbook.md)
   - [命令列說明](./cmd-help.md)
