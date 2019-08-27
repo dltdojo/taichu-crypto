@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="../intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="../resources.html"><strong aria-hidden="true">2.</strong> 學習資源</a></li><li><a href="../poc.html"><strong aria-hidden="true">3.</strong> POC 概念驗證</a></li><li><a href="../mad-white/index.html"><strong aria-hidden="true">4.</strong> POC MAD-WHITE</a></li><li><a href="../mad-red/index.html" class="active"><strong aria-hidden="true">5.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">5.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">5.2.</strong> 聊天測試 BIP39</a></li><li><a href="../mad-red/veloren/vox/index.html"><strong aria-hidden="true">5.3.</strong> Voxel 組件開發編輯</a></li><li><a href="../mad-red/veloren/vox/projects.html"><strong aria-hidden="true">5.4.</strong> Voxel 相關專案</a></li></ol></li><li><a href="../webauthn.html"><strong aria-hidden="true">6.</strong> WebAuthn</a></li><li><a href="../appendix.html"><strong aria-hidden="true">7.</strong> 附錄</a></li><li><ol class="section"><li><a href="../mdbook.html"><strong aria-hidden="true">7.1.</strong> mdbook</a></li><li><a href="../cmd-help.html"><strong aria-hidden="true">7.2.</strong> 命令列說明</a></li><li><a href="../license.html"><strong aria-hidden="true">7.3.</strong> 授權條款</a></li><li><a href="../testpage.html"><strong aria-hidden="true">7.4.</strong> 測試頁面</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="../intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="../resources.html"><strong aria-hidden="true">2.</strong> 學習資源</a></li><li><a href="../poc.html"><strong aria-hidden="true">3.</strong> POC 概念驗證</a></li><li><a href="../mad-white/index.html"><strong aria-hidden="true">4.</strong> POC MAD-WHITE</a></li><li><a href="../mad-red/index.html" class="active"><strong aria-hidden="true">5.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">5.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">5.2.</strong> 聊天測試 BIP39</a></li><li><a href="../mad-red/veloren/vox/index.html"><strong aria-hidden="true">5.3.</strong> Voxel 組件開發編輯</a></li><li><a href="../mad-red/veloren/vox/projects.html"><strong aria-hidden="true">5.4.</strong> Voxel 相關專案</a></li></ol></li><li><a href="../crypto-assets.html"><strong aria-hidden="true">6.</strong> Crypto-Assets</a></li><li><a href="../webauthn.html"><strong aria-hidden="true">7.</strong> WebAuthn</a></li><li><a href="../k8s.html"><strong aria-hidden="true">8.</strong> Kubernetes</a></li><li><a href="../appendix.html"><strong aria-hidden="true">9.</strong> 附錄</a></li><li><ol class="section"><li><a href="../mdbook.html"><strong aria-hidden="true">9.1.</strong> mdbook</a></li><li><a href="../cmd-help.html"><strong aria-hidden="true">9.2.</strong> 命令列說明</a></li><li><a href="../license.html"><strong aria-hidden="true">9.3.</strong> 授權條款</a></li><li><a href="../testpage.html"><strong aria-hidden="true">9.4.</strong> 測試頁面</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -147,6 +147,24 @@
                     <main>
                         <h1><a class="header" href="#mad-red" id="mad-red">MAD-RED</a></h1>
 <p>voxbook</p>
+<h2><a class="header" href="#aframe" id="aframe">Aframe</a></h2>
+<ul>
+<li><a href="https://blog.mozvr.com/aframe-environment-component/">Easily customized environments using the Aframe-Environment-Component</a></li>
+<li><a href="https://github.com/supermedium/aframe-environment-component">supermedium/aframe-environment-component</a></li>
+</ul>
+<p><a href="aframe/aframe-env.html">aframe-env.html 測試網頁</a></p>
+<pre><code class="language-html">&lt;html&gt;
+&lt;head&gt;
+ &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js&quot;&gt;&lt;/script&gt;
+ &lt;script src=&quot;https://cdn.jsdelivr.net/npm/aframe-environment-component@2.0.0/dist/aframe-environment-component.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;a-scene&gt;
+        &lt;a-entity environment=&quot;preset: egypt; sunPosition: 1 5 -2; groundColor: #742&quot;&gt;&lt;a-entity&gt;
+    &lt;/a-scene&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
                     </main>
 
