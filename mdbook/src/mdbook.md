@@ -1,8 +1,16 @@
 # mdbook
+<!-- toc -->
+## 安裝 mdbook
+
+先安裝 [mdbook](https://rust-lang-nursery.github.io/mdBook/index.html) 
+再 [mdbook-toc](https://github.com/badboy/mdbook-toc)
+
+```shell
+cargo install mdbook
+cargo install mdbook-toc
+```
 
 ## 如何編譯本書
-
-需要先安裝 mdbook
 
 ```shell
 bash tc.sh --build-book

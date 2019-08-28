@@ -5,5 +5,12 @@ multilingual = false
 src = "src"
 title = "DLTDOJO3 第三新熵熱踢道場"
 
+[output.html]
+mathjax-support = true
+
 [output.html.playpen]
-editable = false
+editable = true
+
+[preprocessor.toc]
+command = "mdbook-toc"
+renderer = ["html"]

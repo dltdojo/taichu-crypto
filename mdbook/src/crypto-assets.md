@@ -1,5 +1,7 @@
 # Crypto-Assets
 
+<!-- toc -->
+
 ## Virtual Assets
 
 - [ 2019 Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers](https://www.fatf-gafi.org/publications/fatfrecommendations/documents/guidance-rba-virtual-assets.html)

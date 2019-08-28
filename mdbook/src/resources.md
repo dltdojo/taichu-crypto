@@ -1,5 +1,7 @@
 # 學習資源
 
+<!-- toc -->
+
 ## 線上書籍
 
 - [Mastering Bitcoin 2nd Edition - Programming the Open Blockchain](https://github.com/bitcoinbook/bitcoinbook)
@@ -31,6 +33,12 @@
 
 - [learning-blockchain · GitHub Topics](https://github.com/topics/learning-blockchain)
 - [Search · blockchain learning](https://github.com/search?o=desc&q=blockchain+learning&s=stars&type=Repositories)
+
+
+## 教學文章
+
+- [文組也該知道的區塊鏈技術知識 <2> 一次搞懂以太坊智慧合約如何運作](https://medium.com/pelith/howethsmartcontractwork-328bd8b9bb62)
+- [文組也該知道的區塊鏈技術知識 <3> 從染色幣到無頭合約的代幣演進史 《上篇》](https://medium.com/pelith/tokenhistory-dd67cf700b92)
 
 
 ## Github/Gitlab 區塊鏈相關開源專案
@@ -85,7 +93,7 @@
 - [區塊客 - 全球中文區塊鏈加密幣資訊網站](https://blockcast.it)
 - [快讯 | Odaily星球日报](https://www.odaily.com/newsflash)
 - [链闻 ChainNews | 区块链新闻快讯资讯媒体](https://www.chainnews.com/)
-
+- [動區動趨](https://www.blocktempo.com/)
 
 ## 遊戲
 
