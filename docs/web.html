@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>WebAuthn - DLTDOJO3 第三新熵熱踢道場</title>
+        <title>Web - DLTDOJO3 第三新熵熱踢道場</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="resources.html"><strong aria-hidden="true">2.</strong> 學習資源</a></li><li><a href="poc.html"><strong aria-hidden="true">3.</strong> POC 概念驗證</a></li><li><a href="mad-white/index.html"><strong aria-hidden="true">4.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li><a href="mad-white/code-server.html"><strong aria-hidden="true">4.1.</strong> VS Code Server</a></li></ol></li><li><a href="mad-red/index.html"><strong aria-hidden="true">5.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="mad-red/veloren/index.html"><strong aria-hidden="true">5.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">5.2.</strong> 聊天測試 BIP39</a></li><li><a href="mad-red/vox/index.html"><strong aria-hidden="true">5.3.</strong> Voxel 組件開發編輯</a></li><li><a href="mad-red/vox/projects.html"><strong aria-hidden="true">5.4.</strong> Voxel 相關專案</a></li></ol></li><li><a href="crypto-assets.html"><strong aria-hidden="true">6.</strong> Crypto-Assets</a></li><li><a href="mdbook.html"><strong aria-hidden="true">7.</strong> mdbook</a></li><li><ol class="section"><li><a href="mdbook/preprocessors.html"><strong aria-hidden="true">7.1.</strong> preprocessors</a></li><li><a href="mdbook/mathjax.html"><strong aria-hidden="true">7.2.</strong> mathjax</a></li></ol></li><li><a href="web.html"><strong aria-hidden="true">8.</strong> Web</a></li><li><ol class="section"><li><a href="webassembly.html"><strong aria-hidden="true">8.1.</strong> WebAssembly</a></li><li><a href="webauthn.html" class="active"><strong aria-hidden="true">8.2.</strong> WebAuthn</a></li></ol></li><li><a href="k8s.html"><strong aria-hidden="true">9.</strong> Kubernetes</a></li><li><a href="appendix.html"><strong aria-hidden="true">10.</strong> 附錄</a></li><li><ol class="section"><li><a href="cmd-help.html"><strong aria-hidden="true">10.1.</strong> 命令列說明</a></li><li><a href="license.html"><strong aria-hidden="true">10.2.</strong> 授權條款</a></li><li><a href="testpage.html"><strong aria-hidden="true">10.3.</strong> 測試頁面</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="resources.html"><strong aria-hidden="true">2.</strong> 學習資源</a></li><li><a href="poc.html"><strong aria-hidden="true">3.</strong> POC 概念驗證</a></li><li><a href="mad-white/index.html"><strong aria-hidden="true">4.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li><a href="mad-white/code-server.html"><strong aria-hidden="true">4.1.</strong> VS Code Server</a></li></ol></li><li><a href="mad-red/index.html"><strong aria-hidden="true">5.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="mad-red/veloren/index.html"><strong aria-hidden="true">5.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">5.2.</strong> 聊天測試 BIP39</a></li><li><a href="mad-red/vox/index.html"><strong aria-hidden="true">5.3.</strong> Voxel 組件開發編輯</a></li><li><a href="mad-red/vox/projects.html"><strong aria-hidden="true">5.4.</strong> Voxel 相關專案</a></li></ol></li><li><a href="crypto-assets.html"><strong aria-hidden="true">6.</strong> Crypto-Assets</a></li><li><a href="mdbook.html"><strong aria-hidden="true">7.</strong> mdbook</a></li><li><ol class="section"><li><a href="mdbook/preprocessors.html"><strong aria-hidden="true">7.1.</strong> preprocessors</a></li><li><a href="mdbook/mathjax.html"><strong aria-hidden="true">7.2.</strong> mathjax</a></li></ol></li><li><a href="web.html" class="active"><strong aria-hidden="true">8.</strong> Web</a></li><li><ol class="section"><li><a href="webassembly.html"><strong aria-hidden="true">8.1.</strong> WebAssembly</a></li><li><a href="webauthn.html"><strong aria-hidden="true">8.2.</strong> WebAuthn</a></li></ol></li><li><a href="k8s.html"><strong aria-hidden="true">9.</strong> Kubernetes</a></li><li><a href="appendix.html"><strong aria-hidden="true">10.</strong> 附錄</a></li><li><ol class="section"><li><a href="cmd-help.html"><strong aria-hidden="true">10.1.</strong> 命令列說明</a></li><li><a href="license.html"><strong aria-hidden="true">10.2.</strong> 授權條款</a></li><li><a href="testpage.html"><strong aria-hidden="true">10.3.</strong> 測試頁面</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -148,31 +148,20 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#webauthn" id="webauthn">webauthn</a></h1>
-<p>FIDO2</p>
-<p>username/password - public-key</p>
-<ul>
-<li><a href="https://www.linuxjournal.com/content/webauthn-web-authentication-yubikey-5">WebAuthn Web Authentication with YubiKey 5</a></li>
-<li><a href="https://speakerdeck.com/mururu/building-fido2-server-in-go">Building FIDO2 server in Go</a></li>
-<li><a href="https://blog.techbridge.cc/2019/08/17/webauthn-intro/">一起來了解 Web Authentication</a></li>
-<li><a href="https://www.herbie.dev/blog/webauthn-basic-web-client-server/">WebAuthn Basic Web Client/Server</a></li>
-<li><a href="https://github.com/StrongKey/fido2">StrongKey/fido2</a></li>
-<li><a href="https://github.com/duo-labs/webauthn">WebAuthn (FIDO2) server library written in Go</a></li>
-<li><a href="https://github.com/MetaMask/metamask-mobile/issues/1011">Integrate YubiKey 5Ci into Metamask Mobile #1011</a></li>
-</ul>
+                        <h1><a class="header" href="#web" id="web">Web</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="webassembly.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="mdbook/mathjax.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="k8s.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="webassembly.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -184,13 +173,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="webassembly.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="mdbook/mathjax.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="k8s.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="webassembly.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

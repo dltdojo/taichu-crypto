@@ -1,4 +1,4 @@
-# mathjax
+# mathjax (無法生成待解決)
 
 mdbook 可內嵌 mathjax
 
