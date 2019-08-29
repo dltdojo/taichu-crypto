@@ -1,6 +1,6 @@
 # 第三新熵熱踢道場 
 
-- [簡介](./intro.md)
+- [簡介](./README.md)
 - [學習資源](./resources.md)
 - [POC 概念驗證](./poc.md)
 - [POC MAD-WHITE](./mad-white/README.md)
@@ -14,7 +14,8 @@
 - [mdbook](./mdbook.md)
   - [preprocessors](./mdbook/preprocessors.md)
   - [mathjax](./mdbook/mathjax.md)
-- [Web](./web.md)
+- [Web](./web/README.md)
+  - [OpenSSL](./web/openssl.md)
   - [WebAssembly](./webassembly.md)
   - [WebAuthn](./webauthn.md)
 - [Kubernetes](./k8s.md)
