@@ -1,0 +1,21 @@
+[package]
+name = "taichu-raw"
+version = "0.1.0"
+authors = ["y12studio <y12studio@gmail.com>"]
+edition = "2018"
+build = "build.rs"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "taichu-raw"
+path = "src/main.rs"
+
+[dependencies]
+structopt = "0.2.18"
+actix-web = { version= "1.0.6", features = ["rust-tls"] }
+actix-web-static-files = "0.2"
+rustls = "0.15"
+rcgen = "0.4.1"
+
+[build-dependencies]
+actix-web-static-files = "0.2"
