@@ -1,7 +1,7 @@
 #[macro_use]
 extern crate actix_web;
 
-use actix_web::{App, HttpResponse, HttpServer};
+use actix_web::{guard, web, App, HttpResponse, HttpServer};
 use actix_web_static_files;
 use rcgen::generate_simple_self_signed;
 use rustls::internal::pemfile::{certs, rsa_private_keys};
@@ -18,6 +18,7 @@ use structopt::StructOpt;
 include!(concat!(env!("OUT_DIR"), "/generated_docs.rs"));
 // include!(concat!(env!("OUT_DIR"), "/generated_api.rs"));
 const INDEX: &str = include_str!("./index.html");
+const P404: &str = include_str!("./p404.html");
 const CERT: &str = include_str!("./test_server.crt");
 const KEY: &str = include_str!("./test_server.key");
 
@@ -48,13 +49,11 @@ struct Opt {
     debug: bool,
 }
 
-#[get("/")]
-fn index() -> HttpResponse {
-    HttpResponse::Ok().body(INDEX)
-}
-
 fn self_signed() {
-    let subject_alt_names = vec!["taichu-raw-dev310.local".to_string(), "localhost".to_string()];
+    let subject_alt_names = vec![
+        "taichu-raw-dev310.local".to_string(),
+        "localhost".to_string(),
+    ];
     let cert = generate_simple_self_signed(subject_alt_names).unwrap();
     println!("{}", cert.serialize_pem().unwrap());
     println!("{}", cert.serialize_private_key_pem());
@@ -114,6 +113,16 @@ fn load_private_key(filename: &PathBuf) -> std::io::Result<rustls::PrivateKey> {
     }
 }
 
+#[get("/")]
+fn index() -> HttpResponse {
+    HttpResponse::Ok().body(INDEX)
+}
+
+/// 404 handler
+fn p404() -> HttpResponse {
+    HttpResponse::Ok().body(P404)
+}
+
 fn main() -> std::io::Result<()> {
     let opt = Opt::from_args();
 
@@ -123,8 +132,7 @@ fn main() -> std::io::Result<()> {
 
     if opt.cli_pki {
         self_signed();
-    } 
-    
+    }
     if opt.serve {
         let mut server = HttpServer::new(move || {
             let generated_docs = generate_docs();
@@ -132,11 +140,21 @@ fn main() -> std::io::Result<()> {
             App::new()
                 .service(index)
                 .service(actix_web_static_files::ResourceFiles::new(
-                    "/pub", generated_docs,
+                    "/pub",
+                    generated_docs,
                 ))
-               // .service(actix_web_static_files::ResourceFiles::new(
-               //     "/pub/api", generated_api,
-               // ))
+                // default
+                .default_service(
+                    // 404 for GET request
+                    web::resource("")
+                        .route(web::get().to(p404))
+                        // all requests that are not `GET`
+                        .route(
+                            web::route()
+                                .guard(guard::Not(guard::Get()))
+                                .to(|| HttpResponse::MethodNotAllowed()),
+                        ),
+                )
         });
         println!("DLTDOJO3 Start https://{}", opt.listen.to_string());
         let mut config = ServerConfig::new(NoClientAuth::new());
