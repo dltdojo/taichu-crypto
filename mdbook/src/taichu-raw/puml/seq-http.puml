@@ -1,0 +1,36 @@
+@startuml
+header DLTDOJO3
+footer https://dltdojo.github.io/taichu-crypto/
+title dltdojo3-seq-http
+legend top
+一個 HTTP/HTML 網路的買賣故事
+endlegend
+skinparam handwritten true
+actor "購買者" as Alice #red
+participant "瀏覽器"  as Browser
+collections "HTTP SERVER" as HTTPD
+actor "生產者" as Bob #yellow
+== 寫 HTML ==
+autonumber 101
+Bob -> HTTPD : 上傳寫作檔 HTML
+note left
+<img:../images/apache-big5-html-src.png{scale=0.5}>
+end note
+== 要 HTTP REQUEST ==
+autonumber 201
+Alice -> Browser : "要求 http://127.0.0.1/"
+Browser -> HTTPD : "要求 HTML 檔案\nGET / HTTP/1.1"
+== 給 HTTP RESPONSE ==
+autonumber 301
+HTTPD -> Browser : "回傳 HTML 檔案\nHTTP/1.1 200 OK\n...."  
+note left
+<img:../images/apache-big5-html-src.png{scale=0.5}>
+end note  
+Browser -> Alice : browser  
+note right
+<img:../images/apache-big5.png{scale=0.5}>
+end note
+== 免費 ? 白吃的午餐 ? 注意力與隱私商品化 ==
+Alice -> Bob : :-)  
+Bob -> Alice : $$$  
+@enduml
