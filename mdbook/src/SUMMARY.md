@@ -5,6 +5,7 @@
 - [POC 概念驗證](./poc.md)
 - [POC TAICHU-RAW](./taichu-raw/README.md)
   - [Apache Big5](./taichu-raw/apache-big5.md)
+  - [OpenAPI v3](./taichu-raw/openapiv3.md)
 - [POC MAD-WHITE](./mad-white/README.md)
   - [VS Code Server](./mad-white/code-server.md)
 - [POC MAD-RED](./mad-red/README.md)

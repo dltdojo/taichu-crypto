@@ -13,8 +13,8 @@ cargo run -- -h
 ## TODO 201909
 
 - [x] [Apache Big5 Page](./apache-big5.md)
-- [ ] OpenAPI Example
-- [ ] [Swagger UI](https://github.com/swagger-api/swagger-ui)
+- [x] [OpenAPI Example](../api/swagger-ui/index.html)
+- [x] [Swagger UI](https://github.com/swagger-api/swagger-ui)
 - [ ] [application/protobuf - actix](https://github.com/actix/examples/tree/master/protobuf)
 - [ ] [Websocket - actix](https://github.com/actix/examples/tree/master/websocket)
 - [ ] [GraphQL - juniper - actix](https://github.com/actix/examples/tree/master/juniper)

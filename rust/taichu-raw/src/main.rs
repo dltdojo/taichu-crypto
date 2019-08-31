@@ -15,7 +15,8 @@ use std::net::SocketAddr;
 use std::path::PathBuf;
 use structopt::StructOpt;
 
-include!(concat!(env!("OUT_DIR"), "/generated.rs"));
+include!(concat!(env!("OUT_DIR"), "/generated_docs.rs"));
+// include!(concat!(env!("OUT_DIR"), "/generated_api.rs"));
 const INDEX: &str = include_str!("./index.html");
 const CERT: &str = include_str!("./test_server.crt");
 const KEY: &str = include_str!("./test_server.key");
@@ -126,12 +127,16 @@ fn main() -> std::io::Result<()> {
     
     if opt.serve {
         let mut server = HttpServer::new(move || {
-            let generated = generate();
+            let generated_docs = generate_docs();
+            // let generated_api = generate_api();
             App::new()
                 .service(index)
                 .service(actix_web_static_files::ResourceFiles::new(
-                    "/pub", generated,
+                    "/pub", generated_docs,
                 ))
+               // .service(actix_web_static_files::ResourceFiles::new(
+               //     "/pub/api", generated_api,
+               // ))
         });
         println!("DLTDOJO3 Start https://{}", opt.listen.to_string());
         let mut config = ServerConfig::new(NoClientAuth::new());
