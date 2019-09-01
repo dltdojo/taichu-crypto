@@ -2,6 +2,7 @@
 extern crate actix_web;
 
 use actix_web::{guard, web, App, HttpResponse, HttpServer};
+use actix_web_prom::PrometheusMetrics;
 use actix_web_static_files;
 use rcgen::generate_simple_self_signed;
 use rustls::internal::pemfile::{certs, rsa_private_keys};
@@ -123,6 +124,52 @@ fn p404() -> HttpResponse {
     HttpResponse::Ok().body(P404)
 }
 
+fn serve(opt: Opt) -> std::io::Result<()> {
+    let prometheus = PrometheusMetrics::new("api", "/metrics");
+    let mut server = HttpServer::new(move || {
+        let generated_docs = generate_docs();
+        // let generated_api = generate_api();
+        App::new()
+            .wrap(prometheus.clone())
+            .service(index)
+            .service(actix_web_static_files::ResourceFiles::new(
+                "/pub",
+                generated_docs,
+            ))
+            // default
+            .default_service(
+                // 404 for GET request
+                web::resource("")
+                    .route(web::get().to(p404))
+                    // all requests that are not `GET`
+                    .route(
+                        web::route()
+                            .guard(guard::Not(guard::Get()))
+                            .to(|| HttpResponse::MethodNotAllowed()),
+                    ),
+            )
+    });
+    println!("DLTDOJO3 Start https://{}", opt.listen.to_string());
+    let mut config = ServerConfig::new(NoClientAuth::new());
+    if opt.tls_cert.is_some() && opt.tls_key.is_some() {
+        let tls_cert = opt.tls_cert.unwrap();
+        let tls_key = opt.tls_key.unwrap();
+        let cert_file = load_certs(&tls_cert)?;
+        let key_file = load_private_key(&tls_key)?;
+        config
+            .set_single_cert(cert_file, key_file)
+            .map_err(|e| IoError::new(IoErrorKind::Other, e.to_string()))?;
+    } else {
+        let cert_file = load_const_cert()?;
+        let key_file = load_const_private_key()?;
+        config
+            .set_single_cert(cert_file, key_file)
+            .map_err(|e| IoError::new(IoErrorKind::Other, e.to_string()))?;
+    }
+    server = server.bind_rustls(opt.listen, config)?;
+    server.system_exit().run()
+}
+
 fn main() -> std::io::Result<()> {
     let opt = Opt::from_args();
 
@@ -133,48 +180,9 @@ fn main() -> std::io::Result<()> {
     if opt.cli_pki {
         self_signed();
     }
+
     if opt.serve {
-        let mut server = HttpServer::new(move || {
-            let generated_docs = generate_docs();
-            // let generated_api = generate_api();
-            App::new()
-                .service(index)
-                .service(actix_web_static_files::ResourceFiles::new(
-                    "/pub",
-                    generated_docs,
-                ))
-                // default
-                .default_service(
-                    // 404 for GET request
-                    web::resource("")
-                        .route(web::get().to(p404))
-                        // all requests that are not `GET`
-                        .route(
-                            web::route()
-                                .guard(guard::Not(guard::Get()))
-                                .to(|| HttpResponse::MethodNotAllowed()),
-                        ),
-                )
-        });
-        println!("DLTDOJO3 Start https://{}", opt.listen.to_string());
-        let mut config = ServerConfig::new(NoClientAuth::new());
-        if opt.tls_cert.is_some() && opt.tls_key.is_some() {
-            let tls_cert = opt.tls_cert.unwrap();
-            let tls_key = opt.tls_key.unwrap();
-            let cert_file = load_certs(&tls_cert)?;
-            let key_file = load_private_key(&tls_key)?;
-            config
-                .set_single_cert(cert_file, key_file)
-                .map_err(|e| IoError::new(IoErrorKind::Other, e.to_string()))?;
-        } else {
-            let cert_file = load_const_cert()?;
-            let key_file = load_const_private_key()?;
-            config
-                .set_single_cert(cert_file, key_file)
-                .map_err(|e| IoError::new(IoErrorKind::Other, e.to_string()))?;
-        }
-        server = server.bind_rustls(opt.listen, config)?;
-        server.system_exit().run().expect("Start Error");
+        serve(opt).expect("Server Error");
     }
     Ok(())
 }

@@ -16,6 +16,7 @@ actix-web = { version= "1.0.6", features = ["rust-tls"] }
 actix-web-static-files = "0.2"
 rustls = "0.15"
 rcgen = "0.4.1"
+actix-web-prom = "0.1"
 
 [build-dependencies]
 actix-web-static-files = "0.2"
