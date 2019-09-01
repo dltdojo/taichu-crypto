@@ -1,0 +1,23 @@
+@startuml
+header DLTDOJO3
+footer 
+https://dltdojo.github.io/taichu-crypto/
+Licensed under the Apache License Version 2.0
+<img:../images/qr-taichu-crypto.png{scale=0.5}>
+end footer
+title dltdojo3-web123-v1
+legend top
+那個 Web x.0 的故事
+endlegend
+skinparam handwritten true
+!include tpl-web123-v1.iuml
+'這裡以下都是新增
+== 600 Web 3.0 DAO ==
+autonumber 601
+participant "DAO"  as DAO
+Alice -> DAO : 加入 DAO
+Bob -> DAO : 加入 DAO
+Bob <-> Alice : 消費者變成生產者，買賣不經那個平台。
+DAO -> Alice : 💰💰💰
+DAO -> Bob : 💰💰💰
+@enduml

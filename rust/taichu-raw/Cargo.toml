@@ -17,6 +17,14 @@ actix-web-static-files = "0.2"
 rustls = "0.15"
 rcgen = "0.4.1"
 actix-web-prom = "0.1"
+bytes = "0.4"
+futures = "0.1"
+env_logger = "*"
+
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
+json = "*"
 
 [build-dependencies]
 actix-web-static-files = "0.2"

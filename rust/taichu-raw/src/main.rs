@@ -1,7 +1,10 @@
 #[macro_use]
 extern crate actix_web;
 
-use actix_web::{guard, web, App, HttpResponse, HttpServer};
+#[macro_use]
+extern crate json;
+
+use actix_web::{guard, web, App, middleware, HttpResponse, HttpServer};
 use actix_web_prom::PrometheusMetrics;
 use actix_web_static_files;
 use rcgen::generate_simple_self_signed;
@@ -15,6 +18,10 @@ use std::io::{BufReader, Cursor};
 use std::net::SocketAddr;
 use std::path::PathBuf;
 use structopt::StructOpt;
+use bytes::BytesMut;
+use futures::{Future, Stream};
+use json::JsonValue;
+use serde_derive::{Deserialize, Serialize};
 
 include!(concat!(env!("OUT_DIR"), "/generated_docs.rs"));
 // include!(concat!(env!("OUT_DIR"), "/generated_api.rs"));
@@ -48,6 +55,12 @@ struct Opt {
 
     #[structopt(short = "d", long = "debug")]
     debug: bool,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct MyObj {
+    name: String,
+    number: i32,
 }
 
 fn self_signed() {
@@ -124,14 +137,28 @@ fn p404() -> HttpResponse {
     HttpResponse::Ok().body(P404)
 }
 
+/// This handler uses json extractor
+/// https://docs.rs/actix-web/0.6.7/actix_web/struct.Json.html
+/// $ curl -kd '{"name":"dltdojo", "number":3}' -H "Content-Type: application/json" -X POST https://localhost:8443/echo
+/// 
+fn echoItem(item: web::Json<MyObj>) -> HttpResponse {
+    println!("model: {:?}", &item);
+    HttpResponse::Ok().json(item.0) // <- send response
+}
+
+
 fn serve(opt: Opt) -> std::io::Result<()> {
     let prometheus = PrometheusMetrics::new("api", "/metrics");
     let mut server = HttpServer::new(move || {
         let generated_docs = generate_docs();
         // let generated_api = generate_api();
         App::new()
+         // enable logger
+            .wrap(middleware::Logger::default())
+            .data(web::JsonConfig::default().limit(4096)) // <- limit size of the payload (global configuration)
             .wrap(prometheus.clone())
             .service(index)
+            .service(web::resource("/echo").route(web::post().to(echoItem)))
             .service(actix_web_static_files::ResourceFiles::new(
                 "/pub",
                 generated_docs,
