@@ -1,0 +1,39 @@
+@startuml
+header DLTDOJO3
+footer 
+https://dltdojo.github.io/taichu-crypto/
+Licensed under the Apache License Version 2.0
+<img:../images/qr-taichu-crypto.png{scale=0.5}>
+end footer
+title dltdojo3-comp-template
+skinparam handwritten false
+left to right direction
+
+package "Docker Container" {
+    folder "Code Server container"{
+      [Code\nServer] as CS #Yellow
+      [mad-white\nprojects]
+      folder "VS Code Extension"{
+       [plantuml]
+      }
+    }
+}
+
+package "Kubernetes" {
+  folder "microk8s" {
+	[DNS]
+	[Registry]
+	[Storage]
+  }
+  folder "Gitops"{
+    [GIT gogs] as GIT #Green
+    [CI drone] as CI #Blue
+  }
+}
+
+CS --> GIT : 1. push
+GIT -> CI : 2. build and test
+CI --> Registry : 3. push
+CI <-- Registry : 4. pull image
+
+@enduml

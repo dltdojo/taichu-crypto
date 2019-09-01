@@ -29,8 +29,6 @@
 
         <!-- Custom theme stylesheets -->
         
-        <link rel="stylesheet" href="src/css/taichu-raw.css">
-        
 
         
         <!-- MathJax -->
@@ -157,12 +155,16 @@
 <li><a href="#web-x0-%E7%9A%84%E6%95%85%E4%BA%8B">Web x.0 的故事</a></li>
 </ul>
 </li>
-<li><a href="#%E7%B5%84%E4%BB%B6%E5%9C%96%E6%A8%A3%E6%9D%BF-component-diagram-template">組件圖樣板 Component Diagram Template</a></li>
+<li><a href="#%E7%B5%84%E4%BB%B6%E5%9C%96%E6%A8%A3%E6%9D%BF-component-diagram-template">組件圖樣板 Component Diagram Template</a>
+<ul>
+<li><a href="#dltdojo3">DLTDOJO3</a></li>
+</ul>
+</li>
 </ul>
 <h1><a class="header" href="#時序圖樣版-sequence-diagram-template" id="時序圖樣版-sequence-diagram-template">時序圖樣版 Sequence Diagram Template</a></h1>
 <p><a href="http://plantuml.com/sequence-diagram">Sequence Diagram - PlantUML</a></p>
 <h2><a class="header" href="#web-x0-的故事" id="web-x0-的故事">Web x.0 的故事</a></h2>
-<p>Sources</p>
+<p><img src="puml/dltdojo3-seq-template.svg" alt="Seq Template" /></p>
 <pre><code>@startuml
 header DLTDOJO3
 footer 
@@ -205,11 +207,51 @@ Bob -&gt; Alice : 消費者變成生產者，買賣不經平台。
 Alice -&gt; Bob : 生產者變成消費者，買賣不經平台。
 @enduml
 </code></pre>
-<p>Diagram</p>
-<p><img src="puml/dltdojo3-seq-template.svg" alt="Seq Template" /></p>
 <h1><a class="header" href="#組件圖樣板-component-diagram-template" id="組件圖樣板-component-diagram-template">組件圖樣板 Component Diagram Template</a></h1>
 <p><a href="http://plantuml.com/component-diagram">Component Diagram - PlantUML</a></p>
-<p>TODO</p>
+<h2><a class="header" href="#dltdojo3" id="dltdojo3">DLTDOJO3</a></h2>
+<p><img src="puml/dltdojo3-comp-template.svg" alt="Comp" /></p>
+<pre><code>@startuml
+header DLTDOJO3
+footer 
+https://dltdojo.github.io/taichu-crypto/
+Licensed under the Apache License Version 2.0
+&lt;img:../images/qr-taichu-crypto.png{scale=0.5}&gt;
+end footer
+title dltdojo3-comp-template
+skinparam handwritten false
+left to right direction
+
+package &quot;Docker Container&quot; {
+    folder &quot;Code Server container&quot;{
+      [Code\nServer] as CS #Yellow
+      [mad-white\nprojects]
+      folder &quot;VS Code Extension&quot;{
+       [plantuml]
+      }
+    }
+}
+
+package &quot;Kubernetes&quot; {
+  folder &quot;microk8s&quot; {
+	[DNS]
+	[Registry]
+	[Storage]
+  }
+  folder &quot;Gitops&quot;{
+    [GIT gogs] as GIT #Green
+    [CI drone] as CI #Blue
+  }
+}
+
+CS --&gt; GIT : 1. push
+GIT -&gt; CI : 2. build and test
+CI --&gt; Registry : 3. push
+CI &lt;-- Registry : 4. pull image
+
+@enduml
+
+</code></pre>
 
                     </main>
 
