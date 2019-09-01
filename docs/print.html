@@ -1108,7 +1108,13 @@ DNS.3 = localhost
 </ul>
 <h1><a class="header" href="#plantuml" id="plantuml">PlantUML</a></h1>
 <ul>
-<li><a href="plantuml.html#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%9D%BF">如何使用模板</a></li>
+<li><a href="plantuml.html#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%9D%BF">如何使用模板</a>
+<ul>
+<li><a href="plantuml.html#%E4%BD%BF%E7%94%A8-tpl-web123-v1-%E8%A7%A3%E8%AA%AA-dao">使用 tpl-web123-v1 解說 DAO</a></li>
+<li><a href="plantuml.html#%E5%A5%97%E7%89%88%E5%8A%A0%E4%B8%8A-dao-%E7%9A%84%E8%AA%AA%E6%98%8E">套版加上 DAO 的說明</a></li>
+<li><a href="plantuml.html#plantuml-online-demo-service-%E6%95%88%E6%9E%9C">PlantUML Online Demo Service 效果</a></li>
+</ul>
+</li>
 <li><a href="plantuml.html#%E6%99%82%E5%BA%8F%E5%9C%96%E6%A8%A3%E7%89%88-sequence-diagram-template">時序圖樣版 Sequence Diagram Template</a>
 <ul>
 <li><a href="plantuml.html#tpl-web123-v1iuml">tpl-web123-v1.iuml</a></li>
@@ -1116,19 +1122,15 @@ DNS.3 = localhost
 </li>
 <li><a href="plantuml.html#%E7%B5%84%E4%BB%B6%E5%9C%96%E6%A8%A3%E6%9D%BF-component-diagram-template">組件圖樣板 Component Diagram Template</a>
 <ul>
-<li><a href="plantuml.html#dltdojo3">DLTDOJO3</a></li>
+<li><a href="plantuml.html#wip-tpl-dltdojo3-x">WIP tpl-dltdojo3-x</a></li>
 </ul>
 </li>
 </ul>
 <h1><a class="header" href="#如何使用模板" id="如何使用模板">如何使用模板</a></h1>
-<p>先看過 <a href="http://plantuml.com/preprocessing">Preprocessing - PlantUML</a></p>
-<p>模板採用 iuml 副檔名前面加上 tpl，引入語法如下。</p>
+<p>先看過 <a href="http://plantuml.com/preprocessing">Preprocessing - PlantUML</a>，模板採用 iuml 副檔名前面加上 tpl，引入語法如下。</p>
 <pre><code>!include tpl-web123-v1.iuml
 </code></pre>
-<p>如要外部使用可以利用下列連結</p>
-<ul>
-<li>https://dltdojo.github.io/taichu-crypto/puml/tpl-web123-v1.iuml</li>
-</ul>
+<h2><a class="header" href="#使用-tpl-web123-v1-解說-dao" id="使用-tpl-web123-v1-解說-dao">使用 tpl-web123-v1 解說 DAO</a></h2>
 <p><img src="puml/tpl-web123-v1.svg" alt="web123 template v1" /></p>
 <p>tpl-web123-v1.iuml 內容</p>
 <pre><code>@startuml
@@ -1164,6 +1166,7 @@ Bob -&gt; Alice : 消費者變成生產者，買賣不經那個平台
 Alice -&gt; Bob : 生產者變成消費者，買賣不經那個平台
 @enduml
 </code></pre>
+<h2><a class="header" href="#套版加上-dao-的說明" id="套版加上-dao-的說明">套版加上 DAO 的說明</a></h2>
 <p><img src="puml/dltdojo3-web123-v1.svg" alt="web123 result " /></p>
 <p>web123-v1.puml 套用模板</p>
 <pre><code>@startuml
@@ -1189,6 +1192,11 @@ Bob &lt;-&gt; Alice : 消費者變成生產者，買賣不經那個平台。
 DAO -&gt; Alice : 💰💰💰
 DAO -&gt; Bob : 💰💰💰
 @enduml
+</code></pre>
+<h2><a class="header" href="#plantuml-online-demo-service-效果" id="plantuml-online-demo-service-效果">PlantUML Online Demo Service 效果</a></h2>
+<p>如要外部使用可以利用下列連結，利用線上服務 <a href="http://www.plantuml.com/plantuml/uml">PlantUML Online Demo Service</a> 利用下列方式加入模板。</p>
+<p><img src="puml/plantuml-server-include-web123.png" alt="pl" /></p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-web123-v1.iuml
 </code></pre>
 <h1><a class="header" href="#時序圖樣版-sequence-diagram-template" id="時序圖樣版-sequence-diagram-template">時序圖樣版 Sequence Diagram Template</a></h1>
 <p><a href="http://plantuml.com/sequence-diagram">Sequence Diagram - PlantUML</a></p>
@@ -1230,7 +1238,7 @@ Alice -&gt; Bob : 生產者變成消費者，買賣不經那個平台
 </code></pre>
 <h1><a class="header" href="#組件圖樣板-component-diagram-template" id="組件圖樣板-component-diagram-template">組件圖樣板 Component Diagram Template</a></h1>
 <p><a href="http://plantuml.com/component-diagram">Component Diagram - PlantUML</a></p>
-<h2><a class="header" href="#dltdojo3" id="dltdojo3">DLTDOJO3</a></h2>
+<h2><a class="header" href="#wip-tpl-dltdojo3-x" id="wip-tpl-dltdojo3-x">WIP tpl-dltdojo3-x</a></h2>
 <p><img src="puml/dltdojo3-comp-template.svg" alt="Comp" /></p>
 <pre><code>@startuml
 header DLTDOJO3
