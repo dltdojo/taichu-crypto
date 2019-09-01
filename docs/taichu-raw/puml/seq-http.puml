@@ -1,14 +1,14 @@
 @startuml
 header DLTDOJO3
-footer https://dltdojo.github.io/taichu-crypto/
+footer https://dltdojo.github.io/taichu-crypto/\nLicensed under the Apache License Version 2.0
 title dltdojo3-seq-http
 legend top
 一個 HTTP/HTML 網路的買賣故事
 endlegend
 skinparam handwritten true
-actor "購買者" as Alice #red
-participant "瀏覽器"  as Browser
-collections "HTTP SERVER" as HTTPD
+actor "消費者" as Alice #red
+participant "Browser\n瀏覽器"  as Browser
+collections "HTTP Server\n超文本傳輸協定服務" as HTTPD
 actor "生產者" as Bob #yellow
 == 寫 HTML ==
 autonumber 101

@@ -2,8 +2,9 @@
 <!-- toc -->
 ## 安裝 mdbook
 
-先安裝 [mdbook](https://rust-lang-nursery.github.io/mdBook/index.html) 
-再 [mdbook-toc](https://github.com/badboy/mdbook-toc)
+1. 參考[安裝 Rust](https://www.rust-lang.org/zh-TW/tools/install)說明將 rust 環境建立起來
+1. 先安裝 [mdbook](https://rust-lang-nursery.github.io/mdBook/index.html) 
+1. 再 [mdbook-toc](https://github.com/badboy/mdbook-toc)
 
 ```shell
 cargo install mdbook
@@ -22,6 +23,7 @@ bash tc.sh --build-book
 bash tc.sh --serve-book
 ```
 
+# 其他主題
 
 ## playgen and Rust Playground 
 
@@ -29,4 +31,4 @@ playpen 有限制 crate 列表如下，要支援 BIP39 之類工具包可能要 
 
 - https://github.com/integer32llc/rust-playground/blob/master/compiler/base/Cargo.toml
 
-{{#playpen rs/time.rs}}
+{{#playpen ../rs/time.rs}}

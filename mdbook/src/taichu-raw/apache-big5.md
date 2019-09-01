@@ -9,13 +9,7 @@
 
 ![Apache Big5](images/apache-big5.png)
 
-## HTML 表
-
-{{#include taichu-raw-index.html}}
-
-mdbook include 語法直接將　html 呈現效果內嵌到本網頁。
-
-## HTML 裡
+## HTML 表裡
 
 [index.html of taichu-raw](taichu-raw-index.html) 為執行 taichu-raw 的預設首頁，上圖塗黑為示範效果。
 
