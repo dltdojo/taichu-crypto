@@ -159,7 +159,9 @@
 </li>
 <li><a href="#%E6%99%82%E5%BA%8F%E5%9C%96%E6%A8%A3%E7%89%88-sequence-diagram-template">時序圖樣版 Sequence Diagram Template</a>
 <ul>
-<li><a href="#tpl-web123-v1iuml">tpl-web123-v1.iuml</a></li>
+<li><a href="#web30-%E6%A6%82%E5%BF%B5-tpl-web123-v1iuml">Web3.0 概念: tpl-web123-v1.iuml</a></li>
+<li><a href="#http-%E6%A6%82%E5%BF%B5-tpl-story-http-v1iuml">HTTP 概念: tpl-story-http-v1.iuml</a></li>
+<li><a href="#exit-voice-and-loyalty%E5%8F%9B%E9%9B%A2%E6%8A%97%E8%AD%B0%E8%88%87%E5%BF%A0%E8%AA%A0-tpl-evl-v1iuml">Exit, Voice and Loyalty《叛離、抗議與忠誠》: tpl-evl-v1.iuml</a></li>
 </ul>
 </li>
 <li><a href="#%E7%B5%84%E4%BB%B6%E5%9C%96%E6%A8%A3%E6%9D%BF-component-diagram-template">組件圖樣板 Component Diagram Template</a>
@@ -237,14 +239,15 @@ DAO -&gt; Bob : 💰💰💰
 </code></pre>
 <h2><a class="header" href="#plantuml-online-demo-service-效果" id="plantuml-online-demo-service-效果">PlantUML Online Demo Service 效果</a></h2>
 <p>如要外部使用可以利用下列連結，利用線上服務 <a href="http://www.plantuml.com/plantuml/uml">PlantUML Online Demo Service</a> 利用下列方式加入模板。</p>
-<p><img src="puml/plantuml-server-include-web123.png" alt="pl" /></p>
+<p>引用</p>
 <pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-web123-v1.iuml
 </code></pre>
+<p><img src="puml/plantuml-server-include-web123.png" alt="pl" /></p>
 <h1><a class="header" href="#時序圖樣版-sequence-diagram-template" id="時序圖樣版-sequence-diagram-template">時序圖樣版 Sequence Diagram Template</a></h1>
 <p><a href="http://plantuml.com/sequence-diagram">Sequence Diagram - PlantUML</a></p>
-<h2><a class="header" href="#tpl-web123-v1iuml" id="tpl-web123-v1iuml">tpl-web123-v1.iuml</a></h2>
+<h2><a class="header" href="#web30-概念-tpl-web123-v1iuml" id="web30-概念-tpl-web123-v1iuml">Web3.0 概念: tpl-web123-v1.iuml</a></h2>
 <p><img src="puml/tpl-web123-v1.svg" alt="web123 template v1" /></p>
-<p>tpl-web123-v1.iuml 內容</p>
+<p>內容</p>
 <pre><code>@startuml
 actor &quot;消費者\nAlice&quot; as Alice #red
 participant &quot;Browser\n瀏覽器\nBrowser&quot;  as Browser
@@ -277,6 +280,77 @@ autonumber 501
 Bob -&gt; Alice : 消費者變成生產者，買賣不經那個平台
 Alice -&gt; Bob : 生產者變成消費者，買賣不經那個平台
 @enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-web123-v1.iuml
+</code></pre>
+<h2><a class="header" href="#http-概念-tpl-story-http-v1iuml" id="http-概念-tpl-story-http-v1iuml">HTTP 概念: tpl-story-http-v1.iuml</a></h2>
+<p><img src="puml/tpl-story-http-v1.svg" alt="story http template v1" /></p>
+<p>內容</p>
+<pre><code>@startuml
+actor &quot;消費者\nAlice&quot; as Alice #red
+participant &quot;瀏覽器\nBrowser&quot;  as Browser
+collections &quot;超文本傳輸協定服務\nHTTPD&quot; as HTTPD
+participant &quot;那個平台\nSRV&quot; as SRV
+actor &quot;生產者\nBob&quot; as Bob #yellow
+== 100 寫 HTML ==
+autonumber 101
+Bob -&gt; SRV : 註冊或架設
+Bob -&gt; HTTPD : 上傳或產生 HTML
+note left
+文字創作、圖片、歌曲、影片、
+人際關係、個資、身分識別
+end note
+== 200 HTTP 協定 ==
+autonumber 201
+Alice -&gt; Browser : http://example.com/foo
+Browser -&gt; HTTPD : GET /foo HTTP/1.1
+HTTPD -&gt; Browser : HTTP/1.1 200 OK\n內容 HTML 
+Browser -&gt; Alice : 解析HTML內容後\n展現在瀏覽器裡面
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-story-http-v1.iuml
+</code></pre>
+<h2><a class="header" href="#exit-voice-and-loyalty叛離抗議與忠誠-tpl-evl-v1iuml" id="exit-voice-and-loyalty叛離抗議與忠誠-tpl-evl-v1iuml">Exit, Voice and Loyalty《叛離、抗議與忠誠》: tpl-evl-v1.iuml</a></h2>
+<p><a href="https://github.com/Joystream">Joystream - Github</a> 的 DAO 治理結構針對組織的 <a href="https://en.wikipedia.org/wiki/Exit,_Voice,_and_Loyalty">Exit, Voice, and Loyalty - wikipedia</a> 問題加以設計，希望探索或建構出可長久的組織結構。</p>
+<p><img src="puml/tpl-evl-v1.svg" alt="evl v1" /></p>
+<p>內容</p>
+<pre><code>@startuml
+actor &quot;個人甲\nAlice&quot; as Alice #red
+collections &quot;原組織或企業\nORG&quot; as ORG
+collections &quot;新組織或企業\nNORG&quot; as NORG #red
+actor &quot;個人乙\nBob&quot; as Bob #yellow
+== 100 當個人甲乙對原組織的運作感到不滿時 ==
+autonumber 101
+Bob -&gt; ORG: 🔥😠🔥
+Alice -&gt; ORG: 🔥😠🔥
+== 200 Exit 叛離 ==
+autonumber 201
+Alice -&gt; ORG : Bye
+note right
+脫離組織運作
+end note
+Alice -&gt; NORG : 加入其他組織
+Alice -&gt; Bob : 或拉人分裂出新組織
+== 300 Voice 抗議 ==
+autonumber 301
+Bob -&gt; ORG : 抗議啦
+note left
+提出異議
+end note
+ORG -&gt; Bob : 回應
+Bob -&gt; Bob : Loyalty 忠誠
+ORG -&gt; Bob : 不理會
+Bob -&gt; Bob : Exit 叛離
+== 400 Loyalty 忠誠 ==
+autonumber 401
+Bob -&gt; ORG : 組織運轉順暢
+Alice -&gt; ORG : 組織運作良好
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-evl-v1.iuml
 </code></pre>
 <h1><a class="header" href="#組件圖樣板-component-diagram-template" id="組件圖樣板-component-diagram-template">組件圖樣板 Component Diagram Template</a></h1>
 <p><a href="http://plantuml.com/component-diagram">Component Diagram - PlantUML</a></p>

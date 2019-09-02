@@ -1,0 +1,32 @@
+@startuml
+actor "個人甲\nAlice" as Alice #red
+collections "原組織或企業\nORG" as ORG
+collections "新組織或企業\nNORG" as NORG #red
+actor "個人乙\nBob" as Bob #yellow
+== 100 當個人甲乙對原組織的運作感到不滿時 ==
+autonumber 101
+Bob -> ORG: 🔥😠🔥
+Alice -> ORG: 🔥😠🔥
+== 200 Exit 叛離 ==
+autonumber 201
+Alice -> ORG : Bye
+note right
+脫離組織運作
+end note
+Alice -> NORG : 加入其他組織
+Alice -> Bob : 或拉人分裂出新組織
+== 300 Voice 抗議 ==
+autonumber 301
+Bob -> ORG : 抗議啦
+note left
+提出異議
+end note
+ORG -> Bob : 回應
+Bob -> Bob : Loyalty 忠誠
+ORG -> Bob : 不理會
+Bob -> Bob : Exit 叛離
+== 400 Loyalty 忠誠 ==
+autonumber 401
+Bob -> ORG : 組織運轉順暢
+Alice -> ORG : 組織運作良好
+@enduml

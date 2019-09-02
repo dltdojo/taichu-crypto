@@ -1,0 +1,21 @@
+@startuml
+actor "消費者\nAlice" as Alice #red
+participant "瀏覽器\nBrowser"  as Browser
+collections "超文本傳輸協定服務\nHTTPD" as HTTPD
+participant "那個平台\nSRV" as SRV
+actor "生產者\nBob" as Bob #yellow
+== 100 寫 HTML ==
+autonumber 101
+Bob -> SRV : 註冊或架設
+Bob -> HTTPD : 上傳或產生 HTML
+note left
+文字創作、圖片、歌曲、影片、
+人際關係、個資、身分識別
+end note
+== 200 HTTP 協定 ==
+autonumber 201
+Alice -> Browser : http://example.com/foo
+Browser -> HTTPD : GET /foo HTTP/1.1
+HTTPD -> Browser : HTTP/1.1 200 OK\n內容 HTML 
+Browser -> Alice : 解析HTML內容後\n展現在瀏覽器裡面
+@enduml
