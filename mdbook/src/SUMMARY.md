@@ -25,6 +25,7 @@
   - [preprocessors](./mdbook/preprocessors.md)
   - [其他](./mdbook/others.md)
 - [學習資源](./resources.md)
+- [書籍](./book.md)
 - [附錄](./appendix.md)
   - [命令列說明](./cmd-help.md)
   - [授權條款](./license.md)

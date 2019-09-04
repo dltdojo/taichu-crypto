@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="342px" preserveAspectRatio="none" style="width:349px;height:342px;" version="1.1" viewBox="0 0 349 342" width="349px" zoomAndPan="magnify"><defs><filter height="300%" id="f6u3a3lcib685" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster You--><polygon fill="#FFFFFF" filter="url(#f6u3a3lcib685)" points="22,86,56,86,63,111.9404,88,111.9404,88,180,22,180,22,86" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="22" x2="63" y1="111.9404" y2="111.9404"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="28" x="26" y="104.8643">You</text><!--cluster TVBuddha--><polygon fill="#FFFFFF" filter="url(#f6u3a3lcib685)" points="120,32,201,32,208,57.9404,327,57.9404,327,330,120,330,120,32" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="120" x2="208" y1="57.9404" y2="57.9404"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="75" x="124" y="50.8643">TV Buddha</text><!--cluster Buddha--><polygon fill="#FFFFFF" filter="url(#f6u3a3lcib685)" points="192,204,252,204,259,229.9404,262,229.9404,262,298,192,298,192,204" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="192" x2="259" y1="229.9404" y2="229.9404"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="54" x="196" y="222.8643">Buddha</text><!--cluster Tele - vision--><polygon fill="#FFFFFF" filter="url(#f6u3a3lcib685)" points="160,86,252,86,259,111.9404,295,111.9404,295,180,160,180,160,86" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="160" x2="259" y1="111.9404" y2="111.9404"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="86" x="164" y="104.8643">Tele - vision</text><!--entity U--><rect fill="#FFFF00" filter="url(#f6u3a3lcib685)" height="39.9404" style="stroke: #A80036; stroke-width: 1.5;" width="34" x="38" y="124"/><rect fill="#FFFF00" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="33" y="129"/><rect fill="#FFFF00" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="33" y="153.9404"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="14" x="48" y="150.8643">&#128064;</text><!--entity BUDDHA--><rect fill="#008000" filter="url(#f6u3a3lcib685)" height="39.9404" style="stroke: #A80036; stroke-width: 1.5;" width="34" x="210" y="242"/><rect fill="#008000" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="205" y="247"/><rect fill="#008000" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="205" y="271.9404"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="14" x="220" y="268.8643">&#128064;</text><!--entity TV--><rect fill="#FEFECE" filter="url(#f6u3a3lcib685)" height="39.9404" style="stroke: #A80036; stroke-width: 1.5;" width="34" x="176" y="124"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="171" y="129"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="171" y="153.9404"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="14" x="186" y="150.8643">&#128250;</text><!--entity Camera--><rect fill="#FEFECE" filter="url(#f6u3a3lcib685)" height="39.9404" style="stroke: #A80036; stroke-width: 1.5;" width="34" x="245" y="124"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="240" y="129"/><rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="240" y="153.9404"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="14" x="255" y="150.8643">&#127909;</text><!--link U to TVBuddha--><path d="M72.1094,144 C81.3517,144 90.5941,144 99.8364,144 C104.4576,144 109.0787,144 113.6998,144 C114.8551,144 116.0104,144 117.1657,144 C117.7433,144 118.3209,144 118.8986,144 C119.1874,144 119.4762,144 119.765,144 C119.8372,144 119.9094,144 119.9816,144 " fill="none" id="U-&gt;TVBuddha" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="119.9816,144,110.9816,140,114.9816,144,110.9816,148,119.9816,144" style="stroke: #A80036; stroke-width: 1.0;"/><!--link BUDDHA to TV--><path d="M221.377,241.817 C215.542,221.908 206.401,190.721 200.078,169.147 " fill="none" id="BUDDHA-&gt;TV" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="198.614,164.155,197.3055,173.9165,200.0196,168.9533,204.9828,171.6675,198.614,164.155" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Camera to BUDDHA--><path d="M256.22,164.155 C250.217,184.053 240.807,215.239 234.295,236.822 " fill="none" id="Camera-&gt;BUDDHA" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="232.788,241.817,239.2171,234.356,234.2322,237.0301,231.5581,232.0452,232.788,241.817" style="stroke: #A80036; stroke-width: 1.0;"/><!--link TV to Camera--><path d="M210.25,144 C221.705,144 233.16,144 244.615,144 " fill="none" id="TV-Camera" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+package "You" {
+  [👀] as U #Yellow
+}
+
+package "TV Buddha" as TVBuddha{
+  folder "Buddha"{
+    [👀] as BUDDHA #Green
+  }
+  folder "Tele - vision" {
+	  [📺] as TV
+	  [🎥] as Camera
+  }
+}
+
+U -> TVBuddha
+BUDDHA -> TV
+Camera - -> BUDDHA
+TV - Camera
+@enduml
+
+PlantUML version 1.2019.09(Tue Aug 27 00:19:51 CST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_221-b11
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS950
+Language: zh
+Country: TW
+--></g></svg>

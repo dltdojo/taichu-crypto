@@ -1,0 +1,22 @@
+@startuml
+' TV Buddha by Nam June Paik
+' “The future is now.” -Nam June Paik
+package "You" {
+  [👀] as U #Yellow
+}
+
+package "TV Buddha" as TVBuddha{
+  folder "Buddha"{
+    [👀] as BUDDHA #Green
+  }
+  folder "Tele - vision" {
+	  [📺] as TV
+	  [🎥] as Camera
+  }
+}
+
+U -> TVBuddha
+BUDDHA -> TV
+Camera --> BUDDHA
+TV - Camera
+@enduml

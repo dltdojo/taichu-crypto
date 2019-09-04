@@ -101,6 +101,24 @@ web123-v1.puml 套用模板
 
 [Component Diagram - PlantUML](http://plantuml.com/component-diagram)
 
+## TV Buddha by Nam June Paik tpl-tv-buddha 
+
+[Looking at Buddha Watching TV](https://www.vmfa.museum/mlit/looking-buddha-watching-tv/)
+
+![tv buddha](puml/tpl-tv-buddha-v1.svg)
+
+內容
+
+```
+{{#include puml/tpl-tv-buddha-v1.iuml}}
+```
+
+引用
+
+```
+!include https://dltdojo.github.io/taichu-crypto/puml/tpl-tv-buddha-v1.iuml
+```
+
 ## WIP tpl-dltdojo3-x
 
 ![Comp](puml/dltdojo3-comp-template.svg)
