@@ -1,0 +1,32 @@
+' Commercial paper tutorial
+' https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html
+'
+@startuml
+folder MagnetoCorp {
+    actor Alice
+    agent "Issue App" as IAPP
+    agent "Gateway" as MGW
+    agent "Wallet" as WALLET
+}
+
+folder PaperNet {
+    node CA 
+    node Orderer
+    folder "MagnetoCorp" as PNMC {
+       package "Peer" as MPEER {
+           artifact "Paper\nContract" as PNPC
+       } 
+       package "Chaincode\nContainer" as CC { 
+         artifact "Paper\nContract" as PNPC_CC
+       }
+    }
+}
+
+IAPP <- WALLET: = 1 retrieve
+IAPP --> MGW: = 2 submit
+MGW <--> MPEER: = 3 propose/endorse
+MGW --> Orderer: = 4 order
+Orderer --> MPEER: = 5 distribute
+MPEER -> MGW: = 6 notify
+MGW -> IAPP: = 7 response
+@enduml

@@ -1,0 +1,419 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Hyperledger Fabric - DLTDOJO3 第三新熵熱踢道場</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="../poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><a href="../taichu-raw/index.html"><strong aria-hidden="true">3.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li><a href="../taichu-raw/apache-big5.html"><strong aria-hidden="true">3.1.</strong> HTTPS: Apache Big5</a></li><li><a href="../taichu-raw/openapiv3.html"><strong aria-hidden="true">3.2.</strong> HTTPS: OpenAPI v3</a></li><li><a href="../taichu-raw/others.html"><strong aria-hidden="true">3.3.</strong> 其他</a></li></ol></li><li><a href="../mad-white/index.html"><strong aria-hidden="true">4.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li><a href="../mad-white/code-server.html"><strong aria-hidden="true">4.1.</strong> VS Code Server</a></li></ol></li><li><a href="../mad-red/index.html"><strong aria-hidden="true">5.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">5.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">5.2.</strong> 聊天測試 BIP39</a></li><li><a href="../mad-red/vox/index.html"><strong aria-hidden="true">5.3.</strong> Voxel 組件開發編輯</a></li><li><a href="../mad-red/vox/projects.html"><strong aria-hidden="true">5.4.</strong> Voxel 相關專案</a></li></ol></li><li><a href="../crypto-assets.html"><strong aria-hidden="true">6.</strong> Crypto-Assets</a></li><li><a href="../dlt.html"><strong aria-hidden="true">7.</strong> DLT</a></li><li><a href="../web/index.html"><strong aria-hidden="true">8.</strong> Web</a></li><li><ol class="section"><li><a href="../web/openssl.html"><strong aria-hidden="true">8.1.</strong> OpenSSL</a></li><li><a href="../webassembly.html"><strong aria-hidden="true">8.2.</strong> WebAssembly</a></li><li><a href="../webauthn.html"><strong aria-hidden="true">8.3.</strong> WebAuthn</a></li></ol></li><li><a href="../k8s.html"><strong aria-hidden="true">9.</strong> Kubernetes</a></li><li><a href="../plantuml.html"><strong aria-hidden="true">10.</strong> PlantUML</a></li><li><ol class="section"><li><a href="../puml/hyperledger-fabric.html" class="active"><strong aria-hidden="true">10.1.</strong> Hyperledger Fabric</a></li><li><a href="../puml/ethereum.html"><strong aria-hidden="true">10.2.</strong> Ethereum</a></li></ol></li><li><a href="../mdbook/index.html"><strong aria-hidden="true">11.</strong> mdbook</a></li><li><ol class="section"><li><a href="../mdbook/preprocessors.html"><strong aria-hidden="true">11.1.</strong> preprocessors</a></li><li><a href="../mdbook/others.html"><strong aria-hidden="true">11.2.</strong> 其他</a></li></ol></li><li><a href="../resources.html"><strong aria-hidden="true">12.</strong> 學習資源</a></li><li><a href="../book.html"><strong aria-hidden="true">13.</strong> 書籍</a></li><li><a href="../appendix.html"><strong aria-hidden="true">14.</strong> 附錄</a></li><li><ol class="section"><li><a href="../cmd-help.html"><strong aria-hidden="true">14.1.</strong> 命令列說明</a></li><li><a href="../license.html"><strong aria-hidden="true">14.2.</strong> 授權條款</a></li><li><a href="../testpage.html"><strong aria-hidden="true">14.3.</strong> 測試頁面</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">DLTDOJO3 第三新熵熱踢道場</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#hyperledger-fabric" id="hyperledger-fabric">Hyperledger Fabric</a></h1>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%9D-tpl-hlf-cp-install-v1iuml">安裝 tpl-hlf-cp-install-v1.iuml</a></li>
+<li><a href="#%E5%AF%A6%E9%AB%94%E5%8C%96-tpl-hlf-cp-instantiate-v1iuml">實體化 tpl-hlf-cp-instantiate-v1.iuml</a></li>
+<li><a href="#%E6%87%89%E7%94%A8%E9%96%8B%E7%99%BC-tpl-hlf-cp-app-v1iuml">應用開發 tpl-hlf-cp-app-v1.iuml</a></li>
+<li><a href="#%E7%B3%BB%E7%B5%B1%E8%AA%AA%E6%98%8E-tpl-hlf-cp-seq-v1iuml">系統說明 tpl-hlf-cp-seq-v1.iuml</a></li>
+<li><a href="#%E7%8B%80%E6%85%8B-tpl-hlf-cp-state-v1iuml">狀態 tpl-hlf-cp-state-v1.iuml</a></li>
+<li><a href="#%E7%B6%B2%E8%B7%AF-tpl-hlf-pnet-seq-v1iuml">網路 tpl-hlf-pnet-seq-v1.iuml</a></li>
+</ul>
+<h2><a class="header" href="#安裝-tpl-hlf-cp-install-v1iuml" id="安裝-tpl-hlf-cp-install-v1iuml">安裝 tpl-hlf-cp-install-v1.iuml</a></h2>
+<p><a href="https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html">Commercial paper tutorial</a></p>
+<p><img src="tpl-hlf-cp-install-v1.svg" alt="tpl-hlf-cp-install-v1.svg" /></p>
+<p>內容</p>
+<pre><code>' Commercial paper tutorial
+' https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html
+'
+@startuml
+folder MagnetoCorp {
+    agent &quot;Admin\nConsole&quot; as MAC
+    artifact &quot;Paper\nContract&quot; as MPC
+}
+
+folder PaperNet {
+    node CA 
+    node Orderer
+    folder &quot;MagnetoCorp&quot; as PNMC {
+       package &quot;Peer&quot; as MPEER {
+         node &quot;Ledger\nDatabase&quot; as LDB
+         artifact &quot;Paper\nContract&quot; as PNPC
+       } 
+    }
+}
+MPC -&gt; MAC
+MAC --&gt; MPEER: install
+PNPC &lt;-&gt; LDB: getState/putState
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-hlf-cp-install-v1.iuml
+</code></pre>
+<h2><a class="header" href="#實體化-tpl-hlf-cp-instantiate-v1iuml" id="實體化-tpl-hlf-cp-instantiate-v1iuml">實體化 tpl-hlf-cp-instantiate-v1.iuml</a></h2>
+<p><a href="https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html">Commercial paper tutorial</a></p>
+<p><img src="tpl-hlf-cp-instantiate-v1.svg" alt="tpl-hlf-cp-instantiate-v1.svg" /></p>
+<p>內容</p>
+<pre><code>' Commercial paper tutorial
+' https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html
+'
+@startuml
+folder MagnetoCorp {
+    agent &quot;Admin\nConsole&quot; as MAC
+}
+
+folder PaperNet {
+    node CA 
+    node Orderer
+    folder &quot;MagnetoCorp&quot; as PNMC {
+       package &quot;Peer&quot; as MPEER {
+           artifact &quot;Paper\nContract&quot; as PNPC
+       } 
+       package &quot;Chaincode\nContainer&quot; as CC { 
+         artifact &quot;Paper\nContract&quot; as PNPC_CC
+       }
+    }
+}
+MAC --&gt; MPEER: = 1. Instantiate
+MPEER --&gt; CC : = 2. Create
+PNPC --&gt; PNPC_CC: = 3. Copy
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-hlf-cp-instantiate-v1.iuml
+</code></pre>
+<h2><a class="header" href="#應用開發-tpl-hlf-cp-app-v1iuml" id="應用開發-tpl-hlf-cp-app-v1iuml">應用開發 tpl-hlf-cp-app-v1.iuml</a></h2>
+<p><a href="https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html">Commercial paper tutorial</a></p>
+<p><img src="tpl-hlf-cp-app-v1.svg" alt="tpl-hlf-cp-app-v1.svg" /></p>
+<p>內容</p>
+<pre><code>' Commercial paper tutorial
+' https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html
+'
+@startuml
+folder MagnetoCorp {
+    actor Alice
+    agent &quot;Issue App&quot; as IAPP
+    agent &quot;Gateway&quot; as MGW
+    agent &quot;Wallet&quot; as WALLET
+}
+
+folder PaperNet {
+    node CA 
+    node Orderer
+    folder &quot;MagnetoCorp&quot; as PNMC {
+       package &quot;Peer&quot; as MPEER {
+           artifact &quot;Paper\nContract&quot; as PNPC
+       } 
+       package &quot;Chaincode\nContainer&quot; as CC { 
+         artifact &quot;Paper\nContract&quot; as PNPC_CC
+       }
+    }
+}
+
+IAPP &lt;- WALLET: = 1 retrieve
+IAPP --&gt; MGW: = 2 submit
+MGW &lt;--&gt; MPEER: = 3 propose/endorse
+MGW --&gt; Orderer: = 4 order
+Orderer --&gt; MPEER: = 5 distribute
+MPEER -&gt; MGW: = 6 notify
+MGW -&gt; IAPP: = 7 response
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-hlf-cp-app-v1.iuml
+</code></pre>
+<h2><a class="header" href="#系統說明-tpl-hlf-cp-seq-v1iuml" id="系統說明-tpl-hlf-cp-seq-v1iuml">系統說明 tpl-hlf-cp-seq-v1.iuml</a></h2>
+<p><img src="tpl-hlf-cp-seq-v1.svg" alt="tpl-hlf-cp-seq-v1.svg" /></p>
+<p>內容</p>
+<pre><code>' Commercial paper tutorial
+' https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html
+'
+@startuml
+participant MagnetoCorp as COM
+actor Alice as Alice #red
+collections PaperNet as NET
+actor Bob as Bob #Yellow
+participant DigiBank as BANK
+COM -&gt; Alice: Authz
+BANK -&gt; Bob: Authz
+Alice -&gt; NET: Issue
+Bob -&gt; NET:  Buy 
+Bob -&gt; NET: Redeem
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-hlf-cp-seq-v1.iuml
+</code></pre>
+<h2><a class="header" href="#狀態-tpl-hlf-cp-state-v1iuml" id="狀態-tpl-hlf-cp-state-v1iuml">狀態 tpl-hlf-cp-state-v1.iuml</a></h2>
+<p><img src="tpl-hlf-cp-state-v1.svg" alt="tpl-hlf-cp-state-v1.svg" /></p>
+<p>內容</p>
+<pre><code>' https://hyperledger-fabric.readthedocs.io/en/release-1.4/developapps/architecture.html
+' Lifecycle
+'
+@startuml
+'hide empty description
+[*] --&gt; issued : issue
+note top
+ Commercial papers transition between 
+ issued, trading and redeemed states 
+ by means of the issue, buy and redeem 
+ transactions.
+end note
+issued -&gt; trading : buy
+trading -&gt; trading: buy
+trading -down-&gt; redeemed: redeem
+redeemed --&gt; [*]
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-hlf-cp-state-v1.iuml
+</code></pre>
+<h2><a class="header" href="#網路-tpl-hlf-pnet-seq-v1iuml" id="網路-tpl-hlf-pnet-seq-v1iuml">網路 tpl-hlf-pnet-seq-v1.iuml</a></h2>
+<p><img src="tpl-hlf-pnet-seq-v1.svg" alt="tpl-hlf-pent-seq-v1.svg" /></p>
+<p>內容</p>
+<pre><code>' https://hyperledger-fabric.readthedocs.io/en/release-1.4/developapps/scenario.html
+' The PaperNet commercial paper network. Six organizations currently use PaperNet network to 
+' issue, buy, sell, redeem and rate commercial paper. 
+' MagentoCorp issues and redeems commercial paper. 
+' DigiBank, BigFund, BrokerHouse and HedgeMatic all trade commercial paper with each other. 
+' RateM provides various measures of risk for commercial paper.
+'
+@startuml
+
+participant MagentoCorp #yellow
+participant DigiBank
+collections PaperNet #green
+participant BigFund
+participant BrokerHouse
+participant HedgeMatic
+participant RateM
+
+== 100 PaperNet commercial paper network ==
+MagentoCorp &lt;-&gt; PaperNet: issue/redeem
+note right #aqua
+  MagentoCorp issues and 
+  redeems commercial paper. 
+end note
+DigiBank &lt;-&gt; PaperNet: buy/sell/redeem
+note right
+	DigiBank, BigFund, BrokerHouse and HedgeMatic 
+    all trade commercial paper with each other. 
+end note
+BigFund &lt;-&gt; PaperNet: buy/sell/redeem
+BrokerHouse &lt;-&gt; PaperNet: buy/sell/redeem
+HedgeMatic &lt;-&gt; PaperNet: buy/sell/redeem
+RateM &lt;-&gt; PaperNet: rate/notify
+note left #red
+	RateM provides various measures of risk 
+    for commercial paper.
+end note
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-hlf-pnet-seq-v1.iuml
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../plantuml.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../puml/ethereum.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../plantuml.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../puml/ethereum.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

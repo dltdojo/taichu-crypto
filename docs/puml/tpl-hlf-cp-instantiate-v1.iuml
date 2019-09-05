@@ -1,0 +1,24 @@
+' Commercial paper tutorial
+' https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html
+'
+@startuml
+folder MagnetoCorp {
+    agent "Admin\nConsole" as MAC
+}
+
+folder PaperNet {
+    node CA 
+    node Orderer
+    folder "MagnetoCorp" as PNMC {
+       package "Peer" as MPEER {
+           artifact "Paper\nContract" as PNPC
+       } 
+       package "Chaincode\nContainer" as CC { 
+         artifact "Paper\nContract" as PNPC_CC
+       }
+    }
+}
+MAC --> MPEER: = 1. Instantiate
+MPEER --> CC : = 2. Create
+PNPC --> PNPC_CC: = 3. Copy
+@enduml

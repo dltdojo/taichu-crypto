@@ -1,0 +1,17 @@
+' https://hyperledger-fabric.readthedocs.io/en/release-1.4/developapps/architecture.html
+' Lifecycle
+'
+@startuml
+'hide empty description
+[*] --> issued : issue
+note top
+ Commercial papers transition between 
+ issued, trading and redeemed states 
+ by means of the issue, buy and redeem 
+ transactions.
+end note
+issued -> trading : buy
+trading -> trading: buy
+trading -down-> redeemed: redeem
+redeemed --> [*]
+@enduml

@@ -1,0 +1,15 @@
+' Commercial paper tutorial
+' https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html
+'
+@startuml
+participant MagnetoCorp as COM
+actor Alice as Alice #red
+collections PaperNet as NET
+actor Bob as Bob #Yellow
+participant DigiBank as BANK
+COM -> Alice: Authz
+BANK -> Bob: Authz
+Alice -> NET: Issue
+Bob -> NET:  Buy 
+Bob -> NET: Redeem
+@enduml

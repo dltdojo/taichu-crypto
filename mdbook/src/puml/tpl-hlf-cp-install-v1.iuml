@@ -1,0 +1,23 @@
+' Commercial paper tutorial
+' https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html
+'
+@startuml
+folder MagnetoCorp {
+    agent "Admin\nConsole" as MAC
+    artifact "Paper\nContract" as MPC
+}
+
+folder PaperNet {
+    node CA 
+    node Orderer
+    folder "MagnetoCorp" as PNMC {
+       package "Peer" as MPEER {
+         node "Ledger\nDatabase" as LDB
+         artifact "Paper\nContract" as PNPC
+       } 
+    }
+}
+MPC -> MAC
+MAC --> MPEER: install
+PNPC <-> LDB: getState/putState
+@enduml

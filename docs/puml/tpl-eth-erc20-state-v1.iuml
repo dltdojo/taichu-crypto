@@ -1,0 +1,21 @@
+' WIP
+' https://eips.ethereum.org/EIPS/eip-20
+'
+@startuml
+'hide empty description
+[*] --> issued : issue
+note top
+ EIP 20: ERC-20 Token Standard
+  mapping (address => uint256) private _balances;
+  mapping (address => mapping (address => uint256)) private _allowances;
+  
+  transfer(address recipient, uint256 amount)
+  allowance(address owner, address spender)
+  approve(address spender, uint256 amount)
+  transferFrom(address sender, address recipient, uint256 amount)
+end note
+issued -> active : deploy
+active -> active: transfer
+active -down-> allowance: allowance
+allowance -> active: approve
+@enduml
