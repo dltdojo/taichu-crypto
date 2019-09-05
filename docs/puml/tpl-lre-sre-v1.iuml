@@ -1,0 +1,29 @@
+' WIP
+' 
+@startuml
+actor "Ledger Reliability Engineer" as LRE #Orange
+actor "Site Reliability Engineer" as SRE #YellowGreen
+interface  DevOps
+
+folder Site #YellowGreen {
+  agent app 
+  database database
+  cloud cloud
+  node node
+  queue queue
+  storage storage
+}
+
+folder Ledger #Orange {
+  agent "dApp\nConsensus Algorithm" as DAPP
+  agent app as LAPP
+  database database as LDB
+  node peer as LPEER
+  storage storage as LSTORAGE
+}
+
+Ledger -- LRE
+LRE - DevOps
+Site -- SRE
+SRE -- DevOps
+@enduml
