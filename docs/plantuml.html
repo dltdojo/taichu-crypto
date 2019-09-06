@@ -162,6 +162,7 @@
 <li><a href="#web30-%E6%A6%82%E5%BF%B5-tpl-web123-v1iuml">Web3.0 概念: tpl-web123-v1.iuml</a></li>
 <li><a href="#http-%E6%A6%82%E5%BF%B5-tpl-story-http-v1iuml">HTTP 概念: tpl-story-http-v1.iuml</a></li>
 <li><a href="#exit-voice-and-loyalty%E5%8F%9B%E9%9B%A2%E6%8A%97%E8%AD%B0%E8%88%87%E5%BF%A0%E8%AA%A0-tpl-evl-v1iuml">Exit, Voice and Loyalty《叛離、抗議與忠誠》: tpl-evl-v1.iuml</a></li>
+<li><a href="#the-site-reliability-workbook-ch2---implementing-slos--tpl-sre-slos-v1iuml">The Site Reliability Workbook Ch2 - Implementing SLOs : tpl-sre-slos-v1.iuml</a></li>
 </ul>
 </li>
 <li><a href="#%E7%B5%84%E4%BB%B6%E5%9C%96%E6%A8%A3%E6%9D%BF-component-diagram-template">組件圖樣板 Component Diagram Template</a>
@@ -352,6 +353,71 @@ Alice -&gt; ORG : 組織運作良好
 </code></pre>
 <p>引用</p>
 <pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-evl-v1.iuml
+</code></pre>
+<h2><a class="header" href="#the-site-reliability-workbook-ch2---implementing-slos--tpl-sre-slos-v1iuml" id="the-site-reliability-workbook-ch2---implementing-slos--tpl-sre-slos-v1iuml">The Site Reliability Workbook Ch2 - Implementing SLOs : tpl-sre-slos-v1.iuml</a></h2>
+<p><img src="puml/tpl-sre-slos-v1.svg" alt="tpl-sre-slos-v1.svg" /></p>
+<p>內容</p>
+<pre><code>' WIP
+' The Site Reliability Workbook Chapter 2 - Implementing SLOs
+' https://landing.google.com/sre/workbook/chapters/implementing-slos/
+' Service Level Objectives/Service Level Indicators
+@startuml
+skinparam ParticipantPadding 10
+skinparam BoxPadding 10
+
+actor &quot;使用者&quot; as User #Yellow
+
+box &quot;Request-driven\n需求導向&quot; #LightBlue
+	participant &quot;Web Site&quot; as Web
+	participant &quot;API Service&quot; as Api
+end box
+
+box &quot;Pipeline\n管路&quot; #LightCoral
+	participant &quot;Pipeline Job&quot; as Job
+	participant Log
+end box
+
+box &quot;Storage\n儲存&quot; #LightPink
+	database &quot;GameState&quot; as DB
+	database UserData
+	participant UserFile
+end box
+
+note right of Web
+  SLIs: 
+  Availability
+  Latency
+  Quality
+end note
+
+User -&gt; Web
+Web -&gt; DB
+Api -&gt; DB
+
+
+Api -&gt; Job
+
+note right of Job
+  SLIs: 
+  Freshness
+  Correctness
+  Coverage
+end note
+
+DB -&gt; UserData
+UserData -&gt; Api
+
+
+note right of DB
+  SLIs: 
+  Durability
+end note
+
+actor &quot;SRE\n網站可靠性工程師&quot; as RE #Red
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-sre-slos-v1.iuml
 </code></pre>
 <h1><a class="header" href="#組件圖樣板-component-diagram-template" id="組件圖樣板-component-diagram-template">組件圖樣板 Component Diagram Template</a></h1>
 <p><a href="http://plantuml.com/component-diagram">Component Diagram - PlantUML</a></p>

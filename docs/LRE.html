@@ -148,17 +148,103 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#ledger-reliability-engineering-lre" id="ledger-reliability-engineering-lre">Ledger Reliability Engineering (LRE)</a></h1>
+                        <ul>
+<li><a href="#ledger-reliability-engineering-lre">Ledger Reliability Engineering (LRE)</a>
+<ul>
+<li><a href="#todo">TODO</a></li>
+</ul>
+</li>
+<li><a href="#site-reliability-engineering">Site Reliability Engineering</a>
+<ul>
+<li><a href="#implementing-slos">Implementing SLOs</a></li>
+<li><a href="#google-sre-books">Google SRE Books</a></li>
+<li><a href="#telemetry-projects">Telemetry Projects</a></li>
+<li><a href="#sre-golden-signals">SRE Golden Signals</a></li>
+</ul>
+</li>
+<li><a href="#chaos-engineering">Chaos Engineering</a></li>
+</ul>
+<h1><a class="header" href="#ledger-reliability-engineering-lre" id="ledger-reliability-engineering-lre">Ledger Reliability Engineering (LRE)</a></h1>
 <p>Ledger Reliability Engineering (LRE) 與 Site Reliability Engineering (SRE) 應用的 DevOps 工具類似，差異在 dApp 的運作模式牽涉到與他人他社的共識互動機制，而且不太可能單一組織內所有應用都是 dApp，故 LRE 也需兼顧 App 維運需要。</p>
 <p><img src="../puml/tpl-lre-sre-v1.svg" alt="LRE SRE" /></p>
 <p>目前談到 LRE 這塊的資源較少，故先以收集 SRE 為主。</p>
-<h2><a class="header" href="#site-reliability-engineering" id="site-reliability-engineering">Site Reliability Engineering</a></h2>
+<h2><a class="header" href="#todo" id="todo">TODO</a></h2>
+<ul>
+<li><a href="https://landing.google.com/sre/workbook/chapters/implementing-slos/">Error Budgets</a> 跨組織代幣化設計</li>
+</ul>
+<h1><a class="header" href="#site-reliability-engineering" id="site-reliability-engineering">Site Reliability Engineering</a></h1>
 <ul>
 <li><a href="https://github.com/dastergon/awesome-sre/blob/master/README.md#hiring">Awesome Site Reliability Engineering</a></li>
 <li><a href="https://www.hostedgraphite.com/blog/its-dead-jim-how-we-write-an-incident-postmortem">&quot;It's dead, Jim&quot;: How we write an incident postmortem</a></li>
 <li><a href="https://rickhw.github.io/2018/08/03/DevOps/An-Introduction-to-SRE/">推薦：Site Reliability Engineering (SRE, 網站可靠性工程)</a></li>
 </ul>
-<h2><a class="header" href="#chaos-engineering" id="chaos-engineering">Chaos Engineering</a></h2>
+<h2><a class="header" href="#implementing-slos" id="implementing-slos">Implementing SLOs</a></h2>
+<p><img src="puml/tpl-sre-slos-v1.svg" alt="tpl-sre-slos-v1.svg" /></p>
+<p>參照 <a href="https://landing.google.com/sre/workbook/chapters/implementing-slos/">The Site Reliability Workbook Chapter 2 - Implementing SLOs</a>
+建議一開始設計 SLOs</p>
+<ul>
+<li>選一個想用來定義 SLOs 的應用程式就好，其他的可以後面加進來。</li>
+<li>確認使用者是誰，就是那個應用程式最佳化後會很高興的人。</li>
+<li>選那些使用者通用的系統任務或是關鍵活動 (上圖)。</li>
+<li>畫出高階架構圖，顯示關鍵組件、需求流、資料流與關鍵性的服務依賴，關鍵組件做成下列組合包(上圖分色)。
+<ul>
+<li>Request-driven 需求導向</li>
+<li>Pipeline 管道</li>
+<li>Storage 儲存</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr><th>Type of service</th><th align="left">Type of SLI</th></tr></thead><tbody>
+<tr><td>Request-driven</td><td align="left">Availability</td></tr>
+<tr><td>Request-driven</td><td align="left">Latency</td></tr>
+<tr><td>Request-driven</td><td align="left">Quality</td></tr>
+<tr><td>Pipeline</td><td align="left">Freshness</td></tr>
+<tr><td>Pipeline</td><td align="left">Correctness</td></tr>
+<tr><td>Pipeline</td><td align="left">Coverage</td></tr>
+<tr><td>Storage</td><td align="left">Durability</td></tr>
+</tbody></table>
+<h2><a class="header" href="#google-sre-books" id="google-sre-books">Google SRE Books</a></h2>
+<p><a href="https://landing.google.com/sre/books/">Site Reliability Engineering</a> </p>
+<p><a href="https://landing.google.com/sre/books/">The Site Reliability Workbook</a></p>
+<h2><a class="header" href="#telemetry-projects" id="telemetry-projects">Telemetry Projects</a></h2>
+<p><a href="https://github.com/open-telemetry">OpenTelemetry</a>
+<a href="https://github.com/paritytech/substrate-telemetry">paritytech/substrate-telemetry</a>
+<a href="https://github.com/GregBowyer/opentelemetry-rs">OpenTelemetry implementation in rust</a></p>
+<h2><a class="header" href="#sre-golden-signals" id="sre-golden-signals">SRE Golden Signals</a></h2>
+<p><a href="https://medium.com/faun/how-to-monitor-the-sre-golden-signals-1391cadc7524">How to Monitor the SRE Golden Signals</a></p>
+<ul>
+<li>From the Google SRE book: 
+<ul>
+<li>Latency</li>
+<li>Traffic</li>
+<li>Errors</li>
+<li>Saturation</li>
+</ul>
+</li>
+<li>USE Method (from Brendan Gregg): 
+<ul>
+<li>Utilization</li>
+<li>Saturation</li>
+<li>Errors</li>
+</ul>
+</li>
+<li>RED Method (from Tom Wilkie): 
+<ul>
+<li>Rate</li>
+<li>Errors</li>
+<li>Duration</li>
+</ul>
+</li>
+</ul>
+<p>5 Signals</p>
+<ul>
+<li>Rate — Request rate, in requests/sec</li>
+<li>Errors — Error rate, in errors/sec</li>
+<li>Latency — Response time, including queue/wait time, in milliseconds.</li>
+<li>Saturation — How overloaded something is, which is related to utilization but more directly measured by things like queue depth (or sometimes concurrency). As a queue measurement, this becomes non-zero when you are saturated, often not much before. Usually a counter.</li>
+<li>Utilization — How busy the resource or system is. Usually expressed 0–100% and most useful for predictions (as Saturation is probably more useful).</li>
+</ul>
+<h1><a class="header" href="#chaos-engineering" id="chaos-engineering">Chaos Engineering</a></h1>
 <p><a href="https://rickhw.github.io/2018/10/08/DevOps/Chaos-Engineering/">Chaos Engineering (混沌工程)</a></p>
 
                     </main>
