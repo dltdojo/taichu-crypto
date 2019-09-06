@@ -4,13 +4,13 @@
 
 Ledger Reliability Engineering (LRE) 與 Site Reliability Engineering (SRE) 應用的 DevOps 工具類似，差異在 dApp 的運作模式牽涉到與他人他社的共識互動機制，而且不太可能單一組織內所有應用都是 dApp，故 LRE 也需兼顧 App 維運需要。
 
-![LRE SRE](../puml/tpl-lre-sre-v1.svg)
+![LRE SRE](puml/tpl-lre-sre-v1.svg)
 
 目前談到 LRE 這塊的資源較少，故先以收集 SRE 為主。
 
 ## TODO
 
-- [Error Budgets](https://landing.google.com/sre/workbook/chapters/implementing-slos/) 跨組織代幣化設計
+- [Error Budgets](https://landing.google.com/sre/workbook/chapters/implementing-slos/) 跨組織代幣化設計，並改為 Consensus Budgets。
 
 # Site Reliability Engineering
 
