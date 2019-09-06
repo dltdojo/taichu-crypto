@@ -96,6 +96,23 @@ web123-v1.puml 套用模板
 !include https://dltdojo.github.io/taichu-crypto/puml/tpl-evl-v1.iuml
 ```
 
+## The Site Reliability Workbook Ch2 - Implementing SLOs : tpl-sre-slos-v1.iuml
+
+
+![tpl-sre-slos-v1.svg](puml/tpl-sre-slos-v1.svg)
+
+內容
+
+```
+{{#include puml/tpl-sre-slos-v1.iuml}}
+```
+
+引用
+
+```
+!include https://dltdojo.github.io/taichu-crypto/puml/tpl-sre-slos-v1.iuml
+```
+
 
 # 組件圖樣板 Component Diagram Template
 

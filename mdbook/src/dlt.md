@@ -9,6 +9,11 @@
 
 ## Hyperledger Indy
 
+## Kusama Network
+
+- [telemetry.polkadot](https://telemetry.polkadot.io/)
+- [paritytech/substrate-telemetry](https://github.com/paritytech/substrate-telemetry)
+
 ## TODO
 
 - [ ] Hyperledger Ursa

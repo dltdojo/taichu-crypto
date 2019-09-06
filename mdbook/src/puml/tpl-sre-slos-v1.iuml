@@ -1,0 +1,58 @@
+' WIP
+' The Site Reliability Workbook Chapter 2 - Implementing SLOs
+' https://landing.google.com/sre/workbook/chapters/implementing-slos/
+' Service Level Objectives/Service Level Indicators
+@startuml
+skinparam ParticipantPadding 10
+skinparam BoxPadding 10
+
+actor "使用者" as User #Yellow
+
+box "Request-driven\n需求導向" #LightBlue
+	participant "Web Site" as Web
+	participant "API Service" as Api
+end box
+
+box "Pipeline\n管路" #LightCoral
+	participant "Pipeline Job" as Job
+	participant Log
+end box
+
+box "Storage\n儲存" #LightPink
+	database "GameState" as DB
+	database UserData
+	participant UserFile
+end box
+
+note right of Web
+  SLIs: 
+  Availability
+  Latency
+  Quality
+end note
+
+User -> Web
+Web -> DB
+Api -> DB
+
+
+Api -> Job
+
+note right of Job
+  SLIs: 
+  Freshness
+  Correctness
+  Coverage
+end note
+
+DB -> UserData
+UserData -> Api
+
+
+note right of DB
+  SLIs: 
+  Durability
+end note
+
+actor "SRE\n網站可靠性工程師" as RE #Red
+@enduml
