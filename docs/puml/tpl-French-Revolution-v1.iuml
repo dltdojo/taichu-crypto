@@ -1,0 +1,35 @@
+' Révolution française
+' https://zh.wikipedia.org/zh-tw/%E6%B3%95%E5%9B%BD%E5%A4%A7%E9%9D%A9%E5%91%BD
+' 法國大革命（法語：Révolution française， 1789年－1799年）是法國的一段社會激進與政治動盪的時期，對於法國歷史以及全歐洲都留下深刻廣泛影響。
+'
+@startuml
+skinparam ParticipantPadding 5
+skinparam BoxPadding 5
+
+actor "法國國王\n路易十六" as King #Yellow
+
+box "三級會議" #Red
+	actor "代表甲" as A
+	actor "代表乙" as B
+end box
+
+database "議會大樓" as BUILDING
+
+box "國民議會\n室內網球場" #Blue
+	actor "代表丙" as C
+	actor "代表丁" as D
+end box
+
+participant "巴士底監獄" as Bastille
+
+== 三級會議 ==
+A <-> B : 衝突
+King -> BUILDING: 整修關閉
+== 附近網球場 ==
+B -> C : 換地方
+C <-> D : 繼續衝突
+note right: 網球場宣言
+D -> Bastille
+== 法國大革命 ==
+Bastille --> King : 三年後法蘭西第一共和國成立
+@enduml

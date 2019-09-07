@@ -11,6 +11,7 @@ Ledger Reliability Engineering (LRE) 與 Site Reliability Engineering (SRE) 應�
 ## TODO
 
 - [Error Budgets](https://landing.google.com/sre/workbook/chapters/implementing-slos/) 跨組織代幣化設計，並改為 Consensus Budgets。
+- taichu-raw:443/metrics 
 
 # Site Reliability Engineering
 

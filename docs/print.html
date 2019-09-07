@@ -490,6 +490,7 @@ components:
 <li><a href="taichu-raw/others.html#%E7%94%9F%E6%88%90%E8%87%A8%E6%99%82%E6%80%A7-tls-%E6%86%91%E8%AD%89%E8%88%87%E9%87%91%E9%91%B0">生成臨時性 TLS 憑證與金鑰</a></li>
 </ul>
 </li>
+<li><a href="taichu-raw/others.html#rcrpg---rosetta-code">RCRPG - Rosetta Code</a></li>
 </ul>
 <h1><a class="header" href="#https-服務型態" id="https-服務型態">HTTPS 服務型態</a></h1>
 <h2><a class="header" href="#prometheus-support" id="prometheus-support">Prometheus Support</a></h2>
@@ -520,7 +521,7 @@ api_http_requests_total{endpoint=&quot;/favicon.ico&quot;,method=&quot;GET&quot;
 </code></pre>
 <h1><a class="header" href="#cli-命令列型態" id="cli-命令列型態">CLI 命令列型態</a></h1>
 <h2><a class="header" href="#生成臨時性-tls-憑證與金鑰" id="生成臨時性-tls-憑證與金鑰">生成臨時性 TLS 憑證與金鑰</a></h2>
-<p><a href="https://crates.io/crates/rcgen">rcgen</a></p>
+<p>基於 <a href="https://crates.io/crates/rcgen">rcgen</a> 功能生成金鑰與憑證。</p>
 <pre><code class="language-shell">$ taichu-raw -c
 -----BEGIN CERTIFICATE-----
 MIIBZTCCAQygAwIBAgIBKjAKBggqhkjOPQQDAjAhMR8wHQYDVQQDDBZyY2dlbiBz
@@ -539,6 +540,57 @@ nVXwu4/kA0Gn4Nm1HAeuVlpV7AWhRANCAARBkJ9KK6fQthT5Q8ZA9m/eSt1ZcAB2
 ArDVk9yTMe2wnxx5BneFOtchlHu2ZF3KanOhlQi2jI7aQ/7Tw2rkmar3
 -----END PRIVATE KEY-----
 </code></pre>
+<h1><a class="header" href="#rcrpg---rosetta-code" id="rcrpg---rosetta-code">RCRPG - Rosetta Code</a></h1>
+<ul>
+<li><a href="https://github.com/pistacchio/rcrpg-rust">pistacchio/rcrpg-rust</a></li>
+<li><a href="https://rosettacode.org/wiki/RCRPG/Rust">RCRPG - Rosetta Code</a></li>
+<li><a href="https://rosettacode.org/wiki/Category:Programming_Tasks">Rosetta Code : Tasks</a></li>
+</ul>
+<p>互動遊戲功能與規則:</p>
+<ul>
+<li>房間座標軸 room-based navigation in three integer dimensions (x,y,z)</li>
+<li>置物箱 player inventory</li>
+<li>錘梯金三種物件 three types of item: sledge, gold and ladder</li>
+<li>任務座標 a goal coordinate</li>
+</ul>
+<p>通道用錘打開，有梯在地非手持才能爬上層房間，金無用。</p>
+<p>TODO </p>
+<ul>
+<li>中英文對照</li>
+<li>加虛擬通貨錢包(BIP39/Keys)配置</li>
+<li>加學習路線</li>
+</ul>
+<pre><code class="language-shell">$ cargo run
+
+Grab the sledge and make your way to room 1,1,5 for a non-existant prize!
+
+You need a sledge to dig rooms and ladders to go upwards.
+Valid commands are: directions (north, south...), dig, take, drop, equip, inventory and look.
+Additionally you can tag rooms with the 'name' command and alias commands with 'alias'.      
+Have fun!
+look
+The room where it all started... On the floor you can see: a sledge, a ladder. There are no exits in this room.
+north
+There's no exit in that direction!
+dig north
+With your bare hands?
+equip sledge
+Item equipped
+dig north
+There is now an exit northward
+north
+Room at (0, -1, 0). On the floor you can see: a sledge. There is one exit: south.
+
+</code></pre>
+<p>Rosetta Code 範例程式碼轉入本案的 Apache License 授權問題，該網站寫到授權為 GFDL</p>
+<blockquote>
+<p>Content is available under GNU Free Documentation License 1.2 unless otherwise noted.</p>
+</blockquote>
+<p>引用<a href="https://zh.wikipedia.org/zh-tw/GNU%E8%87%AA%E7%94%B1%E6%96%87%E6%A1%A3%E8%AE%B8%E5%8F%AF%E8%AF%81">GNU自由文檔許可證</a>說明</p>
+<blockquote>
+<p>GNU自由檔案授權條款與GNU通用公眾授權條款(GPL)雙向不相容，導致範例程式碼必須雙重授權才能既使用在檔案又使用在程式內。這點受到批評。</p>
+</blockquote>
+<p>重製範例碼改作放在 Apache License 授權專案可能有爭議，這裡改作置入當成程式碼著作權說明案例。</p>
 <h1><a class="header" href="#mad-white-1" id="mad-white-1">MAD WHITE</a></h1>
 <ul>
 <li><a href="mad-white%5Cindex.html#getting-started">Getting Started</a>
@@ -895,6 +947,7 @@ Hyperledger Burrow</li>
 <h2><a class="header" href="#todo-3" id="todo-3">TODO</a></h2>
 <ul>
 <li><a href="https://landing.google.com/sre/workbook/chapters/implementing-slos/">Error Budgets</a> 跨組織代幣化設計，並改為 Consensus Budgets。</li>
+<li>taichu-raw:443/metrics </li>
 </ul>
 <h1><a class="header" href="#site-reliability-engineering" id="site-reliability-engineering">Site Reliability Engineering</a></h1>
 <ul>
@@ -974,7 +1027,7 @@ Hyperledger Burrow</li>
 <!-- toc -->
 <h1><a class="header" href="#html-測試頁及樣版" id="html-測試頁及樣版">HTML 測試頁及樣版</a></h1>
 <ul>
-<li><a href="web/testpage-pre.html">font Roboto Mono, monospace, cowsay and colorchange</a></li>
+<li><a href="web/testpage-pre.html">閃字網頁 font Roboto Mono, monospace, cowsay and colorchange</a></li>
 <li><a href="web/testpage-animation.html">testpage animation with taichu-raw.css </a></li>
 </ul>
 <h1><a class="header" href="#openssl" id="openssl">OpenSSL</a></h1>
@@ -1226,6 +1279,8 @@ DNS.3 = localhost
 <li><a href="plantuml.html#http-%E6%A6%82%E5%BF%B5-tpl-story-http-v1iuml">HTTP 概念: tpl-story-http-v1.iuml</a></li>
 <li><a href="plantuml.html#exit-voice-and-loyalty%E5%8F%9B%E9%9B%A2%E6%8A%97%E8%AD%B0%E8%88%87%E5%BF%A0%E8%AA%A0-tpl-evl-v1iuml">Exit, Voice and Loyalty《叛離、抗議與忠誠》: tpl-evl-v1.iuml</a></li>
 <li><a href="plantuml.html#the-site-reliability-workbook-ch2---implementing-slos--tpl-sre-slos-v1iuml">The Site Reliability Workbook Ch2 - Implementing SLOs : tpl-sre-slos-v1.iuml</a></li>
+<li><a href="plantuml.html#crypto-custody--tpl-custody-fork-v1iuml">Crypto Custody : tpl-custody-fork-v1.iuml</a></li>
+<li><a href="plantuml.html#%E6%B3%95%E5%9C%8B%E5%A4%A7%E9%9D%A9%E5%91%BD--tpl-french-revolution-v1iuml">法國大革命 : tpl-French-Revolution-v1.iuml</a></li>
 </ul>
 </li>
 <li><a href="plantuml.html#%E7%B5%84%E4%BB%B6%E5%9C%96%E6%A8%A3%E6%9D%BF-component-diagram-template">組件圖樣板 Component Diagram Template</a>
@@ -1481,6 +1536,111 @@ actor &quot;SRE\n網站可靠性工程師&quot; as RE #Red
 </code></pre>
 <p>引用</p>
 <pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-sre-slos-v1.iuml
+</code></pre>
+<h2><a class="header" href="#crypto-custody--tpl-custody-fork-v1iuml" id="crypto-custody--tpl-custody-fork-v1iuml">Crypto Custody : tpl-custody-fork-v1.iuml</a></h2>
+<p><a href="https://www.coindesk.com/the-crypto-custody-conundrum-what-are-we-even-talking-about">The Crypto Custody Conundrum: What Are We Even Talking About?</a></p>
+<p><img src="puml/tpl-custody-fork-v1.svg" alt="tpl-custody-fork-v1.svg" /></p>
+<p>內容</p>
+<pre><code>' https://www.coindesk.com/the-crypto-custody-conundrum-what-are-we-even-talking-about
+' The Crypto Custody Conundrum: What Are We Even Talking About?
+' 借據、本票(民法債務不履行) 保管條(刑法侵占)
+@startuml
+skinparam ParticipantPadding 5
+skinparam BoxPadding 5
+
+actor &quot;使用者&quot; as User #Yellow
+box &quot;司法&quot; #LightSalmon
+	participant &quot;民法\nCivil law&quot; as CIVIL
+	participant &quot;刑法\nCriminal law&quot; as CRIMINAL
+end box
+actor &quot;SafeKeeping\n保管人&quot; as SK #Red
+== 100 C is for custody ==
+autonumber 101
+User -&gt; SK: 保管申請
+User -&gt; SK: 交付保管物
+SK -&gt; User: 保管證明\n契約、借據、本票(民法債務不履行)\n保管條(刑法侵占)
+User -&gt; SK: 要求返還
+SK -&gt; SK: 無法返還
+SK &lt;-&gt; User: 協調
+User -&gt; CIVIL: 最佳利益???
+User -&gt; CRIMINAL: 最佳利益???
+== 200 C is for complication ==
+autonumber 201
+User &lt;-&gt; SK
+note right
+無記名資產
+金鑰即所有權
+交付金鑰與轉帳之保管差異
+end note
+== 300 C is for consent ==
+autonumber 301
+User &lt;-&gt; SK
+note right #red
+多簽之部分所有權保管
+end note
+== 400 C is for consumer ==
+autonumber 401
+User &lt;-&gt; SK
+note right
+金融消費者保護法
+虛擬通貨適用
+end note
+== 500 C is for challenge ==
+autonumber 501
+User &lt;-&gt; SK
+note right
+有種東西稱為分叉 fork
+ownership?
+liability?
+end note
+
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-custody-fork-v1.iuml
+</code></pre>
+<h2><a class="header" href="#法國大革命--tpl-french-revolution-v1iuml" id="法國大革命--tpl-french-revolution-v1iuml">法國大革命 : tpl-French-Revolution-v1.iuml</a></h2>
+<p><a href="https://zh.wikipedia.org/zh-tw/%E6%B3%95%E5%9B%BD%E5%A4%A7%E9%9D%A9%E5%91%BD">法國大革命</a></p>
+<p><img src="puml/tpl-French-Revolution-v1.svg" alt="tpl-French-Revolution-v1.svg" /></p>
+<p>內容</p>
+<pre><code>' Révolution française
+' https://zh.wikipedia.org/zh-tw/%E6%B3%95%E5%9B%BD%E5%A4%A7%E9%9D%A9%E5%91%BD
+' 法國大革命（法語：Révolution française， 1789年－1799年）是法國的一段社會激進與政治動盪的時期，對於法國歷史以及全歐洲都留下深刻廣泛影響。
+'
+@startuml
+skinparam ParticipantPadding 5
+skinparam BoxPadding 5
+
+actor &quot;法國國王\n路易十六&quot; as King #Yellow
+
+box &quot;三級會議&quot; #Red
+	actor &quot;代表甲&quot; as A
+	actor &quot;代表乙&quot; as B
+end box
+
+database &quot;議會大樓&quot; as BUILDING
+
+box &quot;國民議會\n室內網球場&quot; #Blue
+	actor &quot;代表丙&quot; as C
+	actor &quot;代表丁&quot; as D
+end box
+
+participant &quot;巴士底監獄&quot; as Bastille
+
+== 三級會議 ==
+A &lt;-&gt; B : 衝突
+King -&gt; BUILDING: 整修關閉
+== 附近網球場 ==
+B -&gt; C : 換地方
+C &lt;-&gt; D : 繼續衝突
+note right: 網球場宣言
+D -&gt; Bastille
+== 法國大革命 ==
+Bastille --&gt; King : 三年後法蘭西第一共和國成立
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-French-Revolution-v1.iuml
 </code></pre>
 <h1><a class="header" href="#組件圖樣板-component-diagram-template" id="組件圖樣板-component-diagram-template">組件圖樣板 Component Diagram Template</a></h1>
 <p><a href="http://plantuml.com/component-diagram">Component Diagram - PlantUML</a></p>
@@ -2017,6 +2177,7 @@ mathjax-support = true
 <li><a href="https://github.com/w3c">W3C</a></li>
 <li><a href="https://github.com/plantuml">plantuml</a></li>
 <li><a href="https://github.com/hashicorp">HashiCorp</a></li>
+<li><a href="https://rosettacode.org/wiki/Category:Programming_Tasks">Rosetta Code : Tasks</a></li>
 </ul>
 <h2><a class="header" href="#網路資源" id="網路資源">網路資源</a></h2>
 <ul>

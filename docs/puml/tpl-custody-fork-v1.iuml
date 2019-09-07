@@ -1,0 +1,54 @@
+' https://www.coindesk.com/the-crypto-custody-conundrum-what-are-we-even-talking-about
+' The Crypto Custody Conundrum: What Are We Even Talking About?
+' 借據、本票(民法債務不履行) 保管條(刑法侵占)
+@startuml
+skinparam ParticipantPadding 5
+skinparam BoxPadding 5
+
+actor "使用者" as User #Yellow
+box "司法" #LightSalmon
+	participant "民法\nCivil law" as CIVIL
+	participant "刑法\nCriminal law" as CRIMINAL
+end box
+actor "SafeKeeping\n保管人" as SK #Red
+== 100 C is for custody ==
+autonumber 101
+User -> SK: 保管申請
+User -> SK: 交付保管物
+SK -> User: 保管證明\n契約、借據、本票(民法債務不履行)\n保管條(刑法侵占)
+User -> SK: 要求返還
+SK -> SK: 無法返還
+SK <-> User: 協調
+User -> CIVIL: 最佳利益???
+User -> CRIMINAL: 最佳利益???
+== 200 C is for complication ==
+autonumber 201
+User <-> SK
+note right
+無記名資產
+金鑰即所有權
+交付金鑰與轉帳之保管差異
+end note
+== 300 C is for consent ==
+autonumber 301
+User <-> SK
+note right #red
+多簽之部分所有權保管
+end note
+== 400 C is for consumer ==
+autonumber 401
+User <-> SK
+note right
+金融消費者保護法
+虛擬通貨適用
+end note
+== 500 C is for challenge ==
+autonumber 501
+User <-> SK
+note right
+有種東西稱為分叉 fork
+ownership?
+liability?
+end note
+
+@enduml

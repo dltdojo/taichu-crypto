@@ -113,6 +113,42 @@ web123-v1.puml 套用模板
 !include https://dltdojo.github.io/taichu-crypto/puml/tpl-sre-slos-v1.iuml
 ```
 
+## Crypto Custody : tpl-custody-fork-v1.iuml
+
+[The Crypto Custody Conundrum: What Are We Even Talking About?](https://www.coindesk.com/the-crypto-custody-conundrum-what-are-we-even-talking-about)
+
+![tpl-custody-fork-v1.svg](puml/tpl-custody-fork-v1.svg)
+
+內容
+
+```
+{{#include puml/tpl-custody-fork-v1.iuml}}
+```
+
+引用
+
+```
+!include https://dltdojo.github.io/taichu-crypto/puml/tpl-custody-fork-v1.iuml
+```
+
+## 法國大革命 : tpl-French-Revolution-v1.iuml
+
+[法國大革命](https://zh.wikipedia.org/zh-tw/%E6%B3%95%E5%9B%BD%E5%A4%A7%E9%9D%A9%E5%91%BD)
+
+![tpl-French-Revolution-v1.svg](puml/tpl-French-Revolution-v1.svg)
+
+內容
+
+```
+{{#include puml/tpl-French-Revolution-v1.iuml}}
+```
+
+引用
+
+```
+!include https://dltdojo.github.io/taichu-crypto/puml/tpl-French-Revolution-v1.iuml
+```
+
 
 # 組件圖樣板 Component Diagram Template
 

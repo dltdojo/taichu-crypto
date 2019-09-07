@@ -163,6 +163,8 @@
 <li><a href="#http-%E6%A6%82%E5%BF%B5-tpl-story-http-v1iuml">HTTP 概念: tpl-story-http-v1.iuml</a></li>
 <li><a href="#exit-voice-and-loyalty%E5%8F%9B%E9%9B%A2%E6%8A%97%E8%AD%B0%E8%88%87%E5%BF%A0%E8%AA%A0-tpl-evl-v1iuml">Exit, Voice and Loyalty《叛離、抗議與忠誠》: tpl-evl-v1.iuml</a></li>
 <li><a href="#the-site-reliability-workbook-ch2---implementing-slos--tpl-sre-slos-v1iuml">The Site Reliability Workbook Ch2 - Implementing SLOs : tpl-sre-slos-v1.iuml</a></li>
+<li><a href="#crypto-custody--tpl-custody-fork-v1iuml">Crypto Custody : tpl-custody-fork-v1.iuml</a></li>
+<li><a href="#%E6%B3%95%E5%9C%8B%E5%A4%A7%E9%9D%A9%E5%91%BD--tpl-french-revolution-v1iuml">法國大革命 : tpl-French-Revolution-v1.iuml</a></li>
 </ul>
 </li>
 <li><a href="#%E7%B5%84%E4%BB%B6%E5%9C%96%E6%A8%A3%E6%9D%BF-component-diagram-template">組件圖樣板 Component Diagram Template</a>
@@ -418,6 +420,111 @@ actor &quot;SRE\n網站可靠性工程師&quot; as RE #Red
 </code></pre>
 <p>引用</p>
 <pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-sre-slos-v1.iuml
+</code></pre>
+<h2><a class="header" href="#crypto-custody--tpl-custody-fork-v1iuml" id="crypto-custody--tpl-custody-fork-v1iuml">Crypto Custody : tpl-custody-fork-v1.iuml</a></h2>
+<p><a href="https://www.coindesk.com/the-crypto-custody-conundrum-what-are-we-even-talking-about">The Crypto Custody Conundrum: What Are We Even Talking About?</a></p>
+<p><img src="puml/tpl-custody-fork-v1.svg" alt="tpl-custody-fork-v1.svg" /></p>
+<p>內容</p>
+<pre><code>' https://www.coindesk.com/the-crypto-custody-conundrum-what-are-we-even-talking-about
+' The Crypto Custody Conundrum: What Are We Even Talking About?
+' 借據、本票(民法債務不履行) 保管條(刑法侵占)
+@startuml
+skinparam ParticipantPadding 5
+skinparam BoxPadding 5
+
+actor &quot;使用者&quot; as User #Yellow
+box &quot;司法&quot; #LightSalmon
+	participant &quot;民法\nCivil law&quot; as CIVIL
+	participant &quot;刑法\nCriminal law&quot; as CRIMINAL
+end box
+actor &quot;SafeKeeping\n保管人&quot; as SK #Red
+== 100 C is for custody ==
+autonumber 101
+User -&gt; SK: 保管申請
+User -&gt; SK: 交付保管物
+SK -&gt; User: 保管證明\n契約、借據、本票(民法債務不履行)\n保管條(刑法侵占)
+User -&gt; SK: 要求返還
+SK -&gt; SK: 無法返還
+SK &lt;-&gt; User: 協調
+User -&gt; CIVIL: 最佳利益???
+User -&gt; CRIMINAL: 最佳利益???
+== 200 C is for complication ==
+autonumber 201
+User &lt;-&gt; SK
+note right
+無記名資產
+金鑰即所有權
+交付金鑰與轉帳之保管差異
+end note
+== 300 C is for consent ==
+autonumber 301
+User &lt;-&gt; SK
+note right #red
+多簽之部分所有權保管
+end note
+== 400 C is for consumer ==
+autonumber 401
+User &lt;-&gt; SK
+note right
+金融消費者保護法
+虛擬通貨適用
+end note
+== 500 C is for challenge ==
+autonumber 501
+User &lt;-&gt; SK
+note right
+有種東西稱為分叉 fork
+ownership?
+liability?
+end note
+
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-custody-fork-v1.iuml
+</code></pre>
+<h2><a class="header" href="#法國大革命--tpl-french-revolution-v1iuml" id="法國大革命--tpl-french-revolution-v1iuml">法國大革命 : tpl-French-Revolution-v1.iuml</a></h2>
+<p><a href="https://zh.wikipedia.org/zh-tw/%E6%B3%95%E5%9B%BD%E5%A4%A7%E9%9D%A9%E5%91%BD">法國大革命</a></p>
+<p><img src="puml/tpl-French-Revolution-v1.svg" alt="tpl-French-Revolution-v1.svg" /></p>
+<p>內容</p>
+<pre><code>' Révolution française
+' https://zh.wikipedia.org/zh-tw/%E6%B3%95%E5%9B%BD%E5%A4%A7%E9%9D%A9%E5%91%BD
+' 法國大革命（法語：Révolution française， 1789年－1799年）是法國的一段社會激進與政治動盪的時期，對於法國歷史以及全歐洲都留下深刻廣泛影響。
+'
+@startuml
+skinparam ParticipantPadding 5
+skinparam BoxPadding 5
+
+actor &quot;法國國王\n路易十六&quot; as King #Yellow
+
+box &quot;三級會議&quot; #Red
+	actor &quot;代表甲&quot; as A
+	actor &quot;代表乙&quot; as B
+end box
+
+database &quot;議會大樓&quot; as BUILDING
+
+box &quot;國民議會\n室內網球場&quot; #Blue
+	actor &quot;代表丙&quot; as C
+	actor &quot;代表丁&quot; as D
+end box
+
+participant &quot;巴士底監獄&quot; as Bastille
+
+== 三級會議 ==
+A &lt;-&gt; B : 衝突
+King -&gt; BUILDING: 整修關閉
+== 附近網球場 ==
+B -&gt; C : 換地方
+C &lt;-&gt; D : 繼續衝突
+note right: 網球場宣言
+D -&gt; Bastille
+== 法國大革命 ==
+Bastille --&gt; King : 三年後法蘭西第一共和國成立
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-French-Revolution-v1.iuml
 </code></pre>
 <h1><a class="header" href="#組件圖樣板-component-diagram-template" id="組件圖樣板-component-diagram-template">組件圖樣板 Component Diagram Template</a></h1>
 <p><a href="http://plantuml.com/component-diagram">Component Diagram - PlantUML</a></p>

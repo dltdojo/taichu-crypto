@@ -81,6 +81,7 @@
 - [W3C](https://github.com/w3c)
 - [plantuml](https://github.com/plantuml)
 - [HashiCorp](https://github.com/hashicorp)
+- [Rosetta Code : Tasks](https://rosettacode.org/wiki/Category:Programming_Tasks)
 
 ## 網路資源
 
