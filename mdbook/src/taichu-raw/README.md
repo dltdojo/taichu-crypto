@@ -25,3 +25,4 @@ cargo run -- -h
 - [ ] [paritytech/substrate](https://github.com/paritytech/substrate)
 - [ ] [libp2p/rust-libp2p](https://github.com/libp2p/rust-libp2p)
 - [ ] [blockchain-network-simple](https://docs.rs/blockchain-network-simple/0.5.0/blockchain_network_simple/)
+- [ ] [Prometheus - veloren](https://gitlab.com/veloren/veloren/merge_requests/486)

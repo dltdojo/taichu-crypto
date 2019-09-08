@@ -1,5 +1,7 @@
 # MAD WHITE
 
+MAD WHITE 目的為試驗使用 [cdr/code-server](https://github.com/cdr/code-server) 專案的 [codercom/code-server](https://hub.docker.com/r/codercom/code-server) image 為基底做出區塊鏈學習環境建置用 image ，目標是學習端不需安裝除了瀏覽器之外的軟體，就能學習、驗證與撰寫各種線上教材的設計學習情境。
+
 <!-- toc -->
 
 # Getting Started
@@ -53,3 +55,4 @@ bash mad-white.sh install|delete|info
 ## 201909
 
 - [ ] [code-sever docker v2 test](https://hub.docker.com/r/codercom/code-server/tags)
+- [ ] [[v2] Rewrite code-server to use new web stuff](https://github.com/cdr/code-server/pull/857)

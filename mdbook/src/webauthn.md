@@ -11,3 +11,9 @@ username/password - public-key
 - [StrongKey/fido2](https://github.com/StrongKey/fido2)
 - [WebAuthn (FIDO2) server library written in Go](https://github.com/duo-labs/webauthn)
 - [Integrate YubiKey 5Ci into Metamask Mobile #1011](https://github.com/MetaMask/metamask-mobile/issues/1011)
+
+## caniuse Web Authentication API 69%
+
+https://caniuse.com/#search=WebAuthn
+
+WebAssembly is 87%
