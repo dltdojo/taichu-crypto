@@ -1,0 +1,35 @@
+@startuml
+
+actor "Developer" as Dev
+actor "Operator" as Op
+actor "學員\nUser" as User #red
+
+rectangle "DLTDOJO3" {
+
+    rectangle "cli" #LightBlue {
+        component "taichu-raw" as TaichuRaw #yellow
+        component mdbook
+    }
+
+    rectangle "Kubernetes" #LightCoral{
+        rectangle "Services" {
+            component "Git\nCICD" as drone
+            component plantuml
+            component registry
+        }
+        rectangle "MAD WHITE" as madwhite {
+            component "code\nserver" as cs
+        }
+        rectangle "MAD RED" as madred {
+            component "veloren\nserver" as vs
+        }
+    }
+}
+
+TaichuRaw -- mdbook
+Op ..> TaichuRaw
+Dev ..> plantuml
+Dev ..> registry
+Dev ..> cs
+User ..> cs
+@enduml

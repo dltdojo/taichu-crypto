@@ -1,0 +1,8 @@
+@startuml
+[*] -> Waiting
+Waiting --> Started: Start
+Waiting --> Finished : Done
+Started --> Finished : Finish
+Started --> Suspended : Suspend
+Suspended --> Started : Resume
+@enduml

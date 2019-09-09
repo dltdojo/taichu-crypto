@@ -149,10 +149,47 @@ web123-v1.puml 套用模板
 !include https://dltdojo.github.io/taichu-crypto/puml/tpl-French-Revolution-v1.iuml
 ```
 
-
 # 組件圖樣板 Component Diagram Template
 
 [Component Diagram - PlantUML](http://plantuml.com/component-diagram)
+
+## State machine Replication SMR
+
+> There are only two hard problems in distributed systems:  2. Exactly-once delivery 1. Guaranteed order of messages 2. Exactly-once delivery @mathiasverraes
+
+[How Does Distributed Consensus Work?](https://medium.com/s/story/lets-take-a-crack-at-understanding-distributed-consensus-dad23d0dc95)
+
+![tpl-state-machine-replication-v1.svg](puml/tpl-state-machine-replication-v1.svg)
+
+內容
+
+```
+{{#include puml/tpl-state-machine-replication-v1.iuml}}
+```
+
+引用
+
+```
+!include https://dltdojo.github.io/taichu-crypto/puml/tpl-state-machine-replication-v1.iuml
+```
+
+## TON tpl-ton-v1.iuml
+
+[TON Blockchain Test Network](https://test.ton.org/)
+
+![tpl-ton-v1.svg](puml/tpl-ton-v1.svg)
+
+內容
+
+```
+{{#include puml/tpl-ton-v1.iuml}}
+```
+
+引用
+
+```
+!include https://dltdojo.github.io/taichu-crypto/puml/tpl-ton-v1.iuml
+```
 
 ## TV Buddha by Nam June Paik tpl-tv-buddha 
 
@@ -172,10 +209,45 @@ web123-v1.puml 套用模板
 !include https://dltdojo.github.io/taichu-crypto/puml/tpl-tv-buddha-v1.iuml
 ```
 
+## DLTDOJO3 v1 tpl-dltdojo3-v1.iuml
+
+![tpl-dltdojo3-v1.svg](puml/tpl-dltdojo3-v1.svg)
+
+內容
+
+```
+{{#include puml/tpl-dltdojo3-v1.iuml}}
+```
+
+引用
+
+```
+!include https://dltdojo.github.io/taichu-crypto/puml/tpl-dltdojo3-v1.iuml
+```
+
+
 ## WIP tpl-dltdojo3-x
 
 ![Comp](puml/dltdojo3-comp-template.svg)
 
 ```
 {{#include puml/comp-template.puml}}
+```
+
+# 狀態圖樣版 State Diagram Template
+
+## tpl-state-machine-v1.iuml
+
+![tpl-state-machine-v1.svg](puml/tpl-state-machine-v1.svg)
+
+內容
+
+```
+{{#include puml/tpl-state-machine-v1.iuml}}
+```
+
+引用
+
+```
+!include https://dltdojo.github.io/taichu-crypto/puml/tpl-state-machine-v1.iuml
 ```

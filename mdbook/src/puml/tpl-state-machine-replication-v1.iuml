@@ -1,0 +1,55 @@
+' How Does Distributed Consensus Work? https://medium.com/s/story/lets-take-a-crack-at-understanding-distributed-consensus-dad23d0dc95
+' https://ethfans.org/posts/lets-take-a-crack-at-understanding-distributed-consensus-part-1
+' https://www.chainnews.com/articles/879522545128.htm
+' 
+@startuml
+
+agent "Client" as Client
+
+rectangle "State Machine Replication" {
+
+    rectangle "Server1" #LightBlue {
+        frame SM1 [
+            State Machine 
+            ----
+            balance(alice)=199
+            balance(bob)=1
+        ] 
+        component "Consensus" as Consensus1
+        component "Ledger" as Ledger1
+    }
+
+    rectangle "Server2" #LightCoral{
+        frame SM2 [
+            State Machine 
+            ----
+            balance(alice)=199
+            balance(bob)=1
+        ]
+
+        component "Consensus" as Consensus2
+        component "Ledger" as Ledger2
+    }
+
+    rectangle "ServerN+1" as ServerN1 #yellow
+
+    stack TwoHardThins #LightGreen[
+        Two hard problems in distributed systems:
+        2. Exactly-once delivery 
+        1. Guaranteed order of messages 
+        2. Exactly-once delivery
+        @mathiasverraes
+    ]
+}
+
+Client --> Consensus1 : == 1
+Consensus1 <--> TwoHardThins : == 2
+TwoHardThins <--> Consensus2 : == 2
+Consensus1 <--> ServerN1: == 2 問題：故障與時序
+Consensus2 <-> ServerN1 : == 2
+Consensus1 -> Ledger1 : == 3
+Ledger1 --> SM1 : == 4
+Consensus2 --> Ledger2: == 3
+Ledger2 --> SM2 : == 4
+SM2 -> Client: == 5
+@enduml

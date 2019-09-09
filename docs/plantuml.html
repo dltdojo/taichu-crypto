@@ -169,8 +169,16 @@
 </li>
 <li><a href="#%E7%B5%84%E4%BB%B6%E5%9C%96%E6%A8%A3%E6%9D%BF-component-diagram-template">組件圖樣板 Component Diagram Template</a>
 <ul>
+<li><a href="#state-machine-replication-smr">State machine Replication SMR</a></li>
+<li><a href="#ton-tpl-ton-v1iuml">TON tpl-ton-v1.iuml</a></li>
 <li><a href="#tv-buddha-by-nam-june-paik-tpl-tv-buddha">TV Buddha by Nam June Paik tpl-tv-buddha</a></li>
+<li><a href="#dltdojo3-v1-tpl-dltdojo3-v1iuml">DLTDOJO3 v1 tpl-dltdojo3-v1.iuml</a></li>
 <li><a href="#wip-tpl-dltdojo3-x">WIP tpl-dltdojo3-x</a></li>
+</ul>
+</li>
+<li><a href="#%E7%8B%80%E6%85%8B%E5%9C%96%E6%A8%A3%E7%89%88-state-diagram-template">狀態圖樣版 State Diagram Template</a>
+<ul>
+<li><a href="#tpl-state-machine-v1iuml">tpl-state-machine-v1.iuml</a></li>
 </ul>
 </li>
 </ul>
@@ -528,6 +536,124 @@ Bastille --&gt; King : 三年後法蘭西第一共和國成立
 </code></pre>
 <h1><a class="header" href="#組件圖樣板-component-diagram-template" id="組件圖樣板-component-diagram-template">組件圖樣板 Component Diagram Template</a></h1>
 <p><a href="http://plantuml.com/component-diagram">Component Diagram - PlantUML</a></p>
+<h2><a class="header" href="#state-machine-replication-smr" id="state-machine-replication-smr">State machine Replication SMR</a></h2>
+<blockquote>
+<p>There are only two hard problems in distributed systems:  2. Exactly-once delivery 1. Guaranteed order of messages 2. Exactly-once delivery @mathiasverraes</p>
+</blockquote>
+<p><a href="https://medium.com/s/story/lets-take-a-crack-at-understanding-distributed-consensus-dad23d0dc95">How Does Distributed Consensus Work?</a></p>
+<p><img src="puml/tpl-state-machine-replication-v1.svg" alt="tpl-state-machine-replication-v1.svg" /></p>
+<p>內容</p>
+<pre><code>' How Does Distributed Consensus Work? https://medium.com/s/story/lets-take-a-crack-at-understanding-distributed-consensus-dad23d0dc95
+' https://ethfans.org/posts/lets-take-a-crack-at-understanding-distributed-consensus-part-1
+' https://www.chainnews.com/articles/879522545128.htm
+' 
+@startuml
+
+agent &quot;Client&quot; as Client
+
+rectangle &quot;State Machine Replication&quot; {
+
+    rectangle &quot;Server1&quot; #LightBlue {
+        frame SM1 [
+            State Machine 
+            ----
+            balance(alice)=199
+            balance(bob)=1
+        ] 
+        component &quot;Consensus&quot; as Consensus1
+        component &quot;Ledger&quot; as Ledger1
+    }
+
+    rectangle &quot;Server2&quot; #LightCoral{
+        frame SM2 [
+            State Machine 
+            ----
+            balance(alice)=199
+            balance(bob)=1
+        ]
+
+        component &quot;Consensus&quot; as Consensus2
+        component &quot;Ledger&quot; as Ledger2
+    }
+
+    rectangle &quot;ServerN+1&quot; as ServerN1 #yellow
+
+    stack TwoHardThins #LightGreen[
+        Two hard problems in distributed systems:
+        2. Exactly-once delivery 
+        1. Guaranteed order of messages 
+        2. Exactly-once delivery
+        @mathiasverraes
+    ]
+}
+
+Client --&gt; Consensus1 : == 1
+Consensus1 &lt;--&gt; TwoHardThins : == 2
+TwoHardThins &lt;--&gt; Consensus2 : == 2
+Consensus1 &lt;--&gt; ServerN1: == 2 問題：故障與時序
+Consensus2 &lt;-&gt; ServerN1 : == 2
+Consensus1 -&gt; Ledger1 : == 3
+Ledger1 --&gt; SM1 : == 4
+Consensus2 --&gt; Ledger2: == 3
+Ledger2 --&gt; SM2 : == 4
+SM2 -&gt; Client: == 5
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-state-machine-replication-v1.iuml
+</code></pre>
+<h2><a class="header" href="#ton-tpl-ton-v1iuml" id="ton-tpl-ton-v1iuml">TON tpl-ton-v1.iuml</a></h2>
+<p><a href="https://test.ton.org/">TON Blockchain Test Network</a></p>
+<p><img src="puml/tpl-ton-v1.svg" alt="tpl-ton-v1.svg" /></p>
+<p>內容</p>
+<pre><code>' [ton-blockchain/ton github](https://github.com/ton-blockchain)
+' 
+@startuml
+
+' TON有四个角色：验证员，合作者，提名者和渔夫（Validators, collators, nominators, and fisherman.）
+actor &quot;Validator\n驗證者&quot; as Validator 
+actor &quot;Collator\n合作者&quot; as Collator 
+actor &quot;Nominator\n提名者&quot; as Nominator 
+' 漁夫捕捉無效驗證者的無效交易
+actor &quot;Fisherman\n漁夫&quot; as Fisherman #red
+
+
+' 主鏈有 TON 的創世參數還有驗證節點紀錄
+rectangle &quot;TON Main Blockchain&quot; {
+    ' 可生成最多 2^32 條工作鏈条工作链，創工作鏈需 2/3 驗證節點支持。
+    ' 每條工作鏈的虛擬機器可不同，地址帳戶代幣合約等也有差異。
+    ' 每條工作鏈會有該工作鏈的基礎原生代幣。
+    rectangle &quot;Workchain 1\n工作鏈壹&quot; as WC1 #LightBlue {
+        ' 每條工作鏈可生成最多 2^60 條分片鏈
+        ' 同一條工作鏈的分片鏈其帳戶合約地址格式相同。
+        component &quot;Shardchain\n分片鏈A1&quot; as W1SA1
+        component &quot;Shardchain\n分片鏈A2&quot; as W1SA2
+        component &quot;Shardchain\n分片鏈AN&quot; as W1SAN
+    }
+
+    rectangle &quot;Workchain 2\n工作鏈貳&quot; as WC2 #LightCoral{
+        component &quot;Shardchain\n分片鏈B1&quot; as W2SB1
+        component &quot;Shardchain\n分片鏈B2&quot; as W2SB2
+        component &quot;Shardchain\n分片鏈BN&quot; as W2SBN
+    }
+
+    rectangle &quot;Workchain N\n工作鏈N&quot;
+}
+
+W1SA1 &lt;--&gt; W1SA2: == 1 Hypercube routing 
+W1SA2 &lt;-&gt; W1SAN: == 1 
+W1SA1 &lt;--&gt; W1SAN: == 1 
+
+Validator ..&gt; WC1
+Fisherman ..&gt; WC1
+Collator ..&gt; WC2
+Nominator ..&gt; WC2
+
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-ton-v1.iuml
+</code></pre>
 <h2><a class="header" href="#tv-buddha-by-nam-june-paik-tpl-tv-buddha" id="tv-buddha-by-nam-june-paik-tpl-tv-buddha">TV Buddha by Nam June Paik tpl-tv-buddha</a></h2>
 <p><a href="https://www.vmfa.museum/mlit/looking-buddha-watching-tv/">Looking at Buddha Watching TV</a></p>
 <p><img src="puml/tpl-tv-buddha-v1.svg" alt="tv buddha" /></p>
@@ -558,6 +684,48 @@ TV - Camera
 </code></pre>
 <p>引用</p>
 <pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-tv-buddha-v1.iuml
+</code></pre>
+<h2><a class="header" href="#dltdojo3-v1-tpl-dltdojo3-v1iuml" id="dltdojo3-v1-tpl-dltdojo3-v1iuml">DLTDOJO3 v1 tpl-dltdojo3-v1.iuml</a></h2>
+<p><img src="puml/tpl-dltdojo3-v1.svg" alt="tpl-dltdojo3-v1.svg" /></p>
+<p>內容</p>
+<pre><code>@startuml
+
+actor &quot;Developer&quot; as Dev
+actor &quot;Operator&quot; as Op
+actor &quot;學員\nUser&quot; as User #red
+
+rectangle &quot;DLTDOJO3&quot; {
+
+    rectangle &quot;cli&quot; #LightBlue {
+        component &quot;taichu-raw&quot; as TaichuRaw #yellow
+        component mdbook
+    }
+
+    rectangle &quot;Kubernetes&quot; #LightCoral{
+        rectangle &quot;Services&quot; {
+            component &quot;Git\nCICD&quot; as drone
+            component plantuml
+            component registry
+        }
+        rectangle &quot;MAD WHITE&quot; as madwhite {
+            component &quot;code\nserver&quot; as cs
+        }
+        rectangle &quot;MAD RED&quot; as madred {
+            component &quot;veloren\nserver&quot; as vs
+        }
+    }
+}
+
+TaichuRaw -- mdbook
+Op ..&gt; TaichuRaw
+Dev ..&gt; plantuml
+Dev ..&gt; registry
+Dev ..&gt; cs
+User ..&gt; cs
+@enduml
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-dltdojo3-v1.iuml
 </code></pre>
 <h2><a class="header" href="#wip-tpl-dltdojo3-x" id="wip-tpl-dltdojo3-x">WIP tpl-dltdojo3-x</a></h2>
 <p><img src="puml/dltdojo3-comp-template.svg" alt="Comp" /></p>
@@ -601,6 +769,23 @@ CI &lt;-- Registry : 4. pull image
 
 @enduml
 
+</code></pre>
+<h1><a class="header" href="#狀態圖樣版-state-diagram-template" id="狀態圖樣版-state-diagram-template">狀態圖樣版 State Diagram Template</a></h1>
+<h2><a class="header" href="#tpl-state-machine-v1iuml" id="tpl-state-machine-v1iuml">tpl-state-machine-v1.iuml</a></h2>
+<p><img src="puml/tpl-state-machine-v1.svg" alt="tpl-state-machine-v1.svg" /></p>
+<p>內容</p>
+<pre><code>@startuml
+[*] -&gt; Waiting
+Waiting --&gt; Started: Start
+Waiting --&gt; Finished : Done
+Started --&gt; Finished : Finish
+Started --&gt; Suspended : Suspend
+Suspended --&gt; Started : Resume
+@enduml
+
+</code></pre>
+<p>引用</p>
+<pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-state-machine-v1.iuml
 </code></pre>
 
                     </main>

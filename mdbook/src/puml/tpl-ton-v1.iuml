@@ -1,0 +1,44 @@
+' [ton-blockchain/ton github](https://github.com/ton-blockchain)
+' 
+@startuml
+
+' TON有四个角色：验证员，合作者，提名者和渔夫（Validators, collators, nominators, and fisherman.）
+actor "Validator\n驗證者" as Validator 
+actor "Collator\n合作者" as Collator 
+actor "Nominator\n提名者" as Nominator 
+' 漁夫捕捉無效驗證者的無效交易
+actor "Fisherman\n漁夫" as Fisherman #red
+
+
+' 主鏈有 TON 的創世參數還有驗證節點紀錄
+rectangle "TON Main Blockchain" {
+    ' 可生成最多 2^32 條工作鏈条工作链，創工作鏈需 2/3 驗證節點支持。
+    ' 每條工作鏈的虛擬機器可不同，地址帳戶代幣合約等也有差異。
+    ' 每條工作鏈會有該工作鏈的基礎原生代幣。
+    rectangle "Workchain 1\n工作鏈壹" as WC1 #LightBlue {
+        ' 每條工作鏈可生成最多 2^60 條分片鏈
+        ' 同一條工作鏈的分片鏈其帳戶合約地址格式相同。
+        component "Shardchain\n分片鏈A1" as W1SA1
+        component "Shardchain\n分片鏈A2" as W1SA2
+        component "Shardchain\n分片鏈AN" as W1SAN
+    }
+
+    rectangle "Workchain 2\n工作鏈貳" as WC2 #LightCoral{
+        component "Shardchain\n分片鏈B1" as W2SB1
+        component "Shardchain\n分片鏈B2" as W2SB2
+        component "Shardchain\n分片鏈BN" as W2SBN
+    }
+
+    rectangle "Workchain N\n工作鏈N"
+}
+
+W1SA1 <--> W1SA2: == 1 Hypercube routing 
+W1SA2 <-> W1SAN: == 1 
+W1SA1 <--> W1SAN: == 1 
+
+Validator ..> WC1
+Fisherman ..> WC1
+Collator ..> WC2
+Nominator ..> WC2
+
+@enduml
