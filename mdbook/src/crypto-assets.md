@@ -25,7 +25,7 @@ FATF 指引 RBA-VA-VASPs 用詞可能成為書寫主流用語之一。 2019 版�
 - ScriptCoffee
 - CodeCoffee
 
-## BAT
+## Basic Attention Token (BAT)
 
 Brave browser 開始進軍小螢幕，注意力商人一書裡面提到四個螢幕最後版本就是手機版，Brave browser 安裝後右上角的獅子會有明顯的數字很容易知道這個站台追蹤的資訊，建議邊看注意力商人一書邊看獅子標示更有感。
 
@@ -33,7 +33,7 @@ Brave browser 開始進軍小螢幕，注意力商人一書裡面提到四個螢
 
 [Brave browser now can show its privacy-first ads on Android, too](https://www.cnet.com/news/brave-browser-now-can-show-its-privacy-first-ads-on-android-too/)
 
-## TON
+## Telegram Open Network (TON)
 
 - [TON Blockchain Test Network](https://test.ton.org/)
 - [ton-blockchain/ton github](https://github.com/ton-blockchain)
@@ -42,6 +42,13 @@ Brave browser 開始進軍小螢幕，注意力商人一書裡面提到四個螢
 
 ![tpl-ton-v1.svg](puml/tpl-ton-v1.svg)
 
+
+
+## Stellar XLM
+
+[Stellar](https://github.com/stellar)
+
+# Crypto
 
 ## Verifiable Random Function (VRF) 
 
@@ -52,6 +59,10 @@ Brave browser 開始進軍小螢幕，注意力商人一書裡面提到四個螢
 - [ontio/ontology-crypto](https://github.com/ontio/ontology-crypto)
 - [区块链知识之 VRF: 可验证随机函数](https://www.jishuwen.com/d/2JWW)
 - [区块链中VRF的应用及原理解析](https://www.odaily.com/post/5133096)
+
+## Sharding 
+
+- [Sharding and Scaling On Blockchain](https://hackernoon.com/sharding-and-the-scaling-of-a-blockchain-xz1kq30j0)
 
 # TODO
 

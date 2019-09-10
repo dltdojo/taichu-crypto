@@ -26,6 +26,7 @@
 - [PlantUML](./plantuml.md)
   - [Hyperledger Fabric](./puml/hyperledger-fabric.md)
   - [Ethereum](./puml/ethereum.md)
+- [Messaging](./messaging.md)
 - [mdbook](./mdbook/README.md)
   - [preprocessors](./mdbook/preprocessors.md)
   - [其他](./mdbook/others.md)
