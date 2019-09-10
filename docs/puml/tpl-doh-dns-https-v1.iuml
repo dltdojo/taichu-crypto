@@ -1,0 +1,60 @@
+' A cartoon intro to DNS over HTTPS
+' https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/
+@startuml
+skinparam ParticipantPadding 5
+skinparam BoxPadding 5
+box "Alice Realm" #LightBlue
+  actor "Alice\n瀏覽器" as Alice #yellow
+  participant "DoB\nAlice" as ADOB #white
+end box
+box "The kingdom of far far away" #white
+  participant "DNS善意\nPort 53" as GDNS #green
+  participant "DNS惡意\nPort 53" as BDNS #red
+  participant "DoH\nPort 443" as DOH #yellow
+end box
+box "Bob Realm" #LightCoral
+  participant "DoB\nBob" as BDOB #white
+  actor "Bob\n瀏覽器" as Bob
+end box
+== 100 Tracking 追蹤 ==
+autonumber 101
+Bob -> BDNS : register
+Alice -> GDNS : DNS port 53
+GDNS -> BDNS
+BDNS -> BDNS : tracking 紀錄追蹤
+BDNS -> GDNS : 給正確的地址
+GDNS -> Alice
+== 200  Spoofing 欺騙 ==
+autonumber 201
+BDNS -> GDNS : 給假造的地址
+GDNS -> Alice
+note over ADOB
+要自保需確認每個查詢都是可信的。
+一般人在公共場域無法確認。
+end note
+== 300 DNS over HTTPS (DoH) ==
+autonumber 301
+Alice -> DOH : 可設定可信的 DoH\nHTTPS port 443
+DOH -> DOH : 紀錄
+DOH -> Alice : 可信任的地址
+note over DOH
+隱私與內容過濾
+1. DNS 個人紀錄被移出 ISP
+2. DNS 紀錄(ISP端與用戶裝置端)的利用、加值、過濾
+3. DNS 紀錄 ISP端法遵議題
+4. 資料集中化不再分散各個 DNS
+5. 牽涉不同司法管轄
+6. 需信任 DoH 不做紀錄
+end note
+== 400 DNS over Blockchain (DoB) ==
+autonumber 401
+ADOB <-> BDOB: 同步
+Alice -> ADOB: 只查自己節點
+Bob -> BDOB: 無紀錄洩漏問題
+note over DOH
+1. DoB 不普及
+2. DoB 節點成本需用客戶在乎隱私動機來支付，
+   否則容易轉成中心化 API 服務架構，回到紀
+   錄竄改100/200原點，還不如用 DoH。
+end note
+@enduml

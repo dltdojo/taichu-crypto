@@ -43,6 +43,16 @@ Brave browser 開始進軍小螢幕，注意力商人一書裡面提到四個螢
 ![tpl-ton-v1.svg](puml/tpl-ton-v1.svg)
 
 
+## Verifiable Random Function (VRF) 
+
+- [Verifiable Random Functions (VRFs) draft-irtf-cfrg-vrf-05](https://datatracker.ietf.org/doc/draft-irtf-cfrg-vrf/?include_text=1)
+- [Algorand 的 draft-irtf-cfrg-vrf-version03](https://github.com/algorand/libsodium/tree/draft-irtf-cfrg-vrf-03)
+- [google/keytransparency - github](https://github.com/google/keytransparency)
+- [w3f/schnorrkel Schnorr VRFs and signatures on the Ristretto group](https://github.com/w3f/schnorrkel)
+- [ontio/ontology-crypto](https://github.com/ontio/ontology-crypto)
+- [区块链知识之 VRF: 可验证随机函数](https://www.jishuwen.com/d/2JWW)
+- [区块链中VRF的应用及原理解析](https://www.odaily.com/post/5133096)
+
 # TODO
 
 ## 201909

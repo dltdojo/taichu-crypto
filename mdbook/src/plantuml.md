@@ -113,6 +113,40 @@ web123-v1.puml 套用模板
 !include https://dltdojo.github.io/taichu-crypto/puml/tpl-sre-slos-v1.iuml
 ```
 
+## Random Oracle tpl-random-oracle-v1.iuml
+
+![tpl-random-oracle-v1.svg](puml/tpl-random-oracle-v1.svg)
+
+內容
+
+```
+{{#include puml/tpl-random-oracle-v1.iuml}}
+```
+
+引用
+
+```
+!include https://dltdojo.github.io/taichu-crypto/puml/tpl-random-oracle-v1.iuml
+```
+
+## DNS-over-HTTPS (DoH) tpl-doh-dns-https-v1.iuml
+
+[A cartoon intro to DNS over HTTPS](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/)
+
+![tpl-doh-dns-https-v1.svg](puml/tpl-doh-dns-https-v1.svg)
+
+內容
+
+```
+{{#include puml/tpl-doh-dns-https-v1.iuml}}
+```
+
+引用
+
+```
+!include https://dltdojo.github.io/taichu-crypto/puml/tpl-doh-dns-https-v1.iuml
+```
+
 ## Crypto Custody : tpl-custody-fork-v1.iuml
 
 [The Crypto Custody Conundrum: What Are We Even Talking About?](https://www.coindesk.com/the-crypto-custody-conundrum-what-are-we-even-talking-about)

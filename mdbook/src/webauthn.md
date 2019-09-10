@@ -1,8 +1,9 @@
 # webauthn
 
-FIDO2
+<!-- toc -->
 
-username/password - public-key
+
+# FIDO2 Resources
 
 - [WebAuthn Web Authentication with YubiKey 5](https://www.linuxjournal.com/content/webauthn-web-authentication-yubikey-5)
 - [Building FIDO2 server in Go](https://speakerdeck.com/mururu/building-fido2-server-in-go)
@@ -12,8 +13,11 @@ username/password - public-key
 - [WebAuthn (FIDO2) server library written in Go](https://github.com/duo-labs/webauthn)
 - [Integrate YubiKey 5Ci into Metamask Mobile #1011](https://github.com/MetaMask/metamask-mobile/issues/1011)
 
-## caniuse Web Authentication API 69%
 
-https://caniuse.com/#search=WebAuthn
+# TODO
 
-WebAssembly is 87%
+## 201909
+
+- [ ]  圖 username/password - public-key
+- [ ] [圖 Introduction to Web Authentication: The New W3C Spec](https://auth0.com/blog/introduction-to-web-authentication/)
+- [ ] [caniuse Web Authentication API 69%](https://caniuse.com/#search=WebAuthn) , WebAssembly is 87%

@@ -2,8 +2,18 @@
 
 [Decentralized autonomous organization](https://en.wikipedia.org/wiki/Decentralized_autonomous_organization)
 
-
 <!-- toc -->
+
+# DAO 績效 
+
+## 激勵原則 OKRs or KPI
+
+DAO 績效分配參考[Live OKRs - Joystream - github](https://github.com/Joystream/joystream/tree/master/okrs)
+
+- 專案
+- 每版本
+- 每群組
+- 個人
 
 # TODO
 
@@ -17,4 +27,5 @@
 - [ ] [Kusama Network - github](https://github.com/kusamanetwork)
 - [ ] [Joystream/substrate-node-joystream: Joystream Full Node](https://github.com/Joystream/substrate-node-joystream)
 - [ ] [Exit, Voice, and Loyalty - Wikipedia](https://en.wikipedia.org/wiki/Exit,_Voice,_and_Loyalty)
+- [ ] OKRs
 

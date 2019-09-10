@@ -1,0 +1,22 @@
+' https://www.odaily.com/post/5133096
+' https://www.jishuwen.com/d/2JWW
+@startuml
+' Random Oracle RO
+actor Alice #yellow
+participant "Random Oracle" as RO #yellow
+actor Bob
+
+== 100 Random Oracle ==
+autonumber 101
+Alice -> RO: 輸入值
+Alice <- RO: 輸出隨機值
+note left
+隨機分佈在值域內
+end note
+Bob -> RO: 輸入值
+Bob <- RO: 隨機值
+note right
+如 103 輸入值與 101 一樣
+104 值會與 102 相同
+end note
+@enduml
