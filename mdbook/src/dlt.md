@@ -1,10 +1,6 @@
-# (WIP) DLT
+# DLT
 
 <!-- toc -->
-
-# Hyperledger Fabric
-
-TODO
 
 # Kusama Network
 
@@ -16,7 +12,9 @@ TODO
 
 ## 201909 
 
-- [ ] Hyperledger Sawtooth
+- [x] Libra page
+- [x] Hyperledger fabric page
+- [x] Hyperledger Sawtooth page
 - [ ] Hyperledger Besu
 - [ ] Hyperledger Ursa
 - [ ] Hyperledger Burrow

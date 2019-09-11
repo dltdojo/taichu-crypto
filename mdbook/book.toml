@@ -5,11 +5,6 @@ multilingual = false
 src = "src"
 title = "DLTDOJO3 第三新熵熱踢道場"
 
-[output.html]
-mathjax-support = true
-# additional-css = ["src/css/taichu-raw.css"]
-
-
 [output.html.playpen]
 editable = true
 

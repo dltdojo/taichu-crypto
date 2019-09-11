@@ -1,5 +1,7 @@
-# Web
+# Web Tech
 <!-- toc -->
+
+# Protocol 
 
 ## DNS-over-HTTPS (DoH)
 
@@ -11,8 +13,3 @@
 - [Ethereum Name Service](https://github.com/ensdomains)
 
 ![tpl-doh-dns-https-v1.svg](../puml/tpl-doh-dns-https-v1.svg)
-
-# HTML 測試頁及樣版
-
-- [閃字網頁 font Roboto Mono, monospace, cowsay and colorchange](testpage-pre.html)
-- [testpage animation with taichu-raw.css ](testpage-animation.html)

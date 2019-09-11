@@ -42,6 +42,27 @@ serve_book(){
     popd
 }
 
+
+# gen-proto-doc PROTOS_DIR DEST_FILE
+gen_proto_doc(){
+    set -x
+    PROTOS_DIR=$1
+    MDFILE=md-proto-gen-tmp.md
+    DEST_FILE=$2
+    pushd $PROTOS_DIR
+    rm /tmp/$MDFILE
+    find . -type f -name '*.proto' | xargs protoc --doc_out=/tmp --doc_opt=markdown,$MDFILE
+    #sed -i "1i# ProtocolBuffer Doc\n## Generated Date:$(date --iso-8601=seconds)\n<!-- toc -->" /tmp/$MDFILE
+    sed -i "1i# Generated Date:$(date --iso-8601=seconds)\n" /tmp/$MDFILE
+    echo -e '\n# Protos File Tree\n```\n' >> /tmp/$MDFILE 
+    tree -P "*.proto" . >> /tmp/$MDFILE
+    echo -e '\n```\n' >> /tmp/$MDFILE 
+    echo -e "# Protobuf sources\n" >> /tmp/$MDFILE
+    find . -type f -name '*.proto' -exec echo -e '\n## src:{}\n```proto\n' \; -exec cat {} \; -exec echo -e '\n```\n' \; >> /tmp/$MDFILE
+    cp -f /tmp/$MDFILE $DEST_FILE
+    popd
+}
+
 usage() {
     cat 1>&2 <<EOF
 DLTDOJO CLI Tool
@@ -64,6 +85,7 @@ case "$1" in
   --drun) shift; drun_ddj3base $@ ;;
   --build-book) shift; build_book $@ ;;
   --serve-book) shift; serve_book $@ ;;
+  --gen-proto-doc) shift; gen_proto_doc $@ ;;
   -h|--help)
       usage
       exit 0

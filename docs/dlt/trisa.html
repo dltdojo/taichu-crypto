@@ -1,0 +1,622 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>TRISA - DLTDOJO3 第三新熵熱踢道場</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> 簡介</a></li><li><a href="../poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><a href="../taichu-raw/index.html"><strong aria-hidden="true">3.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li><a href="../taichu-raw/apache-big5.html"><strong aria-hidden="true">3.1.</strong> HTTPS: Apache Big5</a></li><li><a href="../taichu-raw/openapiv3.html"><strong aria-hidden="true">3.2.</strong> HTTPS: OpenAPI v3</a></li><li><a href="../taichu-raw/others.html"><strong aria-hidden="true">3.3.</strong> 其他</a></li></ol></li><li><a href="../mad-white/index.html"><strong aria-hidden="true">4.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li><a href="../mad-white/code-server.html"><strong aria-hidden="true">4.1.</strong> VS Code Server</a></li></ol></li><li><a href="../mad-red/index.html"><strong aria-hidden="true">5.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">5.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">5.2.</strong> 聊天測試 BIP39</a></li><li><a href="../mad-red/vox/index.html"><strong aria-hidden="true">5.3.</strong> Voxel 組件開發編輯</a></li><li><a href="../mad-red/vox/projects.html"><strong aria-hidden="true">5.4.</strong> Voxel 相關專案</a></li></ol></li><li><a href="../crypto-assets.html"><strong aria-hidden="true">6.</strong> Crypto-Assets</a></li><li><a href="../dlt.html"><strong aria-hidden="true">7.</strong> DLT</a></li><li><ol class="section"><li><a href="../dlt/hl-fabric.html"><strong aria-hidden="true">7.1.</strong> Hyperledger Fabric</a></li><li><a href="../dlt/hl-sawtooth.html"><strong aria-hidden="true">7.2.</strong> Hyperledger Sawtooth</a></li><li><a href="../dlt/libra.html"><strong aria-hidden="true">7.3.</strong> Libra</a></li><li><a href="../dlt/trisa.html" class="active"><strong aria-hidden="true">7.4.</strong> TRISA</a></li></ol></li><li><a href="../dao.html"><strong aria-hidden="true">8.</strong> DAO</a></li><li><ol class="section"><li><a href="../dao/aragon.html"><strong aria-hidden="true">8.1.</strong> Aragon</a></li><li><a href="../dao/joystream.html"><strong aria-hidden="true">8.2.</strong> JoyStream</a></li></ol></li><li><a href="../did.html"><strong aria-hidden="true">9.</strong> DID</a></li><li><a href="../LRE.html"><strong aria-hidden="true">10.</strong> Ledger Reliability Engineering(LRE)</a></li><li><a href="../web/index.html"><strong aria-hidden="true">11.</strong> Web Tech</a></li><li><ol class="section"><li><a href="../web/extensions.html"><strong aria-hidden="true">11.1.</strong> Browser Extensiions</a></li><li><a href="../web/example-page.html"><strong aria-hidden="true">11.2.</strong> Example Pages</a></li><li><a href="../webauthn.html"><strong aria-hidden="true">11.3.</strong> WebAuthn</a></li><li><a href="../webassembly.html"><strong aria-hidden="true">11.4.</strong> WebAssembly</a></li><li><a href="../web/openssl.html"><strong aria-hidden="true">11.5.</strong> OpenSSL</a></li></ol></li><li><a href="../k8s.html"><strong aria-hidden="true">12.</strong> Kubernetes</a></li><li><a href="../plantuml.html"><strong aria-hidden="true">13.</strong> PlantUML</a></li><li><ol class="section"><li><a href="../puml/hyperledger-fabric.html"><strong aria-hidden="true">13.1.</strong> Hyperledger Fabric</a></li><li><a href="../puml/ethereum.html"><strong aria-hidden="true">13.2.</strong> Ethereum</a></li></ol></li><li><a href="../messaging.html"><strong aria-hidden="true">14.</strong> Messaging</a></li><li><a href="../mdbook/index.html"><strong aria-hidden="true">15.</strong> mdbook</a></li><li><ol class="section"><li><a href="../mdbook/preprocessors.html"><strong aria-hidden="true">15.1.</strong> preprocessors</a></li><li><a href="../mdbook/others.html"><strong aria-hidden="true">15.2.</strong> 其他</a></li></ol></li><li><a href="../resources.html"><strong aria-hidden="true">16.</strong> 學習資源</a></li><li><a href="../book.html"><strong aria-hidden="true">17.</strong> 書籍</a></li><li><a href="../job.html"><strong aria-hidden="true">18.</strong> 工作</a></li><li><a href="../appendix.html"><strong aria-hidden="true">19.</strong> 附錄</a></li><li><ol class="section"><li><a href="../cmd-help.html"><strong aria-hidden="true">19.1.</strong> 命令列 tc.sh</a></li><li><a href="../license.html"><strong aria-hidden="true">19.2.</strong> 授權條款</a></li><li><a href="../testpage.html"><strong aria-hidden="true">19.3.</strong> 測試頁面</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">DLTDOJO3 第三新熵熱踢道場</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#travel-rule-information-sharing-architecture-for-virtual-asset-service-providers-trisa" id="travel-rule-information-sharing-architecture-for-virtual-asset-service-providers-trisa">Travel Rule Information Sharing Architecture for Virtual Asset Service Providers (TRISA)</a></h1>
+<p><a href="https://github.com/trisacrypto/trisa">trisacrypto/trisa - github</a> 專案讓錢包或交易所等可符合 Financial Action Task Force (FATF) 的 travel rule 要求。參考報導 <a href="https://www.coindesk.com/ciphertrace-enters-race-to-solve-cryptos-fatf-compliance-headache">CipherTrace Enters Race to Solve Crypto's FATF Compliance Headache - CoinDesk</a></p>
+<h1><a class="header" href="#toc" id="toc">TOC</a></h1>
+<ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90-google-protocol-buffers-%E6%96%87%E4%BB%B6">如何生成 Google Protocol Buffers 文件</a></li>
+<li><a href="#generated-date2019-09-11t1647550800">Generated Date:2019-09-11T16:47:55+08:00</a></li>
+<li><a href="#protocol-documentation">Protocol Documentation</a>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#trisadataethereumv1alpha1ethereumproto">trisa/data/ethereum/v1alpha1/ethereum.proto</a>
+<ul>
+<li><a href="#data">Data</a></li>
+</ul>
+</li>
+<li><a href="#trisadatabitcoinv1alpha1bitcoinproto">trisa/data/bitcoin/v1alpha1/bitcoin.proto</a>
+<ul>
+<li><a href="#data">Data</a></li>
+</ul>
+</li>
+<li><a href="#trisaprotocolv1alpha1trisaproto">trisa/protocol/v1alpha1/trisa.proto</a>
+<ul>
+<li><a href="#transaction">Transaction</a></li>
+<li><a href="#transactiondata">TransactionData</a></li>
+<li><a href="#trisapeer2peer">TrisaPeer2Peer</a></li>
+</ul>
+</li>
+<li><a href="#trisaidentityusv1alpha1identityproto">trisa/identity/us/v1alpha1/identity.proto</a>
+<ul>
+<li><a href="#identity">Identity</a></li>
+</ul>
+</li>
+<li><a href="#trisaidentitybev1alpha1identityproto">trisa/identity/be/v1alpha1/identity.proto</a>
+<ul>
+<li><a href="#identity">Identity</a></li>
+</ul>
+</li>
+<li><a href="#tvcadiscoverydiscoveryproto">tvca/discovery/discovery.proto</a>
+<ul>
+<li><a href="#crlstore">CRLStore</a></li>
+<li><a href="#trisa">Trisa</a></li>
+<li><a href="#x509">X509</a></li>
+<li><a href="#x509store">X509Store</a></li>
+</ul>
+</li>
+<li><a href="#scalar-value-types">Scalar Value Types</a></li>
+</ul>
+</li>
+<li><a href="#protos-file-tree">Protos File Tree</a></li>
+<li><a href="#protobuf-sources">Protobuf sources</a>
+<ul>
+<li><a href="#srctrisadataethereumv1alpha1ethereumproto">src:./trisa/data/ethereum/v1alpha1/ethereum.proto</a></li>
+<li><a href="#srctrisadatabitcoinv1alpha1bitcoinproto">src:./trisa/data/bitcoin/v1alpha1/bitcoin.proto</a></li>
+<li><a href="#srctrisaprotocolv1alpha1trisaproto">src:./trisa/protocol/v1alpha1/trisa.proto</a></li>
+<li><a href="#srctrisaidentityusv1alpha1identityproto">src:./trisa/identity/us/v1alpha1/identity.proto</a></li>
+<li><a href="#srctrisaidentitybev1alpha1identityproto">src:./trisa/identity/be/v1alpha1/identity.proto</a></li>
+<li><a href="#srctvcadiscoverydiscoveryproto">src:./tvca/discovery/discovery.proto</a></li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#如何生成-google-protocol-buffers-文件" id="如何生成-google-protocol-buffers-文件">如何生成 Google Protocol Buffers 文件</a></h1>
+<p><a href="https://github.com/pseudomuto/protoc-gen-doc">pseudomuto/protoc-gen-doc: Documentation generator plugin for Google Protocol Buffers</a></p>
+<pre><code class="language-shell">git clone https://github.com/trisacrypto/trisa.git /tmp/src/trisa
+bash tc.sh --gen-proto-doc /tmp/src/trisa/proto /tmp/output.md
+</code></pre>
+<h1><a class="header" href="#generated-date2019-09-11t1647550800" id="generated-date2019-09-11t1647550800">Generated Date:2019-09-11T16:47:55+08:00</a></h1>
+<h1><a class="header" href="#protocol-documentation" id="protocol-documentation">Protocol Documentation</a></h1>
+<p><a name="top"></a></p>
+<h2><a class="header" href="#table-of-contents" id="table-of-contents">Table of Contents</a></h2>
+<ul>
+<li>
+<p><a href="#trisa/data/ethereum/v1alpha1/ethereum.proto">trisa/data/ethereum/v1alpha1/ethereum.proto</a></p>
+<ul>
+<li><a href="#trisa.data.ethereum.v1alpha1.Data">Data</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#trisa/data/bitcoin/v1alpha1/bitcoin.proto">trisa/data/bitcoin/v1alpha1/bitcoin.proto</a></p>
+<ul>
+<li><a href="#trisa.data.bitcoin.v1alpha1.Data">Data</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#trisa/protocol/v1alpha1/trisa.proto">trisa/protocol/v1alpha1/trisa.proto</a></p>
+<ul>
+<li>
+<p><a href="#trisa.protocol.v1alpha1.Transaction">Transaction</a></p>
+</li>
+<li>
+<p><a href="#trisa.protocol.v1alpha1.TransactionData">TransactionData</a></p>
+</li>
+<li>
+<p><a href="#trisa.protocol.v1alpha1.TrisaPeer2Peer">TrisaPeer2Peer</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#trisa/identity/us/v1alpha1/identity.proto">trisa/identity/us/v1alpha1/identity.proto</a></p>
+<ul>
+<li><a href="#trisa.identity.us.v1alpha1.Identity">Identity</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#trisa/identity/be/v1alpha1/identity.proto">trisa/identity/be/v1alpha1/identity.proto</a></p>
+<ul>
+<li><a href="#trisa.identity.be.v1alpha1.Identity">Identity</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#tvca/discovery/discovery.proto">tvca/discovery/discovery.proto</a></p>
+<ul>
+<li><a href="#trisa.tvca.discovery.CRLStore">CRLStore</a></li>
+<li><a href="#trisa.tvca.discovery.Trisa">Trisa</a></li>
+<li><a href="#trisa.tvca.discovery.X509">X509</a></li>
+<li><a href="#trisa.tvca.discovery.X509Store">X509Store</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#scalar-value-types">Scalar Value Types</a></p>
+</li>
+</ul>
+<p><a name="trisa/data/ethereum/v1alpha1/ethereum.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#trisadataethereumv1alpha1ethereumproto" id="trisadataethereumv1alpha1ethereumproto">trisa/data/ethereum/v1alpha1/ethereum.proto</a></h2>
+<p><a name="trisa.data.ethereum.v1alpha1.Data"></a></p>
+<h3><a class="header" href="#data" id="data">Data</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>source</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>destination</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>amount</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="trisa/data/bitcoin/v1alpha1/bitcoin.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#trisadatabitcoinv1alpha1bitcoinproto" id="trisadatabitcoinv1alpha1bitcoinproto">trisa/data/bitcoin/v1alpha1/bitcoin.proto</a></h2>
+<p><a name="trisa.data.bitcoin.v1alpha1.Data"></a></p>
+<h3><a class="header" href="#data-1" id="data-1">Data</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>source</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>destination</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>amount</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="trisa/protocol/v1alpha1/trisa.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#trisaprotocolv1alpha1trisaproto" id="trisaprotocolv1alpha1trisaproto">trisa/protocol/v1alpha1/trisa.proto</a></h2>
+<p><a name="trisa.protocol.v1alpha1.Transaction"></a></p>
+<h3><a class="header" href="#transaction" id="transaction">Transaction</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>id</td><td><a href="#string">string</a></td><td></td><td>The transaction identifier generated by the sender. Any response to a transaction request needs to carry the same identifier.</td></tr>
+<tr><td>transaction</td><td><a href="#bytes">bytes</a></td><td></td><td>Encrypted TransactionData</td></tr>
+<tr><td>encryption_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Encryption key used to encrypt the transaction blob. This key itself is encrypted using the public key of the receiver.</td></tr>
+<tr><td>encryption_algorithm</td><td><a href="#string">string</a></td><td></td><td>The encryption algorithm used to encrypt the transaction blob.</td></tr>
+<tr><td>hmac</td><td><a href="#bytes">bytes</a></td><td></td><td>HMAC signature calculated from encrypted transaction blob.</td></tr>
+<tr><td>hmac_secret</td><td><a href="#bytes">bytes</a></td><td></td><td>The HMAC secret used to calculate the HMAC signature. This secret itself is encrypted using the public key of the receiver.</td></tr>
+<tr><td>hmac_algorithm</td><td><a href="#string">string</a></td><td></td><td>The algorithm used to calculate the HMAC signature.</td></tr>
+</tbody></table>
+<p><a name="trisa.protocol.v1alpha1.TransactionData"></a></p>
+<h3><a class="header" href="#transactiondata" id="transactiondata">TransactionData</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>identity</td><td><a href="#google.protobuf.Any">google.protobuf.Any</a></td><td></td><td>Identity contains any valid identity structure.</td></tr>
+<tr><td>data</td><td><a href="#google.protobuf.Any">google.protobuf.Any</a></td><td></td><td>Data contains the network specific data.</td></tr>
+</tbody></table>
+<p><a name="trisa.protocol.v1alpha1.TrisaPeer2Peer"></a></p>
+<h3><a class="header" href="#trisapeer2peer" id="trisapeer2peer">TrisaPeer2Peer</a></h3>
+<table><thead><tr><th>Method Name</th><th>Request Type</th><th>Response Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>TransactionStream</td><td><a href="#trisa.protocol.v1alpha1.Transaction">Transaction</a> stream</td><td><a href="#trisa.protocol.v1alpha1.Transaction">Transaction</a> stream</td><td></td></tr>
+</tbody></table>
+<p><a name="trisa/identity/us/v1alpha1/identity.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#trisaidentityusv1alpha1identityproto" id="trisaidentityusv1alpha1identityproto">trisa/identity/us/v1alpha1/identity.proto</a></h2>
+<p><a name="trisa.identity.us.v1alpha1.Identity"></a></p>
+<h3><a class="header" href="#identity" id="identity">Identity</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>first_name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>last_name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>ssn</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>state</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>driver_license</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="trisa/identity/be/v1alpha1/identity.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#trisaidentitybev1alpha1identityproto" id="trisaidentitybev1alpha1identityproto">trisa/identity/be/v1alpha1/identity.proto</a></h2>
+<p><a name="trisa.identity.be.v1alpha1.Identity"></a></p>
+<h3><a class="header" href="#identity-1" id="identity-1">Identity</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>first_name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>last_name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>national_number</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>city_of_birth</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="tvca/discovery/discovery.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#tvcadiscoverydiscoveryproto" id="tvcadiscoverydiscoveryproto">tvca/discovery/discovery.proto</a></h2>
+<p><a name="trisa.tvca.discovery.CRLStore"></a></p>
+<h3><a class="header" href="#crlstore" id="crlstore">CRLStore</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>revoked</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="trisa.tvca.discovery.Trisa"></a></p>
+<h3><a class="header" href="#trisa" id="trisa">Trisa</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>ca</td><td><a href="#string">string</a></td><td></td><td>URL where the /.well-known/trisa endpoint is located.</td></tr>
+<tr><td>x509_root_store</td><td><a href="#string">string</a></td><td></td><td>URL to the root certificate store.</td></tr>
+<tr><td>x509_issuer_store</td><td><a href="#string">string</a></td><td></td><td>URL to the intermediate/issuer certificate store.</td></tr>
+<tr><td>x509_vasp_store</td><td><a href="#string">string</a></td><td></td><td>URL to the active VASP certificate store.</td></tr>
+<tr><td>crl_store</td><td><a href="#string">string</a></td><td></td><td>URL to the CRL store.</td></tr>
+</tbody></table>
+<p><a name="trisa.tvca.discovery.X509"></a></p>
+<h3><a class="header" href="#x509" id="x509">X509</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>id</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>pem</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="trisa.tvca.discovery.X509Store"></a></p>
+<h3><a class="header" href="#x509store" id="x509store">X509Store</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>store</td><td><a href="#trisa.tvca.discovery.X509">X509</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<h2><a class="header" href="#scalar-value-types" id="scalar-value-types">Scalar Value Types</a></h2>
+<table><thead><tr><th>.proto Type</th><th>Notes</th><th>C++ Type</th><th>Java Type</th><th>Python Type</th></tr></thead><tbody>
+<tr><td><a name="double" /> double</td><td></td><td>double</td><td>double</td><td>float</td></tr>
+<tr><td><a name="float" /> float</td><td></td><td>float</td><td>float</td><td>float</td></tr>
+<tr><td><a name="int32" /> int32</td><td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="int64" /> int64</td><td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="uint32" /> uint32</td><td>Uses variable-length encoding.</td><td>uint32</td><td>int</td><td>int/long</td></tr>
+<tr><td><a name="uint64" /> uint64</td><td>Uses variable-length encoding.</td><td>uint64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="sint32" /> sint32</td><td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="sint64" /> sint64</td><td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="fixed32" /> fixed32</td><td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td><td>uint32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="fixed64" /> fixed64</td><td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td><td>uint64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="sfixed32" /> sfixed32</td><td>Always four bytes.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="sfixed64" /> sfixed64</td><td>Always eight bytes.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="bool" /> bool</td><td></td><td>bool</td><td>boolean</td><td>boolean</td></tr>
+<tr><td><a name="string" /> string</td><td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td><td>string</td><td>String</td><td>str/unicode</td></tr>
+<tr><td><a name="bytes" /> bytes</td><td>May contain any arbitrary sequence of bytes.</td><td>string</td><td>ByteString</td><td>str</td></tr>
+</tbody></table>
+<h1><a class="header" href="#protos-file-tree" id="protos-file-tree">Protos File Tree</a></h1>
+<pre><code>
+.
+├── trisa
+│   ├── data
+│   │   ├── bitcoin
+│   │   │   └── v1alpha1
+│   │   │       └── bitcoin.proto
+│   │   └── ethereum
+│   │       └── v1alpha1
+│   │           └── ethereum.proto
+│   ├── identity
+│   │   ├── be
+│   │   │   └── v1alpha1
+│   │   │       └── identity.proto
+│   │   └── us
+│   │       └── v1alpha1
+│   │           └── identity.proto
+│   └── protocol
+│       └── v1alpha1
+│           └── trisa.proto
+└── tvca
+    └── discovery
+        └── discovery.proto
+
+15 directories, 6 files
+
+</code></pre>
+<h1><a class="header" href="#protobuf-sources" id="protobuf-sources">Protobuf sources</a></h1>
+<h2><a class="header" href="#srctrisadataethereumv1alpha1ethereumproto" id="srctrisadataethereumv1alpha1ethereumproto">src:./trisa/data/ethereum/v1alpha1/ethereum.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package trisa.data.ethereum.v1alpha1;
+
+option go_package = &quot;github.com/trisacrypto/trisa/proto/trisa/data/ethereum/v1alpha1&quot;;
+
+message Data {
+    string source = 1;
+    string destination = 2;
+    int32 amount = 3;
+}
+</code></pre>
+<h2><a class="header" href="#srctrisadatabitcoinv1alpha1bitcoinproto" id="srctrisadatabitcoinv1alpha1bitcoinproto">src:./trisa/data/bitcoin/v1alpha1/bitcoin.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package trisa.data.bitcoin.v1alpha1;
+
+option go_package = &quot;github.com/trisacrypto/trisa/proto/trisa/data/bitcoin/v1alpha1&quot;;
+
+message Data {
+    string source = 1;
+    string destination = 2;
+    int32 amount = 3;
+}
+</code></pre>
+<h2><a class="header" href="#srctrisaprotocolv1alpha1trisaproto" id="srctrisaprotocolv1alpha1trisaproto">src:./trisa/protocol/v1alpha1/trisa.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package trisa.protocol.v1alpha1;
+
+import &quot;google/protobuf/any.proto&quot;;
+
+option go_package = &quot;github.com/trisacrypto/trisa/proto/trisa/protocol/v1alpha1&quot;;
+
+service TrisaPeer2Peer {
+    rpc TransactionStream(stream Transaction) returns (stream Transaction) {}
+}
+
+message Transaction {
+    // The transaction identifier generated by the sender. Any response
+    // to a transaction request needs to carry the same identifier.
+    string id = 1;
+
+    // Encrypted TransactionData
+    bytes transaction = 2;
+
+    // Encryption key used to encrypt the transaction blob. This key itself
+    // is encrypted using the public key of the receiver.
+    bytes encryption_key = 3;
+
+    // The encryption algorithm used to encrypt the transaction blob.
+    string encryption_algorithm = 4;
+
+    // HMAC signature calculated from encrypted transaction blob.
+    bytes hmac = 5;
+
+    // The HMAC secret used to calculate the HMAC signature. This secret
+    // itself is encrypted using the public key of the receiver.
+    bytes hmac_secret = 6;
+
+    // The algorithm used to calculate the HMAC signature.
+    string hmac_algorithm = 7;
+}
+
+message TransactionData {
+    // Identity contains any valid identity structure.
+    google.protobuf.Any identity = 1;
+
+    // Data contains the network specific data.
+    google.protobuf.Any data = 2;
+}
+</code></pre>
+<h2><a class="header" href="#srctrisaidentityusv1alpha1identityproto" id="srctrisaidentityusv1alpha1identityproto">src:./trisa/identity/us/v1alpha1/identity.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package trisa.identity.us.v1alpha1;
+
+option go_package = &quot;github.com/trisacrypto/trisa/proto/trisa/identity/us/v1alpha1&quot;;
+
+message Identity {
+    string first_name = 1;
+    string last_name = 2;
+    string ssn = 3;
+    string state = 4;
+    string driver_license = 5;
+}
+</code></pre>
+<h2><a class="header" href="#srctrisaidentitybev1alpha1identityproto" id="srctrisaidentitybev1alpha1identityproto">src:./trisa/identity/be/v1alpha1/identity.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package trisa.identity.be.v1alpha1;
+
+option go_package = &quot;github.com/trisacrypto/trisa/proto/trisa/identity/be/v1alpha1&quot;;
+
+message Identity {
+    string first_name = 1;
+    string last_name = 2;
+    string national_number = 3;
+    string city_of_birth = 4;
+}
+</code></pre>
+<h2><a class="header" href="#srctvcadiscoverydiscoveryproto" id="srctvcadiscoverydiscoveryproto">src:./tvca/discovery/discovery.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package trisa.tvca.discovery;
+
+option go_package = &quot;github.com/trisacrypto/trisa/proto/tvca/discovery&quot;;
+
+message Trisa {
+    // URL where the /.well-known/trisa endpoint is located.
+    string ca = 1;
+
+    // URL to the root certificate store.
+    string x509_root_store = 2;
+
+    // URL to the intermediate/issuer certificate store.
+    string x509_issuer_store = 3;
+
+    // URL to the active VASP certificate store.
+    string x509_vasp_store = 4;
+
+    // URL to the CRL store.
+    string crl_store = 5;
+}
+
+message X509Store {
+    repeated X509 store = 1;
+}
+
+message X509 {
+    string id = 1;
+    string pem = 2;
+}
+
+message CRLStore {
+    repeated string revoked = 1;
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../dlt/libra.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../dao.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../dlt/libra.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../dao.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
