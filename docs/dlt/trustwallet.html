@@ -1,0 +1,3689 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>TrustWallet - DLTDOJO3 第三新熵熱踢道場</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> DLTDOJO3</a></li><li><a href="../poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><a href="../taichu-raw/index.html"><strong aria-hidden="true">3.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li><a href="../taichu-raw/apache-big5.html"><strong aria-hidden="true">3.1.</strong> HTTPS: Apache Big5</a></li><li><a href="../taichu-raw/openapiv3.html"><strong aria-hidden="true">3.2.</strong> HTTPS: OpenAPI v3</a></li><li><a href="../taichu-raw/others.html"><strong aria-hidden="true">3.3.</strong> 其他</a></li></ol></li><li><a href="../mad-white/index.html"><strong aria-hidden="true">4.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li><a href="../mad-white/code-server.html"><strong aria-hidden="true">4.1.</strong> VS Code Server</a></li></ol></li><li><a href="../mad-red/index.html"><strong aria-hidden="true">5.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">5.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">5.2.</strong> 聊天測試 BIP39</a></li><li><a href="../mad-red/vox/index.html"><strong aria-hidden="true">5.3.</strong> Voxel 組件開發編輯</a></li><li><a href="../mad-red/vox/projects.html"><strong aria-hidden="true">5.4.</strong> Voxel 相關專案</a></li></ol></li><li><a href="../crypto-assets.html"><strong aria-hidden="true">6.</strong> Crypto-Assets</a></li><li><a href="../dlt.html"><strong aria-hidden="true">7.</strong> DLT</a></li><li><ol class="section"><li><a href="../dlt/hl-fabric.html"><strong aria-hidden="true">7.1.</strong> Hyperledger Fabric</a></li><li><a href="../dlt/hl-sawtooth.html"><strong aria-hidden="true">7.2.</strong> Hyperledger Sawtooth</a></li><li><a href="../dlt/hl-burrow.html"><strong aria-hidden="true">7.3.</strong> HyperLedger Burrow</a></li><li><a href="../dlt/libra.html"><strong aria-hidden="true">7.4.</strong> Libra</a></li><li><a href="../dlt/lnrpc.html"><strong aria-hidden="true">7.5.</strong> lightning network</a></li><li><a href="../dlt/exonum.html"><strong aria-hidden="true">7.6.</strong> exonum</a></li><li><a href="../dlt/trisa.html"><strong aria-hidden="true">7.7.</strong> TRISA</a></li><li><a href="../dlt/xuperchain.html"><strong aria-hidden="true">7.8.</strong> xuperchain</a></li><li><a href="../dlt/trustwallet.html" class="active"><strong aria-hidden="true">7.9.</strong> TrustWallet</a></li><li><a href="../dlt/openbazaar.html"><strong aria-hidden="true">7.10.</strong> OpenBazaar</a></li><li><a href="../dlt/amazon-qldb.html"><strong aria-hidden="true">7.11.</strong> Amazon QLDB</a></li></ol></li><li><a href="../dao.html"><strong aria-hidden="true">8.</strong> DAO</a></li><li><ol class="section"><li><a href="../dao/aragon.html"><strong aria-hidden="true">8.1.</strong> Aragon</a></li><li><a href="../dao/joystream.html"><strong aria-hidden="true">8.2.</strong> JoyStream</a></li></ol></li><li><a href="../did.html"><strong aria-hidden="true">9.</strong> DID</a></li><li><a href="../LRE.html"><strong aria-hidden="true">10.</strong> Ledger Reliability Engineering(LRE)</a></li><li><a href="../web/index.html"><strong aria-hidden="true">11.</strong> Web Tech</a></li><li><ol class="section"><li><a href="../web/extensions.html"><strong aria-hidden="true">11.1.</strong> Browser Extensiions</a></li><li><a href="../web/example-page.html"><strong aria-hidden="true">11.2.</strong> Example Pages</a></li><li><a href="../webauthn.html"><strong aria-hidden="true">11.3.</strong> WebAuthn</a></li><li><a href="../webassembly.html"><strong aria-hidden="true">11.4.</strong> WebAssembly</a></li><li><a href="../web/openssl.html"><strong aria-hidden="true">11.5.</strong> OpenSSL</a></li></ol></li><li><a href="../k8s.html"><strong aria-hidden="true">12.</strong> Kubernetes</a></li><li><a href="../plantuml.html"><strong aria-hidden="true">13.</strong> PlantUML</a></li><li><ol class="section"><li><a href="../puml/hyperledger-fabric.html"><strong aria-hidden="true">13.1.</strong> Hyperledger Fabric</a></li><li><a href="../puml/ethereum.html"><strong aria-hidden="true">13.2.</strong> Ethereum</a></li></ol></li><li><a href="../messaging.html"><strong aria-hidden="true">14.</strong> Messaging</a></li><li><a href="../mdbook/index.html"><strong aria-hidden="true">15.</strong> mdbook</a></li><li><ol class="section"><li><a href="../mdbook/preprocessors.html"><strong aria-hidden="true">15.1.</strong> preprocessors</a></li><li><a href="../mdbook/others.html"><strong aria-hidden="true">15.2.</strong> 其他</a></li></ol></li><li><a href="../resources.html"><strong aria-hidden="true">16.</strong> 學習資源</a></li><li><a href="../book.html"><strong aria-hidden="true">17.</strong> 書籍</a></li><li><a href="../job.html"><strong aria-hidden="true">18.</strong> 工作</a></li><li><a href="../appendix.html"><strong aria-hidden="true">19.</strong> 附錄</a></li><li><ol class="section"><li><a href="../cmd-help.html"><strong aria-hidden="true">19.1.</strong> 命令列 tc.sh</a></li><li><a href="../license.html"><strong aria-hidden="true">19.2.</strong> 授權條款</a></li><li><a href="../testpage.html"><strong aria-hidden="true">19.3.</strong> 測試頁面</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">DLTDOJO3 第三新熵熱踢道場</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#trustwallet" id="trustwallet">TrustWallet</a></h1>
+<p><a href="https://github.com/trustwallet/wallet-core/tree/master/src/proto">wallet-core/src/proto at master · trustwallet/wallet-core</a></p>
+<!-- toc -->
+<h1><a class="header" href="#如何生成-google-protocol-buffers-文件" id="如何生成-google-protocol-buffers-文件">如何生成 Google Protocol Buffers 文件</a></h1>
+<p><a href="https://github.com/pseudomuto/protoc-gen-doc">pseudomuto/protoc-gen-doc: Documentation generator plugin for Google Protocol Buffers</a></p>
+<pre><code class="language-shell">git clone https://github.com/trustwallet/wallet-core.git /tmp/src/trustwallet-core
+bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
+</code></pre>
+<h1><a class="header" href="#generated-date2019-09-12t1157390800" id="generated-date2019-09-12t1157390800">Generated Date:2019-09-12T11:57:39+08:00</a></h1>
+<h1><a class="header" href="#protocol-documentation" id="protocol-documentation">Protocol Documentation</a></h1>
+<p><a name="top"></a></p>
+<h2><a class="header" href="#table-of-contents" id="table-of-contents">Table of Contents</a></h2>
+<ul>
+<li>
+<p><a href="#Ethereum.proto">Ethereum.proto</a></p>
+<ul>
+<li><a href="#TW.Ethereum.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Ethereum.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Semux.proto">Semux.proto</a></p>
+<ul>
+<li><a href="#TW.Semux.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Semux.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Aion.proto">Aion.proto</a></p>
+<ul>
+<li><a href="#TW.Aion.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Aion.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Cosmos.proto">Cosmos.proto</a></p>
+<ul>
+<li><a href="#TW.Cosmos.Proto.Amount">Amount</a></li>
+<li><a href="#TW.Cosmos.Proto.Fee">Fee</a></li>
+<li><a href="#TW.Cosmos.Proto.SendCoinsMessage">SendCoinsMessage</a></li>
+<li><a href="#TW.Cosmos.Proto.Signature">Signature</a></li>
+<li><a href="#TW.Cosmos.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Cosmos.Proto.SigningOutput">SigningOutput</a></li>
+<li><a href="#TW.Cosmos.Proto.StakeMessage">StakeMessage</a></li>
+<li><a href="#TW.Cosmos.Proto.Transaction">Transaction</a></li>
+<li><a href="#TW.Cosmos.Proto.WithdrawStakeRewardMessage">WithdrawStakeRewardMessage</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#ARK.proto">ARK.proto</a></p>
+<ul>
+<li>
+<p><a href="#TW.ARK.Proto.SigningInput">SigningInput</a></p>
+</li>
+<li>
+<p><a href="#TW.ARK.Proto.SigningOutput">SigningOutput</a></p>
+</li>
+<li>
+<p><a href="#TW.ARK.Proto.TransactionType">TransactionType</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#IoTeX.proto">IoTeX.proto</a></p>
+<ul>
+<li><a href="#TW.IoTeX.Proto.Action">Action</a></li>
+<li><a href="#TW.IoTeX.Proto.ActionCore">ActionCore</a></li>
+<li><a href="#TW.IoTeX.Proto.Execution">Execution</a></li>
+<li><a href="#TW.IoTeX.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.IoTeX.Proto.SigningOutput">SigningOutput</a></li>
+<li><a href="#TW.IoTeX.Proto.Transfer">Transfer</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Bitcoin.proto">Bitcoin.proto</a></p>
+<ul>
+<li><a href="#TW.Bitcoin.Proto.OutPoint">OutPoint</a></li>
+<li><a href="#TW.Bitcoin.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Bitcoin.Proto.SigningInput.ScriptsEntry">SigningInput.ScriptsEntry</a></li>
+<li><a href="#TW.Bitcoin.Proto.SigningOutput">SigningOutput</a></li>
+<li><a href="#TW.Bitcoin.Proto.Transaction">Transaction</a></li>
+<li><a href="#TW.Bitcoin.Proto.TransactionInput">TransactionInput</a></li>
+<li><a href="#TW.Bitcoin.Proto.TransactionOutput">TransactionOutput</a></li>
+<li><a href="#TW.Bitcoin.Proto.TransactionPlan">TransactionPlan</a></li>
+<li><a href="#TW.Bitcoin.Proto.UnspentTransaction">UnspentTransaction</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Decred.proto">Decred.proto</a></p>
+<ul>
+<li><a href="#TW.Decred.Proto.SigningOutput">SigningOutput</a></li>
+<li><a href="#TW.Decred.Proto.Transaction">Transaction</a></li>
+<li><a href="#TW.Decred.Proto.TransactionInput">TransactionInput</a></li>
+<li><a href="#TW.Decred.Proto.TransactionOutput">TransactionOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Zilliqa.proto">Zilliqa.proto</a></p>
+<ul>
+<li><a href="#TW.Zilliqa.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Zilliqa.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Solana.proto">Solana.proto</a></p>
+<ul>
+<li><a href="#TW.Solana.Proto.DeactivateStake">DeactivateStake</a></li>
+<li><a href="#TW.Solana.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Solana.Proto.SigningOutput">SigningOutput</a></li>
+<li><a href="#TW.Solana.Proto.Stake">Stake</a></li>
+<li><a href="#TW.Solana.Proto.Transfer">Transfer</a></li>
+<li><a href="#TW.Solana.Proto.WithdrawStake">WithdrawStake</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Ontology.proto">Ontology.proto</a></p>
+<ul>
+<li><a href="#TW.Ontology.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Ontology.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Stellar.proto">Stellar.proto</a></p>
+<ul>
+<li>
+<p><a href="#TW.Stellar.Proto.MemoHash">MemoHash</a></p>
+</li>
+<li>
+<p><a href="#TW.Stellar.Proto.MemoId">MemoId</a></p>
+</li>
+<li>
+<p><a href="#TW.Stellar.Proto.MemoText">MemoText</a></p>
+</li>
+<li>
+<p><a href="#TW.Stellar.Proto.MemoVoid">MemoVoid</a></p>
+</li>
+<li>
+<p><a href="#TW.Stellar.Proto.SigningInput">SigningInput</a></p>
+</li>
+<li>
+<p><a href="#TW.Stellar.Proto.SigningOutput">SigningOutput</a></p>
+</li>
+<li>
+<p><a href="#TW.Stellar.Proto.SigningInput.OperationType">SigningInput.OperationType</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#Waves.proto">Waves.proto</a></p>
+<ul>
+<li><a href="#TW.Waves.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Waves.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Common.proto">Common.proto</a></p>
+<ul>
+<li><a href="#TW.Proto.Result">Result</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Ripple.proto">Ripple.proto</a></p>
+<ul>
+<li><a href="#TW.Ripple.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Ripple.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Binance.proto">Binance.proto</a></p>
+<ul>
+<li><a href="#TW.Binance.Proto.CancelTradeOrder">CancelTradeOrder</a></li>
+<li><a href="#TW.Binance.Proto.ClaimHTLOrder">ClaimHTLOrder</a></li>
+<li><a href="#TW.Binance.Proto.DepositHTLTOrder">DepositHTLTOrder</a></li>
+<li><a href="#TW.Binance.Proto.HTLTOrder">HTLTOrder</a></li>
+<li><a href="#TW.Binance.Proto.RefundHTLTOrder">RefundHTLTOrder</a></li>
+<li><a href="#TW.Binance.Proto.SendOrder">SendOrder</a></li>
+<li><a href="#TW.Binance.Proto.SendOrder.Input">SendOrder.Input</a></li>
+<li><a href="#TW.Binance.Proto.SendOrder.Output">SendOrder.Output</a></li>
+<li><a href="#TW.Binance.Proto.SendOrder.Token">SendOrder.Token</a></li>
+<li><a href="#TW.Binance.Proto.Signature">Signature</a></li>
+<li><a href="#TW.Binance.Proto.Signature.PubKey">Signature.PubKey</a></li>
+<li><a href="#TW.Binance.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Binance.Proto.SigningOutput">SigningOutput</a></li>
+<li><a href="#TW.Binance.Proto.TokenFreezeOrder">TokenFreezeOrder</a></li>
+<li><a href="#TW.Binance.Proto.TokenUnfreezeOrder">TokenUnfreezeOrder</a></li>
+<li><a href="#TW.Binance.Proto.TradeOrder">TradeOrder</a></li>
+<li><a href="#TW.Binance.Proto.Transaction">Transaction</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Icon.proto">Icon.proto</a></p>
+<ul>
+<li><a href="#TW.Icon.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Icon.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#VeChain.proto">VeChain.proto</a></p>
+<ul>
+<li><a href="#TW.VeChain.Proto.Clause">Clause</a></li>
+<li><a href="#TW.VeChain.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.VeChain.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Tezos.proto">Tezos.proto</a></p>
+<ul>
+<li>
+<p><a href="#TW.Tezos.Proto.DelegationOperationData">DelegationOperationData</a></p>
+</li>
+<li>
+<p><a href="#TW.Tezos.Proto.Operation">Operation</a></p>
+</li>
+<li>
+<p><a href="#TW.Tezos.Proto.OperationList">OperationList</a></p>
+</li>
+<li>
+<p><a href="#TW.Tezos.Proto.OriginationOperationData">OriginationOperationData</a></p>
+</li>
+<li>
+<p><a href="#TW.Tezos.Proto.RevealOperationData">RevealOperationData</a></p>
+</li>
+<li>
+<p><a href="#TW.Tezos.Proto.SigningInput">SigningInput</a></p>
+</li>
+<li>
+<p><a href="#TW.Tezos.Proto.SigningOutput">SigningOutput</a></p>
+</li>
+<li>
+<p><a href="#TW.Tezos.Proto.TransactionOperationData">TransactionOperationData</a></p>
+</li>
+<li>
+<p><a href="#TW.Tezos.Proto.Operation.OperationKind">Operation.OperationKind</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#Any.proto">Any.proto</a></p>
+<ul>
+<li><a href="#TW.Any.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Any.Proto.SigningOutput">SigningOutput</a></li>
+<li><a href="#TW.Any.Proto.SigningOutput.Error">SigningOutput.Error</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Nebulas.proto">Nebulas.proto</a></p>
+<ul>
+<li><a href="#TW.Nebulas.Proto.Data">Data</a></li>
+<li><a href="#TW.Nebulas.Proto.RawTransaction">RawTransaction</a></li>
+<li><a href="#TW.Nebulas.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Nebulas.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Bravo.proto">Bravo.proto</a></p>
+<ul>
+<li><a href="#TW.Bravo.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Bravo.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Tron.proto">Tron.proto</a></p>
+<ul>
+<li><a href="#TW.Tron.Proto.BlockHeader">BlockHeader</a></li>
+<li><a href="#TW.Tron.Proto.FreezeBalanceContract">FreezeBalanceContract</a></li>
+<li><a href="#TW.Tron.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Tron.Proto.SigningOutput">SigningOutput</a></li>
+<li><a href="#TW.Tron.Proto.Transaction">Transaction</a></li>
+<li><a href="#TW.Tron.Proto.TransferAssetContract">TransferAssetContract</a></li>
+<li><a href="#TW.Tron.Proto.TransferContract">TransferContract</a></li>
+<li><a href="#TW.Tron.Proto.TriggerSmartContract">TriggerSmartContract</a></li>
+<li><a href="#TW.Tron.Proto.UnfreezeAssetContract">UnfreezeAssetContract</a></li>
+<li><a href="#TW.Tron.Proto.UnfreezeBalanceContract">UnfreezeBalanceContract</a></li>
+<li><a href="#TW.Tron.Proto.VoteAssetContract">VoteAssetContract</a></li>
+<li><a href="#TW.Tron.Proto.VoteWitnessContract">VoteWitnessContract</a></li>
+<li><a href="#TW.Tron.Proto.VoteWitnessContract.Vote">VoteWitnessContract.Vote</a></li>
+<li><a href="#TW.Tron.Proto.WithdrawBalanceContract">WithdrawBalanceContract</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Theta.proto">Theta.proto</a></p>
+<ul>
+<li><a href="#TW.Theta.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Theta.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Aeternity.proto">Aeternity.proto</a></p>
+<ul>
+<li><a href="#TW.Aeternity.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Aeternity.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Nimiq.proto">Nimiq.proto</a></p>
+<ul>
+<li><a href="#TW.Nimiq.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Nimiq.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#Harmony.proto">Harmony.proto</a></p>
+<ul>
+<li><a href="#TW.Harmony.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Harmony.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#EOS.proto">EOS.proto</a></p>
+<ul>
+<li>
+<p><a href="#TW.EOS.Proto.Asset">Asset</a></p>
+</li>
+<li>
+<p><a href="#TW.EOS.Proto.SigningInput">SigningInput</a></p>
+</li>
+<li>
+<p><a href="#TW.EOS.Proto.SigningOutput">SigningOutput</a></p>
+</li>
+<li>
+<p><a href="#TW.EOS.Proto.KeyType">KeyType</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#Nano.proto">Nano.proto</a></p>
+<ul>
+<li><a href="#TW.Nano.Proto.SigningInput">SigningInput</a></li>
+<li><a href="#TW.Nano.Proto.SigningOutput">SigningOutput</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#IOST.proto">IOST.proto</a></p>
+<ul>
+<li>
+<p><a href="#TW.IOST.Proto.AccountInfo">AccountInfo</a></p>
+</li>
+<li>
+<p><a href="#TW.IOST.Proto.Action">Action</a></p>
+</li>
+<li>
+<p><a href="#TW.IOST.Proto.AmountLimit">AmountLimit</a></p>
+</li>
+<li>
+<p><a href="#TW.IOST.Proto.Signature">Signature</a></p>
+</li>
+<li>
+<p><a href="#TW.IOST.Proto.SigningInput">SigningInput</a></p>
+</li>
+<li>
+<p><a href="#TW.IOST.Proto.SigningOutput">SigningOutput</a></p>
+</li>
+<li>
+<p><a href="#TW.IOST.Proto.Transaction">Transaction</a></p>
+</li>
+<li>
+<p><a href="#TW.IOST.Proto.Algorithm">Algorithm</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#scalar-value-types">Scalar Value Types</a></p>
+</li>
+</ul>
+<p><a name="Ethereum.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#ethereumproto" id="ethereumproto">Ethereum.proto</a></h2>
+<p><a name="TW.Ethereum.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput" id="signinginput">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>chain_id</td><td><a href="#bytes">bytes</a></td><td></td><td>Chain identifier (256-bit number)</td></tr>
+<tr><td>nonce</td><td><a href="#bytes">bytes</a></td><td></td><td>Nonce (256-bit number)</td></tr>
+<tr><td>gas_price</td><td><a href="#bytes">bytes</a></td><td></td><td>Gas price (256-bit number)</td></tr>
+<tr><td>gas_limit</td><td><a href="#bytes">bytes</a></td><td></td><td>Gas limit (256-bit number)</td></tr>
+<tr><td>to_address</td><td><a href="#string">string</a></td><td></td><td>Recipient's address.</td></tr>
+<tr><td>amount</td><td><a href="#bytes">bytes</a></td><td></td><td>Amount to send in wei (256-bit number)</td></tr>
+<tr><td>payload</td><td><a href="#bytes">bytes</a></td><td></td><td>Optional payload</td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Private key.</td></tr>
+</tbody></table>
+<p><a name="TW.Ethereum.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput" id="signingoutput">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#bytes">bytes</a></td><td></td><td>Signed and encoded transaction bytes.</td></tr>
+<tr><td>v</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>r</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>s</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="Semux.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#semuxproto" id="semuxproto">Semux.proto</a></h2>
+<p><a name="TW.Semux.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-1" id="signinginput-1">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>destination</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>fee</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>nonce</td><td><a href="#uint64">uint64</a></td><td></td><td>current latest transaction serial number</td></tr>
+<tr><td>timestamp</td><td><a href="#uint64">uint64</a></td><td></td><td>current timestamp in millisecond</td></tr>
+</tbody></table>
+<p><a name="TW.Semux.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-1" id="signingoutput-1">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="Aion.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#aionproto" id="aionproto">Aion.proto</a></h2>
+<p><a name="TW.Aion.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-2" id="signinginput-2">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>nonce</td><td><a href="#bytes">bytes</a></td><td></td><td>Nonce (256-bit number)</td></tr>
+<tr><td>gas_price</td><td><a href="#bytes">bytes</a></td><td></td><td>Gas price (256-bit number)</td></tr>
+<tr><td>gas_limit</td><td><a href="#bytes">bytes</a></td><td></td><td>Gas limit (256-bit number)</td></tr>
+<tr><td>to_address</td><td><a href="#string">string</a></td><td></td><td>Recipient's address.</td></tr>
+<tr><td>amount</td><td><a href="#bytes">bytes</a></td><td></td><td>Amount to send in wei (256-bit number)</td></tr>
+<tr><td>payload</td><td><a href="#bytes">bytes</a></td><td></td><td>Optional payload</td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Private key.</td></tr>
+</tbody></table>
+<p><a name="TW.Aion.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-2" id="signingoutput-2">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#bytes">bytes</a></td><td></td><td>Signed and encoded transaction bytes.</td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td>Signature.</td></tr>
+</tbody></table>
+<p><a name="Cosmos.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#cosmosproto" id="cosmosproto">Cosmos.proto</a></h2>
+<p><a name="TW.Cosmos.Proto.Amount"></a></p>
+<h3><a class="header" href="#amount" id="amount">Amount</a></h3>
+<p>Amount</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>denom</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>amount</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Cosmos.Proto.Fee"></a></p>
+<h3><a class="header" href="#fee" id="fee">Fee</a></h3>
+<p>Fee</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>amounts</td><td><a href="#TW.Cosmos.Proto.Amount">Amount</a></td><td>repeated</td><td></td></tr>
+<tr><td>gas</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Cosmos.Proto.SendCoinsMessage"></a></p>
+<h3><a class="header" href="#sendcoinsmessage" id="sendcoinsmessage">SendCoinsMessage</a></h3>
+<p>Message for sending coins.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>from_address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>to_address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>amounts</td><td><a href="#TW.Cosmos.Proto.Amount">Amount</a></td><td>repeated</td><td></td></tr>
+<tr><td>type_prefix</td><td><a href="#string">string</a></td><td></td><td>default is cosmos-sdk/MsgSend</td></tr>
+</tbody></table>
+<p><a name="TW.Cosmos.Proto.Signature"></a></p>
+<h3><a class="header" href="#signature" id="signature">Signature</a></h3>
+<p>Signature</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>public_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Cosmos.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-3" id="signinginput-3">SigningInput</a></h3>
+<p>Input data necessary to create a signed order.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>account_number</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>chain_id</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>fee</td><td><a href="#TW.Cosmos.Proto.Fee">Fee</a></td><td></td><td></td></tr>
+<tr><td>memo</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>sequence</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>send_coins_message</td><td><a href="#TW.Cosmos.Proto.SendCoinsMessage">SendCoinsMessage</a></td><td></td><td></td></tr>
+<tr><td>stake_message</td><td><a href="#TW.Cosmos.Proto.StakeMessage">StakeMessage</a></td><td></td><td></td></tr>
+<tr><td>unstake_message</td><td><a href="#TW.Cosmos.Proto.StakeMessage">StakeMessage</a></td><td></td><td></td></tr>
+<tr><td>withdraw_stake_reward_message</td><td><a href="#TW.Cosmos.Proto.WithdrawStakeRewardMessage">WithdrawStakeRewardMessage</a></td><td></td><td></td></tr>
+<tr><td>type_prefix</td><td><a href="#string">string</a></td><td></td><td>default is cosmos-sdk/MsgSend</td></tr>
+</tbody></table>
+<p><a name="TW.Cosmos.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-3" id="signingoutput-3">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td>Signature</td></tr>
+<tr><td>json</td><td><a href="#string">string</a></td><td></td><td>Signed transaction in JSON.</td></tr>
+</tbody></table>
+<p><a name="TW.Cosmos.Proto.StakeMessage"></a></p>
+<h3><a class="header" href="#stakemessage" id="stakemessage">StakeMessage</a></h3>
+<p>Message for staking.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>delegator_address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>validator_address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>amount</td><td><a href="#TW.Cosmos.Proto.Amount">Amount</a></td><td></td><td></td></tr>
+<tr><td>type_prefix</td><td><a href="#string">string</a></td><td></td><td>cosmos-sdk/MsgDelegate to stake and cosmos-sdk/MsgUndelegate to unstake</td></tr>
+</tbody></table>
+<p><a name="TW.Cosmos.Proto.Transaction"></a></p>
+<h3><a class="header" href="#transaction" id="transaction">Transaction</a></h3>
+<p>Transaction</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>fee</td><td><a href="#TW.Cosmos.Proto.Fee">Fee</a></td><td></td><td></td></tr>
+<tr><td>memo</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>signature</td><td><a href="#TW.Cosmos.Proto.Signature">Signature</a></td><td></td><td></td></tr>
+<tr><td>send_coins_message</td><td><a href="#TW.Cosmos.Proto.SendCoinsMessage">SendCoinsMessage</a></td><td></td><td></td></tr>
+<tr><td>stake_message</td><td><a href="#TW.Cosmos.Proto.StakeMessage">StakeMessage</a></td><td></td><td></td></tr>
+<tr><td>unstake_message</td><td><a href="#TW.Cosmos.Proto.StakeMessage">StakeMessage</a></td><td></td><td></td></tr>
+<tr><td>withdraw_stake_reward_message</td><td><a href="#TW.Cosmos.Proto.WithdrawStakeRewardMessage">WithdrawStakeRewardMessage</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Cosmos.Proto.WithdrawStakeRewardMessage"></a></p>
+<h3><a class="header" href="#withdrawstakerewardmessage" id="withdrawstakerewardmessage">WithdrawStakeRewardMessage</a></h3>
+<p>Message for staking.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>delegator_address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>validator_address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>type_prefix</td><td><a href="#string">string</a></td><td></td><td>default is cosmos-sdk/MsgWithdrawDelegationReward</td></tr>
+</tbody></table>
+<p><a name="ARK.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#arkproto" id="arkproto">ARK.proto</a></h2>
+<p><a name="TW.ARK.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-4" id="signinginput-4">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>type</td><td><a href="#TW.ARK.Proto.TransactionType">TransactionType</a></td><td></td><td>Transaction type</td></tr>
+<tr><td>amount</td><td><a href="#uint64">uint64</a></td><td></td><td>Amount to send</td></tr>
+<tr><td>fee</td><td><a href="#uint64">uint64</a></td><td></td><td>Fee</td></tr>
+<tr><td>to_address</td><td><a href="#string">string</a></td><td></td><td>Recipient's address.</td></tr>
+<tr><td>timestamp</td><td><a href="#uint32">uint32</a></td><td></td><td>Timestamp</td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Private key.</td></tr>
+</tbody></table>
+<p><a name="TW.ARK.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-4" id="signingoutput-4">SigningOutput</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#string">string</a></td><td></td><td>JSON-encoded transaction parameters.</td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td>Signature.</td></tr>
+</tbody></table>
+<p><a name="TW.ARK.Proto.TransactionType"></a></p>
+<h3><a class="header" href="#transactiontype" id="transactiontype">TransactionType</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>Transfer</td><td>0</td><td></td></tr>
+</tbody></table>
+<p><a name="IoTeX.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#iotexproto" id="iotexproto">IoTeX.proto</a></h2>
+<p><a name="TW.IoTeX.Proto.Action"></a></p>
+<h3><a class="header" href="#action" id="action">Action</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>core</td><td><a href="#TW.IoTeX.Proto.ActionCore">ActionCore</a></td><td></td><td></td></tr>
+<tr><td>senderPubKey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.IoTeX.Proto.ActionCore"></a></p>
+<h3><a class="header" href="#actioncore" id="actioncore">ActionCore</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>version</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>nonce</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>gasLimit</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>gasPrice</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>transfer</td><td><a href="#TW.IoTeX.Proto.Transfer">Transfer</a></td><td></td><td></td></tr>
+<tr><td>execution</td><td><a href="#TW.IoTeX.Proto.Execution">Execution</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.IoTeX.Proto.Execution"></a></p>
+<h3><a class="header" href="#execution" id="execution">Execution</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>amount</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>contract</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.IoTeX.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-5" id="signinginput-5">SigningInput</a></h3>
+<p>transaction signing input</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>version</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>nonce</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>gasLimit</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>gasPrice</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>privateKey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>transfer</td><td><a href="#TW.IoTeX.Proto.Transfer">Transfer</a></td><td></td><td></td></tr>
+<tr><td>execution</td><td><a href="#TW.IoTeX.Proto.Execution">Execution</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.IoTeX.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-5" id="signingoutput-5">SigningOutput</a></h3>
+<p>transaction signing output</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#bytes">bytes</a></td><td></td><td>Signed and encoded Action bytes</td></tr>
+<tr><td>hash</td><td><a href="#bytes">bytes</a></td><td></td><td>Signed Action hash</td></tr>
+</tbody></table>
+<p><a name="TW.IoTeX.Proto.Transfer"></a></p>
+<h3><a class="header" href="#transfer" id="transfer">Transfer</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>amount</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>recipient</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>payload</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="Bitcoin.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#bitcoinproto" id="bitcoinproto">Bitcoin.proto</a></h2>
+<p><a name="TW.Bitcoin.Proto.OutPoint"></a></p>
+<h3><a class="header" href="#outpoint" id="outpoint">OutPoint</a></h3>
+<p>Bitcoin transaction out-point reference.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>hash</td><td><a href="#bytes">bytes</a></td><td></td><td>The hash of the referenced transaction.</td></tr>
+<tr><td>index</td><td><a href="#uint32">uint32</a></td><td></td><td>The index of the specific output in the transaction.</td></tr>
+<tr><td>sequence</td><td><a href="#uint32">uint32</a></td><td></td><td>Transaction version as defined by the sender.</td></tr>
+</tbody></table>
+<p><a name="TW.Bitcoin.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-6" id="signinginput-6">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>hash_type</td><td><a href="#uint32">uint32</a></td><td></td><td>Hash type to use when signing.</td></tr>
+<tr><td>amount</td><td><a href="#int64">int64</a></td><td></td><td>Amount to send.</td></tr>
+<tr><td>byte_fee</td><td><a href="#int64">int64</a></td><td></td><td>Transaction fee per byte.</td></tr>
+<tr><td>to_address</td><td><a href="#string">string</a></td><td></td><td>Recipient's address.</td></tr>
+<tr><td>change_address</td><td><a href="#string">string</a></td><td></td><td>Change address.</td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td>repeated</td><td>Available private keys.</td></tr>
+<tr><td>scripts</td><td><a href="#TW.Bitcoin.Proto.SigningInput.ScriptsEntry">SigningInput.ScriptsEntry</a></td><td>repeated</td><td>Available redeem scripts indexed by script hash.</td></tr>
+<tr><td>utxo</td><td><a href="#TW.Bitcoin.Proto.UnspentTransaction">UnspentTransaction</a></td><td>repeated</td><td>Available unspent transaction outputs.</td></tr>
+<tr><td>use_max_amount</td><td><a href="#bool">bool</a></td><td></td><td>If sending max amount.</td></tr>
+<tr><td>coin_type</td><td><a href="#uint32">uint32</a></td><td></td><td>Coin type (forks).</td></tr>
+</tbody></table>
+<p><a name="TW.Bitcoin.Proto.SigningInput.ScriptsEntry"></a></p>
+<h3><a class="header" href="#signinginputscriptsentry" id="signinginputscriptsentry">SigningInput.ScriptsEntry</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Bitcoin.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-6" id="signingoutput-6">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>transaction</td><td><a href="#TW.Bitcoin.Proto.Transaction">Transaction</a></td><td></td><td>Resulting transaction. Note that the amount may be different than the requested amount to account for fees and available funds.</td></tr>
+<tr><td>encoded</td><td><a href="#bytes">bytes</a></td><td></td><td>Signed and encoded transaction bytes.</td></tr>
+<tr><td>fee</td><td><a href="#int64">int64</a></td><td></td><td>Total transaction fees.</td></tr>
+<tr><td>max_amount</td><td><a href="#int64">int64</a></td><td></td><td>Maximum spendable amount.</td></tr>
+<tr><td>transaction_id</td><td><a href="#string">string</a></td><td></td><td>Transaction id</td></tr>
+</tbody></table>
+<p><a name="TW.Bitcoin.Proto.Transaction"></a></p>
+<h3><a class="header" href="#transaction-1" id="transaction-1">Transaction</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>version</td><td><a href="#sint32">sint32</a></td><td></td><td>Transaction data format version.</td></tr>
+<tr><td>lockTime</td><td><a href="#uint32">uint32</a></td><td></td><td>The block number or timestamp at which this transaction is unlocked.</td></tr>
+<tr><td>inputs</td><td><a href="#TW.Bitcoin.Proto.TransactionInput">TransactionInput</a></td><td>repeated</td><td>A list of 1 or more transaction inputs or sources for coins.</td></tr>
+<tr><td>outputs</td><td><a href="#TW.Bitcoin.Proto.TransactionOutput">TransactionOutput</a></td><td>repeated</td><td>A list of 1 or more transaction outputs or destinations for coins</td></tr>
+</tbody></table>
+<p><a name="TW.Bitcoin.Proto.TransactionInput"></a></p>
+<h3><a class="header" href="#transactioninput" id="transactioninput">TransactionInput</a></h3>
+<p>Bitcoin transaction input.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>previousOutput</td><td><a href="#TW.Bitcoin.Proto.OutPoint">OutPoint</a></td><td></td><td>Reference to the previous transaction's output.</td></tr>
+<tr><td>sequence</td><td><a href="#uint32">uint32</a></td><td></td><td>Transaction version as defined by the sender.</td></tr>
+<tr><td>script</td><td><a href="#bytes">bytes</a></td><td></td><td>Computational script for confirming transaction authorization.</td></tr>
+</tbody></table>
+<p><a name="TW.Bitcoin.Proto.TransactionOutput"></a></p>
+<h3><a class="header" href="#transactionoutput" id="transactionoutput">TransactionOutput</a></h3>
+<p>Bitcoin transaction output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>value</td><td><a href="#int64">int64</a></td><td></td><td>Transaction amount.</td></tr>
+<tr><td>script</td><td><a href="#bytes">bytes</a></td><td></td><td>Usually contains the public key as a Bitcoin script setting up conditions to claim this output.</td></tr>
+</tbody></table>
+<p><a name="TW.Bitcoin.Proto.TransactionPlan"></a></p>
+<h3><a class="header" href="#transactionplan" id="transactionplan">TransactionPlan</a></h3>
+<p>Describes a preliminary transaction plan.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>amount</td><td><a href="#int64">int64</a></td><td></td><td>Amount to be received at the other end.</td></tr>
+<tr><td>available_amount</td><td><a href="#int64">int64</a></td><td></td><td>Maximum available amount.</td></tr>
+<tr><td>fee</td><td><a href="#int64">int64</a></td><td></td><td>Estimated transaction fee.</td></tr>
+<tr><td>change</td><td><a href="#int64">int64</a></td><td></td><td>Change.</td></tr>
+<tr><td>utxos</td><td><a href="#TW.Bitcoin.Proto.UnspentTransaction">UnspentTransaction</a></td><td>repeated</td><td>Selected unspent transaction outputs.</td></tr>
+</tbody></table>
+<p><a name="TW.Bitcoin.Proto.UnspentTransaction"></a></p>
+<h3><a class="header" href="#unspenttransaction" id="unspenttransaction">UnspentTransaction</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>out_point</td><td><a href="#TW.Bitcoin.Proto.OutPoint">OutPoint</a></td><td></td><td></td></tr>
+<tr><td>script</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>amount</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="Decred.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#decredproto" id="decredproto">Decred.proto</a></h2>
+<p><a name="TW.Decred.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-7" id="signingoutput-7">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>transaction</td><td><a href="#TW.Decred.Proto.Transaction">Transaction</a></td><td></td><td>Resulting transaction. Note that the amount may be different than the requested amount to account for fees and available funds.</td></tr>
+<tr><td>encoded</td><td><a href="#bytes">bytes</a></td><td></td><td>Signed and encoded transaction bytes.</td></tr>
+<tr><td>fee</td><td><a href="#int64">int64</a></td><td></td><td>Total transaction fees.</td></tr>
+<tr><td>max_amount</td><td><a href="#int64">int64</a></td><td></td><td>Maximum spendable amount.</td></tr>
+<tr><td>transaction_id</td><td><a href="#string">string</a></td><td></td><td>Transaction id</td></tr>
+</tbody></table>
+<p><a name="TW.Decred.Proto.Transaction"></a></p>
+<h3><a class="header" href="#transaction-2" id="transaction-2">Transaction</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>serializeType</td><td><a href="#uint32">uint32</a></td><td></td><td>Serialization format</td></tr>
+<tr><td>version</td><td><a href="#uint32">uint32</a></td><td></td><td>Transaction data format version</td></tr>
+<tr><td>inputs</td><td><a href="#TW.Decred.Proto.TransactionInput">TransactionInput</a></td><td>repeated</td><td>A list of 1 or more transaction inputs or sources for coins.</td></tr>
+<tr><td>outputs</td><td><a href="#TW.Decred.Proto.TransactionOutput">TransactionOutput</a></td><td>repeated</td><td>A list of 1 or more transaction outputs or destinations for coins</td></tr>
+<tr><td>lockTime</td><td><a href="#uint32">uint32</a></td><td></td><td>The time when a transaction can be spent (usually zero, in which case it has no effect).</td></tr>
+<tr><td>expiry</td><td><a href="#uint32">uint32</a></td><td></td><td>The block height at which the transaction expires and is no longer valid.</td></tr>
+</tbody></table>
+<p><a name="TW.Decred.Proto.TransactionInput"></a></p>
+<h3><a class="header" href="#transactioninput-1" id="transactioninput-1">TransactionInput</a></h3>
+<p>Decred transaction input.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>previousOutput</td><td><a href="#TW.Bitcoin.Proto.OutPoint">TW.Bitcoin.Proto.OutPoint</a></td><td></td><td>Reference to the previous transaction's output.</td></tr>
+<tr><td>sequence</td><td><a href="#uint32">uint32</a></td><td></td><td>Transaction version as defined by the sender.</td></tr>
+<tr><td>valueIn</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>blockHeight</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>blockIndex</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>script</td><td><a href="#bytes">bytes</a></td><td></td><td>Computational script for confirming transaction authorization.</td></tr>
+</tbody></table>
+<p><a name="TW.Decred.Proto.TransactionOutput"></a></p>
+<h3><a class="header" href="#transactionoutput-1" id="transactionoutput-1">TransactionOutput</a></h3>
+<p>Decred transaction output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>value</td><td><a href="#int64">int64</a></td><td></td><td>Transaction amount.</td></tr>
+<tr><td>version</td><td><a href="#uint32">uint32</a></td><td></td><td>Transaction output version.</td></tr>
+<tr><td>script</td><td><a href="#bytes">bytes</a></td><td></td><td>Usually contains the public key as a Decred script setting up conditions to claim this output.</td></tr>
+</tbody></table>
+<p><a name="Zilliqa.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#zilliqaproto" id="zilliqaproto">Zilliqa.proto</a></h2>
+<p><a name="TW.Zilliqa.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-7" id="signinginput-7">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>version</td><td><a href="#uint32">uint32</a></td><td></td><td>Transaction version</td></tr>
+<tr><td>nonce</td><td><a href="#uint64">uint64</a></td><td></td><td>Nonce</td></tr>
+<tr><td>to_address</td><td><a href="#string">string</a></td><td></td><td>Recipient's address.</td></tr>
+<tr><td>amount</td><td><a href="#bytes">bytes</a></td><td></td><td>Amount to send (256-bit number)</td></tr>
+<tr><td>gas_price</td><td><a href="#bytes">bytes</a></td><td></td><td>GasPrice (256-bit number)</td></tr>
+<tr><td>gas_limit</td><td><a href="#uint64">uint64</a></td><td></td><td>GasLimit</td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Private Key</td></tr>
+<tr><td>code</td><td><a href="#bytes">bytes</a></td><td></td><td>Smart contract code</td></tr>
+<tr><td>data</td><td><a href="#bytes">bytes</a></td><td></td><td>String-ified JSON object specifying the transition parameter</td></tr>
+</tbody></table>
+<p><a name="TW.Zilliqa.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-8" id="signingoutput-8">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td>Signed signature bytes.</td></tr>
+</tbody></table>
+<p><a name="Solana.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#solanaproto" id="solanaproto">Solana.proto</a></h2>
+<p><a name="TW.Solana.Proto.DeactivateStake"></a></p>
+<h3><a class="header" href="#deactivatestake" id="deactivatestake">DeactivateStake</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>The stake account private key</td></tr>
+<tr><td>vote_pubkey</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Solana.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-8" id="signinginput-8">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>transfer_transaction</td><td><a href="#TW.Solana.Proto.Transfer">Transfer</a></td><td></td><td></td></tr>
+<tr><td>stake_transaction</td><td><a href="#TW.Solana.Proto.Stake">Stake</a></td><td></td><td></td></tr>
+<tr><td>deactivate_stake_transaction</td><td><a href="#TW.Solana.Proto.DeactivateStake">DeactivateStake</a></td><td></td><td></td></tr>
+<tr><td>withdraw_transaction</td><td><a href="#TW.Solana.Proto.WithdrawStake">WithdrawStake</a></td><td></td><td></td></tr>
+<tr><td>recent_blockhash</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Solana.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-9" id="signingoutput-9">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Solana.Proto.Stake"></a></p>
+<h3><a class="header" href="#stake" id="stake">Stake</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>from_private_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>stake_private_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>vote_pubkey</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Solana.Proto.Transfer"></a></p>
+<h3><a class="header" href="#transfer-1" id="transfer-1">Transfer</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>recipient</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Solana.Proto.WithdrawStake"></a></p>
+<h3><a class="header" href="#withdrawstake" id="withdrawstake">WithdrawStake</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>The stake account private key</td></tr>
+<tr><td>recipient</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="Ontology.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#ontologyproto" id="ontologyproto">Ontology.proto</a></h2>
+<p><a name="TW.Ontology.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-9" id="signinginput-9">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>contract</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>method</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>owner_private_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>to_address</td><td><a href="#string">string</a></td><td></td><td>base58 encode address string (160-bit number)</td></tr>
+<tr><td>amount</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>payer_private_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>gas_price</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>gas_limit</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>query_address</td><td><a href="#string">string</a></td><td></td><td>base58 encode address string (160-bit number)</td></tr>
+<tr><td>nonce</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Ontology.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-10" id="signingoutput-10">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#bytes">bytes</a></td><td></td><td>Signed and encoded transaction bytes.</td></tr>
+</tbody></table>
+<p><a name="Stellar.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#stellarproto" id="stellarproto">Stellar.proto</a></h2>
+<p><a name="TW.Stellar.Proto.MemoHash"></a></p>
+<h3><a class="header" href="#memohash" id="memohash">MemoHash</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>hash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Stellar.Proto.MemoId"></a></p>
+<h3><a class="header" href="#memoid" id="memoid">MemoId</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>id</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Stellar.Proto.MemoText"></a></p>
+<h3><a class="header" href="#memotext" id="memotext">MemoText</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>text</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Stellar.Proto.MemoVoid"></a></p>
+<h3><a class="header" href="#memovoid" id="memovoid">MemoVoid</a></h3>
+<p><a name="TW.Stellar.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-10" id="signinginput-10">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>amount</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>fee</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+<tr><td>sequence</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>account</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>destination</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Private key.</td></tr>
+<tr><td>memo_void</td><td><a href="#TW.Stellar.Proto.MemoVoid">MemoVoid</a></td><td></td><td></td></tr>
+<tr><td>memo_text</td><td><a href="#TW.Stellar.Proto.MemoText">MemoText</a></td><td></td><td></td></tr>
+<tr><td>memo_id</td><td><a href="#TW.Stellar.Proto.MemoId">MemoId</a></td><td></td><td></td></tr>
+<tr><td>memo_hash</td><td><a href="#TW.Stellar.Proto.MemoHash">MemoHash</a></td><td></td><td></td></tr>
+<tr><td>memo_return_hash</td><td><a href="#TW.Stellar.Proto.MemoHash">MemoHash</a></td><td></td><td></td></tr>
+<tr><td>operation_type</td><td><a href="#TW.Stellar.Proto.SigningInput.OperationType">SigningInput.OperationType</a></td><td></td><td></td></tr>
+<tr><td>passphrase</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Stellar.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-11" id="signingoutput-11">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>signature</td><td><a href="#string">string</a></td><td></td><td>Signature.</td></tr>
+</tbody></table>
+<p><a name="TW.Stellar.Proto.SigningInput.OperationType"></a></p>
+<h3><a class="header" href="#signinginputoperationtype" id="signinginputoperationtype">SigningInput.OperationType</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>CREATE_ACCOUNT</td><td>0</td><td></td></tr>
+<tr><td>PAYMENT</td><td>1</td><td></td></tr>
+</tbody></table>
+<p><a name="Waves.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#wavesproto" id="wavesproto">Waves.proto</a></h2>
+<p><a name="TW.Waves.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-11" id="signinginput-11">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>amount</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>asset</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>fee</td><td><a href="#int64">int64</a></td><td></td><td>minimum 0.001 Waves (100000 Wavelets) for now</td></tr>
+<tr><td>fee_asset</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>to</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>attachment</td><td><a href="#bytes">bytes</a></td><td></td><td>any 140 bytes payload, will be displayed to the client as utf-8 string</td></tr>
+<tr><td>timestamp</td><td><a href="#int64">int64</a></td><td></td><td>in millis</td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Waves.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-12" id="signingoutput-12">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>json</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="Common.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#commonproto" id="commonproto">Common.proto</a></h2>
+<p><a name="TW.Proto.Result"></a></p>
+<h3><a class="header" href="#result" id="result">Result</a></h3>
+<p>Result type.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>success</td><td><a href="#bool">bool</a></td><td></td><td>Whether the operation was successful.</td></tr>
+<tr><td>error</td><td><a href="#string">string</a></td><td></td><td>Optional error message, only present if success is false.</td></tr>
+<tr><td>objects</td><td><a href="#google.protobuf.Any">google.protobuf.Any</a></td><td>repeated</td><td>Result objects, if any.</td></tr>
+</tbody></table>
+<p><a name="Ripple.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#rippleproto" id="rippleproto">Ripple.proto</a></h2>
+<p><a name="TW.Ripple.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-12" id="signinginput-12">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>amount</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>fee</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>sequence</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+<tr><td>last_ledger_sequence</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+<tr><td>account</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>destination</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>destination_tag</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>flags</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Ripple.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-13" id="signingoutput-13">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="Binance.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#binanceproto" id="binanceproto">Binance.proto</a></h2>
+<p><a name="TW.Binance.Proto.CancelTradeOrder"></a></p>
+<h3><a class="header" href="#canceltradeorder" id="canceltradeorder">CancelTradeOrder</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>sender</td><td><a href="#bytes">bytes</a></td><td></td><td>0x166E681B // prefix</td></tr>
+</tbody></table>
+<p>originating address |
+| symbol | <a href="#string">string</a> |  | symbol for trading pair in full name of the tokens |
+| refid | <a href="#string">string</a> |  | order id to cancel |</p>
+<p><a name="TW.Binance.Proto.ClaimHTLOrder"></a></p>
+<h3><a class="header" href="#claimhtlorder" id="claimhtlorder">ClaimHTLOrder</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>from</td><td><a href="#bytes">bytes</a></td><td></td><td>0xC1665300 // prefix</td></tr>
+</tbody></table>
+<p>signer address |
+| swap_id | <a href="#bytes">bytes</a> |  |  |
+| random_number | <a href="#bytes">bytes</a> |  |  |</p>
+<p><a name="TW.Binance.Proto.DepositHTLTOrder"></a></p>
+<h3><a class="header" href="#deposithtltorder" id="deposithtltorder">DepositHTLTOrder</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>from</td><td><a href="#bytes">bytes</a></td><td></td><td>0xB33F9A24 // prefix</td></tr>
+</tbody></table>
+<p>signer address |
+| amount | <a href="#TW.Binance.Proto.SendOrder.Token">SendOrder.Token</a> | repeated |  |
+| swap_id | <a href="#bytes">bytes</a> |  |  |</p>
+<p><a name="TW.Binance.Proto.HTLTOrder"></a></p>
+<h3><a class="header" href="#htltorder" id="htltorder">HTLTOrder</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>from</td><td><a href="#bytes">bytes</a></td><td></td><td>0xB33F9A24 // prefix</td></tr>
+</tbody></table>
+<p>signer address |
+| to | <a href="#bytes">bytes</a> |  | recipient address |
+| recipient_other_chain | <a href="#string">string</a> |  |  |
+| sender_other_chain | <a href="#string">string</a> |  |  |
+| random_number_hash | <a href="#bytes">bytes</a> |  | hash of a random number and timestamp, based on SHA256 |
+| timestamp | <a href="#int64">int64</a> |  |  |
+| amount | <a href="#TW.Binance.Proto.SendOrder.Token">SendOrder.Token</a> | repeated |  |
+| expected_income | <a href="#string">string</a> |  | expected gained token on the other chain |
+| height_span | <a href="#int64">int64</a> |  |  |
+| cross_chain | <a href="#bool">bool</a> |  |  |</p>
+<p><a name="TW.Binance.Proto.RefundHTLTOrder"></a></p>
+<h3><a class="header" href="#refundhtltorder" id="refundhtltorder">RefundHTLTOrder</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>from</td><td><a href="#bytes">bytes</a></td><td></td><td>0x3454A27C // prefix</td></tr>
+</tbody></table>
+<p>signer address |
+| swap_id | <a href="#bytes">bytes</a> |  |  |</p>
+<p><a name="TW.Binance.Proto.SendOrder"></a></p>
+<h3><a class="header" href="#sendorder" id="sendorder">SendOrder</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>inputs</td><td><a href="#TW.Binance.Proto.SendOrder.Input">SendOrder.Input</a></td><td>repeated</td><td></td></tr>
+<tr><td>outputs</td><td><a href="#TW.Binance.Proto.SendOrder.Output">SendOrder.Output</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Binance.Proto.SendOrder.Input"></a></p>
+<h3><a class="header" href="#sendorderinput" id="sendorderinput">SendOrder.Input</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>coins</td><td><a href="#TW.Binance.Proto.SendOrder.Token">SendOrder.Token</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Binance.Proto.SendOrder.Output"></a></p>
+<h3><a class="header" href="#sendorderoutput" id="sendorderoutput">SendOrder.Output</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>coins</td><td><a href="#TW.Binance.Proto.SendOrder.Token">SendOrder.Token</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Binance.Proto.SendOrder.Token"></a></p>
+<h3><a class="header" href="#sendordertoken" id="sendordertoken">SendOrder.Token</a></h3>
+<p>0x2A2C87FA</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>denom</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>amount</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Binance.Proto.Signature"></a></p>
+<h3><a class="header" href="#signature-1" id="signature-1">Signature</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>pub_key</td><td><a href="#bytes">bytes</a></td><td></td><td>public key bytes of the signer address</td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td>signature bytes, please check chain access section for signature generation</td></tr>
+<tr><td>account_number</td><td><a href="#int64">int64</a></td><td></td><td>another identifier of signer, which can be read from chain by account REST API or RPC</td></tr>
+<tr><td>sequence</td><td><a href="#int64">int64</a></td><td></td><td>sequence number for the next transaction</td></tr>
+</tbody></table>
+<p><a name="TW.Binance.Proto.Signature.PubKey"></a></p>
+<h3><a class="header" href="#signaturepubkey" id="signaturepubkey">Signature.PubKey</a></h3>
+<p>0xEB5AE987          // prefix
+bytes               // public key bytes</p>
+<p><a name="TW.Binance.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-13" id="signinginput-13">SigningInput</a></h3>
+<p>Input data necessary to create a signed order.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>chain_id</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>account_number</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>sequence</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>source</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>memo</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>trade_order</td><td><a href="#TW.Binance.Proto.TradeOrder">TradeOrder</a></td><td></td><td></td></tr>
+<tr><td>cancel_trade_order</td><td><a href="#TW.Binance.Proto.CancelTradeOrder">CancelTradeOrder</a></td><td></td><td></td></tr>
+<tr><td>send_order</td><td><a href="#TW.Binance.Proto.SendOrder">SendOrder</a></td><td></td><td></td></tr>
+<tr><td>freeze_order</td><td><a href="#TW.Binance.Proto.TokenFreezeOrder">TokenFreezeOrder</a></td><td></td><td></td></tr>
+<tr><td>unfreeze_order</td><td><a href="#TW.Binance.Proto.TokenUnfreezeOrder">TokenUnfreezeOrder</a></td><td></td><td></td></tr>
+<tr><td>htlt_order</td><td><a href="#TW.Binance.Proto.HTLTOrder">HTLTOrder</a></td><td></td><td></td></tr>
+<tr><td>depositHTLT_order</td><td><a href="#TW.Binance.Proto.DepositHTLTOrder">DepositHTLTOrder</a></td><td></td><td></td></tr>
+<tr><td>claimHTLT_order</td><td><a href="#TW.Binance.Proto.ClaimHTLOrder">ClaimHTLOrder</a></td><td></td><td></td></tr>
+<tr><td>refundHTLT_order</td><td><a href="#TW.Binance.Proto.RefundHTLTOrder">RefundHTLTOrder</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Binance.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-14" id="signingoutput-14">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#bytes">bytes</a></td><td></td><td>Signed and encoded transaction bytes.</td></tr>
+</tbody></table>
+<p><a name="TW.Binance.Proto.TokenFreezeOrder"></a></p>
+<h3><a class="header" href="#tokenfreezeorder" id="tokenfreezeorder">TokenFreezeOrder</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>from</td><td><a href="#bytes">bytes</a></td><td></td><td>0xE774B32D // prefix</td></tr>
+</tbody></table>
+<p>owner address |
+| symbol | <a href="#string">string</a> |  | token symbol, in full name with &quot;-&quot; suffix |
+| amount | <a href="#int64">int64</a> |  | amount of token to freeze |</p>
+<p><a name="TW.Binance.Proto.TokenUnfreezeOrder"></a></p>
+<h3><a class="header" href="#tokenunfreezeorder" id="tokenunfreezeorder">TokenUnfreezeOrder</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>from</td><td><a href="#bytes">bytes</a></td><td></td><td>0x6515FF0D // prefix</td></tr>
+</tbody></table>
+<p>owner address |
+| symbol | <a href="#string">string</a> |  | token symbol, in full name with &quot;-&quot; suffix |
+| amount | <a href="#int64">int64</a> |  | amount of token to unfreeze |</p>
+<p><a name="TW.Binance.Proto.TradeOrder"></a></p>
+<h3><a class="header" href="#tradeorder" id="tradeorder">TradeOrder</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>sender</td><td><a href="#bytes">bytes</a></td><td></td><td>0xCE6DC043 // prefix</td></tr>
+</tbody></table>
+<p>originating address |
+| id | <a href="#string">string</a> |  | order id, optional |
+| symbol | <a href="#string">string</a> |  | symbol for trading pair in full name of the tokens |
+| ordertype | <a href="#int64">int64</a> |  | only accept 2 for now, meaning limit order |
+| side | <a href="#int64">int64</a> |  | 1 for buy and 2 fory sell |
+| price | <a href="#int64">int64</a> |  | price of the order, which is the real price multiplied by 1e8 (10^8) and rounded to integer |
+| quantity | <a href="#int64">int64</a> |  | quantity of the order, which is the real price multiplied by 1e8 (10^8) and rounded to integer |
+| timeinforce | <a href="#int64">int64</a> |  | 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC) |</p>
+<p><a name="TW.Binance.Proto.Transaction"></a></p>
+<h3><a class="header" href="#transaction-3" id="transaction-3">Transaction</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>msgs</td><td><a href="#bytes">bytes</a></td><td>repeated</td><td>int64 SIZE-OF-ENCODED // varint encoded length of the structure after encoding 0xF0625DEE // prefix</td></tr>
+</tbody></table>
+<p>array of size 1, containing the transaction message, which are one of the transaction type below |
+| signatures | <a href="#bytes">bytes</a> | repeated | array of size 1, containing the standard signature structure of the transaction sender |
+| memo | <a href="#string">string</a> |  | a short sentence of remark for the transaction, only for <code>Transfer</code> transactions. |
+| source | <a href="#int64">int64</a> |  | an identifier for tools triggerring this transaction, set to zero if unwilling to disclose. |
+| data | <a href="#bytes">bytes</a> |  | reserved for future use |</p>
+<p><a name="Icon.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#iconproto" id="iconproto">Icon.proto</a></h2>
+<p><a name="TW.Icon.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-14" id="signinginput-14">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>from_address</td><td><a href="#string">string</a></td><td></td><td>Sender address.</td></tr>
+<tr><td>to_address</td><td><a href="#string">string</a></td><td></td><td>Recipient address.</td></tr>
+<tr><td>value</td><td><a href="#bytes">bytes</a></td><td></td><td>Transfer amount.</td></tr>
+<tr><td>step_limit</td><td><a href="#bytes">bytes</a></td><td></td><td>The amount of step to send with the transaction.</td></tr>
+<tr><td>timestamp</td><td><a href="#int64">int64</a></td><td></td><td>UNIX epoch time (from 1970.1.1 00:00:00) in microseconds</td></tr>
+<tr><td>nonce</td><td><a href="#bytes">bytes</a></td><td></td><td>Integer value increased by request to avoid replay attacks.</td></tr>
+<tr><td>network_id</td><td><a href="#bytes">bytes</a></td><td></td><td>Network identifier</td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Private key.</td></tr>
+</tbody></table>
+<p><a name="TW.Icon.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-15" id="signingoutput-15">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#string">string</a></td><td></td><td>JSON-encoded transaction parameters.</td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td>Signature.</td></tr>
+</tbody></table>
+<p><a name="VeChain.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#vechainproto" id="vechainproto">VeChain.proto</a></h2>
+<p><a name="TW.VeChain.Proto.Clause"></a></p>
+<h3><a class="header" href="#clause" id="clause">Clause</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>to</td><td><a href="#string">string</a></td><td></td><td>Recipient address.</td></tr>
+<tr><td>value</td><td><a href="#bytes">bytes</a></td><td></td><td>Transaction amount.</td></tr>
+<tr><td>data</td><td><a href="#bytes">bytes</a></td><td></td><td>Payload data.</td></tr>
+</tbody></table>
+<p><a name="TW.VeChain.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-15" id="signinginput-15">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>chain_tag</td><td><a href="#uint32">uint32</a></td><td></td><td>Last byte of the genesis block ID which is used to identify a blockchain to prevent the cross-chain replay attack.</td></tr>
+<tr><td>block_ref</td><td><a href="#uint64">uint64</a></td><td></td><td>Reference to a specific block.</td></tr>
+<tr><td>expiration</td><td><a href="#uint32">uint32</a></td><td></td><td>How long, in terms of the number of blocks, the transaction will be allowed to be mined in VeChainThor.</td></tr>
+<tr><td>clauses</td><td><a href="#TW.VeChain.Proto.Clause">Clause</a></td><td>repeated</td><td>An array of Clause objects. / / Each clause contains fields To, Value and Data to enable a single transaction to carry multiple tasks issued / by the transaction sender.</td></tr>
+<tr><td>gas_price_coef</td><td><a href="#uint32">uint32</a></td><td></td><td>Coefficient used to calculate the gas price for the transaction.</td></tr>
+<tr><td>gas</td><td><a href="#uint64">uint64</a></td><td></td><td>Maximum amount of gas allowed to pay for the transaction.</td></tr>
+<tr><td>depends_on</td><td><a href="#bytes">bytes</a></td><td></td><td>ID of the transaction on which the current transaction depends.</td></tr>
+<tr><td>nonce</td><td><a href="#uint64">uint64</a></td><td></td><td>Number set by user.</td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Private key.</td></tr>
+</tbody></table>
+<p><a name="TW.VeChain.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-16" id="signingoutput-16">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#bytes">bytes</a></td><td></td><td>Signed and encoded transaction bytes.</td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td>Signature.</td></tr>
+</tbody></table>
+<p><a name="Tezos.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#tezosproto" id="tezosproto">Tezos.proto</a></h2>
+<p><a name="TW.Tezos.Proto.DelegationOperationData"></a></p>
+<h3><a class="header" href="#delegationoperationdata" id="delegationoperationdata">DelegationOperationData</a></h3>
+<p>Delegation operation specific data.
+Next field: 2</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>delegate</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tezos.Proto.Operation"></a></p>
+<h3><a class="header" href="#operation" id="operation">Operation</a></h3>
+<p>An operation that can be applied to the Tezos blockchain.
+Next field: 12</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>counter</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>source</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>fee</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>gas_limit</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>storage_limit</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>kind</td><td><a href="#TW.Tezos.Proto.Operation.OperationKind">Operation.OperationKind</a></td><td></td><td></td></tr>
+<tr><td>reveal_operation_data</td><td><a href="#TW.Tezos.Proto.RevealOperationData">RevealOperationData</a></td><td></td><td></td></tr>
+<tr><td>transaction_operation_data</td><td><a href="#TW.Tezos.Proto.TransactionOperationData">TransactionOperationData</a></td><td></td><td></td></tr>
+<tr><td>origination_operation_data</td><td><a href="#TW.Tezos.Proto.OriginationOperationData">OriginationOperationData</a></td><td></td><td></td></tr>
+<tr><td>delegation_operation_data</td><td><a href="#TW.Tezos.Proto.DelegationOperationData">DelegationOperationData</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tezos.Proto.OperationList"></a></p>
+<h3><a class="header" href="#operationlist" id="operationlist">OperationList</a></h3>
+<p>A list of operations and a branch.
+Next field: 3</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>branch</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>operations</td><td><a href="#TW.Tezos.Proto.Operation">Operation</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tezos.Proto.OriginationOperationData"></a></p>
+<h3><a class="header" href="#originationoperationdata" id="originationoperationdata">OriginationOperationData</a></h3>
+<p>Origination operation specific data.
+Next field: 3</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>manager_pubkey</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>balance</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tezos.Proto.RevealOperationData"></a></p>
+<h3><a class="header" href="#revealoperationdata" id="revealoperationdata">RevealOperationData</a></h3>
+<p>Reveal operation specific data.
+Next field: 2</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>public_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tezos.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-16" id="signinginput-16">SigningInput</a></h3>
+<p>Input data necessary to create a signed Tezos transaction.
+Next field: 3</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>operation_list</td><td><a href="#TW.Tezos.Proto.OperationList">OperationList</a></td><td></td><td></td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tezos.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-17" id="signingoutput-17">SigningOutput</a></h3>
+<p>Transaction signing output.
+Next field: 2</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>signed_bytes</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tezos.Proto.TransactionOperationData"></a></p>
+<h3><a class="header" href="#transactionoperationdata" id="transactionoperationdata">TransactionOperationData</a></h3>
+<p>Transaction operation specific data.
+Next field: 3</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>destination</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>amount</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tezos.Proto.Operation.OperationKind"></a></p>
+<h3><a class="header" href="#operationoperationkind" id="operationoperationkind">Operation.OperationKind</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>ENDORSEMENT</td><td>0</td><td>Note: Proto3 semantics require a zero value.</td></tr>
+<tr><td>REVEAL</td><td>7</td><td></td></tr>
+<tr><td>TRANSACTION</td><td>8</td><td></td></tr>
+<tr><td>ORIGINATION</td><td>9</td><td></td></tr>
+<tr><td>DELEGATION</td><td>10</td><td></td></tr>
+</tbody></table>
+<p><a name="Any.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#anyproto" id="anyproto">Any.proto</a></h2>
+<p><a name="TW.Any.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-17" id="signinginput-17">SigningInput</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>coin_type</td><td><a href="#uint32">uint32</a></td><td></td><td>BIP44 network ID</td></tr>
+<tr><td>transaction</td><td><a href="#string">string</a></td><td></td><td>JSON transaction</td></tr>
+<tr><td>private_key</td><td><a href="#string">string</a></td><td></td><td>Private Key in HEX format</td></tr>
+</tbody></table>
+<p><a name="TW.Any.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-18" id="signingoutput-18">SigningOutput</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>error</td><td><a href="#TW.Any.Proto.SigningOutput.Error">SigningOutput.Error</a></td><td></td><td></td></tr>
+<tr><td>success</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>output</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Any.Proto.SigningOutput.Error"></a></p>
+<h3><a class="header" href="#signingoutputerror" id="signingoutputerror">SigningOutput.Error</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>code</td><td><a href="#uint32">uint32</a></td><td></td><td>Error code</td></tr>
+<tr><td>description</td><td><a href="#string">string</a></td><td></td><td>Error description</td></tr>
+</tbody></table>
+<p><a name="Nebulas.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#nebulasproto" id="nebulasproto">Nebulas.proto</a></h2>
+<p><a name="TW.Nebulas.Proto.Data"></a></p>
+<h3><a class="header" href="#data" id="data">Data</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>type</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>payload</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Nebulas.Proto.RawTransaction"></a></p>
+<h3><a class="header" href="#rawtransaction" id="rawtransaction">RawTransaction</a></h3>
+<p>Raw transaction data</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>hash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>from</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>to</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>nonce</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>timestamp</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>data</td><td><a href="#TW.Nebulas.Proto.Data">Data</a></td><td></td><td></td></tr>
+<tr><td>chain_id</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>gas_price</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>gas_limit</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>alg</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>sign</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Nebulas.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-18" id="signinginput-18">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>from_address</td><td><a href="#string">string</a></td><td></td><td>sender's address.</td></tr>
+<tr><td>chain_id</td><td><a href="#bytes">bytes</a></td><td></td><td>Chain identifier (256-bit number)</td></tr>
+<tr><td>nonce</td><td><a href="#bytes">bytes</a></td><td></td><td>Nonce (256-bit number)</td></tr>
+<tr><td>gas_price</td><td><a href="#bytes">bytes</a></td><td></td><td>Gas price (256-bit number)</td></tr>
+<tr><td>gas_limit</td><td><a href="#bytes">bytes</a></td><td></td><td>Gas limit (256-bit number)</td></tr>
+<tr><td>to_address</td><td><a href="#string">string</a></td><td></td><td>Recipient's address.</td></tr>
+<tr><td>amount</td><td><a href="#bytes">bytes</a></td><td></td><td>Amount to send in wei, 1 NAS = 10^18 Wei (256-bit number)</td></tr>
+<tr><td>timestamp</td><td><a href="#bytes">bytes</a></td><td></td><td>Timestamp to create transaction (256-bit number)</td></tr>
+<tr><td>payload</td><td><a href="#string">string</a></td><td></td><td>Optional payload</td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Private key.</td></tr>
+</tbody></table>
+<p><a name="TW.Nebulas.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-19" id="signingoutput-19">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>algorithm</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>raw</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="Bravo.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#bravoproto" id="bravoproto">Bravo.proto</a></h2>
+<p><a name="TW.Bravo.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-19" id="signinginput-19">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>chain_id</td><td><a href="#bytes">bytes</a></td><td></td><td>Chain id (256-bit number)</td></tr>
+<tr><td>sender</td><td><a href="#string">string</a></td><td></td><td>Sender's username</td></tr>
+<tr><td>recipient</td><td><a href="#string">string</a></td><td></td><td>Recipient's username</td></tr>
+<tr><td>amount</td><td><a href="#double">double</a></td><td></td><td>Amount in &quot;BRAVO&quot; or &quot;TEST&quot;</td></tr>
+<tr><td>testnet</td><td><a href="#bool">bool</a></td><td></td><td>Whether the transaction is for testnet</td></tr>
+<tr><td>memo</td><td><a href="#string">string</a></td><td></td><td>Memo to attach to the transaction</td></tr>
+<tr><td>reference_block_id</td><td><a href="#bytes">bytes</a></td><td></td><td>Reference Block Id (160-bits)</td></tr>
+<tr><td>reference_block_time</td><td><a href="#sfixed32">sfixed32</a></td><td></td><td>Timestamp on the reference block</td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Sender's private key's raw bytes</td></tr>
+</tbody></table>
+<p><a name="TW.Bravo.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-20" id="signingoutput-20">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>json_encoded</td><td><a href="#string">string</a></td><td></td><td>JSON of the signed transaction.</td></tr>
+</tbody></table>
+<p><a name="Tron.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#tronproto" id="tronproto">Tron.proto</a></h2>
+<p><a name="TW.Tron.Proto.BlockHeader"></a></p>
+<h3><a class="header" href="#blockheader" id="blockheader">BlockHeader</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>timestamp</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>tx_trie_root</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>parent_hash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>number</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>witness_address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>version</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tron.Proto.FreezeBalanceContract"></a></p>
+<h3><a class="header" href="#freezebalancecontract" id="freezebalancecontract">FreezeBalanceContract</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>owner_address</td><td><a href="#string">string</a></td><td></td><td>Sender address.</td></tr>
+<tr><td>frozen_balance</td><td><a href="#int64">int64</a></td><td></td><td>Frozen balance. Minimum 1</td></tr>
+<tr><td>frozen_duration</td><td><a href="#int64">int64</a></td><td></td><td>Frozen duration</td></tr>
+<tr><td>resource</td><td><a href="#string">string</a></td><td></td><td>Resource type: BANDWIDTH</td></tr>
+<tr><td>receiver_address</td><td><a href="#string">string</a></td><td></td><td>Receiver address</td></tr>
+</tbody></table>
+<p><a name="TW.Tron.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-20" id="signinginput-20">SigningInput</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>transaction</td><td><a href="#TW.Tron.Proto.Transaction">Transaction</a></td><td></td><td>Transaction.</td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Private key.</td></tr>
+</tbody></table>
+<p><a name="TW.Tron.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-21" id="signingoutput-21">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>id</td><td><a href="#bytes">bytes</a></td><td></td><td>Transaction identifier.</td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td>Signature.</td></tr>
+<tr><td>ref_block_bytes</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>ref_block_hash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tron.Proto.Transaction"></a></p>
+<h3><a class="header" href="#transaction-4" id="transaction-4">Transaction</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>timestamp</td><td><a href="#int64">int64</a></td><td></td><td>Transaction timestamp in milliseconds.</td></tr>
+<tr><td>expiration</td><td><a href="#int64">int64</a></td><td></td><td>Transaction expiration time in milliseconds.</td></tr>
+<tr><td>block_header</td><td><a href="#TW.Tron.Proto.BlockHeader">BlockHeader</a></td><td></td><td>Transaction block header.</td></tr>
+<tr><td>fee_limit</td><td><a href="#int64">int64</a></td><td></td><td>Transaction fee limit</td></tr>
+<tr><td>transfer</td><td><a href="#TW.Tron.Proto.TransferContract">TransferContract</a></td><td></td><td></td></tr>
+<tr><td>transfer_asset</td><td><a href="#TW.Tron.Proto.TransferAssetContract">TransferAssetContract</a></td><td></td><td></td></tr>
+<tr><td>freeze_balance</td><td><a href="#TW.Tron.Proto.FreezeBalanceContract">FreezeBalanceContract</a></td><td></td><td></td></tr>
+<tr><td>unfreeze_balance</td><td><a href="#TW.Tron.Proto.UnfreezeBalanceContract">UnfreezeBalanceContract</a></td><td></td><td></td></tr>
+<tr><td>unfreeze_asset</td><td><a href="#TW.Tron.Proto.UnfreezeAssetContract">UnfreezeAssetContract</a></td><td></td><td></td></tr>
+<tr><td>withdraw_balance</td><td><a href="#TW.Tron.Proto.WithdrawBalanceContract">WithdrawBalanceContract</a></td><td></td><td></td></tr>
+<tr><td>vote_asset</td><td><a href="#TW.Tron.Proto.VoteAssetContract">VoteAssetContract</a></td><td></td><td></td></tr>
+<tr><td>vote_witness</td><td><a href="#TW.Tron.Proto.VoteWitnessContract">VoteWitnessContract</a></td><td></td><td></td></tr>
+<tr><td>trigger_smart_contract</td><td><a href="#TW.Tron.Proto.TriggerSmartContract">TriggerSmartContract</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tron.Proto.TransferAssetContract"></a></p>
+<h3><a class="header" href="#transferassetcontract" id="transferassetcontract">TransferAssetContract</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>asset_name</td><td><a href="#string">string</a></td><td></td><td>Asset name.</td></tr>
+<tr><td>owner_address</td><td><a href="#string">string</a></td><td></td><td>Sender address.</td></tr>
+<tr><td>to_address</td><td><a href="#string">string</a></td><td></td><td>Recipient address.</td></tr>
+<tr><td>amount</td><td><a href="#int64">int64</a></td><td></td><td>Amount to send.</td></tr>
+</tbody></table>
+<p><a name="TW.Tron.Proto.TransferContract"></a></p>
+<h3><a class="header" href="#transfercontract" id="transfercontract">TransferContract</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>owner_address</td><td><a href="#string">string</a></td><td></td><td>Sender address.</td></tr>
+<tr><td>to_address</td><td><a href="#string">string</a></td><td></td><td>Recipient address.</td></tr>
+<tr><td>amount</td><td><a href="#int64">int64</a></td><td></td><td>Amount to send.</td></tr>
+</tbody></table>
+<p><a name="TW.Tron.Proto.TriggerSmartContract"></a></p>
+<h3><a class="header" href="#triggersmartcontract" id="triggersmartcontract">TriggerSmartContract</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>owner_address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>contract_address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>call_value</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>call_token_value</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>token_id</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tron.Proto.UnfreezeAssetContract"></a></p>
+<h3><a class="header" href="#unfreezeassetcontract" id="unfreezeassetcontract">UnfreezeAssetContract</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>owner_address</td><td><a href="#string">string</a></td><td></td><td>Sender address</td></tr>
+</tbody></table>
+<p><a name="TW.Tron.Proto.UnfreezeBalanceContract"></a></p>
+<h3><a class="header" href="#unfreezebalancecontract" id="unfreezebalancecontract">UnfreezeBalanceContract</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>owner_address</td><td><a href="#string">string</a></td><td></td><td>Sender address</td></tr>
+<tr><td>resource</td><td><a href="#string">string</a></td><td></td><td>Resource type: BANDWIDTH</td></tr>
+<tr><td>receiver_address</td><td><a href="#string">string</a></td><td></td><td>Receiver address</td></tr>
+</tbody></table>
+<p><a name="TW.Tron.Proto.VoteAssetContract"></a></p>
+<h3><a class="header" href="#voteassetcontract" id="voteassetcontract">VoteAssetContract</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>owner_address</td><td><a href="#string">string</a></td><td></td><td>Sender address</td></tr>
+<tr><td>vote_address</td><td><a href="#string">string</a></td><td>repeated</td><td>Vote addresses</td></tr>
+<tr><td>support</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>count</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tron.Proto.VoteWitnessContract"></a></p>
+<h3><a class="header" href="#votewitnesscontract" id="votewitnesscontract">VoteWitnessContract</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>owner_address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>votes</td><td><a href="#TW.Tron.Proto.VoteWitnessContract.Vote">VoteWitnessContract.Vote</a></td><td>repeated</td><td></td></tr>
+<tr><td>support</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tron.Proto.VoteWitnessContract.Vote"></a></p>
+<h3><a class="header" href="#votewitnesscontractvote" id="votewitnesscontractvote">VoteWitnessContract.Vote</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>vote_address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>vote_count</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Tron.Proto.WithdrawBalanceContract"></a></p>
+<h3><a class="header" href="#withdrawbalancecontract" id="withdrawbalancecontract">WithdrawBalanceContract</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>owner_address</td><td><a href="#string">string</a></td><td></td><td>Sender address</td></tr>
+</tbody></table>
+<p><a name="Theta.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#thetaproto" id="thetaproto">Theta.proto</a></h2>
+<p><a name="TW.Theta.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-21" id="signinginput-21">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>chain_id</td><td><a href="#string">string</a></td><td></td><td>Chain ID string, mainnet, testnet and privatenet</td></tr>
+<tr><td>to_address</td><td><a href="#string">string</a></td><td></td><td>Recipient address</td></tr>
+<tr><td>theta_amount</td><td><a href="#bytes">bytes</a></td><td></td><td>Theta token amount to send in wei (256-bit number)</td></tr>
+<tr><td>tfuel_amount</td><td><a href="#bytes">bytes</a></td><td></td><td>TFuel token amount to send in wei (256-bit number)</td></tr>
+<tr><td>sequence</td><td><a href="#uint64">uint64</a></td><td></td><td>Sequence number of the transaction for the sender address</td></tr>
+<tr><td>fee</td><td><a href="#bytes">bytes</a></td><td></td><td>Fee amount in TFuel wei for the transaction (256-bit number)</td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Private key</td></tr>
+</tbody></table>
+<p><a name="TW.Theta.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-22" id="signingoutput-22">SigningOutput</a></h3>
+<p>Transaction signing output</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#bytes">bytes</a></td><td></td><td>Signed and encoded transaction bytes</td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td>Signature</td></tr>
+</tbody></table>
+<p><a name="Aeternity.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#aeternityproto" id="aeternityproto">Aeternity.proto</a></h2>
+<p><a name="TW.Aeternity.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-22" id="signinginput-22">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>from_address</td><td><a href="#string">string</a></td><td></td><td>Address of the sender with &quot;ak_&quot; prefix</td></tr>
+<tr><td>to_address</td><td><a href="#string">string</a></td><td></td><td>Address of the recipient with &quot;ak_&quot; prefix</td></tr>
+<tr><td>amount</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>fee</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>payload</td><td><a href="#string">string</a></td><td></td><td>Message, optional</td></tr>
+<tr><td>ttl</td><td><a href="#uint64">uint64</a></td><td></td><td>Time to live until block height</td></tr>
+<tr><td>nonce</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Aeternity.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-23" id="signingoutput-23">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#string">string</a></td><td></td><td>Signed and encoded transaction bytes, Base64 with checksum</td></tr>
+<tr><td>signature</td><td><a href="#string">string</a></td><td></td><td>Signature, Base58 with checksum</td></tr>
+</tbody></table>
+<p><a name="Nimiq.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#nimiqproto" id="nimiqproto">Nimiq.proto</a></h2>
+<p><a name="TW.Nimiq.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-23" id="signinginput-23">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>destination</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>fee</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>validity_start_height</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.Nimiq.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-24" id="signingoutput-24">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="Harmony.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#harmonyproto" id="harmonyproto">Harmony.proto</a></h2>
+<p><a name="TW.Harmony.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-24" id="signinginput-24">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>chain_id</td><td><a href="#bytes">bytes</a></td><td></td><td>Chain identifier (256-bit number)</td></tr>
+<tr><td>nonce</td><td><a href="#bytes">bytes</a></td><td></td><td>Nonce (256-bit number)</td></tr>
+<tr><td>gas_price</td><td><a href="#bytes">bytes</a></td><td></td><td>Gas price (256-bit number)</td></tr>
+<tr><td>gas_limit</td><td><a href="#bytes">bytes</a></td><td></td><td>Gas limit (256-bit number)</td></tr>
+<tr><td>to_address</td><td><a href="#string">string</a></td><td></td><td>Recipient's address.</td></tr>
+<tr><td>amount</td><td><a href="#bytes">bytes</a></td><td></td><td>Amount to send in wei (256-bit number)</td></tr>
+<tr><td>payload</td><td><a href="#bytes">bytes</a></td><td></td><td>Optional payload</td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Private key.</td></tr>
+<tr><td>from_shard_id</td><td><a href="#bytes">bytes</a></td><td></td><td>From shard ID (256-bit number)</td></tr>
+<tr><td>to_shard_id</td><td><a href="#bytes">bytes</a></td><td></td><td>To Shard ID (256-bit number)</td></tr>
+</tbody></table>
+<p><a name="TW.Harmony.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-25" id="signingoutput-25">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>encoded</td><td><a href="#bytes">bytes</a></td><td></td><td>Signed and encoded transaction bytes.</td></tr>
+<tr><td>v</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>r</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>s</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="EOS.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#eosproto" id="eosproto">EOS.proto</a></h2>
+<p><a name="TW.EOS.Proto.Asset"></a></p>
+<h3><a class="header" href="#asset" id="asset">Asset</a></h3>
+<p>Values for an Asset object.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>amount</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>decimals</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>symbol</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.EOS.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-25" id="signinginput-25">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>chain_id</td><td><a href="#bytes">bytes</a></td><td></td><td>Chain id (256-bit number)</td></tr>
+<tr><td>reference_block_id</td><td><a href="#bytes">bytes</a></td><td></td><td>Reference Block Id (256-bits)</td></tr>
+<tr><td>reference_block_time</td><td><a href="#sfixed32">sfixed32</a></td><td></td><td>Timestamp on the reference block</td></tr>
+<tr><td>currency</td><td><a href="#string">string</a></td><td></td><td>Currency (e.g. &quot;eosio.token&quot;)</td></tr>
+<tr><td>sender</td><td><a href="#string">string</a></td><td></td><td>Sender's username</td></tr>
+<tr><td>recipient</td><td><a href="#string">string</a></td><td></td><td>Recipient's username</td></tr>
+<tr><td>memo</td><td><a href="#string">string</a></td><td></td><td>Memo attached to the transaction</td></tr>
+<tr><td>asset</td><td><a href="#TW.EOS.Proto.Asset">Asset</a></td><td></td><td>Asset details and amount</td></tr>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Sender's private key's raw bytes</td></tr>
+<tr><td>private_key_type</td><td><a href="#TW.EOS.Proto.KeyType">KeyType</a></td><td></td><td>Type of the private key</td></tr>
+</tbody></table>
+<p><a name="TW.EOS.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-26" id="signingoutput-26">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>json_encoded</td><td><a href="#string">string</a></td><td></td><td>JSON of the packed transaction.</td></tr>
+</tbody></table>
+<p><a name="TW.EOS.Proto.KeyType"></a></p>
+<h3><a class="header" href="#keytype" id="keytype">KeyType</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>LEGACY</td><td>0</td><td></td></tr>
+<tr><td>MODERNK1</td><td>1</td><td></td></tr>
+<tr><td>MODERNR1</td><td>2</td><td></td></tr>
+</tbody></table>
+<p><a name="Nano.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#nanoproto" id="nanoproto">Nano.proto</a></h2>
+<p><a name="TW.Nano.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-26" id="signinginput-26">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>private_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Private key</td></tr>
+<tr><td>parent_block</td><td><a href="#bytes">bytes</a></td><td></td><td>Optional parent block hash</td></tr>
+<tr><td>link_block</td><td><a href="#bytes">bytes</a></td><td></td><td>Hash of a block to receive from</td></tr>
+<tr><td>link_recipient</td><td><a href="#string">string</a></td><td></td><td>Recipient address to send coins to</td></tr>
+<tr><td>representative</td><td><a href="#string">string</a></td><td></td><td>Representative address</td></tr>
+<tr><td>balance</td><td><a href="#string">string</a></td><td></td><td>Account balance (128-bit unsigned integer, as a string)</td></tr>
+</tbody></table>
+<p><a name="TW.Nano.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-27" id="signingoutput-27">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td>Signature</td></tr>
+<tr><td>block_hash</td><td><a href="#bytes">bytes</a></td><td></td><td>Block hash</td></tr>
+</tbody></table>
+<p><a name="IOST.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#iostproto" id="iostproto">IOST.proto</a></h2>
+<p><a name="TW.IOST.Proto.AccountInfo"></a></p>
+<h3><a class="header" href="#accountinfo" id="accountinfo">AccountInfo</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>active_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>owner_key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.IOST.Proto.Action"></a></p>
+<h3><a class="header" href="#action-1" id="action-1">Action</a></h3>
+<p>The message defines transaction action struct.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>contract</td><td><a href="#string">string</a></td><td></td><td>contract name</td></tr>
+<tr><td>action_name</td><td><a href="#string">string</a></td><td></td><td>action name</td></tr>
+<tr><td>data</td><td><a href="#string">string</a></td><td></td><td>data</td></tr>
+</tbody></table>
+<p><a name="TW.IOST.Proto.AmountLimit"></a></p>
+<h3><a class="header" href="#amountlimit" id="amountlimit">AmountLimit</a></h3>
+<p>The message defines transaction amount limit struct.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>token</td><td><a href="#string">string</a></td><td></td><td>token name</td></tr>
+<tr><td>value</td><td><a href="#string">string</a></td><td></td><td>limit value</td></tr>
+</tbody></table>
+<p><a name="TW.IOST.Proto.Signature"></a></p>
+<h3><a class="header" href="#signature-2" id="signature-2">Signature</a></h3>
+<p>The message defines signature struct.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>algorithm</td><td><a href="#TW.IOST.Proto.Algorithm">Algorithm</a></td><td></td><td>signature algorithm</td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td>signature bytes</td></tr>
+<tr><td>public_key</td><td><a href="#bytes">bytes</a></td><td></td><td>public key</td></tr>
+</tbody></table>
+<p><a name="TW.IOST.Proto.SigningInput"></a></p>
+<h3><a class="header" href="#signinginput-27" id="signinginput-27">SigningInput</a></h3>
+<p>Input data necessary to create a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>account</td><td><a href="#TW.IOST.Proto.AccountInfo">AccountInfo</a></td><td></td><td></td></tr>
+<tr><td>transaction_template</td><td><a href="#TW.IOST.Proto.Transaction">Transaction</a></td><td></td><td></td></tr>
+<tr><td>transfer_destination</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>transfer_amount</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>transfer_memo</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="TW.IOST.Proto.SigningOutput"></a></p>
+<h3><a class="header" href="#signingoutput-28" id="signingoutput-28">SigningOutput</a></h3>
+<p>Transaction signing output.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>transaction</td><td><a href="#TW.IOST.Proto.Transaction">Transaction</a></td><td></td><td>Signed transaction</td></tr>
+</tbody></table>
+<p><a name="TW.IOST.Proto.Transaction"></a></p>
+<h3><a class="header" href="#transaction-5" id="transaction-5">Transaction</a></h3>
+<p>The message defines the transaction request.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>time</td><td><a href="#int64">int64</a></td><td></td><td>transaction timestamp</td></tr>
+<tr><td>expiration</td><td><a href="#int64">int64</a></td><td></td><td>expiration timestamp</td></tr>
+<tr><td>gas_ratio</td><td><a href="#double">double</a></td><td></td><td>gas price</td></tr>
+<tr><td>gas_limit</td><td><a href="#double">double</a></td><td></td><td>gas limit</td></tr>
+<tr><td>delay</td><td><a href="#int64">int64</a></td><td></td><td>delay nanoseconds</td></tr>
+<tr><td>chain_id</td><td><a href="#uint32">uint32</a></td><td></td><td>chain id</td></tr>
+<tr><td>actions</td><td><a href="#TW.IOST.Proto.Action">Action</a></td><td>repeated</td><td>action list</td></tr>
+<tr><td>amount_limit</td><td><a href="#TW.IOST.Proto.AmountLimit">AmountLimit</a></td><td>repeated</td><td>amount limit</td></tr>
+<tr><td>signers</td><td><a href="#string">string</a></td><td>repeated</td><td>signer list</td></tr>
+<tr><td>signatures</td><td><a href="#TW.IOST.Proto.Signature">Signature</a></td><td>repeated</td><td>signatures of signers</td></tr>
+<tr><td>publisher</td><td><a href="#string">string</a></td><td></td><td>publisher</td></tr>
+<tr><td>publisher_sigs</td><td><a href="#TW.IOST.Proto.Signature">Signature</a></td><td>repeated</td><td>signatures of publisher</td></tr>
+</tbody></table>
+<p><a name="TW.IOST.Proto.Algorithm"></a></p>
+<h3><a class="header" href="#algorithm" id="algorithm">Algorithm</a></h3>
+<p>The enumeration defines the signature algorithm.</p>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>UNKNOWN</td><td>0</td><td>unknown</td></tr>
+<tr><td>SECP256K1</td><td>1</td><td>secp256k1</td></tr>
+<tr><td>ED25519</td><td>2</td><td>ed25519</td></tr>
+</tbody></table>
+<h2><a class="header" href="#scalar-value-types" id="scalar-value-types">Scalar Value Types</a></h2>
+<table><thead><tr><th>.proto Type</th><th>Notes</th><th>C++ Type</th><th>Java Type</th><th>Python Type</th></tr></thead><tbody>
+<tr><td><a name="double" /> double</td><td></td><td>double</td><td>double</td><td>float</td></tr>
+<tr><td><a name="float" /> float</td><td></td><td>float</td><td>float</td><td>float</td></tr>
+<tr><td><a name="int32" /> int32</td><td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="int64" /> int64</td><td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="uint32" /> uint32</td><td>Uses variable-length encoding.</td><td>uint32</td><td>int</td><td>int/long</td></tr>
+<tr><td><a name="uint64" /> uint64</td><td>Uses variable-length encoding.</td><td>uint64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="sint32" /> sint32</td><td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="sint64" /> sint64</td><td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="fixed32" /> fixed32</td><td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td><td>uint32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="fixed64" /> fixed64</td><td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td><td>uint64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="sfixed32" /> sfixed32</td><td>Always four bytes.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="sfixed64" /> sfixed64</td><td>Always eight bytes.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="bool" /> bool</td><td></td><td>bool</td><td>boolean</td><td>boolean</td></tr>
+<tr><td><a name="string" /> string</td><td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td><td>string</td><td>String</td><td>str/unicode</td></tr>
+<tr><td><a name="bytes" /> bytes</td><td>May contain any arbitrary sequence of bytes.</td><td>string</td><td>ByteString</td><td>str</td></tr>
+</tbody></table>
+<h1><a class="header" href="#protos-file-tree" id="protos-file-tree">Protos File Tree</a></h1>
+<pre><code>
+.
+├── Aeternity.proto
+├── Aion.proto
+├── Any.proto
+├── ARK.proto
+├── Binance.proto
+├── Bitcoin.proto
+├── Bravo.proto
+├── Common.proto
+├── Cosmos.proto
+├── Decred.proto
+├── EOS.proto
+├── Ethereum.proto
+├── Harmony.proto
+├── Icon.proto
+├── IOST.proto
+├── IoTeX.proto
+├── Nano.proto
+├── Nebulas.proto
+├── Nimiq.proto
+├── Ontology.proto
+├── Ripple.proto
+├── Semux.proto
+├── Solana.proto
+├── Stellar.proto
+├── Tezos.proto
+├── Theta.proto
+├── Tron.proto
+├── VeChain.proto
+├── Waves.proto
+└── Zilliqa.proto
+
+0 directories, 30 files
+
+</code></pre>
+<h1><a class="header" href="#protobuf-sources" id="protobuf-sources">Protobuf sources</a></h1>
+<h2><a class="header" href="#srcethereumproto" id="srcethereumproto">src:./Ethereum.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Ethereum.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    // Chain identifier (256-bit number)
+    bytes chain_id = 1;
+
+    // Nonce (256-bit number)
+    bytes nonce = 2;
+
+    // Gas price (256-bit number)
+    bytes gas_price = 3;
+
+    // Gas limit (256-bit number)
+    bytes gas_limit = 4;
+
+    // Recipient's address.
+    string to_address = 5;
+
+    // Amount to send in wei (256-bit number)
+    bytes amount = 6;
+
+    // Optional payload
+    bytes payload = 7;
+
+    // Private key.
+    bytes private_key = 8;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // Signed and encoded transaction bytes.
+    bytes encoded = 1;
+
+    bytes v = 2;
+    bytes r = 3;
+    bytes s = 4;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcsemuxproto" id="srcsemuxproto">src:./Semux.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Semux.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    bytes private_key = 1;
+
+    string destination = 2;
+
+    uint64 value = 3;
+
+    uint64 fee = 4;
+
+    // current latest transaction serial number
+    uint64 nonce = 5;
+
+    // current timestamp in millisecond
+    uint64 timestamp = 6;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    bytes encoded = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcaionproto" id="srcaionproto">src:./Aion.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Aion.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    // Nonce (256-bit number)
+    bytes nonce = 1;
+
+    // Gas price (256-bit number)
+    bytes gas_price = 2;
+
+    // Gas limit (256-bit number)
+    bytes gas_limit = 3;
+
+    // Recipient's address.
+    string to_address = 4;
+
+    // Amount to send in wei (256-bit number)
+    bytes amount = 5;
+
+    // Optional payload
+    bytes payload = 6;
+
+    // Private key.
+    bytes private_key = 7;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // Signed and encoded transaction bytes.
+    bytes encoded = 1;
+
+    // Signature.
+    bytes signature = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srccosmosproto" id="srccosmosproto">src:./Cosmos.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Cosmos.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Amount
+message Amount {
+    string denom = 1;
+    int64 amount = 2;
+}
+
+// Fee
+message Fee {
+    repeated Amount amounts = 1;
+    uint64 gas = 2;
+}
+
+// Message for sending coins.
+message SendCoinsMessage {
+    string from_address = 1;
+    string to_address = 2;
+    repeated Amount amounts = 3;
+    // default is cosmos-sdk/MsgSend
+    string type_prefix = 4;
+}
+
+// Message for staking.
+message StakeMessage {
+    string delegator_address = 1;
+    string validator_address = 2;
+    Amount amount = 3;
+    // cosmos-sdk/MsgDelegate to stake and cosmos-sdk/MsgUndelegate to unstake
+    string type_prefix = 4;
+}
+
+// Message for staking.
+message WithdrawStakeRewardMessage {
+    string delegator_address = 1;
+    string validator_address = 2;
+    // default is cosmos-sdk/MsgWithdrawDelegationReward
+    string type_prefix = 3;
+}
+
+// Signature
+message Signature {
+    bytes public_key = 1;
+    bytes signature = 2;
+}
+
+// Transaction
+message Transaction {
+    Fee fee = 1;
+    string memo = 2;
+    Signature signature = 3;
+
+    oneof message_oneof {
+        SendCoinsMessage send_coins_message = 4;
+        StakeMessage stake_message = 5;
+        StakeMessage unstake_message = 6;
+        WithdrawStakeRewardMessage withdraw_stake_reward_message = 7;
+    }
+}
+
+// Input data necessary to create a signed order.
+message SigningInput {
+    uint64 account_number = 1;
+    string chain_id = 2;
+    Fee fee = 3;
+    string memo = 4;
+    uint64 sequence = 5; 
+
+    bytes private_key = 6;
+
+    oneof message_oneof {
+        SendCoinsMessage send_coins_message = 7;
+        StakeMessage stake_message = 8;
+        StakeMessage unstake_message = 9;
+        WithdrawStakeRewardMessage withdraw_stake_reward_message = 10;
+    }
+    // default is cosmos-sdk/MsgSend
+    string type_prefix = 11;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // Signature
+    bytes signature = 1;
+    // Signed transaction in JSON.
+    string json = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcarkproto" id="srcarkproto">src:./ARK.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.ARK.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+enum TransactionType {
+    Transfer = 0;
+}
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    // Transaction type
+    TransactionType type = 1;
+
+    // Amount to send
+    uint64 amount = 2;
+
+    // Fee
+    uint64 fee = 3;
+
+    // Recipient's address.
+    string to_address = 4;
+
+    // Timestamp
+    uint32 timestamp = 5;
+
+    // Private key.
+    bytes private_key = 6;
+}
+
+message SigningOutput {
+    // JSON-encoded transaction parameters.
+    string encoded = 1;
+
+    // Signature.
+    bytes signature = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srciotexproto" id="srciotexproto">src:./IoTeX.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.IoTeX.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+message Transfer {
+    string amount  = 1;
+    string recipient = 2;
+    bytes payload  = 3;
+}
+
+message Execution {
+    string amount  = 1;
+    string contract = 2;
+    bytes data = 3;
+}
+
+message ActionCore {
+    uint32 version = 1;
+    uint64 nonce = 2;
+    uint64 gasLimit = 3;
+    string gasPrice = 4;
+    oneof action {
+        Transfer transfer = 10;
+        Execution execution = 12;
+  }
+}
+
+message Action {
+    ActionCore core = 1;
+    bytes senderPubKey = 2;
+    bytes signature = 3;
+}
+
+// transaction signing input
+message SigningInput {
+    uint32 version = 1;
+    uint64 nonce = 2;
+    uint64 gasLimit = 3;
+    string gasPrice = 4;
+    bytes privateKey = 5;
+    oneof action {
+        Transfer transfer = 10;
+        Execution execution = 12;
+  }
+}
+
+// transaction signing output
+message SigningOutput {
+    // Signed and encoded Action bytes
+    bytes encoded = 1;
+
+    // Signed Action hash
+    bytes hash = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcbitcoinproto" id="srcbitcoinproto">src:./Bitcoin.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Bitcoin.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+message Transaction {
+    // Transaction data format version.
+    sint32 version = 1;
+
+    // The block number or timestamp at which this transaction is unlocked.
+    uint32 lockTime = 2;
+
+    // A list of 1 or more transaction inputs or sources for coins.
+    repeated TransactionInput inputs = 3;
+
+    // A list of 1 or more transaction outputs or destinations for coins
+    repeated TransactionOutput outputs = 4;
+}
+
+// Bitcoin transaction input.
+message TransactionInput {
+    // Reference to the previous transaction's output.
+    OutPoint previousOutput = 1;
+
+    // Transaction version as defined by the sender.
+    uint32 sequence = 2;
+
+    // Computational script for confirming transaction authorization.
+    bytes script = 3;
+}
+
+// Bitcoin transaction out-point reference.
+message OutPoint {
+    // The hash of the referenced transaction.
+    bytes hash = 1;
+
+    // The index of the specific output in the transaction.
+    uint32 index = 2;
+
+    // Transaction version as defined by the sender.
+    uint32 sequence = 3;
+}
+
+// Bitcoin transaction output.
+message TransactionOutput {
+    // Transaction amount.
+    int64 value = 1;
+
+    // Usually contains the public key as a Bitcoin script setting up conditions to claim this output.
+    bytes script = 2;
+}
+
+message UnspentTransaction {
+    OutPoint out_point = 1;
+    bytes script = 2;
+    int64 amount = 3;
+}
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    // Hash type to use when signing.
+    uint32 hash_type = 1;
+
+    // Amount to send.
+    int64 amount = 2;
+
+    // Transaction fee per byte.
+    int64 byte_fee = 3;
+
+    // Recipient's address.
+    string to_address = 4;
+
+    // Change address.
+    string change_address = 5;
+
+    // Available private keys.
+    repeated bytes private_key = 10;
+
+    // Available redeem scripts indexed by script hash.
+    map&lt;string, bytes&gt; scripts = 11;
+
+    // Available unspent transaction outputs.
+    repeated UnspentTransaction utxo = 12;
+
+    // If sending max amount.
+    bool use_max_amount = 13;
+
+    // Coin type (forks).
+    uint32 coin_type = 14;
+}
+
+// Describes a preliminary transaction plan.
+message TransactionPlan {
+    // Amount to be received at the other end.
+    int64 amount = 1;
+
+    // Maximum available amount.
+    int64 available_amount = 2;
+
+    // Estimated transaction fee.
+    int64 fee = 3;
+
+    // Change.
+    int64 change = 4;
+
+    // Selected unspent transaction outputs.
+    repeated UnspentTransaction utxos = 5;
+};
+
+// Transaction signing output.
+message SigningOutput {
+    // Resulting transaction. Note that the amount may be different than the requested amount to account for fees and available funds.
+    Transaction transaction = 1;
+
+    // Signed and encoded transaction bytes.
+    bytes encoded = 2;
+
+    // Total transaction fees.
+    int64 fee = 3;
+
+    // Maximum spendable amount.
+    int64 max_amount = 4;
+
+    // Transaction id
+    string transaction_id = 5;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcdecredproto" id="srcdecredproto">src:./Decred.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Decred.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+import &quot;Bitcoin.proto&quot;;
+
+message Transaction {
+    /// Serialization format
+    uint32 serializeType = 1;
+
+    /// Transaction data format version
+    uint32 version = 2;
+
+    // A list of 1 or more transaction inputs or sources for coins.
+    repeated TransactionInput inputs = 3;
+
+    // A list of 1 or more transaction outputs or destinations for coins
+    repeated TransactionOutput outputs = 4;
+
+    /// The time when a transaction can be spent (usually zero, in which case it has no effect).
+    uint32 lockTime = 5;
+
+    /// The block height at which the transaction expires and is no longer valid.
+    uint32 expiry = 6;
+}
+
+// Decred transaction input.
+message TransactionInput {
+    // Reference to the previous transaction's output.
+    Bitcoin.Proto.OutPoint previousOutput = 1;
+
+    // Transaction version as defined by the sender.
+    uint32 sequence = 2;
+
+	int64 valueIn = 3;
+	uint32 blockHeight = 4;
+	uint32 blockIndex = 5;
+
+    // Computational script for confirming transaction authorization.
+    bytes script = 6;
+}
+
+// Decred transaction output.
+message TransactionOutput {
+    // Transaction amount.
+    int64 value = 1;
+
+    /// Transaction output version.
+    uint32 version = 2;
+
+    // Usually contains the public key as a Decred script setting up conditions to claim this output.
+    bytes script = 3;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // Resulting transaction. Note that the amount may be different than the requested amount to account for fees and available funds.
+    Transaction transaction = 1;
+
+    // Signed and encoded transaction bytes.
+    bytes encoded = 2;
+
+    // Total transaction fees.
+    int64 fee = 3;
+
+    // Maximum spendable amount.
+    int64 max_amount = 4;
+
+    // Transaction id
+    string transaction_id = 5;
+}
+
+</code></pre>
+<h2><a class="header" href="#srczilliqaproto" id="srczilliqaproto">src:./Zilliqa.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Zilliqa.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    // Transaction version
+    uint32 version         = 1;
+
+    // Nonce
+    uint64 nonce           = 2;
+
+    // Recipient's address.
+    string to_address      = 3;
+
+    // Amount to send (256-bit number)
+    bytes amount           = 4;
+
+    // GasPrice (256-bit number)
+    bytes gas_price        = 5;
+
+    // GasLimit
+    uint64 gas_limit        = 6;
+
+    // Private Key
+    bytes private_key      = 7;
+
+    // Smart contract code
+    bytes code             = 10;
+
+    // String-ified JSON object specifying the transition parameter
+    bytes data             = 11;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // Signed signature bytes.
+    bytes signature = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcsolanaproto" id="srcsolanaproto">src:./Solana.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Solana.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+message Transfer {
+    bytes private_key = 1;
+    string recipient = 2;
+    uint64 value = 3;
+}
+
+message Stake {
+    bytes from_private_key = 1;
+    bytes stake_private_key = 2;
+    string vote_pubkey = 3;
+    uint64 value = 4;
+}
+
+message DeactivateStake {
+    // The stake account private key
+    bytes private_key = 1;
+    string vote_pubkey = 2;
+}
+
+message WithdrawStake {
+    // The stake account private key
+    bytes private_key = 1;
+    string recipient = 2;
+    uint64 value = 3;
+}
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    oneof transaction_type {
+        Transfer transfer_transaction = 1;
+        Stake stake_transaction = 2;
+        DeactivateStake deactivate_stake_transaction = 3;
+        WithdrawStake withdraw_transaction = 4;
+    }
+    string recent_blockhash = 5;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    bytes encoded = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcontologyproto" id="srcontologyproto">src:./Ontology.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Ontology.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+
+    string contract = 1;
+
+    string method = 2;
+
+    bytes owner_private_key = 3;
+
+    // base58 encode address string (160-bit number)
+    string to_address = 4;
+
+    uint64 amount = 5;
+
+    bytes payer_private_key = 6;
+
+    uint64 gas_price = 7;
+
+    uint64 gas_limit = 8;
+
+    // base58 encode address string (160-bit number)
+    string query_address = 9;
+
+    uint32 nonce = 10;
+
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // Signed and encoded transaction bytes.
+    bytes encoded = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcstellarproto" id="srcstellarproto">src:./Stellar.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Stellar.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+message MemoVoid {
+}
+
+message MemoText {
+    string text = 1;
+}
+
+message MemoId {
+    int64 id = 1;
+}
+
+message MemoHash {
+    bytes hash = 1;
+}
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    int64 amount = 1;
+
+    int32 fee = 2;
+
+    int64 sequence = 3;
+
+    string account = 4;
+
+    string destination = 5;
+
+    // Private key.
+    bytes private_key = 6;
+
+    oneof memo_type_oneof {
+        MemoVoid memo_void = 7;
+        MemoText memo_text = 8;
+        MemoId memo_id = 9;
+        MemoHash memo_hash = 10;
+        MemoHash memo_return_hash = 11;
+    }
+
+    enum OperationType {
+        CREATE_ACCOUNT = 0;
+        PAYMENT = 1;
+    }
+    OperationType operation_type = 12;
+
+    string passphrase = 13;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // Signature.
+    string signature = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcwavesproto" id="srcwavesproto">src:./Waves.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Waves.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    int64 amount = 1;
+
+    string asset = 2;
+
+    // minimum 0.001 Waves (100000 Wavelets) for now
+    int64 fee = 3;
+
+    string fee_asset = 4;
+
+    string to = 5;
+
+    // any 140 bytes payload, will be displayed to the client as utf-8 string
+    bytes attachment = 6;
+
+    // in millis
+    int64 timestamp = 7;
+
+    bytes private_key = 8;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    bytes signature = 1;
+    string json = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srccommonproto" id="srccommonproto">src:./Common.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+import &quot;google/protobuf/any.proto&quot;;
+
+package TW.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Result type.
+message Result {
+    // Whether the operation was successful.
+    bool success = 1;
+
+    // Optional error message, only present if success is false.
+    string error = 2;
+
+    // Result objects, if any.
+    repeated google.protobuf.Any objects = 3;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcrippleproto" id="srcrippleproto">src:./Ripple.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Ripple.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    int64 amount = 1;
+
+    int64 fee = 2;
+
+    int32 sequence = 3;
+
+    int32 last_ledger_sequence = 4;
+
+    string account = 5;
+
+    string destination = 6;
+
+    int64 destination_tag = 7;
+
+    int64 flags = 8;
+
+    bytes private_key = 9;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    bytes encoded = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcbinanceproto" id="srcbinanceproto">src:./Binance.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Binance.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+message Transaction {
+    // int64 SIZE-OF-ENCODED      // varint encoded length of the structure after encoding
+    // 0xF0625DEE                  // prefix
+    repeated bytes msgs = 1;       // array of size 1, containing the transaction message, which are one of the transaction type below
+    repeated bytes signatures = 2; // array of size 1, containing the standard signature structure of the transaction sender
+    string memo = 3;               // a short sentence of remark for the transaction, only for `Transfer` transactions.
+    int64 source = 4;              // an identifier for tools triggerring this transaction, set to zero if unwilling to disclose.
+    bytes data = 5;                // reserved for future use
+}
+
+message Signature {
+    message PubKey {
+        // 0xEB5AE987          // prefix
+        // bytes               // public key bytes
+    }
+    bytes pub_key = 1;         // public key bytes of the signer address
+    bytes signature = 2;       // signature bytes, please check chain access section for signature generation
+    int64 account_number = 3;  // another identifier of signer, which can be read from chain by account REST API or RPC
+    int64 sequence = 4;        // sequence number for the next transaction
+}
+
+message TradeOrder {
+    // 0xCE6DC043           // prefix
+    bytes sender = 1;       // originating address
+    string id = 2;          // order id, optional
+    string symbol = 3;      // symbol for trading pair in full name of the tokens
+    int64 ordertype = 4;    // only accept 2 for now, meaning limit order
+    int64 side = 5;         // 1 for buy and 2 fory sell
+    int64 price = 6;        // price of the order, which is the real price multiplied by 1e8 (10^8) and rounded to integer
+    int64 quantity = 7;     // quantity of the order, which is the real price multiplied by 1e8 (10^8) and rounded to integer
+    int64 timeinforce = 8;  // 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC)
+}
+
+message CancelTradeOrder {
+    // 0x166E681B      // prefix
+    bytes sender = 1;  // originating address
+    string symbol = 2; // symbol for trading pair in full name of the tokens
+    string refid = 3;  // order id to cancel
+}
+
+message SendOrder {
+    // 0x2A2C87FA
+    message Token {
+        string denom = 1;
+        int64 amount = 2;
+    }
+    message Input {
+        bytes address = 1;
+        repeated Token coins = 2;
+    }
+    message Output {
+        bytes address = 1;
+        repeated Token coins = 2;
+    }
+    repeated Input inputs = 1;
+    repeated Output outputs = 2;
+}
+
+message TokenFreezeOrder {
+    // 0xE774B32D      // prefix
+    bytes from = 1;    // owner address
+    string symbol = 2; // token symbol, in full name with &quot;-&quot; suffix
+    int64 amount = 3;  // amount of token to freeze
+}
+
+message TokenUnfreezeOrder {
+    // 0x6515FF0D      // prefix
+    bytes from = 1;    // owner address
+    string symbol = 2; // token symbol, in full name with &quot;-&quot; suffix
+    int64 amount = 3;  // amount of token to unfreeze
+}
+
+message HTLTOrder {
+    // 0xB33F9A24      // prefix
+    bytes from = 1;    // signer address
+    bytes to = 2;    // recipient address
+    string recipient_other_chain = 3;
+    string sender_other_chain = 4;
+    bytes random_number_hash = 5; //hash of a random number and timestamp, based on SHA256
+    int64 timestamp = 6;
+    repeated SendOrder.Token amount = 7;
+    string expected_income = 8; // expected gained token on the other chain
+    int64 height_span = 9;
+    bool cross_chain = 10;
+}
+
+message DepositHTLTOrder {
+    // 0xB33F9A24      // prefix
+    bytes from = 1;    // signer address
+    repeated SendOrder.Token amount = 2;
+    bytes swap_id = 3;
+}
+
+message ClaimHTLOrder {
+    // 0xC1665300      // prefix
+    bytes from = 1;    // signer address
+    bytes swap_id = 2;
+    bytes random_number = 3;
+}
+
+message RefundHTLTOrder {
+    // 0x3454A27C      // prefix
+    bytes from = 1;    // signer address
+    bytes swap_id = 2;
+}
+
+// Input data necessary to create a signed order.
+message SigningInput {
+    string chain_id = 1;
+    int64 account_number = 2;
+    int64 sequence = 3;
+    int64 source = 4;
+    string memo = 5;
+    bytes private_key = 6;
+
+    oneof order_oneof {
+        TradeOrder trade_order = 8;
+        CancelTradeOrder cancel_trade_order = 9;
+        SendOrder send_order = 10;
+        TokenFreezeOrder freeze_order = 11;
+        TokenUnfreezeOrder unfreeze_order = 12;
+        HTLTOrder htlt_order = 13;
+        DepositHTLTOrder depositHTLT_order = 14;
+        ClaimHTLOrder claimHTLT_order = 15;
+        RefundHTLTOrder refundHTLT_order = 16;
+    }
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // Signed and encoded transaction bytes.
+    bytes encoded = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srciconproto" id="srciconproto">src:./Icon.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Icon.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    // Sender address.
+    string from_address = 1;
+
+    // Recipient address.
+    string to_address = 2;
+
+    // Transfer amount.
+    bytes value = 3;
+
+    // The amount of step to send with the transaction.
+    bytes step_limit = 4;
+
+    // UNIX epoch time (from 1970.1.1 00:00:00) in microseconds
+    int64 timestamp = 5;
+
+    // Integer value increased by request to avoid replay attacks.
+    bytes nonce = 6;
+
+    // Network identifier
+    bytes network_id = 7;
+
+    // Private key.
+    bytes private_key = 8;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // JSON-encoded transaction parameters.
+    string encoded = 1;
+
+    // Signature.
+    bytes signature = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcvechainproto" id="srcvechainproto">src:./VeChain.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.VeChain.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+message Clause {
+    /// Recipient address.
+    string to = 1;
+
+    /// Transaction amount.
+    bytes value = 2;
+
+    /// Payload data.
+    bytes data = 3;
+}
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    /// Last byte of the genesis block ID which is used to identify a blockchain to prevent the cross-chain replay attack.
+    uint32 chain_tag = 1;
+
+    /// Reference to a specific block.
+    uint64 block_ref = 2;
+
+    /// How long, in terms of the number of blocks, the transaction will be allowed to be mined in VeChainThor.
+    uint32 expiration = 3;
+
+    /// An array of Clause objects.
+    ///
+    /// Each clause contains fields To, Value and Data to enable a single transaction to carry multiple tasks issued
+    /// by the transaction sender.
+    repeated Clause clauses = 4;
+
+    /// Coefficient used to calculate the gas price for the transaction.
+    uint32 gas_price_coef = 5;
+
+    /// Maximum amount of gas allowed to pay for the transaction.
+    uint64 gas = 6;
+
+    /// ID of the transaction on which the current transaction depends.
+    bytes depends_on = 7;
+
+    /// Number set by user.
+    uint64 nonce = 8;
+
+    // Private key.
+    bytes private_key = 9;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // Signed and encoded transaction bytes.
+    bytes encoded = 1;
+
+    // Signature.
+    bytes signature = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srctezosproto" id="srctezosproto">src:./Tezos.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Tezos.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed Tezos transaction.
+// Next field: 3
+message SigningInput {
+  OperationList operation_list = 1;
+  bytes private_key = 2;
+}
+
+// Transaction signing output.
+// Next field: 2
+message SigningOutput {
+  bytes signed_bytes = 1;
+}
+
+// A list of operations and a branch.
+// Next field: 3
+message OperationList {
+  string branch = 1;
+  repeated Operation operations = 2;
+}
+
+// An operation that can be applied to the Tezos blockchain.
+// Next field: 12
+message Operation {
+  int64 counter = 1;
+  string source = 2;
+  int64 fee = 3;
+  int64 gas_limit = 4;
+  int64 storage_limit = 5;
+
+  enum OperationKind {
+    // Note: Proto3 semantics require a zero value.
+    ENDORSEMENT = 0;
+
+    REVEAL = 7;
+    TRANSACTION = 8;
+    ORIGINATION = 9;
+    DELEGATION = 10;
+  }
+  OperationKind kind = 7;
+
+  // Operation specific data depending on the type of the operation.
+  oneof operation_data {
+    RevealOperationData reveal_operation_data = 8;
+    TransactionOperationData transaction_operation_data = 9;
+    OriginationOperationData origination_operation_data = 10;
+    DelegationOperationData delegation_operation_data = 11;
+  }
+}
+
+// Transaction operation specific data.
+// Next field: 3
+message TransactionOperationData {
+  string destination = 1;
+  int64 amount = 2;
+}
+
+// Reveal operation specific data.
+// Next field: 2
+message RevealOperationData {
+  bytes public_key = 1;
+}
+
+// Origination operation specific data.
+// Next field: 3
+message OriginationOperationData {
+  string manager_pubkey = 1;
+  int64 balance = 2;
+}
+
+// Delegation operation specific data.
+// Next field: 2
+message DelegationOperationData {
+  string delegate = 1;
+}
+</code></pre>
+<h2><a class="header" href="#srcanyproto" id="srcanyproto">src:./Any.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Any.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+message SigningInput {
+    // BIP44 network ID
+    uint32 coin_type   = 1;
+    // JSON transaction
+    string transaction = 2;
+    // Private Key in HEX format
+    string  private_key = 3;
+}
+
+message SigningOutput {
+    message Error {
+        // Error code
+        uint32 code        = 1;
+        // Error description
+        string description = 2;
+    }
+
+    oneof result {
+        Error error = 1;
+        bool success = 2;
+    }
+
+    string output = 4;
+}
+</code></pre>
+<h2><a class="header" href="#srcnebulasproto" id="srcnebulasproto">src:./Nebulas.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Nebulas.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    // sender's address.
+    string from_address = 1;
+
+    // Chain identifier (256-bit number)
+    bytes chain_id = 2;
+
+    // Nonce (256-bit number)
+    bytes nonce = 3;
+
+    // Gas price (256-bit number)
+    bytes gas_price = 4;
+
+    
+    // Gas limit (256-bit number)
+    bytes gas_limit = 5;
+
+    // Recipient's address.
+    string to_address = 6;
+
+    // Amount to send in wei, 1 NAS = 10^18 Wei (256-bit number)
+    bytes amount = 7;
+
+    // Timestamp to create transaction (256-bit number)
+    bytes timestamp = 8;
+
+    // Optional payload
+    string payload = 9;
+
+    // Private key.
+    bytes private_key = 10;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    uint32 algorithm = 1;
+    bytes signature = 2;
+    string raw = 3;
+}
+
+//
+message Data {
+    string type = 1;
+    bytes payload = 2;
+}
+
+// Raw transaction data
+message RawTransaction {
+    bytes hash  = 1;
+    bytes from = 2;
+    bytes to = 3;
+    bytes value = 4;
+    uint64 nonce = 5;
+    int64 timestamp = 6;
+    Data data = 7;
+    uint32 chain_id = 8;
+    bytes gas_price = 9;
+    bytes gas_limit = 10;
+
+    uint32 alg = 11;
+    bytes sign = 12;
+}
+</code></pre>
+<h2><a class="header" href="#srcbravoproto" id="srcbravoproto">src:./Bravo.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Bravo.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    // Chain id (256-bit number)
+    bytes chain_id = 1;
+
+    // Sender's username
+    string sender = 2;
+
+    // Recipient's username
+    string recipient = 3;
+
+    // Amount in &quot;BRAVO&quot; or &quot;TEST&quot;
+    double amount = 4;
+
+    // Whether the transaction is for testnet
+    bool testnet = 5;
+
+    // Memo to attach to the transaction
+    string memo = 6;
+
+    // Reference Block Id (160-bits)
+    bytes reference_block_id = 7;
+
+    // Timestamp on the reference block
+    sfixed32 reference_block_time = 8;
+
+    // Sender's private key's raw bytes
+    bytes private_key = 9;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // JSON of the signed transaction.
+    string json_encoded = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srctronproto" id="srctronproto">src:./Tron.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Tron.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+message TransferContract {
+    // Sender address.
+    string owner_address = 1;
+
+    // Recipient address.
+    string to_address = 2;
+
+    // Amount to send.
+    int64 amount = 3;
+}
+
+message TransferAssetContract {
+    // Asset name.
+    string asset_name = 1;
+
+    // Sender address.
+    string owner_address = 2;
+
+    // Recipient address.
+    string to_address = 3;
+
+    // Amount to send.
+    int64 amount = 4;
+}
+
+message FreezeBalanceContract {
+    // Sender address.
+    string owner_address = 1;
+    // Frozen balance. Minimum 1
+    int64 frozen_balance = 2;
+    // Frozen duration
+    int64 frozen_duration = 3;
+    // Resource type: BANDWIDTH | ENERGY
+    string resource = 10;
+    // Receiver address
+    string receiver_address = 15;
+}
+
+message UnfreezeBalanceContract {
+    // Sender address
+    string owner_address = 1;
+    // Resource type: BANDWIDTH | ENERGY
+    string resource = 10;
+    // Receiver address
+    string receiver_address = 15;
+}
+
+message UnfreezeAssetContract {
+    // Sender address
+    string owner_address = 1;
+}
+
+message VoteAssetContract {
+    // Sender address
+    string owner_address = 1;
+    // Vote addresses
+    repeated string vote_address = 2;
+    bool support = 3;
+    int32 count = 5;
+}
+
+message VoteWitnessContract {
+    message Vote {
+        string vote_address = 1;
+        int64 vote_count = 2;
+    }
+    string owner_address = 1;
+    repeated Vote votes = 2;
+    bool support = 3;
+}
+
+message WithdrawBalanceContract {
+    // Sender address
+    string owner_address = 1;
+}
+
+message TriggerSmartContract {
+    string owner_address = 1;
+    string contract_address = 2;
+    int64 call_value = 3;
+    bytes data = 4;
+    int64 call_token_value = 5;
+    int64 token_id = 6;
+}
+
+message BlockHeader {
+    int64 timestamp = 1;
+    bytes tx_trie_root = 2;
+    bytes parent_hash = 3;
+    int64 number = 7;
+    bytes witness_address = 9;
+    int32 version = 10;
+}
+
+message Transaction {
+    // Transaction timestamp in milliseconds.
+    int64 timestamp = 1;
+
+    // Transaction expiration time in milliseconds.
+    int64 expiration = 2;
+
+    // Transaction block header.
+    BlockHeader block_header = 3;
+
+    // Transaction fee limit
+    int64 fee_limit = 4;
+
+    // Contract.
+    oneof contract_oneof {
+        TransferContract transfer = 10;
+        TransferAssetContract transfer_asset = 11;
+        FreezeBalanceContract freeze_balance = 12;
+        UnfreezeBalanceContract unfreeze_balance = 13;
+        UnfreezeAssetContract unfreeze_asset = 14;
+        WithdrawBalanceContract withdraw_balance = 15;
+        VoteAssetContract vote_asset = 16;
+        VoteWitnessContract vote_witness = 17;
+        TriggerSmartContract trigger_smart_contract = 18;
+    }
+}
+
+message SigningInput {
+    // Transaction.
+    Transaction transaction = 1;
+
+    // Private key.
+    bytes private_key = 2;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // Transaction identifier.
+    bytes id = 1;
+
+    // Signature.
+    bytes signature = 2;
+
+    bytes ref_block_bytes = 3;
+    bytes ref_block_hash = 4;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcthetaproto" id="srcthetaproto">src:./Theta.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Theta.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+/// Input data necessary to create a signed transaction
+message SigningInput {
+    /// Chain ID string, mainnet, testnet and privatenet
+    string chain_id = 1;
+
+    /// Recipient address
+    string to_address = 2;
+
+    /// Theta token amount to send in wei (256-bit number)
+    bytes theta_amount = 3;
+
+    /// TFuel token amount to send in wei (256-bit number)
+    bytes tfuel_amount = 4;
+
+    /// Sequence number of the transaction for the sender address
+    uint64 sequence = 5;
+
+    /// Fee amount in TFuel wei for the transaction (256-bit number)
+    bytes fee = 6;
+
+    /// Private key
+    bytes private_key = 7;
+}
+
+/// Transaction signing output
+message SigningOutput {
+    /// Signed and encoded transaction bytes
+    bytes encoded = 1;
+
+    /// Signature
+    bytes signature = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcaeternityproto" id="srcaeternityproto">src:./Aeternity.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Aeternity.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    // Address of the sender with &quot;ak_&quot; prefix
+    string from_address = 1;
+
+    // Address of the recipient with &quot;ak_&quot; prefix
+    string to_address = 2;
+
+    bytes amount = 3;
+
+    bytes fee = 4;
+
+    // Message, optional
+    string payload = 5;
+
+    // Time to live until block height
+    uint64 ttl = 6;
+
+    uint64 nonce = 7;
+
+    bytes private_key = 8;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // Signed and encoded transaction bytes, Base64 with checksum
+    string encoded = 1;
+    // Signature, Base58 with checksum
+    string signature = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcnimiqproto" id="srcnimiqproto">src:./Nimiq.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Nimiq.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    bytes private_key = 1;
+
+    string destination = 2;
+
+    uint64 value = 3;
+
+    uint64 fee = 4;
+
+    uint32 validity_start_height = 5;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    bytes encoded = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcharmonyproto" id="srcharmonyproto">src:./Harmony.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Harmony.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    // Chain identifier (256-bit number)
+    bytes chain_id = 1;
+
+    // Nonce (256-bit number)
+    bytes nonce = 2;
+
+    // Gas price (256-bit number)
+    bytes gas_price = 3;
+
+    // Gas limit (256-bit number)
+    bytes gas_limit = 4;
+
+    // Recipient's address.
+    string to_address = 5;
+
+    // Amount to send in wei (256-bit number)
+    bytes amount = 6;
+
+    // Optional payload
+    bytes payload = 7;
+
+    // Private key.
+    bytes private_key = 8;
+
+    // From shard ID (256-bit number)
+    bytes from_shard_id = 9;
+
+    // To Shard ID (256-bit number)
+    bytes to_shard_id = 10;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // Signed and encoded transaction bytes.
+    bytes encoded = 1;
+
+    bytes v = 2;
+    bytes r = 3;
+    bytes s = 4;
+}
+
+</code></pre>
+<h2><a class="header" href="#srceosproto" id="srceosproto">src:./EOS.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.EOS.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+enum KeyType {
+    LEGACY = 0;
+    MODERNK1 = 1;
+    MODERNR1 = 2;
+}
+
+// Values for an Asset object.
+message Asset {
+    int64 amount = 1;
+    uint32 decimals = 2;
+    string symbol = 3;
+}
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    // Chain id (256-bit number)
+    bytes chain_id = 1;
+
+    // Reference Block Id (256-bits)
+    bytes reference_block_id = 2;
+
+    // Timestamp on the reference block
+    sfixed32 reference_block_time = 3;
+    
+    // Currency (e.g. &quot;eosio.token&quot;)
+    string currency = 4;
+
+    // Sender's username
+    string sender = 5;
+
+    // Recipient's username
+    string recipient = 6;
+
+    // Memo attached to the transaction
+    string memo = 7;
+
+    // Asset details and amount
+    Asset asset = 8;
+
+    // Sender's private key's raw bytes
+    bytes private_key = 9;
+
+    // Type of the private key
+    KeyType private_key_type = 10;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // JSON of the packed transaction.
+    string json_encoded = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcnanoproto" id="srcnanoproto">src:./Nano.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.Nano.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    // Private key
+    bytes private_key = 1;
+
+    // Optional parent block hash
+    bytes parent_block = 2;
+
+    oneof link_oneof {
+        // Hash of a block to receive from
+        bytes link_block = 3;
+        // Recipient address to send coins to
+        string link_recipient = 4;
+    }
+
+    // Representative address
+    string representative = 5;
+
+    // Account balance (128-bit unsigned integer, as a string)
+    string balance = 6;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // Signature
+    bytes signature = 1;
+    // Block hash
+    bytes block_hash = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srciostproto" id="srciostproto">src:./IOST.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package TW.IOST.Proto;
+option java_package = &quot;wallet.core.jni.proto&quot;;
+
+// The message defines transaction action struct.
+message Action {
+    // contract name
+    string contract = 1;
+    // action name
+    string action_name = 2;
+    // data
+    string data = 3;
+}
+
+// The message defines transaction amount limit struct.
+message AmountLimit {
+    // token name
+    string token = 1;
+    // limit value
+    string value = 2;
+}
+
+// The enumeration defines the signature algorithm.
+enum Algorithm {
+    // unknown
+    UNKNOWN = 0;
+    // secp256k1
+    SECP256K1 = 1;
+    // ed25519
+    ED25519 = 2;
+}
+
+// The message defines signature struct.
+message Signature {
+    // signature algorithm
+    Algorithm algorithm = 1;
+    // signature bytes
+    bytes signature = 2;
+    // public key
+    bytes public_key = 3;
+}
+
+// The message defines the transaction request.
+message Transaction {
+    // transaction timestamp
+    int64 time = 1;
+    // expiration timestamp
+    int64 expiration = 2;
+    // gas price
+    double gas_ratio = 3;
+    // gas limit
+    double gas_limit = 4;
+    // delay nanoseconds
+    int64 delay = 5;
+    // chain id
+    uint32 chain_id = 6;
+    // action list
+    repeated Action actions = 7;
+    // amount limit
+    repeated AmountLimit amount_limit = 8;
+    // signer list
+    repeated string signers = 9;
+    // signatures of signers
+    repeated Signature signatures = 10;
+    // publisher
+    string publisher = 11;
+    // signatures of publisher
+    repeated Signature publisher_sigs = 12;
+}
+
+message AccountInfo {
+    string name = 1;
+    bytes active_key = 2;
+    bytes owner_key = 3;
+}
+
+// Input data necessary to create a signed transaction.
+message SigningInput {
+    AccountInfo account = 1;
+    Transaction transaction_template = 2;
+    string transfer_destination = 3;
+    string transfer_amount = 4;
+    string transfer_memo = 5;
+}
+
+// Transaction signing output.
+message SigningOutput {
+    // Signed transaction
+    Transaction transaction = 1;
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../dlt/xuperchain.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../dlt/openbazaar.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../dlt/xuperchain.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../dlt/openbazaar.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

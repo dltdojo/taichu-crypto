@@ -1,0 +1,2693 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>OpenBazaar - DLTDOJO3 第三新熵熱踢道場</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> DLTDOJO3</a></li><li><a href="../poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><a href="../taichu-raw/index.html"><strong aria-hidden="true">3.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li><a href="../taichu-raw/apache-big5.html"><strong aria-hidden="true">3.1.</strong> HTTPS: Apache Big5</a></li><li><a href="../taichu-raw/openapiv3.html"><strong aria-hidden="true">3.2.</strong> HTTPS: OpenAPI v3</a></li><li><a href="../taichu-raw/others.html"><strong aria-hidden="true">3.3.</strong> 其他</a></li></ol></li><li><a href="../mad-white/index.html"><strong aria-hidden="true">4.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li><a href="../mad-white/code-server.html"><strong aria-hidden="true">4.1.</strong> VS Code Server</a></li></ol></li><li><a href="../mad-red/index.html"><strong aria-hidden="true">5.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">5.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">5.2.</strong> 聊天測試 BIP39</a></li><li><a href="../mad-red/vox/index.html"><strong aria-hidden="true">5.3.</strong> Voxel 組件開發編輯</a></li><li><a href="../mad-red/vox/projects.html"><strong aria-hidden="true">5.4.</strong> Voxel 相關專案</a></li></ol></li><li><a href="../crypto-assets.html"><strong aria-hidden="true">6.</strong> Crypto-Assets</a></li><li><a href="../dlt.html"><strong aria-hidden="true">7.</strong> DLT</a></li><li><ol class="section"><li><a href="../dlt/hl-fabric.html"><strong aria-hidden="true">7.1.</strong> Hyperledger Fabric</a></li><li><a href="../dlt/hl-sawtooth.html"><strong aria-hidden="true">7.2.</strong> Hyperledger Sawtooth</a></li><li><a href="../dlt/hl-burrow.html"><strong aria-hidden="true">7.3.</strong> HyperLedger Burrow</a></li><li><a href="../dlt/libra.html"><strong aria-hidden="true">7.4.</strong> Libra</a></li><li><a href="../dlt/lnrpc.html"><strong aria-hidden="true">7.5.</strong> lightning network</a></li><li><a href="../dlt/exonum.html"><strong aria-hidden="true">7.6.</strong> exonum</a></li><li><a href="../dlt/trisa.html"><strong aria-hidden="true">7.7.</strong> TRISA</a></li><li><a href="../dlt/xuperchain.html"><strong aria-hidden="true">7.8.</strong> xuperchain</a></li><li><a href="../dlt/trustwallet.html"><strong aria-hidden="true">7.9.</strong> TrustWallet</a></li><li><a href="../dlt/openbazaar.html" class="active"><strong aria-hidden="true">7.10.</strong> OpenBazaar</a></li><li><a href="../dlt/amazon-qldb.html"><strong aria-hidden="true">7.11.</strong> Amazon QLDB</a></li></ol></li><li><a href="../dao.html"><strong aria-hidden="true">8.</strong> DAO</a></li><li><ol class="section"><li><a href="../dao/aragon.html"><strong aria-hidden="true">8.1.</strong> Aragon</a></li><li><a href="../dao/joystream.html"><strong aria-hidden="true">8.2.</strong> JoyStream</a></li></ol></li><li><a href="../did.html"><strong aria-hidden="true">9.</strong> DID</a></li><li><a href="../LRE.html"><strong aria-hidden="true">10.</strong> Ledger Reliability Engineering(LRE)</a></li><li><a href="../web/index.html"><strong aria-hidden="true">11.</strong> Web Tech</a></li><li><ol class="section"><li><a href="../web/extensions.html"><strong aria-hidden="true">11.1.</strong> Browser Extensiions</a></li><li><a href="../web/example-page.html"><strong aria-hidden="true">11.2.</strong> Example Pages</a></li><li><a href="../webauthn.html"><strong aria-hidden="true">11.3.</strong> WebAuthn</a></li><li><a href="../webassembly.html"><strong aria-hidden="true">11.4.</strong> WebAssembly</a></li><li><a href="../web/openssl.html"><strong aria-hidden="true">11.5.</strong> OpenSSL</a></li></ol></li><li><a href="../k8s.html"><strong aria-hidden="true">12.</strong> Kubernetes</a></li><li><a href="../plantuml.html"><strong aria-hidden="true">13.</strong> PlantUML</a></li><li><ol class="section"><li><a href="../puml/hyperledger-fabric.html"><strong aria-hidden="true">13.1.</strong> Hyperledger Fabric</a></li><li><a href="../puml/ethereum.html"><strong aria-hidden="true">13.2.</strong> Ethereum</a></li></ol></li><li><a href="../messaging.html"><strong aria-hidden="true">14.</strong> Messaging</a></li><li><a href="../mdbook/index.html"><strong aria-hidden="true">15.</strong> mdbook</a></li><li><ol class="section"><li><a href="../mdbook/preprocessors.html"><strong aria-hidden="true">15.1.</strong> preprocessors</a></li><li><a href="../mdbook/others.html"><strong aria-hidden="true">15.2.</strong> 其他</a></li></ol></li><li><a href="../resources.html"><strong aria-hidden="true">16.</strong> 學習資源</a></li><li><a href="../book.html"><strong aria-hidden="true">17.</strong> 書籍</a></li><li><a href="../job.html"><strong aria-hidden="true">18.</strong> 工作</a></li><li><a href="../appendix.html"><strong aria-hidden="true">19.</strong> 附錄</a></li><li><ol class="section"><li><a href="../cmd-help.html"><strong aria-hidden="true">19.1.</strong> 命令列 tc.sh</a></li><li><a href="../license.html"><strong aria-hidden="true">19.2.</strong> 授權條款</a></li><li><a href="../testpage.html"><strong aria-hidden="true">19.3.</strong> 測試頁面</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">DLTDOJO3 第三新熵熱踢道場</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#openbazaar" id="openbazaar">OpenBazaar</a></h1>
+<p><a href="https://github.com/OpenBazaar/openbazaar-go/tree/master/pb/protos">openbazaar-go/pb/protos at master · OpenBazaar/openbazaar-go</a></p>
+<!-- toc -->
+<h1><a class="header" href="#如何生成-google-protocol-buffers-文件" id="如何生成-google-protocol-buffers-文件">如何生成 Google Protocol Buffers 文件</a></h1>
+<p><a href="https://github.com/pseudomuto/protoc-gen-doc">pseudomuto/protoc-gen-doc: Documentation generator plugin for Google Protocol Buffers</a></p>
+<pre><code class="language-shell">git clone https://github.com/OpenBazaar/openbazaar-go.git /tmp/src/openbazaar-go
+bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
+</code></pre>
+<h1><a class="header" href="#generated-date2019-09-12t1121430800" id="generated-date2019-09-12t1121430800">Generated Date:2019-09-12T11:21:43+08:00</a></h1>
+<h1><a class="header" href="#protocol-documentation" id="protocol-documentation">Protocol Documentation</a></h1>
+<p><a name="top"></a></p>
+<h2><a class="header" href="#table-of-contents" id="table-of-contents">Table of Contents</a></h2>
+<ul>
+<li>
+<p><a href="#contracts.proto">contracts.proto</a></p>
+<ul>
+<li>
+<p><a href="#.BitcoinSignature">BitcoinSignature</a></p>
+</li>
+<li>
+<p><a href="#.Dispute">Dispute</a></p>
+</li>
+<li>
+<p><a href="#.DisputeAcceptance">DisputeAcceptance</a></p>
+</li>
+<li>
+<p><a href="#.DisputeResolution">DisputeResolution</a></p>
+</li>
+<li>
+<p><a href="#.DisputeResolution.Payout">DisputeResolution.Payout</a></p>
+</li>
+<li>
+<p><a href="#.DisputeResolution.Payout.Output">DisputeResolution.Payout.Output</a></p>
+</li>
+<li>
+<p><a href="#.ID">ID</a></p>
+</li>
+<li>
+<p><a href="#.ID.Pubkeys">ID.Pubkeys</a></p>
+</li>
+<li>
+<p><a href="#.Listing">Listing</a></p>
+</li>
+<li>
+<p><a href="#.Listing.Coupon">Listing.Coupon</a></p>
+</li>
+<li>
+<p><a href="#.Listing.Item">Listing.Item</a></p>
+</li>
+<li>
+<p><a href="#.Listing.Item.Image">Listing.Item.Image</a></p>
+</li>
+<li>
+<p><a href="#.Listing.Item.Option">Listing.Item.Option</a></p>
+</li>
+<li>
+<p><a href="#.Listing.Item.Option.Variant">Listing.Item.Option.Variant</a></p>
+</li>
+<li>
+<p><a href="#.Listing.Item.Sku">Listing.Item.Sku</a></p>
+</li>
+<li>
+<p><a href="#.Listing.Metadata">Listing.Metadata</a></p>
+</li>
+<li>
+<p><a href="#.Listing.ShippingOption">Listing.ShippingOption</a></p>
+</li>
+<li>
+<p><a href="#.Listing.ShippingOption.Service">Listing.ShippingOption.Service</a></p>
+</li>
+<li>
+<p><a href="#.Listing.Tax">Listing.Tax</a></p>
+</li>
+<li>
+<p><a href="#.Order">Order</a></p>
+</li>
+<li>
+<p><a href="#.Order.Item">Order.Item</a></p>
+</li>
+<li>
+<p><a href="#.Order.Item.Option">Order.Item.Option</a></p>
+</li>
+<li>
+<p><a href="#.Order.Item.ShippingOption">Order.Item.ShippingOption</a></p>
+</li>
+<li>
+<p><a href="#.Order.Payment">Order.Payment</a></p>
+</li>
+<li>
+<p><a href="#.Order.Shipping">Order.Shipping</a></p>
+</li>
+<li>
+<p><a href="#.OrderCompletion">OrderCompletion</a></p>
+</li>
+<li>
+<p><a href="#.OrderConfirmation">OrderConfirmation</a></p>
+</li>
+<li>
+<p><a href="#.OrderFulfillment">OrderFulfillment</a></p>
+</li>
+<li>
+<p><a href="#.OrderFulfillment.CryptocurrencyDelivery">OrderFulfillment.CryptocurrencyDelivery</a></p>
+</li>
+<li>
+<p><a href="#.OrderFulfillment.DigitalDelivery">OrderFulfillment.DigitalDelivery</a></p>
+</li>
+<li>
+<p><a href="#.OrderFulfillment.Payout">OrderFulfillment.Payout</a></p>
+</li>
+<li>
+<p><a href="#.OrderFulfillment.PhysicalDelivery">OrderFulfillment.PhysicalDelivery</a></p>
+</li>
+<li>
+<p><a href="#.OrderProcessingFailure">OrderProcessingFailure</a></p>
+</li>
+<li>
+<p><a href="#.OrderReject">OrderReject</a></p>
+</li>
+<li>
+<p><a href="#.Outpoint">Outpoint</a></p>
+</li>
+<li>
+<p><a href="#.Rating">Rating</a></p>
+</li>
+<li>
+<p><a href="#.Rating.RatingData">Rating.RatingData</a></p>
+</li>
+<li>
+<p><a href="#.RatingSignature">RatingSignature</a></p>
+</li>
+<li>
+<p><a href="#.RatingSignature.TransactionMetadata">RatingSignature.TransactionMetadata</a></p>
+</li>
+<li>
+<p><a href="#.RatingSignature.TransactionMetadata.Image">RatingSignature.TransactionMetadata.Image</a></p>
+</li>
+<li>
+<p><a href="#.Refund">Refund</a></p>
+</li>
+<li>
+<p><a href="#.Refund.TransactionInfo">Refund.TransactionInfo</a></p>
+</li>
+<li>
+<p><a href="#.RicardianContract">RicardianContract</a></p>
+</li>
+<li>
+<p><a href="#.Signature">Signature</a></p>
+</li>
+<li>
+<p><a href="#.SignedListing">SignedListing</a></p>
+</li>
+<li>
+<p><a href="#.VendorFinalizedPayment">VendorFinalizedPayment</a></p>
+</li>
+<li>
+<p><a href="#.Listing.Metadata.ContractType">Listing.Metadata.ContractType</a></p>
+</li>
+<li>
+<p><a href="#.Listing.Metadata.Format">Listing.Metadata.Format</a></p>
+</li>
+<li>
+<p><a href="#.Listing.ShippingOption.ShippingType">Listing.ShippingOption.ShippingType</a></p>
+</li>
+<li>
+<p><a href="#.Order.Payment.Method">Order.Payment.Method</a></p>
+</li>
+<li>
+<p><a href="#.Signature.Section">Signature.Section</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#posts.proto">posts.proto</a></p>
+<ul>
+<li>
+<p><a href="#.Post">Post</a></p>
+</li>
+<li>
+<p><a href="#.Post.Image">Post.Image</a></p>
+</li>
+<li>
+<p><a href="#.SignedPost">SignedPost</a></p>
+</li>
+<li>
+<p><a href="#.Post.PostType">Post.PostType</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#message.proto">message.proto</a></p>
+<ul>
+<li>
+<p><a href="#.Block">Block</a></p>
+</li>
+<li>
+<p><a href="#.Chat">Chat</a></p>
+</li>
+<li>
+<p><a href="#.CidList">CidList</a></p>
+</li>
+<li>
+<p><a href="#.Envelope">Envelope</a></p>
+</li>
+<li>
+<p><a href="#.Error">Error</a></p>
+</li>
+<li>
+<p><a href="#.Message">Message</a></p>
+</li>
+<li>
+<p><a href="#.OrderPaymentTxn">OrderPaymentTxn</a></p>
+</li>
+<li>
+<p><a href="#.SignedData">SignedData</a></p>
+</li>
+<li>
+<p><a href="#.SignedData.Command">SignedData.Command</a></p>
+</li>
+<li>
+<p><a href="#.Chat.Flag">Chat.Flag</a></p>
+</li>
+<li>
+<p><a href="#.Message.MessageType">Message.MessageType</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#countrycodes.proto">countrycodes.proto</a></p>
+<ul>
+<li><a href="#.CountryCode">CountryCode</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#profile.proto">profile.proto</a></p>
+<ul>
+<li><a href="#.Profile">Profile</a></li>
+<li><a href="#.Profile.Colors">Profile.Colors</a></li>
+<li><a href="#.Profile.Contact">Profile.Contact</a></li>
+<li><a href="#.Profile.Image">Profile.Image</a></li>
+<li><a href="#.Profile.SocialAccount">Profile.SocialAccount</a></li>
+<li><a href="#.Profile.Stats">Profile.Stats</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#moderator.proto">moderator.proto</a></p>
+<ul>
+<li>
+<p><a href="#.DisputeUpdate">DisputeUpdate</a></p>
+</li>
+<li>
+<p><a href="#.Moderator">Moderator</a></p>
+</li>
+<li>
+<p><a href="#.Moderator.Fee">Moderator.Fee</a></p>
+</li>
+<li>
+<p><a href="#.Moderator.Price">Moderator.Price</a></p>
+</li>
+<li>
+<p><a href="#.Moderator.Fee.FeeType">Moderator.Fee.FeeType</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#orders.proto">orders.proto</a></p>
+<ul>
+<li><a href="#.OrderState">OrderState</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#api.proto">api.proto</a></p>
+<ul>
+<li><a href="#.CaseRespApi">CaseRespApi</a></li>
+<li><a href="#.Coupon">Coupon</a></li>
+<li><a href="#.OrderRespApi">OrderRespApi</a></li>
+<li><a href="#.PeerAndProfile">PeerAndProfile</a></li>
+<li><a href="#.PeerAndProfileWithID">PeerAndProfileWithID</a></li>
+<li><a href="#.RatingWithID">RatingWithID</a></li>
+<li><a href="#.TransactionRecord">TransactionRecord</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#scalar-value-types">Scalar Value Types</a></p>
+</li>
+</ul>
+<p><a name="contracts.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#contractsproto" id="contractsproto">contracts.proto</a></h2>
+<p><a name=".BitcoinSignature"></a></p>
+<h3><a class="header" href="#bitcoinsignature" id="bitcoinsignature">BitcoinSignature</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>inputIndex</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Dispute"></a></p>
+<h3><a class="header" href="#dispute" id="dispute">Dispute</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>claim</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>payoutAddress</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>outpoints</td><td><a href="#Outpoint">Outpoint</a></td><td>repeated</td><td></td></tr>
+<tr><td>serializedContract</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".DisputeAcceptance"></a></p>
+<h3><a class="header" href="#disputeacceptance" id="disputeacceptance">DisputeAcceptance</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>closedBy</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".DisputeResolution"></a></p>
+<h3><a class="header" href="#disputeresolution" id="disputeresolution">DisputeResolution</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>orderId</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>proposedBy</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>resolution</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>payout</td><td><a href="#DisputeResolution.Payout">DisputeResolution.Payout</a></td><td></td><td></td></tr>
+<tr><td>moderatorRatingSigs</td><td><a href="#bytes">bytes</a></td><td>repeated</td><td>Used in ratings</td></tr>
+</tbody></table>
+<p><a name=".DisputeResolution.Payout"></a></p>
+<h3><a class="header" href="#disputeresolutionpayout" id="disputeresolutionpayout">DisputeResolution.Payout</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>sigs</td><td><a href="#BitcoinSignature">BitcoinSignature</a></td><td>repeated</td><td></td></tr>
+<tr><td>inputs</td><td><a href="#Outpoint">Outpoint</a></td><td>repeated</td><td></td></tr>
+<tr><td>buyerOutput</td><td><a href="#DisputeResolution.Payout.Output">DisputeResolution.Payout.Output</a></td><td></td><td></td></tr>
+<tr><td>vendorOutput</td><td><a href="#DisputeResolution.Payout.Output">DisputeResolution.Payout.Output</a></td><td></td><td></td></tr>
+<tr><td>moderatorOutput</td><td><a href="#DisputeResolution.Payout.Output">DisputeResolution.Payout.Output</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".DisputeResolution.Payout.Output"></a></p>
+<h3><a class="header" href="#disputeresolutionpayoutoutput" id="disputeresolutionpayoutoutput">DisputeResolution.Payout.Output</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>script</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>amount</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".ID"></a></p>
+<h3><a class="header" href="#id" id="id">ID</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>peerID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>handle</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>pubkeys</td><td><a href="#ID.Pubkeys">ID.Pubkeys</a></td><td></td><td></td></tr>
+<tr><td>bitcoinSig</td><td><a href="#bytes">bytes</a></td><td></td><td>Bitcoin signature covering peerID</td></tr>
+</tbody></table>
+<p><a name=".ID.Pubkeys"></a></p>
+<h3><a class="header" href="#idpubkeys" id="idpubkeys">ID.Pubkeys</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>identity</td><td><a href="#bytes">bytes</a></td><td></td><td>IPFS public key</td></tr>
+<tr><td>bitcoin</td><td><a href="#bytes">bytes</a></td><td></td><td>Bitcoin public key</td></tr>
+</tbody></table>
+<p><a name=".Listing"></a></p>
+<h3><a class="header" href="#listing" id="listing">Listing</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>slug</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>vendorID</td><td><a href="#ID">ID</a></td><td></td><td></td></tr>
+<tr><td>metadata</td><td><a href="#Listing.Metadata">Listing.Metadata</a></td><td></td><td></td></tr>
+<tr><td>item</td><td><a href="#Listing.Item">Listing.Item</a></td><td></td><td></td></tr>
+<tr><td>shippingOptions</td><td><a href="#Listing.ShippingOption">Listing.ShippingOption</a></td><td>repeated</td><td></td></tr>
+<tr><td>taxes</td><td><a href="#Listing.Tax">Listing.Tax</a></td><td>repeated</td><td></td></tr>
+<tr><td>coupons</td><td><a href="#Listing.Coupon">Listing.Coupon</a></td><td>repeated</td><td></td></tr>
+<tr><td>moderators</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>termsAndConditions</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>refundPolicy</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Listing.Coupon"></a></p>
+<h3><a class="header" href="#listingcoupon" id="listingcoupon">Listing.Coupon</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>title</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>hash</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>discountCode</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>percentDiscount</td><td><a href="#float">float</a></td><td></td><td></td></tr>
+<tr><td>priceDiscount</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Listing.Item"></a></p>
+<h3><a class="header" href="#listingitem" id="listingitem">Listing.Item</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>title</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>description</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>processingTime</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>price</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>nsfw</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>tags</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>images</td><td><a href="#Listing.Item.Image">Listing.Item.Image</a></td><td>repeated</td><td></td></tr>
+<tr><td>categories</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>grams</td><td><a href="#float">float</a></td><td></td><td></td></tr>
+<tr><td>condition</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>options</td><td><a href="#Listing.Item.Option">Listing.Item.Option</a></td><td>repeated</td><td></td></tr>
+<tr><td>skus</td><td><a href="#Listing.Item.Sku">Listing.Item.Sku</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name=".Listing.Item.Image"></a></p>
+<h3><a class="header" href="#listingitemimage" id="listingitemimage">Listing.Item.Image</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>filename</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>original</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>large</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>medium</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>small</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>tiny</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Listing.Item.Option"></a></p>
+<h3><a class="header" href="#listingitemoption" id="listingitemoption">Listing.Item.Option</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>description</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>variants</td><td><a href="#Listing.Item.Option.Variant">Listing.Item.Option.Variant</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name=".Listing.Item.Option.Variant"></a></p>
+<h3><a class="header" href="#listingitemoptionvariant" id="listingitemoptionvariant">Listing.Item.Option.Variant</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>image</td><td><a href="#Listing.Item.Image">Listing.Item.Image</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Listing.Item.Sku"></a></p>
+<h3><a class="header" href="#listingitemsku" id="listingitemsku">Listing.Item.Sku</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>variantCombo</td><td><a href="#uint32">uint32</a></td><td>repeated</td><td></td></tr>
+<tr><td>productID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>surcharge</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>quantity</td><td><a href="#int64">int64</a></td><td></td><td>Not saved with listing</td></tr>
+</tbody></table>
+<p><a name=".Listing.Metadata"></a></p>
+<h3><a class="header" href="#listingmetadata" id="listingmetadata">Listing.Metadata</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>version</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>contractType</td><td><a href="#Listing.Metadata.ContractType">Listing.Metadata.ContractType</a></td><td></td><td></td></tr>
+<tr><td>format</td><td><a href="#Listing.Metadata.Format">Listing.Metadata.Format</a></td><td></td><td></td></tr>
+<tr><td>expiry</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>acceptedCurrencies</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>pricingCurrency</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>language</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>escrowTimeoutHours</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>coinType</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>coinDivisibility</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>priceModifier</td><td><a href="#float">float</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Listing.ShippingOption"></a></p>
+<h3><a class="header" href="#listingshippingoption" id="listingshippingoption">Listing.ShippingOption</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>type</td><td><a href="#Listing.ShippingOption.ShippingType">Listing.ShippingOption.ShippingType</a></td><td></td><td></td></tr>
+<tr><td>regions</td><td><a href="#CountryCode">CountryCode</a></td><td>repeated</td><td></td></tr>
+<tr><td>services</td><td><a href="#Listing.ShippingOption.Service">Listing.ShippingOption.Service</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name=".Listing.ShippingOption.Service"></a></p>
+<h3><a class="header" href="#listingshippingoptionservice" id="listingshippingoptionservice">Listing.ShippingOption.Service</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>price</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>estimatedDelivery</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>additionalItemPrice</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Listing.Tax"></a></p>
+<h3><a class="header" href="#listingtax" id="listingtax">Listing.Tax</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>taxType</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>taxRegions</td><td><a href="#CountryCode">CountryCode</a></td><td>repeated</td><td></td></tr>
+<tr><td>taxShipping</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>percentage</td><td><a href="#float">float</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Order"></a></p>
+<h3><a class="header" href="#order" id="order">Order</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>refundAddress</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>refundFee</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>shipping</td><td><a href="#Order.Shipping">Order.Shipping</a></td><td></td><td></td></tr>
+<tr><td>buyerID</td><td><a href="#ID">ID</a></td><td></td><td></td></tr>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>items</td><td><a href="#Order.Item">Order.Item</a></td><td>repeated</td><td></td></tr>
+<tr><td>payment</td><td><a href="#Order.Payment">Order.Payment</a></td><td></td><td></td></tr>
+<tr><td>ratingKeys</td><td><a href="#bytes">bytes</a></td><td>repeated</td><td></td></tr>
+<tr><td>alternateContactInfo</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>version</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Order.Item"></a></p>
+<h3><a class="header" href="#orderitem" id="orderitem">Order.Item</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>listingHash</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>quantity</td><td><a href="#uint32">uint32</a></td><td></td><td>order version &lt; 2 used with listing version &lt; 3</td></tr>
+<tr><td>quantity64</td><td><a href="#uint64">uint64</a></td><td></td><td>order version &gt;= 2 used with listing version &gt;= 3</td></tr>
+<tr><td>options</td><td><a href="#Order.Item.Option">Order.Item.Option</a></td><td>repeated</td><td></td></tr>
+<tr><td>shippingOption</td><td><a href="#Order.Item.ShippingOption">Order.Item.ShippingOption</a></td><td></td><td></td></tr>
+<tr><td>memo</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>couponCodes</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>paymentAddress</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Order.Item.Option"></a></p>
+<h3><a class="header" href="#orderitemoption" id="orderitemoption">Order.Item.Option</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Order.Item.ShippingOption"></a></p>
+<h3><a class="header" href="#orderitemshippingoption" id="orderitemshippingoption">Order.Item.ShippingOption</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>service</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Order.Payment"></a></p>
+<h3><a class="header" href="#orderpayment" id="orderpayment">Order.Payment</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>method</td><td><a href="#Order.Payment.Method">Order.Payment.Method</a></td><td></td><td></td></tr>
+<tr><td>moderator</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>amount</td><td><a href="#uint64">uint64</a></td><td></td><td>Satoshis</td></tr>
+<tr><td>chaincode</td><td><a href="#string">string</a></td><td></td><td>Hex encoded</td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td>B58check encoded</td></tr>
+<tr><td>redeemScript</td><td><a href="#string">string</a></td><td></td><td>Hex encoded</td></tr>
+<tr><td>moderatorKey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>coin</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Order.Shipping"></a></p>
+<h3><a class="header" href="#ordershipping" id="ordershipping">Order.Shipping</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>shipTo</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>city</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>state</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>postalCode</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>country</td><td><a href="#CountryCode">CountryCode</a></td><td></td><td></td></tr>
+<tr><td>addressNotes</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".OrderCompletion"></a></p>
+<h3><a class="header" href="#ordercompletion" id="ordercompletion">OrderCompletion</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>orderId</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>payoutSigs</td><td><a href="#BitcoinSignature">BitcoinSignature</a></td><td>repeated</td><td></td></tr>
+<tr><td>ratings</td><td><a href="#Rating">Rating</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name=".OrderConfirmation"></a></p>
+<h3><a class="header" href="#orderconfirmation" id="orderconfirmation">OrderConfirmation</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>orderID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>paymentAddress</td><td><a href="#string">string</a></td><td></td><td>Direct payments only</td></tr>
+<tr><td>requestedAmount</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>ratingSignatures</td><td><a href="#RatingSignature">RatingSignature</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name=".OrderFulfillment"></a></p>
+<h3><a class="header" href="#orderfulfillment" id="orderfulfillment">OrderFulfillment</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>orderId</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>slug</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>physicalDelivery</td><td><a href="#OrderFulfillment.PhysicalDelivery">OrderFulfillment.PhysicalDelivery</a></td><td>repeated</td><td>Physical goods only</td></tr>
+<tr><td>digitalDelivery</td><td><a href="#OrderFulfillment.DigitalDelivery">OrderFulfillment.DigitalDelivery</a></td><td>repeated</td><td>Digital goods only</td></tr>
+<tr><td>payout</td><td><a href="#OrderFulfillment.Payout">OrderFulfillment.Payout</a></td><td></td><td>Moderated payments only</td></tr>
+<tr><td>ratingSignature</td><td><a href="#RatingSignature">RatingSignature</a></td><td></td><td></td></tr>
+<tr><td>note</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>cryptocurrencyDelivery</td><td><a href="#OrderFulfillment.CryptocurrencyDelivery">OrderFulfillment.CryptocurrencyDelivery</a></td><td>repeated</td><td>Cryptocurrencies only</td></tr>
+</tbody></table>
+<p><a name=".OrderFulfillment.CryptocurrencyDelivery"></a></p>
+<h3><a class="header" href="#orderfulfillmentcryptocurrencydelivery" id="orderfulfillmentcryptocurrencydelivery">OrderFulfillment.CryptocurrencyDelivery</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>transactionID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".OrderFulfillment.DigitalDelivery"></a></p>
+<h3><a class="header" href="#orderfulfillmentdigitaldelivery" id="orderfulfillmentdigitaldelivery">OrderFulfillment.DigitalDelivery</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>url</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>password</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".OrderFulfillment.Payout"></a></p>
+<h3><a class="header" href="#orderfulfillmentpayout" id="orderfulfillmentpayout">OrderFulfillment.Payout</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>sigs</td><td><a href="#BitcoinSignature">BitcoinSignature</a></td><td>repeated</td><td></td></tr>
+<tr><td>payoutAddress</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>payoutFeePerByte</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".OrderFulfillment.PhysicalDelivery"></a></p>
+<h3><a class="header" href="#orderfulfillmentphysicaldelivery" id="orderfulfillmentphysicaldelivery">OrderFulfillment.PhysicalDelivery</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>shipper</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>trackingNumber</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".OrderProcessingFailure"></a></p>
+<h3><a class="header" href="#orderprocessingfailure" id="orderprocessingfailure">OrderProcessingFailure</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>orderID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>attemptedMessageType</td><td><a href="#Message.MessageType">Message.MessageType</a></td><td></td><td></td></tr>
+<tr><td>contract</td><td><a href="#RicardianContract">RicardianContract</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".OrderReject"></a></p>
+<h3><a class="header" href="#orderreject" id="orderreject">OrderReject</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>orderID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>sigs</td><td><a href="#BitcoinSignature">BitcoinSignature</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name=".Outpoint"></a></p>
+<h3><a class="header" href="#outpoint" id="outpoint">Outpoint</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>hash</td><td><a href="#string">string</a></td><td></td><td>Hex encoded</td></tr>
+<tr><td>index</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Rating"></a></p>
+<h3><a class="header" href="#rating" id="rating">Rating</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>ratingData</td><td><a href="#Rating.RatingData">Rating.RatingData</a></td><td></td><td></td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Rating.RatingData"></a></p>
+<h3><a class="header" href="#ratingratingdata" id="ratingratingdata">Rating.RatingData</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>ratingKey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>vendorID</td><td><a href="#ID">ID</a></td><td></td><td></td></tr>
+<tr><td>vendorSig</td><td><a href="#RatingSignature">RatingSignature</a></td><td></td><td></td></tr>
+<tr><td>buyerID</td><td><a href="#ID">ID</a></td><td></td><td>optional</td></tr>
+<tr><td>buyerName</td><td><a href="#string">string</a></td><td></td><td>optional</td></tr>
+<tr><td>buyerSig</td><td><a href="#bytes">bytes</a></td><td></td><td>optional</td></tr>
+<tr><td>moderatorSig</td><td><a href="#bytes">bytes</a></td><td></td><td>only if a dispute was won</td></tr>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>overall</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>quality</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>description</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>deliverySpeed</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>customerService</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>review</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".RatingSignature"></a></p>
+<h3><a class="header" href="#ratingsignature" id="ratingsignature">RatingSignature</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>metadata</td><td><a href="#RatingSignature.TransactionMetadata">RatingSignature.TransactionMetadata</a></td><td></td><td></td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".RatingSignature.TransactionMetadata"></a></p>
+<h3><a class="header" href="#ratingsignaturetransactionmetadata" id="ratingsignaturetransactionmetadata">RatingSignature.TransactionMetadata</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>listingSlug</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>ratingKey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>moderatorKey</td><td><a href="#bytes">bytes</a></td><td></td><td>Only if moderated</td></tr>
+<tr><td>listingTitle</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>thumbnail</td><td><a href="#RatingSignature.TransactionMetadata.Image">RatingSignature.TransactionMetadata.Image</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".RatingSignature.TransactionMetadata.Image"></a></p>
+<h3><a class="header" href="#ratingsignaturetransactionmetadataimage" id="ratingsignaturetransactionmetadataimage">RatingSignature.TransactionMetadata.Image</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>tiny</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>small</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>medium</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>large</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>original</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Refund"></a></p>
+<h3><a class="header" href="#refund" id="refund">Refund</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>orderID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>sigs</td><td><a href="#BitcoinSignature">BitcoinSignature</a></td><td>repeated</td><td></td></tr>
+<tr><td>refundTransaction</td><td><a href="#Refund.TransactionInfo">Refund.TransactionInfo</a></td><td></td><td></td></tr>
+<tr><td>memo</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Refund.TransactionInfo"></a></p>
+<h3><a class="header" href="#refundtransactioninfo" id="refundtransactioninfo">Refund.TransactionInfo</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>txid</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".RicardianContract"></a></p>
+<h3><a class="header" href="#ricardiancontract" id="ricardiancontract">RicardianContract</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>vendorListings</td><td><a href="#Listing">Listing</a></td><td>repeated</td><td></td></tr>
+<tr><td>buyerOrder</td><td><a href="#Order">Order</a></td><td></td><td></td></tr>
+<tr><td>vendorOrderConfirmation</td><td><a href="#OrderConfirmation">OrderConfirmation</a></td><td></td><td></td></tr>
+<tr><td>vendorOrderFulfillment</td><td><a href="#OrderFulfillment">OrderFulfillment</a></td><td>repeated</td><td></td></tr>
+<tr><td>buyerOrderCompletion</td><td><a href="#OrderCompletion">OrderCompletion</a></td><td></td><td></td></tr>
+<tr><td>dispute</td><td><a href="#Dispute">Dispute</a></td><td></td><td></td></tr>
+<tr><td>disputeResolution</td><td><a href="#DisputeResolution">DisputeResolution</a></td><td></td><td></td></tr>
+<tr><td>disputeAcceptance</td><td><a href="#DisputeAcceptance">DisputeAcceptance</a></td><td></td><td></td></tr>
+<tr><td>refund</td><td><a href="#Refund">Refund</a></td><td></td><td></td></tr>
+<tr><td>signatures</td><td><a href="#Signature">Signature</a></td><td>repeated</td><td></td></tr>
+<tr><td>errors</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name=".Signature"></a></p>
+<h3><a class="header" href="#signature" id="signature">Signature</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>section</td><td><a href="#Signature.Section">Signature.Section</a></td><td></td><td></td></tr>
+<tr><td>signatureBytes</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".SignedListing"></a></p>
+<h3><a class="header" href="#signedlisting" id="signedlisting">SignedListing</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>listing</td><td><a href="#Listing">Listing</a></td><td></td><td></td></tr>
+<tr><td>hash</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".VendorFinalizedPayment"></a></p>
+<h3><a class="header" href="#vendorfinalizedpayment" id="vendorfinalizedpayment">VendorFinalizedPayment</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>orderID</td><td><a href="#string">string</a></td><td></td><td>OrderID which has its funds released to the vendor</td></tr>
+</tbody></table>
+<p><a name=".Listing.Metadata.ContractType"></a></p>
+<h3><a class="header" href="#listingmetadatacontracttype" id="listingmetadatacontracttype">Listing.Metadata.ContractType</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>PHYSICAL_GOOD</td><td>0</td><td></td></tr>
+<tr><td>DIGITAL_GOOD</td><td>1</td><td></td></tr>
+<tr><td>SERVICE</td><td>2</td><td></td></tr>
+<tr><td>CROWD_FUND</td><td>3</td><td></td></tr>
+<tr><td>CRYPTOCURRENCY</td><td>4</td><td></td></tr>
+</tbody></table>
+<p><a name=".Listing.Metadata.Format"></a></p>
+<h3><a class="header" href="#listingmetadataformat" id="listingmetadataformat">Listing.Metadata.Format</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>FIXED_PRICE</td><td>0</td><td></td></tr>
+<tr><td>MARKET_PRICE</td><td>2</td><td></td></tr>
+</tbody></table>
+<p><a name=".Listing.ShippingOption.ShippingType"></a></p>
+<h3><a class="header" href="#listingshippingoptionshippingtype" id="listingshippingoptionshippingtype">Listing.ShippingOption.ShippingType</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>LOCAL_PICKUP</td><td>0</td><td></td></tr>
+<tr><td>FIXED_PRICE</td><td>1</td><td></td></tr>
+</tbody></table>
+<p><a name=".Order.Payment.Method"></a></p>
+<h3><a class="header" href="#orderpaymentmethod" id="orderpaymentmethod">Order.Payment.Method</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>ADDRESS_REQUEST</td><td>0</td><td></td></tr>
+<tr><td>DIRECT</td><td>1</td><td></td></tr>
+<tr><td>MODERATED</td><td>2</td><td></td></tr>
+</tbody></table>
+<p><a name=".Signature.Section"></a></p>
+<h3><a class="header" href="#signaturesection" id="signaturesection">Signature.Section</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>LISTING</td><td>0</td><td></td></tr>
+<tr><td>ORDER</td><td>1</td><td></td></tr>
+<tr><td>ORDER_CONFIRMATION</td><td>2</td><td></td></tr>
+<tr><td>ORDER_FULFILLMENT</td><td>3</td><td></td></tr>
+<tr><td>ORDER_COMPLETION</td><td>4</td><td></td></tr>
+<tr><td>DISPUTE</td><td>5</td><td></td></tr>
+<tr><td>DISPUTE_RESOLUTION</td><td>6</td><td></td></tr>
+<tr><td>REFUND</td><td>7</td><td></td></tr>
+</tbody></table>
+<p><a name="posts.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#postsproto" id="postsproto">posts.proto</a></h2>
+<p><a name=".Post"></a></p>
+<h3><a class="header" href="#post" id="post">Post</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>slug</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>vendorID</td><td><a href="#ID">ID</a></td><td></td><td></td></tr>
+<tr><td>status</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>longForm</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>images</td><td><a href="#Post.Image">Post.Image</a></td><td>repeated</td><td></td></tr>
+<tr><td>tags</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>channels</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>postType</td><td><a href="#Post.PostType">Post.PostType</a></td><td></td><td></td></tr>
+<tr><td>reference</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Post.Image"></a></p>
+<h3><a class="header" href="#postimage" id="postimage">Post.Image</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>filename</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>original</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>large</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>medium</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>small</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>tiny</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".SignedPost"></a></p>
+<h3><a class="header" href="#signedpost" id="signedpost">SignedPost</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>post</td><td><a href="#Post">Post</a></td><td></td><td></td></tr>
+<tr><td>hash</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Post.PostType"></a></p>
+<h3><a class="header" href="#postposttype" id="postposttype">Post.PostType</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>POST</td><td>0</td><td></td></tr>
+<tr><td>COMMENT</td><td>1</td><td></td></tr>
+<tr><td>REPOST</td><td>2</td><td></td></tr>
+</tbody></table>
+<p><a name="message.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#messageproto" id="messageproto">message.proto</a></h2>
+<p><a name=".Block"></a></p>
+<h3><a class="header" href="#block" id="block">Block</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>rawData</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>cid</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Chat"></a></p>
+<h3><a class="header" href="#chat" id="chat">Chat</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>messageId</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>subject</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>message</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>flag</td><td><a href="#Chat.Flag">Chat.Flag</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".CidList"></a></p>
+<h3><a class="header" href="#cidlist" id="cidlist">CidList</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>cids</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name=".Envelope"></a></p>
+<h3><a class="header" href="#envelope" id="envelope">Envelope</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>message</td><td><a href="#Message">Message</a></td><td></td><td></td></tr>
+<tr><td>pubkey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Error"></a></p>
+<h3><a class="header" href="#error" id="error">Error</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>code</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>errorMessage</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>orderID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Message"></a></p>
+<h3><a class="header" href="#message" id="message">Message</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>messageType</td><td><a href="#Message.MessageType">Message.MessageType</a></td><td></td><td></td></tr>
+<tr><td>payload</td><td><a href="#google.protobuf.Any">google.protobuf.Any</a></td><td></td><td></td></tr>
+<tr><td>requestId</td><td><a href="#int32">int32</a></td><td></td><td>optional</td></tr>
+<tr><td>isResponse</td><td><a href="#bool">bool</a></td><td></td><td>optional</td></tr>
+</tbody></table>
+<p><a name=".OrderPaymentTxn"></a></p>
+<h3><a class="header" href="#orderpaymenttxn" id="orderpaymenttxn">OrderPaymentTxn</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>coin</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>orderID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>transactionID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>withInput</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".SignedData"></a></p>
+<h3><a class="header" href="#signeddata" id="signeddata">SignedData</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>senderPubkey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>serializedData</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".SignedData.Command"></a></p>
+<h3><a class="header" href="#signeddatacommand" id="signeddatacommand">SignedData.Command</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>peerID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>type</td><td><a href="#Message.MessageType">Message.MessageType</a></td><td></td><td></td></tr>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Chat.Flag"></a></p>
+<h3><a class="header" href="#chatflag" id="chatflag">Chat.Flag</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>MESSAGE</td><td>0</td><td></td></tr>
+<tr><td>TYPING</td><td>1</td><td></td></tr>
+<tr><td>READ</td><td>2</td><td></td></tr>
+</tbody></table>
+<p><a name=".Message.MessageType"></a></p>
+<h3><a class="header" href="#messagemessagetype" id="messagemessagetype">Message.MessageType</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>PING</td><td>0</td><td></td></tr>
+<tr><td>CHAT</td><td>1</td><td></td></tr>
+<tr><td>FOLLOW</td><td>2</td><td></td></tr>
+<tr><td>UNFOLLOW</td><td>3</td><td></td></tr>
+<tr><td>ORDER</td><td>4</td><td></td></tr>
+<tr><td>ORDER_REJECT</td><td>5</td><td></td></tr>
+<tr><td>ORDER_CANCEL</td><td>6</td><td></td></tr>
+<tr><td>ORDER_CONFIRMATION</td><td>7</td><td></td></tr>
+<tr><td>ORDER_FULFILLMENT</td><td>8</td><td></td></tr>
+<tr><td>ORDER_COMPLETION</td><td>9</td><td></td></tr>
+<tr><td>DISPUTE_OPEN</td><td>10</td><td></td></tr>
+<tr><td>DISPUTE_UPDATE</td><td>11</td><td></td></tr>
+<tr><td>DISPUTE_CLOSE</td><td>12</td><td></td></tr>
+<tr><td>REFUND</td><td>13</td><td></td></tr>
+<tr><td>OFFLINE_ACK</td><td>14</td><td></td></tr>
+<tr><td>OFFLINE_RELAY</td><td>15</td><td></td></tr>
+<tr><td>MODERATOR_ADD</td><td>16</td><td></td></tr>
+<tr><td>MODERATOR_REMOVE</td><td>17</td><td></td></tr>
+<tr><td>STORE</td><td>18</td><td></td></tr>
+<tr><td>BLOCK</td><td>19</td><td></td></tr>
+<tr><td>VENDOR_FINALIZED_PAYMENT</td><td>20</td><td></td></tr>
+<tr><td>ORDER_PAYMENT</td><td>21</td><td></td></tr>
+<tr><td>ERROR</td><td>500</td><td></td></tr>
+<tr><td>ORDER_PROCESSING_FAILURE</td><td>501</td><td></td></tr>
+</tbody></table>
+<p><a name="countrycodes.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#countrycodesproto" id="countrycodesproto">countrycodes.proto</a></h2>
+<p><a name=".CountryCode"></a></p>
+<h3><a class="header" href="#countrycode" id="countrycode">CountryCode</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>NA</td><td>0</td><td></td></tr>
+<tr><td>AFGHANISTAN</td><td>1</td><td></td></tr>
+<tr><td>ALAND_ISLANDS</td><td>2</td><td></td></tr>
+<tr><td>ALBANIA</td><td>3</td><td></td></tr>
+<tr><td>ALGERIA</td><td>4</td><td></td></tr>
+<tr><td>AMERICAN_SAMOA</td><td>5</td><td></td></tr>
+<tr><td>ANDORRA</td><td>6</td><td></td></tr>
+<tr><td>ANGOLA</td><td>7</td><td></td></tr>
+<tr><td>ANGUILLA</td><td>8</td><td></td></tr>
+<tr><td>ANTIGUA</td><td>9</td><td></td></tr>
+<tr><td>ARGENTINA</td><td>10</td><td></td></tr>
+<tr><td>ARMENIA</td><td>11</td><td></td></tr>
+<tr><td>ARUBA</td><td>12</td><td></td></tr>
+<tr><td>AUSTRALIA</td><td>13</td><td></td></tr>
+<tr><td>AUSTRIA</td><td>14</td><td></td></tr>
+<tr><td>AZERBAIJAN</td><td>15</td><td></td></tr>
+<tr><td>BAHAMAS</td><td>16</td><td></td></tr>
+<tr><td>BAHRAIN</td><td>17</td><td></td></tr>
+<tr><td>BANGLADESH</td><td>18</td><td></td></tr>
+<tr><td>BARBADOS</td><td>19</td><td></td></tr>
+<tr><td>BELARUS</td><td>20</td><td></td></tr>
+<tr><td>BELGIUM</td><td>21</td><td></td></tr>
+<tr><td>BELIZE</td><td>22</td><td></td></tr>
+<tr><td>BENIN</td><td>23</td><td></td></tr>
+<tr><td>BERMUDA</td><td>24</td><td></td></tr>
+<tr><td>BHUTAN</td><td>25</td><td></td></tr>
+<tr><td>BOLIVIA</td><td>26</td><td></td></tr>
+<tr><td>BONAIRE_SINT_EUSTATIUS_SABA</td><td>27</td><td></td></tr>
+<tr><td>BOSNIA</td><td>28</td><td></td></tr>
+<tr><td>BOTSWANA</td><td>29</td><td></td></tr>
+<tr><td>BOUVET_ISLAND</td><td>30</td><td></td></tr>
+<tr><td>BRAZIL</td><td>31</td><td></td></tr>
+<tr><td>BRITISH_INDIAN_OCEAN_TERRITORY</td><td>32</td><td></td></tr>
+<tr><td>BRUNEI_DARUSSALAM</td><td>33</td><td></td></tr>
+<tr><td>BULGARIA</td><td>34</td><td></td></tr>
+<tr><td>BURKINA_FASO</td><td>35</td><td></td></tr>
+<tr><td>BURUNDI</td><td>36</td><td></td></tr>
+<tr><td>CABO_VERDE</td><td>37</td><td></td></tr>
+<tr><td>CAMBODIA</td><td>38</td><td></td></tr>
+<tr><td>CAMEROON</td><td>39</td><td></td></tr>
+<tr><td>CANADA</td><td>40</td><td></td></tr>
+<tr><td>CAYMAN_ISLANDS</td><td>41</td><td></td></tr>
+<tr><td>CENTRAL_AFRICAN_REPUBLIC</td><td>42</td><td></td></tr>
+<tr><td>CHAD</td><td>43</td><td></td></tr>
+<tr><td>CHILE</td><td>44</td><td></td></tr>
+<tr><td>CHINA</td><td>45</td><td></td></tr>
+<tr><td>CHRISTMAS_ISLAND</td><td>46</td><td></td></tr>
+<tr><td>COCOS_ISLANDS</td><td>47</td><td></td></tr>
+<tr><td>COLOMBIA</td><td>48</td><td></td></tr>
+<tr><td>COMOROS</td><td>49</td><td></td></tr>
+<tr><td>CONGO_REPUBLIC</td><td>50</td><td></td></tr>
+<tr><td>CONGO</td><td>51</td><td></td></tr>
+<tr><td>COOK_ISLANDS</td><td>52</td><td></td></tr>
+<tr><td>COSTA_RICA</td><td>53</td><td></td></tr>
+<tr><td>COTE_DIVOIRE</td><td>54</td><td></td></tr>
+<tr><td>CROATIA</td><td>55</td><td></td></tr>
+<tr><td>CUBA</td><td>56</td><td></td></tr>
+<tr><td>CURACAO</td><td>57</td><td></td></tr>
+<tr><td>CYPRUS</td><td>58</td><td></td></tr>
+<tr><td>CZECH_REPUBLIC</td><td>59</td><td></td></tr>
+<tr><td>DENMARK</td><td>60</td><td></td></tr>
+<tr><td>DJIBOUTI</td><td>61</td><td></td></tr>
+<tr><td>DOMINICA</td><td>62</td><td></td></tr>
+<tr><td>DOMINICAN_REPUBLIC</td><td>63</td><td></td></tr>
+<tr><td>ECUADOR</td><td>64</td><td></td></tr>
+<tr><td>EGYPT</td><td>65</td><td></td></tr>
+<tr><td>EL_SALVADOR</td><td>66</td><td></td></tr>
+<tr><td>EQUATORIAL_GUINEA</td><td>67</td><td></td></tr>
+<tr><td>ERITREA</td><td>68</td><td></td></tr>
+<tr><td>ESTONIA</td><td>69</td><td></td></tr>
+<tr><td>ETHIOPIA</td><td>70</td><td></td></tr>
+<tr><td>FALKLAND_ISLANDS</td><td>71</td><td></td></tr>
+<tr><td>FAROE_ISLANDS</td><td>72</td><td></td></tr>
+<tr><td>FIJI</td><td>73</td><td></td></tr>
+<tr><td>FINLAND</td><td>74</td><td></td></tr>
+<tr><td>FRANCE</td><td>75</td><td></td></tr>
+<tr><td>FRENCH_GUIANA</td><td>76</td><td></td></tr>
+<tr><td>FRENCH_POLYNESIA</td><td>77</td><td></td></tr>
+<tr><td>FRENCH_SOUTHERN_TERRITORIES</td><td>78</td><td></td></tr>
+<tr><td>GABON</td><td>79</td><td></td></tr>
+<tr><td>GAMBIA</td><td>80</td><td></td></tr>
+<tr><td>GEORGIA</td><td>81</td><td></td></tr>
+<tr><td>GERMANY</td><td>82</td><td></td></tr>
+<tr><td>GHANA</td><td>83</td><td></td></tr>
+<tr><td>GIBRALTAR</td><td>84</td><td></td></tr>
+<tr><td>GREECE</td><td>85</td><td></td></tr>
+<tr><td>GREENLAND</td><td>86</td><td></td></tr>
+<tr><td>GRENADA</td><td>87</td><td></td></tr>
+<tr><td>GUADELOUPE</td><td>88</td><td></td></tr>
+<tr><td>GUAM</td><td>89</td><td></td></tr>
+<tr><td>GUATEMALA</td><td>90</td><td></td></tr>
+<tr><td>GUERNSEY</td><td>91</td><td></td></tr>
+<tr><td>GUINEA</td><td>92</td><td></td></tr>
+<tr><td>GUINEA_BISSAU</td><td>93</td><td></td></tr>
+<tr><td>GUYANA</td><td>94</td><td></td></tr>
+<tr><td>HAITI</td><td>95</td><td></td></tr>
+<tr><td>HEARD_ISLAND</td><td>96</td><td></td></tr>
+<tr><td>HOLY_SEE</td><td>97</td><td></td></tr>
+<tr><td>HONDURAS</td><td>98</td><td></td></tr>
+<tr><td>HONG_KONG</td><td>99</td><td></td></tr>
+<tr><td>HUNGARY</td><td>100</td><td></td></tr>
+<tr><td>ICELAND</td><td>101</td><td></td></tr>
+<tr><td>INDIA</td><td>102</td><td></td></tr>
+<tr><td>INDONESIA</td><td>103</td><td></td></tr>
+<tr><td>IRAN</td><td>104</td><td></td></tr>
+<tr><td>IRAQ</td><td>105</td><td></td></tr>
+<tr><td>IRELAND</td><td>106</td><td></td></tr>
+<tr><td>ISLE_OF_MAN</td><td>107</td><td></td></tr>
+<tr><td>ISRAEL</td><td>108</td><td></td></tr>
+<tr><td>ITALY</td><td>109</td><td></td></tr>
+<tr><td>JAMAICA</td><td>110</td><td></td></tr>
+<tr><td>JAPAN</td><td>111</td><td></td></tr>
+<tr><td>JERSEY</td><td>112</td><td></td></tr>
+<tr><td>JORDAN</td><td>113</td><td></td></tr>
+<tr><td>KAZAKHSTAN</td><td>114</td><td></td></tr>
+<tr><td>KENYA</td><td>115</td><td></td></tr>
+<tr><td>KIRIBATI</td><td>116</td><td></td></tr>
+<tr><td>NORTH_KOREA</td><td>117</td><td></td></tr>
+<tr><td>SOUTH_KOREA</td><td>118</td><td></td></tr>
+<tr><td>KUWAIT</td><td>119</td><td></td></tr>
+<tr><td>KYRGYZSTAN</td><td>120</td><td></td></tr>
+<tr><td>LAO</td><td>121</td><td></td></tr>
+<tr><td>LATVIA</td><td>122</td><td></td></tr>
+<tr><td>LEBANON</td><td>123</td><td></td></tr>
+<tr><td>LESOTHO</td><td>124</td><td></td></tr>
+<tr><td>LIBERIA</td><td>125</td><td></td></tr>
+<tr><td>LIBYA</td><td>126</td><td></td></tr>
+<tr><td>LIECHTENSTEIN</td><td>127</td><td></td></tr>
+<tr><td>LITHUANIA</td><td>128</td><td></td></tr>
+<tr><td>LUXEMBOURG</td><td>129</td><td></td></tr>
+<tr><td>MACAO</td><td>130</td><td></td></tr>
+<tr><td>MACEDONIA</td><td>131</td><td></td></tr>
+<tr><td>MADAGASCAR</td><td>132</td><td></td></tr>
+<tr><td>MALAWI</td><td>133</td><td></td></tr>
+<tr><td>MALAYSIA</td><td>134</td><td></td></tr>
+<tr><td>MALDIVES</td><td>135</td><td></td></tr>
+<tr><td>MALI</td><td>136</td><td></td></tr>
+<tr><td>MALTA</td><td>137</td><td></td></tr>
+<tr><td>MARSHALL_ISLANDS</td><td>138</td><td></td></tr>
+<tr><td>MARTINIQUE</td><td>139</td><td></td></tr>
+<tr><td>MAURITANIA</td><td>140</td><td></td></tr>
+<tr><td>MAURITIUS</td><td>141</td><td></td></tr>
+<tr><td>MAYOTTE</td><td>142</td><td></td></tr>
+<tr><td>MEXICO</td><td>143</td><td></td></tr>
+<tr><td>MICRONESIA</td><td>144</td><td></td></tr>
+<tr><td>MOLDOVA</td><td>145</td><td></td></tr>
+<tr><td>MONACO</td><td>146</td><td></td></tr>
+<tr><td>MONGOLIA</td><td>147</td><td></td></tr>
+<tr><td>MONTENEGRO</td><td>148</td><td></td></tr>
+<tr><td>MONTSERRAT</td><td>149</td><td></td></tr>
+<tr><td>MOROCCO</td><td>150</td><td></td></tr>
+<tr><td>MOZAMBIQUE</td><td>151</td><td></td></tr>
+<tr><td>MYANMAR</td><td>152</td><td></td></tr>
+<tr><td>NAMIBIA</td><td>153</td><td></td></tr>
+<tr><td>NAURU</td><td>154</td><td></td></tr>
+<tr><td>NEPAL</td><td>155</td><td></td></tr>
+<tr><td>NETHERLANDS</td><td>156</td><td></td></tr>
+<tr><td>NEW_CALEDONIA</td><td>157</td><td></td></tr>
+<tr><td>NEW_ZEALAND</td><td>158</td><td></td></tr>
+<tr><td>NICARAGUA</td><td>159</td><td></td></tr>
+<tr><td>NIGER</td><td>160</td><td></td></tr>
+<tr><td>NIGERIA</td><td>161</td><td></td></tr>
+<tr><td>NIUE</td><td>162</td><td></td></tr>
+<tr><td>NORFOLK_ISLAND</td><td>163</td><td></td></tr>
+<tr><td>NORTHERN_MARIANA_ISLANDS</td><td>164</td><td></td></tr>
+<tr><td>NORWAY</td><td>165</td><td></td></tr>
+<tr><td>OMAN</td><td>166</td><td></td></tr>
+<tr><td>PAKISTAN</td><td>167</td><td></td></tr>
+<tr><td>PALAU</td><td>168</td><td></td></tr>
+<tr><td>PANAMA</td><td>169</td><td></td></tr>
+<tr><td>PAPUA_NEW_GUINEA</td><td>170</td><td></td></tr>
+<tr><td>PARAGUAY</td><td>171</td><td></td></tr>
+<tr><td>PERU</td><td>172</td><td></td></tr>
+<tr><td>PHILIPPINES</td><td>173</td><td></td></tr>
+<tr><td>PITCAIRN</td><td>174</td><td></td></tr>
+<tr><td>POLAND</td><td>175</td><td></td></tr>
+<tr><td>PORTUGAL</td><td>176</td><td></td></tr>
+<tr><td>PUERTO_RICO</td><td>177</td><td></td></tr>
+<tr><td>QATAR</td><td>178</td><td></td></tr>
+<tr><td>REUNION</td><td>179</td><td></td></tr>
+<tr><td>ROMANIA</td><td>180</td><td></td></tr>
+<tr><td>RUSSIA</td><td>181</td><td></td></tr>
+<tr><td>RWANDA</td><td>182</td><td></td></tr>
+<tr><td>SAINT_BARTHELEMY</td><td>183</td><td></td></tr>
+<tr><td>SAINT_HELENA</td><td>184</td><td></td></tr>
+<tr><td>SAINT_KITTS</td><td>185</td><td></td></tr>
+<tr><td>SAINT_LUCIA</td><td>186</td><td></td></tr>
+<tr><td>SAINT_MARTIN</td><td>187</td><td></td></tr>
+<tr><td>SAINT_PIERRE</td><td>188</td><td></td></tr>
+<tr><td>SAINT_VINCENT</td><td>189</td><td></td></tr>
+<tr><td>SAMOA</td><td>190</td><td></td></tr>
+<tr><td>SAN_MARINO</td><td>191</td><td></td></tr>
+<tr><td>SAO_TOME</td><td>192</td><td></td></tr>
+<tr><td>SAUDI_ARABIA</td><td>193</td><td></td></tr>
+<tr><td>SENEGAL</td><td>194</td><td></td></tr>
+<tr><td>SERBIA</td><td>195</td><td></td></tr>
+<tr><td>SEYCHELLES</td><td>196</td><td></td></tr>
+<tr><td>SIERRA_LEONE</td><td>197</td><td></td></tr>
+<tr><td>SINGAPORE</td><td>198</td><td></td></tr>
+<tr><td>SINT_MAARTEN</td><td>199</td><td></td></tr>
+<tr><td>SUCRE</td><td>200</td><td></td></tr>
+<tr><td>SLOVAKIA</td><td>201</td><td></td></tr>
+<tr><td>SLOVENIA</td><td>202</td><td></td></tr>
+<tr><td>SOLOMON_ISLANDS</td><td>203</td><td></td></tr>
+<tr><td>SOMALIA</td><td>204</td><td></td></tr>
+<tr><td>SOUTH_AFRICA</td><td>205</td><td></td></tr>
+<tr><td>SOUTH_SUDAN</td><td>206</td><td></td></tr>
+<tr><td>SPAIN</td><td>207</td><td></td></tr>
+<tr><td>SRI_LANKA</td><td>208</td><td></td></tr>
+<tr><td>SUDAN</td><td>209</td><td></td></tr>
+<tr><td>SURINAME</td><td>210</td><td></td></tr>
+<tr><td>SVALBARD</td><td>211</td><td></td></tr>
+<tr><td>ESWATINI</td><td>212</td><td></td></tr>
+<tr><td>SWAZILAND</td><td>212</td><td></td></tr>
+<tr><td>SWEDEN</td><td>213</td><td></td></tr>
+<tr><td>SWITZERLAND</td><td>214</td><td></td></tr>
+<tr><td>SYRIAN_ARAB_REPUBLIC</td><td>215</td><td></td></tr>
+<tr><td>TAIWAN</td><td>216</td><td></td></tr>
+<tr><td>TAJIKISTAN</td><td>217</td><td></td></tr>
+<tr><td>TANZANIA</td><td>218</td><td></td></tr>
+<tr><td>THAILAND</td><td>219</td><td></td></tr>
+<tr><td>TIMOR_LESTE</td><td>220</td><td></td></tr>
+<tr><td>TOGO</td><td>221</td><td></td></tr>
+<tr><td>TOKELAU</td><td>222</td><td></td></tr>
+<tr><td>TONGA</td><td>223</td><td></td></tr>
+<tr><td>TRINIDAD</td><td>224</td><td></td></tr>
+<tr><td>TUNISIA</td><td>225</td><td></td></tr>
+<tr><td>TURKEY</td><td>226</td><td></td></tr>
+<tr><td>TURKMENISTAN</td><td>227</td><td></td></tr>
+<tr><td>TURKS_AND_CAICOS_ISLANDS</td><td>228</td><td></td></tr>
+<tr><td>TUVALU</td><td>229</td><td></td></tr>
+<tr><td>UGANDA</td><td>230</td><td></td></tr>
+<tr><td>UKRAINE</td><td>231</td><td></td></tr>
+<tr><td>UNITED_ARAB_EMIRATES</td><td>232</td><td></td></tr>
+<tr><td>UNITED_KINGDOM</td><td>233</td><td></td></tr>
+<tr><td>UNITED_STATES</td><td>234</td><td></td></tr>
+<tr><td>URUGUAY</td><td>235</td><td></td></tr>
+<tr><td>UZBEKISTAN</td><td>236</td><td></td></tr>
+<tr><td>VANUATU</td><td>237</td><td></td></tr>
+<tr><td>VENEZUELA</td><td>238</td><td></td></tr>
+<tr><td>VIETNAM</td><td>239</td><td></td></tr>
+<tr><td>VIRGIN_ISLANDS_BRITISH</td><td>240</td><td></td></tr>
+<tr><td>VIRGIN_ISLANDS_US</td><td>241</td><td></td></tr>
+<tr><td>WALLIS_AND_FUTUNA</td><td>242</td><td></td></tr>
+<tr><td>WESTERN_SAHARA</td><td>243</td><td></td></tr>
+<tr><td>YEMEN</td><td>244</td><td></td></tr>
+<tr><td>ZAMBIA</td><td>245</td><td></td></tr>
+<tr><td>ZIMBABWE</td><td>246</td><td></td></tr>
+<tr><td>UNITED_STATES_MINOR_ISLANDS</td><td>247</td><td></td></tr>
+<tr><td>ALL</td><td>500</td><td></td></tr>
+<tr><td>AFRICA</td><td>501</td><td></td></tr>
+<tr><td>ASIA</td><td>502</td><td></td></tr>
+<tr><td>CENTRAL_AMERICA</td><td>503</td><td></td></tr>
+<tr><td>EUROPE</td><td>504</td><td></td></tr>
+<tr><td>MIDDLE_EAST</td><td>505</td><td></td></tr>
+<tr><td>NORTH_AMERICA</td><td>506</td><td></td></tr>
+<tr><td>SOUTH_AMERICA</td><td>507</td><td></td></tr>
+<tr><td>OCEANIA</td><td>508</td><td></td></tr>
+</tbody></table>
+<p><a name="profile.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#profileproto" id="profileproto">profile.proto</a></h2>
+<p><a name=".Profile"></a></p>
+<h3><a class="header" href="#profile" id="profile">Profile</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>peerID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>handle</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>location</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>about</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>shortDescription</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>nsfw</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>vendor</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>moderator</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>moderatorInfo</td><td><a href="#Moderator">Moderator</a></td><td></td><td></td></tr>
+<tr><td>contactInfo</td><td><a href="#Profile.Contact">Profile.Contact</a></td><td></td><td></td></tr>
+<tr><td>colors</td><td><a href="#Profile.Colors">Profile.Colors</a></td><td></td><td></td></tr>
+<tr><td>avatarHashes</td><td><a href="#Profile.Image">Profile.Image</a></td><td></td><td></td></tr>
+<tr><td>headerHashes</td><td><a href="#Profile.Image">Profile.Image</a></td><td></td><td></td></tr>
+<tr><td>stats</td><td><a href="#Profile.Stats">Profile.Stats</a></td><td></td><td></td></tr>
+<tr><td>bitcoinPubkey</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>lastModified</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>currencies</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name=".Profile.Colors"></a></p>
+<h3><a class="header" href="#profilecolors" id="profilecolors">Profile.Colors</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>primary</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>secondary</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>text</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>highlight</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>highlightText</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Profile.Contact"></a></p>
+<h3><a class="header" href="#profilecontact" id="profilecontact">Profile.Contact</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>website</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>email</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>phoneNumber</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>social</td><td><a href="#Profile.SocialAccount">Profile.SocialAccount</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name=".Profile.Image"></a></p>
+<h3><a class="header" href="#profileimage" id="profileimage">Profile.Image</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>tiny</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>small</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>medium</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>large</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>original</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Profile.SocialAccount"></a></p>
+<h3><a class="header" href="#profilesocialaccount" id="profilesocialaccount">Profile.SocialAccount</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>type</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>username</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>proof</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Profile.Stats"></a></p>
+<h3><a class="header" href="#profilestats" id="profilestats">Profile.Stats</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>followerCount</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>followingCount</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>listingCount</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>ratingCount</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>postCount</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>averageRating</td><td><a href="#float">float</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="moderator.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#moderatorproto" id="moderatorproto">moderator.proto</a></h2>
+<p><a name=".DisputeUpdate"></a></p>
+<h3><a class="header" href="#disputeupdate" id="disputeupdate">DisputeUpdate</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>orderId</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>payoutAddress</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>outpoints</td><td><a href="#Outpoint">Outpoint</a></td><td>repeated</td><td></td></tr>
+<tr><td>serializedContract</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Moderator"></a></p>
+<h3><a class="header" href="#moderator" id="moderator">Moderator</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>description</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>termsAndConditions</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>languages</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>acceptedCurrencies</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>fee</td><td><a href="#Moderator.Fee">Moderator.Fee</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Moderator.Fee"></a></p>
+<h3><a class="header" href="#moderatorfee" id="moderatorfee">Moderator.Fee</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>fixedFee</td><td><a href="#Moderator.Price">Moderator.Price</a></td><td></td><td></td></tr>
+<tr><td>percentage</td><td><a href="#float">float</a></td><td></td><td></td></tr>
+<tr><td>feeType</td><td><a href="#Moderator.Fee.FeeType">Moderator.Fee.FeeType</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Moderator.Price"></a></p>
+<h3><a class="header" href="#moderatorprice" id="moderatorprice">Moderator.Price</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>currencyCode</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>amount</td><td><a href="#uint64">uint64</a></td><td></td><td>Bitcoins must be in satoshi</td></tr>
+</tbody></table>
+<p><a name=".Moderator.Fee.FeeType"></a></p>
+<h3><a class="header" href="#moderatorfeefeetype" id="moderatorfeefeetype">Moderator.Fee.FeeType</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>FIXED</td><td>0</td><td></td></tr>
+<tr><td>PERCENTAGE</td><td>1</td><td></td></tr>
+<tr><td>FIXED_PLUS_PERCENTAGE</td><td>2</td><td></td></tr>
+</tbody></table>
+<p><a name="orders.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#ordersproto" id="ordersproto">orders.proto</a></h2>
+<p><a name=".OrderState"></a></p>
+<h3><a class="header" href="#orderstate" id="orderstate">OrderState</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>PENDING</td><td>0</td><td>Order has been funded and sent to the vendor but vendor has not yet responded</td></tr>
+<tr><td>AWAITING_PAYMENT</td><td>1</td><td>Waiting for the buyer to fund the payment address</td></tr>
+<tr><td>AWAITING_PICKUP</td><td>2</td><td>Waiting for the customer to pick up the order (customer pickup option only)</td></tr>
+<tr><td>AWAITING_FULFILLMENT</td><td>3</td><td>Order has been fully funded and we're waiting for the vendor to fulfill</td></tr>
+<tr><td>PARTIALLY_FULFILLED</td><td>4</td><td>Vendor has fulfilled part of the order</td></tr>
+<tr><td>FULFILLED</td><td>5</td><td>Vendor has fulfilled the order</td></tr>
+<tr><td>COMPLETED</td><td>6</td><td>Buyer has completed the order and left a review</td></tr>
+<tr><td>CANCELED</td><td>7</td><td>Buyer canceled the order (offline order only)</td></tr>
+<tr><td>DECLINED</td><td>8</td><td>Vendor declined to confirm the order (offline order only)</td></tr>
+<tr><td>REFUNDED</td><td>9</td><td>Vendor refunded the order</td></tr>
+<tr><td>DISPUTED</td><td>10</td><td>Contract is under active dispute</td></tr>
+<tr><td>DECIDED</td><td>11</td><td>The moderator has resolved the dispute and we are waiting for the winning party to accept the payout.</td></tr>
+<tr><td>RESOLVED</td><td>12</td><td>The winning party has accepted the dispute and it is now complete. After the buyer leaves a review the state should be set to COMPLETE.</td></tr>
+<tr><td>PAYMENT_FINALIZED</td><td>13</td><td>Escrow has been released after waiting the timeout period. After the buyer leaves a review the state should be set to COMPLETE.</td></tr>
+<tr><td>PROCESSING_ERROR</td><td>14</td><td>We screwed up and produced a order which didn't validate. This state is only used for offline orders. If a processing error occurred with an open connection between buyer and vendor the vendor just rejects the order on the spot neither party commits the order to the database.</td></tr>
+</tbody></table>
+<p><a name="api.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#apiproto" id="apiproto">api.proto</a></h2>
+<p><a name=".CaseRespApi"></a></p>
+<h3><a class="header" href="#caserespapi" id="caserespapi">CaseRespApi</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>buyerContract</td><td><a href="#RicardianContract">RicardianContract</a></td><td></td><td></td></tr>
+<tr><td>vendorContract</td><td><a href="#RicardianContract">RicardianContract</a></td><td></td><td></td></tr>
+<tr><td>buyerContractValidationErrors</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>vendorContractValidationErrors</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>state</td><td><a href="#OrderState">OrderState</a></td><td></td><td></td></tr>
+<tr><td>read</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>buyerOpened</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>claim</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>unreadChatMessages</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>resolution</td><td><a href="#DisputeResolution">DisputeResolution</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".Coupon"></a></p>
+<h3><a class="header" href="#coupon" id="coupon">Coupon</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>hash</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>code</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".OrderRespApi"></a></p>
+<h3><a class="header" href="#orderrespapi" id="orderrespapi">OrderRespApi</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>contract</td><td><a href="#RicardianContract">RicardianContract</a></td><td></td><td></td></tr>
+<tr><td>state</td><td><a href="#OrderState">OrderState</a></td><td></td><td></td></tr>
+<tr><td>read</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>funded</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>unreadChatMessages</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>paymentAddressTransactions</td><td><a href="#TransactionRecord">TransactionRecord</a></td><td>repeated</td><td></td></tr>
+<tr><td>refundAddressTransaction</td><td><a href="#TransactionRecord">TransactionRecord</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".PeerAndProfile"></a></p>
+<h3><a class="header" href="#peerandprofile" id="peerandprofile">PeerAndProfile</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>peerId</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>profile</td><td><a href="#Profile">Profile</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".PeerAndProfileWithID"></a></p>
+<h3><a class="header" href="#peerandprofilewithid" id="peerandprofilewithid">PeerAndProfileWithID</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>id</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>peerId</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>profile</td><td><a href="#Profile">Profile</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".RatingWithID"></a></p>
+<h3><a class="header" href="#ratingwithid" id="ratingwithid">RatingWithID</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>id</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>ratingId</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>rating</td><td><a href="#Rating">Rating</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name=".TransactionRecord"></a></p>
+<h3><a class="header" href="#transactionrecord" id="transactionrecord">TransactionRecord</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>txid</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>confirmations</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>height</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>timestamp</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+</tbody></table>
+<h2><a class="header" href="#scalar-value-types" id="scalar-value-types">Scalar Value Types</a></h2>
+<table><thead><tr><th>.proto Type</th><th>Notes</th><th>C++ Type</th><th>Java Type</th><th>Python Type</th></tr></thead><tbody>
+<tr><td><a name="double" /> double</td><td></td><td>double</td><td>double</td><td>float</td></tr>
+<tr><td><a name="float" /> float</td><td></td><td>float</td><td>float</td><td>float</td></tr>
+<tr><td><a name="int32" /> int32</td><td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="int64" /> int64</td><td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="uint32" /> uint32</td><td>Uses variable-length encoding.</td><td>uint32</td><td>int</td><td>int/long</td></tr>
+<tr><td><a name="uint64" /> uint64</td><td>Uses variable-length encoding.</td><td>uint64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="sint32" /> sint32</td><td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="sint64" /> sint64</td><td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="fixed32" /> fixed32</td><td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td><td>uint32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="fixed64" /> fixed64</td><td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td><td>uint64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="sfixed32" /> sfixed32</td><td>Always four bytes.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="sfixed64" /> sfixed64</td><td>Always eight bytes.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="bool" /> bool</td><td></td><td>bool</td><td>boolean</td><td>boolean</td></tr>
+<tr><td><a name="string" /> string</td><td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td><td>string</td><td>String</td><td>str/unicode</td></tr>
+<tr><td><a name="bytes" /> bytes</td><td>May contain any arbitrary sequence of bytes.</td><td>string</td><td>ByteString</td><td>str</td></tr>
+</tbody></table>
+<h1><a class="header" href="#protos-file-tree" id="protos-file-tree">Protos File Tree</a></h1>
+<pre><code>
+.
+├── api.proto
+├── contracts.proto
+├── countrycodes.proto
+├── message.proto
+├── moderator.proto
+├── orders.proto
+├── posts.proto
+└── profile.proto
+
+0 directories, 8 files
+
+</code></pre>
+<h1><a class="header" href="#protobuf-sources" id="protobuf-sources">Protobuf sources</a></h1>
+<h2><a class="header" href="#srccontractsproto" id="srccontractsproto">src:./contracts.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+option go_package = &quot;pb&quot;;
+
+
+import &quot;countrycodes.proto&quot;;
+import &quot;message.proto&quot;;
+import &quot;google/protobuf/timestamp.proto&quot;;
+
+message RicardianContract {
+    repeated Listing vendorListings                    = 1;
+    Order buyerOrder                                   = 2;
+    OrderConfirmation vendorOrderConfirmation          = 3;
+    repeated OrderFulfillment vendorOrderFulfillment   = 4;
+    OrderCompletion buyerOrderCompletion               = 5;
+    Dispute dispute                                    = 6;
+    DisputeResolution disputeResolution                = 7;
+    DisputeAcceptance disputeAcceptance                = 8;
+    Refund refund                                      = 9;
+    repeated Signature signatures                      = 10;
+    repeated string errors                             = 11;
+}
+
+message Listing {
+    string slug                             = 1;
+    ID vendorID                             = 2;
+    Metadata metadata                       = 3;
+    Item item                               = 4;
+    repeated ShippingOption shippingOptions = 5;
+    repeated Tax taxes                      = 6;
+    repeated Coupon coupons                 = 7;
+    repeated string moderators              = 8;
+    string termsAndConditions               = 9;
+    string refundPolicy                     = 10;
+
+    message Metadata {
+        uint32 version                     = 1;
+        ContractType contractType          = 2;
+        Format format                      = 3;
+        google.protobuf.Timestamp expiry   = 4;
+        repeated string acceptedCurrencies = 5;
+        string pricingCurrency             = 6;
+        string language                    = 7;
+        uint32 escrowTimeoutHours          = 8;
+        string coinType                    = 9;
+        uint32 coinDivisibility            = 10;
+        float priceModifier                = 11;
+
+        enum ContractType {
+            PHYSICAL_GOOD  = 0;
+            DIGITAL_GOOD   = 1;
+            SERVICE        = 2;
+            CROWD_FUND     = 3;
+            CRYPTOCURRENCY = 4;
+        }
+
+        enum Format {
+            FIXED_PRICE  = 0;
+            MARKET_PRICE = 2;
+        }
+    }
+
+    message Item {
+        string title               = 1;
+        string description         = 2;
+        string processingTime      = 3;
+        uint64 price               = 4;
+        bool nsfw                  = 5;
+        repeated string tags       = 6;
+        repeated Image images      = 7;
+        repeated string categories = 8;
+        float grams                = 9;
+        string condition           = 10;
+        repeated Option options    = 11;
+        repeated Sku skus          = 12;
+
+        message Option {
+            string name                = 1;
+            string description         = 2;
+            repeated Variant variants  = 3;
+
+            message Variant {
+                string name = 1;
+                Image image = 2;
+            }
+        }
+
+        message Sku {
+            repeated uint32 variantCombo = 1;
+            string productID             = 2;
+            int64 surcharge              = 3;
+            int64 quantity               = 4; // Not saved with listing
+        }
+
+        message Image {
+            string filename = 1;
+            string original = 2;
+            string large    = 3;
+            string medium   = 4;
+            string small    = 5;
+            string tiny     = 6;
+        }
+    }
+
+    message ShippingOption {
+        string name                         = 1;
+        ShippingType type                   = 2;
+        repeated CountryCode regions        = 3;
+        repeated Service services           = 5;
+
+        enum ShippingType {
+            LOCAL_PICKUP = 0;
+            FIXED_PRICE  = 1;
+        }
+
+        message Service {
+            string name                = 1;
+            uint64 price               = 2;
+            string estimatedDelivery   = 3;
+            uint64 additionalItemPrice = 4;
+        }
+    }
+
+    message Tax {
+        string taxType                  = 1;
+        repeated CountryCode taxRegions = 2;
+        bool taxShipping                = 3;
+        float percentage                = 4;
+    }
+
+    message Coupon {
+        string title = 1;
+        oneof code {
+            string hash         = 2;
+            string discountCode = 3;
+        }
+        oneof discount {
+            float percentDiscount = 5;
+            uint64 priceDiscount  = 6;
+        }
+    }
+}
+
+message Order {
+    string refundAddress                 = 1;
+    uint64 refundFee                     = 2;
+    Shipping shipping                    = 3;
+    ID buyerID                           = 4;
+    google.protobuf.Timestamp timestamp  = 5;
+    repeated Item items                  = 6;
+    Payment payment                      = 7;
+    repeated bytes ratingKeys            = 8;
+    string alternateContactInfo          = 9;
+    uint32 version                       = 10;
+
+    message Shipping {
+        string shipTo       = 1;
+        string address      = 2;
+        string city         = 3;
+        string state        = 4;
+        string postalCode   = 5;
+        CountryCode country = 6;
+        string addressNotes = 7;
+    }
+
+    message Item {
+        string listingHash            = 1;
+        uint32 quantity               = 2; // order version &lt; 2 used with listing version &lt; 3
+        uint64 quantity64             = 8; // order version &gt;= 2 used with listing version &gt;= 3
+        repeated Option options       = 3;
+        ShippingOption shippingOption = 4;
+        string memo                   = 5;
+        repeated string couponCodes   = 6;
+        string paymentAddress         = 7;
+
+        message Option {
+            string name  = 1;
+            string value = 2;
+        }
+
+        message ShippingOption {
+            string name    = 1;
+            string service = 2;
+        }
+    }
+
+    message Payment {
+        Method method       = 1;
+        string moderator    = 2;
+        uint64 amount       = 3; // Satoshis
+        string chaincode    = 4; // Hex encoded
+        string address      = 5; // B58check encoded
+        string redeemScript = 6; // Hex encoded
+        bytes  moderatorKey = 7;
+        string coin         = 8;
+
+        enum Method {
+            ADDRESS_REQUEST = 0;
+            DIRECT          = 1;
+            MODERATED       = 2;
+        }
+    }
+}
+
+message OrderConfirmation {
+    string orderID                            = 1;
+    google.protobuf.Timestamp timestamp       = 2;
+    // Direct payments only
+    string paymentAddress                     = 3;
+    uint64 requestedAmount                    = 4;
+
+    repeated RatingSignature ratingSignatures = 5;
+}
+
+message OrderReject {
+    string orderID                      = 1;
+    google.protobuf.Timestamp timestamp = 2;
+    repeated BitcoinSignature sigs      = 3;
+}
+
+message RatingSignature {
+    TransactionMetadata metadata = 1;
+    bytes signature              = 2;
+
+    message TransactionMetadata {
+        string listingSlug   = 1;
+        bytes  ratingKey     = 2;
+        bytes  moderatorKey  = 3; // Only if moderated
+        string listingTitle  = 4;
+        Image  thumbnail     = 5;
+
+        message Image {
+                string tiny     = 1;
+                string small    = 2;
+                string medium   = 3;
+                string large    = 4;
+                string original = 5;
+        }
+    }
+}
+
+message BitcoinSignature {
+    uint32 inputIndex = 1;
+    bytes signature   = 2;
+}
+
+message OrderFulfillment {
+    string orderId                             = 1;
+
+    string slug                                = 2;
+
+    google.protobuf.Timestamp timestamp        = 3;
+
+    // Physical goods only
+    repeated PhysicalDelivery physicalDelivery = 4;
+
+    //Digital goods only
+    repeated DigitalDelivery digitalDelivery   = 5;
+
+    // Moderated payments only
+    Payout payout                              = 6;
+
+    RatingSignature ratingSignature            = 7;
+
+    string note                                = 8;
+
+    // Cryptocurrencies only
+    repeated CryptocurrencyDelivery cryptocurrencyDelivery = 9;
+
+    message PhysicalDelivery {
+        string shipper            = 1;
+        string trackingNumber     = 2;
+    }
+
+    message DigitalDelivery {
+        string url                = 1;
+        string password           = 2;
+    }
+
+    message CryptocurrencyDelivery {
+        string transactionID      = 1;
+    }
+
+    message Payout {
+        repeated BitcoinSignature sigs = 1;
+        string payoutAddress           = 2;
+        uint64 payoutFeePerByte        = 3;
+    }
+}
+
+message OrderCompletion {
+    string orderId                       = 1;
+    google.protobuf.Timestamp timestamp  = 2;
+    repeated BitcoinSignature payoutSigs = 3;
+    repeated Rating ratings              = 4;
+}
+
+message OrderProcessingFailure {
+  string orderID                           = 1;
+  Message.MessageType attemptedMessageType = 2;
+  RicardianContract contract               = 3;
+}
+
+message Rating {
+    RatingData ratingData = 1;
+    bytes signature       = 2;
+
+    message RatingData {
+        bytes ratingKey                     = 1;
+        ID vendorID                         = 2;
+        RatingSignature vendorSig           = 3;
+        ID buyerID                          = 4; // optional
+        string buyerName                    = 5; // optional
+        bytes buyerSig                      = 6; // optional
+        bytes moderatorSig                  = 7; // only if a dispute was won
+
+
+        google.protobuf.Timestamp timestamp = 8;
+
+        uint32 overall                      = 9;
+        uint32 quality                      = 10;
+        uint32 description                  = 11;
+        uint32 deliverySpeed                = 12;
+        uint32 customerService              = 13;
+        string review                       = 14;
+    }
+}
+
+message Dispute {
+    google.protobuf.Timestamp timestamp = 1;
+    string claim                        = 2;
+    string payoutAddress                = 3;
+    repeated Outpoint outpoints         = 4;
+    bytes serializedContract            = 5;
+}
+
+message DisputeResolution {
+    google.protobuf.Timestamp timestamp = 1;
+    string orderId                      = 2;
+    string proposedBy                   = 3;
+    string resolution                   = 4;
+    Payout payout                       = 5;
+    repeated bytes moderatorRatingSigs  = 6; // Used in ratings
+
+    message Payout {
+            repeated BitcoinSignature sigs = 1;
+            repeated Outpoint inputs       = 2;
+            Output buyerOutput             = 3;
+            Output vendorOutput            = 4;
+            Output moderatorOutput         = 5;
+
+            message Output {
+              oneof scriptOrAddress {
+                string script  = 1;
+                string address = 3;
+              }
+              uint64 amount  = 2;
+            }
+    }
+}
+
+message DisputeAcceptance {
+    google.protobuf.Timestamp timestamp = 1;
+    string closedBy                     = 2;
+}
+
+message Outpoint {
+        string hash  = 1; // Hex encoded
+        uint32 index = 2;
+        uint64 value = 3;
+}
+
+message Refund {
+    string orderID                      = 1;
+    google.protobuf.Timestamp timestamp = 2;
+    repeated BitcoinSignature sigs      = 3;
+    TransactionInfo refundTransaction   = 4;
+    string memo                         = 5;
+
+    message TransactionInfo {
+        string txid  = 1;
+        uint64 value = 2;
+    }
+}
+
+message VendorFinalizedPayment {
+  string orderID = 1; // OrderID which has its funds released to the vendor
+}
+
+message ID {
+    string peerID       = 1;
+    string handle       = 2;
+    Pubkeys pubkeys     = 3;
+    bytes bitcoinSig    = 4; // Bitcoin signature covering peerID
+
+    message Pubkeys {
+        bytes identity = 1; // IPFS public key
+        bytes bitcoin  = 2; // Bitcoin public key
+    }
+}
+
+message Signature {
+    Section section      = 1;
+    bytes signatureBytes = 2;
+
+    enum Section {
+        LISTING            = 0;
+        ORDER              = 1;
+        ORDER_CONFIRMATION = 2;
+        ORDER_FULFILLMENT  = 3;
+        ORDER_COMPLETION   = 4;
+        DISPUTE            = 5;
+        DISPUTE_RESOLUTION = 6;
+        REFUND             = 7;
+    }
+}
+
+message SignedListing {
+    Listing listing     = 1;
+    string hash         = 2;
+    bytes signature     = 3;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcpostsproto" id="srcpostsproto">src:./posts.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+option go_package = &quot;pb&quot;;
+
+
+import &quot;google/protobuf/timestamp.proto&quot;;
+import &quot;contracts.proto&quot;;
+
+message Post {
+    string slug                         = 1;
+    ID vendorID                         = 2;
+    string status                       = 3;
+    string longForm                     = 4;
+    repeated Image images               = 5;
+    repeated string tags                = 6;
+    repeated string channels            = 7;
+    PostType postType                   = 8;
+    string reference                    = 9;
+    google.protobuf.Timestamp timestamp = 10;
+
+    message Image {
+        string filename = 1;
+        string original = 2;
+        string large    = 3;
+        string medium   = 4;
+        string small    = 5;
+        string tiny     = 6;
+    }
+
+    enum PostType {
+        POST        = 0;
+        COMMENT     = 1;
+        REPOST      = 2;
+    }
+}
+
+message SignedPost {
+    Post post           = 1;
+    string hash         = 2;
+    bytes signature     = 3;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcmessageproto" id="srcmessageproto">src:./message.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+option go_package = &quot;pb&quot;;
+
+
+import &quot;google/protobuf/any.proto&quot;;
+import &quot;google/protobuf/timestamp.proto&quot;;
+
+message Message {
+    MessageType messageType     = 1;
+    google.protobuf.Any payload = 2;
+    int32 requestId             = 3; // optional
+    bool isResponse             = 4; // optional
+
+    enum MessageType {
+        PING                     = 0;
+        CHAT                     = 1;
+        FOLLOW                   = 2;
+        UNFOLLOW                 = 3;
+        ORDER                    = 4;
+        ORDER_REJECT             = 5;
+        ORDER_CANCEL             = 6;
+        ORDER_CONFIRMATION       = 7;
+        ORDER_FULFILLMENT        = 8;
+        ORDER_COMPLETION         = 9;
+        DISPUTE_OPEN             = 10;
+        DISPUTE_UPDATE           = 11;
+        DISPUTE_CLOSE            = 12;
+        REFUND                   = 13;
+        OFFLINE_ACK              = 14;
+        OFFLINE_RELAY            = 15;
+        MODERATOR_ADD            = 16;
+        MODERATOR_REMOVE         = 17;
+        STORE                    = 18;
+        BLOCK                    = 19;
+        VENDOR_FINALIZED_PAYMENT = 20;
+        ORDER_PAYMENT            = 21;
+        ERROR                    = 500;
+        ORDER_PROCESSING_FAILURE = 501;
+    }
+}
+
+message Envelope {
+    Message message = 1;
+    bytes pubkey    = 2;
+    bytes signature = 3;
+}
+
+message Chat  {
+    string messageId                    = 1;
+    string subject                      = 2;
+    string message                      = 3;
+    google.protobuf.Timestamp timestamp = 4;
+    Flag flag                           = 5;
+
+    enum Flag {
+        MESSAGE = 0;
+        TYPING  = 1;
+        READ    = 2;
+    }
+}
+
+message SignedData {
+    bytes senderPubkey        = 1;
+    bytes serializedData      = 2;
+    bytes signature           = 3;
+
+    message Command {
+        string peerID                       = 1;
+        Message.MessageType type            = 2;
+        google.protobuf.Timestamp timestamp = 3;
+    }
+}
+
+message CidList {
+    repeated string cids = 1;
+}
+
+message Block {
+    bytes rawData = 1;
+    string cid    = 2;
+}
+
+message Error {
+    uint32 code         = 1;
+    string errorMessage = 2;
+    string orderID      = 3;
+}
+
+message OrderPaymentTxn {
+    string coin          = 1;
+    string orderID       = 2;
+    string transactionID = 3;
+    bool withInput = 4;
+}
+
+</code></pre>
+<h2><a class="header" href="#srccountrycodesproto" id="srccountrycodesproto">src:./countrycodes.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+option go_package = &quot;pb&quot;;
+
+
+enum CountryCode {
+    option allow_alias = true;
+    NA                             = 0;
+
+    AFGHANISTAN                    = 1;
+    ALAND_ISLANDS                  = 2;
+    ALBANIA                        = 3;
+    ALGERIA                        = 4;
+    AMERICAN_SAMOA                 = 5;
+    ANDORRA                        = 6;
+    ANGOLA                         = 7;
+    ANGUILLA                       = 8;
+    ANTIGUA                        = 9;
+
+    ARGENTINA                      = 10;
+    ARMENIA                        = 11;
+    ARUBA                          = 12;
+    AUSTRALIA                      = 13;
+    AUSTRIA                        = 14;
+    AZERBAIJAN                     = 15;
+    BAHAMAS                        = 16;
+    BAHRAIN                        = 17;
+    BANGLADESH                     = 18;
+    BARBADOS                       = 19;
+
+    BELARUS                        = 20;
+    BELGIUM                        = 21;
+    BELIZE                         = 22;
+    BENIN                          = 23;
+    BERMUDA                        = 24;
+    BHUTAN                         = 25;
+    BOLIVIA                        = 26;
+    BONAIRE_SINT_EUSTATIUS_SABA    = 27;
+    BOSNIA                         = 28;
+    BOTSWANA                       = 29;
+
+    BOUVET_ISLAND                  = 30;
+    BRAZIL                         = 31;
+    BRITISH_INDIAN_OCEAN_TERRITORY = 32;
+    BRUNEI_DARUSSALAM              = 33;
+    BULGARIA                       = 34;
+    BURKINA_FASO                   = 35;
+    BURUNDI                        = 36;
+    CABO_VERDE                     = 37;
+    CAMBODIA                       = 38;
+    CAMEROON                       = 39;
+
+    CANADA                         = 40;
+    CAYMAN_ISLANDS                 = 41;
+    CENTRAL_AFRICAN_REPUBLIC       = 42;
+    CHAD                           = 43;
+    CHILE                          = 44;
+    CHINA                          = 45;
+    CHRISTMAS_ISLAND               = 46;
+    COCOS_ISLANDS                  = 47;
+    COLOMBIA                       = 48;
+    COMOROS                        = 49;
+
+    CONGO_REPUBLIC                 = 50;
+    CONGO                          = 51;
+    COOK_ISLANDS                   = 52;
+    COSTA_RICA                     = 53;
+    COTE_DIVOIRE                   = 54;
+    CROATIA                        = 55;
+    CUBA                           = 56;
+    CURACAO                        = 57;
+    CYPRUS                         = 58;
+    CZECH_REPUBLIC                 = 59;
+
+    DENMARK                        = 60;
+    DJIBOUTI                       = 61;
+    DOMINICA                       = 62;
+    DOMINICAN_REPUBLIC             = 63;
+    ECUADOR                        = 64;
+    EGYPT                          = 65;
+    EL_SALVADOR                    = 66;
+    EQUATORIAL_GUINEA              = 67;
+    ERITREA                        = 68;
+    ESTONIA                        = 69;
+
+    ETHIOPIA                       = 70;
+    FALKLAND_ISLANDS               = 71;
+    FAROE_ISLANDS                  = 72;
+    FIJI                           = 73;
+    FINLAND                        = 74;
+    FRANCE                         = 75;
+    FRENCH_GUIANA                  = 76;
+    FRENCH_POLYNESIA               = 77;
+    FRENCH_SOUTHERN_TERRITORIES    = 78;
+    GABON                          = 79;
+
+    GAMBIA                         = 80;
+    GEORGIA                        = 81;
+    GERMANY                        = 82;
+    GHANA                          = 83;
+    GIBRALTAR                      = 84;
+    GREECE                         = 85;
+    GREENLAND                      = 86;
+    GRENADA                        = 87;
+    GUADELOUPE                     = 88;
+    GUAM                           = 89;
+
+    GUATEMALA                      = 90;
+    GUERNSEY                       = 91;
+    GUINEA                         = 92;
+    GUINEA_BISSAU                  = 93;
+    GUYANA                         = 94;
+    HAITI                          = 95;
+    HEARD_ISLAND                   = 96;
+    HOLY_SEE                       = 97;
+    HONDURAS                       = 98;
+    HONG_KONG                      = 99;
+
+    HUNGARY                        = 100;
+    ICELAND                        = 101;
+    INDIA                          = 102;
+    INDONESIA                      = 103;
+    IRAN                           = 104;
+    IRAQ                           = 105;
+    IRELAND                        = 106;
+    ISLE_OF_MAN                    = 107;
+    ISRAEL                         = 108;
+    ITALY                          = 109;
+
+    JAMAICA                        = 110;
+    JAPAN                          = 111;
+    JERSEY                         = 112;
+    JORDAN                         = 113;
+    KAZAKHSTAN                     = 114;
+    KENYA                          = 115;
+    KIRIBATI                       = 116;
+    NORTH_KOREA                    = 117;
+    SOUTH_KOREA                    = 118;
+    KUWAIT                         = 119;
+
+    KYRGYZSTAN                     = 120;
+    LAO                            = 121;
+    LATVIA                         = 122;
+    LEBANON                        = 123;
+    LESOTHO                        = 124;
+    LIBERIA                        = 125;
+    LIBYA                          = 126;
+    LIECHTENSTEIN                  = 127;
+    LITHUANIA                      = 128;
+    LUXEMBOURG                     = 129;
+
+    MACAO                          = 130;
+    MACEDONIA                      = 131;
+    MADAGASCAR                     = 132;
+    MALAWI                         = 133;
+    MALAYSIA                       = 134;
+    MALDIVES                       = 135;
+    MALI                           = 136;
+    MALTA                          = 137;
+    MARSHALL_ISLANDS               = 138;
+    MARTINIQUE                     = 139;
+
+    MAURITANIA                     = 140;
+    MAURITIUS                      = 141;
+    MAYOTTE                        = 142;
+    MEXICO                         = 143;
+    MICRONESIA                     = 144;
+    MOLDOVA                        = 145;
+    MONACO                         = 146;
+    MONGOLIA                       = 147;
+    MONTENEGRO                     = 148;
+    MONTSERRAT                     = 149;
+
+    MOROCCO                        = 150;
+    MOZAMBIQUE                     = 151;
+    MYANMAR                        = 152;
+    NAMIBIA                        = 153;
+    NAURU                          = 154;
+    NEPAL                          = 155;
+    NETHERLANDS                    = 156;
+    NEW_CALEDONIA                  = 157;
+    NEW_ZEALAND                    = 158;
+    NICARAGUA                      = 159;
+
+    NIGER                          = 160;
+    NIGERIA                        = 161;
+    NIUE                           = 162;
+    NORFOLK_ISLAND                 = 163;
+    NORTHERN_MARIANA_ISLANDS       = 164;
+    NORWAY                         = 165;
+    OMAN                           = 166;
+    PAKISTAN                       = 167;
+    PALAU                          = 168;
+    PANAMA                         = 169;
+
+    PAPUA_NEW_GUINEA               = 170;
+    PARAGUAY                       = 171;
+    PERU                           = 172;
+    PHILIPPINES                    = 173;
+    PITCAIRN                       = 174;
+    POLAND                         = 175;
+    PORTUGAL                       = 176;
+    PUERTO_RICO                    = 177;
+    QATAR                          = 178;
+    REUNION                        = 179;
+
+    ROMANIA                        = 180;
+    RUSSIA                         = 181;
+    RWANDA                         = 182;
+    SAINT_BARTHELEMY               = 183;
+    SAINT_HELENA                   = 184;
+    SAINT_KITTS                    = 185;
+    SAINT_LUCIA                    = 186;
+    SAINT_MARTIN                   = 187;
+    SAINT_PIERRE                   = 188;
+    SAINT_VINCENT                  = 189;
+
+    SAMOA                          = 190;
+    SAN_MARINO                     = 191;
+    SAO_TOME                       = 192;
+    SAUDI_ARABIA                   = 193;
+    SENEGAL                        = 194;
+    SERBIA                         = 195;
+    SEYCHELLES                     = 196;
+    SIERRA_LEONE                   = 197;
+    SINGAPORE                      = 198;
+    SINT_MAARTEN                   = 199;
+
+    SUCRE                          = 200;
+    SLOVAKIA                       = 201;
+    SLOVENIA                       = 202;
+    SOLOMON_ISLANDS                = 203;
+    SOMALIA                        = 204;
+    SOUTH_AFRICA                   = 205;
+    SOUTH_SUDAN                    = 206;
+    SPAIN                          = 207;
+    SRI_LANKA                      = 208;
+    SUDAN                          = 209;
+
+    SURINAME                       = 210;
+    SVALBARD                       = 211;
+    ESWATINI                       = 212;
+    SWAZILAND                      = 212;
+    SWEDEN                         = 213;
+    SWITZERLAND                    = 214;
+    SYRIAN_ARAB_REPUBLIC           = 215;
+    TAIWAN                         = 216;
+    TAJIKISTAN                     = 217;
+    TANZANIA                       = 218;
+    THAILAND                       = 219;
+
+    TIMOR_LESTE                    = 220;
+    TOGO                           = 221;
+    TOKELAU                        = 222;
+    TONGA                          = 223;
+    TRINIDAD                       = 224;
+    TUNISIA                        = 225;
+    TURKEY                         = 226;
+    TURKMENISTAN                   = 227;
+    TURKS_AND_CAICOS_ISLANDS       = 228;
+    TUVALU                         = 229;
+
+    UGANDA                         = 230;
+    UKRAINE                        = 231;
+    UNITED_ARAB_EMIRATES           = 232;
+    UNITED_KINGDOM                 = 233;
+    UNITED_STATES                  = 234;
+    URUGUAY                        = 235;
+    UZBEKISTAN                     = 236;
+    VANUATU                        = 237;
+    VENEZUELA                      = 238;
+    VIETNAM                        = 239;
+
+    VIRGIN_ISLANDS_BRITISH         = 240;
+    VIRGIN_ISLANDS_US              = 241;
+    WALLIS_AND_FUTUNA              = 242;
+    WESTERN_SAHARA                 = 243;
+    YEMEN                          = 244;
+    ZAMBIA                         = 245;
+    ZIMBABWE                       = 246;
+    UNITED_STATES_MINOR_ISLANDS    = 247;
+
+    ALL                            = 500;
+    AFRICA                         = 501;
+    ASIA                           = 502;
+    CENTRAL_AMERICA                = 503;
+    EUROPE                         = 504;
+    MIDDLE_EAST                    = 505;
+    NORTH_AMERICA                  = 506;
+    SOUTH_AMERICA                  = 507;
+    OCEANIA                        = 508;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcprofileproto" id="srcprofileproto">src:./profile.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+option go_package = &quot;pb&quot;;
+
+
+import &quot;google/protobuf/timestamp.proto&quot;;
+import &quot;moderator.proto&quot;;
+
+message Profile {
+    string peerID                          = 1;
+    string handle                          = 2;
+    string name                            = 3;
+    string location                        = 4;
+    string about                           = 5;
+    string shortDescription                = 6;
+
+    bool nsfw                              = 7;
+    bool vendor                            = 8;
+    bool moderator                         = 9;
+    Moderator moderatorInfo                = 10;
+
+    Contact contactInfo                    = 11;
+    Colors colors                          = 12;
+
+    // The following data is added to the profile
+    // automatically by the server and may be omitted
+    // when setting the profile via API.
+
+    Image avatarHashes                     = 13;
+    Image headerHashes                     = 14;
+
+    Stats stats                            = 15;
+
+    string bitcoinPubkey                   = 16;
+
+    google.protobuf.Timestamp lastModified = 17;
+
+    repeated string currencies             = 18;
+
+    message Contact {
+        string website                = 1;
+        string email                  = 2;
+        string phoneNumber            = 3;
+        repeated SocialAccount social = 4;
+    }
+
+    message SocialAccount {
+        string type     = 1;
+        string username = 2;
+        string proof    = 3;
+    }
+
+    message Image {
+        string tiny     = 1;
+        string small    = 2;
+        string medium   = 3;
+        string large    = 4;
+        string original = 5;
+    }
+
+    message Colors {
+        string primary       = 1;
+        string secondary     = 2;
+        string text          = 3;
+        string highlight     = 4;
+        string highlightText = 5;
+    }
+
+    message Stats {
+        uint32 followerCount  = 1;
+        uint32 followingCount = 2;
+        uint32 listingCount   = 3;
+        uint32 ratingCount    = 4;
+        uint32 postCount      = 5;
+        float averageRating   = 6;
+    }
+}
+
+</code></pre>
+<h2><a class="header" href="#srcmoderatorproto" id="srcmoderatorproto">src:./moderator.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+option go_package = &quot;pb&quot;;
+
+
+import &quot;contracts.proto&quot;;
+
+message Moderator {
+    string description                 = 1;
+    string termsAndConditions          = 2;
+    repeated string languages          = 3;
+    repeated string acceptedCurrencies = 4;
+    Fee fee                            = 5;
+
+    message Fee {
+        Price fixedFee   = 1;
+        float percentage = 2;
+        FeeType feeType  = 3;
+
+        enum FeeType {
+            FIXED                 = 0;
+            PERCENTAGE            = 1;
+            FIXED_PLUS_PERCENTAGE = 2;
+        }
+    }
+
+    message Price {
+        string currencyCode = 1;
+        uint64 amount       = 2; // Bitcoins must be in satoshi
+    }
+}
+
+message DisputeUpdate {
+    string orderId              = 1;
+    string payoutAddress        = 2;
+    repeated Outpoint outpoints = 3;
+    bytes serializedContract    = 4;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcordersproto" id="srcordersproto">src:./orders.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+option go_package = &quot;pb&quot;;
+
+
+enum OrderState {
+    // Order has been funded and sent to the vendor but vendor has not yet responded
+    PENDING              = 0;
+
+    // Waiting for the buyer to fund the payment address
+    AWAITING_PAYMENT     = 1;
+
+    // Waiting for the customer to pick up the order (customer pickup option only)
+    AWAITING_PICKUP      = 2;
+
+    // Order has been fully funded and we're waiting for the vendor to fulfill
+    AWAITING_FULFILLMENT = 3;
+
+    // Vendor has fulfilled part of the order
+    PARTIALLY_FULFILLED  = 4;
+
+    // Vendor has fulfilled the order
+    FULFILLED            = 5;
+
+    // Buyer has completed the order and left a review
+    COMPLETED            = 6;
+
+    // Buyer canceled the order (offline order only)
+    CANCELED             = 7;
+
+    // Vendor declined to confirm the order (offline order only)
+    DECLINED             = 8;
+
+    // Vendor refunded the order
+    REFUNDED             = 9;
+
+    // Contract is under active dispute
+    DISPUTED             = 10;
+
+    // The moderator has resolved the dispute and we are waiting for the winning party to
+    // accept the payout.
+    DECIDED              = 11;
+
+    // The winning party has accepted the dispute and it is now complete. After the buyer
+    // leaves a review the state should be set to COMPLETE.
+    RESOLVED             = 12;
+
+    // Escrow has been released after waiting the timeout period. After the buyer
+    // leaves a review the state should be set to COMPLETE.
+    PAYMENT_FINALIZED    = 13;
+
+    // We screwed up and produced a order which didn't validate. This state is only used for offline orders. If a processing
+    // error occurred with an open connection between buyer and vendor the vendor just rejects the order on the spot neither party
+    // commits the order to the database.
+    PROCESSING_ERROR     = 14;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcapiproto" id="srcapiproto">src:./api.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+option go_package = &quot;pb&quot;;
+
+
+import &quot;contracts.proto&quot;;
+import &quot;orders.proto&quot;;
+import &quot;profile.proto&quot;;
+import &quot;google/protobuf/timestamp.proto&quot;;
+
+// This schema is used for the /ob/listing api call structure
+// We use protobuf for this instead of a basic struct because
+// the listing object is in protobuf and we can't mix types. Also
+// we want to avoid putting fields in the contract that are only
+// used by the api.
+
+message Coupon {
+    string hash = 1;
+    string code = 2;
+}
+
+message OrderRespApi {
+    RicardianContract contract                            = 1;
+    OrderState state                                      = 2;
+    bool read                                             = 3;
+    bool funded                                           = 4;
+    uint64 unreadChatMessages                             = 5;
+    repeated TransactionRecord paymentAddressTransactions = 6;
+    TransactionRecord refundAddressTransaction            = 7;
+}
+
+message CaseRespApi {
+    google.protobuf.Timestamp timestamp            = 1;
+    RicardianContract buyerContract                = 2;
+    RicardianContract vendorContract               = 3;
+    repeated string buyerContractValidationErrors  = 4;
+    repeated string vendorContractValidationErrors = 5;
+    OrderState state                               = 6;
+    bool read                                      = 7;
+    bool buyerOpened                               = 8;
+    string claim                                   = 9;
+    uint64 unreadChatMessages                      = 10;
+    DisputeResolution resolution                   = 11;
+}
+
+message TransactionRecord {
+    string txid                         = 1;
+    int64 value                         = 2;
+    uint32 confirmations                = 3;
+    uint32 height                       = 4;
+    google.protobuf.Timestamp timestamp = 5;
+}
+
+message PeerAndProfile {
+    string peerId   = 1;
+    Profile profile = 2;
+}
+
+message PeerAndProfileWithID {
+    string id       = 1;
+    string peerId   = 2;
+    Profile profile = 3;
+}
+
+message RatingWithID {
+    string id       = 1;
+    string ratingId = 2;
+    Rating rating   = 3;
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../dlt/trustwallet.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../dlt/amazon-qldb.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../dlt/trustwallet.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../dlt/amazon-qldb.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

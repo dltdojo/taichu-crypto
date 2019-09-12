@@ -17,6 +17,8 @@ DAO 績效分配參考[Live OKRs - Joystream - github](https://github.com/Joystr
 
 # TODO
 
+- [Commonwealth](https://github.com/hicommonwealth)
+
 ## 201909
 
 - [ ] DAO 圖與概念

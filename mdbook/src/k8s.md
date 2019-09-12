@@ -141,7 +141,23 @@ COPY --from=build-cue /go/bin/cue /usr/bin/cue
 - [runyontr/kudocue mysql](https://github.com/runyontr/kudocue)
 - [instrumenta/conftest](https://github.com/instrumenta/conftest)
 
-## TODO
+# TODO
+
+## Vault
+
+[hashicorp/vault: A tool for secrets management, encryption as a service, and privileged access management](https://github.com/hashicorp/vault)
+
+[banzaicloud/bank-vaults: A Vault swiss-army knife: a K8s operator, Go client with automatic token renewal, automatic configuration, multiple unseal options and more. A CLI tool to init, unseal and configure Vault (auth methods, secret engines). Direct secret injection into Pods.](https://github.com/banzaicloud/bank-vaults)
+
+## Prometheus
+
+[Prometheus](https://github.com/prometheus)
+
+## Grafana
+
+[Grafana Labs](https://github.com/grafana)
+
+## 201909
 
 - [x] docker image
 - [ ] [encoding/openapi: support OpenAPI](https://github.com/cuelang/cue/blob/master/encoding/openapi/testdata/openapi.cue)

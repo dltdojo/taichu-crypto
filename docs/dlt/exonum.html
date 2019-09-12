@@ -1,0 +1,1081 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>exonum - DLTDOJO3 第三新熵熱踢道場</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> DLTDOJO3</a></li><li><a href="../poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><a href="../taichu-raw/index.html"><strong aria-hidden="true">3.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li><a href="../taichu-raw/apache-big5.html"><strong aria-hidden="true">3.1.</strong> HTTPS: Apache Big5</a></li><li><a href="../taichu-raw/openapiv3.html"><strong aria-hidden="true">3.2.</strong> HTTPS: OpenAPI v3</a></li><li><a href="../taichu-raw/others.html"><strong aria-hidden="true">3.3.</strong> 其他</a></li></ol></li><li><a href="../mad-white/index.html"><strong aria-hidden="true">4.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li><a href="../mad-white/code-server.html"><strong aria-hidden="true">4.1.</strong> VS Code Server</a></li></ol></li><li><a href="../mad-red/index.html"><strong aria-hidden="true">5.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">5.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">5.2.</strong> 聊天測試 BIP39</a></li><li><a href="../mad-red/vox/index.html"><strong aria-hidden="true">5.3.</strong> Voxel 組件開發編輯</a></li><li><a href="../mad-red/vox/projects.html"><strong aria-hidden="true">5.4.</strong> Voxel 相關專案</a></li></ol></li><li><a href="../crypto-assets.html"><strong aria-hidden="true">6.</strong> Crypto-Assets</a></li><li><a href="../dlt.html"><strong aria-hidden="true">7.</strong> DLT</a></li><li><ol class="section"><li><a href="../dlt/hl-fabric.html"><strong aria-hidden="true">7.1.</strong> Hyperledger Fabric</a></li><li><a href="../dlt/hl-sawtooth.html"><strong aria-hidden="true">7.2.</strong> Hyperledger Sawtooth</a></li><li><a href="../dlt/hl-burrow.html"><strong aria-hidden="true">7.3.</strong> HyperLedger Burrow</a></li><li><a href="../dlt/libra.html"><strong aria-hidden="true">7.4.</strong> Libra</a></li><li><a href="../dlt/lnrpc.html"><strong aria-hidden="true">7.5.</strong> lightning network</a></li><li><a href="../dlt/exonum.html" class="active"><strong aria-hidden="true">7.6.</strong> exonum</a></li><li><a href="../dlt/trisa.html"><strong aria-hidden="true">7.7.</strong> TRISA</a></li><li><a href="../dlt/xuperchain.html"><strong aria-hidden="true">7.8.</strong> xuperchain</a></li><li><a href="../dlt/trustwallet.html"><strong aria-hidden="true">7.9.</strong> TrustWallet</a></li><li><a href="../dlt/openbazaar.html"><strong aria-hidden="true">7.10.</strong> OpenBazaar</a></li><li><a href="../dlt/amazon-qldb.html"><strong aria-hidden="true">7.11.</strong> Amazon QLDB</a></li></ol></li><li><a href="../dao.html"><strong aria-hidden="true">8.</strong> DAO</a></li><li><ol class="section"><li><a href="../dao/aragon.html"><strong aria-hidden="true">8.1.</strong> Aragon</a></li><li><a href="../dao/joystream.html"><strong aria-hidden="true">8.2.</strong> JoyStream</a></li></ol></li><li><a href="../did.html"><strong aria-hidden="true">9.</strong> DID</a></li><li><a href="../LRE.html"><strong aria-hidden="true">10.</strong> Ledger Reliability Engineering(LRE)</a></li><li><a href="../web/index.html"><strong aria-hidden="true">11.</strong> Web Tech</a></li><li><ol class="section"><li><a href="../web/extensions.html"><strong aria-hidden="true">11.1.</strong> Browser Extensiions</a></li><li><a href="../web/example-page.html"><strong aria-hidden="true">11.2.</strong> Example Pages</a></li><li><a href="../webauthn.html"><strong aria-hidden="true">11.3.</strong> WebAuthn</a></li><li><a href="../webassembly.html"><strong aria-hidden="true">11.4.</strong> WebAssembly</a></li><li><a href="../web/openssl.html"><strong aria-hidden="true">11.5.</strong> OpenSSL</a></li></ol></li><li><a href="../k8s.html"><strong aria-hidden="true">12.</strong> Kubernetes</a></li><li><a href="../plantuml.html"><strong aria-hidden="true">13.</strong> PlantUML</a></li><li><ol class="section"><li><a href="../puml/hyperledger-fabric.html"><strong aria-hidden="true">13.1.</strong> Hyperledger Fabric</a></li><li><a href="../puml/ethereum.html"><strong aria-hidden="true">13.2.</strong> Ethereum</a></li></ol></li><li><a href="../messaging.html"><strong aria-hidden="true">14.</strong> Messaging</a></li><li><a href="../mdbook/index.html"><strong aria-hidden="true">15.</strong> mdbook</a></li><li><ol class="section"><li><a href="../mdbook/preprocessors.html"><strong aria-hidden="true">15.1.</strong> preprocessors</a></li><li><a href="../mdbook/others.html"><strong aria-hidden="true">15.2.</strong> 其他</a></li></ol></li><li><a href="../resources.html"><strong aria-hidden="true">16.</strong> 學習資源</a></li><li><a href="../book.html"><strong aria-hidden="true">17.</strong> 書籍</a></li><li><a href="../job.html"><strong aria-hidden="true">18.</strong> 工作</a></li><li><a href="../appendix.html"><strong aria-hidden="true">19.</strong> 附錄</a></li><li><ol class="section"><li><a href="../cmd-help.html"><strong aria-hidden="true">19.1.</strong> 命令列 tc.sh</a></li><li><a href="../license.html"><strong aria-hidden="true">19.2.</strong> 授權條款</a></li><li><a href="../testpage.html"><strong aria-hidden="true">19.3.</strong> 測試頁面</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">DLTDOJO3 第三新熵熱踢道場</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#exonum" id="exonum">exonum</a></h1>
+<h1><a class="header" href="#toc" id="toc">TOC</a></h1>
+<!-- toc -->
+<h1><a class="header" href="#如何創建服務" id="如何創建服務">如何創建服務</a></h1>
+<p><a href="https://github.com/exonum/exonum-doc/blob/master/src/get-started/create-service.md">Cryptocurrency Tutorial: How to Create Services · exonum/exonum-doc</a></p>
+<blockquote>
+<p>Exonum uses Protobuf as its serialization format for storage of data. Thus, we need to describe our structures using the Protobuf interface description language first. </p>
+</blockquote>
+<pre><code class="language-proto">syntax = &quot;proto3&quot;;
+
+// Allows to use `exonum.PublicKey` structure already described in `exonum`
+// library.
+import &quot;helpers.proto&quot;;
+
+// Wallet structure used to persist data within the service.
+message Wallet {
+  exonum.PublicKey pub_key = 1;
+  string name = 2;
+  uint64 balance = 3;
+}
+
+// Transaction type for creating a new wallet.
+message TxCreateWallet {
+  // UTF-8 string with the owner's name.
+  string name = 1;
+}
+
+// Transaction type for transferring tokens between two wallets.
+message TxTransfer {
+  // Public key of the receiver.
+  exonum.PublicKey to = 1;
+  // Number of tokens to transfer from the sender's account to the receiver's
+  // account.
+  uint64 amount = 2;
+  // Auxiliary number to guarantee non-idempotence of transactions.
+  uint64 seed = 3;
+}
+</code></pre>
+<h1><a class="header" href="#如何生成-google-protocol-buffers-文件" id="如何生成-google-protocol-buffers-文件">如何生成 Google Protocol Buffers 文件</a></h1>
+<p><a href="https://github.com/exonum/exonum/tree/master/exonum/src/proto/schema/exonum">exonum/exonum/src/proto/schema/exonum at master · exonum/exonum</a></p>
+<pre><code class="language-shell">git clone https://github.com/exonum/exonum.git /tmp/src/exonum
+bash tc.sh --gen-proto-doc /tmp/src/exonum/exonum/src/proto/schema/exonum /tmp/output.md
+</code></pre>
+<h1><a class="header" href="#generated-date2019-09-12t1131080800" id="generated-date2019-09-12t1131080800">Generated Date:2019-09-12T11:31:08+08:00</a></h1>
+<h1><a class="header" href="#protocol-documentation" id="protocol-documentation">Protocol Documentation</a></h1>
+<p><a name="top"></a></p>
+<h2><a class="header" href="#table-of-contents" id="table-of-contents">Table of Contents</a></h2>
+<ul>
+<li>
+<p><a href="#tests.proto">tests.proto</a></p>
+<ul>
+<li><a href="#exonum.tests.BlockchainTestTxA">BlockchainTestTxA</a></li>
+<li><a href="#exonum.tests.BlockchainTestTxB">BlockchainTestTxB</a></li>
+<li><a href="#exonum.tests.CreateWallet">CreateWallet</a></li>
+<li><a href="#exonum.tests.Point">Point</a></li>
+<li><a href="#exonum.tests.TestFixedArrays">TestFixedArrays</a></li>
+<li><a href="#exonum.tests.TestProtobufConvert">TestProtobufConvert</a></li>
+<li><a href="#exonum.tests.TestProtobufConvertMap">TestProtobufConvertMap</a></li>
+<li><a href="#exonum.tests.TestProtobufConvertMap.BytesMapEntry">TestProtobufConvertMap.BytesMapEntry</a></li>
+<li><a href="#exonum.tests.TestProtobufConvertMap.KeyStringMapEntry">TestProtobufConvertMap.KeyStringMapEntry</a></li>
+<li><a href="#exonum.tests.TestProtobufConvertMap.NumMapEntry">TestProtobufConvertMap.NumMapEntry</a></li>
+<li><a href="#exonum.tests.TestProtobufConvertMap.PointMapEntry">TestProtobufConvertMap.PointMapEntry</a></li>
+<li><a href="#exonum.tests.TestProtobufConvertMap.StringMapEntry">TestProtobufConvertMap.StringMapEntry</a></li>
+<li><a href="#exonum.tests.TestProtobufConvertRepeated">TestProtobufConvertRepeated</a></li>
+<li><a href="#exonum.tests.TestServiceTx">TestServiceTx</a></li>
+<li><a href="#exonum.tests.TimestampTx">TimestampTx</a></li>
+<li><a href="#exonum.tests.Transfer">Transfer</a></li>
+<li><a href="#exonum.tests.TxAfterCommit">TxAfterCommit</a></li>
+<li><a href="#exonum.tests.TxConfig">TxConfig</a></li>
+<li><a href="#exonum.tests.TxSimple">TxSimple</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#doc_tests.proto">doc_tests.proto</a></p>
+<ul>
+<li><a href="#exonum.doc_tests.CreateWallet">CreateWallet</a></li>
+<li><a href="#exonum.doc_tests.MyStructBig">MyStructBig</a></li>
+<li><a href="#exonum.doc_tests.MyStructSmall">MyStructSmall</a></li>
+<li><a href="#exonum.doc_tests.MyTransaction">MyTransaction</a></li>
+<li><a href="#exonum.doc_tests.Point">Point</a></li>
+<li><a href="#exonum.doc_tests.TxA">TxA</a></li>
+<li><a href="#exonum.doc_tests.TxB">TxB</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#helpers.proto">helpers.proto</a></p>
+<ul>
+<li><a href="#exonum.BitVec">BitVec</a></li>
+<li><a href="#exonum.Hash">Hash</a></li>
+<li><a href="#exonum.PublicKey">PublicKey</a></li>
+<li><a href="#exonum.Signature">Signature</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#storage.proto">storage.proto</a></p>
+<ul>
+<li><a href="#exonum.IndexMetadata">IndexMetadata</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#protocol.proto">protocol.proto</a></p>
+<ul>
+<li><a href="#exonum.consensus.BlockRequest">BlockRequest</a></li>
+<li><a href="#exonum.consensus.BlockResponse">BlockResponse</a></li>
+<li><a href="#exonum.consensus.Connect">Connect</a></li>
+<li><a href="#exonum.consensus.PeersRequest">PeersRequest</a></li>
+<li><a href="#exonum.consensus.PoolTransactionsRequest">PoolTransactionsRequest</a></li>
+<li><a href="#exonum.consensus.Precommit">Precommit</a></li>
+<li><a href="#exonum.consensus.Prevote">Prevote</a></li>
+<li><a href="#exonum.consensus.PrevotesRequest">PrevotesRequest</a></li>
+<li><a href="#exonum.consensus.Propose">Propose</a></li>
+<li><a href="#exonum.consensus.ProposeRequest">ProposeRequest</a></li>
+<li><a href="#exonum.consensus.Status">Status</a></li>
+<li><a href="#exonum.consensus.TransactionsRequest">TransactionsRequest</a></li>
+<li><a href="#exonum.consensus.TransactionsResponse">TransactionsResponse</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#blockchain.proto">blockchain.proto</a></p>
+<ul>
+<li><a href="#exonum.Block">Block</a></li>
+<li><a href="#exonum.ConfigReference">ConfigReference</a></li>
+<li><a href="#exonum.TransactionResult">TransactionResult</a></li>
+<li><a href="#exonum.TxLocation">TxLocation</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#scalar-value-types">Scalar Value Types</a></p>
+</li>
+</ul>
+<p><a name="tests.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#testsproto" id="testsproto">tests.proto</a></h2>
+<p><a name="exonum.tests.BlockchainTestTxA"></a></p>
+<h3><a class="header" href="#blockchaintesttxa" id="blockchaintesttxa">BlockchainTestTxA</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>a</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.BlockchainTestTxB"></a></p>
+<h3><a class="header" href="#blockchaintesttxb" id="blockchaintesttxb">BlockchainTestTxB</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>b</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>c</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.CreateWallet"></a></p>
+<h3><a class="header" href="#createwallet" id="createwallet">CreateWallet</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>pubkey</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.Point"></a></p>
+<h3><a class="header" href="#point" id="point">Point</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>x</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>y</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.TestFixedArrays"></a></p>
+<h3><a class="header" href="#testfixedarrays" id="testfixedarrays">TestFixedArrays</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>fixed_array_8</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>fixed_array_16</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>fixed_array_32</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.TestProtobufConvert"></a></p>
+<h3><a class="header" href="#testprotobufconvert" id="testprotobufconvert">TestProtobufConvert</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>hash</td><td><a href="#exonum.Hash">exonum.Hash</a></td><td></td><td></td></tr>
+<tr><td>unsigned_32</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>unsigned_64</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>regular_i32</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+<tr><td>regular_i64</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>fixed_u32</td><td><a href="#fixed32">fixed32</a></td><td></td><td></td></tr>
+<tr><td>fixed_u64</td><td><a href="#fixed64">fixed64</a></td><td></td><td></td></tr>
+<tr><td>fixed_i32</td><td><a href="#sfixed32">sfixed32</a></td><td></td><td></td></tr>
+<tr><td>fixed_i64</td><td><a href="#sfixed64">sfixed64</a></td><td></td><td></td></tr>
+<tr><td>float_32</td><td><a href="#float">float</a></td><td></td><td></td></tr>
+<tr><td>float_64</td><td><a href="#double">double</a></td><td></td><td></td></tr>
+<tr><td>boolean</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>s_i32</td><td><a href="#sint32">sint32</a></td><td></td><td></td></tr>
+<tr><td>s_i64</td><td><a href="#sint64">sint64</a></td><td></td><td></td></tr>
+<tr><td>bytes_field</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>string_field</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>message_field</td><td><a href="#exonum.tests.Point">Point</a></td><td></td><td></td></tr>
+<tr><td>bit_vec</td><td><a href="#exonum.BitVec">exonum.BitVec</a></td><td></td><td></td></tr>
+<tr><td>time</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.TestProtobufConvertMap"></a></p>
+<h3><a class="header" href="#testprotobufconvertmap" id="testprotobufconvertmap">TestProtobufConvertMap</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>num_map</td><td><a href="#exonum.tests.TestProtobufConvertMap.NumMapEntry">TestProtobufConvertMap.NumMapEntry</a></td><td>repeated</td><td></td></tr>
+<tr><td>string_map</td><td><a href="#exonum.tests.TestProtobufConvertMap.StringMapEntry">TestProtobufConvertMap.StringMapEntry</a></td><td>repeated</td><td></td></tr>
+<tr><td>bytes_map</td><td><a href="#exonum.tests.TestProtobufConvertMap.BytesMapEntry">TestProtobufConvertMap.BytesMapEntry</a></td><td>repeated</td><td></td></tr>
+<tr><td>point_map</td><td><a href="#exonum.tests.TestProtobufConvertMap.PointMapEntry">TestProtobufConvertMap.PointMapEntry</a></td><td>repeated</td><td></td></tr>
+<tr><td>key_string_map</td><td><a href="#exonum.tests.TestProtobufConvertMap.KeyStringMapEntry">TestProtobufConvertMap.KeyStringMapEntry</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.TestProtobufConvertMap.BytesMapEntry"></a></p>
+<h3><a class="header" href="#testprotobufconvertmapbytesmapentry" id="testprotobufconvertmapbytesmapentry">TestProtobufConvertMap.BytesMapEntry</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.TestProtobufConvertMap.KeyStringMapEntry"></a></p>
+<h3><a class="header" href="#testprotobufconvertmapkeystringmapentry" id="testprotobufconvertmapkeystringmapentry">TestProtobufConvertMap.KeyStringMapEntry</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.TestProtobufConvertMap.NumMapEntry"></a></p>
+<h3><a class="header" href="#testprotobufconvertmapnummapentry" id="testprotobufconvertmapnummapentry">TestProtobufConvertMap.NumMapEntry</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.TestProtobufConvertMap.PointMapEntry"></a></p>
+<h3><a class="header" href="#testprotobufconvertmappointmapentry" id="testprotobufconvertmappointmapentry">TestProtobufConvertMap.PointMapEntry</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#exonum.tests.Point">Point</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.TestProtobufConvertMap.StringMapEntry"></a></p>
+<h3><a class="header" href="#testprotobufconvertmapstringmapentry" id="testprotobufconvertmapstringmapentry">TestProtobufConvertMap.StringMapEntry</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.TestProtobufConvertRepeated"></a></p>
+<h3><a class="header" href="#testprotobufconvertrepeated" id="testprotobufconvertrepeated">TestProtobufConvertRepeated</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>keys</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td>repeated</td><td></td></tr>
+<tr><td>bytes_array</td><td><a href="#bytes">bytes</a></td><td>repeated</td><td></td></tr>
+<tr><td>string_array</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>num_array</td><td><a href="#uint32">uint32</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.TestServiceTx"></a></p>
+<h3><a class="header" href="#testservicetx" id="testservicetx">TestServiceTx</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>value</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.TimestampTx"></a></p>
+<h3><a class="header" href="#timestamptx" id="timestamptx">TimestampTx</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.Transfer"></a></p>
+<h3><a class="header" href="#transfer" id="transfer">Transfer</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>from</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>to</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>amount</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.TxAfterCommit"></a></p>
+<h3><a class="header" href="#txaftercommit" id="txaftercommit">TxAfterCommit</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.TxConfig"></a></p>
+<h3><a class="header" href="#txconfig" id="txconfig">TxConfig</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>from</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>config</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>actual_from</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.tests.TxSimple"></a></p>
+<h3><a class="header" href="#txsimple" id="txsimple">TxSimple</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>public_key</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>msg</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="doc_tests.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#doc_testsproto" id="doc_testsproto">doc_tests.proto</a></h2>
+<p><a name="exonum.doc_tests.CreateWallet"></a></p>
+<h3><a class="header" href="#createwallet-1" id="createwallet-1">CreateWallet</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.doc_tests.MyStructBig"></a></p>
+<h3><a class="header" href="#mystructbig" id="mystructbig">MyStructBig</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>hash</td><td><a href="#exonum.Hash">exonum.Hash</a></td><td></td><td></td></tr>
+<tr><td>my_struct_small</td><td><a href="#exonum.doc_tests.MyStructSmall">MyStructSmall</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.doc_tests.MyStructSmall"></a></p>
+<h3><a class="header" href="#mystructsmall" id="mystructsmall">MyStructSmall</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>num_field</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>string_field</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.doc_tests.MyTransaction"></a></p>
+<h3><a class="header" href="#mytransaction" id="mytransaction">MyTransaction</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>public_key</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.doc_tests.Point"></a></p>
+<h3><a class="header" href="#point-1" id="point-1">Point</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>x</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+<tr><td>y</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.doc_tests.TxA"></a></p>
+<h3><a class="header" href="#txa" id="txa">TxA</a></h3>
+<p>Transaction fields</p>
+<p><a name="exonum.doc_tests.TxB"></a></p>
+<h3><a class="header" href="#txb" id="txb">TxB</a></h3>
+<p>...</p>
+<p><a name="helpers.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#helpersproto" id="helpersproto">helpers.proto</a></h2>
+<p><a name="exonum.BitVec"></a></p>
+<h3><a class="header" href="#bitvec" id="bitvec">BitVec</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>len</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.Hash"></a></p>
+<h3><a class="header" href="#hash" id="hash">Hash</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.PublicKey"></a></p>
+<h3><a class="header" href="#publickey" id="publickey">PublicKey</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.Signature"></a></p>
+<h3><a class="header" href="#signature" id="signature">Signature</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="storage.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#storageproto" id="storageproto">storage.proto</a></h2>
+<p><a name="exonum.IndexMetadata"></a></p>
+<h3><a class="header" href="#indexmetadata" id="indexmetadata">IndexMetadata</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>index_type</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>is_family</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="protocol.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#protocolproto" id="protocolproto">protocol.proto</a></h2>
+<p><a name="exonum.consensus.BlockRequest"></a></p>
+<h3><a class="header" href="#blockrequest" id="blockrequest">BlockRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>to</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.consensus.BlockResponse"></a></p>
+<h3><a class="header" href="#blockresponse" id="blockresponse">BlockResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>to</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>block</td><td><a href="#exonum.Block">exonum.Block</a></td><td></td><td></td></tr>
+<tr><td>precommits</td><td><a href="#bytes">bytes</a></td><td>repeated</td><td></td></tr>
+<tr><td>transactions</td><td><a href="#exonum.Hash">exonum.Hash</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.consensus.Connect"></a></p>
+<h3><a class="header" href="#connect" id="connect">Connect</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>pub_addr</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>time</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>user_agent</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.consensus.PeersRequest"></a></p>
+<h3><a class="header" href="#peersrequest" id="peersrequest">PeersRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>to</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.consensus.PoolTransactionsRequest"></a></p>
+<h3><a class="header" href="#pooltransactionsrequest" id="pooltransactionsrequest">PoolTransactionsRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>to</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.consensus.Precommit"></a></p>
+<h3><a class="header" href="#precommit" id="precommit">Precommit</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>validator</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>round</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>propose_hash</td><td><a href="#exonum.Hash">exonum.Hash</a></td><td></td><td></td></tr>
+<tr><td>block_hash</td><td><a href="#exonum.Hash">exonum.Hash</a></td><td></td><td></td></tr>
+<tr><td>time</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.consensus.Prevote"></a></p>
+<h3><a class="header" href="#prevote" id="prevote">Prevote</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>validator</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>round</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>propose_hash</td><td><a href="#exonum.Hash">exonum.Hash</a></td><td></td><td></td></tr>
+<tr><td>locked_round</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.consensus.PrevotesRequest"></a></p>
+<h3><a class="header" href="#prevotesrequest" id="prevotesrequest">PrevotesRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>to</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>round</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>propose_hash</td><td><a href="#exonum.Hash">exonum.Hash</a></td><td></td><td></td></tr>
+<tr><td>validators</td><td><a href="#exonum.BitVec">exonum.BitVec</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.consensus.Propose"></a></p>
+<h3><a class="header" href="#propose" id="propose">Propose</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>validator</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>round</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>prev_hash</td><td><a href="#exonum.Hash">exonum.Hash</a></td><td></td><td></td></tr>
+<tr><td>transactions</td><td><a href="#exonum.Hash">exonum.Hash</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.consensus.ProposeRequest"></a></p>
+<h3><a class="header" href="#proposerequest" id="proposerequest">ProposeRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>to</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>propose_hash</td><td><a href="#exonum.Hash">exonum.Hash</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.consensus.Status"></a></p>
+<h3><a class="header" href="#status" id="status">Status</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>last_hash</td><td><a href="#exonum.Hash">exonum.Hash</a></td><td></td><td></td></tr>
+<tr><td>pool_size</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.consensus.TransactionsRequest"></a></p>
+<h3><a class="header" href="#transactionsrequest" id="transactionsrequest">TransactionsRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>to</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>txs</td><td><a href="#exonum.Hash">exonum.Hash</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.consensus.TransactionsResponse"></a></p>
+<h3><a class="header" href="#transactionsresponse" id="transactionsresponse">TransactionsResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>to</td><td><a href="#exonum.PublicKey">exonum.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>transactions</td><td><a href="#bytes">bytes</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="blockchain.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#blockchainproto" id="blockchainproto">blockchain.proto</a></h2>
+<p><a name="exonum.Block"></a></p>
+<h3><a class="header" href="#block" id="block">Block</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>proposer_id</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>tx_count</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>prev_hash</td><td><a href="#exonum.Hash">Hash</a></td><td></td><td></td></tr>
+<tr><td>tx_hash</td><td><a href="#exonum.Hash">Hash</a></td><td></td><td></td></tr>
+<tr><td>state_hash</td><td><a href="#exonum.Hash">Hash</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.ConfigReference"></a></p>
+<h3><a class="header" href="#configreference" id="configreference">ConfigReference</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>actual_from</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>cfg_hash</td><td><a href="#exonum.Hash">Hash</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.TransactionResult"></a></p>
+<h3><a class="header" href="#transactionresult" id="transactionresult">TransactionResult</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>status</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>description</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exonum.TxLocation"></a></p>
+<h3><a class="header" href="#txlocation" id="txlocation">TxLocation</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>block_height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>position_in_block</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<h2><a class="header" href="#scalar-value-types" id="scalar-value-types">Scalar Value Types</a></h2>
+<table><thead><tr><th>.proto Type</th><th>Notes</th><th>C++ Type</th><th>Java Type</th><th>Python Type</th></tr></thead><tbody>
+<tr><td><a name="double" /> double</td><td></td><td>double</td><td>double</td><td>float</td></tr>
+<tr><td><a name="float" /> float</td><td></td><td>float</td><td>float</td><td>float</td></tr>
+<tr><td><a name="int32" /> int32</td><td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="int64" /> int64</td><td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="uint32" /> uint32</td><td>Uses variable-length encoding.</td><td>uint32</td><td>int</td><td>int/long</td></tr>
+<tr><td><a name="uint64" /> uint64</td><td>Uses variable-length encoding.</td><td>uint64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="sint32" /> sint32</td><td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="sint64" /> sint64</td><td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="fixed32" /> fixed32</td><td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td><td>uint32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="fixed64" /> fixed64</td><td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td><td>uint64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="sfixed32" /> sfixed32</td><td>Always four bytes.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="sfixed64" /> sfixed64</td><td>Always eight bytes.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="bool" /> bool</td><td></td><td>bool</td><td>boolean</td><td>boolean</td></tr>
+<tr><td><a name="string" /> string</td><td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td><td>string</td><td>String</td><td>str/unicode</td></tr>
+<tr><td><a name="bytes" /> bytes</td><td>May contain any arbitrary sequence of bytes.</td><td>string</td><td>ByteString</td><td>str</td></tr>
+</tbody></table>
+<h1><a class="header" href="#protos-file-tree" id="protos-file-tree">Protos File Tree</a></h1>
+<pre><code>
+.
+├── blockchain.proto
+├── doc_tests.proto
+├── helpers.proto
+├── protocol.proto
+├── storage.proto
+└── tests.proto
+
+0 directories, 6 files
+
+</code></pre>
+<h1><a class="header" href="#protobuf-sources" id="protobuf-sources">Protobuf sources</a></h1>
+<h2><a class="header" href="#srctestsproto" id="srctestsproto">src:./tests.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright 2019 The Exonum Team
+//
+// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = &quot;proto3&quot;;
+
+import &quot;helpers.proto&quot;;
+import &quot;google/protobuf/timestamp.proto&quot;;
+
+package exonum.tests;
+
+message TimestampTx { bytes data = 1; }
+
+message TxAfterCommit { uint64 height = 1; }
+
+message TxConfig {
+  exonum.PublicKey from = 1;
+  bytes config = 2;
+  uint64 actual_from = 3;
+}
+
+message TxSimple {
+  exonum.PublicKey public_key = 1;
+  string msg = 2;
+}
+
+message TestServiceTx { uint64 value = 1; }
+
+message BlockchainTestTxA { uint64 a = 1; }
+
+message BlockchainTestTxB {
+  uint64 b = 1;
+  uint32 c = 2;
+}
+
+message CreateWallet {
+  exonum.PublicKey pubkey = 1;
+  string name = 2;
+}
+
+message Transfer {
+  exonum.PublicKey from = 1;
+  exonum.PublicKey to = 2;
+  uint64 amount = 3;
+}
+
+message Point {
+  uint32 x = 1;
+  uint32 y = 2;
+}
+
+message TestProtobufConvert {
+  exonum.PublicKey key = 1;
+  exonum.Hash hash = 2;
+  uint32 unsigned_32 = 3;
+  uint64 unsigned_64 = 4;
+  int32 regular_i32 = 5;
+  int64 regular_i64 = 6;
+  fixed32 fixed_u32 = 7;
+  fixed64 fixed_u64 = 8;
+  sfixed32 fixed_i32 = 9;
+  sfixed64 fixed_i64 = 10;
+  float float_32 = 11;
+  double float_64 = 12;
+  bool boolean = 13;
+  sint32 s_i32 = 14;
+  sint64 s_i64 = 15;
+  bytes bytes_field = 16;
+  string string_field = 17;
+  Point message_field = 18;
+  exonum.BitVec bit_vec = 19;
+  google.protobuf.Timestamp time = 20;
+}
+
+message TestProtobufConvertRepeated {
+  repeated exonum.PublicKey keys = 1;
+  repeated bytes bytes_array = 2;
+  repeated string string_array = 3;
+  repeated uint32 num_array = 4;
+}
+
+message TestProtobufConvertMap {
+  map&lt;uint32, uint64&gt; num_map = 1;
+  map&lt;uint32, string&gt; string_map = 2;
+  map&lt;uint32, bytes&gt; bytes_map = 4;
+  map&lt;uint32, Point&gt; point_map = 5;
+  map&lt;string, uint64&gt; key_string_map = 6;
+}
+
+message TestFixedArrays {
+  bytes fixed_array_8 = 1;
+  bytes fixed_array_16 = 2;
+  bytes fixed_array_32 = 3;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcdoc_testsproto" id="srcdoc_testsproto">src:./doc_tests.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright 2019 The Exonum Team
+//
+// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = &quot;proto3&quot;;
+
+import &quot;helpers.proto&quot;;
+
+package exonum.doc_tests;
+
+message CreateWallet { string name = 1; }
+
+message Point {
+  int32 x = 1;
+  int32 y = 2;
+}
+
+message TxA {
+  // Transaction fields
+}
+
+message TxB {
+  /// ...
+}
+
+message MyTransaction { exonum.PublicKey public_key = 1; }
+
+message MyStructSmall {
+  exonum.PublicKey key = 1;
+  uint32 num_field = 2;
+  string string_field = 3;
+}
+message MyStructBig {
+  exonum.Hash hash = 1;
+  MyStructSmall my_struct_small = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srchelpersproto" id="srchelpersproto">src:./helpers.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright 2019 The Exonum Team
+//
+// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = &quot;proto3&quot;;
+
+package exonum;
+
+message Hash { bytes data = 1; }
+
+message PublicKey { bytes data = 1; }
+
+message Signature { bytes data = 1; }
+
+message BitVec {
+  bytes data = 1;
+  uint64 len = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcstorageproto" id="srcstorageproto">src:./storage.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright 2019 The Exonum Team
+//
+// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = &quot;proto3&quot;;
+
+package exonum;
+
+message IndexMetadata {
+  uint32 index_type = 1;
+  bool is_family = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcprotocolproto" id="srcprotocolproto">src:./protocol.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright 2019 The Exonum Team
+//
+// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = &quot;proto3&quot;;
+
+package exonum.consensus;
+
+import &quot;helpers.proto&quot;;
+import &quot;blockchain.proto&quot;;
+import &quot;google/protobuf/timestamp.proto&quot;;
+
+message Connect {
+  string pub_addr = 1;
+  google.protobuf.Timestamp time = 2;
+  string user_agent = 3;
+}
+
+message Status {
+  uint64 height = 1;
+  exonum.Hash last_hash = 2;
+  uint64 pool_size = 3;
+}
+
+message Propose {
+  uint32 validator = 1;
+  uint64 height = 2;
+  uint32 round = 3;
+  exonum.Hash prev_hash = 4;
+  repeated exonum.Hash transactions = 5;
+}
+
+message Prevote {
+  uint32 validator = 1;
+  uint64 height = 2;
+  uint32 round = 3;
+  exonum.Hash propose_hash = 4;
+  uint32 locked_round = 5;
+}
+
+message Precommit {
+  uint32 validator = 1;
+  uint64 height = 2;
+  uint32 round = 3;
+  exonum.Hash propose_hash = 4;
+  exonum.Hash block_hash = 5;
+  google.protobuf.Timestamp time = 6;
+}
+
+message BlockResponse {
+  exonum.PublicKey to = 1;
+  exonum.Block block = 2;
+  repeated bytes precommits = 3;
+  repeated exonum.Hash transactions = 4;
+}
+
+message TransactionsResponse {
+  exonum.PublicKey to = 1;
+  repeated bytes transactions = 2;
+}
+
+message ProposeRequest {
+  exonum.PublicKey to = 1;
+  uint64 height = 2;
+  exonum.Hash propose_hash = 3;
+}
+
+message TransactionsRequest {
+  exonum.PublicKey to = 1;
+  repeated exonum.Hash txs = 2;
+}
+
+message PrevotesRequest {
+  exonum.PublicKey to = 1;
+  uint64 height = 2;
+  uint32 round = 3;
+  exonum.Hash propose_hash = 4;
+  exonum.BitVec validators = 5;
+}
+
+message PeersRequest { exonum.PublicKey to = 1; }
+
+message BlockRequest {
+  exonum.PublicKey to = 1;
+  uint64 height = 2;
+}
+
+message PoolTransactionsRequest {
+  exonum.PublicKey to = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcblockchainproto" id="srcblockchainproto">src:./blockchain.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright 2019 The Exonum Team
+//
+// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = &quot;proto3&quot;;
+
+package exonum;
+
+import &quot;helpers.proto&quot;;
+
+message Block {
+  uint32 proposer_id = 1;
+  uint64 height = 2;
+  uint32 tx_count = 3;
+  exonum.Hash prev_hash = 4;
+  exonum.Hash tx_hash = 5;
+  exonum.Hash state_hash = 6;
+}
+
+message ConfigReference {
+  uint64 actual_from = 1;
+  exonum.Hash cfg_hash = 2;
+}
+
+message TxLocation {
+  uint64 block_height = 1;
+  uint64 position_in_block = 2;
+}
+
+message TransactionResult {
+  uint32 status = 1;
+  string description = 2;
+}
+
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../dlt/lnrpc.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../dlt/trisa.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../dlt/lnrpc.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../dlt/trisa.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

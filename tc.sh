@@ -43,7 +43,13 @@ serve_book(){
 }
 
 
+#
 # gen-proto-doc PROTOS_DIR DEST_FILE
+# [grpc-ecosystem/grpc-gateway: gRPC to JSON proxy generator following the gRPC HTTP spec](https://github.com/grpc-ecosystem/grpc-gateway)
+# go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
+# go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
+# go get -u github.com/golang/protobuf/protoc-gen-go
+#
 gen_proto_doc(){
     set -x
     PROTOS_DIR=$1
@@ -51,14 +57,26 @@ gen_proto_doc(){
     DEST_FILE=$2
     pushd $PROTOS_DIR
     rm /tmp/$MDFILE
-    find . -type f -name '*.proto' | xargs protoc --doc_out=/tmp --doc_opt=markdown,$MDFILE
+    find . -type f \
+       -not -path "./google/protobuf/*" \
+       -not -path "./github.com/gogo/protobuf/gogoproto/*" \
+       -not -path "./googleapis/google/api/*" \
+       -name '*.proto' | xargs protoc -I. -I/usr/local/include \
+       -I$GOPATH/src \
+       -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \
+       --doc_out=/tmp --doc_opt=markdown,$MDFILE
     #sed -i "1i# ProtocolBuffer Doc\n## Generated Date:$(date --iso-8601=seconds)\n<!-- toc -->" /tmp/$MDFILE
     sed -i "1i# Generated Date:$(date --iso-8601=seconds)\n" /tmp/$MDFILE
     echo -e '\n# Protos File Tree\n```\n' >> /tmp/$MDFILE 
     tree -P "*.proto" . >> /tmp/$MDFILE
     echo -e '\n```\n' >> /tmp/$MDFILE 
     echo -e "# Protobuf sources\n" >> /tmp/$MDFILE
-    find . -type f -name '*.proto' -exec echo -e '\n## src:{}\n```proto\n' \; -exec cat {} \; -exec echo -e '\n```\n' \; >> /tmp/$MDFILE
+    find . -type f \
+       -not -path "./google/protobuf/*" \
+       -not -path "./github.com/gogo/protobuf/gogoproto/*" \
+       -not -path "./googleapis/google/api/*" \
+       -name '*.proto' \
+       -exec echo -e '\n## src:{}\n```proto\n' \; -exec cat {} \; -exec echo -e '\n```\n' \; >> /tmp/$MDFILE
     cp -f /tmp/$MDFILE $DEST_FILE
     popd
 }

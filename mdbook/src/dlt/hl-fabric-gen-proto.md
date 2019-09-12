@@ -1,25 +1,9 @@
-# Generated Date:2019-09-11T17:20:09+08:00
+# Generated Date:2019-09-12T14:31:57+08:00
 
 # Protocol Documentation
 <a name="top"></a>
 
 ## Table of Contents
-
-- [idemix/idemix.proto](#idemix/idemix.proto)
-    - [CredRequest](#.CredRequest)
-    - [Credential](#.Credential)
-    - [CredentialRevocationInformation](#.CredentialRevocationInformation)
-    - [ECP](#.ECP)
-    - [ECP2](#.ECP2)
-    - [IssuerKey](#.IssuerKey)
-    - [IssuerPublicKey](#.IssuerPublicKey)
-    - [NonRevocationProof](#.NonRevocationProof)
-    - [NymSignature](#.NymSignature)
-    - [Signature](#.Signature)
-  
-  
-  
-  
 
 - [peer/transaction.proto](#peer/transaction.proto)
     - [ChaincodeActionPayload](#protos.ChaincodeActionPayload)
@@ -54,6 +38,8 @@
   
 
 - [peer/chaincode.proto](#peer/chaincode.proto)
+    - [CDSData](#protos.CDSData)
+    - [ChaincodeData](#protos.ChaincodeData)
     - [ChaincodeDeploymentSpec](#protos.ChaincodeDeploymentSpec)
     - [ChaincodeID](#protos.ChaincodeID)
     - [ChaincodeInput](#protos.ChaincodeInput)
@@ -62,9 +48,7 @@
     - [ChaincodeSpec](#protos.ChaincodeSpec)
     - [LifecycleEvent](#protos.LifecycleEvent)
   
-    - [ChaincodeDeploymentSpec.ExecutionEnvironment](#protos.ChaincodeDeploymentSpec.ExecutionEnvironment)
     - [ChaincodeSpec.Type](#protos.ChaincodeSpec.Type)
-    - [ConfidentialityLevel](#protos.ConfidentialityLevel)
   
   
   
@@ -77,20 +61,6 @@
   
   
   
-  
-
-- [peer/admin.proto](#peer/admin.proto)
-    - [AdminOperation](#protos.AdminOperation)
-    - [LogLevelRequest](#protos.LogLevelRequest)
-    - [LogLevelResponse](#protos.LogLevelResponse)
-    - [LogSpecRequest](#protos.LogSpecRequest)
-    - [LogSpecResponse](#protos.LogSpecResponse)
-    - [ServerStatus](#protos.ServerStatus)
-  
-    - [ServerStatus.StatusCode](#protos.ServerStatus.StatusCode)
-  
-  
-    - [Admin](#protos.Admin)
   
 
 - [peer/query.proto](#peer/query.proto)
@@ -115,6 +85,8 @@
   
 
 - [peer/events.proto](#peer/events.proto)
+    - [BlockAndPrivateData](#protos.BlockAndPrivateData)
+    - [BlockAndPrivateData.PrivateDataMapEntry](#protos.BlockAndPrivateData.PrivateDataMapEntry)
     - [DeliverResponse](#protos.DeliverResponse)
     - [FilteredBlock](#protos.FilteredBlock)
     - [FilteredChaincodeAction](#protos.FilteredChaincodeAction)
@@ -138,11 +110,61 @@
   
   
 
+- [peer/policy.proto](#peer/policy.proto)
+    - [ApplicationPolicy](#protos.ApplicationPolicy)
+  
+  
+  
+  
+
+- [peer/lifecycle/chaincode_definition.proto](#peer/lifecycle/chaincode_definition.proto)
+    - [ChaincodeEndorsementInfo](#lifecycle.ChaincodeEndorsementInfo)
+    - [ChaincodeValidationInfo](#lifecycle.ChaincodeValidationInfo)
+  
+  
+  
+  
+
 - [peer/lifecycle/lifecycle.proto](#peer/lifecycle/lifecycle.proto)
+    - [ApproveChaincodeDefinitionForMyOrgArgs](#lifecycle.ApproveChaincodeDefinitionForMyOrgArgs)
+    - [ApproveChaincodeDefinitionForMyOrgResult](#lifecycle.ApproveChaincodeDefinitionForMyOrgResult)
+    - [ChaincodeSource](#lifecycle.ChaincodeSource)
+    - [ChaincodeSource.Local](#lifecycle.ChaincodeSource.Local)
+    - [ChaincodeSource.Unavailable](#lifecycle.ChaincodeSource.Unavailable)
+    - [CheckCommitReadinessArgs](#lifecycle.CheckCommitReadinessArgs)
+    - [CheckCommitReadinessResult](#lifecycle.CheckCommitReadinessResult)
+    - [CheckCommitReadinessResult.ApprovalsEntry](#lifecycle.CheckCommitReadinessResult.ApprovalsEntry)
+    - [CommitChaincodeDefinitionArgs](#lifecycle.CommitChaincodeDefinitionArgs)
+    - [CommitChaincodeDefinitionResult](#lifecycle.CommitChaincodeDefinitionResult)
+    - [GetInstalledChaincodePackageArgs](#lifecycle.GetInstalledChaincodePackageArgs)
+    - [GetInstalledChaincodePackageResult](#lifecycle.GetInstalledChaincodePackageResult)
     - [InstallChaincodeArgs](#lifecycle.InstallChaincodeArgs)
     - [InstallChaincodeResult](#lifecycle.InstallChaincodeResult)
+    - [QueryChaincodeDefinitionArgs](#lifecycle.QueryChaincodeDefinitionArgs)
+    - [QueryChaincodeDefinitionResult](#lifecycle.QueryChaincodeDefinitionResult)
+    - [QueryChaincodeDefinitionResult.ApprovalsEntry](#lifecycle.QueryChaincodeDefinitionResult.ApprovalsEntry)
+    - [QueryChaincodeDefinitionsArgs](#lifecycle.QueryChaincodeDefinitionsArgs)
+    - [QueryChaincodeDefinitionsResult](#lifecycle.QueryChaincodeDefinitionsResult)
+    - [QueryChaincodeDefinitionsResult.ChaincodeDefinition](#lifecycle.QueryChaincodeDefinitionsResult.ChaincodeDefinition)
     - [QueryInstalledChaincodeArgs](#lifecycle.QueryInstalledChaincodeArgs)
     - [QueryInstalledChaincodeResult](#lifecycle.QueryInstalledChaincodeResult)
+    - [QueryInstalledChaincodeResult.Chaincode](#lifecycle.QueryInstalledChaincodeResult.Chaincode)
+    - [QueryInstalledChaincodeResult.References](#lifecycle.QueryInstalledChaincodeResult.References)
+    - [QueryInstalledChaincodeResult.ReferencesEntry](#lifecycle.QueryInstalledChaincodeResult.ReferencesEntry)
+    - [QueryInstalledChaincodesArgs](#lifecycle.QueryInstalledChaincodesArgs)
+    - [QueryInstalledChaincodesResult](#lifecycle.QueryInstalledChaincodesResult)
+    - [QueryInstalledChaincodesResult.Chaincode](#lifecycle.QueryInstalledChaincodesResult.Chaincode)
+    - [QueryInstalledChaincodesResult.InstalledChaincode](#lifecycle.QueryInstalledChaincodesResult.InstalledChaincode)
+    - [QueryInstalledChaincodesResult.InstalledChaincode.ReferencesEntry](#lifecycle.QueryInstalledChaincodesResult.InstalledChaincode.ReferencesEntry)
+    - [QueryInstalledChaincodesResult.References](#lifecycle.QueryInstalledChaincodesResult.References)
+  
+  
+  
+  
+
+- [peer/lifecycle/db.proto](#peer/lifecycle/db.proto)
+    - [StateData](#lifecycle.StateData)
+    - [StateMetadata](#lifecycle.StateMetadata)
   
   
   
@@ -181,8 +203,6 @@
   
 
 - [peer/peer.proto](#peer/peer.proto)
-    - [PeerEndpoint](#protos.PeerEndpoint)
-    - [PeerID](#protos.PeerID)
   
   
   
@@ -353,10 +373,17 @@
   
 
 - [orderer/etcdraft/configuration.proto](#orderer/etcdraft/configuration.proto)
-    - [BlockMetadata](#etcdraft.BlockMetadata)
     - [ConfigMetadata](#etcdraft.ConfigMetadata)
     - [Consenter](#etcdraft.Consenter)
     - [Options](#etcdraft.Options)
+  
+  
+  
+  
+
+- [orderer/etcdraft/metadata.proto](#orderer/etcdraft/metadata.proto)
+    - [BlockMetadata](#etcdraft.BlockMetadata)
+    - [ClusterMetadata](#etcdraft.ClusterMetadata)
   
   
   
@@ -403,55 +430,6 @@
   
   
     - [Gossip](#gossip.Gossip)
-  
-
-- [token/transaction.proto](#token/transaction.proto)
-    - [InputId](#.InputId)
-    - [PlainApprove](#.PlainApprove)
-    - [PlainDelegatedOutput](#.PlainDelegatedOutput)
-    - [PlainImport](#.PlainImport)
-    - [PlainOutput](#.PlainOutput)
-    - [PlainTokenAction](#.PlainTokenAction)
-    - [PlainTransfer](#.PlainTransfer)
-    - [PlainTransferFrom](#.PlainTransferFrom)
-    - [TokenTransaction](#.TokenTransaction)
-  
-  
-  
-  
-
-- [token/prover.proto](#token/prover.proto)
-    - [AllowanceRecipientShare](#protos.AllowanceRecipientShare)
-    - [ApproveRequest](#protos.ApproveRequest)
-    - [Command](#protos.Command)
-    - [CommandResponse](#protos.CommandResponse)
-    - [CommandResponseHeader](#protos.CommandResponseHeader)
-    - [Error](#protos.Error)
-    - [ExpectationRequest](#protos.ExpectationRequest)
-    - [Header](#protos.Header)
-    - [ImportRequest](#protos.ImportRequest)
-    - [ListRequest](#protos.ListRequest)
-    - [RecipientTransferShare](#protos.RecipientTransferShare)
-    - [RedeemRequest](#protos.RedeemRequest)
-    - [SignedCommand](#protos.SignedCommand)
-    - [SignedCommandResponse](#protos.SignedCommandResponse)
-    - [TokenOutput](#protos.TokenOutput)
-    - [TokenToIssue](#protos.TokenToIssue)
-    - [TransferRequest](#protos.TransferRequest)
-    - [UnspentTokens](#protos.UnspentTokens)
-  
-  
-  
-    - [Prover](#protos.Prover)
-  
-
-- [token/expectations.proto](#token/expectations.proto)
-    - [PlainExpectation](#protos.PlainExpectation)
-    - [PlainTokenExpectation](#protos.PlainTokenExpectation)
-    - [TokenExpectation](#protos.TokenExpectation)
-  
-  
-  
   
 
 - [transientstore/transientstore.proto](#transientstore/transientstore.proto)
@@ -553,240 +531,6 @@
   
 
 - [Scalar Value Types](#scalar-value-types)
-
-
-
-<a name="idemix/idemix.proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## idemix/idemix.proto
-
-
-
-<a name=".CredRequest"></a>
-
-### CredRequest
-CredRequest specifies a credential request object that consists of
-nym - a pseudonym, which is a commitment to the user secret
-issuer_nonce - a random nonce provided by the issuer
-proof_c, proof_s - a zero-knowledge proof of knowledge of the
-user secret inside Nym
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| nym | [ECP](#ECP) |  |  |
-| issuer_nonce | [bytes](#bytes) |  |  |
-| proof_c | [bytes](#bytes) |  |  |
-| proof_s | [bytes](#bytes) |  |  |
-
-
-
-
-
-
-<a name=".Credential"></a>
-
-### Credential
-Credential specifies a credential object that consists of
-a, b, e, s - signature value
-attrs - attribute values
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| a | [ECP](#ECP) |  |  |
-| b | [ECP](#ECP) |  |  |
-| e | [bytes](#bytes) |  |  |
-| s | [bytes](#bytes) |  |  |
-| attrs | [bytes](#bytes) | repeated |  |
-
-
-
-
-
-
-<a name=".CredentialRevocationInformation"></a>
-
-### CredentialRevocationInformation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| epoch | [int64](#int64) |  | epoch contains the epoch (time window) in which this CRI is valid |
-| epoch_pk | [ECP2](#ECP2) |  | epoch_pk is the public key that is used by the revocation authority in this epoch |
-| epoch_pk_sig | [bytes](#bytes) |  | epoch_pk_sig is a signature on the EpochPK valid under the revocation authority&#39;s long term key |
-| revocation_alg | [int32](#int32) |  | revocation_alg denotes which revocation algorithm is used |
-| revocation_data | [bytes](#bytes) |  | revocation_data contains data specific to the revocation algorithm used |
-
-
-
-
-
-
-<a name=".ECP"></a>
-
-### ECP
-ECP is an elliptic curve point specified by its coordinates
-ECP corresponds to an element of the first group (G1)
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| x | [bytes](#bytes) |  |  |
-| y | [bytes](#bytes) |  |  |
-
-
-
-
-
-
-<a name=".ECP2"></a>
-
-### ECP2
-ECP2 is an elliptic curve point specified by its coordinates
-ECP2 corresponds to an element of the second group (G2)
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| xa | [bytes](#bytes) |  |  |
-| xb | [bytes](#bytes) |  |  |
-| ya | [bytes](#bytes) |  |  |
-| yb | [bytes](#bytes) |  |  |
-
-
-
-
-
-
-<a name=".IssuerKey"></a>
-
-### IssuerKey
-IssuerKey specifies an issuer key pair that consists of
-ISk - the issuer secret key and
-IssuerPublicKey - the issuer public key
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| isk | [bytes](#bytes) |  |  |
-| ipk | [IssuerPublicKey](#IssuerPublicKey) |  |  |
-
-
-
-
-
-
-<a name=".IssuerPublicKey"></a>
-
-### IssuerPublicKey
-IssuerPublicKey specifies an issuer public key that consists of
-attribute_names - a list of the attribute names of a credential issued by the issuer
-h_sk, h_rand, h_attrs, w, bar_g1, bar_g2 - group elements corresponding to the signing key, randomness, and attributes
-proof_c, proof_s compose a zero-knowledge proof of knowledge of the secret key
-hash is a hash of the public key appended to it
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| attribute_names | [string](#string) | repeated |  |
-| h_sk | [ECP](#ECP) |  |  |
-| h_rand | [ECP](#ECP) |  |  |
-| h_attrs | [ECP](#ECP) | repeated |  |
-| w | [ECP2](#ECP2) |  |  |
-| bar_g1 | [ECP](#ECP) |  |  |
-| bar_g2 | [ECP](#ECP) |  |  |
-| proof_c | [bytes](#bytes) |  |  |
-| proof_s | [bytes](#bytes) |  |  |
-| hash | [bytes](#bytes) |  |  |
-
-
-
-
-
-
-<a name=".NonRevocationProof"></a>
-
-### NonRevocationProof
-NonRevocationProof contains proof that the credential is not revoked
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| revocation_alg | [int32](#int32) |  |  |
-| non_revocation_proof | [bytes](#bytes) |  |  |
-
-
-
-
-
-
-<a name=".NymSignature"></a>
-
-### NymSignature
-NymSignature specifies a signature object that signs a message
-with respect to a pseudonym. It differs from the standard idemix.signature in the fact that
-the  standard signature object also proves that the pseudonym is based on a secret certified by
-a CA (issuer), whereas NymSignature only proves that the the owner of the pseudonym
-signed the message
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| proof_c | [bytes](#bytes) |  | proof_c is the Fiat-Shamir challenge of the ZKP |
-| proof_s_sk | [bytes](#bytes) |  | proof_s_sk is the s-value proving knowledge of the user secret key |
-| proof_s_r_nym | [bytes](#bytes) |  | proof_s_r_nym is the s-value proving knowledge of the pseudonym secret |
-| nonce | [bytes](#bytes) |  | nonce is a fresh nonce used for the signature |
-
-
-
-
-
-
-<a name=".Signature"></a>
-
-### Signature
-Signature specifies a signature object that consists of
-a_prime, a_bar, b_prime, proof_* - randomized credential signature values
-and a zero-knowledge proof of knowledge of a credential
-and the corresponding user secret together with the attribute values
-nonce - a fresh nonce used for the signature
-nym - a fresh pseudonym (a commitment to to the user secret)
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| a_prime | [ECP](#ECP) |  |  |
-| a_bar | [ECP](#ECP) |  |  |
-| b_prime | [ECP](#ECP) |  |  |
-| proof_c | [bytes](#bytes) |  |  |
-| proof_s_sk | [bytes](#bytes) |  |  |
-| proof_s_e | [bytes](#bytes) |  |  |
-| proof_s_r2 | [bytes](#bytes) |  |  |
-| proof_s_r3 | [bytes](#bytes) |  |  |
-| proof_s_s_prime | [bytes](#bytes) |  |  |
-| proof_s_attrs | [bytes](#bytes) | repeated |  |
-| nonce | [bytes](#bytes) |  |  |
-| nym | [ECP](#ECP) |  |  |
-| proof_s_r_nym | [bytes](#bytes) |  |  |
-| revocation_epoch_pk | [ECP2](#ECP2) |  |  |
-| revocation_pk_sig | [bytes](#bytes) |  |  |
-| epoch | [int64](#int64) |  |  |
-| non_revocation_proof | [NonRevocationProof](#NonRevocationProof) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
 
 
 
@@ -924,6 +668,7 @@ Reserved entries in the key-level metadata map
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | VALIDATION_PARAMETER | 0 |  |
+| VALIDATION_PARAMETER_V2 | 1 |  |
 
 
 
@@ -959,6 +704,7 @@ Reserved entries in the key-level metadata map
 | BAD_RWSET | 22 |  |
 | ILLEGAL_WRITESET | 23 |  |
 | INVALID_WRITESET | 24 |  |
+| INVALID_CHAINCODE | 25 |  |
 | NOT_VALIDATED | 254 |  |
 | INVALID_OTHER_REASON | 255 |  |
 
@@ -1071,19 +817,7 @@ AnchorPeers simply represents list of anchor peers which is used in Configuratio
 <p align="right"><a href="#top">Top</a></p>
 
 ## peer/signed_cc_dep_spec.proto
-Copyright IBM Corp. 2017 All Rights Reserved.
 
-Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
 
 
 <a name="protos.SignedChaincodeDeploymentSpec"></a>
@@ -1119,6 +853,48 @@ SignedChaincodeDeploymentSpec carries the CDS along with endorsements
 
 
 
+<a name="protos.CDSData"></a>
+
+### CDSData
+CDSData is data stored in the LSCC on instantiation of a CC
+for CDSPackage.  This needs to be serialized for ChaincodeData
+hence the protobuf format
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| hash | [bytes](#bytes) |  | hash of ChaincodeDeploymentSpec.code_package |
+| metadatahash | [bytes](#bytes) |  | hash of ChaincodeID.name &#43; ChaincodeID.version |
+
+
+
+
+
+
+<a name="protos.ChaincodeData"></a>
+
+### ChaincodeData
+ChaincodeData defines the datastructure for chaincodes to be serialized by proto
+Type provides an additional check by directing to use a specific package after instantiation
+Data is Type specific (see CDSPackage and SignedCDSPackage)
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of the chaincode |
+| version | [string](#string) |  | Version of the chaincode |
+| escc | [string](#string) |  | Escc for the chaincode instance |
+| vscc | [string](#string) |  | Vscc for the chaincode instance |
+| policy | [common.SignaturePolicyEnvelope](#common.SignaturePolicyEnvelope) |  | Policy endorsement policy for the chaincode instance |
+| data | [bytes](#bytes) |  | Data data specific to the package |
+| id | [bytes](#bytes) |  | Id of the chaincode that&#39;s the unique fingerprint for the CC This is not currently used anywhere but serves as a good eyecatcher |
+| instantiation_policy | [common.SignaturePolicyEnvelope](#common.SignaturePolicyEnvelope) |  | InstantiationPolicy for the chaincode |
+
+
+
+
+
+
 <a name="protos.ChaincodeDeploymentSpec"></a>
 
 ### ChaincodeDeploymentSpec
@@ -1130,7 +906,6 @@ TODO: Define `codePackage`.
 | ----- | ---- | ----- | ----------- |
 | chaincode_spec | [ChaincodeSpec](#protos.ChaincodeSpec) |  |  |
 | code_package | [bytes](#bytes) |  |  |
-| exec_env | [ChaincodeDeploymentSpec.ExecutionEnvironment](#protos.ChaincodeDeploymentSpec.ExecutionEnvironment) |  |  |
 
 
 
@@ -1172,6 +947,7 @@ the []byte-based current ChaincodeInput structure.
 | ----- | ---- | ----- | ----------- |
 | args | [bytes](#bytes) | repeated |  |
 | decorations | [ChaincodeInput.DecorationsEntry](#protos.ChaincodeInput.DecorationsEntry) | repeated |  |
+| is_init | [bool](#bool) |  | is_init is used for the application to signal that an invocation is to be routed to the legacy &#39;Init&#39; function for compatibility with chaincodes which handled Init in the old way. New applications should manage their initialized state themselves. |
 
 
 
@@ -1245,18 +1021,6 @@ LifecycleEvent is used as the payload of the chaincode event emitted by LSCC
  
 
 
-<a name="protos.ChaincodeDeploymentSpec.ExecutionEnvironment"></a>
-
-### ChaincodeDeploymentSpec.ExecutionEnvironment
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| DOCKER | 0 |  |
-| SYSTEM | 1 |  |
-
-
-
 <a name="protos.ChaincodeSpec.Type"></a>
 
 ### ChaincodeSpec.Type
@@ -1269,18 +1033,6 @@ LifecycleEvent is used as the payload of the chaincode event emitted by LSCC
 | NODE | 2 |  |
 | CAR | 3 |  |
 | JAVA | 4 |  |
-
-
-
-<a name="protos.ConfidentialityLevel"></a>
-
-### ConfidentialityLevel
-Confidentiality Levels
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| PUBLIC | 0 |  |
-| CONFIDENTIAL | 1 |  |
 
 
  
@@ -1360,7 +1112,7 @@ chaincode state changes and events inside the extension field.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| proposal_hash | [bytes](#bytes) |  | Hash of the proposal that triggered this response. The hash is used to link a response with its proposal, both for bookeeping purposes on an asynchronous system and for security reasons (accountability, non-repudiation). The hash usually covers the entire Proposal message (byte-by-byte). However this implies that the hash can only be verified if the entire proposal message is available when ProposalResponsePayload is included in a transaction or stored in the ledger. For confidentiality reasons, with chaincodes it might be undesirable to store the proposal payload in the ledger. If the type is CHAINCODE, this is handled by separating the proposal&#39;s header and the payload: the header is always hashed in its entirety whereas the payload can either be hashed fully, or only its hash may be hashed, or nothing from the payload can be hashed. The PayloadVisibility field in the Header&#39;s extension controls to which extent the proposal payload is &#34;visible&#34; in the sense that was just explained. |
+| proposal_hash | [bytes](#bytes) |  | Hash of the proposal that triggered this response. The hash is used to link a response with its proposal, both for bookeeping purposes on an asynchronous system and for security reasons (accountability, non-repudiation). The hash usually covers the entire Proposal message (byte-by-byte). |
 | extension | [bytes](#bytes) |  | Extension should be unmarshaled to a type-specific message. The type of the extension in any proposal response depends on the type of the proposal that the client selected when the proposal was initially sent out. In particular, this information is stored in the type field of a Header. For chaincode, it&#39;s a ChaincodeAction message |
 
 
@@ -1390,148 +1142,6 @@ be used within another message.
  
 
  
-
- 
-
-
-
-<a name="peer/admin.proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## peer/admin.proto
-
-
-
-<a name="protos.AdminOperation"></a>
-
-### AdminOperation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| logReq | [LogLevelRequest](#protos.LogLevelRequest) |  |  |
-| logSpecReq | [LogSpecRequest](#protos.LogSpecRequest) |  |  |
-
-
-
-
-
-
-<a name="protos.LogLevelRequest"></a>
-
-### LogLevelRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| log_module | [string](#string) |  |  |
-| log_level | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="protos.LogLevelResponse"></a>
-
-### LogLevelResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| log_module | [string](#string) |  |  |
-| log_level | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="protos.LogSpecRequest"></a>
-
-### LogSpecRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| log_spec | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="protos.LogSpecResponse"></a>
-
-### LogSpecResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| log_spec | [string](#string) |  |  |
-| error | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="protos.ServerStatus"></a>
-
-### ServerStatus
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| status | [ServerStatus.StatusCode](#protos.ServerStatus.StatusCode) |  |  |
-
-
-
-
-
- 
-
-
-<a name="protos.ServerStatus.StatusCode"></a>
-
-### ServerStatus.StatusCode
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| UNDEFINED | 0 |  |
-| STARTED | 1 |  |
-| STOPPED | 2 |  |
-| PAUSED | 3 |  |
-| ERROR | 4 |  |
-| UNKNOWN | 5 |  |
-
-
- 
-
- 
-
-
-<a name="protos.Admin"></a>
-
-### Admin
-Interface exported by the server.
-
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| GetStatus | [.common.Envelope](#common.Envelope) | [ServerStatus](#protos.ServerStatus) |  |
-| StartServer | [.common.Envelope](#common.Envelope) | [ServerStatus](#protos.ServerStatus) |  |
-| GetModuleLogLevel | [.common.Envelope](#common.Envelope) | [LogLevelResponse](#protos.LogLevelResponse) |  |
-| SetModuleLogLevel | [.common.Envelope](#common.Envelope) | [LogLevelResponse](#protos.LogLevelResponse) |  |
-| RevertLogLevels | [.common.Envelope](#common.Envelope) | [.google.protobuf.Empty](#google.protobuf.Empty) |  |
-| GetLogSpec | [.common.Envelope](#common.Envelope) | [LogSpecResponse](#protos.LogSpecResponse) |  |
-| SetLogSpec | [.common.Envelope](#common.Envelope) | [LogSpecResponse](#protos.LogSpecResponse) |  |
 
  
 
@@ -1737,6 +1347,38 @@ argument field of the ChaincodeValidation message.
 
 
 
+<a name="protos.BlockAndPrivateData"></a>
+
+### BlockAndPrivateData
+BlockAndPrivateData contains Block and a map from tx_seq_in_block to rwset.TxPvtReadWriteSet
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| block | [common.Block](#common.Block) |  |  |
+| private_data_map | [BlockAndPrivateData.PrivateDataMapEntry](#protos.BlockAndPrivateData.PrivateDataMapEntry) | repeated | map from tx_seq_in_block to rwset.TxPvtReadWriteSet |
+
+
+
+
+
+
+<a name="protos.BlockAndPrivateData.PrivateDataMapEntry"></a>
+
+### BlockAndPrivateData.PrivateDataMapEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [uint64](#uint64) |  |  |
+| value | [rwset.TxPvtReadWriteSet](#rwset.TxPvtReadWriteSet) |  |  |
+
+
+
+
+
+
 <a name="protos.DeliverResponse"></a>
 
 ### DeliverResponse
@@ -1748,6 +1390,7 @@ DeliverResponse
 | status | [common.Status](#common.Status) |  |  |
 | block | [common.Block](#common.Block) |  |  |
 | filtered_block | [FilteredBlock](#protos.FilteredBlock) |  |  |
+| block_and_private_data | [BlockAndPrivateData](#protos.BlockAndPrivateData) |  |  |
 
 
 
@@ -1835,8 +1478,9 @@ message from regular block
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Deliver | [.common.Envelope](#common.Envelope) stream | [DeliverResponse](#protos.DeliverResponse) stream | deliver first requires an Envelope of type ab.DELIVER_SEEK_INFO with Payload data as a marshaled orderer.SeekInfo message, then a stream of block replies is received |
-| DeliverFiltered | [.common.Envelope](#common.Envelope) stream | [DeliverResponse](#protos.DeliverResponse) stream | deliver first requires an Envelope of type ab.DELIVER_SEEK_INFO with Payload data as a marshaled orderer.SeekInfo message, then a stream of **filtered** block replies is received |
+| Deliver | [.common.Envelope](#common.Envelope) stream | [DeliverResponse](#protos.DeliverResponse) stream | Deliver first requires an Envelope of type ab.DELIVER_SEEK_INFO with Payload data as a marshaled orderer.SeekInfo message, then a stream of block replies is received |
+| DeliverFiltered | [.common.Envelope](#common.Envelope) stream | [DeliverResponse](#protos.DeliverResponse) stream | DeliverFiltered first requires an Envelope of type ab.DELIVER_SEEK_INFO with Payload data as a marshaled orderer.SeekInfo message, then a stream of **filtered** block replies is received |
+| DeliverWithPrivateData | [.common.Envelope](#common.Envelope) stream | [DeliverResponse](#protos.DeliverResponse) stream | DeliverWithPrivateData first requires an Envelope of type ab.DELIVER_SEEK_INFO with Payload data as a marshaled orderer.SeekInfo message, then a stream of block and private data replies is received |
 
  
 
@@ -1862,7 +1506,6 @@ of the chaincode.
 | events | [bytes](#bytes) |  | This field contains the events generated by the chaincode executing this invocation. |
 | response | [Response](#protos.Response) |  | This field contains the result of executing this invocation. |
 | chaincode_id | [ChaincodeID](#protos.ChaincodeID) |  | This field contains the ChaincodeID of executing this invocation. Endorser will set it with the ChaincodeID called by endorser while simulating proposal. Committer will validate the version matching with latest chaincode version. Adding ChaincodeID to keep version opens up the possibility of multiple ChaincodeAction per transaction. |
-| token_expectation | [TokenExpectation](#protos.TokenExpectation) |  | This field contains the token expectation generated by the chaincode executing this invocation |
 
 
 
@@ -1879,7 +1522,6 @@ chaincode to invoke and what should appear on the ledger.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| payload_visibility | [bytes](#bytes) |  | The PayloadVisibility field controls to what extent the Proposal&#39;s payload (recall that for the type CHAINCODE, it is ChaincodeProposalPayload message) field will be visible in the final transaction and in the ledger. Ideally, it would be configurable, supporting at least 3 main visibility modes: 1. all bytes of the payload are visible; 2. only a hash of the payload is visible; 3. nothing is visible. Notice that the visibility function may be potentially part of the ESCC. In that case it overrides PayloadVisibility field. Finally notice that this field impacts the content of ProposalResponsePayload.proposalHash. |
 | chaincode_id | [ChaincodeID](#protos.ChaincodeID) |  | The ID of the chaincode to target. |
 
 
@@ -2004,6 +1646,90 @@ steps:
 
 
 
+<a name="peer/policy.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## peer/policy.proto
+
+
+
+<a name="protos.ApplicationPolicy"></a>
+
+### ApplicationPolicy
+ApplicationPolicy captures the diffenrent policy types that
+are set and evaluted at the application level.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| signature_policy | [common.SignaturePolicyEnvelope](#common.SignaturePolicyEnvelope) |  | SignaturePolicy type is used if the policy is specified as a combination (using threshold gates) of signatures from MSP principals |
+| channel_config_policy_reference | [string](#string) |  | ChannelConfigPolicyReference is used when the policy is specified as a string that references a policy defined in the configuration of the channel |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="peer/lifecycle/chaincode_definition.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## peer/lifecycle/chaincode_definition.proto
+
+
+
+<a name="lifecycle.ChaincodeEndorsementInfo"></a>
+
+### ChaincodeEndorsementInfo
+ChaincodeEndorsementInfo is (most) everything the peer needs to know in order
+to execute a chaincode
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| version | [string](#string) |  |  |
+| init_required | [bool](#bool) |  |  |
+| endorsement_plugin | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.ChaincodeValidationInfo"></a>
+
+### ChaincodeValidationInfo
+ValidationInfo is (most) everything the peer needs to know in order
+to validate a transaction
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| validation_plugin | [string](#string) |  |  |
+| validation_parameter | [bytes](#bytes) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="peer/lifecycle/lifecycle.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -2011,18 +1737,217 @@ steps:
 
 
 
-<a name="lifecycle.InstallChaincodeArgs"></a>
+<a name="lifecycle.ApproveChaincodeDefinitionForMyOrgArgs"></a>
 
-### InstallChaincodeArgs
-InstallChaincodeArgs is the message used as the argument to
-&#39;&#43;lifecycle.InstallChaincode&#39;
+### ApproveChaincodeDefinitionForMyOrgArgs
+ApproveChaincodeDefinitionForMyOrgArgs is the message used as arguments to
+`_lifecycle.ApproveChaincodeDefinitionForMyOrg`.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| sequence | [int64](#int64) |  |  |
 | name | [string](#string) |  |  |
 | version | [string](#string) |  |  |
-| chaincode_install_package | [bytes](#bytes) |  | This should be a marshaled peer.ChaincodeInstallPackage |
+| endorsement_plugin | [string](#string) |  |  |
+| validation_plugin | [string](#string) |  |  |
+| validation_parameter | [bytes](#bytes) |  |  |
+| collections | [common.CollectionConfigPackage](#common.CollectionConfigPackage) |  |  |
+| init_required | [bool](#bool) |  |  |
+| source | [ChaincodeSource](#lifecycle.ChaincodeSource) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.ApproveChaincodeDefinitionForMyOrgResult"></a>
+
+### ApproveChaincodeDefinitionForMyOrgResult
+ApproveChaincodeDefinitionForMyOrgResult is the message returned by
+`_lifecycle.ApproveChaincodeDefinitionForMyOrg`. Currently it returns
+nothing, but may be extended in the future.
+
+
+
+
+
+
+<a name="lifecycle.ChaincodeSource"></a>
+
+### ChaincodeSource
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| unavailable | [ChaincodeSource.Unavailable](#lifecycle.ChaincodeSource.Unavailable) |  |  |
+| local_package | [ChaincodeSource.Local](#lifecycle.ChaincodeSource.Local) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.ChaincodeSource.Local"></a>
+
+### ChaincodeSource.Local
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| package_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.ChaincodeSource.Unavailable"></a>
+
+### ChaincodeSource.Unavailable
+
+
+
+
+
+
+
+<a name="lifecycle.CheckCommitReadinessArgs"></a>
+
+### CheckCommitReadinessArgs
+CheckCommitReadinessArgs is the message used as arguments to
+`_lifecycle.CheckCommitReadiness`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| sequence | [int64](#int64) |  |  |
+| name | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+| endorsement_plugin | [string](#string) |  |  |
+| validation_plugin | [string](#string) |  |  |
+| validation_parameter | [bytes](#bytes) |  |  |
+| collections | [common.CollectionConfigPackage](#common.CollectionConfigPackage) |  |  |
+| init_required | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.CheckCommitReadinessResult"></a>
+
+### CheckCommitReadinessResult
+CheckCommitReadinessResult is the message returned by
+`_lifecycle.CheckCommitReadiness`. It returns a map of
+orgs to their approval (true/false) for the definition 
+supplied as args.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| approvals | [CheckCommitReadinessResult.ApprovalsEntry](#lifecycle.CheckCommitReadinessResult.ApprovalsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="lifecycle.CheckCommitReadinessResult.ApprovalsEntry"></a>
+
+### CheckCommitReadinessResult.ApprovalsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.CommitChaincodeDefinitionArgs"></a>
+
+### CommitChaincodeDefinitionArgs
+CommitChaincodeDefinitionArgs is the message used as arguments to
+`_lifecycle.CommitChaincodeDefinition`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| sequence | [int64](#int64) |  |  |
+| name | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+| endorsement_plugin | [string](#string) |  |  |
+| validation_plugin | [string](#string) |  |  |
+| validation_parameter | [bytes](#bytes) |  |  |
+| collections | [common.CollectionConfigPackage](#common.CollectionConfigPackage) |  |  |
+| init_required | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.CommitChaincodeDefinitionResult"></a>
+
+### CommitChaincodeDefinitionResult
+CommitChaincodeDefinitionResult is the message returned by
+`_lifecycle.CommitChaincodeDefinition`. Currently it returns
+nothing, but may be extended in the future.
+
+
+
+
+
+
+<a name="lifecycle.GetInstalledChaincodePackageArgs"></a>
+
+### GetInstalledChaincodePackageArgs
+GetInstalledChaincodePackageArgs is the message used as the argument to
+&#39;_lifecycle.GetInstalledChaincodePackage&#39;.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| package_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.GetInstalledChaincodePackageResult"></a>
+
+### GetInstalledChaincodePackageResult
+GetInstalledChaincodePackageResult is the message returned by
+&#39;_lifecycle.GetInstalledChaincodePackage&#39;.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| chaincode_install_package | [bytes](#bytes) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.InstallChaincodeArgs"></a>
+
+### InstallChaincodeArgs
+InstallChaincodeArgs is the message used as the argument to
+&#39;_lifecycle.InstallChaincode&#39;.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| chaincode_install_package | [bytes](#bytes) |  | This should be a marshaled lifecycle.ChaincodePackage |
 
 
 
@@ -2033,12 +1958,117 @@ InstallChaincodeArgs is the message used as the argument to
 
 ### InstallChaincodeResult
 InstallChaincodeArgs is the message returned by
-&#39;&#43;lifecycle.InstallChaincode&#39;
+&#39;_lifecycle.InstallChaincode&#39;.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| hash | [bytes](#bytes) |  |  |
+| package_id | [string](#string) |  |  |
+| label | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.QueryChaincodeDefinitionArgs"></a>
+
+### QueryChaincodeDefinitionArgs
+QueryChaincodeDefinitionArgs is the message used as arguments to
+`_lifecycle.QueryChaincodeDefinition`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.QueryChaincodeDefinitionResult"></a>
+
+### QueryChaincodeDefinitionResult
+QueryChaincodeDefinitionResult is the message returned by
+`_lifecycle.QueryChaincodeDefinition`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| sequence | [int64](#int64) |  |  |
+| version | [string](#string) |  |  |
+| endorsement_plugin | [string](#string) |  |  |
+| validation_plugin | [string](#string) |  |  |
+| validation_parameter | [bytes](#bytes) |  |  |
+| collections | [common.CollectionConfigPackage](#common.CollectionConfigPackage) |  |  |
+| init_required | [bool](#bool) |  |  |
+| approvals | [QueryChaincodeDefinitionResult.ApprovalsEntry](#lifecycle.QueryChaincodeDefinitionResult.ApprovalsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="lifecycle.QueryChaincodeDefinitionResult.ApprovalsEntry"></a>
+
+### QueryChaincodeDefinitionResult.ApprovalsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.QueryChaincodeDefinitionsArgs"></a>
+
+### QueryChaincodeDefinitionsArgs
+QueryChaincodeDefinitionsArgs is the message used as arguments to
+`_lifecycle.QueryChaincodeDefinitions`.
+
+
+
+
+
+
+<a name="lifecycle.QueryChaincodeDefinitionsResult"></a>
+
+### QueryChaincodeDefinitionsResult
+QueryChaincodeDefinitionsResult is the message returned by
+`_lifecycle.QueryChaincodeDefinitions`.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| chaincode_definitions | [QueryChaincodeDefinitionsResult.ChaincodeDefinition](#lifecycle.QueryChaincodeDefinitionsResult.ChaincodeDefinition) | repeated |  |
+
+
+
+
+
+
+<a name="lifecycle.QueryChaincodeDefinitionsResult.ChaincodeDefinition"></a>
+
+### QueryChaincodeDefinitionsResult.ChaincodeDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| sequence | [int64](#int64) |  |  |
+| version | [string](#string) |  |  |
+| endorsement_plugin | [string](#string) |  |  |
+| validation_plugin | [string](#string) |  |  |
+| validation_parameter | [bytes](#bytes) |  |  |
+| collections | [common.CollectionConfigPackage](#common.CollectionConfigPackage) |  |  |
+| init_required | [bool](#bool) |  |  |
 
 
 
@@ -2048,8 +2078,41 @@ InstallChaincodeArgs is the message returned by
 <a name="lifecycle.QueryInstalledChaincodeArgs"></a>
 
 ### QueryInstalledChaincodeArgs
-QueryInstalledChaincodeArgs is the message returned by
-&#39;&#43;lifecycle.QueryInstalledChaincode&#39;
+QueryInstalledChaincodeArgs is the message used as arguments
+&#39;_lifecycle.QueryInstalledChaincode&#39;
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| package_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.QueryInstalledChaincodeResult"></a>
+
+### QueryInstalledChaincodeResult
+QueryInstalledChaincodeResult is the message returned by
+&#39;_lifecycle.QueryInstalledChaincode&#39;
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| package_id | [string](#string) |  |  |
+| label | [string](#string) |  |  |
+| references | [QueryInstalledChaincodeResult.ReferencesEntry](#lifecycle.QueryInstalledChaincodeResult.ReferencesEntry) | repeated |  |
+
+
+
+
+
+
+<a name="lifecycle.QueryInstalledChaincodeResult.Chaincode"></a>
+
+### QueryInstalledChaincodeResult.Chaincode
+
 
 
 | Field | Type | Label | Description |
@@ -2062,16 +2125,176 @@ QueryInstalledChaincodeArgs is the message returned by
 
 
 
-<a name="lifecycle.QueryInstalledChaincodeResult"></a>
+<a name="lifecycle.QueryInstalledChaincodeResult.References"></a>
 
-### QueryInstalledChaincodeResult
-QueryInstalledChaincodeResult is the message returned by
-&#39;&#43;lifecycle.QueryInstalledChaincode&#39;
+### QueryInstalledChaincodeResult.References
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| hash | [bytes](#bytes) |  |  |
+| chaincodes | [QueryInstalledChaincodeResult.Chaincode](#lifecycle.QueryInstalledChaincodeResult.Chaincode) | repeated |  |
+
+
+
+
+
+
+<a name="lifecycle.QueryInstalledChaincodeResult.ReferencesEntry"></a>
+
+### QueryInstalledChaincodeResult.ReferencesEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [QueryInstalledChaincodeResult.References](#lifecycle.QueryInstalledChaincodeResult.References) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.QueryInstalledChaincodesArgs"></a>
+
+### QueryInstalledChaincodesArgs
+QueryInstalledChaincodesArgs currently is an empty argument to
+&#39;_lifecycle.QueryInstalledChaincodes&#39;.   In the future, it may be
+extended to have parameters.
+
+
+
+
+
+
+<a name="lifecycle.QueryInstalledChaincodesResult"></a>
+
+### QueryInstalledChaincodesResult
+QueryInstalledChaincodesResult is the message returned by
+&#39;_lifecycle.QueryInstalledChaincodes&#39;.  It returns a list of installed
+chaincodes, including a map of channel name to chaincode name and version
+pairs of chaincode definitions that reference this chaincode package.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| installed_chaincodes | [QueryInstalledChaincodesResult.InstalledChaincode](#lifecycle.QueryInstalledChaincodesResult.InstalledChaincode) | repeated |  |
+
+
+
+
+
+
+<a name="lifecycle.QueryInstalledChaincodesResult.Chaincode"></a>
+
+### QueryInstalledChaincodesResult.Chaincode
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.QueryInstalledChaincodesResult.InstalledChaincode"></a>
+
+### QueryInstalledChaincodesResult.InstalledChaincode
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| package_id | [string](#string) |  |  |
+| label | [string](#string) |  |  |
+| references | [QueryInstalledChaincodesResult.InstalledChaincode.ReferencesEntry](#lifecycle.QueryInstalledChaincodesResult.InstalledChaincode.ReferencesEntry) | repeated |  |
+
+
+
+
+
+
+<a name="lifecycle.QueryInstalledChaincodesResult.InstalledChaincode.ReferencesEntry"></a>
+
+### QueryInstalledChaincodesResult.InstalledChaincode.ReferencesEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [QueryInstalledChaincodesResult.References](#lifecycle.QueryInstalledChaincodesResult.References) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.QueryInstalledChaincodesResult.References"></a>
+
+### QueryInstalledChaincodesResult.References
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| chaincodes | [QueryInstalledChaincodesResult.Chaincode](#lifecycle.QueryInstalledChaincodesResult.Chaincode) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="peer/lifecycle/db.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## peer/lifecycle/db.proto
+
+
+
+<a name="lifecycle.StateData"></a>
+
+### StateData
+StateData encodes a particular field of a datatype
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Int64 | [int64](#int64) |  |  |
+| Bytes | [bytes](#bytes) |  |  |
+| String | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="lifecycle.StateMetadata"></a>
+
+### StateMetadata
+StateMetadata describes the keys in a namespace.  It is necessary because
+in collections, range scans are not possible during transactions which
+write.  Therefore we must track the keys in our namespace ourselves.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| datatype | [string](#string) |  |  |
+| fields | [string](#string) | repeated |  |
 
 
 
@@ -2091,19 +2314,7 @@ QueryInstalledChaincodeResult is the message returned by
 <p align="right"><a href="#top">Top</a></p>
 
 ## peer/chaincode_event.proto
-Copyright IBM Corp. 2017 All Rights Reserved.
 
-Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
 
 
 <a name="protos.ChaincodeEvent"></a>
@@ -2498,49 +2709,6 @@ provides the context necessary for the server to respond appropriately.
 <p align="right"><a href="#top">Top</a></p>
 
 ## peer/peer.proto
-Copyright IBM Corp. 2016 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-
-<a name="protos.PeerEndpoint"></a>
-
-### PeerEndpoint
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [PeerID](#protos.PeerID) |  |  |
-| address | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="protos.PeerID"></a>
-
-### PeerID
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-
-
-
 
 
  
@@ -3417,9 +3585,7 @@ timestamp, and delete marker which resulted from a history query.
 <p align="right"><a href="#top">Top</a></p>
 
 ## discovery/protocol.proto
-Copyright IBM Corp. All Rights Reserved.
 
-SPDX-License-Identifier: Apache-2.0
 
 
 <a name="discovery.AuthInfo"></a>
@@ -4302,6 +4468,7 @@ ConsensusRequest is a consensus specific message sent to a cluster member.
 | ----- | ---- | ----- | ----------- |
 | channel | [string](#string) |  |  |
 | payload | [bytes](#bytes) |  |  |
+| metadata | [bytes](#bytes) |  |  |
 
 
 
@@ -4400,25 +4567,6 @@ Cluster defines communication between cluster members.
 
 
 
-<a name="etcdraft.BlockMetadata"></a>
-
-### BlockMetadata
-BlockMetadata stores data used by the Raft OSNs when
-coordinating with each other, to be serialized into
-block meta dta field and used after failres and restarts.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| consenter_ids | [uint64](#uint64) | repeated | Maintains a mapping between the cluster&#39;s OSNs and their Raft IDs. |
-| next_consenter_id | [uint64](#uint64) |  | Carries the Raft ID value that will be assigned to the next OSN that will join this cluster. |
-| raft_index | [uint64](#uint64) |  | Index of etcd/raft entry for current block. |
-
-
-
-
-
-
 <a name="etcdraft.ConfigMetadata"></a>
 
 ### ConfigMetadata
@@ -4483,13 +4631,61 @@ per-channel basis.
 
 
 
+<a name="orderer/etcdraft/metadata.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## orderer/etcdraft/metadata.proto
+
+
+
+<a name="etcdraft.BlockMetadata"></a>
+
+### BlockMetadata
+BlockMetadata stores data used by the Raft OSNs when
+coordinating with each other, to be serialized into
+block meta dta field and used after failres and restarts.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| consenter_ids | [uint64](#uint64) | repeated | Maintains a mapping between the cluster&#39;s OSNs and their Raft IDs. |
+| next_consenter_id | [uint64](#uint64) |  | Carries the Raft ID value that will be assigned to the next OSN that will join this cluster. |
+| raft_index | [uint64](#uint64) |  | Index of etcd/raft entry for current block. |
+
+
+
+
+
+
+<a name="etcdraft.ClusterMetadata"></a>
+
+### ClusterMetadata
+ClusterMetadata encapsulates metadata that is exchanged among cluster nodes
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| active_nodes | [uint64](#uint64) | repeated | Indicates active nodes in cluster that are reacheable by Raft leader |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="gossip/message.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## gossip/message.proto
-Copyright IBM Corp. All Rights Reserved.
 
-SPDX-License-Identifier: Apache-2.0
 
 
 <a name="gossip.Acknowledgement"></a>
@@ -5147,569 +5343,6 @@ Gossip
 
 
 
-<a name="token/transaction.proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## token/transaction.proto
-
-
-
-<a name=".InputId"></a>
-
-### InputId
-An InputId specifies an output using the transaction ID and the index of the output in the transaction
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| tx_id | [string](#string) |  | The transaction ID |
-| index | [uint32](#uint32) |  | The index of the output in the transaction |
-
-
-
-
-
-
-<a name=".PlainApprove"></a>
-
-### PlainApprove
-PlainApprove specifies an approve of one or more tokens in plaintext format
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| inputs | [InputId](#InputId) | repeated | The inputs to the transfer transaction are specified by their ID |
-| delegated_outputs | [PlainDelegatedOutput](#PlainDelegatedOutput) | repeated | An approve transaction contains one or more plain delegated outputs |
-| output | [PlainOutput](#PlainOutput) |  | An approve transaction contains one plain output |
-
-
-
-
-
-
-<a name=".PlainDelegatedOutput"></a>
-
-### PlainDelegatedOutput
-A PlainDelegatedOutput is the result of approve transactions using plaintext tokens
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| owner | [bytes](#bytes) |  | The owner is the serialization of a SerializedIdentity struct |
-| delegatees | [bytes](#bytes) | repeated | The delegatees is an arrary of the serialized identities that can spend the output on behalf the owner |
-| type | [string](#string) |  | The token type |
-| quantity | [uint64](#uint64) |  | The quantity of tokens |
-
-
-
-
-
-
-<a name=".PlainImport"></a>
-
-### PlainImport
-PlainImport specifies an import of one or more tokens in plaintext format
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| outputs | [PlainOutput](#PlainOutput) | repeated | An import transaction may contain one or more outputs |
-
-
-
-
-
-
-<a name=".PlainOutput"></a>
-
-### PlainOutput
-A PlainOutput is the result of import and transfer transactions using plaintext tokens
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| owner | [bytes](#bytes) |  | The owner is the serialization of a SerializedIdentity struct |
-| type | [string](#string) |  | The token type |
-| quantity | [uint64](#uint64) |  | The quantity of tokens |
-
-
-
-
-
-
-<a name=".PlainTokenAction"></a>
-
-### PlainTokenAction
-PlainTokenAction governs the structure of a token action that is
-subjected to no privacy restrictions
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| plain_import | [PlainImport](#PlainImport) |  | A plaintext token import transaction |
-| plain_transfer | [PlainTransfer](#PlainTransfer) |  | A plaintext token transfer transaction |
-| plain_redeem | [PlainTransfer](#PlainTransfer) |  | A plaintext token redeem transaction |
-| plain_approve | [PlainApprove](#PlainApprove) |  | A plaintext token approve transaction |
-| plain_transfer_From | [PlainTransferFrom](#PlainTransferFrom) |  | A plaintext token transfer from transaction |
-
-
-
-
-
-
-<a name=".PlainTransfer"></a>
-
-### PlainTransfer
-PlainTransfer specifies a transfer of one or more plaintext tokens to one or more outputs
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| inputs | [InputId](#InputId) | repeated | The inputs to the transfer transaction are specified by their ID |
-| outputs | [PlainOutput](#PlainOutput) | repeated | A transfer transaction may contain one or more outputs |
-
-
-
-
-
-
-<a name=".PlainTransferFrom"></a>
-
-### PlainTransferFrom
-PlainTransferFrom specifies a transfer of one or more plaintext delegated tokens to one or more outputs
-an to a delegated output
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| inputs | [InputId](#InputId) | repeated | The inputs to the transfer transaction are specified by their ID |
-| outputs | [PlainOutput](#PlainOutput) | repeated | A transferFrom transaction contains multiple outputs |
-| delegated_output | [PlainDelegatedOutput](#PlainDelegatedOutput) |  | A transferFrom transaction may contain one delegatable output |
-
-
-
-
-
-
-<a name=".TokenTransaction"></a>
-
-### TokenTransaction
-TokenTransaction governs the structure of Payload.data, when
-the transaction&#39;s envelope header indicates a transaction of type
-&#34;Token&#34;
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| plain_action | [PlainTokenAction](#PlainTokenAction) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="token/prover.proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## token/prover.proto
-
-
-
-<a name="protos.AllowanceRecipientShare"></a>
-
-### AllowanceRecipientShare
-ALlowance defines how many and what tokens a recipient can transfer on behalf of their actual owner
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| recipient | [bytes](#bytes) |  | Recipient refers to the entity allowed to spend the specified quantity from the tokens identified by token IDs |
-| quantity | [uint64](#uint64) |  | Quantity is how many tokens are delegated to the recipient |
-
-
-
-
-
-
-<a name="protos.ApproveRequest"></a>
-
-### ApproveRequest
-ApproveRequest is used to request the creation of allowance from one owner to another
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| credential | [bytes](#bytes) |  | Credential refers to the public credential of the request creator |
-| allowance_shares | [AllowanceRecipientShare](#protos.AllowanceRecipientShare) | repeated | Allowance describes the tokens the creator of the request is willing to delegate |
-| token_ids | [bytes](#bytes) | repeated | TokenIds are the token identifiers used to create the allowance |
-
-
-
-
-
-
-<a name="protos.Command"></a>
-
-### Command
-Command describes the type of operation that a client is requesting.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| header | [Header](#protos.Header) |  | Header is the header of this command |
-| import_request | [ImportRequest](#protos.ImportRequest) |  |  |
-| transfer_request | [TransferRequest](#protos.TransferRequest) |  |  |
-| list_request | [ListRequest](#protos.ListRequest) |  |  |
-| redeem_request | [RedeemRequest](#protos.RedeemRequest) |  |  |
-| approve_request | [ApproveRequest](#protos.ApproveRequest) |  |  |
-| transfer_from_request | [TransferRequest](#protos.TransferRequest) |  |  |
-| expectation_request | [ExpectationRequest](#protos.ExpectationRequest) |  |  |
-
-
-
-
-
-
-<a name="protos.CommandResponse"></a>
-
-### CommandResponse
-A CommnandResponse is returned from a prover to the command submitter.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| header | [CommandResponseHeader](#protos.CommandResponseHeader) |  | Header of the response. |
-| err | [Error](#protos.Error) |  |  |
-| token_transaction | [TokenTransaction](#TokenTransaction) |  |  |
-| unspent_tokens | [UnspentTokens](#protos.UnspentTokens) |  |  |
-
-
-
-
-
-
-<a name="protos.CommandResponseHeader"></a>
-
-### CommandResponseHeader
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| timestamp | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | Timestamp is the time that the message was created as defined by the sender |
-| command_hash | [bytes](#bytes) |  | CommandHash is the hash computed on the concatenation of the SignedCommand&#39;s command and signature fields. If not specified differently, SHA256 is used The hash is used to link a response with its request, both for bookeeping purposes on an asynchronous system and for security reasons (accountability, non-repudiation) |
-| creator | [bytes](#bytes) |  | Creator is the identity of the party creating this message |
-
-
-
-
-
-
-<a name="protos.Error"></a>
-
-### Error
-Error reports an application error
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| message | [string](#string) |  | Message associated with this response. |
-| payload | [bytes](#bytes) |  | Payload that can be used to include metadata with this response. |
-
-
-
-
-
-
-<a name="protos.ExpectationRequest"></a>
-
-### ExpectationRequest
-ExpectationRequest is used to request indirect token import or transfer based on the token expectation
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| credential | [bytes](#bytes) |  | credential contains information for the party who is requesting the operation The content of this field depends on the characteristic of token manager system |
-| expectation | [TokenExpectation](#protos.TokenExpectation) |  | expectation contains the expected outputs for token import or transfer |
-| token_ids | [bytes](#bytes) | repeated | TokenIds are the token identifiers used to fulfill the expectation |
-
-
-
-
-
-
-<a name="protos.Header"></a>
-
-### Header
-Header is a generic replay prevention and identity message to include in a signed command
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| timestamp | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | Timestamp is the local time when the message was created by the sender |
-| channel_id | [string](#string) |  | ChannelId identifies the channel this message is bound for |
-| nonce | [bytes](#bytes) |  | Nonce is a sufficientley long random value used to ensure the request has enough entropy. |
-| creator | [bytes](#bytes) |  | Creator of the message. Typically, a marshaled msp.SerializedIdentity |
-
-
-
-
-
-
-<a name="protos.ImportRequest"></a>
-
-### ImportRequest
-ImportRequest is used to request creation of imports
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| credential | [bytes](#bytes) |  | Credential contains information about the party who is requesting the operation the content of this field depends on the charateristic of the token manager system used. |
-| tokens_to_issue | [TokenToIssue](#protos.TokenToIssue) | repeated | TokenToIssue contains the information about the tokens to be issued |
-
-
-
-
-
-
-<a name="protos.ListRequest"></a>
-
-### ListRequest
-ListRequest is used to request a list of unspent tokens
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| credential | [bytes](#bytes) |  |  |
-
-
-
-
-
-
-<a name="protos.RecipientTransferShare"></a>
-
-### RecipientTransferShare
-RecipientTransferShare describes how much a recipient will receive in a token transfer
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| recipient | [bytes](#bytes) |  | Recipient refers to the prospective owner of a transferred token |
-| quantity | [uint64](#uint64) |  | Quantity refers to the number of token units to be transferred to the recipient |
-
-
-
-
-
-
-<a name="protos.RedeemRequest"></a>
-
-### RedeemRequest
-RedeemRequest is used to request token redemption
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| credential | [bytes](#bytes) |  | Credential contains information for the party who is requesting the operation The content of this field depends on the characteristic of token manager system |
-| token_ids | [bytes](#bytes) | repeated | token_ids specifies the ids for the tokens that will be redeemed |
-| quantity_to_redeem | [uint64](#uint64) |  | quantity refers to the number of units of a given token needs to be redeemed. |
-
-
-
-
-
-
-<a name="protos.SignedCommand"></a>
-
-### SignedCommand
-SignedCommand is a command that carries the signature of the command&#39;s creator.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| command | [bytes](#bytes) |  | Command is the serialised version of a Command message |
-| signature | [bytes](#bytes) |  | Signature is the signature over command |
-
-
-
-
-
-
-<a name="protos.SignedCommandResponse"></a>
-
-### SignedCommandResponse
-SignedCommandResponse is a signed command response
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| response | [bytes](#bytes) |  | Response is the serialised version of a CommandResponse message |
-| signature | [bytes](#bytes) |  | Signature is the signature over command |
-
-
-
-
-
-
-<a name="protos.TokenOutput"></a>
-
-### TokenOutput
-TokenOutput is used to specify a token returned by ListRequest
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [bytes](#bytes) |  | ID is used to uniquely identify the token |
-| type | [string](#string) |  | Type is the type of the token |
-| quantity | [uint64](#uint64) |  | Quantity represents the number for this type of token |
-
-
-
-
-
-
-<a name="protos.TokenToIssue"></a>
-
-### TokenToIssue
-TokenToIssue describes a token to be issued in the system
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| recipient | [bytes](#bytes) |  | Recipient refers to the owner of the token to be issued |
-| type | [string](#string) |  | Type refers to the token type |
-| quantity | [uint64](#uint64) |  | Quantity refers to the number of token units to be issued |
-
-
-
-
-
-
-<a name="protos.TransferRequest"></a>
-
-### TransferRequest
-RequestTransfer is used to request creation of transfers
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| credential | [bytes](#bytes) |  |  |
-| token_ids | [bytes](#bytes) | repeated |  |
-| shares | [RecipientTransferShare](#protos.RecipientTransferShare) | repeated |  |
-
-
-
-
-
-
-<a name="protos.UnspentTokens"></a>
-
-### UnspentTokens
-UnspentTokens is used to hold the output of listRequest
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| tokens | [TokenOutput](#protos.TokenOutput) | repeated |  |
-
-
-
-
-
- 
-
- 
-
- 
-
-
-<a name="protos.Prover"></a>
-
-### Prover
-Prover provides support to clients for the creation of FabToken transactions,
-and to query the ledger.
-
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| ProcessCommand | [SignedCommand](#protos.SignedCommand) | [SignedCommandResponse](#protos.SignedCommandResponse) | ProcessCommand processes the passed command ensuring proper access control. The returned response allows the client to understand if the operation was succeffully executed and if not, the response reports the reason of the failure. |
-
- 
-
-
-
-<a name="token/expectations.proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## token/expectations.proto
-
-
-
-<a name="protos.PlainExpectation"></a>
-
-### PlainExpectation
-PlainExpectation represent the plain expectation where no confidentiality is provided.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| import_expectation | [PlainTokenExpectation](#protos.PlainTokenExpectation) |  | ImportExpectation describes an token import expectation |
-| transfer_expectation | [PlainTokenExpectation](#protos.PlainTokenExpectation) |  | TransferExpectation describes a token transfer expectation |
-
-
-
-
-
-
-<a name="protos.PlainTokenExpectation"></a>
-
-### PlainTokenExpectation
-PlainTokenExpectation represents the expecation that
-certain outputs will be matched
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| outputs | [PlainOutput](#PlainOutput) | repeated | Outputs contains the expected outputs |
-
-
-
-
-
-
-<a name="protos.TokenExpectation"></a>
-
-### TokenExpectation
-TokenExpectation represent the belief that someone should achieve in terms of a token action
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| plain_expectation | [PlainExpectation](#protos.PlainExpectation) |  | PlainExpectation describes a plain token expectation |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
 <a name="transientstore/transientstore.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -5917,19 +5550,7 @@ with a Key of &#34;OrdererAddresses&#34; and a Value of OrdererAddresses as mars
 <p align="right"><a href="#top">Top</a></p>
 
 ## common/ledger.proto
-Copyright IBM Corp. 2016 All Rights Reserved.
 
-Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
 
 
 <a name="common.BlockchainInfo"></a>
@@ -6669,10 +6290,7 @@ This enum enlists indexes of the block metadata array
 <a name="common.HeaderType"></a>
 
 ### HeaderType
-Prevent removed tag re-use
-Uncomment after fabric-baseimage moves to 3.5.1
-reserved 7;
-reserved &#34;PEER_RESOURCE_UPDATE&#34;;
+
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -6684,7 +6302,6 @@ reserved &#34;PEER_RESOURCE_UPDATE&#34;;
 | DELIVER_SEEK_INFO | 5 | Used as the type for Envelope messages submitted to instruct the Deliver API to seek |
 | CHAINCODE_PACKAGE | 6 | Used for packaging chaincode artifacts for install |
 | PEER_ADMIN_OPERATION | 8 | Used for invoking an administrative operation on a peer |
-| TOKEN_TRANSACTION | 9 | Used to denote transactions that invoke token management operations |
 
 
 
@@ -6811,6 +6428,7 @@ Dynamic collections are deferred.
 | maximum_peer_count | [int32](#int32) |  | The maximum number of peers that private data will be sent to upon endorsement. This number has to be bigger than required_peer_count. |
 | block_to_live | [uint64](#uint64) |  | The number of blocks after which the collection data expires. For instance if the value is set to 10, a key last modified by block number 100 will be purged at block number 111. A zero value is treated same as MaxUint64 |
 | member_only_read | [bool](#bool) |  | The member only read access denotes whether only collection member clients can read the private data (if set to true), or even non members can read the data (if set to false, for example if you want to implement more granular access logic in the chaincode) |
+| member_only_write | [bool](#bool) |  | The member only write access denotes whether only collection member clients can write the private data (if set to true), or even non members can write the data (if set to false, for example if you want to implement more granular access logic in the chaincode) |
 
 
 
@@ -6851,6 +6469,7 @@ Dynamic collections are deferred.
 ```
 
 .
+├── ci
 ├── common
 │   ├── collection.proto
 │   ├── common.proto
@@ -6862,17 +6481,13 @@ Dynamic collections are deferred.
 │   └── protocol.proto
 ├── gossip
 │   └── message.proto
-├── idemix
-│   └── idemix.proto
 ├── ledger
 │   ├── queryresult
 │   │   └── kv_query_result.proto
 │   └── rwset
 │       ├── kvrwset
-│       │   ├── kv_rwset.proto
-│       │   └── tests
-│       ├── rwset.proto
-│       └── tests
+│       │   └── kv_rwset.proto
+│       └── rwset.proto
 ├── msp
 │   ├── identities.proto
 │   ├── msp_config.proto
@@ -6883,208 +6498,51 @@ Dynamic collections are deferred.
 │   ├── configuration.proto
 │   ├── etcdraft
 │   │   ├── configuration.proto
-│   │   └── testdata
+│   │   └── metadata.proto
 │   └── kafka.proto
 ├── peer
-│   ├── admin.proto
 │   ├── chaincode_event.proto
 │   ├── chaincode.proto
 │   ├── chaincode_shim.proto
 │   ├── configuration.proto
 │   ├── events.proto
 │   ├── lifecycle
+│   │   ├── chaincode_definition.proto
+│   │   ├── db.proto
 │   │   └── lifecycle.proto
 │   ├── peer.proto
+│   ├── policy.proto
 │   ├── proposal.proto
 │   ├── proposal_response.proto
 │   ├── query.proto
 │   ├── resources.proto
 │   ├── signed_cc_dep_spec.proto
 │   └── transaction.proto
-├── testutils
-├── token
-│   ├── expectations.proto
-│   ├── prover.proto
-│   └── transaction.proto
-├── transientstore
-│   └── transientstore.proto
-└── utils
+└── transientstore
+    └── transientstore.proto
 
-20 directories, 38 files
+14 directories, 37 files
 
 ```
 
 # Protobuf sources
 
 
-## src:./idemix/idemix.proto
-```proto
-
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
-
-syntax = "proto3";
-
-option go_package = "github.com/hyperledger/fabric/idemix";
-
-// The Identity Mixer protocols make use of pairings (bilinear maps) -
-// functions that can be described as e: G1 x G2 -> GT  that
-// map group elements from the source groups (G1 and G2) to the target group
-// Such groups can be represented by the points on an elliptic curve
-
-// ECP is an elliptic curve point specified by its coordinates
-// ECP corresponds to an element of the first group (G1)
-message ECP {
-	bytes x = 1;
-	bytes y = 2;
-}
-
-// ECP2 is an elliptic curve point specified by its coordinates
-// ECP2 corresponds to an element of the second group (G2)
-message ECP2 {
-	bytes xa = 1;
-	bytes xb = 2;
-	bytes ya = 3;
-	bytes yb = 4;
-}
-
-// IssuerPublicKey specifies an issuer public key that consists of
-// attribute_names - a list of the attribute names of a credential issued by the issuer
-// h_sk, h_rand, h_attrs, w, bar_g1, bar_g2 - group elements corresponding to the signing key, randomness, and attributes
-// proof_c, proof_s compose a zero-knowledge proof of knowledge of the secret key
-// hash is a hash of the public key appended to it
-message IssuerPublicKey {
-	repeated string attribute_names = 1;
-	ECP h_sk = 2;
-	ECP h_rand = 3;
-	repeated ECP h_attrs = 4;
-	ECP2 w = 5;
-	ECP bar_g1 = 6;
-	ECP bar_g2 = 7;
-	bytes proof_c = 8;
-	bytes proof_s = 9;
-	bytes hash = 10;
-}
-
-// IssuerKey specifies an issuer key pair that consists of
-// ISk - the issuer secret key and
-// IssuerPublicKey - the issuer public key
-message IssuerKey {
-	bytes isk = 1;
-	IssuerPublicKey ipk = 2;
-}
-
-// Credential specifies a credential object that consists of
-// a, b, e, s - signature value
-// attrs - attribute values
-message Credential {
-	ECP a = 1;
-	ECP b = 2;
-	bytes e = 3;
-	bytes s = 4;
-	repeated bytes attrs = 5;
-}
-
-// CredRequest specifies a credential request object that consists of
-// nym - a pseudonym, which is a commitment to the user secret
-// issuer_nonce - a random nonce provided by the issuer
-// proof_c, proof_s - a zero-knowledge proof of knowledge of the
-// user secret inside Nym
-message CredRequest {
-	ECP nym = 1;
-	bytes issuer_nonce = 2;
-	bytes proof_c = 3;
-	bytes proof_s = 4;
-}
-
-// Signature specifies a signature object that consists of
-// a_prime, a_bar, b_prime, proof_* - randomized credential signature values
-// and a zero-knowledge proof of knowledge of a credential
-// and the corresponding user secret together with the attribute values
-// nonce - a fresh nonce used for the signature
-// nym - a fresh pseudonym (a commitment to to the user secret)
-message Signature {
-	ECP a_prime = 1;
-	ECP a_bar = 2;
-	ECP b_prime = 3;
-	bytes proof_c = 4;
-	bytes proof_s_sk = 5;
-	bytes proof_s_e = 6;
-	bytes proof_s_r2 = 7;
-	bytes proof_s_r3 = 8;
-	bytes proof_s_s_prime = 9;
-	repeated bytes proof_s_attrs = 10;
-	bytes nonce = 11;
-	ECP nym = 12;
-	bytes proof_s_r_nym = 13;
-	ECP2 revocation_epoch_pk = 14;
-	bytes revocation_pk_sig = 15;
-	int64 epoch = 16;
-	NonRevocationProof non_revocation_proof = 17;
-}
-
-// NonRevocationProof contains proof that the credential is not revoked
-message NonRevocationProof {
-	int32 revocation_alg = 1;
-	bytes non_revocation_proof = 2;
-}
-
-// NymSignature specifies a signature object that signs a message
-// with respect to a pseudonym. It differs from the standard idemix.signature in the fact that
-// the  standard signature object also proves that the pseudonym is based on a secret certified by
-// a CA (issuer), whereas NymSignature only proves that the the owner of the pseudonym
-// signed the message
-message NymSignature {
-	// proof_c is the Fiat-Shamir challenge of the ZKP
-	bytes proof_c = 1;
-	// proof_s_sk is the s-value proving knowledge of the user secret key
-	bytes proof_s_sk = 2;
-	//proof_s_r_nym is the s-value proving knowledge of the pseudonym secret
-	bytes proof_s_r_nym = 3;
-	// nonce is a fresh nonce used for the signature
-	bytes nonce = 4;
-}
-
-message CredentialRevocationInformation {
-	// epoch contains the epoch (time window) in which this CRI is valid
-	int64 epoch = 1;
-
-	// epoch_pk is the public key that is used by the revocation authority in this epoch
-	ECP2 epoch_pk = 2;
-
-	// epoch_pk_sig is a signature on the EpochPK valid under the revocation authority's long term key
-	bytes epoch_pk_sig = 3;
-
-	// revocation_alg denotes which revocation algorithm is used
-	int32 revocation_alg = 4;
-
-	// revocation_data contains data specific to the revocation algorithm used
-	bytes revocation_data = 5;
-}
-```
-
-
 ## src:./peer/transaction.proto
 ```proto
 
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/fabric/protos/peer";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer";
 option java_package = "org.hyperledger.fabric.protos.peer";
 option java_outer_classname = "TransactionPackage";
 
 package protos;
 
-import "google/protobuf/timestamp.proto";
 import "peer/proposal_response.proto";
 import "common/common.proto";
 
@@ -7092,15 +6550,14 @@ import "common/common.proto";
 // (in the signature field) over the bytes of the transaction (in the
 // transactionBytes field).
 message SignedTransaction {
+    // The bytes of the Transaction. NDD
+    bytes transaction_bytes = 1;
 
-	// The bytes of the Transaction. NDD
-	bytes transaction_bytes = 1;
-
-	// Signature of the transactionBytes The public key of the signature is in
-	// the header field of TransactionAction There might be multiple
-	// TransactionAction, so multiple headers, but there should be same
-	// transactor identity (cert) in all headers
-	bytes signature = 2;
+    // Signature of the transactionBytes The public key of the signature is in
+    // the header field of TransactionAction There might be multiple
+    // TransactionAction, so multiple headers, but there should be same
+    // transactor identity (cert) in all headers
+    bytes signature = 2;
 }
 
 // ProcessedTransaction wraps an Envelope that includes a transaction along with an indication
@@ -7131,21 +6588,21 @@ message ProcessedTransaction {
 // to ensure that they are treated atomically.
 message Transaction {
 
-	// The payload is an array of TransactionAction. An array is necessary to
-	// accommodate multiple actions per transaction
-	repeated TransactionAction actions = 1;
+    // The payload is an array of TransactionAction. An array is necessary to
+    // accommodate multiple actions per transaction
+    repeated TransactionAction actions = 1;
 }
 
 // TransactionAction binds a proposal to its action.  The type field in the
 // header dictates the type of action to be applied to the ledger.
 message TransactionAction {
 
-	// The header of the proposal action, which is the proposal header
-	bytes header = 1;
+    // The header of the proposal action, which is the proposal header
+    bytes header = 1;
 
-	// The payload of the action as defined by the type in the header For
-	// chaincode, it's the bytes of ChaincodeActionPayload
-	bytes payload = 2;
+    // The payload of the action as defined by the type in the header For
+    // chaincode, it's the bytes of ChaincodeActionPayload
+    bytes payload = 2;
 }
 
 //---------- Chaincode Transaction ------------
@@ -7154,69 +6611,69 @@ message TransactionAction {
 // payload when the Header's type is set to CHAINCODE.  It carries the
 // chaincodeProposalPayload and an endorsed action to apply to the ledger.
 message ChaincodeActionPayload {
+    // This field contains the bytes of the ChaincodeProposalPayload message from
+    // the original invocation (essentially the arguments) after the application
+    // of the visibility function. The main visibility modes are "full" (the
+    // entire ChaincodeProposalPayload message is included here), "hash" (only
+    // the hash of the ChaincodeProposalPayload message is included) or
+    // "nothing".  This field will be used to check the consistency of
+    // ProposalResponsePayload.proposalHash.  For the CHAINCODE type,
+    // ProposalResponsePayload.proposalHash is supposed to be H(ProposalHeader ||
+    // f(ChaincodeProposalPayload)) where f is the visibility function.
+    bytes chaincode_proposal_payload = 1;
 
-	// This field contains the bytes of the ChaincodeProposalPayload message from
-	// the original invocation (essentially the arguments) after the application
-	// of the visibility function. The main visibility modes are "full" (the
-	// entire ChaincodeProposalPayload message is included here), "hash" (only
-	// the hash of the ChaincodeProposalPayload message is included) or
-	// "nothing".  This field will be used to check the consistency of
-	// ProposalResponsePayload.proposalHash.  For the CHAINCODE type,
-	// ProposalResponsePayload.proposalHash is supposed to be H(ProposalHeader ||
-	// f(ChaincodeProposalPayload)) where f is the visibility function.
-	bytes chaincode_proposal_payload = 1;
-
-	// The list of actions to apply to the ledger
-	ChaincodeEndorsedAction action = 2;
+    // The list of actions to apply to the ledger
+    ChaincodeEndorsedAction action = 2;
 }
 
 // ChaincodeEndorsedAction carries information about the endorsement of a
 // specific proposal
 message ChaincodeEndorsedAction {
+    // This is the bytes of the ProposalResponsePayload message signed by the
+    // endorsers.  Recall that for the CHAINCODE type, the
+    // ProposalResponsePayload's extenstion field carries a ChaincodeAction
+    bytes proposal_response_payload = 1;
 
-	// This is the bytes of the ProposalResponsePayload message signed by the
-	// endorsers.  Recall that for the CHAINCODE type, the
-	// ProposalResponsePayload's extenstion field carries a ChaincodeAction
-	bytes proposal_response_payload = 1;
-
-	// The endorsement of the proposal, basically the endorser's signature over
-	// proposalResponsePayload
-	repeated Endorsement endorsements = 2;
+    // The endorsement of the proposal, basically the endorser's signature over
+    // proposalResponsePayload
+    repeated Endorsement endorsements = 2;
 }
 
 enum TxValidationCode {
-	VALID = 0;
-	NIL_ENVELOPE = 1;
-	BAD_PAYLOAD = 2;
-	BAD_COMMON_HEADER = 3;
-	BAD_CREATOR_SIGNATURE = 4;
-	INVALID_ENDORSER_TRANSACTION = 5;
-	INVALID_CONFIG_TRANSACTION = 6;
-	UNSUPPORTED_TX_PAYLOAD = 7;
-	BAD_PROPOSAL_TXID = 8;
-	DUPLICATE_TXID = 9;
-	ENDORSEMENT_POLICY_FAILURE = 10;
-	MVCC_READ_CONFLICT = 11;
-	PHANTOM_READ_CONFLICT = 12;
-	UNKNOWN_TX_TYPE = 13;
-	TARGET_CHAIN_NOT_FOUND = 14;
-	MARSHAL_TX_ERROR = 15;
-	NIL_TXACTION = 16;
-	EXPIRED_CHAINCODE = 17;
-	CHAINCODE_VERSION_CONFLICT = 18;
-	BAD_HEADER_EXTENSION = 19;
-	BAD_CHANNEL_HEADER = 20;
-	BAD_RESPONSE_PAYLOAD = 21;
-	BAD_RWSET = 22;
-	ILLEGAL_WRITESET = 23;
-	INVALID_WRITESET = 24;
-	NOT_VALIDATED = 254;
-	INVALID_OTHER_REASON = 255;
+    VALID = 0;
+    NIL_ENVELOPE = 1;
+    BAD_PAYLOAD = 2;
+    BAD_COMMON_HEADER = 3;
+    BAD_CREATOR_SIGNATURE = 4;
+    INVALID_ENDORSER_TRANSACTION = 5;
+    INVALID_CONFIG_TRANSACTION = 6;
+    UNSUPPORTED_TX_PAYLOAD = 7;
+    BAD_PROPOSAL_TXID = 8;
+    DUPLICATE_TXID = 9;
+    ENDORSEMENT_POLICY_FAILURE = 10;
+    MVCC_READ_CONFLICT = 11;
+    PHANTOM_READ_CONFLICT = 12;
+    UNKNOWN_TX_TYPE = 13;
+    TARGET_CHAIN_NOT_FOUND = 14;
+    MARSHAL_TX_ERROR = 15;
+    NIL_TXACTION = 16;
+    EXPIRED_CHAINCODE = 17;
+    CHAINCODE_VERSION_CONFLICT = 18;
+    BAD_HEADER_EXTENSION = 19;
+    BAD_CHANNEL_HEADER = 20;
+    BAD_RESPONSE_PAYLOAD = 21;
+    BAD_RWSET = 22;
+    ILLEGAL_WRITESET = 23;
+    INVALID_WRITESET = 24;
+    INVALID_CHAINCODE = 25;
+    NOT_VALIDATED = 254;
+    INVALID_OTHER_REASON = 255;
 }
 
 // Reserved entries in the key-level metadata map
 enum MetaDataKeys {
-	VALIDATION_PARAMETER = 0;
+    VALIDATION_PARAMETER = 0;
+    VALIDATION_PARAMETER_V2 = 1;
 }
 
 ```
@@ -7225,26 +6682,14 @@ enum MetaDataKeys {
 ## src:./peer/configuration.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2017 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-                 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
 option java_package = "org.hyperledger.fabric.protos.peer";
-option go_package = "github.com/hyperledger/fabric/protos/peer";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer";
 
 package protos;
 
@@ -7256,13 +6701,8 @@ message AnchorPeers {
 // AnchorPeer message structure which provides information about anchor peer, it includes host name,
 // port number and peer certificate.
 message AnchorPeer {
-
-    // DNS host name of the anchor peer
-    string host = 1;
-
-    // The port number
-    int32 port  = 2;
-
+    string host = 1; // DNS host name of the anchor peer
+    int32 port  = 2; // The port number
 }
 
 // APIResource represents an API resource in the peer whose ACL
@@ -7283,25 +6723,14 @@ message ACLs {
 ## src:./peer/signed_cc_dep_spec.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2017 All Rights Reserved.
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-		 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 syntax = "proto3";
 
 option java_package = "org.hyperledger.fabric.protos.peer";
-option go_package = "github.com/hyperledger/fabric/protos/peer";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer";
 
 package protos;
 
@@ -7309,20 +6738,19 @@ import "peer/proposal_response.proto";
 
 // SignedChaincodeDeploymentSpec carries the CDS along with endorsements
 message SignedChaincodeDeploymentSpec {
+    // This is the bytes of the ChaincodeDeploymentSpec
+    bytes chaincode_deployment_spec = 1;
 
-	// This is the bytes of the ChaincodeDeploymentSpec
-	bytes chaincode_deployment_spec = 1;
+    // This is the instantiation policy which is identical in structure
+    // to endorsement policy.  This policy is checked by the VSCC at commit
+    // time on the instantiation (all peers will get the same policy as it
+    // will be part of the LSCC instantation record and will be part of the
+    // hash as well)
+    bytes instantiation_policy = 2;
 
-	// This is the instantiation policy which is identical in structure
-	// to endorsement policy.  This policy is checked by the VSCC at commit
-	// time on the instantiation (all peers will get the same policy as it
-	// will be part of the LSCC instantation record and will be part of the
-	// hash as well)
-	bytes instantiation_policy = 2;
-
-	// The endorsements of the above deployment spec, the owner's signature over
-	// chaincode_deployment_spec and Endorsement.endorser.
-	repeated Endorsement owner_endorsements = 3;
+    // The endorsements of the above deployment spec, the owner's signature over
+    // chaincode_deployment_spec and Endorsement.endorser.
+    repeated Endorsement owner_endorsements = 3;
 }
 
 
@@ -7332,35 +6760,18 @@ message SignedChaincodeDeploymentSpec {
 ## src:./peer/chaincode.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2017 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-		 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-package protos;
 option java_package = "org.hyperledger.fabric.protos.peer";
-option go_package = "github.com/hyperledger/fabric/protos/peer";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer";
 
+package protos;
 
-// Confidentiality Levels
-enum ConfidentialityLevel {
-    PUBLIC = 0;
-    CONFIDENTIAL = 1;
-}
-
+import "common/policies.proto";
 
 //ChaincodeID contains the path as specified by the deploy transaction
 //that created it as well as the hashCode that is generated by the
@@ -7387,6 +6798,12 @@ message ChaincodeID {
 message ChaincodeInput {
     repeated bytes args  = 1;
     map<string, bytes> decorations = 2;
+
+    // is_init is used for the application to signal that an invocation is to be routed
+    // to the legacy 'Init' function for compatibility with chaincodes which handled
+    // Init in the old way.  New applications should manage their initialized state
+    // themselves.
+    bool is_init = 3;
 }
 
 // Carries the chaincode specification. This is the actual metadata required for
@@ -7411,17 +6828,11 @@ message ChaincodeSpec {
 // TODO: Define `codePackage`.
 message ChaincodeDeploymentSpec {
     // Prevent removed tag re-use
-    reserved 2;
-    reserved "effective_date";
-
-    enum ExecutionEnvironment {
-        DOCKER = 0;
-        SYSTEM = 1;
-    }
+    reserved 2, 4;
+    reserved "effective_date", "exec_env";
 
     ChaincodeSpec chaincode_spec = 1;
     bytes code_package = 3;
-    ExecutionEnvironment exec_env=  4;
 
 }
 
@@ -7439,31 +6850,58 @@ message LifecycleEvent {
     string chaincode_name = 1;
 }
 
+// CDSData is data stored in the LSCC on instantiation of a CC
+// for CDSPackage.  This needs to be serialized for ChaincodeData
+// hence the protobuf format
+message CDSData {
+    bytes hash = 1; // hash of ChaincodeDeploymentSpec.code_package
+    bytes metadatahash = 2; // hash of ChaincodeID.name + ChaincodeID.version
+}
+
+// ChaincodeData defines the datastructure for chaincodes to be serialized by proto
+// Type provides an additional check by directing to use a specific package after instantiation
+// Data is Type specific (see CDSPackage and SignedCDSPackage)
+message ChaincodeData {
+
+    // Name of the chaincode
+    string name = 1;
+
+    // Version of the chaincode
+    string version = 2;
+
+    // Escc for the chaincode instance
+    string escc = 3;
+
+    // Vscc for the chaincode instance
+    string vscc = 4;
+
+    // Policy endorsement policy for the chaincode instance
+    common.SignaturePolicyEnvelope policy = 5;
+
+    // Data data specific to the package
+    bytes data = 6;
+
+    // Id of the chaincode that's the unique fingerprint for the CC This is not
+    // currently used anywhere but serves as a good eyecatcher
+    bytes id = 7;
+
+    // InstantiationPolicy for the chaincode
+    common.SignaturePolicyEnvelope instantiation_policy = 8;
+}
+
 ```
 
 
 ## src:./peer/proposal_response.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2016 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-		 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/fabric/protos/peer";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer";
 option java_package = "org.hyperledger.fabric.protos.peer";
 option java_outer_classname = "ProposalResponsePackage";
 
@@ -7480,38 +6918,36 @@ import "google/protobuf/timestamp.proto";
 // endorsers agree on the same action and produce signature to that effect, a
 // transaction can be generated and sent for ordering.
 message ProposalResponse {
+    // Version indicates message protocol version
+    int32 version = 1;
 
-	// Version indicates message protocol version
-	int32 version = 1;
+    // Timestamp is the time that the message
+    // was created as  defined by the sender
+    google.protobuf.Timestamp timestamp = 2;
 
-	// Timestamp is the time that the message
-	// was created as  defined by the sender
-	google.protobuf.Timestamp timestamp = 2;
+    // A response message indicating whether the
+    // endorsement of the action was successful
+    Response response = 4;
 
-	// A response message indicating whether the
-	// endorsement of the action was successful
-	Response response = 4;
+    // The payload of response. It is the bytes of ProposalResponsePayload
+    bytes payload = 5;
 
-	// The payload of response. It is the bytes of ProposalResponsePayload
-	bytes payload = 5;
-
-	// The endorsement of the proposal, basically
-	// the endorser's signature over the payload
-	Endorsement endorsement = 6;
+    // The endorsement of the proposal, basically
+    // the endorser's signature over the payload
+    Endorsement endorsement = 6;
 }
 
 // A response with a representation similar to an HTTP response that can
 // be used within another message.
 message Response {
+    // A status code that should follow the HTTP status codes.
+    int32 status = 1;
 
-	// A status code that should follow the HTTP status codes.
-	int32 status = 1;
+    // A message associated with the response code.
+    string message = 2;
 
-	// A message associated with the response code.
-	string message = 2;
-
-	// A payload that can be used to include metadata with this response.
-	bytes payload = 3;
+    // A payload that can be used to include metadata with this response.
+    bytes payload = 3;
 }
 
 // ProposalResponsePayload is the payload of a proposal response.  This message
@@ -7520,30 +6956,19 @@ message Response {
 // representation of the proposal (proposalHash) and a representation of the
 // chaincode state changes and events inside the extension field.
 message ProposalResponsePayload {
+    // Hash of the proposal that triggered this response. The hash is used to
+    // link a response with its proposal, both for bookeeping purposes on an
+    // asynchronous system and for security reasons (accountability,
+    // non-repudiation). The hash usually covers the entire Proposal message
+    // (byte-by-byte).
+    bytes proposal_hash = 1;
 
-	// Hash of the proposal that triggered this response. The hash is used to
-	// link a response with its proposal, both for bookeeping purposes on an
-	// asynchronous system and for security reasons (accountability,
-	// non-repudiation). The hash usually covers the entire Proposal message
-	// (byte-by-byte). However this implies that the hash can only be verified
-	// if the entire proposal message is available when ProposalResponsePayload is
-	// included in a transaction or stored in the ledger. For confidentiality
-	// reasons, with chaincodes it might be undesirable to store the proposal
-	// payload in the ledger.  If the type is CHAINCODE, this is handled by
-	// separating the proposal's header and
-	// the payload: the header is always hashed in its entirety whereas the
-	// payload can either be hashed fully, or only its hash may be hashed, or
-	// nothing from the payload can be hashed. The PayloadVisibility field in the
-	// Header's extension controls to which extent the proposal payload is
-	// "visible" in the sense that was just explained.
-	bytes proposal_hash = 1;
-
-	// Extension should be unmarshaled to a type-specific message. The type of
-	// the extension in any proposal response depends on the type of the proposal
-	// that the client selected when the proposal was initially sent out.  In
-	// particular, this information is stored in the type field of a Header.  For
-	// chaincode, it's a ChaincodeAction message
-	bytes extension = 2;
+    // Extension should be unmarshaled to a type-specific message. The type of
+    // the extension in any proposal response depends on the type of the proposal
+    // that the client selected when the proposal was initially sent out.  In
+    // particular, this information is stored in the type field of a Header.  For
+    // chaincode, it's a ChaincodeAction message
+    bytes extension = 2;
 }
 
 // An endorsement is a signature of an endorser over a proposal response.  By
@@ -7556,87 +6981,12 @@ message ProposalResponsePayload {
 // expected to endorse a single proposal response/action (many endorsements
 // over a single proposal response)
 message Endorsement {
+    // Identity of the endorser (e.g. its certificate)
+    bytes endorser = 1;
 
-	// Identity of the endorser (e.g. its certificate)
-	bytes endorser = 1;
-
-	// Signature of the payload included in ProposalResponse concatenated with
-	// the endorser's certificate; ie, sign(ProposalResponse.payload + endorser)
-	bytes signature = 2;
-}
-
-```
-
-
-## src:./peer/admin.proto
-```proto
-
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
-
-syntax = "proto3";
-
-option java_package = "org.hyperledger.fabric.protos.peer";
-option java_outer_classname = "AdminPackage";
-option go_package = "github.com/hyperledger/fabric/protos/peer";
-
-package protos;
-
-import "google/protobuf/empty.proto";
-import "common/common.proto";
-
-// Interface exported by the server.
-service Admin {
-    rpc GetStatus(common.Envelope) returns (ServerStatus) {}
-    rpc StartServer(common.Envelope) returns (ServerStatus) {}
-    rpc GetModuleLogLevel(common.Envelope) returns (LogLevelResponse) {}
-    rpc SetModuleLogLevel(common.Envelope) returns (LogLevelResponse) {}
-    rpc RevertLogLevels(common.Envelope) returns (google.protobuf.Empty) {}
-    rpc GetLogSpec(common.Envelope) returns (LogSpecResponse) {}
-    rpc SetLogSpec(common.Envelope) returns (LogSpecResponse) {}
-}
-
-message ServerStatus {
-
-    enum StatusCode {
-        UNDEFINED = 0;
-        STARTED = 1;
-        STOPPED = 2;
-        PAUSED = 3;
-        ERROR = 4;
-        UNKNOWN = 5;
-    }
-
-    StatusCode status = 1;
-
-}
-message LogLevelRequest {
-	string log_module = 1;
-	string log_level = 2;
-}
-
-message LogLevelResponse {
-	string log_module = 1;
-	string log_level = 2;
-}
-
-message LogSpecRequest {
-	string log_spec = 1;
-}
-
-message LogSpecResponse {
-	string log_spec = 1;
-	string error = 2;
-}
-
-message AdminOperation {
-    oneof content {
-        LogLevelRequest logReq = 1;
-        LogSpecRequest logSpecReq = 2;
-    }
+    // Signature of the payload included in ProposalResponse concatenated with
+    // the endorser's certificate; ie, sign(ProposalResponse.payload + endorser)
+    bytes signature = 2;
 }
 
 ```
@@ -7645,26 +6995,14 @@ message AdminOperation {
 ## src:./peer/query.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2017 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-                 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
 option java_package = "org.hyperledger.fabric.protos.peer";
-option go_package = "github.com/hyperledger/fabric/protos/peer";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer";
 
 package protos;
 
@@ -7718,16 +7056,14 @@ message ChannelInfo {
 ## src:./peer/resources.proto
 ```proto
 
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
 option java_package = "org.hyperledger.fabric.protos.peer";
-option go_package = "github.com/hyperledger/fabric/protos/peer";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer";
 
 package protos;
 
@@ -7781,24 +7117,22 @@ message ConfigTree {
 ## src:./peer/events.proto
 ```proto
 
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-import "common/common.proto";
-import "google/protobuf/timestamp.proto";
-import "peer/chaincode_event.proto";
-import "peer/transaction.proto";
-
 option java_package = "org.hyperledger.fabric.protos.peer";
 option java_outer_classname = "EventsPackage";
-option go_package = "github.com/hyperledger/fabric/protos/peer";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer";
 
 package protos;
+
+import "common/common.proto";
+import "ledger/rwset/rwset.proto";
+import "peer/chaincode_event.proto";
+import "peer/transaction.proto";
 
 // FilteredBlock is a minimal set of information about a block
 message FilteredBlock {
@@ -7830,25 +7164,38 @@ message FilteredChaincodeAction {
     ChaincodeEvent chaincode_event = 1;
 }
 
+// BlockAndPrivateData contains Block and a map from tx_seq_in_block to rwset.TxPvtReadWriteSet
+message BlockAndPrivateData {
+    common.Block block = 1;
+    // map from tx_seq_in_block to rwset.TxPvtReadWriteSet
+    map<uint64, rwset.TxPvtReadWriteSet> private_data_map = 2;
+}
+
 // DeliverResponse
 message DeliverResponse {
     oneof Type {
         common.Status status = 1;
         common.Block block = 2;
         FilteredBlock filtered_block = 3;
+        BlockAndPrivateData block_and_private_data = 4;
     }
 }
 
 service Deliver {
-    // deliver first requires an Envelope of type ab.DELIVER_SEEK_INFO with
+    // Deliver first requires an Envelope of type ab.DELIVER_SEEK_INFO with
     // Payload data as a marshaled orderer.SeekInfo message,
     // then a stream of block replies is received
     rpc Deliver (stream common.Envelope) returns (stream DeliverResponse) {
     }
-    // deliver first requires an Envelope of type ab.DELIVER_SEEK_INFO with
+    // DeliverFiltered first requires an Envelope of type ab.DELIVER_SEEK_INFO with
     // Payload data as a marshaled orderer.SeekInfo message,
     // then a stream of **filtered** block replies is received
     rpc DeliverFiltered (stream common.Envelope) returns (stream DeliverResponse) {
+    }
+    // DeliverWithPrivateData first requires an Envelope of type ab.DELIVER_SEEK_INFO with
+    // Payload data as a marshaled orderer.SeekInfo message,
+    // then a stream of block and private data replies is received
+    rpc DeliverWithPrivateData (stream common.Envelope) returns (stream DeliverResponse) {
     }
 }
 
@@ -7858,25 +7205,13 @@ service Deliver {
 ## src:./peer/proposal.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2016 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-		 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/fabric/protos/peer";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer";
 option java_package = "org.hyperledger.fabric.protos.peer";
 option java_outer_classname = "ProposalPackage";
 
@@ -7884,7 +7219,6 @@ package protos;
 
 import "peer/chaincode.proto";
 import "peer/proposal_response.proto";
-import "token/expectations.proto";
 
 /*
 The flow to get a generic transaction approved goes as follows:
@@ -7964,13 +7298,13 @@ SignedTransaction
 // 4. Detect replay attacks;
 message SignedProposal {
 
-	// The bytes of Proposal
-	bytes proposal_bytes = 1;
+    // The bytes of Proposal
+    bytes proposal_bytes = 1;
 
   // Signaure over proposalBytes; this signature is to be verified against
   // the creator identity contained in the header of the Proposal message
   // marshaled as proposalBytes
-	bytes signature = 2;
+    bytes signature = 2;
 }
 
 // A Proposal is sent to an endorser for endorsement.  The proposal contains:
@@ -7994,17 +7328,17 @@ message SignedProposal {
 //    submitting peer model.
 message Proposal {
 
-	// The header of the proposal. It is the bytes of the Header
-	bytes header = 1;
+    // The header of the proposal. It is the bytes of the Header
+    bytes header = 1;
 
-	// The payload of the proposal as defined by the type in the proposal
-	// header.
-	bytes payload = 2;
+    // The payload of the proposal as defined by the type in the proposal
+    // header.
+    bytes payload = 2;
 
-	// Optional extensions to the proposal. Its content depends on the Header's
-	// type field.  For the type CHAINCODE, it might be the bytes of a
-	// ChaincodeAction message.
-	bytes extension = 3;
+    // Optional extensions to the proposal. Its content depends on the Header's
+    // type field.  For the type CHAINCODE, it might be the bytes of a
+    // ChaincodeAction message.
+    bytes extension = 3;
 }
 
 //-------- the Chaincode Proposal -----------
@@ -8077,21 +7411,11 @@ SignedTransaction
 // chaincode to invoke and what should appear on the ledger.
 message ChaincodeHeaderExtension {
 
-	// The PayloadVisibility field controls to what extent the Proposal's payload
-	// (recall that for the type CHAINCODE, it is ChaincodeProposalPayload
-	// message) field will be visible in the final transaction and in the ledger.
-	// Ideally, it would be configurable, supporting at least 3 main visibility
-	// modes:
-	// 1. all bytes of the payload are visible;
-	// 2. only a hash of the payload is visible;
-	// 3. nothing is visible.
-	// Notice that the visibility function may be potentially part of the ESCC.
-	// In that case it overrides PayloadVisibility field.  Finally notice that
-	// this field impacts the content of ProposalResponsePayload.proposalHash.
-	bytes payload_visibility = 1;
+    reserved 1;
+    reserved "payload_visbility";
 
-	// The ID of the chaincode to target.
-	ChaincodeID chaincode_id = 2;
+    // The ID of the chaincode to target.
+    ChaincodeID chaincode_id = 2;
 }
 
 // ChaincodeProposalPayload is the Proposal's payload message to be used when
@@ -8099,88 +7423,359 @@ message ChaincodeHeaderExtension {
 // invocation.
 message ChaincodeProposalPayload {
 
-	// Input contains the arguments for this invocation. If this invocation
-	// deploys a new chaincode, ESCC/VSCC are part of this field.
-	// This is usually a marshaled ChaincodeInvocationSpec
-	bytes input  = 1;
+    // Input contains the arguments for this invocation. If this invocation
+    // deploys a new chaincode, ESCC/VSCC are part of this field.
+    // This is usually a marshaled ChaincodeInvocationSpec
+    bytes input  = 1;
 
-	// TransientMap contains data (e.g. cryptographic material) that might be used
-	// to implement some form of application-level confidentiality. The contents
-	// of this field are supposed to always be omitted from the transaction and
-	// excluded from the ledger.
-	map<string, bytes> TransientMap = 2;
+    // TransientMap contains data (e.g. cryptographic material) that might be used
+    // to implement some form of application-level confidentiality. The contents
+    // of this field are supposed to always be omitted from the transaction and
+    // excluded from the ledger.
+    map<string, bytes> TransientMap = 2;
 }
 
 // ChaincodeAction contains the actions the events generated by the execution
 // of the chaincode.
 message ChaincodeAction {
+    reserved 5;
+    reserved "token_operations";
 
-	// This field contains the read set and the write set produced by the
-	// chaincode executing this invocation.
-	bytes results = 1;
+    // This field contains the read set and the write set produced by the
+    // chaincode executing this invocation.
+    bytes results = 1;
 
-	// This field contains the events generated by the chaincode executing this
-	// invocation.
-	bytes events = 2;
+    // This field contains the events generated by the chaincode executing this
+    // invocation.
+    bytes events = 2;
 
-	// This field contains the result of executing this invocation.
-	Response response = 3;
+    // This field contains the result of executing this invocation.
+    Response response = 3;
 
-	// This field contains the ChaincodeID of executing this invocation. Endorser
-	// will set it with the ChaincodeID called by endorser while simulating proposal.
-	// Committer will validate the version matching with latest chaincode version.
-	// Adding ChaincodeID to keep version opens up the possibility of multiple
-	// ChaincodeAction per transaction.
-	ChaincodeID chaincode_id = 4;
-
-	// This field contains the token expectation generated by the chaincode
-	// executing this invocation
-	TokenExpectation token_expectation = 5;
+    // This field contains the ChaincodeID of executing this invocation. Endorser
+    // will set it with the ChaincodeID called by endorser while simulating proposal.
+    // Committer will validate the version matching with latest chaincode version.
+    // Adding ChaincodeID to keep version opens up the possibility of multiple
+    // ChaincodeAction per transaction.
+    ChaincodeID chaincode_id = 4;
 }
+
+```
+
+
+## src:./peer/policy.proto
+```proto
+
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = "proto3";
+
+option go_package = "github.com/hyperledger/fabric-protos-go/peer";
+option java_package = "org.hyperledger.fabric.protos.peer";
+
+package protos;
+
+import "common/policies.proto";
+
+// ApplicationPolicy captures the diffenrent policy types that
+// are set and evaluted at the application level.
+message ApplicationPolicy {
+    oneof Type {
+        // SignaturePolicy type is used if the policy is specified as
+        // a combination (using threshold gates) of signatures from MSP
+        // principals
+        common.SignaturePolicyEnvelope signature_policy = 1;
+
+        // ChannelConfigPolicyReference is used when the policy is
+        // specified as a string that references a policy defined in
+        // the configuration of the channel
+        string channel_config_policy_reference = 2;
+    }
+}
+
+```
+
+
+## src:./peer/lifecycle/chaincode_definition.proto
+```proto
+
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = "proto3";
+
+option java_package = "org.hyperledger.fabric.protos.peer.lifecycle";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer/lifecycle";
+
+package lifecycle;
+
+// These protos are used for encoding chaincode definitions into the statedb
+// in general, it should not be necessary for clients to utilize them.
+
+// ChaincodeEndorsementInfo is (most) everything the peer needs to know in order
+// to execute a chaincode
+message ChaincodeEndorsementInfo {
+    string version = 1;
+    bool init_required = 2;
+    string endorsement_plugin = 3;
+}
+
+// ValidationInfo is (most) everything the peer needs to know in order
+// to validate a transaction
+message ChaincodeValidationInfo {
+    string validation_plugin = 1;
+    bytes validation_parameter = 2;
+}
+
+// The notable omission in this file is the collection configuration info.
+// It should be moved to this package, but... defering for now.
+
 ```
 
 
 ## src:./peer/lifecycle/lifecycle.proto
 ```proto
 
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
+option java_package = "org.hyperledger.fabric.protos.peer.lifecycle";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer/lifecycle";
+
 package lifecycle;
 
-option java_package = "org.hyperledger.fabric.protos.peer.lifecycle";
-option go_package = "github.com/hyperledger/fabric/protos/peer/lifecycle";
+import "common/collection.proto";
 
 // InstallChaincodeArgs is the message used as the argument to
-// '+lifecycle.InstallChaincode'
+// '_lifecycle.InstallChaincode'.
 message InstallChaincodeArgs {
-    string name = 1;
-    string version = 2;
-    bytes chaincode_install_package = 3; // This should be a marshaled peer.ChaincodeInstallPackage
+    bytes chaincode_install_package = 1; // This should be a marshaled lifecycle.ChaincodePackage
 }
 
 // InstallChaincodeArgs is the message returned by
-// '+lifecycle.InstallChaincode'
+// '_lifecycle.InstallChaincode'.
 message InstallChaincodeResult {
-    bytes hash = 1;
+    string package_id = 1;
+    string label = 2;
 }
 
-// QueryInstalledChaincodeArgs is the message returned by
-// '+lifecycle.QueryInstalledChaincode'
+// QueryInstalledChaincodeArgs is the message used as arguments
+// '_lifecycle.QueryInstalledChaincode'
 message QueryInstalledChaincodeArgs {
-    string name = 1;
-    string version = 2;
+    string package_id = 1;
 }
 
 // QueryInstalledChaincodeResult is the message returned by
-// '+lifecycle.QueryInstalledChaincode'
+// '_lifecycle.QueryInstalledChaincode'
 message QueryInstalledChaincodeResult {
-    bytes hash = 1;
+    string package_id = 1;
+    string label = 2;
+    map<string, References> references = 3;
+
+    message References {
+        repeated Chaincode chaincodes = 1;
+    }
+
+    message Chaincode {
+        string name = 1;
+        string version = 2;
+    }
+}
+
+// GetInstalledChaincodePackageArgs is the message used as the argument to
+// '_lifecycle.GetInstalledChaincodePackage'.
+message GetInstalledChaincodePackageArgs {
+    string package_id = 1;
+}
+
+// GetInstalledChaincodePackageResult is the message returned by
+// '_lifecycle.GetInstalledChaincodePackage'.
+message GetInstalledChaincodePackageResult {
+    bytes chaincode_install_package = 1;
+}
+
+// QueryInstalledChaincodesArgs currently is an empty argument to
+// '_lifecycle.QueryInstalledChaincodes'.   In the future, it may be
+// extended to have parameters.
+message QueryInstalledChaincodesArgs {
+}
+
+// QueryInstalledChaincodesResult is the message returned by
+// '_lifecycle.QueryInstalledChaincodes'.  It returns a list of installed
+// chaincodes, including a map of channel name to chaincode name and version
+// pairs of chaincode definitions that reference this chaincode package.
+message QueryInstalledChaincodesResult {
+    message InstalledChaincode {
+        string package_id = 1;
+        string label = 2;
+        map<string, References> references = 3;
+    }
+
+    message References {
+        repeated Chaincode chaincodes = 1;
+    }
+
+    message Chaincode {
+        string name = 1;
+        string version = 2;
+    }
+
+    repeated InstalledChaincode installed_chaincodes = 1;
+}
+
+// ApproveChaincodeDefinitionForMyOrgArgs is the message used as arguments to
+// `_lifecycle.ApproveChaincodeDefinitionForMyOrg`.
+message ApproveChaincodeDefinitionForMyOrgArgs {
+    int64 sequence = 1;
+    string name = 2;
+    string version = 3;
+    string endorsement_plugin = 4;
+    string validation_plugin = 5;
+    bytes validation_parameter = 6;
+    common.CollectionConfigPackage collections = 7;
+    bool init_required = 8;
+    ChaincodeSource source = 9;
+}
+
+message ChaincodeSource {
+    message Unavailable {}
+
+    message Local {
+        string package_id = 1;
+    }
+
+    oneof Type {
+        Unavailable unavailable = 1;
+        Local local_package = 2;
+    }
+}
+
+// ApproveChaincodeDefinitionForMyOrgResult is the message returned by
+// `_lifecycle.ApproveChaincodeDefinitionForMyOrg`. Currently it returns
+// nothing, but may be extended in the future.
+message ApproveChaincodeDefinitionForMyOrgResult {
+}
+
+// CommitChaincodeDefinitionArgs is the message used as arguments to
+// `_lifecycle.CommitChaincodeDefinition`.
+message CommitChaincodeDefinitionArgs {
+    int64 sequence = 1;
+    string name = 2;
+    string version = 3;
+    string endorsement_plugin = 4;
+    string validation_plugin = 5;
+    bytes validation_parameter = 6;
+    common.CollectionConfigPackage collections = 7;
+    bool init_required = 8;
+}
+
+// CommitChaincodeDefinitionResult is the message returned by
+// `_lifecycle.CommitChaincodeDefinition`. Currently it returns
+// nothing, but may be extended in the future.
+message CommitChaincodeDefinitionResult {
+}
+
+// CheckCommitReadinessArgs is the message used as arguments to
+// `_lifecycle.CheckCommitReadiness`.
+message CheckCommitReadinessArgs {
+    int64 sequence = 1;
+    string name = 2;
+    string version = 3;
+    string endorsement_plugin = 4;
+    string validation_plugin = 5;
+    bytes validation_parameter = 6;
+    common.CollectionConfigPackage collections = 7;
+    bool init_required = 8;
+}
+
+// CheckCommitReadinessResult is the message returned by
+// `_lifecycle.CheckCommitReadiness`. It returns a map of
+// orgs to their approval (true/false) for the definition 
+// supplied as args.
+message CheckCommitReadinessResult{
+    map<string, bool> approvals = 1;
+}
+
+// QueryChaincodeDefinitionArgs is the message used as arguments to
+// `_lifecycle.QueryChaincodeDefinition`.
+message QueryChaincodeDefinitionArgs {
+    string name = 1;
+}
+
+// QueryChaincodeDefinitionResult is the message returned by
+// `_lifecycle.QueryChaincodeDefinition`.
+message QueryChaincodeDefinitionResult {
+    int64 sequence = 1;
+    string version = 2;
+    string endorsement_plugin = 3;
+    string validation_plugin = 4;
+    bytes validation_parameter = 5;
+    common.CollectionConfigPackage collections = 6;
+    bool init_required = 7;
+    map<string,bool> approvals = 8;
+}
+
+// QueryChaincodeDefinitionsArgs is the message used as arguments to
+// `_lifecycle.QueryChaincodeDefinitions`.
+message QueryChaincodeDefinitionsArgs { }
+
+// QueryChaincodeDefinitionsResult is the message returned by
+// `_lifecycle.QueryChaincodeDefinitions`.
+message QueryChaincodeDefinitionsResult {
+    message ChaincodeDefinition {
+        string name = 1;
+        int64 sequence = 2;
+        string version = 3;
+        string endorsement_plugin = 4;
+        string validation_plugin = 5;
+        bytes validation_parameter = 6;
+        common.CollectionConfigPackage collections = 7;
+        bool init_required = 8;
+    }
+    repeated ChaincodeDefinition chaincode_definitions = 1;
+}
+
+```
+
+
+## src:./peer/lifecycle/db.proto
+```proto
+
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = "proto3";
+
+option java_package = "org.hyperledger.fabric.protos.peer.lifecycle";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer/lifecycle";
+
+package lifecycle;
+
+// These protos are used for encoding data into the statedb
+// in general, it should not be necessary for clients to utilize them.
+
+// StateMetadata describes the keys in a namespace.  It is necessary because
+// in collections, range scans are not possible during transactions which
+// write.  Therefore we must track the keys in our namespace ourselves.
+message StateMetadata {
+    string datatype = 1;
+    repeated string fields = 2;
+}
+
+// StateData encodes a particular field of a datatype
+message StateData {
+    oneof Type {
+        int64 Int64 = 1;
+        bytes Bytes = 2;
+        string String = 3;
+    }
 }
 
 ```
@@ -8189,27 +7784,17 @@ message QueryInstalledChaincodeResult {
 ## src:./peer/chaincode_event.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2017 All Rights Reserved.
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-		 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 syntax = "proto3";
-package protos;
+
 option java_package = "org.hyperledger.fabric.protos.peer";
 option java_outer_classname = "ChaincodeEventPackage";
-option go_package = "github.com/hyperledger/fabric/protos/peer";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer";
 
+package protos;
 
 //ChaincodeEvent is used for events and registrations that are specific to chaincode
 //string type - "chaincode"
@@ -8226,24 +7811,22 @@ message ChaincodeEvent {
 ## src:./peer/chaincode_shim.proto
 ```proto
 
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-package protos;
 option java_package = "org.hyperledger.fabric.protos.peer";
-option go_package = "github.com/hyperledger/fabric/protos/peer";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer";
+
+package protos;
+
 import "peer/chaincode_event.proto";
 import "peer/proposal.proto";
 import "google/protobuf/timestamp.proto";
 
-
 message ChaincodeMessage {
-
     enum Type {
         UNDEFINED = 0;
         REGISTER = 1;
@@ -8292,8 +7875,8 @@ message ChaincodeMessage {
 // is to be fetched from the ledger. If the collection is specified, the key
 // would be fetched from the collection (i.e., private state)
 message GetState {
-	string key = 1;
-	string collection = 2;
+    string key = 1;
+    string collection = 2;
 }
 
 message GetStateMetadata {
@@ -8306,9 +7889,9 @@ message GetStateMetadata {
 // specified, the key and value would be written to the transaction's private
 // write set.
 message PutState {
-	string key = 1;
-	bytes value = 2;
-	string collection = 3;
+    string key = 1;
+    bytes value = 2;
+    string collection = 3;
 }
 
 message PutStateMetadata {
@@ -8322,8 +7905,8 @@ message PutStateMetadata {
 // If the collection is specified, the key needs to be recorded in the
 // transaction's private write set as a delete operation.
 message DelState {
-	string key = 1;
-	string collection = 2;
+    string key = 1;
+    string collection = 2;
 }
 
 // GetStateByRange is the payload of a ChaincodeMessage. It contains a start key and
@@ -8331,10 +7914,10 @@ message DelState {
 // the range query needs to be executed on the private data. The metadata hold
 // the byte representation of QueryMetadata.
 message GetStateByRange {
-	string startKey = 1;
-	string endKey = 2;
-	string collection = 3;
-	bytes metadata = 4;
+    string startKey = 1;
+    string endKey = 2;
+    string collection = 3;
+    bytes metadata = 4;
 }
 
 // GetQueryResult is the payload of a ChaincodeMessage. It contains a query
@@ -8342,36 +7925,36 @@ message GetStateByRange {
 // If the collection is specified, the query needs to be executed on the
 // private data.  The metadata hold the byte representation of QueryMetadata.
 message GetQueryResult {
-	string query = 1;
-	string collection = 2;
-	bytes metadata = 3;
+    string query = 1;
+    string collection = 2;
+    bytes metadata = 3;
 }
 
 // QueryMetadata is the metadata of a GetStateByRange and GetQueryResult.
 // It contains a pageSize which denotes the number of records to be fetched
 // and a bookmark.
 message QueryMetadata {
-	int32 pageSize = 1;
-	string bookmark = 2;
+    int32 pageSize = 1;
+    string bookmark = 2;
 }
 
 // GetHistoryForKey is the payload of a ChaincodeMessage. It contains a key
 // for which the historical values need to be retrieved.
 message GetHistoryForKey {
-	string key = 1;
+    string key = 1;
 }
 
 message QueryStateNext {
-	string id = 1;
+    string id = 1;
 }
 
 message QueryStateClose {
-	string id = 1;
+    string id = 1;
 }
 
 // QueryResultBytes hold the byte representation of a record returned by the peer.
 message QueryResultBytes {
-	bytes resultBytes = 1;
+    bytes resultBytes = 1;
 }
 
 // QueryResponse is returned by the peer as a result of a GetStateByRange,
@@ -8380,17 +7963,17 @@ message QueryResultBytes {
 // the peer in has_more field, transaction id in id field, and a QueryResponseMetadata
 // in metadata field.
 message QueryResponse {
-	repeated QueryResultBytes results = 1;
-	bool has_more = 2;
-	string id = 3;
-	bytes metadata = 4;
+    repeated QueryResultBytes results = 1;
+    bool has_more = 2;
+    string id = 3;
+    bytes metadata = 4;
 }
 
 // QueryResponseMetadata is the metadata of a QueryResponse. It contains a count
 // which denotes the number of records fetched from the ledger and a bookmark.
 message QueryResponseMetadata {
-	int32 fetched_records_count = 1;
-	string bookmark = 2;
+    int32 fetched_records_count = 1;
+    string bookmark = 2;
 }
 
 message StateMetadata {
@@ -8405,10 +7988,7 @@ message StateMetadataResult {
 // Interface that provides support to chaincode execution. ChaincodeContext
 // provides the context necessary for the server to respond appropriately.
 service ChaincodeSupport {
-
-	rpc Register(stream ChaincodeMessage) returns (stream ChaincodeMessage) {}
-
-
+    rpc Register(stream ChaincodeMessage) returns (stream ChaincodeMessage);
 }
 
 ```
@@ -8417,42 +7997,22 @@ service ChaincodeSupport {
 ## src:./peer/peer.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2016 All Rights Reserved.
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-		 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 syntax = "proto3";
 
 option java_package = "org.hyperledger.fabric.protos.peer";
-option go_package = "github.com/hyperledger/fabric/protos/peer";
+option go_package = "github.com/hyperledger/fabric-protos-go/peer";
 
 package protos;
 
 import "peer/proposal.proto";
 import "peer/proposal_response.proto";
 
-message PeerID {
-    string name = 1;
-}
-
-message PeerEndpoint {
-    PeerID id = 1;
-    string address = 2;
-}
-
 service Endorser {
-	rpc ProcessProposal(SignedProposal) returns (ProposalResponse) {}
+    rpc ProcessProposal(SignedProposal) returns (ProposalResponse);
 }
 
 ```
@@ -8461,15 +8021,13 @@ service Endorser {
 ## src:./msp/msp_config.proto
 ```proto
 
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/fabric/protos/msp";
+option go_package = "github.com/hyperledger/fabric-protos-go/msp";
 option java_package = "org.hyperledger.fabric.protos.msp";
 option java_outer_classname = "MspConfigPackage";
 
@@ -8674,36 +8232,23 @@ message FabricNodeOUs {
     // OU Identifier of the orderers
     FabricOUIdentifier orderer_ou_identifier = 5;
 }
+
 ```
 
 
 ## src:./msp/msp_principal.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2016 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-                 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
-
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/fabric/protos/msp";
+option go_package = "github.com/hyperledger/fabric-protos-go/msp";
 option java_package = "org.hyperledger.fabric.protos.common";
 
 package common;
-
 
 // msp_principal.proto contains proto messages defining the generalized
 // MSP notion of identity called an MSPPrincipal.  It is used as part of
@@ -8730,7 +8275,6 @@ package common;
 //          identity/certificate; this would mean that the Principal bytes
 //          message
 message MSPPrincipal {
-
     enum Classification {
         ROLE = 0;  // Represents the one of the dedicated MSP roles, the
         // one of a member of MSP network, and the one of an
@@ -8788,7 +8332,6 @@ message OrganizationUnit {
 // field of an MSPPrincipal when it aims to define one of the
 // two dedicated roles within an MSP: Admin and Members.
 message MSPRole {
-
     // MSPIdentifier represents the identifier of the MSP this principal
     // refers to
     string msp_identifier = 1;
@@ -8804,26 +8347,22 @@ message MSPRole {
     // MSPRoleType defines which of the available, pre-defined MSP-roles
     // an identiy should posess inside the MSP with identifier MSPidentifier
     MSPRoleType role = 2;
-
 }
 
 // MSPIdentityAnonymity can be used to enforce an identity to be anonymous or nominal.
 message MSPIdentityAnonymity {
-
     enum MSPIdentityAnonymityType {
         NOMINAL = 0; // Represents a nominal MSP Identity
         ANONYMOUS = 1; // Represents an anonymous MSP Identity
     }
 
     MSPIdentityAnonymityType anonymity_type = 1;
-
 }
 
 // CombinedPrincipal governs the organization of the Principal
 // field of a policy principal when principal_classification has
 // indicated that a combined form of principals is required
 message CombinedPrincipal {
-
     // Principals refer to combined principals
     repeated MSPPrincipal principals = 1;
 }
@@ -8841,16 +8380,13 @@ message CombinedPrincipal {
 ## src:./msp/identities.proto
 ```proto
 
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
-
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/fabric/protos/msp";
+option go_package = "github.com/hyperledger/fabric-protos-go/msp";
 option java_package = "org.hyperledger.fabric.protos.msp";
 
 package msp;
@@ -8859,7 +8395,7 @@ package msp;
 // (with its MSP identifier) to be used
 // to serialize it and deserialize it
 message SerializedIdentity {
-	// The identifier of the associated membership service provider
+    // The identifier of the associated membership service provider
     string mspid = 1;
 
     // the Identity, serialized according to the rules of its MPS
@@ -8874,15 +8410,15 @@ message SerializedIdemixIdentity {
     // nym_x is the X-component of the pseudonym elliptic curve point.
     // It is a []byte representation of an amcl.BIG
     // The pseudonym can be seen as a public key of the identity, it is used to verify signatures.
-	bytes nym_x = 1;
+    bytes nym_x = 1;
 
     // nym_y is the Y-component of the pseudonym elliptic curve point.
     // It is a []byte representation of an amcl.BIG
     // The pseudonym can be seen as a public key of the identity, it is used to verify signatures.
-	bytes nym_y = 2;
+    bytes nym_y = 2;
 
     // ou contains the organizational unit of the idemix identity
-	bytes ou = 3;
+    bytes ou = 3;
 
     // role contains the role of this identity (e.g., ADMIN or MEMBER)
     bytes role = 4;
@@ -8890,31 +8426,20 @@ message SerializedIdemixIdentity {
     // proof contains the cryptographic evidence that this identity is valid
     bytes proof = 5;
 }
+
 ```
 
 
 ## src:./ledger/rwset/rwset.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2016 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/fabric/protos/ledger/rwset";
+option go_package = "github.com/hyperledger/fabric-protos-go/ledger/rwset";
 option java_package = "org.hyperledger.fabric.protos.ledger.rwset";
 
 package rwset;
@@ -8968,15 +8493,13 @@ message CollectionPvtReadWriteSet {
 ## src:./ledger/rwset/kvrwset/kv_rwset.proto
 ```proto
 
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/fabric/protos/ledger/rwset/kvrwset";
+option go_package = "github.com/hyperledger/fabric-protos-go/ledger/rwset/kvrwset";
 option java_package = "org.hyperledger.fabric.protos.ledger.rwset.kvrwset";
 
 package kvrwset;
@@ -9091,27 +8614,15 @@ message QueryReadsMerkleSummary {
 ## src:./ledger/queryresult/kv_query_result.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2017 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
 package queryresult;
 
-option go_package = "github.com/hyperledger/fabric/protos/ledger/queryresult";
+option go_package = "github.com/hyperledger/fabric-protos-go/ledger/queryresult";
 option java_package = "org.hyperledger.fabric.protos.ledger.queryresult";
 
 import "google/protobuf/timestamp.proto";
@@ -9139,25 +8650,25 @@ message KeyModification {
 ## src:./discovery/protocol.proto
 ```proto
 
-// Copyright IBM Corp. All Rights Reserved.
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
 //
 // SPDX-License-Identifier: Apache-2.0
-//
+
 syntax = "proto3";
+
+option go_package = "github.com/hyperledger/fabric-protos-go/discovery";
+option java_package = "org.hyperledger.fabric.protos.discovery";
+
+package discovery;
 
 import "gossip/message.proto";
 import "msp/msp_config.proto";
-import "msp/identities.proto";
-
-option go_package = "github.com/hyperledger/fabric/protos/discovery" ;
-
-package discovery;
 
 // Discovery defines a service that serves information about the fabric network
 // like which peers, orderers, chaincodes, etc.
 service Discovery {
     // Discover receives a signed request, and returns a response.
-    rpc Discover (SignedRequest) returns (Response) {}
+    rpc Discover (SignedRequest) returns (Response);
 }
 
 // SignedRequest contains a serialized Request in the payload field
@@ -9373,37 +8884,22 @@ message Endpoint {
     uint32 port = 2;
 }
 
-
-
 ```
 
 
 ## src:./orderer/configuration.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2016 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-                 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/fabric/protos/orderer";
+option go_package = "github.com/hyperledger/fabric-protos-go/orderer";
 option java_package = "org.hyperledger.fabric.protos.orderer";
 
 package orderer;
-
 
 // The orderer config is specified by the following convention:
 //   For a configuration item with key "Key"
@@ -9465,25 +8961,13 @@ message ChannelRestrictions {
 ## src:./orderer/kafka.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2016 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-                 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/fabric/protos/orderer";
+option go_package = "github.com/hyperledger/fabric-protos-go/orderer";
 option java_package = "org.hyperledger.fabric.protos.orderer";
 
 package orderer;
@@ -9555,30 +9039,18 @@ message KafkaMetadata {
 ## src:./orderer/ab.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2016 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-                 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-import "common/common.proto";
-
-option go_package = "github.com/hyperledger/fabric/protos/orderer";
+option go_package = "github.com/hyperledger/fabric-protos-go/orderer";
 option java_package = "org.hyperledger.fabric.protos.orderer";
 
 package orderer;
+
+import "common/common.proto";
 
 message BroadcastResponse {
     // Status code, which may be used to programatically respond to success/failure
@@ -9644,10 +9116,10 @@ message DeliverResponse {
 
 service AtomicBroadcast {
     // broadcast receives a reply of Acknowledgement for each common.Envelope in order, indicating success or type of failure
-    rpc Broadcast(stream common.Envelope) returns (stream BroadcastResponse) {}
+    rpc Broadcast(stream common.Envelope) returns (stream BroadcastResponse);
 
     // deliver first requires an Envelope of type DELIVER_SEEK_INFO with Payload data as a mashaled SeekInfo message, then a stream of block replies is received.
-    rpc Deliver(stream common.Envelope) returns (stream DeliverResponse) {}
+    rpc Deliver(stream common.Envelope) returns (stream DeliverResponse);
 }
 
 ```
@@ -9656,20 +9128,18 @@ service AtomicBroadcast {
 ## src:./orderer/cluster.proto
 ```proto
 
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-import "common/common.proto";
-
-option go_package = "github.com/hyperledger/fabric/protos/orderer";
+option go_package = "github.com/hyperledger/fabric-protos-go/orderer";
 option java_package = "org.hyperledger.fabric.protos.orderer";
 
 package orderer;
+
+import "common/common.proto";
 
 // Cluster defines communication between cluster members.
 service Cluster {
@@ -9698,6 +9168,7 @@ message StepResponse {
 message ConsensusRequest {
     string channel = 1;
     bytes payload = 2;
+    bytes metadata = 3;
 }
 
 // SubmitRequest wraps a transaction to be sent for ordering.
@@ -9721,21 +9192,20 @@ message SubmitResponse {
     // Info string which may contain additional information about the returned status.
     string info = 3;
 }
+
 ```
 
 
 ## src:./orderer/etcdraft/configuration.proto
 ```proto
 
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/fabric/protos/orderer/etcdraft";
+option go_package = "github.com/hyperledger/fabric-protos-go/orderer/etcdraft";
 option java_package = "org.hyperledger.fabric.protos.orderer.etcdraft";
 
 package etcdraft;
@@ -9758,13 +9228,30 @@ message Consenter {
 // Options to be specified for all the etcd/raft nodes. These can be modified on a
 // per-channel basis.
 message Options {
-	string tick_interval = 1; // time duration format, e.g. 500ms
-	uint32 election_tick = 2;
-	uint32 heartbeat_tick = 3;
-	uint32 max_inflight_blocks = 4;
-	// Take snapshot when cumulative data exceeds certain size in bytes.
-	uint32 snapshot_interval_size = 5;
+    string tick_interval = 1; // time duration format, e.g. 500ms
+    uint32 election_tick = 2;
+    uint32 heartbeat_tick = 3;
+    uint32 max_inflight_blocks = 4;
+    // Take snapshot when cumulative data exceeds certain size in bytes.
+    uint32 snapshot_interval_size = 5;
 }
+
+```
+
+
+## src:./orderer/etcdraft/metadata.proto
+```proto
+
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = "proto3";
+
+option go_package = "github.com/hyperledger/fabric-protos-go/orderer/etcdraft";
+option java_package = "org.hyperledger.fabric.protos.orderer.etcdraft";
+
+package etcdraft;
 
 // BlockMetadata stores data used by the Raft OSNs when
 // coordinating with each other, to be serialized into
@@ -9780,19 +9267,26 @@ message BlockMetadata {
     uint64 raft_index = 3;
 }
 
+// ClusterMetadata encapsulates metadata that is exchanged among cluster nodes
+message ClusterMetadata {
+    // Indicates active nodes in cluster that are reacheable by Raft leader
+    repeated uint64 active_nodes = 1;
+}
+
 ```
 
 
 ## src:./gossip/message.proto
 ```proto
 
-// Copyright IBM Corp. All Rights Reserved.
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
 //
 // SPDX-License-Identifier: Apache-2.0
-//
+
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/fabric/protos/gossip" ;
+option go_package = "github.com/hyperledger/fabric-protos-go/gossip";
+option java_package = "org.hyperledger.fabric.protos.gossip";
 
 package gossip;
 
@@ -9802,10 +9296,10 @@ import "common/collection.proto";
 service Gossip {
 
     // GossipStream is the gRPC stream used for sending and receiving messages
-    rpc GossipStream (stream Envelope) returns (stream Envelope) {}
+    rpc GossipStream (stream Envelope) returns (stream Envelope);
 
     // Ping is used to probe a remote peer's aliveness
-    rpc Ping (Empty) returns (Empty) {}
+    rpc Ping (Empty) returns (Empty);
 }
 
 
@@ -10158,449 +9652,6 @@ message Chaincode {
     string version = 2;
     bytes metadata = 3;
 }
-```
-
-
-## src:./token/transaction.proto
-```proto
-
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
-
-syntax = "proto3";
-
-option go_package = "github.com/hyperledger/fabric/protos/token";
-option java_package = "org.hyperledger.fabric.protos.token";
-
-// ================ Existing Fabric Transaction structure ===============
-//
-//In Summary, Fabric supports the following transaction structure:
-//
-//  Envelope
-//  |\_ Signature                                    (signature on the common.Payload message
-//  |                                                 including the transaction by the creator
-//  |                                                 specified in the Payload.header)
-//   \_ Payload
-//      |\_ Header (1)                               (the header of the proposal that requested this
-//      |                                             action; containing channel header, and
-//      |                                             signature header)
-//       \_ Data (1)                                 (serialised Transaction message)
-//           \_ Transaction
-//                \_ TransactionAction (1...n)
-//                    |\_ Header (1)                 (the header of the proposal that
-//                    |                               requested this action)
-//                     \_ ChaincodeActionPayload (1)
-//
-//
-//
-//
-//  =============== Changes to Existing Fabric Transaction structure ===============
-//  For envelopes that carry FabToken transaction we still maintain the same structure
-//  such that the orderers functionality is not disturbed:
-//
-//  Envelope
-//  |\_ Signature                                    (signature on the Payload message including
-//  |                                                 the transaction by the creator
-//  |                                                 specified in the Payload.header)
-//   \_ Payload
-//      |\_ Header (1)                               (the header of the proposal that requested
-//      |                                             this action; containing
-//      |                                             channel header, and signature header)
-//       \_ Data (1)                                 (serialised Transaction message)
-//            \_ TokenTransaction (1)
-//                  \_ action (1)                    (a oneof for the different types of transactions)
-
-
-
-// TokenTransaction governs the structure of Payload.data, when
-// the transaction's envelope header indicates a transaction of type
-// "Token"
-message TokenTransaction {
-    // action carries the content of this transaction.
-    oneof action {
-        PlainTokenAction plain_action = 1;
-    }
-}
-
-// PlainTokenAction governs the structure of a token action that is
-// subjected to no privacy restrictions
-message PlainTokenAction {
-    oneof data {
-        // A plaintext token import transaction
-        PlainImport plain_import = 1;
-        // A plaintext token transfer transaction
-        PlainTransfer plain_transfer = 2;
-        // A plaintext token redeem transaction
-        PlainTransfer plain_redeem = 3;
-        // A plaintext token approve transaction
-        PlainApprove plain_approve = 4;
-        // A plaintext token transfer from transaction
-        PlainTransferFrom plain_transfer_From = 5;
-    }
-}
-
-// PlainImport specifies an import of one or more tokens in plaintext format
-message PlainImport {
-
-    // An import transaction may contain one or more outputs
-    repeated PlainOutput outputs = 1;
-}
-
-// PlainTransfer specifies a transfer of one or more plaintext tokens to one or more outputs
-message PlainTransfer {
-
-    // The inputs to the transfer transaction are specified by their ID
-    repeated InputId inputs = 1;
-
-    // A transfer transaction may contain one or more outputs
-    repeated PlainOutput outputs = 2;
-}
-
-// PlainApprove specifies an approve of one or more tokens in plaintext format
-message PlainApprove {
-    // The inputs to the transfer transaction are specified by their ID
-    repeated InputId inputs = 1;
-
-    // An approve transaction contains one or more plain delegated outputs
-    repeated PlainDelegatedOutput delegated_outputs = 2;
-
-    // An approve transaction contains one plain output
-    PlainOutput output = 3;
-}
-
-// PlainTransferFrom specifies a transfer of one or more plaintext delegated tokens to one or more outputs
-// an to a delegated output
-message PlainTransferFrom {
-    // The inputs to the transfer transaction are specified by their ID
-    repeated InputId inputs = 1;
-
-    // A transferFrom transaction contains multiple outputs
-    repeated PlainOutput outputs = 2;
-
-    // A transferFrom transaction may contain one delegatable output
-    PlainDelegatedOutput delegated_output = 3;
-}
-
-// A PlainOutput is the result of import and transfer transactions using plaintext tokens
-message PlainOutput {
-
-    // The owner is the serialization of a SerializedIdentity struct
-    bytes owner = 1;
-
-    // The token type
-    string type = 2;
-
-    // The quantity of tokens
-    uint64 quantity = 3;
-}
-
-// An InputId specifies an output using the transaction ID and the index of the output in the transaction
-message InputId {
-
-    // The transaction ID
-    string tx_id = 1;
-
-    // The index of the output in the transaction
-    uint32 index = 2;
-}
-
-// A PlainDelegatedOutput is the result of approve transactions using plaintext tokens
-message PlainDelegatedOutput {
-    // The owner is the serialization of a SerializedIdentity struct
-    bytes owner = 1;
-
-    // The delegatees is an arrary of the serialized identities that can spend the output on behalf
-    // the owner
-    repeated bytes delegatees = 2;
-
-    // The token type
-    string type = 3;
-
-    // The quantity of tokens
-    uint64 quantity = 4;
-}
-```
-
-
-## src:./token/prover.proto
-```proto
-
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
-
-syntax = "proto3";
-
-option go_package = "github.com/hyperledger/fabric/protos/token";
-option java_package = "org.hyperledger.fabric.protos.token";
-
-package protos;
-
-import "google/protobuf/timestamp.proto";
-import "token/expectations.proto";
-import "token/transaction.proto";
-
-// TokenToIssue describes a token to be issued in the system
-message TokenToIssue {
-    // Recipient refers to the owner of the token to be issued
-    bytes recipient = 1;
-
-    // Type refers to the token type
-    string type = 2;
-
-    // Quantity refers to the number of token units to be issued
-    uint64 quantity = 3;
-}
-
-// RecipientTransferShare describes how much a recipient will receive in a token transfer
-message RecipientTransferShare {
-    // Recipient refers to the prospective owner of a transferred token
-    bytes recipient = 1;
-
-    // Quantity refers to the number of token units to be transferred to the recipient
-    uint64 quantity = 2;
-}
-
-// TokenOutput is used to specify a token returned by ListRequest
-message TokenOutput {
-    // ID is used to uniquely identify the token
-    bytes id = 1;
-
-    // Type is the type of the token
-    string type = 2;
-
-    // Quantity represents the number for this type of token
-    uint64 quantity = 3;
-}
-
-// UnspentTokens is used to hold the output of listRequest
-message UnspentTokens {
-    repeated TokenOutput tokens = 1;
-}
-
-// ListRequest is used to request a list of unspent tokens
-message ListRequest {
-    bytes credential = 1;
-}
-
-// ImportRequest is used to request creation of imports
-message ImportRequest {
-    // Credential contains information about the party who is requesting the operation
-    // the content of this field depends on the charateristic of the token manager system used.
-    bytes credential = 1;
-
-    // TokenToIssue contains the information about the tokens to be issued
-    repeated TokenToIssue tokens_to_issue = 2;
-}
-
-// RequestTransfer is used to request creation of transfers
-message TransferRequest {
-    bytes credential = 1;
-
-    repeated bytes token_ids = 2;
-
-    repeated RecipientTransferShare shares = 3;
-}
-
-// RedeemRequest is used to request token redemption
-message RedeemRequest {
-    // Credential contains information for the party who is requesting the operation
-    // The content of this field depends on the characteristic of token manager system
-    bytes credential = 1;
-
-    // token_ids specifies the ids for the tokens that will be redeemed
-    repeated bytes token_ids = 2;
-
-    // quantity refers to the number of units of a given token needs to be redeemed.
-    uint64 quantity_to_redeem = 3;
-}
-
-// ALlowance defines how many and what tokens a recipient can transfer on behalf of their actual owner
-message AllowanceRecipientShare {
-    // Recipient refers to the entity allowed to spend the specified quantity from the tokens identified by token IDs
-    bytes recipient = 1;
-
-    // Quantity is how many tokens are delegated to the recipient
-    uint64 quantity = 2;
-}
-
-// ApproveRequest is used to request the creation of allowance from one owner to another
-message ApproveRequest{
-    // Credential refers to the public credential of the request creator
-    bytes credential = 1;
-
-    // Allowance describes the tokens the creator of the request is willing to delegate
-    repeated AllowanceRecipientShare allowance_shares = 2;
-
-    // TokenIds are the token identifiers used to create the allowance
-    repeated bytes token_ids = 3;
-}
-
-// ExpectationRequest is used to request indirect token import or transfer based on the token expectation
-message ExpectationRequest {
-    // credential contains information for the party who is requesting the operation
-    // The content of this field depends on the characteristic of token manager system
-    bytes credential = 1;
-
-    // expectation contains the expected outputs for token import or transfer
-    TokenExpectation expectation = 2;
-
-    // TokenIds are the token identifiers used to fulfill the expectation
-    repeated bytes token_ids = 3;
-}
-
-// Header is a generic replay prevention and identity message to include in a signed command
-message Header {
-    // Timestamp is the local time when the message was created
-    // by the sender
-    google.protobuf.Timestamp timestamp = 1;
-
-    // ChannelId identifies the channel this message is bound for
-    string channel_id = 2;
-
-    // Nonce is a sufficientley long random value
-    // used to ensure the request has enough entropy.
-    bytes nonce = 3;
-
-    // Creator of the message.
-    // Typically, a marshaled msp.SerializedIdentity
-    bytes creator = 4;
-}
-
-
-// Command describes the type of operation that a client is requesting.
-message Command {
-    // Header is the header of this command
-    Header header = 1;
-
-    // Payload is the payload of this command. It can assume one of the following value
-    oneof payload {
-        ImportRequest import_request = 2;
-        TransferRequest transfer_request = 3;
-        ListRequest list_request = 4;
-        RedeemRequest redeem_request = 5;
-        ApproveRequest approve_request = 6;
-        TransferRequest transfer_from_request = 7;
-        ExpectationRequest expectation_request = 8;
-    }
-}
-
-// SignedCommand is a command that carries the signature of the command's creator.
-message SignedCommand {
-    // Command is the serialised version of a Command message
-    bytes command = 1;
-
-    // Signature is the signature over command
-    bytes signature = 2;
-}
-
-message CommandResponseHeader {
-    // Timestamp is the time that the message
-    // was created as  defined by the sender
-    google.protobuf.Timestamp timestamp = 1;
-
-    // CommandHash is the hash computed on the concatenation of the SignedCommand's command and signature fields.
-    // If not specified differently, SHA256 is used
-    // The hash is used to link a response with its request, both for bookeeping purposes on an
-    // asynchronous system and for security reasons (accountability, non-repudiation)
-    bytes command_hash = 2;
-
-    // Creator is the identity of the party creating this message
-    bytes creator = 3;
-}
-
-// Error reports an application error
-message Error {
-    // Message associated with this response.
-    string message = 1;
-
-    // Payload that can be used to include metadata with this response.
-    bytes payload = 2;
-}
-
-// A CommnandResponse is returned from a prover to the command submitter.
-message CommandResponse {
-    // Header of the response.
-    CommandResponseHeader header = 1;
-
-    // Payload of the response.
-    oneof payload {
-        Error err = 2;
-        TokenTransaction token_transaction = 3;
-        UnspentTokens unspent_tokens = 4;
-    }
-}
-
-// SignedCommandResponse is a signed command response
-message SignedCommandResponse {
-    // Response is the serialised version of a CommandResponse message
-    bytes response = 1;
-
-    // Signature is the signature over command
-    bytes signature = 2;
-}
-
-// Prover provides support to clients for the creation of FabToken transactions,
-// and to query the ledger.
-service Prover {
-    // ProcessCommand processes the passed command ensuring proper access control.
-    // The returned response allows the client to understand if the
-    // operation was succeffully executed and if not, the response
-    // reports the reason of the failure.
-    rpc ProcessCommand(SignedCommand) returns (SignedCommandResponse) {}
-}
-
-```
-
-
-## src:./token/expectations.proto
-```proto
-
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
-
-syntax = "proto3";
-
-option go_package = "github.com/hyperledger/fabric/protos/token";
-option java_package = "org.hyperledger.fabric.protos.token";
-
-package protos;
-
-import "google/protobuf/timestamp.proto";
-import "token/transaction.proto";
-
-// TokenExpectation represent the belief that someone should achieve in terms of a token action
-message TokenExpectation {
-    oneof Expectation {
-        // PlainExpectation describes a plain token expectation
-        PlainExpectation plain_expectation = 1;
-    }
-}
-
-// PlainExpectation represent the plain expectation where no confidentiality is provided.
-message PlainExpectation {
-    oneof payload {
-        // ImportExpectation describes an token import expectation
-        PlainTokenExpectation import_expectation = 1;
-        // TransferExpectation describes a token transfer expectation
-        PlainTokenExpectation transfer_expectation = 2;
-    }
-}
-
-// PlainTokenExpectation represents the expecation that
-// certain outputs will be matched
-message PlainTokenExpectation {
-    // Outputs contains the expected outputs
-    repeated PlainOutput outputs = 1;
-}
 
 ```
 
@@ -10608,28 +9659,15 @@ message PlainTokenExpectation {
 ## src:./transientstore/transientstore.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2016 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-
 package transientstore;
 
-option go_package = "github.com/hyperledger/fabric/protos/transientstore";
+option go_package = "github.com/hyperledger/fabric-protos-go/transientstore";
 option java_package = "org.hyperledger.fabric.protos.transientstore";
 
 import "ledger/rwset/rwset.proto";
@@ -10650,25 +9688,13 @@ message TxPvtReadWriteSetWithConfigInfo {
 ## src:./common/configuration.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2016 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-                 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/fabric/protos/common";
+option go_package = "github.com/hyperledger/fabric-protos-go/common";
 option java_package = "org.hyperledger.fabric.protos.common";
 
 package common;
@@ -10731,7 +9757,7 @@ message Consortium {
 // application networks to upgrade themselves independently (with the exception of any
 // new capabilities defined at the /Channel level).
 message Capabilities {
-	map<string, Capability> capabilities = 1;
+    map<string, Capability> capabilities = 1;
 }
 
 // Capability is an empty message for the time being.  It is defined as a protobuf
@@ -10739,30 +9765,20 @@ message Capabilities {
 // if the need arises in the future.  For the time being, a capability being in the
 // capabilities map requires that that capability be supported.
 message Capability { }
+
 ```
 
 
 ## src:./common/ledger.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2016 All Rights Reserved.
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-		 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/fabric/protos/common";
+option go_package = "github.com/hyperledger/fabric-protos-go/common";
 option java_package = "org.hyperledger.fabric.protos.common";
 
 package common;
@@ -10773,7 +9789,6 @@ message BlockchainInfo {
     uint64 height = 1;
     bytes currentBlockHash = 2;
     bytes previousBlockHash = 3;
-
 }
 
 ```
@@ -10782,30 +9797,18 @@ message BlockchainInfo {
 ## src:./common/policies.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2017 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-                 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-import "msp/msp_principal.proto";
-
-option go_package = "github.com/hyperledger/fabric/protos/common";
+option go_package = "github.com/hyperledger/fabric-protos-go/common";
 option java_package = "org.hyperledger.fabric.protos.common";
 
 package common;
+
+import "msp/msp_principal.proto";
 
 // Policy expresses a policy which the orderer can evaluate, because there has been some desire expressed to support
 // multiple policy engines, this is typed as a oneof for now
@@ -10868,21 +9871,19 @@ message ImplicitMetaPolicy {
 ## src:./common/configtx.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2017 All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-import "common/common.proto";
-import "common/policies.proto";
-
-option go_package = "github.com/hyperledger/fabric/protos/common";
+option go_package = "github.com/hyperledger/fabric-protos-go/common";
 option java_package = "org.hyperledger.fabric.protos.common";
 
 package common;
+
+import "common/common.proto";
+import "common/policies.proto";
 
 // ConfigEnvelope is designed to contain _all_ configuration for a chain with no dependency
 // on previous configuration transactions.
@@ -10989,30 +9990,18 @@ message ConfigSignature {
 ## src:./common/common.proto
 ```proto
 
-/*
-Copyright IBM Corp. 2016 All Rights Reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-                 http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-import "google/protobuf/timestamp.proto";
-
-option go_package = "github.com/hyperledger/fabric/protos/common";
+option go_package = "github.com/hyperledger/fabric-protos-go/common";
 option java_package = "org.hyperledger.fabric.protos.common";
 
 package common;
+
+import "google/protobuf/timestamp.proto";
 
 // These status codes are intended to resemble selected HTTP status codes
 enum Status {
@@ -11028,36 +10017,33 @@ enum Status {
 }
 
 enum HeaderType {
-    // Prevent removed tag re-use
-    // Uncomment after fabric-baseimage moves to 3.5.1
-    // reserved 7;
-    // reserved "PEER_RESOURCE_UPDATE";
+    reserved 7, 9;
+    reserved "PEER_RESOURCE_UPDATE", "TOKEN_TRANSACTION";
 
-    MESSAGE = 0;                   // Used for messages which are signed but opaque
-    CONFIG = 1;                    // Used for messages which express the channel config
-    CONFIG_UPDATE = 2;             // Used for transactions which update the channel config
-    ENDORSER_TRANSACTION = 3;      // Used by the SDK to submit endorser based transactions
-    ORDERER_TRANSACTION = 4;       // Used internally by the orderer for management
-    DELIVER_SEEK_INFO = 5;         // Used as the type for Envelope messages submitted to instruct the Deliver API to seek
-    CHAINCODE_PACKAGE = 6;         // Used for packaging chaincode artifacts for install
-    PEER_ADMIN_OPERATION = 8;      // Used for invoking an administrative operation on a peer
-    TOKEN_TRANSACTION = 9;         // Used to denote transactions that invoke token management operations
+    MESSAGE = 0;                     // Used for messages which are signed but opaque
+    CONFIG = 1;                      // Used for messages which express the channel config
+    CONFIG_UPDATE = 2;               // Used for transactions which update the channel config
+    ENDORSER_TRANSACTION = 3;        // Used by the SDK to submit endorser based transactions
+    ORDERER_TRANSACTION = 4;         // Used internally by the orderer for management
+    DELIVER_SEEK_INFO = 5;           // Used as the type for Envelope messages submitted to instruct the Deliver API to seek
+    CHAINCODE_PACKAGE = 6;           // Used for packaging chaincode artifacts for install
+    PEER_ADMIN_OPERATION = 8;        // Used for invoking an administrative operation on a peer
 }
 
 // This enum enlists indexes of the block metadata array
 enum BlockMetadataIndex {
-    SIGNATURES = 0;             // Block metadata array position for block signatures
-    LAST_CONFIG = 1;            // Block metadata array position to store last configuration block sequence number
-    TRANSACTIONS_FILTER = 2;    // Block metadata array position to store serialized bit array filter of invalid transactions
-    ORDERER = 3;                /* Block metadata array position to store operational metadata for orderers e.g. For Kafka,
-                                   this is where we store the last offset written to the local ledger */
-    COMMIT_HASH = 4;            /* Block metadata array position to store the hash of TRANSACTIONS_FILTER, State Updates,
-                                   and the COMMIT_HASH of the previous block */
+    SIGNATURES = 0;                  // Block metadata array position for block signatures
+    LAST_CONFIG = 1;                 // Block metadata array position to store last configuration block sequence number
+    TRANSACTIONS_FILTER = 2;         // Block metadata array position to store serialized bit array filter of invalid transactions
+    ORDERER = 3 [deprecated=true];   /* Block metadata array position to store operational metadata for orderers
+                                        e.g. For Kafka, this is where we store the last offset written to the local ledger */
+    COMMIT_HASH = 4;                 /* Block metadata array position to store the hash of TRANSACTIONS_FILTER, State Updates,
+                                        and the COMMIT_HASH of the previous block */
 }
 
 // LastConfig is the encoded value for the Metadata message which is encoded in the LAST_CONFIGURATION block metadata index
 message LastConfig {
-	uint64 index  = 1;
+    uint64 index  = 1;
 }
 
 // Metadata is a common structure to be used to encode block metadata
@@ -11181,20 +10167,18 @@ message OrdererBlockMetadata {
 ## src:./common/collection.proto
 ```proto
 
-/*
-Copyright IBM Corp. All Rights Reserved.
-
-SPDX-License-Identifier: Apache-2.0
-*/
+// Copyright the Hyperledger Fabric contributors. All rights reserved.
+//
+// SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-import "common/policies.proto";
-
-option go_package = "github.com/hyperledger/fabric/protos/common";
+option go_package = "github.com/hyperledger/fabric-protos-go/common";
 option java_package = "org.hyperledger.fabric.protos.common";
 
 package common;
+
+import "common/policies.proto";
 
 // CollectionConfigPackage represents an array of CollectionConfig
 // messages; the extra struct is required because repeated oneof is
@@ -11235,10 +10219,15 @@ message StaticCollectionConfig {
     // will be purged at block number 111. A zero value is treated same as MaxUint64
     uint64 block_to_live = 5;
     // The member only read access denotes whether only collection member clients
-    // can read the private data (if set to true), or even non members can 
+    // can read the private data (if set to true), or even non members can
     // read the data (if set to false, for example if you want to implement more granular
     // access logic in the chaincode)
     bool member_only_read = 6;
+    // The member only write access denotes whether only collection member clients
+    // can write the private data (if set to true), or even non members can
+    // write the data (if set to false, for example if you want to implement more granular
+    // access logic in the chaincode)
+    bool member_only_write = 7;
 }
 
 

@@ -1,0 +1,3848 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>HyperLedger Burrow - DLTDOJO3 第三新熵熱踢道場</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> DLTDOJO3</a></li><li><a href="../poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><a href="../taichu-raw/index.html"><strong aria-hidden="true">3.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li><a href="../taichu-raw/apache-big5.html"><strong aria-hidden="true">3.1.</strong> HTTPS: Apache Big5</a></li><li><a href="../taichu-raw/openapiv3.html"><strong aria-hidden="true">3.2.</strong> HTTPS: OpenAPI v3</a></li><li><a href="../taichu-raw/others.html"><strong aria-hidden="true">3.3.</strong> 其他</a></li></ol></li><li><a href="../mad-white/index.html"><strong aria-hidden="true">4.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li><a href="../mad-white/code-server.html"><strong aria-hidden="true">4.1.</strong> VS Code Server</a></li></ol></li><li><a href="../mad-red/index.html"><strong aria-hidden="true">5.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">5.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">5.2.</strong> 聊天測試 BIP39</a></li><li><a href="../mad-red/vox/index.html"><strong aria-hidden="true">5.3.</strong> Voxel 組件開發編輯</a></li><li><a href="../mad-red/vox/projects.html"><strong aria-hidden="true">5.4.</strong> Voxel 相關專案</a></li></ol></li><li><a href="../crypto-assets.html"><strong aria-hidden="true">6.</strong> Crypto-Assets</a></li><li><a href="../dlt.html"><strong aria-hidden="true">7.</strong> DLT</a></li><li><ol class="section"><li><a href="../dlt/hl-fabric.html"><strong aria-hidden="true">7.1.</strong> Hyperledger Fabric</a></li><li><a href="../dlt/hl-sawtooth.html"><strong aria-hidden="true">7.2.</strong> Hyperledger Sawtooth</a></li><li><a href="../dlt/hl-burrow.html" class="active"><strong aria-hidden="true">7.3.</strong> HyperLedger Burrow</a></li><li><a href="../dlt/libra.html"><strong aria-hidden="true">7.4.</strong> Libra</a></li><li><a href="../dlt/lnrpc.html"><strong aria-hidden="true">7.5.</strong> lightning network</a></li><li><a href="../dlt/exonum.html"><strong aria-hidden="true">7.6.</strong> exonum</a></li><li><a href="../dlt/trisa.html"><strong aria-hidden="true">7.7.</strong> TRISA</a></li><li><a href="../dlt/xuperchain.html"><strong aria-hidden="true">7.8.</strong> xuperchain</a></li><li><a href="../dlt/trustwallet.html"><strong aria-hidden="true">7.9.</strong> TrustWallet</a></li><li><a href="../dlt/openbazaar.html"><strong aria-hidden="true">7.10.</strong> OpenBazaar</a></li><li><a href="../dlt/amazon-qldb.html"><strong aria-hidden="true">7.11.</strong> Amazon QLDB</a></li></ol></li><li><a href="../dao.html"><strong aria-hidden="true">8.</strong> DAO</a></li><li><ol class="section"><li><a href="../dao/aragon.html"><strong aria-hidden="true">8.1.</strong> Aragon</a></li><li><a href="../dao/joystream.html"><strong aria-hidden="true">8.2.</strong> JoyStream</a></li></ol></li><li><a href="../did.html"><strong aria-hidden="true">9.</strong> DID</a></li><li><a href="../LRE.html"><strong aria-hidden="true">10.</strong> Ledger Reliability Engineering(LRE)</a></li><li><a href="../web/index.html"><strong aria-hidden="true">11.</strong> Web Tech</a></li><li><ol class="section"><li><a href="../web/extensions.html"><strong aria-hidden="true">11.1.</strong> Browser Extensiions</a></li><li><a href="../web/example-page.html"><strong aria-hidden="true">11.2.</strong> Example Pages</a></li><li><a href="../webauthn.html"><strong aria-hidden="true">11.3.</strong> WebAuthn</a></li><li><a href="../webassembly.html"><strong aria-hidden="true">11.4.</strong> WebAssembly</a></li><li><a href="../web/openssl.html"><strong aria-hidden="true">11.5.</strong> OpenSSL</a></li></ol></li><li><a href="../k8s.html"><strong aria-hidden="true">12.</strong> Kubernetes</a></li><li><a href="../plantuml.html"><strong aria-hidden="true">13.</strong> PlantUML</a></li><li><ol class="section"><li><a href="../puml/hyperledger-fabric.html"><strong aria-hidden="true">13.1.</strong> Hyperledger Fabric</a></li><li><a href="../puml/ethereum.html"><strong aria-hidden="true">13.2.</strong> Ethereum</a></li></ol></li><li><a href="../messaging.html"><strong aria-hidden="true">14.</strong> Messaging</a></li><li><a href="../mdbook/index.html"><strong aria-hidden="true">15.</strong> mdbook</a></li><li><ol class="section"><li><a href="../mdbook/preprocessors.html"><strong aria-hidden="true">15.1.</strong> preprocessors</a></li><li><a href="../mdbook/others.html"><strong aria-hidden="true">15.2.</strong> 其他</a></li></ol></li><li><a href="../resources.html"><strong aria-hidden="true">16.</strong> 學習資源</a></li><li><a href="../book.html"><strong aria-hidden="true">17.</strong> 書籍</a></li><li><a href="../job.html"><strong aria-hidden="true">18.</strong> 工作</a></li><li><a href="../appendix.html"><strong aria-hidden="true">19.</strong> 附錄</a></li><li><ol class="section"><li><a href="../cmd-help.html"><strong aria-hidden="true">19.1.</strong> 命令列 tc.sh</a></li><li><a href="../license.html"><strong aria-hidden="true">19.2.</strong> 授權條款</a></li><li><a href="../testpage.html"><strong aria-hidden="true">19.3.</strong> 測試頁面</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">DLTDOJO3 第三新熵熱踢道場</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#hyperledger-burrow" id="hyperledger-burrow">HyperLedger Burrow</a></h1>
+<h1><a class="header" href="#toc" id="toc">TOC</a></h1>
+<!-- toc -->
+<h1><a class="header" href="#如何生成-google-protocol-buffers-文件" id="如何生成-google-protocol-buffers-文件">如何生成 Google Protocol Buffers 文件</a></h1>
+<p><a href="https://github.com/hyperledger/burrow/tree/master/protobuf">burrow/protobuf at master · hyperledger/burrow</a></p>
+<pre><code class="language-shell">git clone https://github.com/hyperledger/burrow.git /tmp/src/burrow
+bash tc.sh --gen-proto-doc /tmp/src/burrow/protobuf /tmp/output.md
+</code></pre>
+<h1><a class="header" href="#generated-date2019-09-12t1423170800" id="generated-date2019-09-12t1423170800">Generated Date:2019-09-12T14:23:17+08:00</a></h1>
+<h1><a class="header" href="#protocol-documentation" id="protocol-documentation">Protocol Documentation</a></h1>
+<p><a name="top"></a></p>
+<h2><a class="header" href="#table-of-contents" id="table-of-contents">Table of Contents</a></h2>
+<ul>
+<li>
+<p><a href="#balance.proto">balance.proto</a></p>
+<ul>
+<li><a href="#balance.Balance">Balance</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#exec.proto">exec.proto</a></p>
+<ul>
+<li><a href="#exec.BeginBlock">BeginBlock</a></li>
+<li><a href="#exec.BeginTx">BeginTx</a></li>
+<li><a href="#exec.BlockExecution">BlockExecution</a></li>
+<li><a href="#exec.CallData">CallData</a></li>
+<li><a href="#exec.CallEvent">CallEvent</a></li>
+<li><a href="#exec.EndBlock">EndBlock</a></li>
+<li><a href="#exec.EndTx">EndTx</a></li>
+<li><a href="#exec.Event">Event</a></li>
+<li><a href="#exec.GovernAccountEvent">GovernAccountEvent</a></li>
+<li><a href="#exec.Header">Header</a></li>
+<li><a href="#exec.InputEvent">InputEvent</a></li>
+<li><a href="#exec.LogEvent">LogEvent</a></li>
+<li><a href="#exec.Origin">Origin</a></li>
+<li><a href="#exec.OutputEvent">OutputEvent</a></li>
+<li><a href="#exec.Result">Result</a></li>
+<li><a href="#exec.StreamEvent">StreamEvent</a></li>
+<li><a href="#exec.StreamEvents">StreamEvents</a></li>
+<li><a href="#exec.TxExecution">TxExecution</a></li>
+<li><a href="#exec.TxExecutionKey">TxExecutionKey</a></li>
+<li><a href="#exec.TxHeader">TxHeader</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#names.proto">names.proto</a></p>
+<ul>
+<li><a href="#names.Entry">Entry</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#encoding.proto">encoding.proto</a></p>
+<ul>
+<li><a href="#encoding.TestMessage">TestMessage</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#validator.proto">validator.proto</a></p>
+<ul>
+<li><a href="#validator.Validator">Validator</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#txs.proto">txs.proto</a></p>
+<ul>
+<li><a href="#txs.Envelope">Envelope</a></li>
+<li><a href="#txs.Receipt">Receipt</a></li>
+<li><a href="#txs.Signatory">Signatory</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#rpctransact.proto">rpctransact.proto</a></p>
+<ul>
+<li>
+<p><a href="#rpctransact.CallCodeParam">CallCodeParam</a></p>
+</li>
+<li>
+<p><a href="#rpctransact.TxEnvelope">TxEnvelope</a></p>
+</li>
+<li>
+<p><a href="#rpctransact.TxEnvelopeParam">TxEnvelopeParam</a></p>
+</li>
+<li>
+<p><a href="#rpctransact.Transact">Transact</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#github.com/tendermint/tendermint/abci/types/types.proto">github.com/tendermint/tendermint/abci/types/types.proto</a></p>
+<ul>
+<li>
+<p><a href="#types.BlockGossip">BlockGossip</a></p>
+</li>
+<li>
+<p><a href="#types.BlockID">BlockID</a></p>
+</li>
+<li>
+<p><a href="#types.BlockSize">BlockSize</a></p>
+</li>
+<li>
+<p><a href="#types.ConsensusParams">ConsensusParams</a></p>
+</li>
+<li>
+<p><a href="#types.Evidence">Evidence</a></p>
+</li>
+<li>
+<p><a href="#types.Header">Header</a></p>
+</li>
+<li>
+<p><a href="#types.LastCommitInfo">LastCommitInfo</a></p>
+</li>
+<li>
+<p><a href="#types.PartSetHeader">PartSetHeader</a></p>
+</li>
+<li>
+<p><a href="#types.PubKey">PubKey</a></p>
+</li>
+<li>
+<p><a href="#types.Request">Request</a></p>
+</li>
+<li>
+<p><a href="#types.RequestBeginBlock">RequestBeginBlock</a></p>
+</li>
+<li>
+<p><a href="#types.RequestCheckTx">RequestCheckTx</a></p>
+</li>
+<li>
+<p><a href="#types.RequestCommit">RequestCommit</a></p>
+</li>
+<li>
+<p><a href="#types.RequestDeliverTx">RequestDeliverTx</a></p>
+</li>
+<li>
+<p><a href="#types.RequestEcho">RequestEcho</a></p>
+</li>
+<li>
+<p><a href="#types.RequestEndBlock">RequestEndBlock</a></p>
+</li>
+<li>
+<p><a href="#types.RequestFlush">RequestFlush</a></p>
+</li>
+<li>
+<p><a href="#types.RequestInfo">RequestInfo</a></p>
+</li>
+<li>
+<p><a href="#types.RequestInitChain">RequestInitChain</a></p>
+</li>
+<li>
+<p><a href="#types.RequestQuery">RequestQuery</a></p>
+</li>
+<li>
+<p><a href="#types.RequestSetOption">RequestSetOption</a></p>
+</li>
+<li>
+<p><a href="#types.Response">Response</a></p>
+</li>
+<li>
+<p><a href="#types.ResponseBeginBlock">ResponseBeginBlock</a></p>
+</li>
+<li>
+<p><a href="#types.ResponseCheckTx">ResponseCheckTx</a></p>
+</li>
+<li>
+<p><a href="#types.ResponseCommit">ResponseCommit</a></p>
+</li>
+<li>
+<p><a href="#types.ResponseDeliverTx">ResponseDeliverTx</a></p>
+</li>
+<li>
+<p><a href="#types.ResponseEcho">ResponseEcho</a></p>
+</li>
+<li>
+<p><a href="#types.ResponseEndBlock">ResponseEndBlock</a></p>
+</li>
+<li>
+<p><a href="#types.ResponseException">ResponseException</a></p>
+</li>
+<li>
+<p><a href="#types.ResponseFlush">ResponseFlush</a></p>
+</li>
+<li>
+<p><a href="#types.ResponseInfo">ResponseInfo</a></p>
+</li>
+<li>
+<p><a href="#types.ResponseInitChain">ResponseInitChain</a></p>
+</li>
+<li>
+<p><a href="#types.ResponseQuery">ResponseQuery</a></p>
+</li>
+<li>
+<p><a href="#types.ResponseSetOption">ResponseSetOption</a></p>
+</li>
+<li>
+<p><a href="#types.TxSize">TxSize</a></p>
+</li>
+<li>
+<p><a href="#types.Validator">Validator</a></p>
+</li>
+<li>
+<p><a href="#types.ValidatorUpdate">ValidatorUpdate</a></p>
+</li>
+<li>
+<p><a href="#types.VoteInfo">VoteInfo</a></p>
+</li>
+<li>
+<p><a href="#types.ABCIApplication">ABCIApplication</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#github.com/tendermint/tendermint/libs/common/types.proto">github.com/tendermint/tendermint/libs/common/types.proto</a></p>
+<ul>
+<li><a href="#common.KI64Pair">KI64Pair</a></li>
+<li><a href="#common.KVPair">KVPair</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#permission.proto">permission.proto</a></p>
+<ul>
+<li><a href="#permission.AccountPermissions">AccountPermissions</a></li>
+<li><a href="#permission.BasePermissions">BasePermissions</a></li>
+<li><a href="#permission.PermArgs">PermArgs</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#acm.proto">acm.proto</a></p>
+<ul>
+<li><a href="#acm.Account">Account</a></li>
+<li><a href="#acm.ContractMeta">ContractMeta</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#rpcquery.proto">rpcquery.proto</a></p>
+<ul>
+<li>
+<p><a href="#rpcquery.GetAccountParam">GetAccountParam</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.GetBlockParam">GetBlockParam</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.GetMetadataParam">GetMetadataParam</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.GetNameParam">GetNameParam</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.GetProposalParam">GetProposalParam</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.GetStatsParam">GetStatsParam</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.GetStorageParam">GetStorageParam</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.GetValidatorSetHistoryParam">GetValidatorSetHistoryParam</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.GetValidatorSetParam">GetValidatorSetParam</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.ListAccountsParam">ListAccountsParam</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.ListNamesParam">ListNamesParam</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.ListProposalsParam">ListProposalsParam</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.MetadataResult">MetadataResult</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.ProposalResult">ProposalResult</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.Stats">Stats</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.StatusParam">StatusParam</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.StorageValue">StorageValue</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.ValidatorSet">ValidatorSet</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.ValidatorSetHistory">ValidatorSetHistory</a></p>
+</li>
+<li>
+<p><a href="#rpcquery.Query">Query</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#tendermint.proto">tendermint.proto</a></p>
+<ul>
+<li><a href="#tendermint.NodeInfo">NodeInfo</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#crypto.proto">crypto.proto</a></p>
+<ul>
+<li><a href="#crypto.PrivateKey">PrivateKey</a></li>
+<li><a href="#crypto.PublicKey">PublicKey</a></li>
+<li><a href="#crypto.Signature">Signature</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#storage.proto">storage.proto</a></p>
+<ul>
+<li><a href="#storage.CommitID">CommitID</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#payload.proto">payload.proto</a></p>
+<ul>
+<li>
+<p><a href="#payload.Any">Any</a></p>
+</li>
+<li>
+<p><a href="#payload.Ballot">Ballot</a></p>
+</li>
+<li>
+<p><a href="#payload.BatchTx">BatchTx</a></p>
+</li>
+<li>
+<p><a href="#payload.BondTx">BondTx</a></p>
+</li>
+<li>
+<p><a href="#payload.CallTx">CallTx</a></p>
+</li>
+<li>
+<p><a href="#payload.ContractMeta">ContractMeta</a></p>
+</li>
+<li>
+<p><a href="#payload.GovTx">GovTx</a></p>
+</li>
+<li>
+<p><a href="#payload.NameTx">NameTx</a></p>
+</li>
+<li>
+<p><a href="#payload.PermsTx">PermsTx</a></p>
+</li>
+<li>
+<p><a href="#payload.Proposal">Proposal</a></p>
+</li>
+<li>
+<p><a href="#payload.ProposalTx">ProposalTx</a></p>
+</li>
+<li>
+<p><a href="#payload.SendTx">SendTx</a></p>
+</li>
+<li>
+<p><a href="#payload.TxInput">TxInput</a></p>
+</li>
+<li>
+<p><a href="#payload.TxOutput">TxOutput</a></p>
+</li>
+<li>
+<p><a href="#payload.UnbondTx">UnbondTx</a></p>
+</li>
+<li>
+<p><a href="#payload.Vote">Vote</a></p>
+</li>
+<li>
+<p><a href="#payload.Ballot.ProposalState">Ballot.ProposalState</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#dump.proto">dump.proto</a></p>
+<ul>
+<li><a href="#dump.AccountStorage">AccountStorage</a></li>
+<li><a href="#dump.Dump">Dump</a></li>
+<li><a href="#dump.EVMEvent">EVMEvent</a></li>
+<li><a href="#dump.Storage">Storage</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#rpcdump.proto">rpcdump.proto</a></p>
+<ul>
+<li>
+<p><a href="#rpcdump.GetDumpParam">GetDumpParam</a></p>
+</li>
+<li>
+<p><a href="#rpcdump.Dump">Dump</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#keys.proto">keys.proto</a></p>
+<ul>
+<li>
+<p><a href="#keys.AddNameRequest">AddNameRequest</a></p>
+</li>
+<li>
+<p><a href="#keys.AddNameResponse">AddNameResponse</a></p>
+</li>
+<li>
+<p><a href="#keys.ExportRequest">ExportRequest</a></p>
+</li>
+<li>
+<p><a href="#keys.ExportResponse">ExportResponse</a></p>
+</li>
+<li>
+<p><a href="#keys.GenRequest">GenRequest</a></p>
+</li>
+<li>
+<p><a href="#keys.GenResponse">GenResponse</a></p>
+</li>
+<li>
+<p><a href="#keys.HashRequest">HashRequest</a></p>
+</li>
+<li>
+<p><a href="#keys.HashResponse">HashResponse</a></p>
+</li>
+<li>
+<p><a href="#keys.ImportJSONRequest">ImportJSONRequest</a></p>
+</li>
+<li>
+<p><a href="#keys.ImportRequest">ImportRequest</a></p>
+</li>
+<li>
+<p><a href="#keys.ImportResponse">ImportResponse</a></p>
+</li>
+<li>
+<p><a href="#keys.KeyID">KeyID</a></p>
+</li>
+<li>
+<p><a href="#keys.ListRequest">ListRequest</a></p>
+</li>
+<li>
+<p><a href="#keys.ListResponse">ListResponse</a></p>
+</li>
+<li>
+<p><a href="#keys.PubRequest">PubRequest</a></p>
+</li>
+<li>
+<p><a href="#keys.PubResponse">PubResponse</a></p>
+</li>
+<li>
+<p><a href="#keys.RemoveNameRequest">RemoveNameRequest</a></p>
+</li>
+<li>
+<p><a href="#keys.RemoveNameResponse">RemoveNameResponse</a></p>
+</li>
+<li>
+<p><a href="#keys.SignRequest">SignRequest</a></p>
+</li>
+<li>
+<p><a href="#keys.SignResponse">SignResponse</a></p>
+</li>
+<li>
+<p><a href="#keys.VerifyRequest">VerifyRequest</a></p>
+</li>
+<li>
+<p><a href="#keys.VerifyResponse">VerifyResponse</a></p>
+</li>
+<li>
+<p><a href="#keys.Keys">Keys</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#errors.proto">errors.proto</a></p>
+<ul>
+<li><a href="#errors.Exception">Exception</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#rpc.proto">rpc.proto</a></p>
+<ul>
+<li><a href="#rpc.ResultStatus">ResultStatus</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#rpcevents.proto">rpcevents.proto</a></p>
+<ul>
+<li>
+<p><a href="#rpcevents.BlockRange">BlockRange</a></p>
+</li>
+<li>
+<p><a href="#rpcevents.BlocksRequest">BlocksRequest</a></p>
+</li>
+<li>
+<p><a href="#rpcevents.Bound">Bound</a></p>
+</li>
+<li>
+<p><a href="#rpcevents.EventsResponse">EventsResponse</a></p>
+</li>
+<li>
+<p><a href="#rpcevents.GetBlockRequest">GetBlockRequest</a></p>
+</li>
+<li>
+<p><a href="#rpcevents.GetTxsRequest">GetTxsRequest</a></p>
+</li>
+<li>
+<p><a href="#rpcevents.GetTxsResponse">GetTxsResponse</a></p>
+</li>
+<li>
+<p><a href="#rpcevents.TxRequest">TxRequest</a></p>
+</li>
+<li>
+<p><a href="#rpcevents.Bound.BoundType">Bound.BoundType</a></p>
+</li>
+<li>
+<p><a href="#rpcevents.ExecutionEvents">ExecutionEvents</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#bcm.proto">bcm.proto</a></p>
+<ul>
+<li><a href="#bcm.PersistedState">PersistedState</a></li>
+<li><a href="#bcm.SyncInfo">SyncInfo</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#spec.proto">spec.proto</a></p>
+<ul>
+<li><a href="#spec.TemplateAccount">TemplateAccount</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#scalar-value-types">Scalar Value Types</a></p>
+</li>
+</ul>
+<p><a name="balance.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#balanceproto" id="balanceproto">balance.proto</a></h2>
+<p><a name="balance.Balance"></a></p>
+<h3><a class="header" href="#balance" id="balance">Balance</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Type</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>Amount</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exec.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#execproto" id="execproto">exec.proto</a></h2>
+<p><a name="exec.BeginBlock"></a></p>
+<h3><a class="header" href="#beginblock" id="beginblock">BeginBlock</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Height</td><td><a href="#uint64">uint64</a></td><td></td><td>The height of this block</td></tr>
+<tr><td>Header</td><td><a href="#types.Header">types.Header</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exec.BeginTx"></a></p>
+<h3><a class="header" href="#begintx" id="begintx">BeginTx</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>TxHeader</td><td><a href="#exec.TxHeader">TxHeader</a></td><td></td><td></td></tr>
+<tr><td>Result</td><td><a href="#exec.Result">Result</a></td><td></td><td>Result of tx execution</td></tr>
+<tr><td>Exception</td><td><a href="#errors.Exception">errors.Exception</a></td><td></td><td>If tx execution was an exception</td></tr>
+</tbody></table>
+<p><a name="exec.BlockExecution"></a></p>
+<h3><a class="header" href="#blockexecution" id="blockexecution">BlockExecution</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Height</td><td><a href="#uint64">uint64</a></td><td></td><td>The height of this block</td></tr>
+<tr><td>Header</td><td><a href="#types.Header">types.Header</a></td><td></td><td></td></tr>
+<tr><td>TxExecutions</td><td><a href="#exec.TxExecution">TxExecution</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="exec.CallData"></a></p>
+<h3><a class="header" href="#calldata" id="calldata">CallData</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Caller</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Callee</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Value</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>Gas</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exec.CallEvent"></a></p>
+<h3><a class="header" href="#callevent" id="callevent">CallEvent</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>CallType</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>CallData</td><td><a href="#exec.CallData">CallData</a></td><td></td><td></td></tr>
+<tr><td>Origin</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>StackDepth</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>Return</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exec.EndBlock"></a></p>
+<h3><a class="header" href="#endblock" id="endblock">EndBlock</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exec.EndTx"></a></p>
+<h3><a class="header" href="#endtx" id="endtx">EndTx</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>TxHash</td><td><a href="#bytes">bytes</a></td><td></td><td>The hash of the transaction that caused this event to be generated</td></tr>
+</tbody></table>
+<p><a name="exec.Event"></a></p>
+<h3><a class="header" href="#event" id="event">Event</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Header</td><td><a href="#exec.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>Input</td><td><a href="#exec.InputEvent">InputEvent</a></td><td></td><td></td></tr>
+<tr><td>Output</td><td><a href="#exec.OutputEvent">OutputEvent</a></td><td></td><td></td></tr>
+<tr><td>Call</td><td><a href="#exec.CallEvent">CallEvent</a></td><td></td><td></td></tr>
+<tr><td>Log</td><td><a href="#exec.LogEvent">LogEvent</a></td><td></td><td></td></tr>
+<tr><td>GovernAccount</td><td><a href="#exec.GovernAccountEvent">GovernAccountEvent</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exec.GovernAccountEvent"></a></p>
+<h3><a class="header" href="#governaccountevent" id="governaccountevent">GovernAccountEvent</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>AccountUpdate</td><td><a href="#spec.TemplateAccount">spec.TemplateAccount</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exec.Header"></a></p>
+<h3><a class="header" href="#header" id="header">Header</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>TxType</td><td><a href="#uint32">uint32</a></td><td></td><td>Transaction type</td></tr>
+<tr><td>TxHash</td><td><a href="#bytes">bytes</a></td><td></td><td>The hash of the transaction that caused this event to be generated</td></tr>
+<tr><td>EventType</td><td><a href="#uint32">uint32</a></td><td></td><td>The type of event</td></tr>
+<tr><td>EventID</td><td><a href="#string">string</a></td><td></td><td>EventID published with event</td></tr>
+<tr><td>Height</td><td><a href="#uint64">uint64</a></td><td></td><td>The block height at which this event was emitted</td></tr>
+<tr><td>Index</td><td><a href="#uint64">uint64</a></td><td></td><td>The index of this event relative to other events generated by the same transaction</td></tr>
+<tr><td>Exception</td><td><a href="#errors.Exception">errors.Exception</a></td><td></td><td>If event is exception</td></tr>
+</tbody></table>
+<p><a name="exec.InputEvent"></a></p>
+<h3><a class="header" href="#inputevent" id="inputevent">InputEvent</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exec.LogEvent"></a></p>
+<h3><a class="header" href="#logevent" id="logevent">LogEvent</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Topics</td><td><a href="#bytes">bytes</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="exec.Origin"></a></p>
+<h3><a class="header" href="#origin" id="origin">Origin</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>ChainID</td><td><a href="#string">string</a></td><td></td><td>The original ChainID from for this transaction</td></tr>
+<tr><td>Height</td><td><a href="#uint64">uint64</a></td><td></td><td>The original height at which this transaction was committed</td></tr>
+<tr><td>Index</td><td><a href="#uint64">uint64</a></td><td></td><td>The original index in the block</td></tr>
+<tr><td>Time</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td>The original block time for this transaction</td></tr>
+</tbody></table>
+<p><a name="exec.OutputEvent"></a></p>
+<h3><a class="header" href="#outputevent" id="outputevent">OutputEvent</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exec.Result"></a></p>
+<h3><a class="header" href="#result" id="result">Result</a></h3>
+<p>Could structure this further if needed - sum type of various results relevant to different transaction types</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Return</td><td><a href="#bytes">bytes</a></td><td></td><td>EVM execution return</td></tr>
+<tr><td>GasUsed</td><td><a href="#uint64">uint64</a></td><td></td><td>Gas used in computation</td></tr>
+<tr><td>NameEntry</td><td><a href="#names.Entry">names.Entry</a></td><td></td><td>Name entry created</td></tr>
+<tr><td>PermArgs</td><td><a href="#permission.PermArgs">permission.PermArgs</a></td><td></td><td>Permission update performed</td></tr>
+</tbody></table>
+<p><a name="exec.StreamEvent"></a></p>
+<h3><a class="header" href="#streamevent" id="streamevent">StreamEvent</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>BeginBlock</td><td><a href="#exec.BeginBlock">BeginBlock</a></td><td></td><td></td></tr>
+<tr><td>BeginTx</td><td><a href="#exec.BeginTx">BeginTx</a></td><td></td><td></td></tr>
+<tr><td>Envelope</td><td><a href="#txs.Envelope">txs.Envelope</a></td><td></td><td></td></tr>
+<tr><td>Event</td><td><a href="#exec.Event">Event</a></td><td></td><td></td></tr>
+<tr><td>EndTx</td><td><a href="#exec.EndTx">EndTx</a></td><td></td><td></td></tr>
+<tr><td>EndBlock</td><td><a href="#exec.EndBlock">EndBlock</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="exec.StreamEvents"></a></p>
+<h3><a class="header" href="#streamevents" id="streamevents">StreamEvents</a></h3>
+<p>This message exists purely for framing []StreamEvent</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>StreamEvents</td><td><a href="#exec.StreamEvent">StreamEvent</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="exec.TxExecution"></a></p>
+<h3><a class="header" href="#txexecution" id="txexecution">TxExecution</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Header</td><td><a href="#exec.TxHeader">TxHeader</a></td><td></td><td></td></tr>
+<tr><td>Envelope</td><td><a href="#txs.Envelope">txs.Envelope</a></td><td></td><td>Signed Tx that triggered this execution</td></tr>
+<tr><td>Events</td><td><a href="#exec.Event">Event</a></td><td>repeated</td><td>Execution events</td></tr>
+<tr><td>Result</td><td><a href="#exec.Result">Result</a></td><td></td><td>The execution results</td></tr>
+<tr><td>Receipt</td><td><a href="#txs.Receipt">txs.Receipt</a></td><td></td><td>The transaction receipt</td></tr>
+<tr><td>Exception</td><td><a href="#errors.Exception">errors.Exception</a></td><td></td><td>If execution was an exception</td></tr>
+<tr><td>TxExecutions</td><td><a href="#exec.TxExecution">TxExecution</a></td><td>repeated</td><td>A proposal may contain other transactions</td></tr>
+</tbody></table>
+<p><a name="exec.TxExecutionKey"></a></p>
+<h3><a class="header" href="#txexecutionkey" id="txexecutionkey">TxExecutionKey</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Height</td><td><a href="#uint64">uint64</a></td><td></td><td>The block height</td></tr>
+<tr><td>Offset</td><td><a href="#uint64">uint64</a></td><td></td><td>The offset of the TxExecution in bytes</td></tr>
+</tbody></table>
+<p><a name="exec.TxHeader"></a></p>
+<h3><a class="header" href="#txheader" id="txheader">TxHeader</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>TxType</td><td><a href="#uint32">uint32</a></td><td></td><td>Transaction type</td></tr>
+<tr><td>TxHash</td><td><a href="#bytes">bytes</a></td><td></td><td>The hash of the transaction that caused this event to be generated</td></tr>
+<tr><td>Height</td><td><a href="#uint64">uint64</a></td><td></td><td>The block height at which this Tx was included</td></tr>
+<tr><td>Index</td><td><a href="#uint64">uint64</a></td><td></td><td>The index of this transaction within the block</td></tr>
+<tr><td>Origin</td><td><a href="#exec.Origin">Origin</a></td><td></td><td>The origin information from the chain on which this tx was originally committed (if restored or otherwise imported)</td></tr>
+</tbody></table>
+<p><a name="names.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#namesproto" id="namesproto">names.proto</a></h2>
+<p><a name="names.Entry"></a></p>
+<h3><a class="header" href="#entry" id="entry">Entry</a></h3>
+<p>NameReg provides a global key value store based on Name, Data pairs that are subject to expiry and ownership by an
+account.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Name</td><td><a href="#string">string</a></td><td></td><td>registered name for the entry</td></tr>
+<tr><td>Owner</td><td><a href="#bytes">bytes</a></td><td></td><td>address that created the entry</td></tr>
+<tr><td>Data</td><td><a href="#string">string</a></td><td></td><td>data to store under this name</td></tr>
+<tr><td>Expires</td><td><a href="#uint64">uint64</a></td><td></td><td>block at which this entry expires</td></tr>
+</tbody></table>
+<p><a name="encoding.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#encodingproto" id="encodingproto">encoding.proto</a></h2>
+<p><a name="encoding.TestMessage"></a></p>
+<h3><a class="header" href="#testmessage" id="testmessage">TestMessage</a></h3>
+<p>For testing</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Type</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>Amount</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="validator.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#validatorproto" id="validatorproto">validator.proto</a></h2>
+<p><a name="validator.Validator"></a></p>
+<h3><a class="header" href="#validator" id="validator">Validator</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>PublicKey</td><td><a href="#crypto.PublicKey">crypto.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>Power</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="txs.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#txsproto" id="txsproto">txs.proto</a></h2>
+<p><a name="txs.Envelope"></a></p>
+<h3><a class="header" href="#envelope" id="envelope">Envelope</a></h3>
+<p>An envelope contains both the signable Tx and the signatures for each input (in signatories)</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Signatories</td><td><a href="#txs.Signatory">Signatory</a></td><td>repeated</td><td></td></tr>
+<tr><td>Tx</td><td><a href="#bytes">bytes</a></td><td></td><td>Canonical bytes of the Tx ready to be signed</td></tr>
+</tbody></table>
+<p><a name="txs.Receipt"></a></p>
+<h3><a class="header" href="#receipt" id="receipt">Receipt</a></h3>
+<p>BroadcastTx or Transaction receipt</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>TxType</td><td><a href="#uint32">uint32</a></td><td></td><td>Transaction type</td></tr>
+<tr><td>TxHash</td><td><a href="#bytes">bytes</a></td><td></td><td>The hash of the transaction that caused this event to be generated</td></tr>
+<tr><td>CreatesContract</td><td><a href="#bool">bool</a></td><td></td><td>Whether the transaction creates a contract</td></tr>
+<tr><td>ContractAddress</td><td><a href="#bytes">bytes</a></td><td></td><td>The address of the contract being called</td></tr>
+</tbody></table>
+<p><a name="txs.Signatory"></a></p>
+<h3><a class="header" href="#signatory" id="signatory">Signatory</a></h3>
+<p>Signatory contains signature and one or both of Address and PublicKey to identify the signer</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>PublicKey</td><td><a href="#crypto.PublicKey">crypto.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>Signature</td><td><a href="#crypto.Signature">crypto.Signature</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpctransact.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#rpctransactproto" id="rpctransactproto">rpctransact.proto</a></h2>
+<p><a name="rpctransact.CallCodeParam"></a></p>
+<h3><a class="header" href="#callcodeparam" id="callcodeparam">CallCodeParam</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>FromAddress</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Code</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpctransact.TxEnvelope"></a></p>
+<h3><a class="header" href="#txenvelope" id="txenvelope">TxEnvelope</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Envelope</td><td><a href="#txs.Envelope">txs.Envelope</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpctransact.TxEnvelopeParam"></a></p>
+<h3><a class="header" href="#txenvelopeparam" id="txenvelopeparam">TxEnvelopeParam</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Envelope</td><td><a href="#txs.Envelope">txs.Envelope</a></td><td></td><td>An existing Envelope - either signed or unsigned - if the latter will be signed server-side</td></tr>
+<tr><td>Payload</td><td><a href="#payload.Any">payload.Any</a></td><td></td><td>If no Envelope provided then one will be generated from the provided payload and signed server-side</td></tr>
+<tr><td>Timeout</td><td><a href="#google.protobuf.Duration">google.protobuf.Duration</a></td><td></td><td>The amount of time to wait for the transaction to be committed and the TxExecution to be returned (server-side). If zero there wait is unbounded. Timed out transactions return SyncInfo state that may be helpful debugging non-committed transactions - this timeout must be less than client timeout to see such information!</td></tr>
+</tbody></table>
+<p><a name="rpctransact.Transact"></a></p>
+<h3><a class="header" href="#transact" id="transact">Transact</a></h3>
+<p>Transaction Service Definition</p>
+<table><thead><tr><th>Method Name</th><th>Request Type</th><th>Response Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>BroadcastTxSync</td><td><a href="#rpctransact.TxEnvelopeParam">TxEnvelopeParam</a></td><td><a href="#exec.TxExecution">.exec.TxExecution</a></td><td>Broadcast a transaction to the mempool - if the transaction is not signed signing will be attempted server-side and wait for it to be included in block</td></tr>
+<tr><td>BroadcastTxAsync</td><td><a href="#rpctransact.TxEnvelopeParam">TxEnvelopeParam</a></td><td><a href="#txs.Receipt">.txs.Receipt</a></td><td>Broadcast a transaction to the mempool - if the transaction is not signed signing will be attempted server-side</td></tr>
+<tr><td>SignTx</td><td><a href="#rpctransact.TxEnvelopeParam">TxEnvelopeParam</a></td><td><a href="#rpctransact.TxEnvelope">TxEnvelope</a></td><td>Sign transaction server-side</td></tr>
+<tr><td>FormulateTx</td><td><a href="#payload.Any">.payload.Any</a></td><td><a href="#rpctransact.TxEnvelope">TxEnvelope</a></td><td>Formulate a transaction from a Payload and retrun the envelop with the Tx bytes ready to sign</td></tr>
+<tr><td>CallTxSync</td><td><a href="#payload.CallTx">.payload.CallTx</a></td><td><a href="#exec.TxExecution">.exec.TxExecution</a></td><td>Formulate and sign a CallTx transaction signed server-side and wait for it to be included in a block, retrieving response</td></tr>
+<tr><td>CallTxAsync</td><td><a href="#payload.CallTx">.payload.CallTx</a></td><td><a href="#txs.Receipt">.txs.Receipt</a></td><td>Formulate and sign a CallTx transaction signed server-side</td></tr>
+<tr><td>CallTxSim</td><td><a href="#payload.CallTx">.payload.CallTx</a></td><td><a href="#exec.TxExecution">.exec.TxExecution</a></td><td>Perform a 'simulated' call of a contract against the current committed EVM state without any changes been saved and wait for the transaction to be included in a block</td></tr>
+<tr><td>CallCodeSim</td><td><a href="#rpctransact.CallCodeParam">CallCodeParam</a></td><td><a href="#exec.TxExecution">.exec.TxExecution</a></td><td>Perform a 'simulated' execution of provided code against the current committed EVM state without any changes been saved</td></tr>
+<tr><td>SendTxSync</td><td><a href="#payload.SendTx">.payload.SendTx</a></td><td><a href="#exec.TxExecution">.exec.TxExecution</a></td><td>Formulate a SendTx transaction signed server-side and wait for it to be included in a block, retrieving response</td></tr>
+<tr><td>SendTxAsync</td><td><a href="#payload.SendTx">.payload.SendTx</a></td><td><a href="#txs.Receipt">.txs.Receipt</a></td><td>Formulate and SendTx transaction signed server-side</td></tr>
+<tr><td>NameTxSync</td><td><a href="#payload.NameTx">.payload.NameTx</a></td><td><a href="#exec.TxExecution">.exec.TxExecution</a></td><td>Formualte a NameTx signed server-side and wait for it to be included in a block returning the registered name</td></tr>
+<tr><td>NameTxAsync</td><td><a href="#payload.NameTx">.payload.NameTx</a></td><td><a href="#txs.Receipt">.txs.Receipt</a></td><td>Formulate a NameTx signed server-side</td></tr>
+</tbody></table>
+<p><a name="github.com/tendermint/tendermint/abci/types/types.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#githubcomtenderminttendermintabcitypestypesproto" id="githubcomtenderminttendermintabcitypestypesproto">github.com/tendermint/tendermint/abci/types/types.proto</a></h2>
+<p><a name="types.BlockGossip"></a></p>
+<h3><a class="header" href="#blockgossip" id="blockgossip">BlockGossip</a></h3>
+<p>BlockGossip determine consensus critical
+elements of how blocks are gossiped</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>block_part_size_bytes</td><td><a href="#int32">int32</a></td><td></td><td>Note: must not be 0</td></tr>
+</tbody></table>
+<p><a name="types.BlockID"></a></p>
+<h3><a class="header" href="#blockid" id="blockid">BlockID</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>hash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>parts_header</td><td><a href="#types.PartSetHeader">PartSetHeader</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.BlockSize"></a></p>
+<h3><a class="header" href="#blocksize" id="blocksize">BlockSize</a></h3>
+<p>BlockSize contains limits on the block size.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>max_bytes</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+<tr><td>max_gas</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.ConsensusParams"></a></p>
+<h3><a class="header" href="#consensusparams" id="consensusparams">ConsensusParams</a></h3>
+<p>ConsensusParams contains all consensus-relevant parameters
+that can be adjusted by the abci app</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>block_size</td><td><a href="#types.BlockSize">BlockSize</a></td><td></td><td></td></tr>
+<tr><td>tx_size</td><td><a href="#types.TxSize">TxSize</a></td><td></td><td></td></tr>
+<tr><td>block_gossip</td><td><a href="#types.BlockGossip">BlockGossip</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.Evidence"></a></p>
+<h3><a class="header" href="#evidence" id="evidence">Evidence</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>type</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>validator</td><td><a href="#types.Validator">Validator</a></td><td></td><td></td></tr>
+<tr><td>height</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>time</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>total_voting_power</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.Header"></a></p>
+<h3><a class="header" href="#header-1" id="header-1">Header</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>chain_id</td><td><a href="#string">string</a></td><td></td><td>basic block info</td></tr>
+<tr><td>height</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>time</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>num_txs</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>total_txs</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>last_block_id</td><td><a href="#types.BlockID">BlockID</a></td><td></td><td>prev block info</td></tr>
+<tr><td>last_commit_hash</td><td><a href="#bytes">bytes</a></td><td></td><td>hashes of block data</td></tr>
+</tbody></table>
+<p>commit from validators from the last block |
+| data_hash | <a href="#bytes">bytes</a> |  | transactions |
+| validators_hash | <a href="#bytes">bytes</a> |  | hashes from the app output from the prev block</p>
+<p>validators for the current block |
+| next_validators_hash | <a href="#bytes">bytes</a> |  | validators for the next block |
+| consensus_hash | <a href="#bytes">bytes</a> |  | consensus params for current block |
+| app_hash | <a href="#bytes">bytes</a> |  | state after txs from the previous block |
+| last_results_hash | <a href="#bytes">bytes</a> |  | root hash of all results from the txs from the previous block |
+| evidence_hash | <a href="#bytes">bytes</a> |  | consensus info</p>
+<p>evidence included in the block |
+| proposer_address | <a href="#bytes">bytes</a> |  | original proposer of the block |</p>
+<p><a name="types.LastCommitInfo"></a></p>
+<h3><a class="header" href="#lastcommitinfo" id="lastcommitinfo">LastCommitInfo</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>round</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+<tr><td>votes</td><td><a href="#types.VoteInfo">VoteInfo</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="types.PartSetHeader"></a></p>
+<h3><a class="header" href="#partsetheader" id="partsetheader">PartSetHeader</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>total</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+<tr><td>hash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.PubKey"></a></p>
+<h3><a class="header" href="#pubkey" id="pubkey">PubKey</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>type</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.Request"></a></p>
+<h3><a class="header" href="#request" id="request">Request</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>echo</td><td><a href="#types.RequestEcho">RequestEcho</a></td><td></td><td></td></tr>
+<tr><td>flush</td><td><a href="#types.RequestFlush">RequestFlush</a></td><td></td><td></td></tr>
+<tr><td>info</td><td><a href="#types.RequestInfo">RequestInfo</a></td><td></td><td></td></tr>
+<tr><td>set_option</td><td><a href="#types.RequestSetOption">RequestSetOption</a></td><td></td><td></td></tr>
+<tr><td>init_chain</td><td><a href="#types.RequestInitChain">RequestInitChain</a></td><td></td><td></td></tr>
+<tr><td>query</td><td><a href="#types.RequestQuery">RequestQuery</a></td><td></td><td></td></tr>
+<tr><td>begin_block</td><td><a href="#types.RequestBeginBlock">RequestBeginBlock</a></td><td></td><td></td></tr>
+<tr><td>check_tx</td><td><a href="#types.RequestCheckTx">RequestCheckTx</a></td><td></td><td></td></tr>
+<tr><td>deliver_tx</td><td><a href="#types.RequestDeliverTx">RequestDeliverTx</a></td><td></td><td></td></tr>
+<tr><td>end_block</td><td><a href="#types.RequestEndBlock">RequestEndBlock</a></td><td></td><td></td></tr>
+<tr><td>commit</td><td><a href="#types.RequestCommit">RequestCommit</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.RequestBeginBlock"></a></p>
+<h3><a class="header" href="#requestbeginblock" id="requestbeginblock">RequestBeginBlock</a></h3>
+<p>NOTE: validators here have empty pubkeys.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>hash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>header</td><td><a href="#types.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>last_commit_info</td><td><a href="#types.LastCommitInfo">LastCommitInfo</a></td><td></td><td></td></tr>
+<tr><td>byzantine_validators</td><td><a href="#types.Evidence">Evidence</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="types.RequestCheckTx"></a></p>
+<h3><a class="header" href="#requestchecktx" id="requestchecktx">RequestCheckTx</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>tx</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.RequestCommit"></a></p>
+<h3><a class="header" href="#requestcommit" id="requestcommit">RequestCommit</a></h3>
+<p><a name="types.RequestDeliverTx"></a></p>
+<h3><a class="header" href="#requestdelivertx" id="requestdelivertx">RequestDeliverTx</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>tx</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.RequestEcho"></a></p>
+<h3><a class="header" href="#requestecho" id="requestecho">RequestEcho</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>message</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.RequestEndBlock"></a></p>
+<h3><a class="header" href="#requestendblock" id="requestendblock">RequestEndBlock</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>height</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.RequestFlush"></a></p>
+<h3><a class="header" href="#requestflush" id="requestflush">RequestFlush</a></h3>
+<p><a name="types.RequestInfo"></a></p>
+<h3><a class="header" href="#requestinfo" id="requestinfo">RequestInfo</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>version</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.RequestInitChain"></a></p>
+<h3><a class="header" href="#requestinitchain" id="requestinitchain">RequestInitChain</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>time</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>chain_id</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>consensus_params</td><td><a href="#types.ConsensusParams">ConsensusParams</a></td><td></td><td></td></tr>
+<tr><td>validators</td><td><a href="#types.ValidatorUpdate">ValidatorUpdate</a></td><td>repeated</td><td></td></tr>
+<tr><td>app_state_bytes</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.RequestQuery"></a></p>
+<h3><a class="header" href="#requestquery" id="requestquery">RequestQuery</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>path</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>height</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>prove</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.RequestSetOption"></a></p>
+<h3><a class="header" href="#requestsetoption" id="requestsetoption">RequestSetOption</a></h3>
+<p>nondeterministic</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.Response"></a></p>
+<h3><a class="header" href="#response" id="response">Response</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>exception</td><td><a href="#types.ResponseException">ResponseException</a></td><td></td><td></td></tr>
+<tr><td>echo</td><td><a href="#types.ResponseEcho">ResponseEcho</a></td><td></td><td></td></tr>
+<tr><td>flush</td><td><a href="#types.ResponseFlush">ResponseFlush</a></td><td></td><td></td></tr>
+<tr><td>info</td><td><a href="#types.ResponseInfo">ResponseInfo</a></td><td></td><td></td></tr>
+<tr><td>set_option</td><td><a href="#types.ResponseSetOption">ResponseSetOption</a></td><td></td><td></td></tr>
+<tr><td>init_chain</td><td><a href="#types.ResponseInitChain">ResponseInitChain</a></td><td></td><td></td></tr>
+<tr><td>query</td><td><a href="#types.ResponseQuery">ResponseQuery</a></td><td></td><td></td></tr>
+<tr><td>begin_block</td><td><a href="#types.ResponseBeginBlock">ResponseBeginBlock</a></td><td></td><td></td></tr>
+<tr><td>check_tx</td><td><a href="#types.ResponseCheckTx">ResponseCheckTx</a></td><td></td><td></td></tr>
+<tr><td>deliver_tx</td><td><a href="#types.ResponseDeliverTx">ResponseDeliverTx</a></td><td></td><td></td></tr>
+<tr><td>end_block</td><td><a href="#types.ResponseEndBlock">ResponseEndBlock</a></td><td></td><td></td></tr>
+<tr><td>commit</td><td><a href="#types.ResponseCommit">ResponseCommit</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.ResponseBeginBlock"></a></p>
+<h3><a class="header" href="#responsebeginblock" id="responsebeginblock">ResponseBeginBlock</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>tags</td><td><a href="#common.KVPair">common.KVPair</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="types.ResponseCheckTx"></a></p>
+<h3><a class="header" href="#responsechecktx" id="responsechecktx">ResponseCheckTx</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>code</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>log</td><td><a href="#string">string</a></td><td></td><td>nondeterministic</td></tr>
+<tr><td>info</td><td><a href="#string">string</a></td><td></td><td>nondeterministic</td></tr>
+<tr><td>gas_wanted</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>gas_used</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>tags</td><td><a href="#common.KVPair">common.KVPair</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="types.ResponseCommit"></a></p>
+<h3><a class="header" href="#responsecommit" id="responsecommit">ResponseCommit</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>data</td><td><a href="#bytes">bytes</a></td><td></td><td>reserve 1</td></tr>
+</tbody></table>
+<p><a name="types.ResponseDeliverTx"></a></p>
+<h3><a class="header" href="#responsedelivertx" id="responsedelivertx">ResponseDeliverTx</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>code</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>log</td><td><a href="#string">string</a></td><td></td><td>nondeterministic</td></tr>
+<tr><td>info</td><td><a href="#string">string</a></td><td></td><td>nondeterministic</td></tr>
+<tr><td>gas_wanted</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>gas_used</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>tags</td><td><a href="#common.KVPair">common.KVPair</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="types.ResponseEcho"></a></p>
+<h3><a class="header" href="#responseecho" id="responseecho">ResponseEcho</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>message</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.ResponseEndBlock"></a></p>
+<h3><a class="header" href="#responseendblock" id="responseendblock">ResponseEndBlock</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>validator_updates</td><td><a href="#types.ValidatorUpdate">ValidatorUpdate</a></td><td>repeated</td><td></td></tr>
+<tr><td>consensus_param_updates</td><td><a href="#types.ConsensusParams">ConsensusParams</a></td><td></td><td></td></tr>
+<tr><td>tags</td><td><a href="#common.KVPair">common.KVPair</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="types.ResponseException"></a></p>
+<h3><a class="header" href="#responseexception" id="responseexception">ResponseException</a></h3>
+<p>nondeterministic</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>error</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.ResponseFlush"></a></p>
+<h3><a class="header" href="#responseflush" id="responseflush">ResponseFlush</a></h3>
+<p><a name="types.ResponseInfo"></a></p>
+<h3><a class="header" href="#responseinfo" id="responseinfo">ResponseInfo</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>data</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>version</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>last_block_height</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>last_block_app_hash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.ResponseInitChain"></a></p>
+<h3><a class="header" href="#responseinitchain" id="responseinitchain">ResponseInitChain</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>consensus_params</td><td><a href="#types.ConsensusParams">ConsensusParams</a></td><td></td><td></td></tr>
+<tr><td>validators</td><td><a href="#types.ValidatorUpdate">ValidatorUpdate</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="types.ResponseQuery"></a></p>
+<h3><a class="header" href="#responsequery" id="responsequery">ResponseQuery</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>code</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>log</td><td><a href="#string">string</a></td><td></td><td>bytes data = 2; // use &quot;value&quot; instead.</td></tr>
+</tbody></table>
+<p>nondeterministic |
+| info | <a href="#string">string</a> |  | nondeterministic |
+| index | <a href="#int64">int64</a> |  |  |
+| key | <a href="#bytes">bytes</a> |  |  |
+| value | <a href="#bytes">bytes</a> |  |  |
+| proof | <a href="#bytes">bytes</a> |  |  |
+| height | <a href="#int64">int64</a> |  |  |</p>
+<p><a name="types.ResponseSetOption"></a></p>
+<h3><a class="header" href="#responsesetoption" id="responsesetoption">ResponseSetOption</a></h3>
+<p>nondeterministic</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>code</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>log</td><td><a href="#string">string</a></td><td></td><td>bytes data = 2;</td></tr>
+<tr><td>info</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.TxSize"></a></p>
+<h3><a class="header" href="#txsize" id="txsize">TxSize</a></h3>
+<p>TxSize contains limits on the tx size.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>max_bytes</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+<tr><td>max_gas</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.Validator"></a></p>
+<h3><a class="header" href="#validator-1" id="validator-1">Validator</a></h3>
+<p>Validator</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>power</td><td><a href="#int64">int64</a></td><td></td><td>PubKey pub_key = 2 [(gogoproto.nullable)=false];</td></tr>
+</tbody></table>
+<p><a name="types.ValidatorUpdate"></a></p>
+<h3><a class="header" href="#validatorupdate" id="validatorupdate">ValidatorUpdate</a></h3>
+<p>ValidatorUpdate</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>pub_key</td><td><a href="#types.PubKey">PubKey</a></td><td></td><td></td></tr>
+<tr><td>power</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.VoteInfo"></a></p>
+<h3><a class="header" href="#voteinfo" id="voteinfo">VoteInfo</a></h3>
+<p>VoteInfo</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>validator</td><td><a href="#types.Validator">Validator</a></td><td></td><td></td></tr>
+<tr><td>signed_last_block</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.ABCIApplication"></a></p>
+<h3><a class="header" href="#abciapplication" id="abciapplication">ABCIApplication</a></h3>
+<table><thead><tr><th>Method Name</th><th>Request Type</th><th>Response Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>Echo</td><td><a href="#types.RequestEcho">RequestEcho</a></td><td><a href="#types.ResponseEcho">ResponseEcho</a></td><td></td></tr>
+<tr><td>Flush</td><td><a href="#types.RequestFlush">RequestFlush</a></td><td><a href="#types.ResponseFlush">ResponseFlush</a></td><td></td></tr>
+<tr><td>Info</td><td><a href="#types.RequestInfo">RequestInfo</a></td><td><a href="#types.ResponseInfo">ResponseInfo</a></td><td></td></tr>
+<tr><td>SetOption</td><td><a href="#types.RequestSetOption">RequestSetOption</a></td><td><a href="#types.ResponseSetOption">ResponseSetOption</a></td><td></td></tr>
+<tr><td>DeliverTx</td><td><a href="#types.RequestDeliverTx">RequestDeliverTx</a></td><td><a href="#types.ResponseDeliverTx">ResponseDeliverTx</a></td><td></td></tr>
+<tr><td>CheckTx</td><td><a href="#types.RequestCheckTx">RequestCheckTx</a></td><td><a href="#types.ResponseCheckTx">ResponseCheckTx</a></td><td></td></tr>
+<tr><td>Query</td><td><a href="#types.RequestQuery">RequestQuery</a></td><td><a href="#types.ResponseQuery">ResponseQuery</a></td><td></td></tr>
+<tr><td>Commit</td><td><a href="#types.RequestCommit">RequestCommit</a></td><td><a href="#types.ResponseCommit">ResponseCommit</a></td><td></td></tr>
+<tr><td>InitChain</td><td><a href="#types.RequestInitChain">RequestInitChain</a></td><td><a href="#types.ResponseInitChain">ResponseInitChain</a></td><td></td></tr>
+<tr><td>BeginBlock</td><td><a href="#types.RequestBeginBlock">RequestBeginBlock</a></td><td><a href="#types.ResponseBeginBlock">ResponseBeginBlock</a></td><td></td></tr>
+<tr><td>EndBlock</td><td><a href="#types.RequestEndBlock">RequestEndBlock</a></td><td><a href="#types.ResponseEndBlock">ResponseEndBlock</a></td><td></td></tr>
+</tbody></table>
+<p><a name="github.com/tendermint/tendermint/libs/common/types.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#githubcomtenderminttendermintlibscommontypesproto" id="githubcomtenderminttendermintlibscommontypesproto">github.com/tendermint/tendermint/libs/common/types.proto</a></h2>
+<p><a name="common.KI64Pair"></a></p>
+<h3><a class="header" href="#ki64pair" id="ki64pair">KI64Pair</a></h3>
+<p>Define these here for compatibility but use tmlibs/common.KI64Pair.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="common.KVPair"></a></p>
+<h3><a class="header" href="#kvpair" id="kvpair">KVPair</a></h3>
+<p>Define these here for compatibility but use tmlibs/common.KVPair.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="permission.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#permissionproto" id="permissionproto">permission.proto</a></h2>
+<p><a name="permission.AccountPermissions"></a></p>
+<h3><a class="header" href="#accountpermissions" id="accountpermissions">AccountPermissions</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Base</td><td><a href="#permission.BasePermissions">BasePermissions</a></td><td>optional</td><td></td></tr>
+<tr><td>Roles</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="permission.BasePermissions"></a></p>
+<h3><a class="header" href="#basepermissions" id="basepermissions">BasePermissions</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Perms</td><td><a href="#uint64">uint64</a></td><td>optional</td><td></td></tr>
+<tr><td>SetBit</td><td><a href="#uint64">uint64</a></td><td>optional</td><td></td></tr>
+</tbody></table>
+<p><a name="permission.PermArgs"></a></p>
+<h3><a class="header" href="#permargs" id="permargs">PermArgs</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Action</td><td><a href="#uint64">uint64</a></td><td>optional</td><td>The permission function</td></tr>
+<tr><td>Target</td><td><a href="#bytes">bytes</a></td><td>optional</td><td>The target of the action</td></tr>
+<tr><td>Permission</td><td><a href="#uint64">uint64</a></td><td>optional</td><td>Possible arguments</td></tr>
+<tr><td>Role</td><td><a href="#string">string</a></td><td>optional</td><td></td></tr>
+<tr><td>Value</td><td><a href="#bool">bool</a></td><td>optional</td><td></td></tr>
+</tbody></table>
+<p><a name="acm.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#acmproto" id="acmproto">acm.proto</a></h2>
+<p><a name="acm.Account"></a></p>
+<h3><a class="header" href="#account" id="account">Account</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>PublicKey</td><td><a href="#crypto.PublicKey">crypto.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>Sequence</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>Balance</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>EVMCode</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Permissions</td><td><a href="#permission.AccountPermissions">permission.AccountPermissions</a></td><td></td><td></td></tr>
+<tr><td>WASMCode</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>CodeHash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>ContractMeta</td><td><a href="#acm.ContractMeta">ContractMeta</a></td><td>repeated</td><td></td></tr>
+<tr><td>Forebear</td><td><a href="#bytes">bytes</a></td><td></td><td>The metadata is stored in the deployed account. When the deployed account creates new account (from Solidity/EVM), they point to the original deployed account where the metadata is stored. This original account is called the forebear.</td></tr>
+</tbody></table>
+<p><a name="acm.ContractMeta"></a></p>
+<h3><a class="header" href="#contractmeta" id="contractmeta">ContractMeta</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>CodeHash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>MetadataHash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Metadata</td><td><a href="#string">string</a></td><td></td><td>In the dump format we would like the ABI rather than its hash</td></tr>
+</tbody></table>
+<p><a name="rpcquery.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#rpcqueryproto" id="rpcqueryproto">rpcquery.proto</a></h2>
+<p><a name="rpcquery.GetAccountParam"></a></p>
+<h3><a class="header" href="#getaccountparam" id="getaccountparam">GetAccountParam</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.GetBlockParam"></a></p>
+<h3><a class="header" href="#getblockparam" id="getblockparam">GetBlockParam</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.GetMetadataParam"></a></p>
+<h3><a class="header" href="#getmetadataparam" id="getmetadataparam">GetMetadataParam</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>MetadataHash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.GetNameParam"></a></p>
+<h3><a class="header" href="#getnameparam" id="getnameparam">GetNameParam</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.GetProposalParam"></a></p>
+<h3><a class="header" href="#getproposalparam" id="getproposalparam">GetProposalParam</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Hash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.GetStatsParam"></a></p>
+<h3><a class="header" href="#getstatsparam" id="getstatsparam">GetStatsParam</a></h3>
+<p><a name="rpcquery.GetStorageParam"></a></p>
+<h3><a class="header" href="#getstorageparam" id="getstorageparam">GetStorageParam</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.GetValidatorSetHistoryParam"></a></p>
+<h3><a class="header" href="#getvalidatorsethistoryparam" id="getvalidatorsethistoryparam">GetValidatorSetHistoryParam</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>IncludePrevious</td><td><a href="#int64">int64</a></td><td></td><td>Use -1 for all available history</td></tr>
+</tbody></table>
+<p><a name="rpcquery.GetValidatorSetParam"></a></p>
+<h3><a class="header" href="#getvalidatorsetparam" id="getvalidatorsetparam">GetValidatorSetParam</a></h3>
+<p><a name="rpcquery.ListAccountsParam"></a></p>
+<h3><a class="header" href="#listaccountsparam" id="listaccountsparam">ListAccountsParam</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Query</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.ListNamesParam"></a></p>
+<h3><a class="header" href="#listnamesparam" id="listnamesparam">ListNamesParam</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Query</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.ListProposalsParam"></a></p>
+<h3><a class="header" href="#listproposalsparam" id="listproposalsparam">ListProposalsParam</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Proposed</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.MetadataResult"></a></p>
+<h3><a class="header" href="#metadataresult" id="metadataresult">MetadataResult</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Metadata</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.ProposalResult"></a></p>
+<h3><a class="header" href="#proposalresult" id="proposalresult">ProposalResult</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Hash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Ballot</td><td><a href="#payload.Ballot">payload.Ballot</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.Stats"></a></p>
+<h3><a class="header" href="#stats" id="stats">Stats</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>AccountsWithCode</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>AccountsWithoutCode</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.StatusParam"></a></p>
+<h3><a class="header" href="#statusparam" id="statusparam">StatusParam</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>BlockTimeWithin</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>BlockSeenTimeWithin</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.StorageValue"></a></p>
+<h3><a class="header" href="#storagevalue" id="storagevalue">StorageValue</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Value</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.ValidatorSet"></a></p>
+<h3><a class="header" href="#validatorset" id="validatorset">ValidatorSet</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>Set</td><td><a href="#validator.Validator">validator.Validator</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.ValidatorSetHistory"></a></p>
+<h3><a class="header" href="#validatorsethistory" id="validatorsethistory">ValidatorSetHistory</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>History</td><td><a href="#rpcquery.ValidatorSet">ValidatorSet</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="rpcquery.Query"></a></p>
+<h3><a class="header" href="#query" id="query">Query</a></h3>
+<table><thead><tr><th>Method Name</th><th>Request Type</th><th>Response Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>Status</td><td><a href="#rpcquery.StatusParam">StatusParam</a></td><td><a href="#rpc.ResultStatus">.rpc.ResultStatus</a></td><td></td></tr>
+<tr><td>GetAccount</td><td><a href="#rpcquery.GetAccountParam">GetAccountParam</a></td><td><a href="#acm.Account">.acm.Account</a></td><td></td></tr>
+<tr><td>GetMetadata</td><td><a href="#rpcquery.GetMetadataParam">GetMetadataParam</a></td><td><a href="#rpcquery.MetadataResult">MetadataResult</a></td><td></td></tr>
+<tr><td>GetStorage</td><td><a href="#rpcquery.GetStorageParam">GetStorageParam</a></td><td><a href="#rpcquery.StorageValue">StorageValue</a></td><td></td></tr>
+<tr><td>ListAccounts</td><td><a href="#rpcquery.ListAccountsParam">ListAccountsParam</a></td><td><a href="#acm.Account">.acm.Account</a> stream</td><td></td></tr>
+<tr><td>GetName</td><td><a href="#rpcquery.GetNameParam">GetNameParam</a></td><td><a href="#names.Entry">.names.Entry</a></td><td></td></tr>
+<tr><td>ListNames</td><td><a href="#rpcquery.ListNamesParam">ListNamesParam</a></td><td><a href="#names.Entry">.names.Entry</a> stream</td><td></td></tr>
+<tr><td>GetValidatorSet</td><td><a href="#rpcquery.GetValidatorSetParam">GetValidatorSetParam</a></td><td><a href="#rpcquery.ValidatorSet">ValidatorSet</a></td><td></td></tr>
+<tr><td>GetValidatorSetHistory</td><td><a href="#rpcquery.GetValidatorSetHistoryParam">GetValidatorSetHistoryParam</a></td><td><a href="#rpcquery.ValidatorSetHistory">ValidatorSetHistory</a></td><td></td></tr>
+<tr><td>GetProposal</td><td><a href="#rpcquery.GetProposalParam">GetProposalParam</a></td><td><a href="#payload.Ballot">.payload.Ballot</a></td><td></td></tr>
+<tr><td>ListProposals</td><td><a href="#rpcquery.ListProposalsParam">ListProposalsParam</a></td><td><a href="#rpcquery.ProposalResult">ProposalResult</a> stream</td><td></td></tr>
+<tr><td>GetStats</td><td><a href="#rpcquery.GetStatsParam">GetStatsParam</a></td><td><a href="#rpcquery.Stats">Stats</a></td><td></td></tr>
+<tr><td>GetBlockHeader</td><td><a href="#rpcquery.GetBlockParam">GetBlockParam</a></td><td><a href="#types.Header">.types.Header</a></td><td></td></tr>
+</tbody></table>
+<p><a name="tendermint.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#tendermintproto" id="tendermintproto">tendermint.proto</a></h2>
+<p>Needed to proto2 rather than proto3 to get pointer field for PermArg</p>
+<p><a name="tendermint.NodeInfo"></a></p>
+<h3><a class="header" href="#nodeinfo" id="nodeinfo">NodeInfo</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>ID</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>ListenAddress</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Network</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Version</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Channels</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Moniker</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>RPCAddress</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>TxIndex</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="crypto.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#cryptoproto" id="cryptoproto">crypto.proto</a></h2>
+<p><a name="crypto.PrivateKey"></a></p>
+<h3><a class="header" href="#privatekey" id="privatekey">PrivateKey</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>CurveType</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>PublicKey</td><td><a href="#bytes">bytes</a></td><td></td><td>Note may need initialisation</td></tr>
+<tr><td>PrivateKey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="crypto.PublicKey"></a></p>
+<h3><a class="header" href="#publickey" id="publickey">PublicKey</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>CurveType</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>PublicKey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="crypto.Signature"></a></p>
+<h3><a class="header" href="#signature" id="signature">Signature</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>CurveType</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>Signature</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="storage.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#storageproto" id="storageproto">storage.proto</a></h2>
+<p><a name="storage.CommitID"></a></p>
+<h3><a class="header" href="#commitid" id="commitid">CommitID</a></h3>
+<p>This is the object that is stored in the leaves of the commitsTree - it captures the sub-tree hashes so that the
+commitsTree's hash becomes a mixture of the hashes of all the sub-trees.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Version</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>Hash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="payload.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#payloadproto" id="payloadproto">payload.proto</a></h2>
+<p><a name="payload.Any"></a></p>
+<h3><a class="header" href="#any" id="any">Any</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>CallTx</td><td><a href="#payload.CallTx">CallTx</a></td><td></td><td></td></tr>
+<tr><td>SendTx</td><td><a href="#payload.SendTx">SendTx</a></td><td></td><td></td></tr>
+<tr><td>NameTx</td><td><a href="#payload.NameTx">NameTx</a></td><td></td><td></td></tr>
+<tr><td>PermsTx</td><td><a href="#payload.PermsTx">PermsTx</a></td><td></td><td></td></tr>
+<tr><td>GovTx</td><td><a href="#payload.GovTx">GovTx</a></td><td></td><td></td></tr>
+<tr><td>BondTx</td><td><a href="#payload.BondTx">BondTx</a></td><td></td><td></td></tr>
+<tr><td>UnbondTx</td><td><a href="#payload.UnbondTx">UnbondTx</a></td><td></td><td></td></tr>
+<tr><td>BatchTx</td><td><a href="#payload.BatchTx">BatchTx</a></td><td></td><td></td></tr>
+<tr><td>ProposalTx</td><td><a href="#payload.ProposalTx">ProposalTx</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="payload.Ballot"></a></p>
+<h3><a class="header" href="#ballot" id="ballot">Ballot</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Proposal</td><td><a href="#payload.Proposal">Proposal</a></td><td></td><td></td></tr>
+<tr><td>FinalizingTx</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>proposalState</td><td><a href="#payload.Ballot.ProposalState">Ballot.ProposalState</a></td><td></td><td></td></tr>
+<tr><td>Votes</td><td><a href="#payload.Vote">Vote</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="payload.BatchTx"></a></p>
+<h3><a class="header" href="#batchtx" id="batchtx">BatchTx</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Inputs</td><td><a href="#payload.TxInput">TxInput</a></td><td>repeated</td><td></td></tr>
+<tr><td>Txs</td><td><a href="#payload.Any">Any</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="payload.BondTx"></a></p>
+<h3><a class="header" href="#bondtx" id="bondtx">BondTx</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Input</td><td><a href="#payload.TxInput">TxInput</a></td><td></td><td>Input must be the validator that desires to bond</td></tr>
+</tbody></table>
+<p><a name="payload.CallTx"></a></p>
+<h3><a class="header" href="#calltx" id="calltx">CallTx</a></h3>
+<p>A instruction to run smart contract code in the EVM</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Input</td><td><a href="#payload.TxInput">TxInput</a></td><td></td><td>The caller's input</td></tr>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td>The contract address to call or nil if we are creating a contract</td></tr>
+<tr><td>GasLimit</td><td><a href="#uint64">uint64</a></td><td></td><td>The upper bound on the amount of gas (and therefore EVM execution steps) this CallTx may generate</td></tr>
+<tr><td>Fee</td><td><a href="#uint64">uint64</a></td><td></td><td>Fee to offer validators for processing transaction</td></tr>
+<tr><td>Data</td><td><a href="#bytes">bytes</a></td><td></td><td>EVM bytecode</td></tr>
+<tr><td>WASM</td><td><a href="#bytes">bytes</a></td><td></td><td>WASM bytecode</td></tr>
+<tr><td>ContractMeta</td><td><a href="#payload.ContractMeta">ContractMeta</a></td><td>repeated</td><td>Set of contracts this code will deploy</td></tr>
+</tbody></table>
+<p><a name="payload.ContractMeta"></a></p>
+<h3><a class="header" href="#contractmeta-1" id="contractmeta-1">ContractMeta</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>CodeHash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Meta</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="payload.GovTx"></a></p>
+<h3><a class="header" href="#govtx" id="govtx">GovTx</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Inputs</td><td><a href="#payload.TxInput">TxInput</a></td><td>repeated</td><td></td></tr>
+<tr><td>AccountUpdates</td><td><a href="#spec.TemplateAccount">spec.TemplateAccount</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="payload.NameTx"></a></p>
+<h3><a class="header" href="#nametx" id="nametx">NameTx</a></h3>
+<p>A request to claim a globally unique name across the entire chain with some optional data storage leased for a fee</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Input</td><td><a href="#payload.TxInput">TxInput</a></td><td></td><td>The name updater</td></tr>
+<tr><td>Name</td><td><a href="#string">string</a></td><td></td><td>The name to update or create</td></tr>
+<tr><td>Data</td><td><a href="#string">string</a></td><td></td><td>The data to store against the name</td></tr>
+<tr><td>Fee</td><td><a href="#uint64">uint64</a></td><td></td><td>The fee to provide that will determine the length of the name lease</td></tr>
+</tbody></table>
+<p><a name="payload.PermsTx"></a></p>
+<h3><a class="header" href="#permstx" id="permstx">PermsTx</a></h3>
+<p>An update to the on-chain permissions</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Input</td><td><a href="#payload.TxInput">TxInput</a></td><td></td><td>The permission moderator</td></tr>
+<tr><td>PermArgs</td><td><a href="#permission.PermArgs">permission.PermArgs</a></td><td></td><td>The modified permissions</td></tr>
+</tbody></table>
+<p><a name="payload.Proposal"></a></p>
+<h3><a class="header" href="#proposal" id="proposal">Proposal</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Description</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>BatchTx</td><td><a href="#payload.BatchTx">BatchTx</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="payload.ProposalTx"></a></p>
+<h3><a class="header" href="#proposaltx" id="proposaltx">ProposalTx</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Input</td><td><a href="#payload.TxInput">TxInput</a></td><td></td><td></td></tr>
+<tr><td>VotingWeight</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>ProposalHash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Proposal</td><td><a href="#payload.Proposal">Proposal</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="payload.SendTx"></a></p>
+<h3><a class="header" href="#sendtx" id="sendtx">SendTx</a></h3>
+<p>A payment between two sets of parties</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Inputs</td><td><a href="#payload.TxInput">TxInput</a></td><td>repeated</td><td>The payers</td></tr>
+<tr><td>Outputs</td><td><a href="#payload.TxOutput">TxOutput</a></td><td>repeated</td><td>The payees</td></tr>
+</tbody></table>
+<p><a name="payload.TxInput"></a></p>
+<h3><a class="header" href="#txinput" id="txinput">TxInput</a></h3>
+<p>An input to a transaction that may carry an Amount as a charge and whose sequence number must be one greater than
+that associated with the account at Address at the time of being received</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td>The address from which this input flows</td></tr>
+<tr><td>Amount</td><td><a href="#uint64">uint64</a></td><td></td><td>The amount of native token to transfer from the input address</td></tr>
+<tr><td>Sequence</td><td><a href="#uint64">uint64</a></td><td></td><td>The sequence number that this transaction will induce (i.e. one greater than the input account's current sequence)</td></tr>
+</tbody></table>
+<p><a name="payload.TxOutput"></a></p>
+<h3><a class="header" href="#txoutput" id="txoutput">TxOutput</a></h3>
+<p>An output from a transaction that may carry an amount as a charge</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td>The address to which this output flows</td></tr>
+<tr><td>Amount</td><td><a href="#uint64">uint64</a></td><td></td><td>The amount of native token to transfer to the output address</td></tr>
+</tbody></table>
+<p><a name="payload.UnbondTx"></a></p>
+<h3><a class="header" href="#unbondtx" id="unbondtx">UnbondTx</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Input</td><td><a href="#payload.TxInput">TxInput</a></td><td></td><td></td></tr>
+<tr><td>Output</td><td><a href="#payload.TxOutput">TxOutput</a></td><td></td><td>Account to unbond</td></tr>
+</tbody></table>
+<p><a name="payload.Vote"></a></p>
+<h3><a class="header" href="#vote" id="vote">Vote</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>VotingWeight</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="payload.Ballot.ProposalState"></a></p>
+<h3><a class="header" href="#ballotproposalstate" id="ballotproposalstate">Ballot.ProposalState</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>PROPOSED</td><td>0</td><td>PROPOSED might be expired, if sequence number of any of the input accounts are out of date</td></tr>
+<tr><td>EXECUTED</td><td>1</td><td></td></tr>
+<tr><td>FAILED</td><td>2</td><td></td></tr>
+</tbody></table>
+<p><a name="dump.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#dumpproto" id="dumpproto">dump.proto</a></h2>
+<p><a name="dump.AccountStorage"></a></p>
+<h3><a class="header" href="#accountstorage" id="accountstorage">AccountStorage</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Storage</td><td><a href="#dump.Storage">Storage</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="dump.Dump"></a></p>
+<h3><a class="header" href="#dump" id="dump">Dump</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>Account</td><td><a href="#acm.Account">acm.Account</a></td><td></td><td></td></tr>
+<tr><td>AccountStorage</td><td><a href="#dump.AccountStorage">AccountStorage</a></td><td></td><td></td></tr>
+<tr><td>EVMEvent</td><td><a href="#dump.EVMEvent">EVMEvent</a></td><td></td><td></td></tr>
+<tr><td>Name</td><td><a href="#names.Entry">names.Entry</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="dump.EVMEvent"></a></p>
+<h3><a class="header" href="#evmevent" id="evmevent">EVMEvent</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>ChainID</td><td><a href="#string">string</a></td><td></td><td>The original ChainID from for this event</td></tr>
+<tr><td>Index</td><td><a href="#uint64">uint64</a></td><td></td><td>The original index for this event</td></tr>
+<tr><td>Time</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td>The original block time for this transaction</td></tr>
+<tr><td>Event</td><td><a href="#exec.LogEvent">exec.LogEvent</a></td><td></td><td>The event itself</td></tr>
+</tbody></table>
+<p><a name="dump.Storage"></a></p>
+<h3><a class="header" href="#storage" id="storage">Storage</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Value</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcdump.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#rpcdumpproto" id="rpcdumpproto">rpcdump.proto</a></h2>
+<p><a name="rpcdump.GetDumpParam"></a></p>
+<h3><a class="header" href="#getdumpparam" id="getdumpparam">GetDumpParam</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcdump.Dump"></a></p>
+<h3><a class="header" href="#dump-1" id="dump-1">Dump</a></h3>
+<table><thead><tr><th>Method Name</th><th>Request Type</th><th>Response Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>GetDump</td><td><a href="#rpcdump.GetDumpParam">GetDumpParam</a></td><td><a href="#dump.Dump">.dump.Dump</a> stream</td><td></td></tr>
+</tbody></table>
+<p><a name="keys.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#keysproto" id="keysproto">keys.proto</a></h2>
+<p><a name="keys.AddNameRequest"></a></p>
+<h3><a class="header" href="#addnamerequest" id="addnamerequest">AddNameRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Keyname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.AddNameResponse"></a></p>
+<h3><a class="header" href="#addnameresponse" id="addnameresponse">AddNameResponse</a></h3>
+<p><a name="keys.ExportRequest"></a></p>
+<h3><a class="header" href="#exportrequest" id="exportrequest">ExportRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Passphrase</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.ExportResponse"></a></p>
+<h3><a class="header" href="#exportresponse" id="exportresponse">ExportResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Publickey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Privatekey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>CurveType</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.GenRequest"></a></p>
+<h3><a class="header" href="#genrequest" id="genrequest">GenRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Passphrase</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>CurveType</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>KeyName</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.GenResponse"></a></p>
+<h3><a class="header" href="#genresponse" id="genresponse">GenResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.HashRequest"></a></p>
+<h3><a class="header" href="#hashrequest" id="hashrequest">HashRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Hashtype</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Message</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.HashResponse"></a></p>
+<h3><a class="header" href="#hashresponse" id="hashresponse">HashResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Hash</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.ImportJSONRequest"></a></p>
+<h3><a class="header" href="#importjsonrequest" id="importjsonrequest">ImportJSONRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Passphrase</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>JSON</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.ImportRequest"></a></p>
+<h3><a class="header" href="#importrequest" id="importrequest">ImportRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Passphrase</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>CurveType</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>KeyBytes</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.ImportResponse"></a></p>
+<h3><a class="header" href="#importresponse" id="importresponse">ImportResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.KeyID"></a></p>
+<h3><a class="header" href="#keyid" id="keyid">KeyID</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>KeyName</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="keys.ListRequest"></a></p>
+<h3><a class="header" href="#listrequest" id="listrequest">ListRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>KeyName</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.ListResponse"></a></p>
+<h3><a class="header" href="#listresponse" id="listresponse">ListResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#keys.KeyID">KeyID</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="keys.PubRequest"></a></p>
+<h3><a class="header" href="#pubrequest" id="pubrequest">PubRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.PubResponse"></a></p>
+<h3><a class="header" href="#pubresponse" id="pubresponse">PubResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>PublicKey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>CurveType</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.RemoveNameRequest"></a></p>
+<h3><a class="header" href="#removenamerequest" id="removenamerequest">RemoveNameRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>KeyName</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.RemoveNameResponse"></a></p>
+<h3><a class="header" href="#removenameresponse" id="removenameresponse">RemoveNameResponse</a></h3>
+<p><a name="keys.SignRequest"></a></p>
+<h3><a class="header" href="#signrequest" id="signrequest">SignRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Passphrase</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Message</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.SignResponse"></a></p>
+<h3><a class="header" href="#signresponse" id="signresponse">SignResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Signature</td><td><a href="#crypto.Signature">crypto.Signature</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.VerifyRequest"></a></p>
+<h3><a class="header" href="#verifyrequest" id="verifyrequest">VerifyRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>PublicKey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Message</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>Signature</td><td><a href="#crypto.Signature">crypto.Signature</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="keys.VerifyResponse"></a></p>
+<h3><a class="header" href="#verifyresponse" id="verifyresponse">VerifyResponse</a></h3>
+<p><a name="keys.Keys"></a></p>
+<h3><a class="header" href="#keys" id="keys">Keys</a></h3>
+<table><thead><tr><th>Method Name</th><th>Request Type</th><th>Response Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>GenerateKey</td><td><a href="#keys.GenRequest">GenRequest</a></td><td><a href="#keys.GenResponse">GenResponse</a></td><td></td></tr>
+<tr><td>PublicKey</td><td><a href="#keys.PubRequest">PubRequest</a></td><td><a href="#keys.PubResponse">PubResponse</a></td><td></td></tr>
+<tr><td>Sign</td><td><a href="#keys.SignRequest">SignRequest</a></td><td><a href="#keys.SignResponse">SignResponse</a></td><td></td></tr>
+<tr><td>Verify</td><td><a href="#keys.VerifyRequest">VerifyRequest</a></td><td><a href="#keys.VerifyResponse">VerifyResponse</a></td><td></td></tr>
+<tr><td>Import</td><td><a href="#keys.ImportRequest">ImportRequest</a></td><td><a href="#keys.ImportResponse">ImportResponse</a></td><td></td></tr>
+<tr><td>ImportJSON</td><td><a href="#keys.ImportJSONRequest">ImportJSONRequest</a></td><td><a href="#keys.ImportResponse">ImportResponse</a></td><td></td></tr>
+<tr><td>Export</td><td><a href="#keys.ExportRequest">ExportRequest</a></td><td><a href="#keys.ExportResponse">ExportResponse</a></td><td></td></tr>
+<tr><td>Hash</td><td><a href="#keys.HashRequest">HashRequest</a></td><td><a href="#keys.HashResponse">HashResponse</a></td><td></td></tr>
+<tr><td>RemoveName</td><td><a href="#keys.RemoveNameRequest">RemoveNameRequest</a></td><td><a href="#keys.RemoveNameResponse">RemoveNameResponse</a></td><td></td></tr>
+<tr><td>List</td><td><a href="#keys.ListRequest">ListRequest</a></td><td><a href="#keys.ListResponse">ListResponse</a></td><td></td></tr>
+<tr><td>AddName</td><td><a href="#keys.AddNameRequest">AddNameRequest</a></td><td><a href="#keys.AddNameResponse">AddNameResponse</a></td><td></td></tr>
+</tbody></table>
+<p><a name="errors.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#errorsproto" id="errorsproto">errors.proto</a></h2>
+<p><a name="errors.Exception"></a></p>
+<h3><a class="header" href="#exception" id="exception">Exception</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Code</td><td><a href="#uint32">uint32</a></td><td></td><td></td></tr>
+<tr><td>Exception</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpc.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#rpcproto" id="rpcproto">rpc.proto</a></h2>
+<p>Needed to proto2 rather than proto3 to get pointer field for PermArg</p>
+<p><a name="rpc.ResultStatus"></a></p>
+<h3><a class="header" href="#resultstatus" id="resultstatus">ResultStatus</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>ChainID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>RunID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>BurrowVersion</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>GenesisHash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>NodeInfo</td><td><a href="#tendermint.NodeInfo">tendermint.NodeInfo</a></td><td></td><td></td></tr>
+<tr><td>SyncInfo</td><td><a href="#bcm.SyncInfo">bcm.SyncInfo</a></td><td></td><td></td></tr>
+<tr><td>CatchingUp</td><td><a href="#bool">bool</a></td><td></td><td>When catching up in fast sync</td></tr>
+<tr><td>ValidatorInfo</td><td><a href="#validator.Validator">validator.Validator</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcevents.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#rpceventsproto" id="rpceventsproto">rpcevents.proto</a></h2>
+<p><a name="rpcevents.BlockRange"></a></p>
+<h3><a class="header" href="#blockrange" id="blockrange">BlockRange</a></h3>
+<p>An inclusive range of blocks to include in output</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Start</td><td><a href="#rpcevents.Bound">Bound</a></td><td></td><td>Bounds can be set to: absolute: block height relative: block height counting back from latest latest: latest block when call is processed stream: for End keep sending new blocks, for start same as latest</td></tr>
+<tr><td>End</td><td><a href="#rpcevents.Bound">Bound</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcevents.BlocksRequest"></a></p>
+<h3><a class="header" href="#blocksrequest" id="blocksrequest">BlocksRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>BlockRange</td><td><a href="#rpcevents.BlockRange">BlockRange</a></td><td></td><td></td></tr>
+<tr><td>Query</td><td><a href="#string">string</a></td><td></td><td>Specify a query on which to match the tags of events. Tag</td></tr>
+</tbody></table>
+<p>For example: EventType = 'LogEvent' AND EventID CONTAINS 'bar' AND TxHash = '020304' AND Height &gt;= 34 AND Index &lt; 3 AND Address = 'DEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEF' |</p>
+<p><a name="rpcevents.Bound"></a></p>
+<h3><a class="header" href="#bound" id="bound">Bound</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Type</td><td><a href="#rpcevents.Bound.BoundType">Bound.BoundType</a></td><td></td><td></td></tr>
+<tr><td>Index</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcevents.EventsResponse"></a></p>
+<h3><a class="header" href="#eventsresponse" id="eventsresponse">EventsResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>Events</td><td><a href="#exec.Event">exec.Event</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="rpcevents.GetBlockRequest"></a></p>
+<h3><a class="header" href="#getblockrequest" id="getblockrequest">GetBlockRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Height</td><td><a href="#uint64">uint64</a></td><td></td><td>Height of block required</td></tr>
+<tr><td>Wait</td><td><a href="#bool">bool</a></td><td></td><td>Whether to wait for the block to become available</td></tr>
+</tbody></table>
+<p><a name="rpcevents.GetTxsRequest"></a></p>
+<h3><a class="header" href="#gettxsrequest" id="gettxsrequest">GetTxsRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>StartHeight</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>EndHeight</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>Query</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="rpcevents.GetTxsResponse"></a></p>
+<h3><a class="header" href="#gettxsresponse" id="gettxsresponse">GetTxsResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Height</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>TxExecutions</td><td><a href="#exec.TxExecution">exec.TxExecution</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="rpcevents.TxRequest"></a></p>
+<h3><a class="header" href="#txrequest" id="txrequest">TxRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>TxHash</td><td><a href="#bytes">bytes</a></td><td></td><td>Height of block required</td></tr>
+<tr><td>Wait</td><td><a href="#bool">bool</a></td><td></td><td>Whether to wait for the block to become available</td></tr>
+</tbody></table>
+<p><a name="rpcevents.Bound.BoundType"></a></p>
+<h3><a class="header" href="#boundboundtype" id="boundboundtype">Bound.BoundType</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>ABSOLUTE</td><td>0</td><td>Index is absolute index of an item</td></tr>
+<tr><td>RELATIVE</td><td>1</td><td>Index is an offset relative to last item</td></tr>
+<tr><td>FIRST</td><td>2</td><td>The first block</td></tr>
+<tr><td>LATEST</td><td>3</td><td>Ignore provided index and evaluate to latest index</td></tr>
+<tr><td>STREAM</td><td>4</td><td>Ignore provided index and stream new objects as they are generated</td></tr>
+</tbody></table>
+<p><a name="rpcevents.ExecutionEvents"></a></p>
+<h3><a class="header" href="#executionevents" id="executionevents">ExecutionEvents</a></h3>
+<hr />
+<p>Execution events</p>
+<table><thead><tr><th>Method Name</th><th>Request Type</th><th>Response Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>Stream</td><td><a href="#rpcevents.BlocksRequest">BlocksRequest</a></td><td><a href="#exec.StreamEvent">.exec.StreamEvent</a> stream</td><td>Get StreamEvents (including transactions) for a range of block heights</td></tr>
+<tr><td>Tx</td><td><a href="#rpcevents.TxRequest">TxRequest</a></td><td><a href="#exec.TxExecution">.exec.TxExecution</a></td><td>Get a particular TxExecution by hash</td></tr>
+<tr><td>Events</td><td><a href="#rpcevents.BlocksRequest">BlocksRequest</a></td><td><a href="#rpcevents.EventsResponse">EventsResponse</a> stream</td><td>GetEvents provides events streaming one block at a time - that is all events emitted in a particular block are guaranteed to be delivered in each GetEventsResponse</td></tr>
+</tbody></table>
+<p><a name="bcm.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#bcmproto" id="bcmproto">bcm.proto</a></h2>
+<p>Needed to proto2 rather than proto3 to get pointer field for PermArg</p>
+<p><a name="bcm.PersistedState"></a></p>
+<h3><a class="header" href="#persistedstate" id="persistedstate">PersistedState</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>AppHashAfterLastBlock</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>LastBlockTime</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td></td></tr>
+<tr><td>LastBlockHeight</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>GenesisHash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="bcm.SyncInfo"></a></p>
+<h3><a class="header" href="#syncinfo" id="syncinfo">SyncInfo</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>LatestBlockHeight</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>LatestBlockHash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>LatestAppHash</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>LatestBlockTime</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td>Timestamp of block as set by the block proposer</td></tr>
+<tr><td>LatestBlockSeenTime</td><td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td><td></td><td>Time at which we committed the last block</td></tr>
+<tr><td>LatestBlockDuration</td><td><a href="#google.protobuf.Duration">google.protobuf.Duration</a></td><td></td><td>Time elapsed since last commit</td></tr>
+</tbody></table>
+<p><a name="spec.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#specproto" id="specproto">spec.proto</a></h2>
+<p><a name="spec.TemplateAccount"></a></p>
+<h3><a class="header" href="#templateaccount" id="templateaccount">TemplateAccount</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>PublicKey</td><td><a href="#crypto.PublicKey">crypto.PublicKey</a></td><td></td><td></td></tr>
+<tr><td>Amounts</td><td><a href="#balance.Balance">balance.Balance</a></td><td>repeated</td><td></td></tr>
+<tr><td>Permissions</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>Roles</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>Code</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<h2><a class="header" href="#scalar-value-types" id="scalar-value-types">Scalar Value Types</a></h2>
+<table><thead><tr><th>.proto Type</th><th>Notes</th><th>C++ Type</th><th>Java Type</th><th>Python Type</th></tr></thead><tbody>
+<tr><td><a name="double" /> double</td><td></td><td>double</td><td>double</td><td>float</td></tr>
+<tr><td><a name="float" /> float</td><td></td><td>float</td><td>float</td><td>float</td></tr>
+<tr><td><a name="int32" /> int32</td><td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="int64" /> int64</td><td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="uint32" /> uint32</td><td>Uses variable-length encoding.</td><td>uint32</td><td>int</td><td>int/long</td></tr>
+<tr><td><a name="uint64" /> uint64</td><td>Uses variable-length encoding.</td><td>uint64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="sint32" /> sint32</td><td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="sint64" /> sint64</td><td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="fixed32" /> fixed32</td><td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td><td>uint32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="fixed64" /> fixed64</td><td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td><td>uint64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="sfixed32" /> sfixed32</td><td>Always four bytes.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="sfixed64" /> sfixed64</td><td>Always eight bytes.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="bool" /> bool</td><td></td><td>bool</td><td>boolean</td><td>boolean</td></tr>
+<tr><td><a name="string" /> string</td><td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td><td>string</td><td>String</td><td>str/unicode</td></tr>
+<tr><td><a name="bytes" /> bytes</td><td>May contain any arbitrary sequence of bytes.</td><td>string</td><td>ByteString</td><td>str</td></tr>
+</tbody></table>
+<h1><a class="header" href="#protos-file-tree" id="protos-file-tree">Protos File Tree</a></h1>
+<pre><code>
+.
+├── acm.proto
+├── balance.proto
+├── bcm.proto
+├── crypto.proto
+├── dump.proto
+├── encoding.proto
+├── errors.proto
+├── exec.proto
+├── github.com
+│   ├── gogo
+│   │   └── protobuf
+│   │       └── gogoproto
+│   │           └── gogo.proto
+│   └── tendermint
+│       └── tendermint
+│           ├── abci
+│           │   └── types
+│           │       └── types.proto
+│           └── libs
+│               └── common
+│                   └── types.proto
+├── google
+│   └── protobuf
+│       ├── descriptor.proto
+│       └── timestamp.proto
+├── keys.proto
+├── names.proto
+├── payload.proto
+├── permission.proto
+├── rpcdump.proto
+├── rpcevents.proto
+├── rpc.proto
+├── rpcquery.proto
+├── rpctransact.proto
+├── spec.proto
+├── storage.proto
+├── tendermint.proto
+├── txs.proto
+└── validator.proto
+
+12 directories, 27 files
+
+</code></pre>
+<h1><a class="header" href="#protobuf-sources" id="protobuf-sources">Protobuf sources</a></h1>
+<h2><a class="header" href="#srcbalanceproto" id="srcbalanceproto">src:./balance.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+option go_package = &quot;github.com/hyperledger/burrow/acm/balance&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+package balance;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+option (gogoproto.messagename_all) = true;
+
+message Balance {
+    option (gogoproto.goproto_sizecache) = false;
+    option (gogoproto.goproto_unkeyed) = false;
+    option (gogoproto.goproto_stringer) = false;
+    uint32 Type = 1 [(gogoproto.casttype) = &quot;Type&quot;];
+    uint64 Amount = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcexecproto" id="srcexecproto">src:./exec.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+package exec;
+
+option go_package = &quot;github.com/hyperledger/burrow/execution/exec&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+import &quot;github.com/tendermint/tendermint/abci/types/types.proto&quot;;
+import &quot;google/protobuf/timestamp.proto&quot;;
+
+import &quot;errors.proto&quot;;
+import &quot;names.proto&quot;;
+import &quot;txs.proto&quot;;
+import &quot;permission.proto&quot;;
+import &quot;spec.proto&quot;;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+option (gogoproto.messagename_all) = true;
+
+// This message exists purely for framing []StreamEvent
+message StreamEvents {
+    repeated StreamEvent StreamEvents = 1;
+}
+
+message StreamEvent {
+    option (gogoproto.onlyone) = true;
+    BeginBlock BeginBlock = 1;
+    BeginTx BeginTx = 2;
+    txs.Envelope Envelope = 3 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/txs.Envelope&quot;];
+    Event Event = 4;
+    EndTx EndTx = 5;
+    EndBlock EndBlock = 6;
+}
+
+message BeginBlock {
+    // The height of this block
+    uint64 Height = 1;
+    types.Header Header = 2;
+}
+
+message EndBlock {
+    uint64 Height = 1;
+}
+
+message BeginTx {
+    TxHeader TxHeader = 1;
+    // Result of tx execution
+    Result Result = 2;
+    // If tx execution was an exception
+    errors.Exception Exception = 4;
+}
+
+message EndTx {
+    // The hash of the transaction that caused this event to be generated
+    bytes TxHash = 3 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+}
+
+message TxHeader {
+    // Transaction type
+    uint32 TxType = 1 [(gogoproto.casttype) = &quot;github.com/hyperledger/burrow/txs/payload.Type&quot;];
+    // The hash of the transaction that caused this event to be generated
+    bytes TxHash = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    // The block height at which this Tx was included
+    uint64 Height = 3;
+    // The index of this transaction within the block
+    uint64 Index = 4;
+    // The origin information from the chain on which this tx was originally committed (if restored or otherwise imported)
+    Origin Origin = 5;
+}
+
+message BlockExecution {
+    // The height of this block
+    uint64 Height = 1;
+    types.Header Header = 2;
+    repeated TxExecution TxExecutions = 3;
+}
+
+message TxExecutionKey {
+    // The block height
+    uint64 Height = 1;
+    // The offset of the TxExecution in bytes
+    uint64 Offset = 2;
+}
+
+message TxExecution {
+    TxHeader Header = 1 [(gogoproto.embed) = true];
+    // Signed Tx that triggered this execution
+    txs.Envelope Envelope = 6 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/txs.Envelope&quot;];
+    // Execution events
+    repeated Event Events = 7;
+    // The execution results
+    Result Result = 8;
+    // The transaction receipt
+    txs.Receipt Receipt = 9;
+    // If execution was an exception
+    errors.Exception Exception = 10;
+    // A proposal may contain other transactions
+    repeated TxExecution TxExecutions = 11;
+}
+
+message Origin {
+    // The original ChainID from for this transaction
+    string ChainID = 1;
+    // The original height at which this transaction was committed
+    uint64 Height = 2;
+    // The original index in the block
+    uint64 Index = 3;
+    // The original block time for this transaction
+    google.protobuf.Timestamp Time = 4 [(gogoproto.nullable) = false, (gogoproto.stdtime) = true];
+}
+
+message Header {
+    option (gogoproto.goproto_stringer) = false;
+    // Transaction type
+    uint32 TxType = 1 [(gogoproto.casttype) = &quot;github.com/hyperledger/burrow/txs/payload.Type&quot;];
+    // The hash of the transaction that caused this event to be generated
+    bytes TxHash = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    // The type of event
+    uint32 EventType = 3 [(gogoproto.casttype) = &quot;EventType&quot;];
+    // EventID published with event
+    string EventID = 4;
+    // The block height at which this event was emitted
+    uint64 Height = 5;
+    // The index of this event relative to other events generated by the same transaction
+    uint64 Index = 6;
+    // If event is exception
+    errors.Exception Exception = 7;
+}
+
+message Event {
+    option (gogoproto.goproto_stringer) = false;
+    option (gogoproto.onlyone) = true;
+    Header Header = 1;
+    InputEvent Input = 2;
+    OutputEvent Output = 3;
+    CallEvent Call = 4;
+    LogEvent Log = 5;
+    GovernAccountEvent GovernAccount = 6;
+}
+
+// Could structure this further if needed - sum type of various results relevant to different transaction types
+message Result {
+    // EVM execution return
+    bytes Return = 1;
+    // Gas used in computation
+    uint64 GasUsed = 2;
+    // Name entry created
+    names.Entry NameEntry = 3;
+    // Permission update performed
+    permission.PermArgs PermArgs = 4;
+}
+
+message LogEvent {
+    bytes Address = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+    bytes Data = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    repeated bytes Topics = 3 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.Word256&quot;, (gogoproto.nullable) = false];
+}
+
+message CallEvent {
+    uint32 CallType = 5 [(gogoproto.casttype) = &quot;CallType&quot;];
+    CallData CallData = 1;
+    bytes Origin = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+    uint64 StackDepth = 3;
+    bytes Return = 4 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+}
+
+message GovernAccountEvent {
+    spec.TemplateAccount AccountUpdate = 1;
+}
+
+message InputEvent {
+    bytes Address = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+}
+
+message OutputEvent {
+    bytes Address = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+}
+
+message CallData {
+    bytes Caller = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+    bytes Callee = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+    bytes Data = 3 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    uint64 Value = 4;
+    uint64 Gas = 5;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcnamesproto" id="srcnamesproto">src:./names.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+package names;
+
+option go_package = &quot;github.com/hyperledger/burrow/execution/names&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+option (gogoproto.stable_marshaler_all) = true;
+// Enable custom Marshal method.
+option (gogoproto.marshaler_all) = true;
+// Enable custom Unmarshal method.
+option (gogoproto.unmarshaler_all) = true;
+// Enable custom Size method (Required by Marshal and Unmarshal).
+option (gogoproto.sizer_all) = true;
+// Enable registration with golang/protobuf for the grpc-gateway.
+option (gogoproto.goproto_registration) = true;
+// Enable generation of XXX_MessageName methods for grpc-go/status.
+option (gogoproto.messagename_all) = true;
+
+// NameReg provides a global key value store based on Name, Data pairs that are subject to expiry and ownership by an
+// account.
+message Entry {
+    option (gogoproto.goproto_stringer) = false;
+    // registered name for the entry
+    string Name = 1;
+    // address that created the entry
+    bytes Owner = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+    // data to store under this name
+    string Data = 3;
+    // block at which this entry expires
+    uint64 Expires = 4;
+}
+
+
+</code></pre>
+<h2><a class="header" href="#srcencodingproto" id="srcencodingproto">src:./encoding.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+option go_package = &quot;github.com/hyperledger/burrow/encoding&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+package encoding;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+option (gogoproto.messagename_all) = true;
+
+// For testing
+message TestMessage {
+    option (gogoproto.goproto_stringer) = false;
+    uint32 Type = 1;
+    uint64 Amount = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcvalidatorproto" id="srcvalidatorproto">src:./validator.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+package validator;
+
+option go_package = &quot;github.com/hyperledger/burrow/acm/validator&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+import &quot;crypto.proto&quot;;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+option (gogoproto.messagename_all) = true;
+
+message Validator {
+    option (gogoproto.goproto_stringer) = false;
+    bytes Address = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;];
+    crypto.PublicKey PublicKey = 2 [(gogoproto.nullable) = false];
+    uint64 Power = 3;
+}
+
+</code></pre>
+<h2><a class="header" href="#srctxsproto" id="srctxsproto">src:./txs.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+option go_package = &quot;github.com/hyperledger/burrow/txs&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+import &quot;crypto.proto&quot;;
+
+package txs;
+
+// Enable custom Marshal method.
+option (gogoproto.marshaler_all) = true;
+// Enable custom Unmarshal method.
+option (gogoproto.unmarshaler_all) = true;
+// Enable custom Size method (Required by Marshal and Unmarshal).
+option (gogoproto.sizer_all) = true;
+// Enable registration with golang/protobuf for the grpc-gateway.
+option (gogoproto.goproto_registration) = true;
+// Enable generation of XXX_MessageName methods for grpc-go/status.
+option (gogoproto.messagename_all) = true;
+
+// An envelope contains both the signable Tx and the signatures for each input (in signatories)
+message Envelope {
+    option (gogoproto.goproto_stringer) = false;
+    repeated Signatory Signatories = 1 [(gogoproto.nullable) = false];
+    // Canonical bytes of the Tx ready to be signed
+    bytes Tx = 2 [(gogoproto.customtype) = &quot;Tx&quot;];
+}
+
+// Signatory contains signature and one or both of Address and PublicKey to identify the signer
+message Signatory {
+    bytes Address = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;];
+    crypto.PublicKey PublicKey = 2;
+    crypto.Signature Signature = 4;
+}
+
+// BroadcastTx or Transaction receipt
+message Receipt {
+    // Transaction type
+    uint32 TxType = 1[(gogoproto.casttype) = &quot;github.com/hyperledger/burrow/txs/payload.Type&quot;];
+    // The hash of the transaction that caused this event to be generated
+    bytes TxHash = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    // Whether the transaction creates a contract
+    bool CreatesContract = 3;
+    // The address of the contract being called
+    bytes ContractAddress = 4 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+}
+
+</code></pre>
+<h2><a class="header" href="#srcrpctransactproto" id="srcrpctransactproto">src:./rpctransact.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+package rpctransact;
+
+option go_package = &quot;github.com/hyperledger/burrow/rpc/rpctransact&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+import &quot;google/protobuf/duration.proto&quot;;
+
+import &quot;exec.proto&quot;;
+import &quot;payload.proto&quot;;
+import &quot;txs.proto&quot;;
+
+// Enable custom Marshal method.
+option (gogoproto.marshaler_all) = true;
+// Enable custom Unmarshal method.
+option (gogoproto.unmarshaler_all) = true;
+// Enable custom Size method (Required by Marshal and Unmarshal).
+option (gogoproto.sizer_all) = true;
+// Enable registration with golang/protobuf for the grpc-gateway.
+option (gogoproto.goproto_registration) = true;
+// Enable generation of XXX_MessageName methods for grpc-go/status.
+option (gogoproto.messagename_all) = true;
+
+// Transaction Service Definition
+service Transact {
+    // Broadcast a transaction to the mempool - if the transaction is not signed signing will be attempted server-side
+    // and wait for it to be included in block
+    rpc BroadcastTxSync (TxEnvelopeParam) returns (exec.TxExecution);
+    // Broadcast a transaction to the mempool - if the transaction is not signed signing will be attempted server-side
+    rpc BroadcastTxAsync (TxEnvelopeParam) returns (txs.Receipt);
+
+    // Sign transaction server-side
+    rpc SignTx (TxEnvelopeParam) returns (TxEnvelope);
+    // Formulate a transaction from a Payload and retrun the envelop with the Tx bytes ready to sign
+    rpc FormulateTx (payload.Any) returns (TxEnvelope);
+
+    // Formulate and sign a CallTx transaction signed server-side and wait for it to be included in a block, retrieving response
+    rpc CallTxSync (payload.CallTx) returns (exec.TxExecution);
+    // Formulate and sign a CallTx transaction signed server-side
+    rpc CallTxAsync (payload.CallTx) returns (txs.Receipt);
+    // Perform a 'simulated' call of a contract against the current committed EVM state without any changes been saved
+    // and wait for the transaction to be included in a block
+    rpc CallTxSim (payload.CallTx) returns (exec.TxExecution);
+    // Perform a 'simulated' execution of provided code against the current committed EVM state without any changes been saved
+    rpc CallCodeSim (CallCodeParam) returns (exec.TxExecution);
+
+    // Formulate a SendTx transaction signed server-side and wait for it to be included in a block, retrieving response
+    rpc SendTxSync (payload.SendTx) returns (exec.TxExecution);
+    // Formulate and  SendTx transaction signed server-side
+    rpc SendTxAsync (payload.SendTx) returns (txs.Receipt);
+
+    // Formualte a NameTx signed server-side and wait for it to be included in a block returning the registered name
+    rpc NameTxSync (payload.NameTx) returns (exec.TxExecution);
+    // Formulate a NameTx signed server-side
+    rpc NameTxAsync (payload.NameTx) returns (txs.Receipt);
+}
+
+message CallCodeParam {
+    bytes FromAddress = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+    bytes Code = 2;
+    bytes Data = 3;
+}
+
+message TxEnvelope {
+    txs.Envelope Envelope = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/txs.Envelope&quot;];
+}
+
+message TxEnvelopeParam {
+    // An existing Envelope - either signed or unsigned - if the latter will be signed server-side
+    txs.Envelope Envelope = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/txs.Envelope&quot;];
+    // If no Envelope provided then one will be generated from the provided payload and signed server-side
+    payload.Any Payload = 2;
+    // The amount of time to wait for the transaction to be committed and the TxExecution to be returned (server-side).
+    // If zero there wait is unbounded. Timed out transactions return SyncInfo state that may be helpful debugging
+    // non-committed transactions - this timeout must be less than client timeout to see such information!
+    google.protobuf.Duration Timeout = 3 [(gogoproto.nullable) = false, (gogoproto.stdduration) = true];
+}
+
+
+</code></pre>
+<h2><a class="header" href="#srcgithubcomtenderminttendermintabcitypestypesproto" id="srcgithubcomtenderminttendermintabcitypestypesproto">src:./github.com/tendermint/tendermint/abci/types/types.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+package types;
+
+// For more information on gogo.proto, see:
+// https://github.com/gogo/protobuf/blob/master/extensions.md
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+import &quot;google/protobuf/timestamp.proto&quot;;
+import &quot;github.com/tendermint/tendermint/libs/common/types.proto&quot;;
+
+// This file is copied from http://github.com/tendermint/abci
+// NOTE: When using custom types, mind the warnings.
+// https://github.com/gogo/protobuf/blob/master/custom_types.md#warnings-and-issues
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+// Generate tests
+option (gogoproto.populate_all) = true;
+option (gogoproto.equal_all) = true;
+option (gogoproto.testgen_all) = true;
+
+//----------------------------------------
+// Request types
+
+message Request {
+  oneof value {
+    RequestEcho echo = 2;
+    RequestFlush flush = 3;
+    RequestInfo info = 4;
+    RequestSetOption set_option = 5;
+    RequestInitChain init_chain = 6;
+    RequestQuery query = 7;
+    RequestBeginBlock begin_block = 8;
+    RequestCheckTx check_tx = 9;
+    RequestDeliverTx deliver_tx = 19;
+    RequestEndBlock end_block = 11;
+    RequestCommit commit = 12;
+  }
+}
+
+message RequestEcho {
+  string message = 1;
+}
+
+message RequestFlush {
+}
+
+message RequestInfo {
+  string version = 1;
+}
+
+// nondeterministic
+message RequestSetOption {
+  string key = 1;
+  string value = 2;
+}
+
+message RequestInitChain {
+  google.protobuf.Timestamp time = 1  [(gogoproto.nullable)=false, (gogoproto.stdtime)=true];
+  string chain_id = 2;
+  ConsensusParams consensus_params = 3;
+  repeated ValidatorUpdate validators = 4  [(gogoproto.nullable)=false];
+  bytes app_state_bytes = 5;
+}
+
+message RequestQuery {
+  bytes data = 1;
+  string path = 2;
+  int64 height = 3;
+  bool prove = 4;
+}
+
+// NOTE: validators here have empty pubkeys.
+message RequestBeginBlock {
+  bytes hash = 1;
+  Header header = 2 [(gogoproto.nullable)=false];
+  LastCommitInfo last_commit_info = 3 [(gogoproto.nullable)=false];
+  repeated Evidence byzantine_validators = 4 [(gogoproto.nullable)=false];
+}
+
+message RequestCheckTx {
+  bytes tx = 1;
+}
+
+message RequestDeliverTx {
+  bytes tx = 1;
+}
+
+message RequestEndBlock {
+  int64 height = 1;
+}
+
+message RequestCommit {
+}
+
+//----------------------------------------
+// Response types
+
+message Response {
+  oneof value {
+    ResponseException exception = 1;
+    ResponseEcho echo = 2;
+    ResponseFlush flush = 3;
+    ResponseInfo info = 4;
+    ResponseSetOption set_option = 5;
+    ResponseInitChain init_chain = 6;
+    ResponseQuery query = 7;
+    ResponseBeginBlock begin_block = 8;
+    ResponseCheckTx check_tx = 9;
+    ResponseDeliverTx deliver_tx = 10;
+    ResponseEndBlock end_block = 11;
+    ResponseCommit commit = 12;
+  }
+}
+
+// nondeterministic
+message ResponseException {
+  string error = 1;
+}
+
+message ResponseEcho {
+  string message = 1;
+}
+
+message ResponseFlush {
+}
+
+message ResponseInfo {
+  string data = 1;
+  string version = 2;
+  int64 last_block_height = 3;
+  bytes last_block_app_hash = 4;
+}
+
+// nondeterministic
+message ResponseSetOption {
+  uint32 code = 1;
+  // bytes data = 2;
+  string log = 3;
+  string info = 4;
+}
+
+message ResponseInitChain {
+  ConsensusParams consensus_params = 1;
+  repeated ValidatorUpdate validators = 2 [(gogoproto.nullable)=false];
+}
+
+message ResponseQuery {
+  uint32 code = 1;
+  // bytes data = 2; // use &quot;value&quot; instead.
+  string log = 3; // nondeterministic
+  string info = 4; // nondeterministic
+  int64 index = 5;
+  bytes key = 6;
+  bytes value = 7;
+  bytes proof = 8;
+  int64 height = 9;
+}
+
+message ResponseBeginBlock {
+  repeated common.KVPair tags = 1 [(gogoproto.nullable)=false, (gogoproto.jsontag)=&quot;tags,omitempty&quot;];
+}
+
+message ResponseCheckTx {
+  uint32 code = 1;
+  bytes data = 2;
+  string log = 3; // nondeterministic
+  string info = 4; // nondeterministic
+  int64 gas_wanted  = 5;
+  int64 gas_used = 6;
+  repeated common.KVPair tags = 7 [(gogoproto.nullable)=false, (gogoproto.jsontag)=&quot;tags,omitempty&quot;];
+}
+
+message ResponseDeliverTx {
+  uint32 code = 1;
+  bytes data = 2;
+  string log = 3; // nondeterministic
+  string info = 4; // nondeterministic
+  int64 gas_wanted = 5;
+  int64 gas_used = 6;
+  repeated common.KVPair tags = 7 [(gogoproto.nullable)=false, (gogoproto.jsontag)=&quot;tags,omitempty&quot;];
+}
+
+message ResponseEndBlock {
+  repeated ValidatorUpdate validator_updates = 1 [(gogoproto.nullable)=false];
+  ConsensusParams consensus_param_updates = 2;
+  repeated common.KVPair tags = 3 [(gogoproto.nullable)=false, (gogoproto.jsontag)=&quot;tags,omitempty&quot;];
+}
+
+message ResponseCommit {
+  // reserve 1
+  bytes data = 2;
+}
+
+//----------------------------------------
+// Misc.
+
+// ConsensusParams contains all consensus-relevant parameters
+// that can be adjusted by the abci app
+message ConsensusParams {
+  BlockSize block_size = 1;
+  TxSize tx_size = 2;
+  BlockGossip block_gossip = 3;
+}
+
+// BlockSize contains limits on the block size.
+message BlockSize {
+  int32 max_bytes = 1;
+  int64 max_gas = 2;
+}
+
+// TxSize contains limits on the tx size.
+message TxSize {
+  int32 max_bytes = 1;
+  int64 max_gas = 2;
+}
+
+// BlockGossip determine consensus critical
+// elements of how blocks are gossiped
+message BlockGossip {
+  // Note: must not be 0
+  int32 block_part_size_bytes = 1;
+}
+
+message LastCommitInfo {
+  int32 round = 1;
+  repeated VoteInfo votes = 2 [(gogoproto.nullable)=false];
+}
+
+//----------------------------------------
+// Blockchain Types
+
+message Header {
+  // basic block info
+  string chain_id = 1 [(gogoproto.customname)=&quot;ChainID&quot;];
+  int64 height = 2;
+  google.protobuf.Timestamp time = 3 [(gogoproto.nullable)=false, (gogoproto.stdtime)=true];
+  int64 num_txs = 4;
+  int64 total_txs = 5;
+
+  // prev block info
+  BlockID last_block_id = 6 [(gogoproto.nullable)=false];
+
+  // hashes of block data
+  bytes last_commit_hash = 7; // commit from validators from the last block
+  bytes data_hash = 8;        // transactions
+
+  // hashes from the app output from the prev block
+  bytes validators_hash = 9;   // validators for the current block
+  bytes next_validators_hash = 10;   // validators for the next block
+  bytes consensus_hash = 11;   // consensus params for current block
+  bytes app_hash = 12;         // state after txs from the previous block
+  bytes last_results_hash = 13;// root hash of all results from the txs from the previous block
+
+  // consensus info
+  bytes evidence_hash = 14;    // evidence included in the block
+  bytes proposer_address = 15; // original proposer of the block
+}
+
+message BlockID {
+  bytes hash = 1;
+  PartSetHeader parts_header = 2 [(gogoproto.nullable)=false];
+}
+
+message PartSetHeader {
+  int32 total = 1;
+  bytes hash = 2;
+}
+
+// Validator
+message Validator {
+  bytes address = 1;
+  //PubKey pub_key = 2 [(gogoproto.nullable)=false];
+  int64 power = 3;
+}
+
+// ValidatorUpdate
+message ValidatorUpdate {
+  PubKey pub_key = 1 [(gogoproto.nullable)=false];
+  int64 power = 2;
+}
+
+// VoteInfo
+message VoteInfo {
+  Validator validator = 1 [(gogoproto.nullable)=false];
+  bool signed_last_block = 2;
+}
+
+message PubKey {
+  string type = 1;
+  bytes  data = 2;
+}
+
+message Evidence {
+  string type = 1;
+  Validator validator = 2 [(gogoproto.nullable)=false];
+  int64 height = 3;
+  google.protobuf.Timestamp time = 4 [(gogoproto.nullable)=false, (gogoproto.stdtime)=true];
+  int64 total_voting_power = 5;
+}
+
+//----------------------------------------
+// Service Definition
+
+service ABCIApplication {
+  rpc Echo(RequestEcho) returns (ResponseEcho) ;
+  rpc Flush(RequestFlush) returns (ResponseFlush);
+  rpc Info(RequestInfo) returns (ResponseInfo);
+  rpc SetOption(RequestSetOption) returns (ResponseSetOption);
+  rpc DeliverTx(RequestDeliverTx) returns (ResponseDeliverTx);
+  rpc CheckTx(RequestCheckTx) returns (ResponseCheckTx);
+  rpc Query(RequestQuery) returns (ResponseQuery);
+  rpc Commit(RequestCommit) returns (ResponseCommit);
+  rpc InitChain(RequestInitChain) returns (ResponseInitChain);
+  rpc BeginBlock(RequestBeginBlock) returns (ResponseBeginBlock);
+  rpc EndBlock(RequestEndBlock) returns (ResponseEndBlock);
+}
+
+</code></pre>
+<h2><a class="header" href="#srcgithubcomtenderminttendermintlibscommontypesproto" id="srcgithubcomtenderminttendermintlibscommontypesproto">src:./github.com/tendermint/tendermint/libs/common/types.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+package common;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+// Generate tests
+option (gogoproto.populate_all) = true;
+option (gogoproto.equal_all) = true;
+option (gogoproto.testgen_all) = true;
+
+//----------------------------------------
+// Abstract types
+
+// Define these here for compatibility but use tmlibs/common.KVPair.
+message KVPair {
+  bytes key = 1;
+  bytes value = 2;
+}
+
+// Define these here for compatibility but use tmlibs/common.KI64Pair.
+message KI64Pair {
+  bytes key = 1;
+  int64 value = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcpermissionproto" id="srcpermissionproto">src:./permission.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto2';
+
+package permission;
+
+option go_package = &quot;github.com/hyperledger/burrow/permission&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+// Enable custom Marshal method.
+option (gogoproto.marshaler_all) = true;
+// Enable custom Unmarshal method.
+option (gogoproto.unmarshaler_all) = true;
+// Enable custom Size method (Required by Marshal and Unmarshal).
+option (gogoproto.sizer_all) = true;
+// Enable registration with golang/protobuf for the grpc-gateway.
+option (gogoproto.goproto_registration) = true;
+// Enable generation of XXX_MessageName methods for grpc-go/status.
+option (gogoproto.messagename_all) = true;
+
+message AccountPermissions {
+    optional BasePermissions Base = 1 [(gogoproto.nullable) = false];
+    option (gogoproto.goproto_sizecache) = false;
+    option (gogoproto.goproto_unkeyed) = false;
+
+    repeated string Roles = 2;
+}
+
+message BasePermissions {
+    option (gogoproto.goproto_stringer) = false;
+    option (gogoproto.goproto_sizecache) = false;
+    option (gogoproto.goproto_unkeyed) = false;
+    optional uint64 Perms = 1 [(gogoproto.casttype) = &quot;PermFlag&quot;, (gogoproto.nullable) = false];
+    optional uint64 SetBit = 2 [(gogoproto.casttype) = &quot;PermFlag&quot;, (gogoproto.nullable) = false];
+}
+
+message PermArgs {
+    option (gogoproto.goproto_unrecognized) = false;
+    option (gogoproto.goproto_stringer) = false;
+    // The permission function
+    optional uint64 Action = 1 [(gogoproto.casttype) = &quot;PermFlag&quot;, (gogoproto.nullable) = false];
+    // The target of the action
+    optional bytes Target = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;];
+    // Possible arguments
+    optional uint64 Permission = 3 [(gogoproto.casttype) = &quot;PermFlag&quot;];
+    optional string Role = 4;
+    optional bool Value = 5;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcacmproto" id="srcacmproto">src:./acm.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+package acm;
+
+option go_package = &quot;github.com/hyperledger/burrow/acm&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+import &quot;permission.proto&quot;;
+import &quot;crypto.proto&quot;;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+option (gogoproto.messagename_all) = true;
+
+message Account {
+    option (gogoproto.goproto_stringer) = false;
+    bytes Address = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+    crypto.PublicKey PublicKey = 2 [(gogoproto.nullable) = false];
+    uint64 Sequence = 3;
+    uint64 Balance = 4;
+    bytes EVMCode = 5 [(gogoproto.customtype) = &quot;Bytecode&quot;, (gogoproto.nullable) = false];
+    permission.AccountPermissions Permissions = 6 [(gogoproto.nullable) = false];
+    bytes WASMCode = 7 [(gogoproto.customtype) = &quot;Bytecode&quot;, (gogoproto.jsontag) = &quot;,omitempty&quot;, (gogoproto.nullable) = false];
+    bytes CodeHash = 8 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false, (gogoproto.jsontag) = &quot;-&quot;];
+    repeated ContractMeta ContractMeta = 9;
+    // The metadata is stored in the deployed account. When the deployed account creates new account (from Solidity/EVM), they point to the original deployed
+    // account where the metadata is stored. This original account is called the forebear.
+    bytes Forebear = 10 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;];
+}
+
+message ContractMeta {
+    bytes CodeHash = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    bytes MetadataHash = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    // In the dump format we would like the ABI rather than its hash
+    string Metadata = 3;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcrpcqueryproto" id="srcrpcqueryproto">src:./rpcquery.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+package rpcquery;
+
+option go_package = &quot;github.com/hyperledger/burrow/rpc/rpcquery&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+import &quot;github.com/tendermint/tendermint/abci/types/types.proto&quot;;
+
+import &quot;names.proto&quot;;
+import &quot;acm.proto&quot;;
+import &quot;validator.proto&quot;;
+import &quot;rpc.proto&quot;;
+import &quot;payload.proto&quot;;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+option (gogoproto.messagename_all) = true;
+
+service Query {
+    rpc Status (StatusParam) returns (rpc.ResultStatus);
+    rpc GetAccount (GetAccountParam) returns (acm.Account);
+    rpc GetMetadata (GetMetadataParam) returns (MetadataResult);
+    rpc GetStorage (GetStorageParam) returns (StorageValue);
+
+    rpc ListAccounts (ListAccountsParam) returns (stream acm.Account);
+
+    rpc GetName (GetNameParam) returns (names.Entry);
+    rpc ListNames (ListNamesParam) returns (stream names.Entry);
+
+    rpc GetValidatorSet (GetValidatorSetParam) returns (ValidatorSet);
+    rpc GetValidatorSetHistory (GetValidatorSetHistoryParam) returns (ValidatorSetHistory);
+
+    rpc GetProposal(GetProposalParam) returns (payload.Ballot);
+    rpc ListProposals(ListProposalsParam) returns (stream ProposalResult);
+
+    rpc GetStats(GetStatsParam) returns (Stats);
+
+    rpc GetBlockHeader(GetBlockParam) returns (types.Header);
+}
+
+message StatusParam {
+    string BlockTimeWithin = 1;
+    string BlockSeenTimeWithin = 2;
+}
+
+message GetAccountParam {
+    bytes Address = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+}
+
+message GetMetadataParam {
+    bytes Address = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;];
+    bytes MetadataHash = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;];
+}
+
+message MetadataResult {
+    string Metadata = 1;
+}
+
+message GetStorageParam {
+    bytes Address = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+    bytes Key = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.Word256&quot;, (gogoproto.nullable) = false];
+}
+
+message StorageValue {
+    bytes Value = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+}
+
+message ListAccountsParam {
+    string Query = 1;
+}
+
+message GetNameParam {
+    string Name = 1;
+}
+
+message ListNamesParam {
+    string Query = 1;
+}
+
+message GetValidatorSetParam {
+
+}
+
+message GetValidatorSetHistoryParam {
+    // Use -1 for all available history
+    int64 IncludePrevious = 1;
+}
+
+message ValidatorSetHistory {
+    repeated ValidatorSet History = 1;
+}
+
+message ValidatorSet {
+    uint64 height = 1;
+    repeated validator.Validator Set = 2;
+}
+
+message GetProposalParam {
+    bytes Hash = 1;
+}
+
+message ListProposalsParam {
+    bool Proposed = 1;
+}
+
+message ProposalResult {
+    bytes Hash = 1;
+    payload.Ballot Ballot = 2;
+}
+
+message GetStatsParam {
+
+}
+
+message Stats {
+    uint64 AccountsWithCode = 1;
+    uint64 AccountsWithoutCode = 2;
+}
+
+message GetBlockParam {
+    uint64 Height = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srctendermintproto" id="srctendermintproto">src:./tendermint.proto</a></h2>
+<pre><code class="language-proto">
+// Needed to proto2 rather than proto3 to get pointer field for PermArg
+syntax = 'proto3';
+
+option go_package = &quot;github.com/hyperledger/burrow/consensus/tendermint&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+package tendermint;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+option (gogoproto.messagename_all) = true;
+
+message NodeInfo {
+    bytes ID = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+    string ListenAddress = 2;
+    string Network = 3;
+    string Version = 4;
+    bytes Channels = 5 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    string Moniker = 6;
+    string RPCAddress = 7;
+    string TxIndex = 8;
+}
+
+</code></pre>
+<h2><a class="header" href="#srccryptoproto" id="srccryptoproto">src:./crypto.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+package crypto;
+
+option go_package = &quot;github.com/hyperledger/burrow/crypto&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+option (gogoproto.messagename_all) = true;
+
+message PublicKey {
+    option (gogoproto.goproto_stringer) = false;
+    uint32 CurveType = 1 [(gogoproto.casttype) = &quot;CurveType&quot;];
+    bytes PublicKey = 2[(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+}
+
+message PrivateKey {
+    option (gogoproto.goproto_stringer) = false;
+    option (gogoproto.goproto_getters) = false;
+    uint32 CurveType = 1 [(gogoproto.casttype) = &quot;CurveType&quot;];
+    // Note may need initialisation
+    bytes PublicKey = 2;
+    bytes PrivateKey = 3;
+}
+
+message Signature {
+    option (gogoproto.goproto_stringer) = false;
+    uint32 CurveType = 1 [(gogoproto.casttype) = &quot;CurveType&quot;];
+    bytes Signature = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcstorageproto" id="srcstorageproto">src:./storage.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+option go_package = &quot;github.com/hyperledger/burrow/storage&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+package storage;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+option (gogoproto.messagename_all) = true;
+
+// This is the object that is stored in the leaves of the commitsTree - it captures the sub-tree hashes so that the
+// commitsTree's hash becomes a mixture of the hashes of all the sub-trees.
+message CommitID {
+    option (gogoproto.goproto_stringer) = false;
+    int64 Version = 1;
+    bytes Hash = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcpayloadproto" id="srcpayloadproto">src:./payload.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+option go_package = &quot;github.com/hyperledger/burrow/txs/payload&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+import &quot;permission.proto&quot;;
+import &quot;spec.proto&quot;;
+
+package payload;
+
+// Enable custom Marshal method.
+option (gogoproto.marshaler_all) = true;
+// Enable custom Unmarshal method.
+option (gogoproto.unmarshaler_all) = true;
+// Enable custom Size method (Required by Marshal and Unmarshal).
+option (gogoproto.sizer_all) = true;
+// Enable registration with golang/protobuf for the grpc-gateway.
+option (gogoproto.goproto_registration) = true;
+// Enable generation of XXX_MessageName methods for grpc-go/status.
+option (gogoproto.messagename_all) = true;
+
+message Any {
+    option (gogoproto.onlyone) = true;
+
+    CallTx CallTx = 1;
+    SendTx SendTx = 2;
+    NameTx NameTx = 3;
+    PermsTx PermsTx = 4;
+    GovTx GovTx = 5;
+    BondTx BondTx = 6;
+    UnbondTx UnbondTx = 7;
+    BatchTx BatchTx = 8;
+    ProposalTx ProposalTx = 9;
+}
+
+// An input to a transaction that may carry an Amount as a charge and whose sequence number must be one greater than
+// that associated with the account at Address at the time of being received
+message TxInput {
+    option (gogoproto.goproto_stringer) = false;
+    // The address from which this input flows
+    bytes Address = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+    // The amount of native token to transfer from the input address
+    uint64 Amount = 2;
+    // The sequence number that this transaction will induce (i.e. one greater than the input account's current sequence)
+    uint64 Sequence = 3;
+}
+
+// An output from a transaction that may carry an amount as a charge
+message TxOutput {
+    option (gogoproto.goproto_stringer) = false;
+    // The address to which this output flows
+    bytes Address = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+    // The amount of native token to transfer to the output address
+    uint64 Amount = 2;
+}
+
+// A instruction to run smart contract code in the EVM
+message CallTx {
+    option (gogoproto.goproto_stringer) = false;
+    // The caller's input
+    TxInput Input = 1;
+    // The contract address to call or nil if we are creating a contract
+    bytes Address = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;];
+    // The upper bound on the amount of gas (and therefore EVM execution steps) this CallTx may generate
+    uint64 GasLimit = 3;
+    // Fee to offer validators for processing transaction
+    uint64 Fee = 4;
+    // EVM bytecode
+    bytes Data = 5 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    // WASM bytecode
+    bytes WASM = 6 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false, (gogoproto.jsontag)=&quot;tags,omitempty&quot;];
+    // Set of contracts this code will deploy
+    repeated ContractMeta ContractMeta = 7;
+}
+
+message ContractMeta {
+    bytes CodeHash = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    string Meta = 2;
+}
+
+// A payment between two sets of parties
+message SendTx {
+    option (gogoproto.goproto_stringer) = false;
+    option (gogoproto.goproto_getters) = false;
+    // The payers
+    repeated TxInput Inputs = 1;
+    // The payees
+    repeated TxOutput Outputs = 2;
+}
+
+// An update to the on-chain permissions
+message PermsTx {
+    option (gogoproto.goproto_stringer) = false;
+    // The permission moderator
+    TxInput Input = 1;
+    // The modified permissions
+    permission.PermArgs PermArgs = 2 [(gogoproto.nullable) = false];
+}
+
+// A request to claim a globally unique name across the entire chain with some optional data storage leased for a fee
+message NameTx {
+    option (gogoproto.goproto_stringer) = false;
+    // The name updater
+    TxInput Input = 1;
+    // The name to update or create
+    string Name = 2;
+    // The data to store against the name
+    string Data = 3;
+    // The fee to provide that will determine the length of the name lease
+    uint64 Fee = 4;
+}
+
+message BondTx {
+    option (gogoproto.goproto_stringer) = false;
+    option (gogoproto.goproto_getters) = false;
+
+    // Input must be the validator that desires to bond
+    TxInput Input = 1;
+}
+
+message UnbondTx {
+    option (gogoproto.goproto_stringer) = false;
+    option (gogoproto.goproto_getters) = false;
+
+    TxInput Input = 1;
+    // Account to unbond
+    TxOutput Output = 2;
+}
+
+message GovTx {
+    option (gogoproto.goproto_stringer) = false;
+    option (gogoproto.goproto_getters) = false;
+
+    repeated TxInput Inputs = 1;
+    repeated spec.TemplateAccount AccountUpdates = 2 [(gogoproto.nullable) = true];
+}
+
+message ProposalTx {
+    option (gogoproto.goproto_stringer) = false;
+    option (gogoproto.goproto_getters) = false;
+
+    TxInput Input = 1;
+    int64 VotingWeight = 2;
+    bytes ProposalHash = 3 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;];
+    Proposal Proposal = 4;
+}
+
+message BatchTx {
+    option (gogoproto.goproto_stringer) = false;
+    option (gogoproto.goproto_getters) = false;
+
+    repeated TxInput Inputs = 1;
+    repeated Any Txs = 2;
+}
+
+message Vote {
+    option (gogoproto.goproto_stringer) = false;
+    option (gogoproto.goproto_getters) = false;
+
+    bytes Address = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+    int64 VotingWeight = 2;
+}
+
+message Proposal {
+    option (gogoproto.goproto_stringer) = false;
+    option (gogoproto.goproto_getters) = false;
+
+    string Name = 1;
+    string Description = 2;
+    BatchTx BatchTx = 3;
+}
+
+message Ballot {
+    Proposal Proposal = 1;
+    bytes FinalizingTx = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;];
+    enum ProposalState {
+        // PROPOSED might be expired, if sequence number of any of the input accounts are out of date
+        PROPOSED = 0;
+        EXECUTED = 1;
+        FAILED = 2;
+    }
+    ProposalState proposalState = 4;
+    repeated Vote Votes = 5;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcdumpproto" id="srcdumpproto">src:./dump.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+option go_package = &quot;github.com/hyperledger/burrow/dump&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+import &quot;google/protobuf/timestamp.proto&quot;;
+
+import &quot;acm.proto&quot;;
+import &quot;exec.proto&quot;;
+import &quot;names.proto&quot;;
+
+package dump;
+
+option (gogoproto.stable_marshaler_all) = true;
+// Enable custom Marshal method.
+option (gogoproto.marshaler_all) = true;
+// Enable custom Unmarshal method.
+option (gogoproto.unmarshaler_all) = true;
+// Enable custom Size method (Required by Marshal and Unmarshal).
+option (gogoproto.sizer_all) = true;
+// Enable registration with golang/protobuf for the grpc-gateway.
+option (gogoproto.goproto_registration) = true;
+// Enable generation of XXX_MessageName methods for grpc-go/status.
+option (gogoproto.messagename_all) = true;
+
+message Storage {
+    bytes Key = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.Word256&quot;, (gogoproto.nullable) = false];
+    bytes Value = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+}
+
+message AccountStorage {
+    bytes Address = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.nullable) = false];
+    repeated Storage Storage = 2;
+}
+
+message EVMEvent {
+    // The original ChainID from for this event
+    string ChainID = 1;
+    // The original index for this event
+    uint64 Index = 4;
+    // The original block time for this transaction
+    google.protobuf.Timestamp Time = 2 [(gogoproto.nullable)=false, (gogoproto.stdtime)=true];
+    // The event itself
+    exec.LogEvent Event = 3;
+}
+
+message Dump {
+    uint64 Height = 1;
+
+    acm.Account Account = 2;
+    AccountStorage AccountStorage = 3;
+    EVMEvent EVMEvent = 4;
+    names.Entry Name = 5;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcrpcdumpproto" id="srcrpcdumpproto">src:./rpcdump.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+package rpcdump;
+
+option go_package = &quot;github.com/hyperledger/burrow/rpc/rpcdump&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+import &quot;dump.proto&quot;;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+option (gogoproto.messagename_all) = true;
+
+service Dump {
+    rpc GetDump(GetDumpParam) returns (stream dump.Dump);
+}
+
+message GetDumpParam {
+    uint64 height = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srckeysproto" id="srckeysproto">src:./keys.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+option go_package = &quot;github.com/hyperledger/burrow/keys&quot;;
+
+package keys;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+import &quot;crypto.proto&quot;;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+option (gogoproto.messagename_all) = true;
+
+service Keys {
+    rpc GenerateKey(GenRequest) returns (GenResponse);
+    rpc PublicKey(PubRequest) returns (PubResponse);
+    rpc Sign(SignRequest) returns (SignResponse);
+    rpc Verify(VerifyRequest) returns (VerifyResponse);
+    rpc Import(ImportRequest) returns (ImportResponse);
+    rpc ImportJSON(ImportJSONRequest) returns (ImportResponse);
+    rpc Export(ExportRequest) returns (ExportResponse);
+    rpc Hash(HashRequest) returns (HashResponse);
+    rpc RemoveName(RemoveNameRequest) returns (RemoveNameResponse);
+    rpc List(ListRequest) returns (ListResponse);
+    rpc AddName(AddNameRequest) returns (AddNameResponse);
+}
+
+// Some empty types we may define later
+
+message ListRequest {
+    string KeyName = 1;
+}
+
+message VerifyResponse {
+
+}
+
+message RemoveNameResponse {
+
+}
+
+message AddNameResponse {
+
+}
+
+message RemoveNameRequest {
+    string KeyName = 1;
+}
+
+
+message GenRequest {
+    string Passphrase = 1;
+    string CurveType = 2;
+    string KeyName = 3;
+}
+
+message GenResponse {
+    string Address = 1;
+}
+
+message PubRequest {
+    string Address = 1;
+    string Name = 2;
+}
+
+message PubResponse {
+    bytes PublicKey = 1;
+    string CurveType = 2;
+}
+
+message ImportJSONRequest {
+    string Passphrase = 1;
+    string JSON = 2;
+}
+
+message ImportResponse {
+    string Address = 1;
+}
+
+message ImportRequest {
+    string Passphrase = 1;
+    string Name = 2;
+    string CurveType = 3;
+    bytes KeyBytes = 4;
+}
+
+message ExportRequest {
+    string Passphrase = 1;
+    string Name = 2;
+    string Address = 3;
+}
+
+message ExportResponse {
+    bytes Publickey = 1;
+    bytes Privatekey = 2;
+    bytes Address = 3;
+    string CurveType = 4;
+}
+
+message SignRequest {
+    string Passphrase = 1;
+    string Address = 2;
+    string Name = 3;
+    bytes Message = 4;
+}
+
+message SignResponse {
+    crypto.Signature Signature = 3;
+}
+
+message VerifyRequest {
+    bytes PublicKey = 2;
+    bytes Message = 3;
+    crypto.Signature Signature = 5;
+}
+
+message HashRequest {
+    string Hashtype = 1;
+    bytes Message = 2;
+}
+
+message HashResponse {
+    string Hash = 1;
+}
+
+message KeyID {
+    string Address = 1;
+    repeated string KeyName = 2;
+}
+
+message ListResponse {
+    repeated KeyID key = 1;
+}
+
+message AddNameRequest {
+    string Keyname = 1;
+    string Address = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcerrorsproto" id="srcerrorsproto">src:./errors.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package errors;
+
+option go_package = &quot;github.com/hyperledger/burrow/execution/errors&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+option (gogoproto.stable_marshaler_all) = true;
+// Enable custom Marshal method.
+option (gogoproto.marshaler_all) = true;
+// Enable custom Unmarshal method.
+option (gogoproto.unmarshaler_all) = true;
+// Enable custom Size method (Required by Marshal and Unmarshal).
+option (gogoproto.sizer_all) = true;
+// Enable registration with golang/protobuf for the grpc-gateway.
+option (gogoproto.goproto_registration) = true;
+// Enable generation of XXX_MessageName methods for grpc-go/status.
+option (gogoproto.messagename_all) = true;
+
+message Exception {
+    option (gogoproto.goproto_stringer) = false;
+    uint32 Code = 1 [(gogoproto.casttype) = &quot;Code&quot;];
+    string Exception = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcrpcproto" id="srcrpcproto">src:./rpc.proto</a></h2>
+<pre><code class="language-proto">
+// Needed to proto2 rather than proto3 to get pointer field for PermArg
+syntax = 'proto3';
+
+option go_package = &quot;github.com/hyperledger/burrow/rpc&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+import &quot;tendermint.proto&quot;;
+import &quot;validator.proto&quot;;
+import &quot;bcm.proto&quot;;
+
+package rpc;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+option (gogoproto.messagename_all) = true;
+
+message ResultStatus {
+    string ChainID = 1;
+    string RunID = 2;
+    string BurrowVersion = 3;
+    bytes GenesisHash = 4 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    tendermint.NodeInfo NodeInfo = 5;
+    bcm.SyncInfo SyncInfo = 6;
+    // When catching up in fast sync
+    bool CatchingUp = 8 [(gogoproto.jsontag) = &quot;&quot;];
+    validator.Validator ValidatorInfo = 7;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcrpceventsproto" id="srcrpceventsproto">src:./rpcevents.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+option go_package = &quot;github.com/hyperledger/burrow/rpc/rpcevents&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+import &quot;exec.proto&quot;;
+
+package rpcevents;
+
+// Enable custom Marshal method.
+option (gogoproto.marshaler_all) = true;
+// Enable custom Unmarshal method.
+option (gogoproto.unmarshaler_all) = true;
+// Enable custom Size method (Required by Marshal and Unmarshal).
+option (gogoproto.sizer_all) = true;
+// Enable registration with golang/protobuf for the grpc-gateway.
+option (gogoproto.goproto_registration) = true;
+// Enable generation of XXX_MessageName methods for grpc-go/status.
+option (gogoproto.messagename_all) = true;
+
+//--------------------------------------------------
+// Execution events
+service ExecutionEvents {
+    // Get StreamEvents (including transactions) for a range of block heights
+    rpc Stream (BlocksRequest) returns (stream exec.StreamEvent);
+    // Get a particular TxExecution by hash
+    rpc Tx (TxRequest) returns (exec.TxExecution);
+    // GetEvents provides events streaming one block at a time - that is all events emitted in a particular block
+    // are guaranteed to be delivered in each GetEventsResponse
+    rpc Events (BlocksRequest) returns (stream EventsResponse);
+}
+
+message GetBlockRequest {
+    // Height of block required
+    uint64 Height = 1;
+    // Whether to wait for the block to become available
+    bool Wait = 2;
+}
+
+message TxRequest {
+    // Height of block required
+    bytes TxHash = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    // Whether to wait for the block to become available
+    bool Wait = 2;
+}
+
+message BlocksRequest {
+    BlockRange BlockRange = 1;
+    // Specify a query on which to match the tags of events.
+    // Tag        | Match type | Values
+    // -----------------------------------------
+    //   All events
+    // -----------------------------------------
+    // TxType       | String     | &quot;UnknownTx&quot;, &quot;SendTx&quot;, &quot;CallTx&quot;, &quot;NameTx&quot;, &quot;BondTx&quot;, &quot;UnbondTx&quot;, &quot;PermissionsTx&quot;, &quot;GovernanceTx&quot;
+    // TxHash       | String     | bytes
+    // EventType    | String     | &quot;CallEvent&quot;, &quot;LogEvent&quot;, &quot;AccountInputEvent&quot;, &quot;AccountOutputEvent&quot;
+    // EventID      | String     | string
+    // Height       | Integer    | uint64
+    // Index        | Integer    | uint64
+    // MessageType  | String     | Go type name
+    // -----------------------------------------
+    //   Log event
+    // -----------------------------------------
+    // Address      | String     | Address (hex)
+    // Log&lt;0-4&gt;     | String     | Word256 (hex)
+    // Log&lt;0-4&gt;Text | String     | string (trimmed)
+    // -----------------------------------------
+    //   Call event
+    // -----------------------------------------
+    // Origin       | String     | Address (hex)
+    // Callee       | String     | Address (hex)
+    // Caller       | String     | Address (hex)
+    // Value        | Integer    | uint64
+    // Gas          | Integer    | uint64
+    // StackDepth   | Integer    | uint64
+    // Exception    | String     | string
+    // -----------------------------------------
+    //   Tx event (input/output)
+    // -----------------------------------------
+    // Exception  | String     | string
+    //
+    // For example:
+    // EventType = 'LogEvent' AND EventID CONTAINS 'bar' AND TxHash = '020304' AND Height &gt;= 34 AND Index &lt; 3 AND Address = 'DEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEF'
+    string Query = 2;
+}
+
+message EventsResponse {
+    uint64 Height = 1;
+    repeated exec.Event Events = 2;
+}
+
+message GetTxsRequest {
+    uint64 StartHeight = 1;
+    uint64 EndHeight = 2;
+    string Query = 3;
+}
+
+message GetTxsResponse {
+    uint64 Height = 1;
+    repeated exec.TxExecution TxExecutions = 2;
+}
+
+message Bound {
+    BoundType Type = 1;
+    uint64 Index = 2;
+    enum BoundType {
+        // Index is absolute index of an item
+        ABSOLUTE = 0;
+        // Index is an offset relative to last item
+        RELATIVE = 1;
+        // The first block
+        FIRST = 2;
+        // Ignore provided index and evaluate to latest index
+        LATEST = 3;
+        // Ignore provided index and stream new objects as they are generated
+        STREAM = 4;
+    }
+}
+
+// An inclusive range of blocks to include in output
+message BlockRange {
+    // Bounds can be set to:
+    // absolute: block height
+    // relative: block height counting back from latest
+    // latest: latest block when call is processed
+    // stream: for End keep sending new blocks, for start same as latest
+    Bound Start = 1;
+    Bound End = 2;
+}
+
+
+</code></pre>
+<h2><a class="header" href="#srcbcmproto" id="srcbcmproto">src:./bcm.proto</a></h2>
+<pre><code class="language-proto">
+// Needed to proto2 rather than proto3 to get pointer field for PermArg
+syntax = 'proto3';
+
+option go_package = &quot;github.com/hyperledger/burrow/bcm&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+import &quot;google/protobuf/timestamp.proto&quot;;
+import &quot;google/protobuf/duration.proto&quot;;
+
+package bcm;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+option (gogoproto.messagename_all) = true;
+
+message SyncInfo {
+    uint64 LatestBlockHeight = 1 [(gogoproto.jsontag) = &quot;&quot;];
+    bytes LatestBlockHash = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    bytes LatestAppHash = 3 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    // Timestamp of block as set by the block proposer
+    google.protobuf.Timestamp LatestBlockTime = 4 [(gogoproto.nullable) = false, (gogoproto.stdtime) = true];
+    // Time at which we committed the last block
+    google.protobuf.Timestamp LatestBlockSeenTime = 5 [(gogoproto.nullable) = false, (gogoproto.stdtime) = true];
+    // Time elapsed since last commit
+    google.protobuf.Duration LatestBlockDuration = 6 [(gogoproto.nullable) = false, (gogoproto.stdduration) = true];
+}
+
+message PersistedState {
+    bytes AppHashAfterLastBlock = 1 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+    google.protobuf.Timestamp LastBlockTime = 2 [(gogoproto.nullable) = false, (gogoproto.stdtime) = true];
+    uint64 LastBlockHeight = 3;
+    bytes GenesisHash = 4 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/binary.HexBytes&quot;, (gogoproto.nullable) = false];
+}
+
+</code></pre>
+<h2><a class="header" href="#srcspecproto" id="srcspecproto">src:./spec.proto</a></h2>
+<pre><code class="language-proto">
+syntax = 'proto3';
+
+option go_package = &quot;github.com/hyperledger/burrow/genesis/spec&quot;;
+
+import &quot;github.com/gogo/protobuf/gogoproto/gogo.proto&quot;;
+
+import &quot;crypto.proto&quot;;
+import &quot;balance.proto&quot;;
+
+package spec;
+
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_registration) = true;
+option (gogoproto.messagename_all) = true;
+
+message TemplateAccount {
+    option (gogoproto.goproto_sizecache) = false;
+    option (gogoproto.goproto_unkeyed) = false;
+
+    string Name = 1;
+    bytes Address = 2 [(gogoproto.customtype) = &quot;github.com/hyperledger/burrow/crypto.Address&quot;, (gogoproto.jsontag) = &quot;,omitempty&quot;, (gogoproto.moretags) = &quot;toml:\&quot;,omitempty\&quot;&quot;];
+    crypto.PublicKey PublicKey = 3 [(gogoproto.jsontag) = &quot;,omitempty&quot;, (gogoproto.moretags) = &quot;toml:\&quot;,omitempty\&quot;&quot;];
+    repeated balance.Balance Amounts = 4 [(gogoproto.nullable) = false, (gogoproto.jsontag) = &quot;,omitempty&quot;, (gogoproto.moretags) = &quot;toml:\&quot;,omitempty\&quot;&quot;];
+    repeated string Permissions = 5 [(gogoproto.jsontag) = &quot;,omitempty&quot;, (gogoproto.moretags) = &quot;toml:\&quot;,omitempty\&quot;&quot;];
+    repeated string Roles = 6 [(gogoproto.jsontag) = &quot;,omitempty&quot;, (gogoproto.moretags) = &quot;toml:\&quot;,omitempty\&quot;&quot;];
+    bytes Code = 7 [(gogoproto.nullable) = true, (gogoproto.customtype) = &quot;github.com/hyperledger/burrow/acm.Bytecode&quot;];
+}
+
+
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../dlt/hl-sawtooth.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../dlt/libra.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../dlt/hl-sawtooth.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../dlt/libra.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

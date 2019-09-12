@@ -1,6 +1,6 @@
 # 第三新熵熱踢道場 
 
-- [簡介](./README.md)
+- [DLTDOJO3](./README.md)
 - [POC 概念驗證](./poc.md)
 - [POC TAICHU-RAW](./taichu-raw/README.md)
   - [HTTPS: Apache Big5](./taichu-raw/apache-big5.md)
@@ -17,8 +17,15 @@
 - [DLT](./dlt.md)
   - [Hyperledger Fabric](./dlt/hl-fabric.md)
   - [Hyperledger Sawtooth](./dlt/hl-sawtooth.md)
+  - [HyperLedger Burrow](./dlt/hl-burrow.md)
   - [Libra](./dlt/libra.md)
+  - [lightning network](./dlt/lnrpc.md)
+  - [exonum](./dlt/exonum.md)
   - [TRISA](./dlt/trisa.md)
+  - [xuperchain](./dlt/xuperchain.md)
+  - [TrustWallet](./dlt/trustwallet.md)
+  - [OpenBazaar](./dlt/openbazaar.md)
+  - [Amazon QLDB](./dlt/amazon-qldb.md)
 - [DAO](./dao.md)
   - [Aragon](./dao/aragon.md)
   - [JoyStream](./dao/joystream.md)

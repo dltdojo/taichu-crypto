@@ -1,0 +1,2747 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>xuperchain - DLTDOJO3 第三新熵熱踢道場</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> DLTDOJO3</a></li><li><a href="../poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><a href="../taichu-raw/index.html"><strong aria-hidden="true">3.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li><a href="../taichu-raw/apache-big5.html"><strong aria-hidden="true">3.1.</strong> HTTPS: Apache Big5</a></li><li><a href="../taichu-raw/openapiv3.html"><strong aria-hidden="true">3.2.</strong> HTTPS: OpenAPI v3</a></li><li><a href="../taichu-raw/others.html"><strong aria-hidden="true">3.3.</strong> 其他</a></li></ol></li><li><a href="../mad-white/index.html"><strong aria-hidden="true">4.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li><a href="../mad-white/code-server.html"><strong aria-hidden="true">4.1.</strong> VS Code Server</a></li></ol></li><li><a href="../mad-red/index.html"><strong aria-hidden="true">5.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">5.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">5.2.</strong> 聊天測試 BIP39</a></li><li><a href="../mad-red/vox/index.html"><strong aria-hidden="true">5.3.</strong> Voxel 組件開發編輯</a></li><li><a href="../mad-red/vox/projects.html"><strong aria-hidden="true">5.4.</strong> Voxel 相關專案</a></li></ol></li><li><a href="../crypto-assets.html"><strong aria-hidden="true">6.</strong> Crypto-Assets</a></li><li><a href="../dlt.html"><strong aria-hidden="true">7.</strong> DLT</a></li><li><ol class="section"><li><a href="../dlt/hl-fabric.html"><strong aria-hidden="true">7.1.</strong> Hyperledger Fabric</a></li><li><a href="../dlt/hl-sawtooth.html"><strong aria-hidden="true">7.2.</strong> Hyperledger Sawtooth</a></li><li><a href="../dlt/hl-burrow.html"><strong aria-hidden="true">7.3.</strong> HyperLedger Burrow</a></li><li><a href="../dlt/libra.html"><strong aria-hidden="true">7.4.</strong> Libra</a></li><li><a href="../dlt/lnrpc.html"><strong aria-hidden="true">7.5.</strong> lightning network</a></li><li><a href="../dlt/exonum.html"><strong aria-hidden="true">7.6.</strong> exonum</a></li><li><a href="../dlt/trisa.html"><strong aria-hidden="true">7.7.</strong> TRISA</a></li><li><a href="../dlt/xuperchain.html" class="active"><strong aria-hidden="true">7.8.</strong> xuperchain</a></li><li><a href="../dlt/trustwallet.html"><strong aria-hidden="true">7.9.</strong> TrustWallet</a></li><li><a href="../dlt/openbazaar.html"><strong aria-hidden="true">7.10.</strong> OpenBazaar</a></li><li><a href="../dlt/amazon-qldb.html"><strong aria-hidden="true">7.11.</strong> Amazon QLDB</a></li></ol></li><li><a href="../dao.html"><strong aria-hidden="true">8.</strong> DAO</a></li><li><ol class="section"><li><a href="../dao/aragon.html"><strong aria-hidden="true">8.1.</strong> Aragon</a></li><li><a href="../dao/joystream.html"><strong aria-hidden="true">8.2.</strong> JoyStream</a></li></ol></li><li><a href="../did.html"><strong aria-hidden="true">9.</strong> DID</a></li><li><a href="../LRE.html"><strong aria-hidden="true">10.</strong> Ledger Reliability Engineering(LRE)</a></li><li><a href="../web/index.html"><strong aria-hidden="true">11.</strong> Web Tech</a></li><li><ol class="section"><li><a href="../web/extensions.html"><strong aria-hidden="true">11.1.</strong> Browser Extensiions</a></li><li><a href="../web/example-page.html"><strong aria-hidden="true">11.2.</strong> Example Pages</a></li><li><a href="../webauthn.html"><strong aria-hidden="true">11.3.</strong> WebAuthn</a></li><li><a href="../webassembly.html"><strong aria-hidden="true">11.4.</strong> WebAssembly</a></li><li><a href="../web/openssl.html"><strong aria-hidden="true">11.5.</strong> OpenSSL</a></li></ol></li><li><a href="../k8s.html"><strong aria-hidden="true">12.</strong> Kubernetes</a></li><li><a href="../plantuml.html"><strong aria-hidden="true">13.</strong> PlantUML</a></li><li><ol class="section"><li><a href="../puml/hyperledger-fabric.html"><strong aria-hidden="true">13.1.</strong> Hyperledger Fabric</a></li><li><a href="../puml/ethereum.html"><strong aria-hidden="true">13.2.</strong> Ethereum</a></li></ol></li><li><a href="../messaging.html"><strong aria-hidden="true">14.</strong> Messaging</a></li><li><a href="../mdbook/index.html"><strong aria-hidden="true">15.</strong> mdbook</a></li><li><ol class="section"><li><a href="../mdbook/preprocessors.html"><strong aria-hidden="true">15.1.</strong> preprocessors</a></li><li><a href="../mdbook/others.html"><strong aria-hidden="true">15.2.</strong> 其他</a></li></ol></li><li><a href="../resources.html"><strong aria-hidden="true">16.</strong> 學習資源</a></li><li><a href="../book.html"><strong aria-hidden="true">17.</strong> 書籍</a></li><li><a href="../job.html"><strong aria-hidden="true">18.</strong> 工作</a></li><li><a href="../appendix.html"><strong aria-hidden="true">19.</strong> 附錄</a></li><li><ol class="section"><li><a href="../cmd-help.html"><strong aria-hidden="true">19.1.</strong> 命令列 tc.sh</a></li><li><a href="../license.html"><strong aria-hidden="true">19.2.</strong> 授權條款</a></li><li><a href="../testpage.html"><strong aria-hidden="true">19.3.</strong> 測試頁面</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">DLTDOJO3 第三新熵熱踢道場</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#xuperchain" id="xuperchain">xuperchain</a></h1>
+<p><a href="https://github.com/xuperchain/xuperunion/tree/master/pb">xuperunion/pb at master · xuperchain/xuperunion</a></p>
+<h1><a class="header" href="#toc" id="toc">TOC</a></h1>
+<!-- toc -->
+<h1><a class="header" href="#create-google-protocol-buffers-docs" id="create-google-protocol-buffers-docs">Create Google Protocol Buffers docs</a></h1>
+<pre><code class="language-shell">git clone https://github.com/xuperchain/xuperunion.git /tmp/src/xuperunion
+bash tc.sh --gen-proto-doc /tmp/src/xuperunion/pb /tmp/output.md
+</code></pre>
+<h1><a class="header" href="#generated-date2019-09-12t1504360800" id="generated-date2019-09-12t1504360800">Generated Date:2019-09-12T15:04:36+08:00</a></h1>
+<h1><a class="header" href="#protocol-documentation" id="protocol-documentation">Protocol Documentation</a></h1>
+<p><a name="top"></a></p>
+<h2><a class="header" href="#table-of-contents" id="table-of-contents">Table of Contents</a></h2>
+<ul>
+<li>
+<p><a href="#chainedbft.proto">chainedbft.proto</a></p>
+<ul>
+<li>
+<p><a href="#pb.ChainedBftPhaseMessage">ChainedBftPhaseMessage</a></p>
+</li>
+<li>
+<p><a href="#pb.ChainedBftVoteMessage">ChainedBftVoteMessage</a></p>
+</li>
+<li>
+<p><a href="#pb.QCSignInfos">QCSignInfos</a></p>
+</li>
+<li>
+<p><a href="#pb.QuorumCert">QuorumCert</a></p>
+</li>
+<li>
+<p><a href="#pb.SignInfo">SignInfo</a></p>
+</li>
+<li>
+<p><a href="#pb.QCState">QCState</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#xcheck.proto">xcheck.proto</a></p>
+<ul>
+<li>
+<p><a href="#pb.ComplianceCheckResponse">ComplianceCheckResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.TransferCheckResponse">TransferCheckResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.Xcheck">Xcheck</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#xchain_spv.proto">xchain_spv.proto</a></p>
+<ul>
+<li>
+<p><a href="#pb.ECDSAAccount">ECDSAAccount</a></p>
+</li>
+<li>
+<p><a href="#pb.ECDSAAccountFromCloud">ECDSAAccountFromCloud</a></p>
+</li>
+<li>
+<p><a href="#pb.ECDSAAccountToCloud">ECDSAAccountToCloud</a></p>
+</li>
+<li>
+<p><a href="#pb.ECDSAInfo">ECDSAInfo</a></p>
+</li>
+<li>
+<p><a href="#pb.Node">Node</a></p>
+</li>
+<li>
+<p><a href="#pb.TxInputs">TxInputs</a></p>
+</li>
+<li>
+<p><a href="#pb.TxOutputs">TxOutputs</a></p>
+</li>
+<li>
+<p><a href="#pb.UTXO">UTXO</a></p>
+</li>
+<li>
+<p><a href="#pb.UTXOs">UTXOs</a></p>
+</li>
+<li>
+<p><a href="#pb.ReturnCode">ReturnCode</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#xchain.proto">xchain.proto</a></p>
+<ul>
+<li>
+<p><a href="#pb.AK2AccountRequest">AK2AccountRequest</a></p>
+</li>
+<li>
+<p><a href="#pb.AK2AccountResponse">AK2AccountResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.Acl">Acl</a></p>
+</li>
+<li>
+<p><a href="#pb.Acl.AksWeightEntry">Acl.AksWeightEntry</a></p>
+</li>
+<li>
+<p><a href="#pb.AclStatus">AclStatus</a></p>
+</li>
+<li>
+<p><a href="#pb.AddressBalanceStatus">AddressBalanceStatus</a></p>
+</li>
+<li>
+<p><a href="#pb.AddressStatus">AddressStatus</a></p>
+</li>
+<li>
+<p><a href="#pb.AkSet">AkSet</a></p>
+</li>
+<li>
+<p><a href="#pb.AkSets">AkSets</a></p>
+</li>
+<li>
+<p><a href="#pb.AkSets.SetsEntry">AkSets.SetsEntry</a></p>
+</li>
+<li>
+<p><a href="#pb.BCSpeeds">BCSpeeds</a></p>
+</li>
+<li>
+<p><a href="#pb.BCSpeeds.BcSpeedEntry">BCSpeeds.BcSpeedEntry</a></p>
+</li>
+<li>
+<p><a href="#pb.BCStatus">BCStatus</a></p>
+</li>
+<li>
+<p><a href="#pb.BCTipStatus">BCTipStatus</a></p>
+</li>
+<li>
+<p><a href="#pb.BatchTxs">BatchTxs</a></p>
+</li>
+<li>
+<p><a href="#pb.Block">Block</a></p>
+</li>
+<li>
+<p><a href="#pb.BlockChains">BlockChains</a></p>
+</li>
+<li>
+<p><a href="#pb.BlockHeight">BlockHeight</a></p>
+</li>
+<li>
+<p><a href="#pb.BlockID">BlockID</a></p>
+</li>
+<li>
+<p><a href="#pb.CommonIn">CommonIn</a></p>
+</li>
+<li>
+<p><a href="#pb.CommonReply">CommonReply</a></p>
+</li>
+<li>
+<p><a href="#pb.ContractResponse">ContractResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.ContractStatus">ContractStatus</a></p>
+</li>
+<li>
+<p><a href="#pb.DeployNativeCodeRequest">DeployNativeCodeRequest</a></p>
+</li>
+<li>
+<p><a href="#pb.DeployNativeCodeResponse">DeployNativeCodeResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.DposCandidatesRequest">DposCandidatesRequest</a></p>
+</li>
+<li>
+<p><a href="#pb.DposCandidatesResponse">DposCandidatesResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.DposCheckResultsRequest">DposCheckResultsRequest</a></p>
+</li>
+<li>
+<p><a href="#pb.DposCheckResultsResponse">DposCheckResultsResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.DposNominateInfo">DposNominateInfo</a></p>
+</li>
+<li>
+<p><a href="#pb.DposNominateRecordsRequest">DposNominateRecordsRequest</a></p>
+</li>
+<li>
+<p><a href="#pb.DposNominateRecordsResponse">DposNominateRecordsResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.DposNomineeRecordsRequest">DposNomineeRecordsRequest</a></p>
+</li>
+<li>
+<p><a href="#pb.DposNomineeRecordsResponse">DposNomineeRecordsResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.DposStatus">DposStatus</a></p>
+</li>
+<li>
+<p><a href="#pb.DposStatusRequest">DposStatusRequest</a></p>
+</li>
+<li>
+<p><a href="#pb.DposStatusResponse">DposStatusResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.DposVoteRecordsRequest">DposVoteRecordsRequest</a></p>
+</li>
+<li>
+<p><a href="#pb.DposVoteRecordsResponse">DposVoteRecordsResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.DposVotedRecordsRequest">DposVotedRecordsRequest</a></p>
+</li>
+<li>
+<p><a href="#pb.DposVotedRecordsResponse">DposVotedRecordsResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.GetAccountContractsRequest">GetAccountContractsRequest</a></p>
+</li>
+<li>
+<p><a href="#pb.GetAccountContractsResponse">GetAccountContractsResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.Header">Header</a></p>
+</li>
+<li>
+<p><a href="#pb.IdentityAuth">IdentityAuth</a></p>
+</li>
+<li>
+<p><a href="#pb.IdentityAuths">IdentityAuths</a></p>
+</li>
+<li>
+<p><a href="#pb.InternalBlock">InternalBlock</a></p>
+</li>
+<li>
+<p><a href="#pb.InternalBlock.FailedTxsEntry">InternalBlock.FailedTxsEntry</a></p>
+</li>
+<li>
+<p><a href="#pb.InvokeRPCRequest">InvokeRPCRequest</a></p>
+</li>
+<li>
+<p><a href="#pb.InvokeRPCResponse">InvokeRPCResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.InvokeRequest">InvokeRequest</a></p>
+</li>
+<li>
+<p><a href="#pb.InvokeRequest.ArgsEntry">InvokeRequest.ArgsEntry</a></p>
+</li>
+<li>
+<p><a href="#pb.InvokeResponse">InvokeResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.LedgerMeta">LedgerMeta</a></p>
+</li>
+<li>
+<p><a href="#pb.NativeCodeDesc">NativeCodeDesc</a></p>
+</li>
+<li>
+<p><a href="#pb.NativeCodeStatus">NativeCodeStatus</a></p>
+</li>
+<li>
+<p><a href="#pb.NativeCodeStatusRequest">NativeCodeStatusRequest</a></p>
+</li>
+<li>
+<p><a href="#pb.NativeCodeStatusResponse">NativeCodeStatusResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.PermissionModel">PermissionModel</a></p>
+</li>
+<li>
+<p><a href="#pb.PreExecWithSelectUTXORequest">PreExecWithSelectUTXORequest</a></p>
+</li>
+<li>
+<p><a href="#pb.PreExecWithSelectUTXOResponse">PreExecWithSelectUTXOResponse</a></p>
+</li>
+<li>
+<p><a href="#pb.RawUrl">RawUrl</a></p>
+</li>
+<li>
+<p><a href="#pb.ResourceLimit">ResourceLimit</a></p>
+</li>
+<li>
+<p><a href="#pb.SignatureInfo">SignatureInfo</a></p>
+</li>
+<li>
+<p><a href="#pb.Speeds">Speeds</a></p>
+</li>
+<li>
+<p><a href="#pb.Speeds.BcSpeedsEntry">Speeds.BcSpeedsEntry</a></p>
+</li>
+<li>
+<p><a href="#pb.Speeds.SumSpeedsEntry">Speeds.SumSpeedsEntry</a></p>
+</li>
+<li>
+<p><a href="#pb.SystemsStatus">SystemsStatus</a></p>
+</li>
+<li>
+<p><a href="#pb.SystemsStatusReply">SystemsStatusReply</a></p>
+</li>
+<li>
+<p><a href="#pb.TokenDetail">TokenDetail</a></p>
+</li>
+<li>
+<p><a href="#pb.TokenFrozenDetail">TokenFrozenDetail</a></p>
+</li>
+<li>
+<p><a href="#pb.TokenFrozenDetails">TokenFrozenDetails</a></p>
+</li>
+<li>
+<p><a href="#pb.Transaction">Transaction</a></p>
+</li>
+<li>
+<p><a href="#pb.TxData">TxData</a></p>
+</li>
+<li>
+<p><a href="#pb.TxDataAccount">TxDataAccount</a></p>
+</li>
+<li>
+<p><a href="#pb.TxInput">TxInput</a></p>
+</li>
+<li>
+<p><a href="#pb.TxInputExt">TxInputExt</a></p>
+</li>
+<li>
+<p><a href="#pb.TxOutput">TxOutput</a></p>
+</li>
+<li>
+<p><a href="#pb.TxOutputExt">TxOutputExt</a></p>
+</li>
+<li>
+<p><a href="#pb.TxStatus">TxStatus</a></p>
+</li>
+<li>
+<p><a href="#pb.Utxo">Utxo</a></p>
+</li>
+<li>
+<p><a href="#pb.UtxoInput">UtxoInput</a></p>
+</li>
+<li>
+<p><a href="#pb.UtxoMeta">UtxoMeta</a></p>
+</li>
+<li>
+<p><a href="#pb.UtxoOutput">UtxoOutput</a></p>
+</li>
+<li>
+<p><a href="#pb.WasmCodeDesc">WasmCodeDesc</a></p>
+</li>
+<li>
+<p><a href="#pb.XuperSignature">XuperSignature</a></p>
+</li>
+<li>
+<p><a href="#pb.voteRecord">voteRecord</a></p>
+</li>
+<li>
+<p><a href="#pb.votedRecord">votedRecord</a></p>
+</li>
+<li>
+<p><a href="#pb.Block.EBlockStatus">Block.EBlockStatus</a></p>
+</li>
+<li>
+<p><a href="#pb.PermissionRule">PermissionRule</a></p>
+</li>
+<li>
+<p><a href="#pb.ResourceType">ResourceType</a></p>
+</li>
+<li>
+<p><a href="#pb.TransactionStatus">TransactionStatus</a></p>
+</li>
+<li>
+<p><a href="#pb.XChainErrorEnum">XChainErrorEnum</a></p>
+</li>
+<li>
+<p><a href="#pb.Xchain">Xchain</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#scalar-value-types">Scalar Value Types</a></p>
+</li>
+</ul>
+<p><a name="chainedbft.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#chainedbftproto" id="chainedbftproto">chainedbft.proto</a></h2>
+<p><a name="pb.ChainedBftPhaseMessage"></a></p>
+<h3><a class="header" href="#chainedbftphasemessage" id="chainedbftphasemessage">ChainedBftPhaseMessage</a></h3>
+<p>ChainedBftPhaseMessage is the proposal message of the protocal.
+In Hotstuff, there are two kinds of messages, &quot;NEW_VIEW_MESSAGE&quot; and &quot;QC_Message&quot;.
+A stable leader can skip this &quot;NEW_VIEW_MESSAGE&quot;.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Type</td><td><a href="#pb.QCState">QCState</a></td><td></td><td>Message Type: NEW_VIEW_MESSAGE or QC_MESSAGE</td></tr>
+<tr><td>ViewNumber</td><td><a href="#int64">int64</a></td><td></td><td>ViewNumber the current view number</td></tr>
+<tr><td>ProposalQC</td><td><a href="#pb.QuorumCert">QuorumCert</a></td><td></td><td>The new proposal send to other replicas while the</td></tr>
+<tr><td>JustifyQC</td><td><a href="#pb.QuorumCert">QuorumCert</a></td><td></td><td>JustifyQC is the QC of the leader gathered, send to next leader, while the message type is &quot;NEW_VIEW_MESSAGE&quot;</td></tr>
+<tr><td>MsgDigest</td><td><a href="#bytes">bytes</a></td><td></td><td>MsgDigest is the digest of the msgg</td></tr>
+<tr><td>Signature</td><td><a href="#pb.SignInfo">SignInfo</a></td><td></td><td>Signature for this msg</td></tr>
+</tbody></table>
+<p><a name="pb.ChainedBftVoteMessage"></a></p>
+<h3><a class="header" href="#chainedbftvotemessage" id="chainedbftvotemessage">ChainedBftVoteMessage</a></h3>
+<p>ChainedBftVoteMessage is the vote message of the protocal.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>ProposalId</td><td><a href="#bytes">bytes</a></td><td></td><td>The id of this message votes for.</td></tr>
+<tr><td>Signature</td><td><a href="#pb.SignInfo">SignInfo</a></td><td></td><td>Replica will sign the QCMessage if the QuorumCert if valid.</td></tr>
+</tbody></table>
+<p><a name="pb.QCSignInfos"></a></p>
+<h3><a class="header" href="#qcsigninfos" id="qcsigninfos">QCSignInfos</a></h3>
+<p>QCSignInfos is the signs of the leader gathered from replicas of a specifically certType.
+A slice of signs is used at present.
+TODO @qizheng09: It will be change to Threshold-Signatures after 
+Crypto lib support Threshold-Signatures.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>QCSignInfos</td><td><a href="#pb.SignInfo">SignInfo</a></td><td>repeated</td><td>QCSignInfos</td></tr>
+</tbody></table>
+<p><a name="pb.QuorumCert"></a></p>
+<h3><a class="header" href="#quorumcert" id="quorumcert">QuorumCert</a></h3>
+<p>QuorumCert is a data type that combines a collection of signatures from replicas.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>ProposalId</td><td><a href="#bytes">bytes</a></td><td></td><td>The id of Proposal this QC certified.</td></tr>
+<tr><td>ProposalMsg</td><td><a href="#bytes">bytes</a></td><td></td><td>The msg of Proposal this QC certified.</td></tr>
+<tr><td>Type</td><td><a href="#pb.QCState">QCState</a></td><td></td><td>The current type of this QC certified. the type contains <code>NEW_VIEW</code>, <code>PREPARE</code></td></tr>
+<tr><td>ViewNumber</td><td><a href="#int64">int64</a></td><td></td><td>The view number of this QC certified.</td></tr>
+<tr><td>SignInfos</td><td><a href="#pb.QCSignInfos">QCSignInfos</a></td><td></td><td>SignInfos is the signs of the leader gathered from replicas of a specifically certType.</td></tr>
+</tbody></table>
+<p><a name="pb.SignInfo"></a></p>
+<h3><a class="header" href="#signinfo" id="signinfo">SignInfo</a></h3>
+<p>SignInfo is the signature information of the</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>Address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>PublicKey</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Sign</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.QCState"></a></p>
+<h3><a class="header" href="#qcstate" id="qcstate">QCState</a></h3>
+<p>QCState is the phase of hotstuff</p>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>NEW_VIEW</td><td>0</td><td></td></tr>
+<tr><td>PREPARE</td><td>1</td><td></td></tr>
+<tr><td>PRE_COMMIT</td><td>2</td><td></td></tr>
+<tr><td>COMMIT</td><td>3</td><td></td></tr>
+<tr><td>DECIDE</td><td>4</td><td></td></tr>
+</tbody></table>
+<p><a name="xcheck.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#xcheckproto" id="xcheckproto">xcheck.proto</a></h2>
+<p><a name="pb.ComplianceCheckResponse"></a></p>
+<h3><a class="header" href="#compliancecheckresponse" id="compliancecheckresponse">ComplianceCheckResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>signature</td><td><a href="#pb.SignatureInfo">SignatureInfo</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.TransferCheckResponse"></a></p>
+<h3><a class="header" href="#transfercheckresponse" id="transfercheckresponse">TransferCheckResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>signature</td><td><a href="#pb.SignatureInfo">SignatureInfo</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.Xcheck"></a></p>
+<h3><a class="header" href="#xcheck" id="xcheck">Xcheck</a></h3>
+<table><thead><tr><th>Method Name</th><th>Request Type</th><th>Response Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>ComplianceCheck</td><td><a href="#pb.TxStatus">TxStatus</a></td><td><a href="#pb.ComplianceCheckResponse">ComplianceCheckResponse</a></td><td></td></tr>
+<tr><td>TransferCheck</td><td><a href="#pb.TxStatus">TxStatus</a></td><td><a href="#pb.TransferCheckResponse">TransferCheckResponse</a></td><td></td></tr>
+</tbody></table>
+<p><a name="xchain_spv.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#xchain_spvproto" id="xchain_spvproto">xchain_spv.proto</a></h2>
+<p><a name="pb.ECDSAAccount"></a></p>
+<h3><a class="header" href="#ecdsaaccount" id="ecdsaaccount">ECDSAAccount</a></h3>
+<p>助记词、私钥的json、公钥的json、钱包地址</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>entropyByte</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>mnemonic</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>jsonPrivateKey</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>jsonPublicKey</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.ECDSAAccountFromCloud"></a></p>
+<h3><a class="header" href="#ecdsaaccountfromcloud" id="ecdsaaccountfromcloud">ECDSAAccountFromCloud</a></h3>
+<p>钱包地址、被加密后的私钥、被加密后的助记词</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>jsonEncryptedPrivateKey</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>encryptedMnemonic</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.ECDSAAccountToCloud"></a></p>
+<h3><a class="header" href="#ecdsaaccounttocloud" id="ecdsaaccounttocloud">ECDSAAccountToCloud</a></h3>
+<p>钱包地址、被加密后的私钥、被加密后的助记词、支付密码的明文</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>jsonEncryptedPrivateKey</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>encryptedMnemonic</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>password</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.ECDSAInfo"></a></p>
+<h3><a class="header" href="#ecdsainfo" id="ecdsainfo">ECDSAInfo</a></h3>
+<p>助记词、随机字节数组、钱包地址</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>entropyByte</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>mnemonic</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.Node"></a></p>
+<h3><a class="header" href="#node" id="node">Node</a></h3>
+<p>全节点</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>host</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>utxoQueryUrl</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>txPostUrl</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>balanceQueryUrl</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.TxInputs"></a></p>
+<h3><a class="header" href="#txinputs" id="txinputs">TxInputs</a></h3>
+<p>交易输入列表</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>txInputList</td><td><a href="#pb.TxInput">TxInput</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.TxOutputs"></a></p>
+<h3><a class="header" href="#txoutputs" id="txoutputs">TxOutputs</a></h3>
+<p>交易输出列表</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>txOutputList</td><td><a href="#pb.TxOutput">TxOutput</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.UTXO"></a></p>
+<h3><a class="header" href="#utxo" id="utxo">UTXO</a></h3>
+<p>未花费的交易输出</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>amount</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>toAddr</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>toPubkey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>refTxid</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>refOffset</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.UTXOs"></a></p>
+<h3><a class="header" href="#utxos" id="utxos">UTXOs</a></h3>
+<p>未花费的交易输出列表</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>uTXOList</td><td><a href="#pb.UTXO">UTXO</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.ReturnCode"></a></p>
+<h3><a class="header" href="#returncode" id="returncode">ReturnCode</a></h3>
+<p>ReturnCode is the code for client</p>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>RETURNSUCCESS</td><td>0</td><td>Operation success</td></tr>
+<tr><td>INTERNALERR</td><td>101000</td><td>Err about Account</td></tr>
+<tr><td>FILENOTEXIST</td><td>101002</td><td></td></tr>
+<tr><td>PARAMERR</td><td>101003</td><td></td></tr>
+<tr><td>HTTPREQUERTFAIL</td><td>101004</td><td></td></tr>
+<tr><td>HTTPRESPONSEFAIL</td><td>101005</td><td></td></tr>
+<tr><td>ACCOUNTNOTEXIST</td><td>101008</td><td></td></tr>
+<tr><td>PWNOTEXIST</td><td>101009</td><td></td></tr>
+<tr><td>PWEXIST</td><td>101010</td><td></td></tr>
+<tr><td>NOTLOGIN</td><td>101012</td><td></td></tr>
+<tr><td>CONNECTNODEFAIL</td><td>102001</td><td>Err about Transaction</td></tr>
+<tr><td>UTXONOTENOUGH</td><td>102002</td><td></td></tr>
+<tr><td>ADDRESSINVALID</td><td>102003</td><td></td></tr>
+<tr><td>FEEINVALID</td><td>102004</td><td></td></tr>
+<tr><td>CONNECTREFUSED</td><td>102005</td><td></td></tr>
+<tr><td>UTXOENCRYPTERR</td><td>102006</td><td></td></tr>
+<tr><td>FEENOTENOUGN</td><td>102007</td><td></td></tr>
+<tr><td>PARAMSINVALID</td><td>102008</td><td></td></tr>
+<tr><td>TXSIGNERR</td><td>102009</td><td></td></tr>
+<tr><td>REPOSTTXERR</td><td>102010</td><td></td></tr>
+<tr><td>BLOCKCHAINNOTEXIST</td><td>102011</td><td></td></tr>
+<tr><td>SERVERERR</td><td>102012</td><td></td></tr>
+</tbody></table>
+<p><a name="xchain.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#xchainproto" id="xchainproto">xchain.proto</a></h2>
+<p><a name="pb.AK2AccountRequest"></a></p>
+<h3><a class="header" href="#ak2accountrequest" id="ak2accountrequest">AK2AccountRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.AK2AccountResponse"></a></p>
+<h3><a class="header" href="#ak2accountresponse" id="ak2accountresponse">AK2AccountResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>account</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.Acl"></a></p>
+<h3><a class="header" href="#acl" id="acl">Acl</a></h3>
+<p>Acl实际使用的结构</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>pm</td><td><a href="#pb.PermissionModel">PermissionModel</a></td><td></td><td>采用的权限模型</td></tr>
+<tr><td>aksWeight</td><td><a href="#pb.Acl.AksWeightEntry">Acl.AksWeightEntry</a></td><td>repeated</td><td>公钥or账户名 -&gt; 权重</td></tr>
+<tr><td>akSets</td><td><a href="#pb.AkSets">AkSets</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.Acl.AksWeightEntry"></a></p>
+<h3><a class="header" href="#aclaksweightentry" id="aclaksweightentry">Acl.AksWeightEntry</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#double">double</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.AclStatus"></a></p>
+<h3><a class="header" href="#aclstatus" id="aclstatus">AclStatus</a></h3>
+<p>查询Acl</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>accountName</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>contractName</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>methodName</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>confirmed</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>acl</td><td><a href="#pb.Acl">Acl</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.AddressBalanceStatus"></a></p>
+<h3><a class="header" href="#addressbalancestatus" id="addressbalancestatus">AddressBalanceStatus</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>tfds</td><td><a href="#pb.TokenFrozenDetails">TokenFrozenDetails</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.AddressStatus"></a></p>
+<h3><a class="header" href="#addressstatus" id="addressstatus">AddressStatus</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>bcs</td><td><a href="#pb.TokenDetail">TokenDetail</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.AkSet"></a></p>
+<h3><a class="header" href="#akset" id="akset">AkSet</a></h3>
+<p>AK集的表示方法</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>aks</td><td><a href="#string">string</a></td><td>repeated</td><td>一堆公钥</td></tr>
+</tbody></table>
+<p><a name="pb.AkSets"></a></p>
+<h3><a class="header" href="#aksets" id="aksets">AkSets</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>sets</td><td><a href="#pb.AkSets.SetsEntry">AkSets.SetsEntry</a></td><td>repeated</td><td>公钥or账户名集</td></tr>
+<tr><td>expression</td><td><a href="#string">string</a></td><td></td><td>表达式，一期不支持表达式，默认集合内是and，集合间是or</td></tr>
+</tbody></table>
+<p><a name="pb.AkSets.SetsEntry"></a></p>
+<h3><a class="header" href="#aksetssetsentry" id="aksetssetsentry">AkSets.SetsEntry</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#pb.AkSet">AkSet</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.BCSpeeds"></a></p>
+<h3><a class="header" href="#bcspeeds" id="bcspeeds">BCSpeeds</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>BcSpeed</td><td><a href="#pb.BCSpeeds.BcSpeedEntry">BCSpeeds.BcSpeedEntry</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.BCSpeeds.BcSpeedEntry"></a></p>
+<h3><a class="header" href="#bcspeedsbcspeedentry" id="bcspeedsbcspeedentry">BCSpeeds.BcSpeedEntry</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#double">double</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.BCStatus"></a></p>
+<h3><a class="header" href="#bcstatus" id="bcstatus">BCStatus</a></h3>
+<p>BlockChain status</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td>block name</td></tr>
+<tr><td>meta</td><td><a href="#pb.LedgerMeta">LedgerMeta</a></td><td></td><td>ledger metadata</td></tr>
+<tr><td>block</td><td><a href="#pb.InternalBlock">InternalBlock</a></td><td></td><td>The information of the longest block</td></tr>
+<tr><td>utxoMeta</td><td><a href="#pb.UtxoMeta">UtxoMeta</a></td><td></td><td>Utox information</td></tr>
+</tbody></table>
+<p><a name="pb.BCTipStatus"></a></p>
+<h3><a class="header" href="#bctipstatus" id="bctipstatus">BCTipStatus</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>is_trunk_tip</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.BatchTxs"></a></p>
+<h3><a class="header" href="#batchtxs" id="batchtxs">BatchTxs</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>Txs</td><td><a href="#pb.TxStatus">TxStatus</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.Block"></a></p>
+<h3><a class="header" href="#block" id="block">Block</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>blockid</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>status</td><td><a href="#pb.Block.EBlockStatus">Block.EBlockStatus</a></td><td></td><td></td></tr>
+<tr><td>block</td><td><a href="#pb.InternalBlock">InternalBlock</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.BlockChains"></a></p>
+<h3><a class="header" href="#blockchains" id="blockchains">BlockChains</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>blockchains</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.BlockHeight"></a></p>
+<h3><a class="header" href="#blockheight" id="blockheight">BlockHeight</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>height</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.BlockID"></a></p>
+<h3><a class="header" href="#blockid" id="blockid">BlockID</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>blockid</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>need_content</td><td><a href="#bool">bool</a></td><td></td><td>if need content</td></tr>
+</tbody></table>
+<p>是否需要内容 |</p>
+<p><a name="pb.CommonIn"></a></p>
+<h3><a class="header" href="#commonin" id="commonin">CommonIn</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.CommonReply"></a></p>
+<h3><a class="header" href="#commonreply" id="commonreply">CommonReply</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.ContractResponse"></a></p>
+<h3><a class="header" href="#contractresponse" id="contractresponse">ContractResponse</a></h3>
+<p>ContractResponse is the response returnd by contract</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>status</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+<tr><td>message</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>body</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.ContractStatus"></a></p>
+<h3><a class="header" href="#contractstatus" id="contractstatus">ContractStatus</a></h3>
+<p>Status of a contract</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>contract_name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>txid</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>desc</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>is_banned</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DeployNativeCodeRequest"></a></p>
+<h3><a class="header" href="#deploynativecoderequest" id="deploynativecoderequest">DeployNativeCodeRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td>chain name</td></tr>
+<tr><td>desc</td><td><a href="#pb.NativeCodeDesc">NativeCodeDesc</a></td><td></td><td>native code desc</td></tr>
+<tr><td>code</td><td><a href="#bytes">bytes</a></td><td></td><td>code is the bytes of binary code</td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td>the address of deployer</td></tr>
+<tr><td>pubkey</td><td><a href="#bytes">bytes</a></td><td></td><td>the public key of deployer</td></tr>
+<tr><td>sign</td><td><a href="#bytes">bytes</a></td><td></td><td>the sign of desc</td></tr>
+</tbody></table>
+<p><a name="pb.DeployNativeCodeResponse"></a></p>
+<h3><a class="header" href="#deploynativecoderesponse" id="deploynativecoderesponse">DeployNativeCodeResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposCandidatesRequest"></a></p>
+<h3><a class="header" href="#dposcandidatesrequest" id="dposcandidatesrequest">DposCandidatesRequest</a></h3>
+<p>候选人列表接口</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposCandidatesResponse"></a></p>
+<h3><a class="header" href="#dposcandidatesresponse" id="dposcandidatesresponse">DposCandidatesResponse</a></h3>
+<p>候选人列表返回</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>candidatesInfo</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposCheckResultsRequest"></a></p>
+<h3><a class="header" href="#dposcheckresultsrequest" id="dposcheckresultsrequest">DposCheckResultsRequest</a></h3>
+<p>查询检票结果记录请求</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>term</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposCheckResultsResponse"></a></p>
+<h3><a class="header" href="#dposcheckresultsresponse" id="dposcheckresultsresponse">DposCheckResultsResponse</a></h3>
+<p>查询检票结果记录返回</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>term</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>checkResult</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposNominateInfo"></a></p>
+<h3><a class="header" href="#dposnominateinfo" id="dposnominateinfo">DposNominateInfo</a></h3>
+<p>候选人信息</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>candidate</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>txid</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposNominateRecordsRequest"></a></p>
+<h3><a class="header" href="#dposnominaterecordsrequest" id="dposnominaterecordsrequest">DposNominateRecordsRequest</a></h3>
+<p>提名者提名记录请求</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposNominateRecordsResponse"></a></p>
+<h3><a class="header" href="#dposnominaterecordsresponse" id="dposnominaterecordsresponse">DposNominateRecordsResponse</a></h3>
+<p>提名者提名记录返回</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>nominateRecords</td><td><a href="#pb.DposNominateInfo">DposNominateInfo</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposNomineeRecordsRequest"></a></p>
+<h3><a class="header" href="#dposnomineerecordsrequest" id="dposnomineerecordsrequest">DposNomineeRecordsRequest</a></h3>
+<p>候选人被提名记录请求</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposNomineeRecordsResponse"></a></p>
+<h3><a class="header" href="#dposnomineerecordsresponse" id="dposnomineerecordsresponse">DposNomineeRecordsResponse</a></h3>
+<p>候选人被提名记录返回</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>txid</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposStatus"></a></p>
+<h3><a class="header" href="#dposstatus" id="dposstatus">DposStatus</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>term</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>block_num</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>proposer</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>proposer_num</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>checkResult</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposStatusRequest"></a></p>
+<h3><a class="header" href="#dposstatusrequest" id="dposstatusrequest">DposStatusRequest</a></h3>
+<p>query dpos consensus current status request</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposStatusResponse"></a></p>
+<h3><a class="header" href="#dposstatusresponse" id="dposstatusresponse">DposStatusResponse</a></h3>
+<p>query dpos consensus current status reply</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>status</td><td><a href="#pb.DposStatus">DposStatus</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposVoteRecordsRequest"></a></p>
+<h3><a class="header" href="#dposvoterecordsrequest" id="dposvoterecordsrequest">DposVoteRecordsRequest</a></h3>
+<p>选民投票记录请求</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposVoteRecordsResponse"></a></p>
+<h3><a class="header" href="#dposvoterecordsresponse" id="dposvoterecordsresponse">DposVoteRecordsResponse</a></h3>
+<p>选民投票记录返回</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>voteTxidRecords</td><td><a href="#pb.voteRecord">voteRecord</a></td><td>repeated</td><td>选民投票txid记录</td></tr>
+</tbody></table>
+<p><a name="pb.DposVotedRecordsRequest"></a></p>
+<h3><a class="header" href="#dposvotedrecordsrequest" id="dposvotedrecordsrequest">DposVotedRecordsRequest</a></h3>
+<p>候选人被投票记录请求</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.DposVotedRecordsResponse"></a></p>
+<h3><a class="header" href="#dposvotedrecordsresponse" id="dposvotedrecordsresponse">DposVotedRecordsResponse</a></h3>
+<p>候选人被投票记录返回</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>votedTxidRecords</td><td><a href="#pb.votedRecord">votedRecord</a></td><td>repeated</td><td>候选人被投票的txid记录</td></tr>
+</tbody></table>
+<p><a name="pb.GetAccountContractsRequest"></a></p>
+<h3><a class="header" href="#getaccountcontractsrequest" id="getaccountcontractsrequest">GetAccountContractsRequest</a></h3>
+<p>Query account contracts request</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>account</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.GetAccountContractsResponse"></a></p>
+<h3><a class="header" href="#getaccountcontractsresponse" id="getaccountcontractsresponse">GetAccountContractsResponse</a></h3>
+<p>Query account contracts response</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>contracts_status</td><td><a href="#pb.ContractStatus">ContractStatus</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.Header"></a></p>
+<h3><a class="header" href="#header" id="header">Header</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>logid</td><td><a href="#string">string</a></td><td></td><td>如果logid没填写，生成一个</td></tr>
+<tr><td>from_node</td><td><a href="#string">string</a></td><td></td><td>call rpc client address，客户端可以为空，节点一定要写自己的address</td></tr>
+<tr><td>error</td><td><a href="#pb.XChainErrorEnum">XChainErrorEnum</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.IdentityAuth"></a></p>
+<h3><a class="header" href="#identityauth" id="identityauth">IdentityAuth</a></h3>
+<p>Identity authentication request</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>sign</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>pubkey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>addr</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>peerID</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>timestamp</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.IdentityAuths"></a></p>
+<h3><a class="header" href="#identityauths" id="identityauths">IdentityAuths</a></h3>
+<p>Identity authentication requests</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>auth</td><td><a href="#pb.IdentityAuth">IdentityAuth</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.InternalBlock"></a></p>
+<h3><a class="header" href="#internalblock" id="internalblock">InternalBlock</a></h3>
+<p>The internal block struct</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>version</td><td><a href="#int32">int32</a></td><td></td><td>block version</td></tr>
+<tr><td>nonce</td><td><a href="#int32">int32</a></td><td></td><td>Random number used to avoid replay attacks</td></tr>
+<tr><td>blockid</td><td><a href="#bytes">bytes</a></td><td></td><td>blockid generate the hash sign of the block used by sha256</td></tr>
+<tr><td>pre_hash</td><td><a href="#bytes">bytes</a></td><td></td><td>pre_hash is the parent blockid of the block</td></tr>
+<tr><td>proposer</td><td><a href="#bytes">bytes</a></td><td></td><td>The miner id</td></tr>
+<tr><td>sign</td><td><a href="#bytes">bytes</a></td><td></td><td>The sign which miner signed: blockid + nonce + timestamp</td></tr>
+<tr><td>pubkey</td><td><a href="#bytes">bytes</a></td><td></td><td>The pk of the miner</td></tr>
+<tr><td>merkle_root</td><td><a href="#bytes">bytes</a></td><td></td><td>The Merkle Tree root</td></tr>
+<tr><td>height</td><td><a href="#int64">int64</a></td><td></td><td>The height of the blockchain</td></tr>
+<tr><td>timestamp</td><td><a href="#int64">int64</a></td><td></td><td>Timestamp of the block</td></tr>
+<tr><td>transactions</td><td><a href="#pb.Transaction">Transaction</a></td><td>repeated</td><td>Transactions of the block, only txid stored on kv, the detail information stored in another table</td></tr>
+<tr><td>tx_count</td><td><a href="#int32">int32</a></td><td></td><td>The transaction count of the block</td></tr>
+<tr><td>merkle_tree</td><td><a href="#bytes">bytes</a></td><td>repeated</td><td>所有交易hash的merkle tree</td></tr>
+<tr><td>curTerm</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>curBlockNum</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>failed_txs</td><td><a href="#pb.InternalBlock.FailedTxsEntry">InternalBlock.FailedTxsEntry</a></td><td>repeated</td><td>txid -&gt; failed reason</td></tr>
+<tr><td>targetBits</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+<tr><td>Justify</td><td><a href="#pb.QuorumCert">QuorumCert</a></td><td></td><td>Justify used in chained-bft</td></tr>
+<tr><td>in_trunk</td><td><a href="#bool">bool</a></td><td></td><td>下面的属性会动态变化 If the block is on the trunk</td></tr>
+<tr><td>next_hash</td><td><a href="#bytes">bytes</a></td><td></td><td>Next next block which on trunk</td></tr>
+</tbody></table>
+<p><a name="pb.InternalBlock.FailedTxsEntry"></a></p>
+<h3><a class="header" href="#internalblockfailedtxsentry" id="internalblockfailedtxsentry">InternalBlock.FailedTxsEntry</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.InvokeRPCRequest"></a></p>
+<h3><a class="header" href="#invokerpcrequest" id="invokerpcrequest">InvokeRPCRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>requests</td><td><a href="#pb.InvokeRequest">InvokeRequest</a></td><td>repeated</td><td></td></tr>
+<tr><td>initiator</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>auth_require</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.InvokeRPCResponse"></a></p>
+<h3><a class="header" href="#invokerpcresponse" id="invokerpcresponse">InvokeRPCResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>response</td><td><a href="#pb.InvokeResponse">InvokeResponse</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.InvokeRequest"></a></p>
+<h3><a class="header" href="#invokerequest" id="invokerequest">InvokeRequest</a></h3>
+<p>预执行的请求结构</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>module_name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>contract_name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>method_name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>args</td><td><a href="#pb.InvokeRequest.ArgsEntry">InvokeRequest.ArgsEntry</a></td><td>repeated</td><td></td></tr>
+<tr><td>resource_limits</td><td><a href="#pb.ResourceLimit">ResourceLimit</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.InvokeRequest.ArgsEntry"></a></p>
+<h3><a class="header" href="#invokerequestargsentry" id="invokerequestargsentry">InvokeRequest.ArgsEntry</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.InvokeResponse"></a></p>
+<h3><a class="header" href="#invokeresponse" id="invokeresponse">InvokeResponse</a></h3>
+<p>预执行的返回结构</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>inputs</td><td><a href="#pb.TxInputExt">TxInputExt</a></td><td>repeated</td><td></td></tr>
+<tr><td>outputs</td><td><a href="#pb.TxOutputExt">TxOutputExt</a></td><td>repeated</td><td></td></tr>
+<tr><td>response</td><td><a href="#bytes">bytes</a></td><td>repeated</td><td></td></tr>
+<tr><td>gas_used</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>requests</td><td><a href="#pb.InvokeRequest">InvokeRequest</a></td><td>repeated</td><td></td></tr>
+<tr><td>responses</td><td><a href="#pb.ContractResponse">ContractResponse</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.LedgerMeta"></a></p>
+<h3><a class="header" href="#ledgermeta" id="ledgermeta">LedgerMeta</a></h3>
+<p>Ledger metadata</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>root_blockid</td><td><a href="#bytes">bytes</a></td><td></td><td>root block id</td></tr>
+<tr><td>tip_blockid</td><td><a href="#bytes">bytes</a></td><td></td><td>tip block id</td></tr>
+<tr><td>trunk_height</td><td><a href="#int64">int64</a></td><td></td><td>the height of the trunk</td></tr>
+<tr><td>max_block_size</td><td><a href="#int64">int64</a></td><td></td><td>max block size</td></tr>
+<tr><td>reserved_contracts</td><td><a href="#pb.InvokeRequest">InvokeRequest</a></td><td>repeated</td><td>preset contracts</td></tr>
+<tr><td>forbidden_contract</td><td><a href="#pb.InvokeRequest">InvokeRequest</a></td><td></td><td>reset forbidden contract configuration</td></tr>
+</tbody></table>
+<p><a name="pb.NativeCodeDesc"></a></p>
+<h3><a class="header" href="#nativecodedesc" id="nativecodedesc">NativeCodeDesc</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>name</td><td><a href="#string">string</a></td><td></td><td>native code name</td></tr>
+<tr><td>version</td><td><a href="#string">string</a></td><td></td><td>code version</td></tr>
+<tr><td>digest</td><td><a href="#bytes">bytes</a></td><td></td><td>digest of binary</td></tr>
+<tr><td>prevVersion</td><td><a href="#string">string</a></td><td></td><td>the previous verion</td></tr>
+<tr><td>xuperApiVersion</td><td><a href="#int32">int32</a></td><td></td><td>xuper api version</td></tr>
+</tbody></table>
+<p><a name="pb.NativeCodeStatus"></a></p>
+<h3><a class="header" href="#nativecodestatus" id="nativecodestatus">NativeCodeStatus</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>desc</td><td><a href="#pb.NativeCodeDesc">NativeCodeDesc</a></td><td></td><td></td></tr>
+<tr><td>status</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+<tr><td>healthy</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.NativeCodeStatusRequest"></a></p>
+<h3><a class="header" href="#nativecodestatusrequest" id="nativecodestatusrequest">NativeCodeStatusRequest</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.NativeCodeStatusResponse"></a></p>
+<h3><a class="header" href="#nativecodestatusresponse" id="nativecodestatusresponse">NativeCodeStatusResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>status</td><td><a href="#pb.NativeCodeStatus">NativeCodeStatus</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.PermissionModel"></a></p>
+<h3><a class="header" href="#permissionmodel" id="permissionmodel">PermissionModel</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>rule</td><td><a href="#pb.PermissionRule">PermissionRule</a></td><td></td><td></td></tr>
+<tr><td>acceptValue</td><td><a href="#double">double</a></td><td></td><td>取决于用哪种rule, 可以表示签名率，签名数或权重阈值</td></tr>
+</tbody></table>
+<p><a name="pb.PreExecWithSelectUTXORequest"></a></p>
+<h3><a class="header" href="#preexecwithselectutxorequest" id="preexecwithselectutxorequest">PreExecWithSelectUTXORequest</a></h3>
+<p>PreExecWithSelectUTXORequest preExec + selectUtxo for request</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>totalAmount</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+<tr><td>signInfo</td><td><a href="#pb.SignatureInfo">SignatureInfo</a></td><td></td><td></td></tr>
+<tr><td>needLock</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>request</td><td><a href="#pb.InvokeRPCRequest">InvokeRPCRequest</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.PreExecWithSelectUTXOResponse"></a></p>
+<h3><a class="header" href="#preexecwithselectutxoresponse" id="preexecwithselectutxoresponse">PreExecWithSelectUTXOResponse</a></h3>
+<p>PreExecWithSelectUTXOResponse preExec + selectUtxo for response</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>response</td><td><a href="#pb.InvokeResponse">InvokeResponse</a></td><td></td><td></td></tr>
+<tr><td>utxoOutput</td><td><a href="#pb.UtxoOutput">UtxoOutput</a></td><td></td><td>for preExec &amp; selectUTXO</td></tr>
+</tbody></table>
+<p><a name="pb.RawUrl"></a></p>
+<h3><a class="header" href="#rawurl" id="rawurl">RawUrl</a></h3>
+<p>RawUrl return the node's  connect url</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>rawUrl</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.ResourceLimit"></a></p>
+<h3><a class="header" href="#resourcelimit" id="resourcelimit">ResourceLimit</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>type</td><td><a href="#pb.ResourceType">ResourceType</a></td><td></td><td></td></tr>
+<tr><td>limit</td><td><a href="#int64">int64</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.SignatureInfo"></a></p>
+<h3><a class="header" href="#signatureinfo" id="signatureinfo">SignatureInfo</a></h3>
+<p>签名详情</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>PublicKey</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>Sign</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.Speeds"></a></p>
+<h3><a class="header" href="#speeds" id="speeds">Speeds</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>SumSpeeds</td><td><a href="#pb.Speeds.SumSpeedsEntry">Speeds.SumSpeedsEntry</a></td><td>repeated</td><td></td></tr>
+<tr><td>BcSpeeds</td><td><a href="#pb.Speeds.BcSpeedsEntry">Speeds.BcSpeedsEntry</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.Speeds.BcSpeedsEntry"></a></p>
+<h3><a class="header" href="#speedsbcspeedsentry" id="speedsbcspeedsentry">Speeds.BcSpeedsEntry</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#pb.BCSpeeds">BCSpeeds</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.Speeds.SumSpeedsEntry"></a></p>
+<h3><a class="header" href="#speedssumspeedsentry" id="speedssumspeedsentry">Speeds.SumSpeedsEntry</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#double">double</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.SystemsStatus"></a></p>
+<h3><a class="header" href="#systemsstatus" id="systemsstatus">SystemsStatus</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcs_status</td><td><a href="#pb.BCStatus">BCStatus</a></td><td>repeated</td><td></td></tr>
+<tr><td>speeds</td><td><a href="#pb.Speeds">Speeds</a></td><td></td><td></td></tr>
+<tr><td>peerUrls</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.SystemsStatusReply"></a></p>
+<h3><a class="header" href="#systemsstatusreply" id="systemsstatusreply">SystemsStatusReply</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>systems_status</td><td><a href="#pb.SystemsStatus">SystemsStatus</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.TokenDetail"></a></p>
+<h3><a class="header" href="#tokendetail" id="tokendetail">TokenDetail</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>balance</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>error</td><td><a href="#pb.XChainErrorEnum">XChainErrorEnum</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.TokenFrozenDetail"></a></p>
+<h3><a class="header" href="#tokenfrozendetail" id="tokenfrozendetail">TokenFrozenDetail</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>balance</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>isFrozen</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.TokenFrozenDetails"></a></p>
+<h3><a class="header" href="#tokenfrozendetails" id="tokenfrozendetails">TokenFrozenDetails</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>tfd</td><td><a href="#pb.TokenFrozenDetail">TokenFrozenDetail</a></td><td>repeated</td><td></td></tr>
+<tr><td>error</td><td><a href="#pb.XChainErrorEnum">XChainErrorEnum</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.Transaction"></a></p>
+<h3><a class="header" href="#transaction" id="transaction">Transaction</a></h3>
+<p>Transaction is the information of the transaction</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>txid</td><td><a href="#bytes">bytes</a></td><td></td><td>txid is the id of this transaction</td></tr>
+<tr><td>blockid</td><td><a href="#bytes">bytes</a></td><td></td><td>the blockid the transaction belong to</td></tr>
+<tr><td>tx_inputs</td><td><a href="#pb.TxInput">TxInput</a></td><td>repeated</td><td>Transaction input list</td></tr>
+<tr><td>tx_outputs</td><td><a href="#pb.TxOutput">TxOutput</a></td><td>repeated</td><td>Transaction output list</td></tr>
+<tr><td>desc</td><td><a href="#bytes">bytes</a></td><td></td><td>Transaction description or system contract</td></tr>
+<tr><td>coinbase</td><td><a href="#bool">bool</a></td><td></td><td>Mining rewards</td></tr>
+<tr><td>nonce</td><td><a href="#string">string</a></td><td></td><td>Random number used to avoid replay attacks</td></tr>
+<tr><td>timestamp</td><td><a href="#int64">int64</a></td><td></td><td>Timestamp to launch the transaction</td></tr>
+<tr><td>version</td><td><a href="#int32">int32</a></td><td></td><td>tx format version; tx格式版本号</td></tr>
+<tr><td>autogen</td><td><a href="#bool">bool</a></td><td></td><td>auto generated tx</td></tr>
+<tr><td>tx_inputs_ext</td><td><a href="#pb.TxInputExt">TxInputExt</a></td><td>repeated</td><td></td></tr>
+<tr><td>tx_outputs_ext</td><td><a href="#pb.TxOutputExt">TxOutputExt</a></td><td>repeated</td><td></td></tr>
+<tr><td>contract_requests</td><td><a href="#pb.InvokeRequest">InvokeRequest</a></td><td>repeated</td><td></td></tr>
+<tr><td>initiator</td><td><a href="#string">string</a></td><td></td><td>权限系统新增字段 交易发起者, 可以是一个Address或者一个Account</td></tr>
+<tr><td>auth_require</td><td><a href="#string">string</a></td><td>repeated</td><td>交易发起需要被收集签名的AddressURL集合信息，包括用于utxo转账和用于合约调用</td></tr>
+<tr><td>initiator_signs</td><td><a href="#pb.SignatureInfo">SignatureInfo</a></td><td>repeated</td><td>交易发起者对交易元数据签名，签名的内容包括auth_require字段</td></tr>
+<tr><td>auth_require_signs</td><td><a href="#pb.SignatureInfo">SignatureInfo</a></td><td>repeated</td><td>收集到的签名</td></tr>
+<tr><td>received_timestamp</td><td><a href="#int64">int64</a></td><td></td><td>节点收到tx的时间戳，不参与签名</td></tr>
+<tr><td>xuper_sign</td><td><a href="#pb.XuperSignature">XuperSignature</a></td><td></td><td>统一签名(支持多重签名/环签名等，与initiator_signs/auth_require_signs不同时使用)</td></tr>
+</tbody></table>
+<p><a name="pb.TxData"></a></p>
+<h3><a class="header" href="#txdata" id="txdata">TxData</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>txid</td><td><a href="#bytes">bytes</a></td><td></td><td>Transaction id</td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td>Block name</td></tr>
+<tr><td>from_addr</td><td><a href="#string">string</a></td><td></td><td>Account which start the transaction</td></tr>
+<tr><td>from_pubkey</td><td><a href="#string">string</a></td><td></td><td>The pk of the account which start the transaction</td></tr>
+<tr><td>from_scrkey</td><td><a href="#string">string</a></td><td></td><td>The sk of the account which start the transaction</td></tr>
+<tr><td>user_sign</td><td><a href="#bytes">bytes</a></td><td></td><td>if user don't want to provide scrkey, he should sign the txdata into user_sign</td></tr>
+<tr><td>account</td><td><a href="#pb.TxDataAccount">TxDataAccount</a></td><td>repeated</td><td>The account list accept tx</td></tr>
+<tr><td>nonce</td><td><a href="#string">string</a></td><td></td><td>Random number used to avoid replay attacks</td></tr>
+<tr><td>timestamp</td><td><a href="#int64">int64</a></td><td></td><td>Timestamp to launch the Tx</td></tr>
+<tr><td>desc</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>version</td><td><a href="#int32">int32</a></td><td></td><td>tx version</td></tr>
+</tbody></table>
+<p><a name="pb.TxDataAccount"></a></p>
+<h3><a class="header" href="#txdataaccount" id="txdataaccount">TxDataAccount</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td>地址</td></tr>
+<tr><td>amount</td><td><a href="#string">string</a></td><td></td><td>金额</td></tr>
+<tr><td>frozen_height</td><td><a href="#int64">int64</a></td><td></td><td>冻结高度</td></tr>
+</tbody></table>
+<p><a name="pb.TxInput"></a></p>
+<h3><a class="header" href="#txinput" id="txinput">TxInput</a></h3>
+<p>Transaction input</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>ref_txid</td><td><a href="#bytes">bytes</a></td><td></td><td>The transaction id referenced to</td></tr>
+<tr><td>ref_offset</td><td><a href="#int32">int32</a></td><td></td><td>The output offset of the transaction referenced to</td></tr>
+<tr><td>from_addr</td><td><a href="#bytes">bytes</a></td><td></td><td>The address of the launcher</td></tr>
+<tr><td>amount</td><td><a href="#bytes">bytes</a></td><td></td><td>The amount of the transaction</td></tr>
+<tr><td>frozen_height</td><td><a href="#int64">int64</a></td><td></td><td>Frozen height</td></tr>
+</tbody></table>
+<p><a name="pb.TxInputExt"></a></p>
+<h3><a class="header" href="#txinputext" id="txinputext">TxInputExt</a></h3>
+<p>扩展输入</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>bucket</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>ref_txid</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>ref_offset</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.TxOutput"></a></p>
+<h3><a class="header" href="#txoutput" id="txoutput">TxOutput</a></h3>
+<p>Transaction output</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>amount</td><td><a href="#bytes">bytes</a></td><td></td><td>The amount of the transaction</td></tr>
+<tr><td>to_addr</td><td><a href="#bytes">bytes</a></td><td></td><td>The address of the launcher</td></tr>
+<tr><td>frozen_height</td><td><a href="#int64">int64</a></td><td></td><td>Fronzen height</td></tr>
+</tbody></table>
+<p><a name="pb.TxOutputExt"></a></p>
+<h3><a class="header" href="#txoutputext" id="txoutputext">TxOutputExt</a></h3>
+<p>扩展输出</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>bucket</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>value</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.TxStatus"></a></p>
+<h3><a class="header" href="#txstatus" id="txstatus">TxStatus</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>txid</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>status</td><td><a href="#pb.TransactionStatus">TransactionStatus</a></td><td></td><td>当前状态</td></tr>
+<tr><td>distance</td><td><a href="#int64">int64</a></td><td></td><td>离主干末端的距离（如果在主干上)</td></tr>
+<tr><td>tx</td><td><a href="#pb.Transaction">Transaction</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.Utxo"></a></p>
+<h3><a class="header" href="#utxo-1" id="utxo-1">Utxo</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>amount</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>toAddr</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>toPubkey</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>refTxid</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>refOffset</td><td><a href="#int32">int32</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.UtxoInput"></a></p>
+<h3><a class="header" href="#utxoinput" id="utxoinput">UtxoInput</a></h3>
+<p>UtxoInput query info to query utxos</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>bcname</td><td><a href="#string">string</a></td><td></td><td>which bcname to select</td></tr>
+<tr><td>address</td><td><a href="#string">string</a></td><td></td><td>address to select</td></tr>
+<tr><td>publickey</td><td><a href="#string">string</a></td><td></td><td>publickey of the address</td></tr>
+<tr><td>totalNeed</td><td><a href="#string">string</a></td><td></td><td>totalNeed refer the total need utxos to select</td></tr>
+<tr><td>userSign</td><td><a href="#bytes">bytes</a></td><td></td><td>userSign of input</td></tr>
+<tr><td>needLock</td><td><a href="#bool">bool</a></td><td></td><td>need lock</td></tr>
+</tbody></table>
+<p><a name="pb.UtxoMeta"></a></p>
+<h3><a class="header" href="#utxometa" id="utxometa">UtxoMeta</a></h3>
+<p>Utxo metadata</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>latest_blockid</td><td><a href="#bytes">bytes</a></td><td></td><td>utxo vm目前执行到的blockid</td></tr>
+<tr><td>lock_key_list</td><td><a href="#string">string</a></td><td>repeated</td><td></td></tr>
+<tr><td>utxo_total</td><td><a href="#string">string</a></td><td></td><td>当前utxo vm上的总资产</td></tr>
+<tr><td>avgDelay</td><td><a href="#int64">int64</a></td><td></td><td>平均上链延时</td></tr>
+<tr><td>unconfirmTxAmount</td><td><a href="#int64">int64</a></td><td></td><td>待确认交易量</td></tr>
+</tbody></table>
+<p><a name="pb.UtxoOutput"></a></p>
+<h3><a class="header" href="#utxooutput" id="utxooutput">UtxoOutput</a></h3>
+<p>UtxoOutput query results</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>header</td><td><a href="#pb.Header">Header</a></td><td></td><td></td></tr>
+<tr><td>utxoList</td><td><a href="#pb.Utxo">Utxo</a></td><td>repeated</td><td>outSign return the output bytes outSign = 2; utxo list</td></tr>
+<tr><td>totalSelected</td><td><a href="#string">string</a></td><td></td><td>total selected amount</td></tr>
+</tbody></table>
+<p><a name="pb.WasmCodeDesc"></a></p>
+<h3><a class="header" href="#wasmcodedesc" id="wasmcodedesc">WasmCodeDesc</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>runtime</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>compiler</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>digest</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>vm_compiler</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.XuperSignature"></a></p>
+<h3><a class="header" href="#xupersignature" id="xupersignature">XuperSignature</a></h3>
+<p>Unified Xuper Signature</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>public_keys</td><td><a href="#bytes">bytes</a></td><td>repeated</td><td></td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.voteRecord"></a></p>
+<h3><a class="header" href="#voterecord" id="voterecord">voteRecord</a></h3>
+<p>选民投票记录</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>candidate</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>txid</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.votedRecord"></a></p>
+<h3><a class="header" href="#votedrecord" id="votedrecord">votedRecord</a></h3>
+<p>候选人被投票记录</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>voter</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+<tr><td>txid</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="pb.Block.EBlockStatus"></a></p>
+<h3><a class="header" href="#blockeblockstatus" id="blockeblockstatus">Block.EBlockStatus</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>ERROR</td><td>0</td><td></td></tr>
+<tr><td>TRUNK</td><td>1</td><td></td></tr>
+<tr><td>BRANCH</td><td>2</td><td></td></tr>
+<tr><td>NOEXIST</td><td>3</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.PermissionRule"></a></p>
+<h3><a class="header" href="#permissionrule" id="permissionrule">PermissionRule</a></h3>
+<p>--------   Account and Permission Section --------</p>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>NULL</td><td>0</td><td>无权限控制</td></tr>
+<tr><td>SIGN_THRESHOLD</td><td>1</td><td>签名阈值策略</td></tr>
+<tr><td>SIGN_AKSET</td><td>2</td><td>AKSet签名策略</td></tr>
+<tr><td>SIGN_RATE</td><td>3</td><td>签名率策略</td></tr>
+<tr><td>SIGN_SUM</td><td>4</td><td>签名个数策略</td></tr>
+<tr><td>CA_SERVER</td><td>5</td><td>CA服务器鉴权</td></tr>
+<tr><td>COMMUNITY_VOTE</td><td>6</td><td>社区治理</td></tr>
+</tbody></table>
+<p><a name="pb.ResourceType"></a></p>
+<h3><a class="header" href="#resourcetype" id="resourcetype">ResourceType</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>CPU</td><td>0</td><td></td></tr>
+<tr><td>MEMORY</td><td>1</td><td></td></tr>
+<tr><td>DISK</td><td>2</td><td></td></tr>
+<tr><td>XFEE</td><td>3</td><td>the fee used in kernel contract</td></tr>
+</tbody></table>
+<p><a name="pb.TransactionStatus"></a></p>
+<h3><a class="header" href="#transactionstatus" id="transactionstatus">TransactionStatus</a></h3>
+<p>TransactionStatus is the status of transaction</p>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>UNDEFINE</td><td>0</td><td>Undefined status</td></tr>
+<tr><td>NOEXIST</td><td>1</td><td>Transaction not exist</td></tr>
+<tr><td>CONFIRM</td><td>2</td><td>Transaction have been confirmed</td></tr>
+<tr><td>FURCATION</td><td>3</td><td>Transaction is on the furcation</td></tr>
+<tr><td>UNCONFIRM</td><td>4</td><td>Transaction have not been confirmed</td></tr>
+</tbody></table>
+<p><a name="pb.XChainErrorEnum"></a></p>
+<h3><a class="header" href="#xchainerrorenum" id="xchainerrorenum">XChainErrorEnum</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>SUCCESS</td><td>0</td><td></td></tr>
+<tr><td>UNKNOW_ERROR</td><td>1</td><td></td></tr>
+<tr><td>CONNECT_REFUSE</td><td>2</td><td></td></tr>
+<tr><td>NOT_ENOUGH_UTXO_ERROR</td><td>3</td><td></td></tr>
+<tr><td>UTXOVM_ALREADY_UNCONFIRM_ERROR</td><td>4</td><td></td></tr>
+<tr><td>UTXOVM_NOT_FOUND_ERROR</td><td>5</td><td></td></tr>
+<tr><td>INPUT_OUTPUT_NOT_EQUAL_ERROR</td><td>6</td><td></td></tr>
+<tr><td>TX_NOT_FOUND_ERROR</td><td>7</td><td></td></tr>
+<tr><td>TX_SIGN_ERROR</td><td>8</td><td></td></tr>
+<tr><td>BLOCKCHAIN_NOTEXIST</td><td>9</td><td></td></tr>
+<tr><td>VALIDATE_ERROR</td><td>10</td><td></td></tr>
+<tr><td>CANNOT_SYNC_BLOCK_ERROR</td><td>11</td><td></td></tr>
+<tr><td>CONFIRM_BLOCK_ERROR</td><td>12</td><td></td></tr>
+<tr><td>UTXOVM_PLAY_ERROR</td><td>13</td><td></td></tr>
+<tr><td>WALK_ERROR</td><td>14</td><td></td></tr>
+<tr><td>NOT_READY_ERROR</td><td>15</td><td></td></tr>
+<tr><td>BLOCK_EXIST_ERROR</td><td>16</td><td></td></tr>
+<tr><td>ROOT_BLOCK_EXIST_ERROR</td><td>17</td><td></td></tr>
+<tr><td>TX_DUPLICATE_ERROR</td><td>19</td><td></td></tr>
+<tr><td>SERVICE_REFUSED_ERROR</td><td>20</td><td></td></tr>
+<tr><td>TXDATA_SIGN_ERROR</td><td>21</td><td></td></tr>
+<tr><td>TX_SLE_ERROR</td><td>25</td><td></td></tr>
+<tr><td>TX_FEE_NOT_ENOUGH_ERROR</td><td>26</td><td></td></tr>
+<tr><td>UTXO_SIGN_ERROR</td><td>28</td><td></td></tr>
+<tr><td>DPOS_QUERY_ERROR</td><td>31</td><td></td></tr>
+<tr><td>RWSET_INVALID_ERROR</td><td>33</td><td></td></tr>
+<tr><td>RWACL_INVALID_ERROR</td><td>34</td><td></td></tr>
+<tr><td>GAS_NOT_ENOUGH_ERROR</td><td>35</td><td></td></tr>
+<tr><td>TX_VERSION_INVALID_ERROR</td><td>36</td><td></td></tr>
+<tr><td>COMPLIANCE_CHECK_NOT_APPROVED</td><td>37</td><td></td></tr>
+<tr><td>ACCOUNT_CONTRACT_STATUS_ERROR</td><td>38</td><td></td></tr>
+<tr><td>TX_VERIFICATION_ERROR</td><td>40</td><td></td></tr>
+</tbody></table>
+<p><a name="pb.Xchain"></a></p>
+<h3><a class="header" href="#xchain" id="xchain">Xchain</a></h3>
+<p>Xchain is the main interfaces</p>
+<table><thead><tr><th>Method Name</th><th>Request Type</th><th>Response Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>PostTx</td><td><a href="#pb.TxStatus">TxStatus</a></td><td><a href="#pb.CommonReply">CommonReply</a></td><td>PostTx post Transaction to a node</td></tr>
+<tr><td>QueryACL</td><td><a href="#pb.AclStatus">AclStatus</a></td><td><a href="#pb.AclStatus">AclStatus</a></td><td></td></tr>
+<tr><td>GetAccountContracts</td><td><a href="#pb.GetAccountContractsRequest">GetAccountContractsRequest</a></td><td><a href="#pb.GetAccountContractsResponse">GetAccountContractsResponse</a></td><td></td></tr>
+<tr><td>QueryTx</td><td><a href="#pb.TxStatus">TxStatus</a></td><td><a href="#pb.TxStatus">TxStatus</a></td><td>QueryTx query Transaction by TxStatus, Bcname and Txid are required for this</td></tr>
+<tr><td>GetBalance</td><td><a href="#pb.AddressStatus">AddressStatus</a></td><td><a href="#pb.AddressStatus">AddressStatus</a></td><td>GetBalance get balance of an address, Address is required for this</td></tr>
+<tr><td>GetBalanceDetail</td><td><a href="#pb.AddressBalanceStatus">AddressBalanceStatus</a></td><td><a href="#pb.AddressBalanceStatus">AddressBalanceStatus</a></td><td>GetFrozenBalance get two kinds of balance 1. Still be frozen of an address 2. Available now of an address Address is required for this</td></tr>
+<tr><td>GetFrozenBalance</td><td><a href="#pb.AddressStatus">AddressStatus</a></td><td><a href="#pb.AddressStatus">AddressStatus</a></td><td>GetFrozenBalance get balance that still be frozen of an address, Address is required for this</td></tr>
+<tr><td>GetBlock</td><td><a href="#pb.BlockID">BlockID</a></td><td><a href="#pb.Block">Block</a></td><td>GetBlock get block by blockid and return if the block in trunk or in branch</td></tr>
+<tr><td>GetBlockByHeight</td><td><a href="#pb.BlockHeight">BlockHeight</a></td><td><a href="#pb.Block">Block</a></td><td>GetBlockByHeight get block by height and return if the block in trunk or in branch</td></tr>
+<tr><td>GetBlockChainStatus</td><td><a href="#pb.BCStatus">BCStatus</a></td><td><a href="#pb.BCStatus">BCStatus</a></td><td></td></tr>
+<tr><td>GetBlockChains</td><td><a href="#pb.CommonIn">CommonIn</a></td><td><a href="#pb.BlockChains">BlockChains</a></td><td>Get blockchains query blockchains</td></tr>
+<tr><td>GetSystemStatus</td><td><a href="#pb.CommonIn">CommonIn</a></td><td><a href="#pb.SystemsStatusReply">SystemsStatusReply</a></td><td>GetSystemStatus query system status</td></tr>
+<tr><td>GetNetURL</td><td><a href="#pb.CommonIn">CommonIn</a></td><td><a href="#pb.RawUrl">RawUrl</a></td><td>GetNetURL return net url</td></tr>
+<tr><td>SelectUTXO</td><td><a href="#pb.UtxoInput">UtxoInput</a></td><td><a href="#pb.UtxoOutput">UtxoOutput</a></td><td>新的Select utxos接口, 不需要签名，可以支持选择账户的utxo</td></tr>
+<tr><td>PreExecWithSelectUTXO</td><td><a href="#pb.PreExecWithSelectUTXORequest">PreExecWithSelectUTXORequest</a></td><td><a href="#pb.PreExecWithSelectUTXOResponse">PreExecWithSelectUTXOResponse</a></td><td>PreExecWithSelectUTXO preExec &amp; selectUtxo</td></tr>
+<tr><td>DeployNativeCode</td><td><a href="#pb.DeployNativeCodeRequest">DeployNativeCodeRequest</a></td><td><a href="#pb.DeployNativeCodeResponse">DeployNativeCodeResponse</a></td><td>Native code deploy interface</td></tr>
+<tr><td>NativeCodeStatus</td><td><a href="#pb.NativeCodeStatusRequest">NativeCodeStatusRequest</a></td><td><a href="#pb.NativeCodeStatusResponse">NativeCodeStatusResponse</a></td><td>Native code status</td></tr>
+<tr><td>DposCandidates</td><td><a href="#pb.DposCandidatesRequest">DposCandidatesRequest</a></td><td><a href="#pb.DposCandidatesResponse">DposCandidatesResponse</a></td><td>DposCandidates get all candidates of the tdpos consensus</td></tr>
+<tr><td>DposNominateRecords</td><td><a href="#pb.DposNominateRecordsRequest">DposNominateRecordsRequest</a></td><td><a href="#pb.DposNominateRecordsResponse">DposNominateRecordsResponse</a></td><td>DposNominateRecords get all records nominated by an user</td></tr>
+<tr><td>DposNomineeRecords</td><td><a href="#pb.DposNomineeRecordsRequest">DposNomineeRecordsRequest</a></td><td><a href="#pb.DposNomineeRecordsResponse">DposNomineeRecordsResponse</a></td><td>DposNomineeRecords get nominated record of a candidate</td></tr>
+<tr><td>DposVoteRecords</td><td><a href="#pb.DposVoteRecordsRequest">DposVoteRecordsRequest</a></td><td><a href="#pb.DposVoteRecordsResponse">DposVoteRecordsResponse</a></td><td>DposVoteRecords get all vote records voted by an user</td></tr>
+<tr><td>DposVotedRecords</td><td><a href="#pb.DposVotedRecordsRequest">DposVotedRecordsRequest</a></td><td><a href="#pb.DposVotedRecordsResponse">DposVotedRecordsResponse</a></td><td>DposVotedRecords get all vote records of a candidate</td></tr>
+<tr><td>DposCheckResults</td><td><a href="#pb.DposCheckResultsRequest">DposCheckResultsRequest</a></td><td><a href="#pb.DposCheckResultsResponse">DposCheckResultsResponse</a></td><td>DposCheckResults get check results of a specific term</td></tr>
+<tr><td>DposStatus</td><td><a href="#pb.DposStatusRequest">DposStatusRequest</a></td><td><a href="#pb.DposStatusResponse">DposStatusResponse</a></td><td>DposStatus get dpos status</td></tr>
+<tr><td>GetAccountByAK</td><td><a href="#pb.AK2AccountRequest">AK2AccountRequest</a></td><td><a href="#pb.AK2AccountResponse">AK2AccountResponse</a></td><td>GetAccountByAK get account sets contain a specific address</td></tr>
+<tr><td>PreExec</td><td><a href="#pb.InvokeRPCRequest">InvokeRPCRequest</a></td><td><a href="#pb.InvokeRPCResponse">InvokeRPCResponse</a></td><td>预执行合约</td></tr>
+</tbody></table>
+<h2><a class="header" href="#scalar-value-types" id="scalar-value-types">Scalar Value Types</a></h2>
+<table><thead><tr><th>.proto Type</th><th>Notes</th><th>C++ Type</th><th>Java Type</th><th>Python Type</th></tr></thead><tbody>
+<tr><td><a name="double" /> double</td><td></td><td>double</td><td>double</td><td>float</td></tr>
+<tr><td><a name="float" /> float</td><td></td><td>float</td><td>float</td><td>float</td></tr>
+<tr><td><a name="int32" /> int32</td><td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="int64" /> int64</td><td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="uint32" /> uint32</td><td>Uses variable-length encoding.</td><td>uint32</td><td>int</td><td>int/long</td></tr>
+<tr><td><a name="uint64" /> uint64</td><td>Uses variable-length encoding.</td><td>uint64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="sint32" /> sint32</td><td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="sint64" /> sint64</td><td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="fixed32" /> fixed32</td><td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td><td>uint32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="fixed64" /> fixed64</td><td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td><td>uint64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="sfixed32" /> sfixed32</td><td>Always four bytes.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="sfixed64" /> sfixed64</td><td>Always eight bytes.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="bool" /> bool</td><td></td><td>bool</td><td>boolean</td><td>boolean</td></tr>
+<tr><td><a name="string" /> string</td><td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td><td>string</td><td>String</td><td>str/unicode</td></tr>
+<tr><td><a name="bytes" /> bytes</td><td>May contain any arbitrary sequence of bytes.</td><td>string</td><td>ByteString</td><td>str</td></tr>
+</tbody></table>
+<h1><a class="header" href="#protos-file-tree" id="protos-file-tree">Protos File Tree</a></h1>
+<pre><code>
+.
+├── chainedbft.proto
+├── googleapis
+│   └── google
+│       └── api
+│           ├── annotations.proto
+│           └── http.proto
+├── xchain.proto
+├── xchain_spv.proto
+└── xcheck.proto
+
+3 directories, 6 files
+
+</code></pre>
+<h1><a class="header" href="#protobuf-sources" id="protobuf-sources">Protobuf sources</a></h1>
+<h2><a class="header" href="#srcchainedbftproto" id="srcchainedbftproto">src:./chainedbft.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package pb;
+
+// QCState is the phase of hotstuff
+enum QCState {
+    NEW_VIEW = 0; 
+    PREPARE = 1;
+    PRE_COMMIT = 2;
+    COMMIT = 3;
+    DECIDE = 4;
+}
+
+// QuorumCert is a data type that combines a collection of signatures from replicas.
+message QuorumCert {
+    // The id of Proposal this QC certified.
+    bytes ProposalId = 1;
+    // The msg of Proposal this QC certified. 
+    bytes ProposalMsg = 2;
+    // The current type of this QC certified.
+    // the type contains `NEW_VIEW`, `PREPARE`
+	QCState Type = 3;
+	// The view number of this QC certified.
+	int64 ViewNumber = 4;
+	// SignInfos is the signs of the leader gathered from replicas
+    // of a specifically certType.
+    QCSignInfos SignInfos  = 5;
+}
+
+// QCSignInfos is the signs of the leader gathered from replicas of a specifically certType.
+// A slice of signs is used at present.
+// TODO @qizheng09: It will be change to Threshold-Signatures after 
+// Crypto lib support Threshold-Signatures.
+message QCSignInfos {
+    // QCSignInfos 
+   repeated SignInfo QCSignInfos = 1; 
+}
+
+// SignInfo is the signature information of the 
+message SignInfo {
+  string Address = 1;
+  string PublicKey = 2;
+  bytes  Sign = 3;
+}
+
+// ChainedBftPhaseMessage is the proposal message of the protocal.
+// In Hotstuff, there are two kinds of messages, &quot;NEW_VIEW_MESSAGE&quot; and &quot;QC_Message&quot;.
+// A stable leader can skip this &quot;NEW_VIEW_MESSAGE&quot;.
+message ChainedBftPhaseMessage {
+    // Message Type: NEW_VIEW_MESSAGE or QC_MESSAGE
+    QCState Type = 1;
+    // ViewNumber the current view number 
+    int64 ViewNumber = 2;
+    // The new proposal send to other replicas while the 
+	QuorumCert ProposalQC = 3;
+    // JustifyQC is the QC of the leader gathered, send to next leader, while the message type is &quot;NEW_VIEW_MESSAGE&quot;
+    QuorumCert JustifyQC = 4;
+    // MsgDigest is the digest of the msgg
+    bytes MsgDigest = 5;
+    // Signature for this msg
+    SignInfo Signature = 6;
+}
+
+// ChainedBftVoteMessage is the vote message of the protocal.
+message ChainedBftVoteMessage {
+    // The id of this message votes for.
+    bytes ProposalId = 1;
+    // Replica will sign the QCMessage if the QuorumCert if valid.
+    SignInfo Signature = 2;
+}
+</code></pre>
+<h2><a class="header" href="#srcxcheckproto" id="srcxcheckproto">src:./xcheck.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package pb;
+
+import &quot;google/api/annotations.proto&quot;;
+import &quot;xchain.proto&quot;;
+
+service Xcheck {
+    rpc ComplianceCheck(TxStatus) returns (ComplianceCheckResponse);
+    rpc TransferCheck(TxStatus) returns (TransferCheckResponse);
+}
+
+message ComplianceCheckResponse {
+    Header header = 1;
+    SignatureInfo signature = 2;
+}
+
+message TransferCheckResponse {
+    Header header = 1;
+    SignatureInfo signature = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcxchain_spvproto" id="srcxchain_spvproto">src:./xchain_spv.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+
+package pb;
+
+import &quot;google/api/annotations.proto&quot;;
+import &quot;xchain.proto&quot;;
+
+// 助记词、私钥的json、公钥的json、钱包地址
+message ECDSAAccount
+{
+    bytes entropyByte = 1;
+    string mnemonic = 2;
+    string jsonPrivateKey = 3;
+    string jsonPublicKey = 4;
+    string address = 5;
+}
+
+// 助记词、随机字节数组、钱包地址
+message ECDSAInfo
+{
+    bytes entropyByte = 1;
+    string mnemonic = 2;
+    string address = 3;
+}
+
+// 钱包地址、被加密后的私钥、被加密后的助记词
+message ECDSAAccountFromCloud
+{
+    string address = 1;
+    string jsonEncryptedPrivateKey = 2;
+    string encryptedMnemonic = 3;
+}
+
+// 钱包地址、被加密后的私钥、被加密后的助记词、支付密码的明文
+message ECDSAAccountToCloud
+{
+    string address = 1;
+    string jsonEncryptedPrivateKey = 2;
+    string encryptedMnemonic = 3;
+    string password = 4;
+}
+
+// 全节点
+message Node
+{
+    bytes host = 1;
+    bytes utxoQueryUrl = 2;
+    bytes txPostUrl = 3;
+    bytes balanceQueryUrl = 4;
+}
+
+// 交易输入列表
+message TxInputs
+{
+    repeated TxInput txInputList = 1;
+}
+// 交易输出列表
+message TxOutputs
+{
+    repeated TxOutput txOutputList = 1;
+}
+
+
+// 未花费的交易输出列表
+message UTXOs
+{
+    repeated UTXO uTXOList = 1;
+}
+// 未花费的交易输出
+message UTXO
+{
+    bytes amount = 1;
+    bytes toAddr = 2;
+    bytes toPubkey = 3;
+    bytes refTxid = 4;
+    int32 refOffset = 5;
+}
+
+// ReturnCode is the code for client
+enum ReturnCode {
+    // Operation success
+       RETURNSUCCESS = 0;
+    // Err about Account
+       INTERNALERR = 101000;
+       FILENOTEXIST = 101002;
+       PARAMERR = 101003;
+       HTTPREQUERTFAIL = 101004;
+       HTTPRESPONSEFAIL = 101005;
+       ACCOUNTNOTEXIST = 101008;
+       PWNOTEXIST = 101009;
+       PWEXIST = 101010;
+       NOTLOGIN = 101012;
+    // Err about Transaction
+       CONNECTNODEFAIL = 102001;
+       UTXONOTENOUGH = 102002;
+       ADDRESSINVALID = 102003;
+       FEEINVALID = 102004;
+       CONNECTREFUSED = 102005;
+       UTXOENCRYPTERR = 102006;
+       FEENOTENOUGN = 102007;
+       PARAMSINVALID = 102008;
+       TXSIGNERR = 102009;
+       REPOSTTXERR = 102010;
+       BLOCKCHAINNOTEXIST = 102011;
+       SERVERERR = 102012;
+    }
+</code></pre>
+<h2><a class="header" href="#srcxchainproto" id="srcxchainproto">src:./xchain.proto</a></h2>
+<pre><code class="language-proto">
+syntax = &quot;proto3&quot;;
+ 
+import &quot;google/api/annotations.proto&quot;;
+import &quot;chainedbft.proto&quot;;
+package pb;
+
+
+enum XChainErrorEnum {
+  SUCCESS = 0;
+  UNKNOW_ERROR = 1;
+  CONNECT_REFUSE = 2;
+  NOT_ENOUGH_UTXO_ERROR = 3;
+  UTXOVM_ALREADY_UNCONFIRM_ERROR = 4;
+  UTXOVM_NOT_FOUND_ERROR = 5;
+  INPUT_OUTPUT_NOT_EQUAL_ERROR = 6;
+  TX_NOT_FOUND_ERROR = 7;
+  TX_SIGN_ERROR = 8;
+  BLOCKCHAIN_NOTEXIST = 9;
+  VALIDATE_ERROR = 10;
+  CANNOT_SYNC_BLOCK_ERROR = 11;
+  CONFIRM_BLOCK_ERROR = 12;
+  UTXOVM_PLAY_ERROR = 13;
+  WALK_ERROR = 14;
+  NOT_READY_ERROR = 15;
+  BLOCK_EXIST_ERROR = 16;
+  ROOT_BLOCK_EXIST_ERROR = 17;
+  TX_DUPLICATE_ERROR = 19;
+  SERVICE_REFUSED_ERROR = 20;
+  TXDATA_SIGN_ERROR = 21;
+  TX_SLE_ERROR = 25;
+  TX_FEE_NOT_ENOUGH_ERROR = 26;
+  UTXO_SIGN_ERROR = 28;
+  DPOS_QUERY_ERROR = 31;
+  RWSET_INVALID_ERROR = 33;
+  RWACL_INVALID_ERROR = 34;
+  GAS_NOT_ENOUGH_ERROR = 35;
+  TX_VERSION_INVALID_ERROR = 36;
+  COMPLIANCE_CHECK_NOT_APPROVED = 37;
+  ACCOUNT_CONTRACT_STATUS_ERROR = 38;
+  TX_VERIFICATION_ERROR = 40;
+}
+
+// TransactionStatus is the status of transaction
+enum TransactionStatus {
+  // Undefined status
+  UNDEFINE = 0;
+  // Transaction not exist
+  NOEXIST = 1;
+  // Transaction have been confirmed
+  CONFIRM = 2;
+  // Transaction is on the furcation
+  FURCATION = 3;
+  // Transaction have not been confirmed
+  UNCONFIRM = 4;
+}
+
+// Xchain is the main interfaces
+service Xchain {
+
+  // PostTx post Transaction to a node
+  rpc PostTx(TxStatus) returns (CommonReply) {
+    option (google.api.http) = {
+      post : &quot;/v1/post_tx&quot;
+      body : &quot;*&quot;
+    };
+  }
+
+  rpc QueryACL(AclStatus) returns (AclStatus) {
+    option (google.api.http) = {
+      post : &quot;/v1/query_acl&quot;
+      body : &quot;*&quot;
+    };
+  }
+
+  rpc GetAccountContracts(GetAccountContractsRequest)
+      returns (GetAccountContractsResponse) {
+    option (google.api.http) = {
+      post : &quot;/v1/get_account_contracts&quot;
+      body : &quot;*&quot;
+    };
+  }
+
+  // QueryTx query Transaction by TxStatus,
+  // Bcname and Txid are required for this
+  rpc QueryTx(TxStatus) returns (TxStatus) {
+    option (google.api.http) = {
+      post : &quot;/v1/query_tx&quot;
+      body : &quot;*&quot;
+    };
+  }
+
+  // GetBalance get balance of an address,
+  // Address is required for this
+  rpc GetBalance(AddressStatus) returns (AddressStatus) {
+    option (google.api.http) = {
+      post : &quot;/v1/get_balance&quot;
+      body : &quot;*&quot;
+    };
+  }
+  
+  // GetFrozenBalance get two kinds of balance
+  // 1. Still be frozen of an address
+  // 2. Available now of an address
+  // Address is required for this
+  rpc GetBalanceDetail(AddressBalanceStatus) returns (AddressBalanceStatus) {
+  option (google.api.http) = {
+    post: &quot;/v1/get_balance_detail&quot;
+    body: &quot;*&quot;
+    };
+  }
+
+  // GetFrozenBalance get balance that still be frozen of an address,
+  // Address is required for this
+  rpc GetFrozenBalance(AddressStatus) returns (AddressStatus) {
+    option (google.api.http) = {
+      post : &quot;/v1/get_frozen_balance&quot;
+      body : &quot;*&quot;
+    };
+  }
+
+  // GetBlock get block by blockid and return if the block in trunk or in branch
+  rpc GetBlock(BlockID) returns (Block) {
+    option (google.api.http) = {
+      post : &quot;/v1/get_block&quot;
+      body : &quot;*&quot;
+    };
+  }
+
+  // GetBlockByHeight get block by height and return if the block in trunk or in
+  // branch
+  rpc GetBlockByHeight(BlockHeight) returns (Block) {
+    option (google.api.http) = {
+      post : &quot;/v1/get_block_by_height&quot;
+      body : &quot;*&quot;
+    };
+  }
+
+  rpc GetBlockChainStatus(BCStatus) returns (BCStatus) {
+    option (google.api.http) = {
+      post : &quot;/v1/get_bcstatus&quot;
+      body : &quot;*&quot;
+    };
+  }
+
+  // Get blockchains query blockchains
+  rpc GetBlockChains(CommonIn) returns (BlockChains) {
+    option (google.api.http) = {
+      get : &quot;/v1/get_bcchains&quot;
+      // body: &quot;*&quot;
+    };
+  }
+
+  // GetSystemStatus query system status
+  rpc GetSystemStatus(CommonIn) returns (SystemsStatusReply) {
+    option (google.api.http) = {
+      post : &quot;/v1/get_sysstatus&quot;
+      body : &quot;*&quot;
+    };
+  }
+
+  // GetNetURL return net url
+  rpc GetNetURL(CommonIn) returns (RawUrl) {}
+
+  // 新的Select utxos接口, 不需要签名，可以支持选择账户的utxo
+  rpc SelectUTXO(UtxoInput) returns (UtxoOutput) {
+    option (google.api.http) = {
+      post : &quot;/v1/select_utxos_v2&quot;
+      body : &quot;*&quot;
+    };
+  }
+
+  // PreExecWithSelectUTXO preExec &amp; selectUtxo
+  rpc PreExecWithSelectUTXO(PreExecWithSelectUTXORequest) returns (PreExecWithSelectUTXOResponse);
+
+  // Native code deploy interface
+  rpc DeployNativeCode(DeployNativeCodeRequest)
+      returns (DeployNativeCodeResponse);
+  // Native code status
+  rpc NativeCodeStatus(NativeCodeStatusRequest)
+      returns (NativeCodeStatusResponse);
+
+  /*
+   * DPoS query interface
+   */
+  //  DposCandidates get all candidates of the tdpos consensus
+  rpc DposCandidates(DposCandidatesRequest) returns (DposCandidatesResponse);
+  //  DposNominateRecords get all records nominated by an user
+  rpc DposNominateRecords(DposNominateRecordsRequest)
+      returns (DposNominateRecordsResponse);
+  //  DposNomineeRecords get nominated record of a candidate
+  rpc DposNomineeRecords(DposNomineeRecordsRequest)
+      returns (DposNomineeRecordsResponse);
+  //  DposVoteRecords get all vote records voted by an user
+  rpc DposVoteRecords(DposVoteRecordsRequest) returns (DposVoteRecordsResponse);
+  //  DposVotedRecords get all vote records of a candidate
+  rpc DposVotedRecords(DposVotedRecordsRequest)
+      returns (DposVotedRecordsResponse);
+  //  DposCheckResults get check results of a specific term
+  rpc DposCheckResults(DposCheckResultsRequest)
+      returns (DposCheckResultsResponse);
+
+  // DposStatus get dpos status
+  rpc DposStatus(DposStatusRequest) returns (DposStatusResponse);
+
+  // GetAccountByAK get account sets contain a specific address
+  rpc GetAccountByAK(AK2AccountRequest) returns (AK2AccountResponse) {
+    option (google.api.http) = {
+      post : &quot;/v1/get_account_by_ak&quot;
+      body : &quot;*&quot;
+    };
+  }
+
+  //预执行合约
+  rpc PreExec(InvokeRPCRequest) returns (InvokeRPCResponse);
+}
+
+message Header {
+  string logid = 1;  //如果logid没填写，生成一个
+  string from_node = 2;  //call rpc client address，客户端可以为空，节点一定要写自己的address
+  XChainErrorEnum error = 3;
+}
+
+message TxDataAccount {
+  string address = 1;  //地址
+  string amount = 2;  //金额
+  int64 frozen_height = 3; //冻结高度
+}
+
+message TxData {
+  Header header = 13;
+  // Transaction id
+  bytes txid = 1;
+  // Block name
+  string bcname = 2;
+  // Account which start the transaction
+  string from_addr = 3;
+  // The pk of the account which start the transaction
+  string from_pubkey = 4;
+  // The sk of the account which start the transaction
+  string from_scrkey = 5;
+  // if user don't want to provide scrkey, he should sign the txdata into
+  // user_sign
+  bytes user_sign = 14;
+  // The account list accept tx
+  repeated TxDataAccount account = 6;
+  // Random number used to avoid replay attacks
+  string nonce = 8;
+  // Timestamp to launch the Tx
+  int64 timestamp = 9;
+  bytes desc = 12;
+  // tx version
+  int32 version = 15;
+}
+
+message TxStatus {
+  Header header = 1;
+  string bcname = 2;
+  bytes txid = 3;
+  TransactionStatus status = 4;  //当前状态
+  int64 distance = 5;  //离主干末端的距离（如果在主干上)
+  Transaction tx = 7;
+}
+
+message BatchTxs {
+  Header header = 1;
+  repeated TxStatus Txs = 2;
+}
+
+message Block {
+  Header header = 1;
+  string bcname = 2;
+  bytes blockid = 3;
+  enum EBlockStatus {
+    ERROR = 0;
+    TRUNK = 1;
+    BRANCH = 2;
+    NOEXIST = 3;
+  }
+  EBlockStatus status = 4;
+  InternalBlock block = 5;
+}
+
+message BlockID {
+  Header header = 4;
+  string bcname = 1;
+  bytes blockid = 2;
+  // if need content
+  bool need_content = 3;  //是否需要内容
+}
+
+message BlockHeight {
+  Header header = 3;
+  string bcname = 1;
+  int64 height = 2;
+}
+
+message CommonReply { Header header = 1; }
+
+message CommonIn { Header header = 1; }
+
+message TokenDetail {
+  string bcname = 1;
+  string balance = 2;
+  XChainErrorEnum error = 3;
+}
+
+message AddressStatus {
+  Header header = 1;
+  string address = 2;
+  repeated TokenDetail bcs = 3;
+}
+
+message TokenFrozenDetail
+{
+  string balance = 1;
+  bool isFrozen = 2;
+}
+
+message TokenFrozenDetails
+{
+  string bcname = 1;
+  repeated TokenFrozenDetail tfd = 2;
+  XChainErrorEnum error  = 3;
+}
+
+message AddressBalanceStatus
+{
+  Header header = 1;
+  string address = 2;
+  repeated TokenFrozenDetails tfds = 3;
+}
+
+// Transaction input
+message TxInput {
+  // The transaction id referenced to
+  bytes ref_txid = 1;
+  // The output offset of the transaction referenced to
+  int32 ref_offset = 2;
+  // The address of the launcher
+  bytes from_addr = 5;
+  // The amount of the transaction
+  bytes amount = 6;
+  // Frozen height
+  int64 frozen_height = 7;
+}
+
+// Transaction output
+message TxOutput {
+  // The amount of the transaction
+  bytes amount = 1;
+  // The address of the launcher
+  bytes to_addr = 2;
+  // Fronzen height
+  int64 frozen_height = 4;
+}
+
+// Unified Xuper Signature
+message XuperSignature {
+  repeated bytes public_keys = 1;
+  bytes signature = 2;
+}
+
+// Transaction is the information of the transaction
+message Transaction {
+  // txid is the id of this transaction
+  bytes txid = 1;
+  // the blockid the transaction belong to
+  bytes blockid = 2;
+  // Transaction input list
+  repeated TxInput tx_inputs = 3;
+  // Transaction output list
+  repeated TxOutput tx_outputs = 4;
+  // Transaction description or system contract
+  bytes desc = 6;
+  // Mining rewards
+  bool coinbase = 7;
+  // Random number used to avoid replay attacks
+  string nonce = 8;
+  // Timestamp to launch the transaction
+  int64 timestamp = 9;
+  // tx format version; tx格式版本号
+  int32 version = 10;
+  // auto generated tx
+  bool autogen = 11;
+
+  repeated TxInputExt tx_inputs_ext = 23;
+  repeated TxOutputExt tx_outputs_ext = 24;
+  repeated InvokeRequest contract_requests = 25;
+
+  // 权限系统新增字段
+  // 交易发起者, 可以是一个Address或者一个Account
+  string initiator = 26;
+  // 交易发起需要被收集签名的AddressURL集合信息，包括用于utxo转账和用于合约调用
+  repeated string auth_require = 27;
+  // 交易发起者对交易元数据签名，签名的内容包括auth_require字段
+  repeated SignatureInfo initiator_signs = 28;
+  // 收集到的签名
+  repeated SignatureInfo auth_require_signs = 29;
+  // 节点收到tx的时间戳，不参与签名
+  int64 received_timestamp = 30;
+  // 统一签名(支持多重签名/环签名等，与initiator_signs/auth_require_signs不同时使用)
+  XuperSignature xuper_sign = 31;
+}
+
+// Ledger metadata
+message LedgerMeta {
+  // root block id
+  bytes root_blockid = 1;
+  // tip block id
+  bytes tip_blockid = 2;
+  // the height of the trunk
+  int64 trunk_height = 3;
+  // max block size
+  int64 max_block_size = 4;
+  // preset contracts
+  repeated InvokeRequest reserved_contracts = 5;
+  // reset forbidden contract configuration
+  InvokeRequest forbidden_contract = 6;
+}
+
+// Utxo metadata
+message UtxoMeta {
+  bytes latest_blockid = 1; // utxo vm目前执行到的blockid
+  repeated string lock_key_list = 2;
+  string utxo_total = 3;       // 当前utxo vm上的总资产
+  int64 avgDelay = 4;          // 平均上链延时
+  int64 unconfirmTxAmount = 5; // 待确认交易量
+}
+
+// The internal block struct
+message InternalBlock {
+  // block version
+  int32 version = 1;
+  // Random number used to avoid replay attacks
+  int32 nonce = 2;
+  // blockid generate the hash sign of the block used by sha256
+  bytes blockid = 3;
+  // pre_hash is the parent blockid of the block
+  bytes pre_hash = 4;
+  // The miner id
+  bytes proposer = 5;
+  // The sign which miner signed: blockid + nonce + timestamp
+  bytes sign = 6;
+  // The pk of the miner
+  bytes pubkey = 7;
+  // The Merkle Tree root
+  bytes merkle_root = 8;
+  // The height of the blockchain
+  int64 height = 9;
+  // Timestamp of the block
+  int64 timestamp = 10;
+  // Transactions of the block, only txid stored on kv, the detail information
+  // stored in another table
+  repeated Transaction transactions = 11;
+  // The transaction count of the block
+  int32 tx_count = 12;
+  // 所有交易hash的merkle tree
+  repeated bytes merkle_tree = 13;
+  int64 curTerm = 16;
+  int64 curBlockNum = 17;
+  map&lt;string, string&gt; failed_txs = 18; // txid -&gt; failed reason
+  int32 targetBits = 19;
+
+  // Justify used in chained-bft
+  QuorumCert Justify = 20;
+  
+  // 下面的属性会动态变化
+  // If the block is on the trunk
+  bool in_trunk = 14;
+  // Next next block which on trunk
+  bytes next_hash = 15;
+}
+
+// BlockChain status
+message BCStatus {
+  Header header = 1;
+  // block name
+  string bcname = 2;
+  // ledger metadata
+  LedgerMeta meta = 3;
+  // The information of the longest block
+  InternalBlock block = 4;
+  // Utox information
+  UtxoMeta utxoMeta = 5;
+}
+
+message BCTipStatus {
+  Header header = 1;
+  bool is_trunk_tip = 2;
+}
+
+message BlockChains {
+  Header header = 1;
+  repeated string blockchains = 2;
+}
+
+message Speeds {
+  map&lt;string, double&gt; SumSpeeds = 1;
+  map&lt;string, BCSpeeds&gt; BcSpeeds = 2;
+}
+
+message BCSpeeds { map&lt;string, double&gt; BcSpeed = 1; }
+
+message SystemsStatus {
+  Header header = 1;
+  repeated BCStatus bcs_status = 2;
+  Speeds speeds = 3;
+  repeated string peerUrls = 4;
+}
+
+message SystemsStatusReply {
+  Header header = 1;
+  SystemsStatus systems_status = 2;
+}
+
+// RawUrl return the node's  connect url
+message RawUrl {
+  Header header = 1;
+  string rawUrl = 2;
+}
+
+message Utxo {
+  bytes amount = 1;
+  bytes toAddr = 2;
+  bytes toPubkey = 3;
+  bytes refTxid = 4;
+  int32 refOffset = 5;
+}
+
+// UtxoInput query info to query utxos
+message UtxoInput {
+  Header header = 1;
+  // which bcname to select
+  string bcname = 2;
+  // address to select
+  string address = 3;
+  // publickey of the address
+  string publickey = 4;
+  // totalNeed refer the total need utxos to select
+  string totalNeed = 5;
+  // userSign of input
+  bytes userSign = 7;
+  // need lock
+  bool needLock = 8;
+}
+
+// UtxoOutput query results
+message UtxoOutput {
+  Header header = 1;
+  // outSign return the output
+  // bytes outSign = 2;
+  // utxo list
+  repeated Utxo utxoList = 2;
+  // total selected amount
+  string totalSelected = 3;
+}
+
+message NativeCodeDesc {
+  // native code name
+  string name = 1;
+  // code version
+  string version = 2;
+  // digest of binary
+  bytes digest = 3;
+  // the previous verion
+  string prevVersion = 4;
+  // xuper api version
+  int32 xuperApiVersion = 5;
+}
+
+message WasmCodeDesc {
+  string runtime = 1;
+  string compiler = 2;
+  bytes digest = 3;
+  string vm_compiler = 4;
+}
+
+message DeployNativeCodeRequest {
+  Header header = 1;
+  // chain name
+  string bcname = 2;
+  // native code desc
+  NativeCodeDesc desc = 3;
+  // code is the bytes of binary code
+  bytes code = 4;
+  // the address of deployer
+  string address = 5;
+  // the public key of deployer
+  bytes pubkey = 6;
+  // the sign of desc
+  bytes sign = 7;
+}
+
+message DeployNativeCodeResponse { Header header = 1; }
+
+message NativeCodeStatus {
+  NativeCodeDesc desc = 1;
+  int32 status = 2;
+  bool healthy = 3;
+}
+
+message NativeCodeStatusRequest {
+  Header header = 1;
+  string bcname = 2;
+}
+
+message NativeCodeStatusResponse {
+  Header header = 1;
+  repeated NativeCodeStatus status = 2;
+}
+
+/*
+ * DPoS query interface
+ */
+// 候选人列表接口
+message DposCandidatesRequest {
+  Header header = 1;
+  string bcname = 2;
+}
+
+// 候选人列表返回
+message DposCandidatesResponse {
+  Header header = 1;
+  repeated string candidatesInfo = 2;
+}
+
+// 提名者提名记录请求
+message DposNominateRecordsRequest {
+  Header header = 1;
+  string bcname = 2;
+  string address = 3;
+}
+
+// 候选人信息
+message DposNominateInfo {
+  string candidate = 1;
+  string txid = 2;
+}
+
+// 提名者提名记录返回
+message DposNominateRecordsResponse {
+  Header header = 1;
+  repeated DposNominateInfo nominateRecords = 2;
+}
+
+// 候选人被提名记录请求
+message DposNomineeRecordsRequest {
+  Header header = 1;
+  string bcname = 2;
+  string address = 3;
+}
+
+// 候选人被提名记录返回
+message DposNomineeRecordsResponse {
+  Header header = 1;
+  string txid = 2;
+}
+
+// 选民投票记录请求
+message DposVoteRecordsRequest {
+  Header header = 1;
+  string bcname = 2;
+  string address = 3;
+}
+
+// 选民投票记录
+message voteRecord {
+  string candidate = 1;
+  string txid = 2;
+}
+
+// 选民投票记录返回
+message DposVoteRecordsResponse {
+  Header header = 1;
+  // 选民投票txid记录
+  repeated voteRecord voteTxidRecords = 2;
+}
+
+// 候选人被投票记录请求
+message DposVotedRecordsRequest {
+  Header header = 1;
+  string bcname = 2;
+  string address = 3;
+}
+// 候选人被投票记录
+message votedRecord {
+  string voter = 1;
+  string txid = 2;
+}
+
+// 候选人被投票记录返回
+message DposVotedRecordsResponse {
+  Header header = 1;
+  // 候选人被投票的txid记录
+  repeated votedRecord votedTxidRecords = 2;
+}
+
+// 查询检票结果记录请求
+message DposCheckResultsRequest {
+  Header header = 1;
+  string bcname = 2;
+  int64 term = 3;
+}
+
+// 查询检票结果记录返回
+message DposCheckResultsResponse {
+  Header header = 1;
+  int64 term = 2;
+  repeated string checkResult = 3;
+}
+
+// query dpos consensus current status request
+message DposStatusRequest {
+  Header header = 1;
+  string bcname = 2;
+}
+
+// query dpos consensus current status reply
+message DposStatusResponse {
+  Header header = 1;
+  DposStatus status = 2;
+}
+
+message DposStatus {
+  int64 term = 1;
+  int64 block_num = 2;
+  string proposer = 3;
+  int64 proposer_num = 4;
+  repeated string checkResult = 5;
+}
+
+message InvokeRPCRequest {
+  Header header = 1;
+  string bcname = 2;
+  repeated InvokeRequest requests = 3;
+  string initiator = 4;
+  repeated string auth_require = 5;
+}
+
+message InvokeRPCResponse {
+  Header header = 1;
+  string bcname = 2;
+  InvokeResponse response = 3;
+}
+
+// 预执行的请求结构
+message InvokeRequest {
+  string module_name = 1;
+  string contract_name = 2;
+  string method_name = 3;
+  map&lt;string, bytes&gt; args = 4;
+  repeated ResourceLimit resource_limits = 5;
+}
+
+// 预执行的返回结构
+message InvokeResponse {
+  repeated TxInputExt inputs = 1;
+  repeated TxOutputExt outputs = 2;
+  repeated bytes response = 3;
+  int64 gas_used = 4;
+  repeated InvokeRequest requests = 5;
+  repeated ContractResponse responses = 6;
+}
+
+// 扩展输入
+message TxInputExt {
+  string bucket = 1;
+  bytes key = 2;
+  bytes ref_txid = 3;
+  int32 ref_offset = 4;
+}
+
+// 扩展输出
+message TxOutputExt {
+  string bucket = 1;
+  bytes key = 2;
+  bytes value = 3;
+}
+
+// 签名详情
+message SignatureInfo {
+  string PublicKey = 1;
+  bytes Sign = 2;
+}
+
+// --------   Account and Permission Section --------
+enum PermissionRule {
+  NULL = 0;           // 无权限控制
+  SIGN_THRESHOLD = 1; // 签名阈值策略
+  SIGN_AKSET = 2;     // AKSet签名策略
+  SIGN_RATE = 3;      // 签名率策略
+  SIGN_SUM = 4;       // 签名个数策略
+  CA_SERVER = 5;      // CA服务器鉴权
+  COMMUNITY_VOTE = 6; // 社区治理
+}
+
+message PermissionModel {
+  PermissionRule rule = 1;
+  double acceptValue = 2; // 取决于用哪种rule, 可以表示签名率，签名数或权重阈值
+}
+
+// AK集的表示方法
+message AkSet {
+  repeated string aks = 1; // 一堆公钥
+}
+message AkSets {
+  map&lt;string, AkSet&gt; sets = 1; // 公钥or账户名集
+  string expression =
+      2; // 表达式，一期不支持表达式，默认集合内是and，集合间是or
+}
+
+// Acl实际使用的结构
+message Acl {
+  PermissionModel pm = 1;            // 采用的权限模型
+  map&lt;string, double&gt; aksWeight = 2; // 公钥or账户名  -&gt; 权重
+  AkSets akSets = 3;
+}
+
+// 查询Acl
+message AclStatus {
+  Header header = 1;
+  string bcname = 2;
+  string accountName = 3;
+  string contractName = 4;
+  string methodName = 5;
+  bool confirmed = 6;
+  Acl acl = 7;
+}
+
+// Identity authentication request
+message IdentityAuth {
+  bytes sign = 1;
+  bytes pubkey = 2;
+  string addr = 3;
+  string peerID = 4;
+  string timestamp = 5;
+}
+
+// Identity authentication requests
+message IdentityAuths { repeated IdentityAuth auth = 1; }
+
+enum ResourceType {
+  CPU = 0;
+  MEMORY = 1;
+  DISK = 2;
+  XFEE = 3; // the fee used in kernel contract
+}
+
+message ResourceLimit {
+  ResourceType type = 1;
+  int64 limit = 2;
+}
+
+message AK2AccountRequest {
+  Header header = 1;
+  string bcname = 2;
+  string address = 3;
+}
+
+message AK2AccountResponse {
+  Header header = 1;
+  string bcname = 2;
+  repeated string account = 3;
+}
+
+// Query account contracts request
+message GetAccountContractsRequest {
+  Header header = 1;
+  string bcname = 2;
+  string account = 3;
+}
+
+// Query account contracts response
+message GetAccountContractsResponse {
+  Header header = 1;
+  repeated ContractStatus contracts_status = 2;
+}
+
+// Status of a contract
+message ContractStatus {
+  string contract_name = 1;
+  string txid = 2;
+  bytes desc = 3;
+  bool is_banned = 4;
+}
+
+// PreExecWithSelectUTXORequest preExec + selectUtxo for request
+message PreExecWithSelectUTXORequest {
+  Header header = 1;
+  string bcname = 2;
+  string address = 3;
+  int64 totalAmount = 4;
+  SignatureInfo signInfo = 6;
+  bool needLock = 7;
+  InvokeRPCRequest request = 5;
+}
+
+// PreExecWithSelectUTXOResponse preExec + selectUtxo for response
+message PreExecWithSelectUTXOResponse {
+  Header header = 1;
+  string bcname = 2;
+  InvokeResponse response = 3;
+  // for preExec &amp; selectUTXO
+  UtxoOutput utxoOutput = 4;
+}
+
+// ContractResponse is the response returnd by contract
+message ContractResponse {
+  int32  status = 1;
+  string message = 2;
+  bytes  body = 3;
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../dlt/trisa.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../dlt/trustwallet.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../dlt/trisa.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../dlt/trustwallet.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
