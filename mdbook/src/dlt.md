@@ -116,5 +116,6 @@ gen_proto_doc(){
 - [x] Hyperledger fabric page
 - [x] Hyperledger Sawtooth page
 - [ ] Hyperledger Besu
+- [ ] [PegaSysEng/pantheon: An enterprise-grade Java-based, Apache 2.0 licensed Ethereum client](https://github.com/PegaSysEng/pantheon)
 - [ ] Hyperledger Ursa
-- [ ] Hyperledger Burrow
+- [x] Hyperledger Burrow

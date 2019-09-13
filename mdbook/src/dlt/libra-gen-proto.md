@@ -1,6 +1,4 @@
-# Generated Date:2019-09-11T17:25:25+08:00
-
-# Protocol Documentation
+# Protobuf Doc 2019-09-11T17:25:25+08:00
 <a name="top"></a>
 
 ## Table of Contents

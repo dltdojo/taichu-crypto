@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Services - DLTDOJO3 第三新熵熱踢道場</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> DLTDOJO3</a></li><li><a href="../poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><a href="../taichu-raw/index.html"><strong aria-hidden="true">3.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li><a href="../taichu-raw/apache-big5.html"><strong aria-hidden="true">3.1.</strong> HTTPS: Apache Big5</a></li><li><a href="../taichu-raw/openapiv3.html"><strong aria-hidden="true">3.2.</strong> HTTPS: OpenAPI v3</a></li><li><a href="../taichu-raw/others.html"><strong aria-hidden="true">3.3.</strong> 其他</a></li></ol></li><li><a href="../mad-white/index.html"><strong aria-hidden="true">4.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li><a href="../mad-white/code-server.html"><strong aria-hidden="true">4.1.</strong> VS Code Server</a></li></ol></li><li><a href="../mad-red/index.html"><strong aria-hidden="true">5.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">5.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">5.2.</strong> 聊天測試 BIP39</a></li><li><a href="../mad-red/vox/index.html"><strong aria-hidden="true">5.3.</strong> Voxel 組件開發編輯</a></li><li><a href="../mad-red/vox/projects.html"><strong aria-hidden="true">5.4.</strong> Voxel 相關專案</a></li></ol></li><li><a href="../crypto-assets.html"><strong aria-hidden="true">6.</strong> Crypto-Assets</a></li><li><a href="../dlt.html"><strong aria-hidden="true">7.</strong> DLT</a></li><li><ol class="section"><li><a href="../dlt/hl-fabric.html"><strong aria-hidden="true">7.1.</strong> Hyperledger Fabric</a></li><li><a href="../dlt/hl-sawtooth.html"><strong aria-hidden="true">7.2.</strong> Hyperledger Sawtooth</a></li><li><a href="../dlt/hl-burrow.html"><strong aria-hidden="true">7.3.</strong> HyperLedger Burrow</a></li><li><a href="../dlt/libra19.html"><strong aria-hidden="true">7.4.</strong> Libra</a></li><li><a href="../dlt/lnrpc.html"><strong aria-hidden="true">7.5.</strong> lightning network</a></li><li><a href="../dlt/exonum.html"><strong aria-hidden="true">7.6.</strong> exonum</a></li><li><a href="../dlt/trisa.html"><strong aria-hidden="true">7.7.</strong> TRISA</a></li><li><a href="../dlt/xuperchain.html"><strong aria-hidden="true">7.8.</strong> xuperchain</a></li><li><a href="../dlt/trustwallet.html"><strong aria-hidden="true">7.9.</strong> TrustWallet</a></li><li><a href="../dlt/openbazaar.html"><strong aria-hidden="true">7.10.</strong> OpenBazaar</a></li></ol></li><li><a href="../dao.html"><strong aria-hidden="true">8.</strong> DAO</a></li><li><ol class="section"><li><a href="../dao/aragon.html"><strong aria-hidden="true">8.1.</strong> Aragon</a></li><li><a href="../dao/joystream.html"><strong aria-hidden="true">8.2.</strong> JoyStream</a></li></ol></li><li><a href="../did.html"><strong aria-hidden="true">9.</strong> DID</a></li><li><a href="../services/index.html" class="active"><strong aria-hidden="true">10.</strong> Services</a></li><li><ol class="section"><li><a href="../services/amazon-qldb.html"><strong aria-hidden="true">10.1.</strong> Amazon QLDB</a></li></ol></li><li><a href="../LRE.html"><strong aria-hidden="true">11.</strong> Ledger Reliability Engineering(LRE)</a></li><li><a href="../web/index.html"><strong aria-hidden="true">12.</strong> Web Tech</a></li><li><ol class="section"><li><a href="../web/extensions.html"><strong aria-hidden="true">12.1.</strong> Browser Extensiions</a></li><li><a href="../web/example-page.html"><strong aria-hidden="true">12.2.</strong> Example Pages</a></li><li><a href="../webauthn.html"><strong aria-hidden="true">12.3.</strong> WebAuthn</a></li><li><a href="../webassembly.html"><strong aria-hidden="true">12.4.</strong> WebAssembly</a></li><li><a href="../web/openssl.html"><strong aria-hidden="true">12.5.</strong> OpenSSL</a></li></ol></li><li><a href="../k8s.html"><strong aria-hidden="true">13.</strong> Kubernetes</a></li><li><a href="../rust.html"><strong aria-hidden="true">14.</strong> Rust</a></li><li><a href="../plantuml.html"><strong aria-hidden="true">15.</strong> PlantUML</a></li><li><ol class="section"><li><a href="../puml/hyperledger-fabric.html"><strong aria-hidden="true">15.1.</strong> Hyperledger Fabric</a></li><li><a href="../puml/ethereum.html"><strong aria-hidden="true">15.2.</strong> Ethereum</a></li></ol></li><li><a href="../messaging.html"><strong aria-hidden="true">16.</strong> Messaging</a></li><li><a href="../mdbook/index.html"><strong aria-hidden="true">17.</strong> mdbook</a></li><li><ol class="section"><li><a href="../mdbook/preprocessors.html"><strong aria-hidden="true">17.1.</strong> preprocessors</a></li><li><a href="../mdbook/others.html"><strong aria-hidden="true">17.2.</strong> 其他</a></li></ol></li><li><a href="../resources.html"><strong aria-hidden="true">18.</strong> 學習資源</a></li><li><a href="../book.html"><strong aria-hidden="true">19.</strong> 書籍</a></li><li><a href="../job.html"><strong aria-hidden="true">20.</strong> 工作</a></li><li><a href="../appendix.html"><strong aria-hidden="true">21.</strong> 附錄</a></li><li><ol class="section"><li><a href="../cmd-help.html"><strong aria-hidden="true">21.1.</strong> 命令列 tc.sh</a></li><li><a href="../license.html"><strong aria-hidden="true">21.2.</strong> 授權條款</a></li><li><a href="../testpage.html"><strong aria-hidden="true">21.3.</strong> 測試頁面</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">DLTDOJO3 第三新熵熱踢道場</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#services" id="services">Services</a></h1>
+<h1><a class="header" href="#toc" id="toc">TOC</a></h1>
+<ul>
+<li><a href="#accounting">Accounting</a></li>
+<li><a href="#todo">TODO</a></li>
+</ul>
+<h1><a class="header" href="#accounting" id="accounting">Accounting</a></h1>
+<ul>
+<li><a href="https://www.8btc.com/article/479582">世界上最会“算计”的公司争相布局区块链，普华永道等四大会计师事务所的变革之路_巴比特_服务于区块链创新者</a></li>
+</ul>
+<h1><a class="header" href="#todo" id="todo">TODO</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../did.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../services/amazon-qldb.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../did.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../services/amazon-qldb.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,1953 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Libra - DLTDOJO3 第三新熵熱踢道場</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> DLTDOJO3</a></li><li><a href="../poc.html"><strong aria-hidden="true">2.</strong> POC 概念驗證</a></li><li><a href="../taichu-raw/index.html"><strong aria-hidden="true">3.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li><a href="../taichu-raw/apache-big5.html"><strong aria-hidden="true">3.1.</strong> HTTPS: Apache Big5</a></li><li><a href="../taichu-raw/openapiv3.html"><strong aria-hidden="true">3.2.</strong> HTTPS: OpenAPI v3</a></li><li><a href="../taichu-raw/others.html"><strong aria-hidden="true">3.3.</strong> 其他</a></li></ol></li><li><a href="../mad-white/index.html"><strong aria-hidden="true">4.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li><a href="../mad-white/code-server.html"><strong aria-hidden="true">4.1.</strong> VS Code Server</a></li></ol></li><li><a href="../mad-red/index.html"><strong aria-hidden="true">5.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">5.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">5.2.</strong> 聊天測試 BIP39</a></li><li><a href="../mad-red/vox/index.html"><strong aria-hidden="true">5.3.</strong> Voxel 組件開發編輯</a></li><li><a href="../mad-red/vox/projects.html"><strong aria-hidden="true">5.4.</strong> Voxel 相關專案</a></li></ol></li><li><a href="../crypto-assets.html"><strong aria-hidden="true">6.</strong> Crypto-Assets</a></li><li><a href="../dlt.html"><strong aria-hidden="true">7.</strong> DLT</a></li><li><ol class="section"><li><a href="../dlt/hl-fabric.html"><strong aria-hidden="true">7.1.</strong> Hyperledger Fabric</a></li><li><a href="../dlt/hl-sawtooth.html"><strong aria-hidden="true">7.2.</strong> Hyperledger Sawtooth</a></li><li><a href="../dlt/hl-burrow.html"><strong aria-hidden="true">7.3.</strong> HyperLedger Burrow</a></li><li><a href="../dlt/libra19.html" class="active"><strong aria-hidden="true">7.4.</strong> Libra</a></li><li><a href="../dlt/lnrpc.html"><strong aria-hidden="true">7.5.</strong> lightning network</a></li><li><a href="../dlt/exonum.html"><strong aria-hidden="true">7.6.</strong> exonum</a></li><li><a href="../dlt/trisa.html"><strong aria-hidden="true">7.7.</strong> TRISA</a></li><li><a href="../dlt/xuperchain.html"><strong aria-hidden="true">7.8.</strong> xuperchain</a></li><li><a href="../dlt/trustwallet.html"><strong aria-hidden="true">7.9.</strong> TrustWallet</a></li><li><a href="../dlt/openbazaar.html"><strong aria-hidden="true">7.10.</strong> OpenBazaar</a></li></ol></li><li><a href="../dao.html"><strong aria-hidden="true">8.</strong> DAO</a></li><li><ol class="section"><li><a href="../dao/aragon.html"><strong aria-hidden="true">8.1.</strong> Aragon</a></li><li><a href="../dao/joystream.html"><strong aria-hidden="true">8.2.</strong> JoyStream</a></li></ol></li><li><a href="../did.html"><strong aria-hidden="true">9.</strong> DID</a></li><li><a href="../services/index.html"><strong aria-hidden="true">10.</strong> Services</a></li><li><ol class="section"><li><a href="../services/amazon-qldb.html"><strong aria-hidden="true">10.1.</strong> Amazon QLDB</a></li></ol></li><li><a href="../LRE.html"><strong aria-hidden="true">11.</strong> Ledger Reliability Engineering(LRE)</a></li><li><a href="../web/index.html"><strong aria-hidden="true">12.</strong> Web Tech</a></li><li><ol class="section"><li><a href="../web/extensions.html"><strong aria-hidden="true">12.1.</strong> Browser Extensiions</a></li><li><a href="../web/example-page.html"><strong aria-hidden="true">12.2.</strong> Example Pages</a></li><li><a href="../webauthn.html"><strong aria-hidden="true">12.3.</strong> WebAuthn</a></li><li><a href="../webassembly.html"><strong aria-hidden="true">12.4.</strong> WebAssembly</a></li><li><a href="../web/openssl.html"><strong aria-hidden="true">12.5.</strong> OpenSSL</a></li></ol></li><li><a href="../k8s.html"><strong aria-hidden="true">13.</strong> Kubernetes</a></li><li><a href="../rust.html"><strong aria-hidden="true">14.</strong> Rust</a></li><li><a href="../plantuml.html"><strong aria-hidden="true">15.</strong> PlantUML</a></li><li><ol class="section"><li><a href="../puml/hyperledger-fabric.html"><strong aria-hidden="true">15.1.</strong> Hyperledger Fabric</a></li><li><a href="../puml/ethereum.html"><strong aria-hidden="true">15.2.</strong> Ethereum</a></li></ol></li><li><a href="../messaging.html"><strong aria-hidden="true">16.</strong> Messaging</a></li><li><a href="../mdbook/index.html"><strong aria-hidden="true">17.</strong> mdbook</a></li><li><ol class="section"><li><a href="../mdbook/preprocessors.html"><strong aria-hidden="true">17.1.</strong> preprocessors</a></li><li><a href="../mdbook/others.html"><strong aria-hidden="true">17.2.</strong> 其他</a></li></ol></li><li><a href="../resources.html"><strong aria-hidden="true">18.</strong> 學習資源</a></li><li><a href="../book.html"><strong aria-hidden="true">19.</strong> 書籍</a></li><li><a href="../job.html"><strong aria-hidden="true">20.</strong> 工作</a></li><li><a href="../appendix.html"><strong aria-hidden="true">21.</strong> 附錄</a></li><li><ol class="section"><li><a href="../cmd-help.html"><strong aria-hidden="true">21.1.</strong> 命令列 tc.sh</a></li><li><a href="../license.html"><strong aria-hidden="true">21.2.</strong> 授權條款</a></li><li><a href="../testpage.html"><strong aria-hidden="true">21.3.</strong> 測試頁面</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">DLTDOJO3 第三新熵熱踢道場</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#libra" id="libra">Libra</a></h1>
+<h1><a class="header" href="#toc" id="toc">TOC</a></h1>
+<ul>
+<li><a href="#%E9%9A%A8%E6%83%B3">隨想</a>
+<ul>
+<li><a href="#%E9%81%B8-protobuf-%E5%9E%8B%E6%AD%A3%E8%A8%80%E9%A0%86">選 ProtoBuf 型正言順</a></li>
+</ul>
+</li>
+<li><a href="#todo">TODO</a></li>
+<li><a href="#protobuf">Protobuf</a></li>
+<li><a href="#%E7%94%9F%E6%88%90-google-protocol-buffers-%E6%96%87%E4%BB%B6">生成 Google Protocol Buffers 文件</a></li>
+<li><a href="#protobuf-doc-2019-09-11t1725250800">Protobuf Doc 2019-09-11T17:25:25+08:00</a>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#transactionproto">transaction.proto</a>
+<ul>
+<li><a href="#accountstate">AccountState</a></li>
+<li><a href="#signedtransaction">SignedTransaction</a></li>
+<li><a href="#signedtransactionwithproof">SignedTransactionWithProof</a></li>
+<li><a href="#signedtransactionsblock">SignedTransactionsBlock</a></li>
+<li><a href="#transactionargument">TransactionArgument</a></li>
+<li><a href="#transactionlistwithproof">TransactionListWithProof</a></li>
+<li><a href="#transactiontocommit">TransactionToCommit</a></li>
+<li><a href="#transactionargumentargtype">TransactionArgument.ArgType</a></li>
+</ul>
+</li>
+<li><a href="#transaction_infoproto">transaction_info.proto</a>
+<ul>
+<li><a href="#transactioninfo">TransactionInfo</a></li>
+</ul>
+</li>
+<li><a href="#account_state_blobproto">account_state_blob.proto</a>
+<ul>
+<li><a href="#accountstateblob">AccountStateBlob</a></li>
+<li><a href="#accountstatewithproof">AccountStateWithProof</a></li>
+</ul>
+</li>
+<li><a href="#eventsproto">events.proto</a>
+<ul>
+<li><a href="#event">Event</a></li>
+<li><a href="#eventwithproof">EventWithProof</a></li>
+<li><a href="#eventsforversions">EventsForVersions</a></li>
+<li><a href="#eventslist">EventsList</a></li>
+</ul>
+</li>
+<li><a href="#validator_public_keysproto">validator_public_keys.proto</a>
+<ul>
+<li><a href="#validatorpublickeys">ValidatorPublicKeys</a></li>
+</ul>
+</li>
+<li><a href="#vm_errorsproto">vm_errors.proto</a>
+<ul>
+<li><a href="#vmstatus">VMStatus</a></li>
+</ul>
+</li>
+<li><a href="#validator_changeproto">validator_change.proto</a>
+<ul>
+<li><a href="#validatorchangeeventwithproof">ValidatorChangeEventWithProof</a></li>
+</ul>
+</li>
+<li><a href="#language_storageproto">language_storage.proto</a>
+<ul>
+<li><a href="#moduleid">ModuleId</a></li>
+</ul>
+</li>
+<li><a href="#validator_setproto">validator_set.proto</a>
+<ul>
+<li><a href="#validatorset">ValidatorSet</a></li>
+</ul>
+</li>
+<li><a href="#ledger_infoproto">ledger_info.proto</a>
+<ul>
+<li><a href="#ledgerinfo">LedgerInfo</a></li>
+<li><a href="#ledgerinfowithsignatures">LedgerInfoWithSignatures</a></li>
+<li><a href="#validatorsignature">ValidatorSignature</a></li>
+</ul>
+</li>
+<li><a href="#proofproto">proof.proto</a>
+<ul>
+<li><a href="#accountstateproof">AccountStateProof</a></li>
+<li><a href="#accumulatorconsistencyproof">AccumulatorConsistencyProof</a></li>
+<li><a href="#accumulatorproof">AccumulatorProof</a></li>
+<li><a href="#eventproof">EventProof</a></li>
+<li><a href="#signedtransactionproof">SignedTransactionProof</a></li>
+<li><a href="#sparsemerkleproof">SparseMerkleProof</a></li>
+</ul>
+</li>
+<li><a href="#get_with_proofproto">get_with_proof.proto</a>
+<ul>
+<li><a href="#getaccountstaterequest">GetAccountStateRequest</a></li>
+<li><a href="#getaccountstateresponse">GetAccountStateResponse</a></li>
+<li><a href="#getaccounttransactionbysequencenumberrequest">GetAccountTransactionBySequenceNumberRequest</a></li>
+</ul>
+</li>
+<li><a href="#-----------------get-single-transaction-by-account-">---------------- Get single transaction by account </a></li>
+<li><a href="#">+</a></li>
+<li><a href="#-sequence-number"> sequence number</a>
+<ul>
+<li><a href="#getaccounttransactionbysequencenumberresponse">GetAccountTransactionBySequenceNumberResponse</a></li>
+<li><a href="#geteventsbyeventaccesspathrequest">GetEventsByEventAccessPathRequest</a></li>
+<li><a href="#geteventsbyeventaccesspathresponse">GetEventsByEventAccessPathResponse</a></li>
+<li><a href="#gettransactionsrequest">GetTransactionsRequest</a></li>
+<li><a href="#gettransactionsresponse">GetTransactionsResponse</a></li>
+<li><a href="#requestitem">RequestItem</a></li>
+<li><a href="#responseitem">ResponseItem</a></li>
+<li><a href="#updatetolatestledgerrequest">UpdateToLatestLedgerRequest</a></li>
+<li><a href="#updatetolatestledgerresponse">UpdateToLatestLedgerResponse</a></li>
+</ul>
+</li>
+<li><a href="#access_pathproto">access_path.proto</a>
+<ul>
+<li><a href="#accesspath">AccessPath</a></li>
+</ul>
+</li>
+<li><a href="#scalar-value-types">Scalar Value Types</a></li>
+</ul>
+</li>
+<li><a href="#protos-file-tree">Protos File Tree</a></li>
+<li><a href="#protobuf-sources">Protobuf sources</a>
+<ul>
+<li><a href="#srctransactionproto">src:./transaction.proto</a></li>
+<li><a href="#srctransaction_infoproto">src:./transaction_info.proto</a></li>
+<li><a href="#srcaccount_state_blobproto">src:./account_state_blob.proto</a></li>
+<li><a href="#srceventsproto">src:./events.proto</a></li>
+<li><a href="#srcvalidator_public_keysproto">src:./validator_public_keys.proto</a></li>
+<li><a href="#srcvm_errorsproto">src:./vm_errors.proto</a></li>
+<li><a href="#srcvalidator_changeproto">src:./validator_change.proto</a></li>
+<li><a href="#srclanguage_storageproto">src:./language_storage.proto</a></li>
+<li><a href="#srcvalidator_setproto">src:./validator_set.proto</a></li>
+<li><a href="#srcledger_infoproto">src:./ledger_info.proto</a></li>
+<li><a href="#srcproofproto">src:./proof.proto</a></li>
+<li><a href="#srcget_with_proofproto">src:./get_with_proof.proto</a></li>
+<li><a href="#srcaccess_pathproto">src:./access_path.proto</a></li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#隨想" id="隨想">隨想</a></h1>
+<h2><a class="header" href="#選-protobuf-型正言順" id="選-protobuf-型正言順">選 ProtoBuf 型正言順</a></h2>
+<p>引用 <a href="https://learnblockchain.cn/2019/08/08/libra-secrity/">区块链安全问题剖析与 Libra 安全点评</a></p>
+<blockquote>
+<p>单一性依赖问题：Libra 如果完全依赖 RUST 语言实现，那么会存在单一依赖问题，如果 RUST 语言出现安全问题，则会波及整个 Libra 系统，这一点可能需要时间来解决。</p>
+</blockquote>
+<p>關於單一依賴的解決速度可能會比其他專案快一點，因 Libra 選型用的是 Google Protocol Buffers (Protobuf) 格式，從 <a href="https://github.com/immutability-io/vault-libra">immutability-io/vault-libra: A Vault plugin for Libra</a> 專案出現的時間點可知整合這類已有 Protobuf 規格的專案相對時間會快上許多，除了格式一致讓 Golang 對接 Rust 應用程式較簡易之外，後續要 Java Python Nodejs 要對接或實作也會方便許多。</p>
+<p>說到對接方便這件事除了開發，其實也牽涉到運轉處理事件的效率，如 <a href="https://landing.google.com/sre/workbook/chapters/implementing-slos/">The Site Reliability Workbook Chapter 2 - Implementing SLOs</a> 建議初始的 SLOs Pipeline 管道區，管區裡會接多長與多少段其實開發階段並不一定清楚，平台運轉後遇到事件時可能會有動態的管路配置，如管裡流的是 Protobuf，對於處理事件的 SRE 來說一來上手容易二來工具也多，處理上更有效率。</p>
+<p><img src="../puml/tpl-sre-slos-v1.svg" alt="tpl-sre-slos-v1.svg" /></p>
+<p>就公鏈來說每個小型獨立節點一般無設置管路區的必要，有設置管路區需求的是較大型服務商，在收發訊息之間加上各種處理來提供服務。聯盟鏈來說對接的同盟可能都會配管，這時如遇到 <a href="https://github.com/hyperledger/fabric-protos">hyperledger/fabric-protos</a> 類似的專案，進管前處理與進管後的管道開發管理都會省下不少功夫，可提高整本帳的可靠度。</p>
+<h1><a class="header" href="#todo" id="todo">TODO</a></h1>
+<ul>
+<li><a href="https://www.chainnews.com/articles/876847007982.htm">【行业报告】《关于 Libra 的多方视角与观点汇总》 - 链闻 ChainNews</a></li>
+<li><a href="https://www.chainnews.com/articles/900065488880.htm">LibraBFT 算法简述 - 链闻 ChainNews</a></li>
+<li><a href="https://www.chainnews.com/articles/026526704886.htm">Libra 是又一个星战计划吗？深度分析数字货币对主权国家的冲击 - 链闻 ChainNews</a></li>
+</ul>
+<h1><a class="header" href="#protobuf" id="protobuf">Protobuf</a></h1>
+<h1><a class="header" href="#生成-google-protocol-buffers-文件" id="生成-google-protocol-buffers-文件">生成 Google Protocol Buffers 文件</a></h1>
+<p><a href="https://github.com/libra/libra/tree/master/types/src/proto">libra/types/src/proto at master · libra/libra</a></p>
+<pre><code class="language-shell">git clone https://github.com/libra/libra.git /tmp/src/libra
+bash tc.sh --gen-proto-doc /tmp/src/libra/types/src/proto /tmp/output.md
+</code></pre>
+<h1><a class="header" href="#protobuf-doc-2019-09-11t1725250800" id="protobuf-doc-2019-09-11t1725250800">Protobuf Doc 2019-09-11T17:25:25+08:00</a></h1>
+<p><a name="top"></a></p>
+<h2><a class="header" href="#table-of-contents" id="table-of-contents">Table of Contents</a></h2>
+<ul>
+<li>
+<p><a href="#transaction.proto">transaction.proto</a></p>
+<ul>
+<li>
+<p><a href="#types.AccountState">AccountState</a></p>
+</li>
+<li>
+<p><a href="#types.SignedTransaction">SignedTransaction</a></p>
+</li>
+<li>
+<p><a href="#types.SignedTransactionWithProof">SignedTransactionWithProof</a></p>
+</li>
+<li>
+<p><a href="#types.SignedTransactionsBlock">SignedTransactionsBlock</a></p>
+</li>
+<li>
+<p><a href="#types.TransactionArgument">TransactionArgument</a></p>
+</li>
+<li>
+<p><a href="#types.TransactionListWithProof">TransactionListWithProof</a></p>
+</li>
+<li>
+<p><a href="#types.TransactionToCommit">TransactionToCommit</a></p>
+</li>
+<li>
+<p><a href="#types.TransactionArgument.ArgType">TransactionArgument.ArgType</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#transaction_info.proto">transaction_info.proto</a></p>
+<ul>
+<li><a href="#types.TransactionInfo">TransactionInfo</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#account_state_blob.proto">account_state_blob.proto</a></p>
+<ul>
+<li><a href="#types.AccountStateBlob">AccountStateBlob</a></li>
+<li><a href="#types.AccountStateWithProof">AccountStateWithProof</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#events.proto">events.proto</a></p>
+<ul>
+<li><a href="#types.Event">Event</a></li>
+<li><a href="#types.EventWithProof">EventWithProof</a></li>
+<li><a href="#types.EventsForVersions">EventsForVersions</a></li>
+<li><a href="#types.EventsList">EventsList</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#validator_public_keys.proto">validator_public_keys.proto</a></p>
+<ul>
+<li><a href="#types.ValidatorPublicKeys">ValidatorPublicKeys</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#vm_errors.proto">vm_errors.proto</a></p>
+<ul>
+<li><a href="#types.VMStatus">VMStatus</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#validator_change.proto">validator_change.proto</a></p>
+<ul>
+<li><a href="#types.ValidatorChangeEventWithProof">ValidatorChangeEventWithProof</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#language_storage.proto">language_storage.proto</a></p>
+<ul>
+<li><a href="#types.ModuleId">ModuleId</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#validator_set.proto">validator_set.proto</a></p>
+<ul>
+<li><a href="#types.ValidatorSet">ValidatorSet</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#ledger_info.proto">ledger_info.proto</a></p>
+<ul>
+<li><a href="#types.LedgerInfo">LedgerInfo</a></li>
+<li><a href="#types.LedgerInfoWithSignatures">LedgerInfoWithSignatures</a></li>
+<li><a href="#types.ValidatorSignature">ValidatorSignature</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#proof.proto">proof.proto</a></p>
+<ul>
+<li><a href="#types.AccountStateProof">AccountStateProof</a></li>
+<li><a href="#types.AccumulatorConsistencyProof">AccumulatorConsistencyProof</a></li>
+<li><a href="#types.AccumulatorProof">AccumulatorProof</a></li>
+<li><a href="#types.EventProof">EventProof</a></li>
+<li><a href="#types.SignedTransactionProof">SignedTransactionProof</a></li>
+<li><a href="#types.SparseMerkleProof">SparseMerkleProof</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#get_with_proof.proto">get_with_proof.proto</a></p>
+<ul>
+<li><a href="#types.GetAccountStateRequest">GetAccountStateRequest</a></li>
+<li><a href="#types.GetAccountStateResponse">GetAccountStateResponse</a></li>
+<li><a href="#types.GetAccountTransactionBySequenceNumberRequest">GetAccountTransactionBySequenceNumberRequest</a></li>
+<li><a href="#types.GetAccountTransactionBySequenceNumberResponse">GetAccountTransactionBySequenceNumberResponse</a></li>
+<li><a href="#types.GetEventsByEventAccessPathRequest">GetEventsByEventAccessPathRequest</a></li>
+<li><a href="#types.GetEventsByEventAccessPathResponse">GetEventsByEventAccessPathResponse</a></li>
+<li><a href="#types.GetTransactionsRequest">GetTransactionsRequest</a></li>
+<li><a href="#types.GetTransactionsResponse">GetTransactionsResponse</a></li>
+<li><a href="#types.RequestItem">RequestItem</a></li>
+<li><a href="#types.ResponseItem">ResponseItem</a></li>
+<li><a href="#types.UpdateToLatestLedgerRequest">UpdateToLatestLedgerRequest</a></li>
+<li><a href="#types.UpdateToLatestLedgerResponse">UpdateToLatestLedgerResponse</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#access_path.proto">access_path.proto</a></p>
+<ul>
+<li><a href="#types.AccessPath">AccessPath</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#scalar-value-types">Scalar Value Types</a></p>
+</li>
+</ul>
+<p><a name="transaction.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#transactionproto" id="transactionproto">transaction.proto</a></h2>
+<p><a name="types.AccountState"></a></p>
+<h3><a class="header" href="#accountstate" id="accountstate">AccountState</a></h3>
+<p>Account state as a whole.
+After execution, updates to accounts are passed in this form to storage for
+persistence.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>address</td><td><a href="#bytes">bytes</a></td><td></td><td>Account address</td></tr>
+<tr><td>blob</td><td><a href="#bytes">bytes</a></td><td></td><td>Account state blob</td></tr>
+</tbody></table>
+<p><a name="types.SignedTransaction"></a></p>
+<h3><a class="header" href="#signedtransaction" id="signedtransaction">SignedTransaction</a></h3>
+<p>A generic structure that represents signed RawTransaction</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>signed_txn</td><td><a href="#bytes">bytes</a></td><td></td><td>LCS byte code representation of a SignedTransaction</td></tr>
+</tbody></table>
+<p><a name="types.SignedTransactionWithProof"></a></p>
+<h3><a class="header" href="#signedtransactionwithproof" id="signedtransactionwithproof">SignedTransactionWithProof</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>version</td><td><a href="#uint64">uint64</a></td><td></td><td>The version of the returned signed transaction.</td></tr>
+<tr><td>signed_transaction</td><td><a href="#types.SignedTransaction">SignedTransaction</a></td><td></td><td>The transaction itself.</td></tr>
+<tr><td>proof</td><td><a href="#types.SignedTransactionProof">SignedTransactionProof</a></td><td></td><td>The proof authenticating the signed transaction.</td></tr>
+<tr><td>events</td><td><a href="#types.EventsList">EventsList</a></td><td></td><td>The events yielded by executing the transaction, if requested.</td></tr>
+</tbody></table>
+<p><a name="types.SignedTransactionsBlock"></a></p>
+<h3><a class="header" href="#signedtransactionsblock" id="signedtransactionsblock">SignedTransactionsBlock</a></h3>
+<p>A generic structure that represents a block of transactions originated from a
+particular validator instance.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>transactions</td><td><a href="#types.SignedTransaction">SignedTransaction</a></td><td>repeated</td><td>Set of Signed Transactions</td></tr>
+<tr><td>validator_public_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Public key of the validator that created this block</td></tr>
+<tr><td>validator_signature</td><td><a href="#bytes">bytes</a></td><td></td><td>Signature of the validator that created this block</td></tr>
+</tbody></table>
+<p><a name="types.TransactionArgument"></a></p>
+<h3><a class="header" href="#transactionargument" id="transactionargument">TransactionArgument</a></h3>
+<p>An argument to the transaction if the transaction takes arguments</p>
+<p><a name="types.TransactionListWithProof"></a></p>
+<h3><a class="header" href="#transactionlistwithproof" id="transactionlistwithproof">TransactionListWithProof</a></h3>
+<p>A list of consecutive transactions with proof. This is mainly used for state
+synchronization when a validator would request a list of transactions from a
+peer, verify the proof, execute the transactions and persist them. Note that
+the transactions are supposed to belong to the same epoch E, otherwise
+verification will fail.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>transactions</td><td><a href="#types.SignedTransaction">SignedTransaction</a></td><td>repeated</td><td>The list of transactions.</td></tr>
+<tr><td>infos</td><td><a href="#types.TransactionInfo">TransactionInfo</a></td><td>repeated</td><td>The list of corresponding TransactionInfo objects.</td></tr>
+<tr><td>events_for_versions</td><td><a href="#types.EventsForVersions">EventsForVersions</a></td><td></td><td>The list of corresponding Event objects (only present if fetch_events was set to true in req)</td></tr>
+<tr><td>first_transaction_version</td><td><a href="#google.protobuf.UInt64Value">google.protobuf.UInt64Value</a></td><td></td><td>If the list is not empty, the version of the first transaction.</td></tr>
+<tr><td>proof_of_first_transaction</td><td><a href="#types.AccumulatorProof">AccumulatorProof</a></td><td></td><td>The proofs of the first and last transaction in this chunk. When this is used for state synchronization, the validator who requests the transactions will provide a version in the request and the proofs will be relative to the given version. When this is returned in GetTransactionsResponse, the proofs will be relative to the ledger info returned in UpdateToLatestLedgerResponse.</td></tr>
+<tr><td>proof_of_last_transaction</td><td><a href="#types.AccumulatorProof">AccumulatorProof</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.TransactionToCommit"></a></p>
+<h3><a class="header" href="#transactiontocommit" id="transactiontocommit">TransactionToCommit</a></h3>
+<p>Transaction struct to commit to storage</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>signed_txn</td><td><a href="#types.SignedTransaction">SignedTransaction</a></td><td></td><td>The signed transaction which was executed</td></tr>
+<tr><td>account_states</td><td><a href="#types.AccountState">AccountState</a></td><td>repeated</td><td>State db updates</td></tr>
+<tr><td>events</td><td><a href="#types.Event">Event</a></td><td>repeated</td><td>Events yielded by the transaction.</td></tr>
+<tr><td>gas_used</td><td><a href="#uint64">uint64</a></td><td></td><td>The amount of gas used.</td></tr>
+</tbody></table>
+<p><a name="types.TransactionArgument.ArgType"></a></p>
+<h3><a class="header" href="#transactionargumentargtype" id="transactionargumentargtype">TransactionArgument.ArgType</a></h3>
+<table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
+<tr><td>U64</td><td>0</td><td></td></tr>
+<tr><td>ADDRESS</td><td>1</td><td></td></tr>
+<tr><td>STRING</td><td>2</td><td></td></tr>
+<tr><td>BYTEARRAY</td><td>3</td><td></td></tr>
+</tbody></table>
+<p><a name="transaction_info.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#transaction_infoproto" id="transaction_infoproto">transaction_info.proto</a></h2>
+<p><a name="types.TransactionInfo"></a></p>
+<h3><a class="header" href="#transactioninfo" id="transactioninfo">TransactionInfo</a></h3>
+<p><code>TransactionInfo</code> is the object we store in the transaction accumulator. It
+consists of the transaction as well as the execution result of this
+transaction. This are later returned to the client so that a client can
+validate the tree</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>signed_transaction_hash</td><td><a href="#bytes">bytes</a></td><td></td><td>Hash of the signed transaction that is stored</td></tr>
+<tr><td>state_root_hash</td><td><a href="#bytes">bytes</a></td><td></td><td>The root hash of Sparse Merkle Tree describing the world state at the end of this transaction</td></tr>
+<tr><td>event_root_hash</td><td><a href="#bytes">bytes</a></td><td></td><td>The root hash of Merkle Accumulator storing all events emitted during this transaction.</td></tr>
+<tr><td>gas_used</td><td><a href="#uint64">uint64</a></td><td></td><td>The amount of gas used by this transaction.</td></tr>
+</tbody></table>
+<p><a name="account_state_blob.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#account_state_blobproto" id="account_state_blobproto">account_state_blob.proto</a></h2>
+<p><a name="types.AccountStateBlob"></a></p>
+<h3><a class="header" href="#accountstateblob" id="accountstateblob">AccountStateBlob</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>blob</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.AccountStateWithProof"></a></p>
+<h3><a class="header" href="#accountstatewithproof" id="accountstatewithproof">AccountStateWithProof</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>version</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>blob</td><td><a href="#types.AccountStateBlob">AccountStateBlob</a></td><td></td><td></td></tr>
+<tr><td>proof</td><td><a href="#types.AccountStateProof">AccountStateProof</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="events.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#eventsproto" id="eventsproto">events.proto</a></h2>
+<p><a name="types.Event"></a></p>
+<h3><a class="header" href="#event" id="event">Event</a></h3>
+<p>An event emitted from a smart contract</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>key</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>sequence_number</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>event_data</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.EventWithProof"></a></p>
+<h3><a class="header" href="#eventwithproof" id="eventwithproof">EventWithProof</a></h3>
+<p>An event along with the proof for the event</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>transaction_version</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>event_index</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>event</td><td><a href="#types.Event">Event</a></td><td></td><td></td></tr>
+<tr><td>proof</td><td><a href="#types.EventProof">EventProof</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.EventsForVersions"></a></p>
+<h3><a class="header" href="#eventsforversions" id="eventsforversions">EventsForVersions</a></h3>
+<p>A list of EventList's, each representing all events for a transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>events_for_version</td><td><a href="#types.EventsList">EventsList</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="types.EventsList"></a></p>
+<h3><a class="header" href="#eventslist" id="eventslist">EventsList</a></h3>
+<p>A list of events.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>events</td><td><a href="#types.Event">Event</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="validator_public_keys.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#validator_public_keysproto" id="validator_public_keysproto">validator_public_keys.proto</a></h2>
+<p><a name="types.ValidatorPublicKeys"></a></p>
+<h3><a class="header" href="#validatorpublickeys" id="validatorpublickeys">ValidatorPublicKeys</a></h3>
+<p>Protobuf definition for the Rust struct ValidatorPublicKeys</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>account_address</td><td><a href="#bytes">bytes</a></td><td></td><td>Validator account address</td></tr>
+<tr><td>consensus_public_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Consensus public key</td></tr>
+<tr><td>network_signing_public_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Network signing publick key</td></tr>
+<tr><td>network_identity_public_key</td><td><a href="#bytes">bytes</a></td><td></td><td>Network identity publick key</td></tr>
+</tbody></table>
+<p><a name="vm_errors.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#vm_errorsproto" id="vm_errorsproto">vm_errors.proto</a></h2>
+<p><a name="types.VMStatus"></a></p>
+<h3><a class="header" href="#vmstatus" id="vmstatus">VMStatus</a></h3>
+<p>The statuses and errors produced by the VM can be categorized into a
+couple different types:</p>
+<ol>
+<li>Validation Statuses: all the errors that can (/should) be
+the result of executing the prologue -- these are primarily used by
+the vm validator and AC.</li>
+<li>Verification Errors: errors that are the result of performing
+bytecode verification (happens at the time of publishing).</li>
+<li>VM Invariant Errors: errors that arise from an internal invariant of
+the VM being violated. These signify a problem with either the VM or
+bytecode verifier.</li>
+<li>Binary Errors: errors that can occur during the process of
+deserialization of a transaction.</li>
+<li>Runtime Statuses: errors that can arise from the execution of a
+transaction (assuming the prologue executes without error). These are
+errors that can occur during execution due to things such as division
+by zero, running out of gas, etc. These do not signify an issue with
+the VM.</li>
+</ol>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>major_status</td><td><a href="#uint64">uint64</a></td><td></td><td>e.g. assertion violation, out of gas</td></tr>
+<tr><td>has_sub_status</td><td><a href="#bool">bool</a></td><td></td><td>Any substatus code. e.g. assertion error number</td></tr>
+<tr><td>sub_status</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>has_message</td><td><a href="#bool">bool</a></td><td></td><td></td></tr>
+<tr><td>message</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="validator_change.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#validator_changeproto" id="validator_changeproto">validator_change.proto</a></h2>
+<p><a name="types.ValidatorChangeEventWithProof"></a></p>
+<h3><a class="header" href="#validatorchangeeventwithproof" id="validatorchangeeventwithproof">ValidatorChangeEventWithProof</a></h3>
+<p>This is used to prove validator changes.  When a validator is changing, it
+triggers an event on /validator_change_account/events/sent.  To tell the
+client about validator changes, we query
+/validator_change_account/events/sent to get all versions that contain
+validator changes after the version that we are trying to update from. For
+each of these versions, the old validator set would have signed the ledger
+info at that version.  The client needs this as well as the event results +
+proof.  The client can then verify that these events were under the current
+tree and that the changes were signed by the old validators (and that the
+events correctly show which validators are the new validators).</p>
+<p>This message represents a single validator change event and the proof that
+corresponds to it</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>ledger_info_with_sigs</td><td><a href="#types.LedgerInfoWithSignatures">LedgerInfoWithSignatures</a></td><td></td><td></td></tr>
+<tr><td>event_with_proof</td><td><a href="#types.EventWithProof">EventWithProof</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="language_storage.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#language_storageproto" id="language_storageproto">language_storage.proto</a></h2>
+<p><a name="types.ModuleId"></a></p>
+<h3><a class="header" href="#moduleid" id="moduleid">ModuleId</a></h3>
+<p>The unique identifier for a module on the chain.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>name</td><td><a href="#string">string</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="validator_set.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#validator_setproto" id="validator_setproto">validator_set.proto</a></h2>
+<p><a name="types.ValidatorSet"></a></p>
+<h3><a class="header" href="#validatorset" id="validatorset">ValidatorSet</a></h3>
+<p>Protobuf definition for the Rust struct ValidatorSet.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>validator_public_keys</td><td><a href="#types.ValidatorPublicKeys">ValidatorPublicKeys</a></td><td>repeated</td><td></td></tr>
+</tbody></table>
+<p><a name="ledger_info.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#ledger_infoproto" id="ledger_infoproto">ledger_info.proto</a></h2>
+<p><a name="types.LedgerInfo"></a></p>
+<h3><a class="header" href="#ledgerinfo" id="ledgerinfo">LedgerInfo</a></h3>
+<p>Even though we don't always need all hashes, we pass them in and return them
+/ always so that we keep them in sync on the client and don't make the client
+/ worry about which one(s) to pass in which cases
+/
+/ This structure serves a dual purpose.
+/
+/ First, if this structure is signed by 2f+1 validators it signifies the state
+/ of the ledger at version <code>version</code> -- it contains the transaction
+/ accumulator at that version which commits to all historical transactions.
+/ This structure may be expanded to include other information that is derived
+/ from that accumulator (e.g. the current time according to the time contract)
+/ to reduce the number of proofs a client must get.
+/
+/ Second, the structure contains a <code>consensus_data_hash</code> value. This is the
+/ hash of an internal data structure that represents a block that is voted on
+/ by consensus.
+/
+/ Combining these two concepts when the consensus algorithm votes on a block B
+/ it votes for a LedgerInfo with the <code>version</code> being the latest version that
+/ will be committed if B gets 2f+1 votes. It sets <code>consensus_data_hash</code> to
+/ represent B so that if those 2f+1 votes are gathered, the block is valid to
+/ commit</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>version</td><td><a href="#uint64">uint64</a></td><td></td><td>Current latest version of the system</td></tr>
+<tr><td>transaction_accumulator_hash</td><td><a href="#bytes">bytes</a></td><td></td><td>Root hash of transaction accumulator at this version</td></tr>
+<tr><td>consensus_data_hash</td><td><a href="#bytes">bytes</a></td><td></td><td>Hash of consensus-specific data that is opaque to all parts of the system other than consensus. This is needed to verify signatures because consensus signing includes this hash</td></tr>
+<tr><td>consensus_block_id</td><td><a href="#bytes">bytes</a></td><td></td><td>The block id of the last committed block corresponding to this ledger info. This field is not particularly interesting to the clients, but can be used by the validators for synchronization.</td></tr>
+<tr><td>epoch_num</td><td><a href="#uint64">uint64</a></td><td></td><td>Epoch number corresponds to the set of validators that are active for this ledger info. The main motivation for keeping the epoch number in the LedgerInfo is to ensure that the client has enough information to verify that the signatures for this info are coming from the validators that indeed form a quorum. Without epoch number a potential attack could reuse the signatures from the validators in one epoch in order to sign the wrong info belonging to another epoch, in which these validators do not form a quorum. The very first epoch number is 0.</td></tr>
+<tr><td>timestamp_usecs</td><td><a href="#uint64">uint64</a></td><td></td><td>Timestamp that represents the microseconds since the epoch (unix time) that is generated by the proposer of the block. This is strictly increasing with every block. If a client reads a timestamp &gt; the one they specified for transaction expiration time, they can be certain that their transaction will never be included in a block in the future (assuming that their transaction has not yet been included)</td></tr>
+<tr><td>next_validator_set</td><td><a href="#types.ValidatorSet">ValidatorSet</a></td><td></td><td>An optional field with the validator set for the next epoch in case it's the last ledger info in the current epoch.</td></tr>
+</tbody></table>
+<p><a name="types.LedgerInfoWithSignatures"></a></p>
+<h3><a class="header" href="#ledgerinfowithsignatures" id="ledgerinfowithsignatures">LedgerInfoWithSignatures</a></h3>
+<p>The validator node returns this structure which includes signatures
+/ from each validator to confirm the state.  The client needs to only pass
+/ back the LedgerInfo element since the validator node doesn't need to know
+/ the signatures again when the client performs a query, those are only there
+/ for the client to be able to verify the state</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>signatures</td><td><a href="#types.ValidatorSignature">ValidatorSignature</a></td><td>repeated</td><td>Signatures of the root node from each validator</td></tr>
+<tr><td>ledger_info</td><td><a href="#types.LedgerInfo">LedgerInfo</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.ValidatorSignature"></a></p>
+<h3><a class="header" href="#validatorsignature" id="validatorsignature">ValidatorSignature</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>validator_id</td><td><a href="#bytes">bytes</a></td><td></td><td>The account address of the validator, which can be used for retrieving its public key during the given epoch.</td></tr>
+<tr><td>signature</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="proof.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#proofproto" id="proofproto">proof.proto</a></h2>
+<p><a name="types.AccountStateProof"></a></p>
+<h3><a class="header" href="#accountstateproof" id="accountstateproof">AccountStateProof</a></h3>
+<p>The complete proof used to authenticate an account state.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>ledger_info_to_transaction_info_proof</td><td><a href="#types.AccumulatorProof">AccumulatorProof</a></td><td></td><td></td></tr>
+<tr><td>transaction_info</td><td><a href="#types.TransactionInfo">TransactionInfo</a></td><td></td><td></td></tr>
+<tr><td>transaction_info_to_account_proof</td><td><a href="#types.SparseMerkleProof">SparseMerkleProof</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.AccumulatorConsistencyProof"></a></p>
+<h3><a class="header" href="#accumulatorconsistencyproof" id="accumulatorconsistencyproof">AccumulatorConsistencyProof</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>frozen_subtree_roots</td><td><a href="#bytes">bytes</a></td><td>repeated</td><td>The root hashes of the frozen subtrees that form the small accumulator. Note that none of these hashes should be default hash.</td></tr>
+<tr><td>num_siblings</td><td><a href="#uint32">uint32</a></td><td></td><td>The total number of siblings.</td></tr>
+<tr><td>non_default_siblings</td><td><a href="#bytes">bytes</a></td><td>repeated</td><td>The non-default siblings. Note that the entire list of siblings always start of zero or more non-default siblings, followed by zero of more default siblings. So given the total number of siblings and the non-default siblings we should be able to construct the entire sibling list.</td></tr>
+</tbody></table>
+<p><a name="types.AccumulatorProof"></a></p>
+<h3><a class="header" href="#accumulatorproof" id="accumulatorproof">AccumulatorProof</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>bitmap</td><td><a href="#uint64">uint64</a></td><td></td><td>The bitmap indicating which siblings are default. 1 means non-default and 0 means default. The LSB corresponds to the sibling at the bottom of the accumulator. The leftmost 1-bit corresponds to the sibling at the level just below root level in the accumulator, since this one is always non-default.</td></tr>
+<tr><td>non_default_siblings</td><td><a href="#bytes">bytes</a></td><td>repeated</td><td>The non-default siblings. The ones near the root are at the beginning of the list.</td></tr>
+</tbody></table>
+<p><a name="types.EventProof"></a></p>
+<h3><a class="header" href="#eventproof" id="eventproof">EventProof</a></h3>
+<p>The complete proof used to authenticate an event.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>ledger_info_to_transaction_info_proof</td><td><a href="#types.AccumulatorProof">AccumulatorProof</a></td><td></td><td></td></tr>
+<tr><td>transaction_info</td><td><a href="#types.TransactionInfo">TransactionInfo</a></td><td></td><td></td></tr>
+<tr><td>transaction_info_to_event_proof</td><td><a href="#types.AccumulatorProof">AccumulatorProof</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.SignedTransactionProof"></a></p>
+<h3><a class="header" href="#signedtransactionproof" id="signedtransactionproof">SignedTransactionProof</a></h3>
+<p>The complete proof used to authenticate a signed transaction.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>ledger_info_to_transaction_info_proof</td><td><a href="#types.AccumulatorProof">AccumulatorProof</a></td><td></td><td></td></tr>
+<tr><td>transaction_info</td><td><a href="#types.TransactionInfo">TransactionInfo</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.SparseMerkleProof"></a></p>
+<h3><a class="header" href="#sparsemerkleproof" id="sparsemerkleproof">SparseMerkleProof</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>leaf</td><td><a href="#bytes">bytes</a></td><td></td><td>This proof can be used to authenticate whether a given leaf exists in the tree or not. In Rust: - If this is <code>Some(HashValue, HashValue)</code> - If the first <code>HashValue</code> equals requested key, this is an inclusion proof and the second <code>HashValue</code> equals the hash of the corresponding account blob. - Otherwise this is a non-inclusion proof. The first <code>HashValue</code> is the only key that exists in the subtree and the second <code>HashValue</code> equals the hash of the corresponding account blob. - If this is <code>None</code>, this is also a non-inclusion proof which indicates the subtree is empty.</td></tr>
+</tbody></table>
+<p>In protobuf, this leaf field should either be - empty, which corresponds to None in the Rust structure. - exactly 64 bytes, which corresponds to Some&lt;(HashValue, HashValue)&gt; in the Rust structure. |
+| bitmap | <a href="#bytes">bytes</a> |  | The bitmap indicating which siblings are default. 1 means non-default and 0 means default. The MSB of the first byte corresponds to the sibling at the top of the Sparse Merkle Tree. The rightmost 1-bit of the last byte corresponds to the sibling at the bottom, since this one is always non-default. |
+| non_default_siblings | <a href="#bytes">bytes</a> | repeated | The non-default siblings. The ones near the root are at the beginning of the list. |</p>
+<p><a name="get_with_proof.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#get_with_proofproto" id="get_with_proofproto">get_with_proof.proto</a></h2>
+<p>How to verify the response as a client:
+(Note that every response comes in the form of GetWithProofResponse which
+wraps the inner response elements that correspond to the specific request
+types.  Below we will assume a single request/response type.  The
+verification can be extended as needed for multiple types. Also note that we
+will use the following notation: resp = GetWithProofResponse and req =
+GetWithProofRequest). Also note that the following will be considered
+equivalent for brevity: req.requested_items.get_account_state_request ==
+req.get_account_state_request And, resp.values.get_account_state_response ==
+resp.get_account_state_response</p>
+<p>GetAccountStateResponse:</p>
+<ul>
+<li>let state_req = req.requested_items.get_account_state_request;</li>
+<li>let state_resp = resp.values.get_account_state_response;</li>
+<li>Verify that:
+<ul>
+<li>state_req.access_path == state_resp.access_path
+<ul>
+<li>This ensures that the server is responding with the correct access
+path</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>let state_data_hash = Hash(state_resp.value);</li>
+<li>let state_proof = resp.values.proof.state_proof_value.sparse_merkle_proof;</li>
+<li>Validate state_proof using state_data_hash as the leaf
+<ul>
+<li>When verifying the state tree, use:
+state_root_hash = resp.values.transaction_info.state_root_hash</li>
+</ul>
+</li>
+<li>Validate accumulator using resp.values.transaction_info as the leaf
+<ul>
+<li>When verifying the accumulator, use:
+root_hash =
+resp.ledger_info_with_sigs.ledger_info.ledger_info.txn_root_hash;</li>
+</ul>
+</li>
+<li>Validate that the transaction root hash submitted in
+req.known_value.node_value.txn_root_hash
+exists in the proof for accumulator and that the proof is valid with
+this hash</li>
+<li>Validate ledger info
+<ul>
+<li>let ledger_info_hash =
+Hash(resp.ledger_info_with_sigs.ledger_info.ledger_info);</li>
+<li>Verify signatures from resp.ledger_info_with_sigs.signatures are
+signing
+ledger_info_hash and that there are &gt;2/3 nodes signing this
+correctly</li>
+<li>Validate that the timestamp is relatively recent in
+resp.ledger_info_with_sigs.ledger_info.timestamp</li>
+</ul>
+</li>
+</ul>
+<p>GetAccountTransactionBySequenceNumberResponse:</p>
+<ul>
+<li>Note that other than type completed_transaction, there will be no proof
+returned
+since the transaction has not yet been committed.  To ensure that a
+validator is telling the truth about it not being committed yet, a
+client should query for their account state and verify that their
+current sequence number is less than what they are searching for with
+GetAccountTransactionBySequenceNumberResponse</li>
+<li>let txn =
+resp.get_account_transaction_by_sequence_number_response.transaction.committed_transaction;</li>
+<li>let txn_hash = Hash(txn);</li>
+<li>Verify that resp.proof.transaction_info.signed_transaction_hash == txn_hash</li>
+<li>Validate accumulator using resp.proof.transaction_info as the leaf
+<ul>
+<li>When verifying the accumulator, use:
+root_hash =
+resp.ledger_info_with_sigs.ledger_info.ledger_info.txn_root_hash;</li>
+</ul>
+</li>
+<li>Validate that the transaction root hash submitted in
+req.known_value.node_value.txn_root_hash
+exists in the proof for accumulator and that the proof is valid with
+this hash</li>
+<li>Validate ledger info
+<ul>
+<li>let ledger_info_hash =
+Hash(resp.ledger_info_with_sigs.ledger_info.ledger_info);</li>
+<li>Verify signatures from resp.ledger_info_with_sigs.signatures are
+signing
+ledger_info_hash and that there are &gt;2/3 nodes signing this
+correctly</li>
+<li>Validate that the timestamp is relatively recent in
+resp.ledger_info_with_sigs.ledger_info.timestamp</li>
+</ul>
+</li>
+</ul>
+<p>GetTransactionsResponse:</p>
+<ul>
+<li>for txn in resp.get_transactions_response.transactions:
+<ul>
+<li>let txn = txn.committed_transaction;</li>
+<li>let txn_hash = Hash(txn);</li>
+<li>Verify that txn.proof.transaction_info.signed_transaction_hash ==
+txn_hash</li>
+<li>Validate accumulator using txn.proof.transaction_info as the leaf</li>
+<li>When verifying the accumulator, use:
+root_hash =
+resp.ledger_info_with_sigs.ledger_info.ledger_info.txn_root_hash;</li>
+<li>Verify that transactions are sequential and none are missing</li>
+</ul>
+</li>
+<li>Validate ledger info
+<ul>
+<li>let ledger_info_hash =
+Hash(resp.ledger_info_with_sigs.ledger_info.ledger_info);</li>
+<li>Verify signatures from resp.ledger_info_with_sigs.signatures are
+signing
+ledger_info_hash and that there are &gt;2/3 nodes signing this
+correctly</li>
+<li>Validate that the timestamp is relatively recent in
+resp.ledger_info_with_sigs.ledger_info.timestamp</li>
+</ul>
+</li>
+<li>If the number of transactions returned is less than limit for an ascending
+query
+or if the requested offset &gt; current version for a descending query,
+the client should verify that the timestamp in ledger info is relatively
+recent to determine if it is likely that all transactions available were
+returned</li>
+</ul>
+<p><a name="types.GetAccountStateRequest"></a></p>
+<h3><a class="header" href="#getaccountstaterequest" id="getaccountstaterequest">GetAccountStateRequest</a></h3>
+<p>Gets latest state for an account.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>address</td><td><a href="#bytes">bytes</a></td><td></td><td>Account for which we are fetching the state.</td></tr>
+</tbody></table>
+<p><a name="types.GetAccountStateResponse"></a></p>
+<h3><a class="header" href="#getaccountstateresponse" id="getaccountstateresponse">GetAccountStateResponse</a></h3>
+<p>State information returned by a get account state query.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>account_state_with_proof</td><td><a href="#types.AccountStateWithProof">AccountStateWithProof</a></td><td></td><td>Blob value representing the account state together with proof the client can utilize to verify it.</td></tr>
+</tbody></table>
+<p><a name="types.GetAccountTransactionBySequenceNumberRequest"></a></p>
+<h3><a class="header" href="#getaccounttransactionbysequencenumberrequest" id="getaccounttransactionbysequencenumberrequest">GetAccountTransactionBySequenceNumberRequest</a></h3>
+<hr />
+<h2><a class="header" href="#-----------------get-single-transaction-by-account--sequence-number" id="-----------------get-single-transaction-by-account--sequence-number">---------------- Get single transaction by account + sequence number</a></h2>
+<p>Get transactions that altered an account - this includes both sent and
+received. A user of this should check that the data returned matches what
+they expect.  As an example, a potential attack vector would be something
+like the following: Alice is buying an apple from Bob. Alice's phone signs a
+transaction X with sequence number N that pays coins to Bob. Alice transmits
+this signature to Bob's payment terminal which then submits the transaction
+and checks its status to see if Alice can be given the apple. However, as Bob
+is doing this Alice constructs a second transaction X' also with sequence
+number N. Alice gets that transaction inserted in the blockchain. If Bob
+isn't thoughtful about how he uses this API he may assume that if he asks for
+the N'th transaction on Alice's account that when the API returns that this
+means the transaction has gone through. The point here is that one should be
+careful in reading too much into &quot;transaction X is on the chain&quot; and focus on
+the logs, which tell you what the transaction did.</p>
+<p>If a client submitted a transaction, they should also verify that the hash of
+the returned transaction matches what they submitted.  As an example, if a
+client has two wallets that share the same account, they may both submit a
+transaction at the same sequence number and only one will be committed.  A
+client should never assume that if they receive the response that this
+transaction was included that it means that this is definitely the
+transaction that was submitted.  They should check that the hash matches what
+they sent</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>account</td><td><a href="#bytes">bytes</a></td><td></td><td>Account for which to query transactions</td></tr>
+<tr><td>sequence_number</td><td><a href="#uint64">uint64</a></td><td></td><td></td></tr>
+<tr><td>fetch_events</td><td><a href="#bool">bool</a></td><td></td><td>Set to true to fetch events for the transaction at this version</td></tr>
+</tbody></table>
+<p><a name="types.GetAccountTransactionBySequenceNumberResponse"></a></p>
+<h3><a class="header" href="#getaccounttransactionbysequencenumberresponse" id="getaccounttransactionbysequencenumberresponse">GetAccountTransactionBySequenceNumberResponse</a></h3>
+<p>Transaction information for transactions requested by
+GetAccountTransactionsRequest</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>signed_transaction_with_proof</td><td><a href="#types.SignedTransactionWithProof">SignedTransactionWithProof</a></td><td></td><td>When the transaction requested is committed, return the committed transaction with proof.</td></tr>
+<tr><td>proof_of_current_sequence_number</td><td><a href="#types.AccountStateWithProof">AccountStateWithProof</a></td><td></td><td>When the transaction requested is not committed, we give a proof that shows the current sequence number is smaller than what would have been if the transaction was committed.</td></tr>
+</tbody></table>
+<p><a name="types.GetEventsByEventAccessPathRequest"></a></p>
+<h3><a class="header" href="#geteventsbyeventaccesspathrequest" id="geteventsbyeventaccesspathrequest">GetEventsByEventAccessPathRequest</a></h3>
+<p>Get events that exist on an event access path.  In the current world,
+a user may specify events that were received, events that were sent, or any
+event that modifies their account</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>access_path</td><td><a href="#types.AccessPath">AccessPath</a></td><td></td><td></td></tr>
+<tr><td>start_event_seq_num</td><td><a href="#uint64">uint64</a></td><td></td><td>The sequence number of the event to start with for this query. Use a sequence number of MAX_INT to represent the latest.</td></tr>
+<tr><td>ascending</td><td><a href="#bool">bool</a></td><td></td><td>If ascending is true this query will return up to <code>limit</code> events that were emitted after <code>start_event_seq_num</code>. Otherwise it will return up to <code>limit</code> events before the offset. Both cases are inclusive.</td></tr>
+<tr><td>limit</td><td><a href="#uint64">uint64</a></td><td></td><td>Limit number of results</td></tr>
+</tbody></table>
+<p><a name="types.GetEventsByEventAccessPathResponse"></a></p>
+<h3><a class="header" href="#geteventsbyeventaccesspathresponse" id="geteventsbyeventaccesspathresponse">GetEventsByEventAccessPathResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>events_with_proof</td><td><a href="#types.EventWithProof">EventWithProof</a></td><td>repeated</td><td>Returns an event and proof of each of the events in the request. The first element of proofs will be the closest to <code>start_event_seq_num</code>.</td></tr>
+<tr><td>proof_of_latest_event</td><td><a href="#types.AccountStateWithProof">AccountStateWithProof</a></td><td></td><td>If the number of events returned is less than <code>limit</code> for an ascending query or if start_event_seq_num &gt; the latest seq_num for a descending query, returns the state of the account containing the given access path in the latest state. This allows the client to verify that there are in fact no extra events.</td></tr>
+</tbody></table>
+<p>The LedgerInfoWithSignatures which is on the main UpdateToLatestLedgerResponse can be used to validate this. |</p>
+<p><a name="types.GetTransactionsRequest"></a></p>
+<h3><a class="header" href="#gettransactionsrequest" id="gettransactionsrequest">GetTransactionsRequest</a></h3>
+<p>Get up to limit transactions starting from start_version.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>start_version</td><td><a href="#uint64">uint64</a></td><td></td><td>The version of the transaction to start with for this query. Use a version of MAX_INT to represent the latest.</td></tr>
+<tr><td>limit</td><td><a href="#uint64">uint64</a></td><td></td><td>Limit number of results</td></tr>
+<tr><td>fetch_events</td><td><a href="#bool">bool</a></td><td></td><td>Set to true to fetch events for the transaction at each version</td></tr>
+</tbody></table>
+<p><a name="types.GetTransactionsResponse"></a></p>
+<h3><a class="header" href="#gettransactionsresponse" id="gettransactionsresponse">GetTransactionsResponse</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>txn_list_with_proof</td><td><a href="#types.TransactionListWithProof">TransactionListWithProof</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.RequestItem"></a></p>
+<h3><a class="header" href="#requestitem" id="requestitem">RequestItem</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>get_account_state_request</td><td><a href="#types.GetAccountStateRequest">GetAccountStateRequest</a></td><td></td><td></td></tr>
+<tr><td>get_account_transaction_by_sequence_number_request</td><td><a href="#types.GetAccountTransactionBySequenceNumberRequest">GetAccountTransactionBySequenceNumberRequest</a></td><td></td><td></td></tr>
+<tr><td>get_events_by_event_access_path_request</td><td><a href="#types.GetEventsByEventAccessPathRequest">GetEventsByEventAccessPathRequest</a></td><td></td><td></td></tr>
+<tr><td>get_transactions_request</td><td><a href="#types.GetTransactionsRequest">GetTransactionsRequest</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.ResponseItem"></a></p>
+<h3><a class="header" href="#responseitem" id="responseitem">ResponseItem</a></h3>
+<p>Individual response items to the queries posed by the requests</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>get_account_state_response</td><td><a href="#types.GetAccountStateResponse">GetAccountStateResponse</a></td><td></td><td></td></tr>
+<tr><td>get_account_transaction_by_sequence_number_response</td><td><a href="#types.GetAccountTransactionBySequenceNumberResponse">GetAccountTransactionBySequenceNumberResponse</a></td><td></td><td></td></tr>
+<tr><td>get_events_by_event_access_path_response</td><td><a href="#types.GetEventsByEventAccessPathResponse">GetEventsByEventAccessPathResponse</a></td><td></td><td></td></tr>
+<tr><td>get_transactions_response</td><td><a href="#types.GetTransactionsResponse">GetTransactionsResponse</a></td><td></td><td></td></tr>
+</tbody></table>
+<p><a name="types.UpdateToLatestLedgerRequest"></a></p>
+<h3><a class="header" href="#updatetolatestledgerrequest" id="updatetolatestledgerrequest">UpdateToLatestLedgerRequest</a></h3>
+<p>This API is used to update the client to the latest ledger version and
+optionally also request 1..n other pieces of data.  This allows for batch
+queries.  All queries return proofs that a client should check to validate
+the data.</p>
+<p>Note that if a client only wishes to update to the latest LedgerInfo and
+receive the proof that this latest ledger extends the client_known_version
+ledger the client had, they can simply set the requested_items to an empty
+list.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>client_known_version</td><td><a href="#uint64">uint64</a></td><td></td><td>This is the version the client already trusts. Usually the client should set this to the version it obtained the last time it synced with the chain. If this is the first time ever the client sends a request, it must use the waypoint hard-coded in its software.</td></tr>
+<tr><td>requested_items</td><td><a href="#types.RequestItem">RequestItem</a></td><td>repeated</td><td>The items for which we are requesting data in this API call.</td></tr>
+</tbody></table>
+<p><a name="types.UpdateToLatestLedgerResponse"></a></p>
+<h3><a class="header" href="#updatetolatestledgerresponse" id="updatetolatestledgerresponse">UpdateToLatestLedgerResponse</a></h3>
+<p>Response from getting latest ledger</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>response_items</td><td><a href="#types.ResponseItem">ResponseItem</a></td><td>repeated</td><td>Responses to the queries posed by the requests. The proofs generated will be relative to the version of the latest ledger provided below.</td></tr>
+<tr><td>ledger_info_with_sigs</td><td><a href="#types.LedgerInfoWithSignatures">LedgerInfoWithSignatures</a></td><td></td><td>The latest ledger info this node has. It will come with at least 2f+1 validator signatures as well as a proof that shows the latest ledger extends the old ledger the client had.</td></tr>
+<tr><td>validator_change_events</td><td><a href="#types.ValidatorChangeEventWithProof">ValidatorChangeEventWithProof</a></td><td>repeated</td><td>Validator change events from what the client last knew. This is used to inform the client of validator changes from the client's last known version until the current version</td></tr>
+</tbody></table>
+<p><a name="access_path.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+<h2><a class="header" href="#access_pathproto" id="access_pathproto">access_path.proto</a></h2>
+<p><a name="types.AccessPath"></a></p>
+<h3><a class="header" href="#accesspath" id="accesspath">AccessPath</a></h3>
+<table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
+<tr><td>address</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+<tr><td>path</td><td><a href="#bytes">bytes</a></td><td></td><td></td></tr>
+</tbody></table>
+<h2><a class="header" href="#scalar-value-types" id="scalar-value-types">Scalar Value Types</a></h2>
+<table><thead><tr><th>.proto Type</th><th>Notes</th><th>C++ Type</th><th>Java Type</th><th>Python Type</th></tr></thead><tbody>
+<tr><td><a name="double" /> double</td><td></td><td>double</td><td>double</td><td>float</td></tr>
+<tr><td><a name="float" /> float</td><td></td><td>float</td><td>float</td><td>float</td></tr>
+<tr><td><a name="int32" /> int32</td><td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="int64" /> int64</td><td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="uint32" /> uint32</td><td>Uses variable-length encoding.</td><td>uint32</td><td>int</td><td>int/long</td></tr>
+<tr><td><a name="uint64" /> uint64</td><td>Uses variable-length encoding.</td><td>uint64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="sint32" /> sint32</td><td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="sint64" /> sint64</td><td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="fixed32" /> fixed32</td><td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td><td>uint32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="fixed64" /> fixed64</td><td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td><td>uint64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="sfixed32" /> sfixed32</td><td>Always four bytes.</td><td>int32</td><td>int</td><td>int</td></tr>
+<tr><td><a name="sfixed64" /> sfixed64</td><td>Always eight bytes.</td><td>int64</td><td>long</td><td>int/long</td></tr>
+<tr><td><a name="bool" /> bool</td><td></td><td>bool</td><td>boolean</td><td>boolean</td></tr>
+<tr><td><a name="string" /> string</td><td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td><td>string</td><td>String</td><td>str/unicode</td></tr>
+<tr><td><a name="bytes" /> bytes</td><td>May contain any arbitrary sequence of bytes.</td><td>string</td><td>ByteString</td><td>str</td></tr>
+</tbody></table>
+<h1><a class="header" href="#protos-file-tree" id="protos-file-tree">Protos File Tree</a></h1>
+<pre><code>
+.
+├── access_path.proto
+├── account_state_blob.proto
+├── events.proto
+├── get_with_proof.proto
+├── language_storage.proto
+├── ledger_info.proto
+├── proof.proto
+├── transaction_info.proto
+├── transaction.proto
+├── validator_change.proto
+├── validator_public_keys.proto
+├── validator_set.proto
+└── vm_errors.proto
+
+0 directories, 13 files
+
+</code></pre>
+<h1><a class="header" href="#protobuf-sources" id="protobuf-sources">Protobuf sources</a></h1>
+<h2><a class="header" href="#srctransactionproto" id="srctransactionproto">src:./transaction.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright (c) The Libra Core Contributors
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = &quot;proto3&quot;;
+
+package types;
+
+import &quot;access_path.proto&quot;;
+import &quot;events.proto&quot;;
+import &quot;proof.proto&quot;;
+import &quot;transaction_info.proto&quot;;
+import &quot;google/protobuf/wrappers.proto&quot;;
+
+// An argument to the transaction if the transaction takes arguments
+message TransactionArgument {
+    enum ArgType {
+        U64 = 0;
+        ADDRESS = 1;
+        STRING = 2;
+        BYTEARRAY = 3;
+    }
+}
+
+// A generic structure that represents signed RawTransaction
+message SignedTransaction {
+    // LCS byte code representation of a SignedTransaction
+    bytes signed_txn = 5;
+}
+
+message SignedTransactionWithProof {
+    // The version of the returned signed transaction.
+    uint64 version = 1;
+
+    // The transaction itself.
+    SignedTransaction signed_transaction = 2;
+
+    // The proof authenticating the signed transaction.
+    SignedTransactionProof proof = 3;
+
+    // The events yielded by executing the transaction, if requested.
+    EventsList events = 4;
+}
+
+// A generic structure that represents a block of transactions originated from a
+// particular validator instance.
+message SignedTransactionsBlock {
+    // Set of Signed Transactions
+    repeated SignedTransaction transactions = 1;
+    // Public key of the validator that created this block
+    bytes validator_public_key = 2;
+    // Signature of the validator that created this block
+    bytes validator_signature = 3;
+}
+
+// Account state as a whole.
+// After execution, updates to accounts are passed in this form to storage for
+// persistence.
+message AccountState {
+    // Account address
+    bytes address = 1;
+    // Account state blob
+    bytes blob = 2;
+}
+
+// Transaction struct to commit to storage
+message TransactionToCommit {
+    // The signed transaction which was executed
+    SignedTransaction signed_txn = 1;
+    // State db updates
+    repeated AccountState account_states = 2;
+    // Events yielded by the transaction.
+    repeated Event events = 3;
+    // The amount of gas used.
+    uint64 gas_used = 4;
+}
+
+// A list of consecutive transactions with proof. This is mainly used for state
+// synchronization when a validator would request a list of transactions from a
+// peer, verify the proof, execute the transactions and persist them. Note that
+// the transactions are supposed to belong to the same epoch E, otherwise
+// verification will fail.
+message TransactionListWithProof {
+    // The list of transactions.
+    repeated SignedTransaction transactions = 1;
+
+    // The list of corresponding TransactionInfo objects.
+    repeated TransactionInfo infos = 2;
+
+    // The list of corresponding Event objects (only present if fetch_events was set to true in req)
+    EventsForVersions events_for_versions = 3;
+
+    // If the list is not empty, the version of the first transaction.
+    google.protobuf.UInt64Value first_transaction_version = 4;
+
+    // The proofs of the first and last transaction in this chunk. When this is
+    // used for state synchronization, the validator who requests the transactions
+    // will provide a version in the request and the proofs will be relative to
+    // the given version. When this is returned in GetTransactionsResponse, the
+    // proofs will be relative to the ledger info returned in
+    // UpdateToLatestLedgerResponse.
+    AccumulatorProof proof_of_first_transaction = 5;
+    AccumulatorProof proof_of_last_transaction = 6;
+}
+
+</code></pre>
+<h2><a class="header" href="#srctransaction_infoproto" id="srctransaction_infoproto">src:./transaction_info.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright (c) The Libra Core Contributors
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = &quot;proto3&quot;;
+
+package types;
+
+// `TransactionInfo` is the object we store in the transaction accumulator. It
+// consists of the transaction as well as the execution result of this
+// transaction. This are later returned to the client so that a client can
+// validate the tree
+message TransactionInfo {
+  // Hash of the signed transaction that is stored
+  bytes signed_transaction_hash = 1;
+
+  // The root hash of Sparse Merkle Tree describing the world state at the end
+  // of this transaction
+  bytes state_root_hash = 2;
+
+  // The root hash of Merkle Accumulator storing all events emitted during this
+  // transaction.
+  bytes event_root_hash = 3;
+
+  // The amount of gas used by this transaction.
+  uint64 gas_used = 4;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcaccount_state_blobproto" id="srcaccount_state_blobproto">src:./account_state_blob.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright (c) The Libra Core Contributors
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = &quot;proto3&quot;;
+
+package types;
+
+import &quot;proof.proto&quot;;
+
+message AccountStateBlob { bytes blob = 1; }
+
+message AccountStateWithProof {
+  uint64 version = 1;
+  AccountStateBlob blob = 2;
+  AccountStateProof proof = 3;
+}
+
+</code></pre>
+<h2><a class="header" href="#srceventsproto" id="srceventsproto">src:./events.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright (c) The Libra Core Contributors
+// SPDX-License-Identifier: Apache-2.0
+
+// This file contains proto definitions related to events.  Events are emitted
+// by smart contract execution.  These could include events such as received
+// transactions, sent transactions, etc.
+
+syntax = &quot;proto3&quot;;
+
+package types;
+
+import &quot;access_path.proto&quot;;
+import &quot;proof.proto&quot;;
+
+// An event emitted from a smart contract
+message Event {
+    bytes key = 1;
+    uint64 sequence_number = 2;
+    bytes event_data = 3;
+}
+
+// An event along with the proof for the event
+message EventWithProof {
+  uint64 transaction_version = 1;
+  uint64 event_index = 2;
+  Event event = 3;
+  EventProof proof = 4;
+}
+
+// A list of events.
+message EventsList {
+  repeated Event events = 1;
+}
+
+// A list of EventList's, each representing all events for a transaction.
+message EventsForVersions {
+    repeated EventsList events_for_version = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcvalidator_public_keysproto" id="srcvalidator_public_keysproto">src:./validator_public_keys.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright (c) The Libra Core Contributors
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = &quot;proto3&quot;;
+
+package types;
+
+// Protobuf definition for the Rust struct ValidatorPublicKeys
+message ValidatorPublicKeys {
+  // Validator account address
+  bytes account_address = 1;
+  // Consensus public key
+  bytes consensus_public_key = 2;
+  // Network signing publick key
+  bytes network_signing_public_key = 3;
+  /// Network identity publick key
+  bytes network_identity_public_key = 4;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcvm_errorsproto" id="srcvm_errorsproto">src:./vm_errors.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright (c) The Libra Core Contributors
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = &quot;proto3&quot;;
+
+package types;
+
+import &quot;language_storage.proto&quot;;
+
+// The statuses and errors produced by the VM can be categorized into a
+// couple different types:
+// 1. Validation Statuses: all the errors that can (/should) be
+//    the result of executing the prologue -- these are primarily used by
+//    the vm validator and AC.
+// 2. Verification Errors: errors that are the result of performing
+//    bytecode verification (happens at the time of publishing).
+// 3. VM Invariant Errors: errors that arise from an internal invariant of
+//    the VM being violated. These signify a problem with either the VM or
+//    bytecode verifier.
+// 4. Binary Errors: errors that can occur during the process of
+//    deserialization of a transaction.
+// 5. Runtime Statuses: errors that can arise from the execution of a
+//    transaction (assuming the prologue executes without error). These are
+//    errors that can occur during execution due to things such as division
+//    by zero, running out of gas, etc. These do not signify an issue with
+//    the VM.
+message VMStatus {
+    // e.g. assertion violation, out of gas
+    uint64 major_status = 1;
+    // Any substatus code. e.g. assertion error number
+    bool has_sub_status = 2;
+    uint64 sub_status = 3;
+    bool has_message = 4;
+    string message = 5;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcvalidator_changeproto" id="srcvalidator_changeproto">src:./validator_change.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright (c) The Libra Core Contributors
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = &quot;proto3&quot;;
+
+package types;
+
+import &quot;events.proto&quot;;
+import &quot;ledger_info.proto&quot;;
+
+// This is used to prove validator changes.  When a validator is changing, it
+// triggers an event on /validator_change_account/events/sent.  To tell the
+// client about validator changes, we query
+// /validator_change_account/events/sent to get all versions that contain
+// validator changes after the version that we are trying to update from. For
+// each of these versions, the old validator set would have signed the ledger
+// info at that version.  The client needs this as well as the event results +
+// proof.  The client can then verify that these events were under the current
+// tree and that the changes were signed by the old validators (and that the
+// events correctly show which validators are the new validators).
+//
+// This message represents a single validator change event and the proof that
+// corresponds to it
+message ValidatorChangeEventWithProof {
+  LedgerInfoWithSignatures ledger_info_with_sigs = 1;
+  EventWithProof event_with_proof = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srclanguage_storageproto" id="srclanguage_storageproto">src:./language_storage.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright (c) The Libra Core Contributors
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = &quot;proto3&quot;;
+
+package types;
+
+/// The unique identifier for a module on the chain.
+message ModuleId {
+    bytes address = 1;
+    string name = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcvalidator_setproto" id="srcvalidator_setproto">src:./validator_set.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright (c) The Libra Core Contributors
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = &quot;proto3&quot;;
+
+package types;
+
+import &quot;validator_public_keys.proto&quot;;
+
+// Protobuf definition for the Rust struct ValidatorSet.
+message ValidatorSet {
+  repeated ValidatorPublicKeys validator_public_keys = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcledger_infoproto" id="srcledger_infoproto">src:./ledger_info.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright (c) The Libra Core Contributors
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = &quot;proto3&quot;;
+
+package types;
+
+import &quot;validator_set.proto&quot;;
+
+/// Even though we don't always need all hashes, we pass them in and return them
+/// always so that we keep them in sync on the client and don't make the client
+/// worry about which one(s) to pass in which cases
+///
+/// This structure serves a dual purpose.
+///
+/// First, if this structure is signed by 2f+1 validators it signifies the state
+/// of the ledger at version `version` -- it contains the transaction
+/// accumulator at that version which commits to all historical transactions.
+/// This structure may be expanded to include other information that is derived
+/// from that accumulator (e.g. the current time according to the time contract)
+/// to reduce the number of proofs a client must get.
+///
+/// Second, the structure contains a `consensus_data_hash` value. This is the
+/// hash of an internal data structure that represents a block that is voted on
+/// by consensus.
+///
+/// Combining these two concepts when the consensus algorithm votes on a block B
+/// it votes for a LedgerInfo with the `version` being the latest version that
+/// will be committed if B gets 2f+1 votes. It sets `consensus_data_hash` to
+/// represent B so that if those 2f+1 votes are gathered, the block is valid to
+/// commit
+message LedgerInfo {
+  // Current latest version of the system
+  uint64 version = 1;
+
+  // Root hash of transaction accumulator at this version
+  bytes transaction_accumulator_hash = 2;
+
+  // Hash of consensus-specific data that is opaque to all parts of the system
+  // other than consensus.  This is needed to verify signatures because
+  // consensus signing includes this hash
+  bytes consensus_data_hash = 3;
+
+  // The block id of the last committed block corresponding to this ledger info.
+  // This field is not particularly interesting to the clients, but can be used
+  // by the validators for synchronization.
+  bytes consensus_block_id = 4;
+
+  // Epoch number corresponds to the set of validators that are active for this
+  // ledger info. The main motivation for keeping the epoch number in the
+  // LedgerInfo is to ensure that the client has enough information to verify
+  // that the signatures for this info are coming from the validators that
+  // indeed form a quorum. Without epoch number a potential attack could reuse
+  // the signatures from the validators in one epoch in order to sign the wrong
+  // info belonging to another epoch, in which these validators do not form a
+  // quorum. The very first epoch number is 0.
+  uint64 epoch_num = 5;
+
+  // Timestamp that represents the microseconds since the epoch (unix time) that is
+  // generated by the proposer of the block.  This is strictly increasing with every block.
+  // If a client reads a timestamp &gt; the one they specified for transaction expiration time,
+  // they can be certain that their transaction will never be included in a block in the future
+  // (assuming that their transaction has not yet been included)
+  uint64 timestamp_usecs = 6;
+
+  // An optional field with the validator set for the next epoch in case it's the last
+  // ledger info in the current epoch.
+  ValidatorSet next_validator_set = 7;
+}
+
+/// The validator node returns this structure which includes signatures
+/// from each validator to confirm the state.  The client needs to only pass
+/// back the LedgerInfo element since the validator node doesn't need to know
+/// the signatures again when the client performs a query, those are only there
+/// for the client to be able to verify the state
+message LedgerInfoWithSignatures {
+  // Signatures of the root node from each validator
+  repeated ValidatorSignature signatures = 1;
+
+  LedgerInfo ledger_info = 2;
+}
+
+message ValidatorSignature {
+  // The account address of the validator, which can be used for retrieving its
+  // public key during the given epoch.
+  bytes validator_id = 1;
+  bytes signature = 2;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcproofproto" id="srcproofproto">src:./proof.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright (c) The Libra Core Contributors
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = &quot;proto3&quot;;
+
+package types;
+
+import &quot;transaction_info.proto&quot;;
+
+message AccumulatorProof {
+  // The bitmap indicating which siblings are default. 1 means non-default and
+  // 0 means default. The LSB corresponds to the sibling at the bottom of the
+  // accumulator. The leftmost 1-bit corresponds to the sibling at the level
+  // just below root level in the accumulator, since this one is always
+  // non-default.
+  uint64 bitmap = 1;
+
+  // The non-default siblings. The ones near the root are at the beginning of
+  // the list.
+  repeated bytes non_default_siblings = 2;
+}
+
+message SparseMerkleProof {
+  // This proof can be used to authenticate whether a given leaf exists in the
+  // tree or not. In Rust:
+  //   - If this is `Some(HashValue, HashValue)`
+  //     - If the first `HashValue` equals requested key, this is an inclusion
+  //       proof and the second `HashValue` equals the hash of the
+  //       corresponding account blob.
+  //     - Otherwise this is a non-inclusion proof. The first `HashValue` is
+  //       the only key that exists in the subtree and the second `HashValue`
+  //       equals the hash of the corresponding account blob.
+  //   - If this is `None`, this is also a non-inclusion proof which indicates
+  //     the subtree is empty.
+  //
+  // In protobuf, this leaf field should either be
+  //   - empty, which corresponds to None in the Rust structure.
+  //   - exactly 64 bytes, which corresponds to Some&lt;(HashValue, HashValue)&gt;
+  //     in the Rust structure.
+  bytes leaf = 1;
+
+  // The bitmap indicating which siblings are default. 1 means non-default and
+  // 0 means default. The MSB of the first byte corresponds to the sibling at
+  // the top of the Sparse Merkle Tree. The rightmost 1-bit of the last byte
+  // corresponds to the sibling at the bottom, since this one is always
+  // non-default.
+  bytes bitmap = 2;
+
+  // The non-default siblings. The ones near the root are at the beginning of
+  // the list.
+  repeated bytes non_default_siblings = 3;
+}
+
+message AccumulatorConsistencyProof {
+  // The root hashes of the frozen subtrees that form the small accumulator.
+  // Note that none of these hashes should be default hash.
+  repeated bytes frozen_subtree_roots = 1;
+
+  // The total number of siblings.
+  uint32 num_siblings = 2;
+
+  // The non-default siblings. Note that the entire list of siblings always
+  // start of zero or more non-default siblings, followed by zero of more
+  // default siblings. So given the total number of siblings and the non-default
+  // siblings we should be able to construct the entire sibling list.
+  repeated bytes non_default_siblings = 3;
+}
+
+// The complete proof used to authenticate a signed transaction.
+message SignedTransactionProof {
+  AccumulatorProof ledger_info_to_transaction_info_proof = 1;
+  TransactionInfo transaction_info = 2;
+}
+
+// The complete proof used to authenticate an account state.
+message AccountStateProof {
+  AccumulatorProof ledger_info_to_transaction_info_proof = 1;
+  TransactionInfo transaction_info = 2;
+  SparseMerkleProof transaction_info_to_account_proof = 3;
+}
+
+// The complete proof used to authenticate an event.
+message EventProof {
+  AccumulatorProof ledger_info_to_transaction_info_proof = 1;
+  TransactionInfo transaction_info = 2;
+  AccumulatorProof transaction_info_to_event_proof = 3;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcget_with_proofproto" id="srcget_with_proofproto">src:./get_with_proof.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright (c) The Libra Core Contributors
+// SPDX-License-Identifier: Apache-2.0
+
+// This file contains proto definitions for performing queries and getting back
+// results with proofs.  This is the interface for a client to query data from
+// the system. Every query result must include proof so that a client can be
+// certain that the data returned is valid.  A client must verify this proof to
+// ensure that a node isn't lying to them.
+
+// How to verify the response as a client:
+// (Note that every response comes in the form of GetWithProofResponse which
+// wraps the inner response elements that correspond to the specific request
+// types.  Below we will assume a single request/response type.  The
+// verification can be extended as needed for multiple types. Also note that we
+// will use the following notation: resp = GetWithProofResponse and req =
+// GetWithProofRequest). Also note that the following will be considered
+// equivalent for brevity: req.requested_items.get_account_state_request ==
+// req.get_account_state_request And, resp.values.get_account_state_response ==
+// resp.get_account_state_response
+//
+// GetAccountStateResponse:
+// - let state_req = req.requested_items.get_account_state_request;
+// - let state_resp = resp.values.get_account_state_response;
+// - Verify that:
+//      - state_req.access_path == state_resp.access_path
+//          - This ensures that the server is responding with the correct access
+//          path
+// - let state_data_hash = Hash(state_resp.value);
+// - let state_proof = resp.values.proof.state_proof_value.sparse_merkle_proof;
+// - Validate state_proof using state_data_hash as the leaf
+//      - When verifying the state tree, use:
+//          state_root_hash = resp.values.transaction_info.state_root_hash
+// - Validate accumulator using resp.values.transaction_info as the leaf
+//      - When verifying the accumulator, use:
+//          root_hash =
+//          resp.ledger_info_with_sigs.ledger_info.ledger_info.txn_root_hash;
+// - Validate that the transaction root hash submitted in
+// req.known_value.node_value.txn_root_hash
+//      exists in the proof for accumulator and that the proof is valid with
+//      this hash
+// - Validate ledger info
+//      - let ledger_info_hash =
+//      Hash(resp.ledger_info_with_sigs.ledger_info.ledger_info);
+//      - Verify signatures from resp.ledger_info_with_sigs.signatures are
+//      signing
+//          ledger_info_hash and that there are &gt;2/3 nodes signing this
+//          correctly
+//      - Validate that the timestamp is relatively recent in
+//          resp.ledger_info_with_sigs.ledger_info.timestamp
+//
+//
+// GetAccountTransactionBySequenceNumberResponse:
+// - Note that other than type completed_transaction, there will be no proof
+// returned
+//      since the transaction has not yet been committed.  To ensure that a
+//      validator is telling the truth about it not being committed yet, a
+//      client should query for their account state and verify that their
+//      current sequence number is less than what they are searching for with
+//      GetAccountTransactionBySequenceNumberResponse
+// - let txn =
+//      resp.get_account_transaction_by_sequence_number_response.transaction.committed_transaction;
+// - let txn_hash = Hash(txn);
+// - Verify that resp.proof.transaction_info.signed_transaction_hash == txn_hash
+// - Validate accumulator using resp.proof.transaction_info as the leaf
+//      - When verifying the accumulator, use:
+//          root_hash =
+//          resp.ledger_info_with_sigs.ledger_info.ledger_info.txn_root_hash;
+// - Validate that the transaction root hash submitted in
+// req.known_value.node_value.txn_root_hash
+//      exists in the proof for accumulator and that the proof is valid with
+//      this hash
+// - Validate ledger info
+//      - let ledger_info_hash =
+//      Hash(resp.ledger_info_with_sigs.ledger_info.ledger_info);
+//      - Verify signatures from resp.ledger_info_with_sigs.signatures are
+//      signing
+//          ledger_info_hash and that there are &gt;2/3 nodes signing this
+//          correctly
+//      - Validate that the timestamp is relatively recent in
+//          resp.ledger_info_with_sigs.ledger_info.timestamp
+//
+//
+// GetTransactionsResponse:
+// - for txn in resp.get_transactions_response.transactions:
+//      - let txn = txn.committed_transaction;
+//      - let txn_hash = Hash(txn);
+//      - Verify that txn.proof.transaction_info.signed_transaction_hash ==
+//      txn_hash
+//      - Validate accumulator using txn.proof.transaction_info as the leaf
+//      - When verifying the accumulator, use:
+//          root_hash =
+//          resp.ledger_info_with_sigs.ledger_info.ledger_info.txn_root_hash;
+//      - Verify that transactions are sequential and none are missing
+// - Validate ledger info
+//      - let ledger_info_hash =
+//      Hash(resp.ledger_info_with_sigs.ledger_info.ledger_info);
+//      - Verify signatures from resp.ledger_info_with_sigs.signatures are
+//      signing
+//          ledger_info_hash and that there are &gt;2/3 nodes signing this
+//          correctly
+//      - Validate that the timestamp is relatively recent in
+//          resp.ledger_info_with_sigs.ledger_info.timestamp
+// - If the number of transactions returned is less than limit for an ascending
+// query
+//      or if the requested offset &gt; current version for a descending query,
+//      the client should verify that the timestamp in ledger info is relatively
+//      recent to determine if it is likely that all transactions available were
+//      returned
+syntax = &quot;proto3&quot;;
+
+package types;
+
+import &quot;access_path.proto&quot;;
+import &quot;account_state_blob.proto&quot;;
+import &quot;events.proto&quot;;
+import &quot;ledger_info.proto&quot;;
+import &quot;transaction.proto&quot;;
+import &quot;validator_change.proto&quot;;
+
+// -----------------------------------------------------------------------------
+// ---------------- Update to latest ledger request
+// -----------------------------------------------------------------------------
+
+// This API is used to update the client to the latest ledger version and
+// optionally also request 1..n other pieces of data.  This allows for batch
+// queries.  All queries return proofs that a client should check to validate
+// the data.
+//
+// Note that if a client only wishes to update to the latest LedgerInfo and
+// receive the proof that this latest ledger extends the client_known_version
+// ledger the client had, they can simply set the requested_items to an empty
+// list.
+message UpdateToLatestLedgerRequest {
+    // This is the version the client already trusts. Usually the client should
+    // set this to the version it obtained the last time it synced with the
+    // chain. If this is the first time ever the client sends a request, it must
+    // use the waypoint hard-coded in its software.
+    uint64 client_known_version = 1;
+
+    // The items for which we are requesting data in this API call.
+    repeated RequestItem requested_items = 2;
+}
+
+message RequestItem {
+    oneof requested_items {
+        GetAccountStateRequest get_account_state_request = 1;
+        GetAccountTransactionBySequenceNumberRequest
+        get_account_transaction_by_sequence_number_request = 2;
+        GetEventsByEventAccessPathRequest get_events_by_event_access_path_request =
+        3;
+        GetTransactionsRequest get_transactions_request = 4;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// ---------------- Update to latest ledger response
+// -----------------------------------------------------------------------------
+
+// Response from getting latest ledger
+message UpdateToLatestLedgerResponse {
+    // Responses to the queries posed by the requests. The proofs generated will
+    // be relative to the version of the latest ledger provided below.
+    repeated ResponseItem response_items = 1;
+
+    // The latest ledger info this node has. It will come with at least 2f+1
+    // validator signatures as well as a proof that shows the latest ledger
+    // extends the old ledger the client had.
+    LedgerInfoWithSignatures ledger_info_with_sigs = 2;
+
+    // Validator change events from what the client last knew.  This is used to
+    // inform the client of validator changes from the client's last known version
+    // until the current version
+    repeated ValidatorChangeEventWithProof validator_change_events = 3;
+}
+
+// Individual response items to the queries posed by the requests
+message ResponseItem {
+    oneof response_items {
+        GetAccountStateResponse get_account_state_response = 3;
+        GetAccountTransactionBySequenceNumberResponse
+            get_account_transaction_by_sequence_number_response = 4;
+        GetEventsByEventAccessPathResponse get_events_by_event_access_path_response = 5;
+        GetTransactionsResponse get_transactions_response = 6;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// ---------------- Get account state (balance, sequence number, etc.)
+// -----------------------------------------------------------------------------
+
+// Gets latest state for an account.
+message GetAccountStateRequest {
+    // Account for which we are fetching the state.
+    bytes address = 1;
+}
+
+// State information returned by a get account state query.
+message GetAccountStateResponse {
+    // Blob value representing the account state together with proof the client
+    // can utilize to verify it.
+    AccountStateWithProof account_state_with_proof = 1;
+}
+
+// -----------------------------------------------------------------------------
+// ---------------- Get single transaction by account + sequence number
+// -----------------------------------------------------------------------------
+// Get transactions that altered an account - this includes both sent and
+// received. A user of this should check that the data returned matches what
+// they expect.  As an example, a potential attack vector would be something
+// like the following: Alice is buying an apple from Bob. Alice's phone signs a
+// transaction X with sequence number N that pays coins to Bob. Alice transmits
+// this signature to Bob's payment terminal which then submits the transaction
+// and checks its status to see if Alice can be given the apple. However, as Bob
+// is doing this Alice constructs a second transaction X' also with sequence
+// number N. Alice gets that transaction inserted in the blockchain. If Bob
+// isn't thoughtful about how he uses this API he may assume that if he asks for
+// the N'th transaction on Alice's account that when the API returns that this
+// means the transaction has gone through. The point here is that one should be
+// careful in reading too much into &quot;transaction X is on the chain&quot; and focus on
+// the logs, which tell you what the transaction did.
+//
+// If a client submitted a transaction, they should also verify that the hash of
+// the returned transaction matches what they submitted.  As an example, if a
+// client has two wallets that share the same account, they may both submit a
+// transaction at the same sequence number and only one will be committed.  A
+// client should never assume that if they receive the response that this
+// transaction was included that it means that this is definitely the
+// transaction that was submitted.  They should check that the hash matches what
+// they sent
+message GetAccountTransactionBySequenceNumberRequest {
+    // Account for which to query transactions
+    bytes account = 1;
+
+    uint64 sequence_number = 2;
+
+    // Set to true to fetch events for the transaction at this version
+    bool fetch_events = 3;
+}
+
+// Transaction information for transactions requested by
+// GetAccountTransactionsRequest
+message GetAccountTransactionBySequenceNumberResponse {
+  // When the transaction requested is committed, return the committed
+  // transaction with proof.
+  SignedTransactionWithProof signed_transaction_with_proof = 2;
+  // When the transaction requested is not committed, we give a proof that
+  // shows the current sequence number is smaller than what would have been if
+  // the transaction was committed.
+  AccountStateWithProof proof_of_current_sequence_number = 3;
+}
+
+// -----------------------------------------------------------------------------
+// ---------------- Get events by event access path
+// -----------------------------------------------------------------------------
+
+// Get events that exist on an event access path.  In the current world,
+// a user may specify events that were received, events that were sent, or any
+// event that modifies their account
+message GetEventsByEventAccessPathRequest {
+    AccessPath access_path = 1;
+
+    // The sequence number of the event to start with for this query. Use a
+    // sequence number of MAX_INT to represent the latest.
+    uint64 start_event_seq_num = 2;
+
+    // If ascending is true this query will return up to `limit` events that were
+    // emitted after `start_event_seq_num`. Otherwise it will return up to `limit`
+    // events before the offset. Both cases are inclusive.
+    bool ascending = 3;
+
+    // Limit number of results
+    uint64 limit = 4;
+}
+
+message GetEventsByEventAccessPathResponse {
+    // Returns an event and proof of each of the events in the request. The first
+    // element of proofs will be the closest to `start_event_seq_num`.
+    repeated EventWithProof events_with_proof = 1;
+
+    // If the number of events returned is less than `limit` for an ascending
+    // query or if start_event_seq_num &gt; the latest seq_num for a descending
+    // query,  returns the state of the account containing the given access path
+    // in the latest state. This allows the client to verify that there are in
+    // fact no extra events.
+    //
+    // The LedgerInfoWithSignatures which is on the main
+    // UpdateToLatestLedgerResponse can be used to validate this.
+    AccountStateWithProof proof_of_latest_event = 2;
+}
+
+// -----------------------------------------------------------------------------
+// ---------------- Get transactions
+// -----------------------------------------------------------------------------
+
+// Get up to limit transactions starting from start_version.
+message GetTransactionsRequest {
+    // The version of the transaction to start with for this query.  Use a version
+    // of MAX_INT to represent the latest.
+    uint64 start_version = 1;
+
+    // Limit number of results
+    uint64 limit = 2;
+
+    // Set to true to fetch events for the transaction at each version
+    bool fetch_events = 3;
+}
+
+message GetTransactionsResponse {
+    TransactionListWithProof txn_list_with_proof = 1;
+}
+
+</code></pre>
+<h2><a class="header" href="#srcaccess_pathproto" id="srcaccess_pathproto">src:./access_path.proto</a></h2>
+<pre><code class="language-proto">
+// Copyright (c) The Libra Core Contributors
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = &quot;proto3&quot;;
+
+package types;
+
+message AccessPath {
+  bytes address = 1;
+  bytes path = 2;
+}
+
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../dlt/hl-burrow.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../dlt/lnrpc.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../dlt/hl-burrow.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../dlt/lnrpc.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
