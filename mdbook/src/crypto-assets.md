@@ -43,10 +43,24 @@ Brave browser 開始進軍小螢幕，注意力商人一書裡面提到四個螢
 ![tpl-ton-v1.svg](puml/tpl-ton-v1.svg)
 
 
-
 ## Stellar XLM
 
 [Stellar](https://github.com/stellar)
+
+
+## Ocean Portocol
+
+[oceanprotocol/ocean: 🌊 The Data Economy](https://github.com/oceanprotocol/ocean)
+
+Service Execution Agreement (SEA) or Service Agreement
+
+> A contract-like agreement between a publisher, a consumer, and a verifier, specifying what assets are to be delivered (from publisher to consumer), the conditions that must be met, and the rewards for fulfilling the conditions.
+
+依照 [Architecture Overview - Ocean Protocol Documentation](https://docs.oceanprotocol.com/concepts/architecture/) 說明分為三層
+
+- Tier 3 - Application Layer
+- Tier 2 - Protocol Layer
+- Tier 1 - Decentralized VM Layer
 
 # Crypto
 

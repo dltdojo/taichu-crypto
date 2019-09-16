@@ -109,6 +109,13 @@ gen_proto_doc(){
 
 > 链上信使协议AMOP（Advanced Messages Onchain Protocol）系统旨在为联盟链提供一个安全高效的消息信道，联盟链中的各个机构，只要部署了区块链节点，无论是共识节点还是观察节点，均可使用AMOP进行通讯
 
+## Eclipse Attack
+
+- [Eclipse Attacks on Bitcoin’s Peer-to-Peer Network](http://cs-people.bu.edu/heilman/eclipse/)
+- [Eclipse Attacks on Bitcoin’s Peer-to-Peer Network - Frankly speaking - Medium](https://medium.com/speaking-frankly/eclipse-attacks-on-bitcoin-s-peer-to-peer-network-e0da797302c2)
+- [Bitcoin News: Researchers Explore Eclipse Attacks on the Ethereum Blockchain](https://bitcoinmagazine.com/articles/researchers-explore-eclipse-attacks-ethereum-blockchain)
+- [Eclipse Attacks on Blockchains’ Peer-to-Peer Network - By](https://hackernoon.com/eclipse-attacks-on-blockchains-peer-to-peer-network-26a62f85f11)
+- [Peer connection drop · Issue #2726 · mimblewimble/grin](https://github.com/mimblewimble/grin/issues/2726)
 
 ## 201909 
 

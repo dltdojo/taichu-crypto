@@ -27,3 +27,14 @@
 
 - [uber/kraken: P2P Docker registry capable of distributing TBs of data in seconds](https://github.com/uber/kraken)
 - [Uber Open Source](https://github.com/uber)
+
+# P2P File Providers
+
+## Publish to ipfs · ethereum/remix-ide
+
+近日的以太坊網頁版開發工具 PR [Publish to ipfs · ethereum/remix-ide](https://github.com/ethereum/remix-ide/pull/2323/files) 引入 ipfs 的合約儲存方式。
+
+```
+registry.get('fileproviders/swarm').api,
+registry.get('fileproviders/ipfs').api,
+```

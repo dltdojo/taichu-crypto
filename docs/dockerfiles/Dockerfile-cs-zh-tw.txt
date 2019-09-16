@@ -1,0 +1,23 @@
+#
+# https://hub.docker.com/r/codercom/code-server/tags
+#
+ARG CS_VER=2.1472-vsc1.38.1
+FROM codercom/code-server:${CS_VER}
+USER coder
+RUN set -eux  && \
+    code-server --install-extension ms-ceintl.vscode-language-pack-zh-hant
+ARG PATH_SETTINGS=/home/coder/.local/share/code-server/User/settings.json
+ARG PATH_LOCALE=/home/coder/.local/share/code-server/User/locale.json
+# COPY settings.json ${PATH_SETTINGS}
+RUN echo '{ \n\
+    "terminal.integrated.shell.linux": "/bin/bash", \n\
+    "files.associations": { \n\
+        "[Dd]ockerfile*": "dockerfile", \n\
+        "docker-compose*": "yaml" \n\
+    } \n\
+}' > ${PATH_SETTINGS}
+
+# https://code.visualstudio.com/docs/getstarted/locales
+RUN echo '{ \n\
+    "locale": "zh-tw" \n\
+}' > ${PATH_LOCALE}

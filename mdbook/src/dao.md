@@ -19,6 +19,11 @@ DAO 績效分配參考[Live OKRs - Joystream - github](https://github.com/Joystr
 
 - [Commonwealth](https://github.com/hicommonwealth)
 
+## DarkDAO
+
+- [On-Chain Vote Buying and the Rise of Dark DAOs](http://hackingdistributed.com/2018/07/02/on-chain-vote-buying/)
+- [選舉網上投票，還未是時候？ - *CUP](https://www.cup.com.hk/2019/09/16/could-we-vote-online-yet/)
+
 ## 201909
 
 - [ ] DAO 圖與概念
