@@ -91,6 +91,7 @@
 - [Bitcoin - The Currency of the Internet](https://www.reddit.com/r/Bitcoin/)
 - [Decrypt](https://decrypt.co/)
 - [Cypherpunks Taiwan 密碼龐克](https://cypherpunks.tech/)
+- [EthFans | 以太坊爱好者](https://ethfans.org/)
 - [區塊客 - 全球中文區塊鏈加密幣資訊網站](https://blockcast.it)
 - [快讯 | Odaily星球日报](https://www.odaily.com/newsflash)
 - [链闻 ChainNews | 区块链新闻快讯资讯媒体](https://www.chainnews.com/)

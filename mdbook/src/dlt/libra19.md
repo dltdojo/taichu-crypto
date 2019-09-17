@@ -25,6 +25,13 @@
 - [LibraBFT 算法简述 - 链闻 ChainNews](https://www.chainnews.com/articles/900065488880.htm)
 - [Libra 是又一个星战计划吗？深度分析数字货币对主权国家的冲击 - 链闻 ChainNews](https://www.chainnews.com/articles/026526704886.htm)
 
+## Move Token Example - etoken-libra 
+
+- [etoroxlabs/etoken-libra: A joyful early experiment of building eTokens on Libra](https://github.com/etoroxlabs/etoken-libra)
+- [etoroxlabs/eToken: eToken is stablecoin implementation by eToro targeting the Ethereum platform](https://github.com/etoroxlabs/etoken)
+
+
+
 # Protobuf
 
 # 生成 Google Protocol Buffers 文件

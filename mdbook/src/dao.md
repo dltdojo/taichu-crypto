@@ -24,6 +24,15 @@ DAO 績效分配參考[Live OKRs - Joystream - github](https://github.com/Joystr
 - [On-Chain Vote Buying and the Rise of Dark DAOs](http://hackingdistributed.com/2018/07/02/on-chain-vote-buying/)
 - [選舉網上投票，還未是時候？ - *CUP](https://www.cup.com.hk/2019/09/16/could-we-vote-online-yet/)
 
+
+## Belmont principles -  DAO 
+
+[Belmont Report - autonomous agents - Wikipedia](https://en.wikipedia.org/wiki/Belmont_Report)
+
+- Respect for persons: protecting the autonomy of all people and treating them with courtesy and respect and allowing for informed consent. Researchers must be truthful and conduct no deception;
+- Beneficence: The philosophy of "Do no harm" while maximizing benefits for the research project and minimizing risks to the research subjects; and
+- Justice: ensuring reasonable, non-exploitative, and well-considered procedures are administered fairly — the fair distribution of costs and benefits to potential research participants — and equally.
+
 ## 201909
 
 - [ ] DAO 圖與概念

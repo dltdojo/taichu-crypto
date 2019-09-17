@@ -30,6 +30,7 @@
   - [Aragon](./dao/aragon.md)
   - [JoyStream](./dao/joystream.md)
 - [DID](./did.md)
+- [DeFi](./defi/README.md)
 - [Services](./services/README.md)
   - [Amazon QLDB](./services/amazon-qldb.md)
 - [Ledger Reliability Engineering(LRE)](./LRE.md)

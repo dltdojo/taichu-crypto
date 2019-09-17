@@ -3,6 +3,21 @@
 # TOC
 <!-- toc -->
 
+# 金融監管
+
+- 
+[区块链技术在证券领域的应用与监管研究 - 上海证券交易所 www.sse.com.cn › publication › actofcourt › law ](http://www.sse.com.cn/aboutus/publication/actofcourt/law/list/a/20190807/10c1f444867fc7b6c66d84f64452a5c3.pdf)
+
+
+## Embedded supervision
+
+> In DLT-based markets, by contrast, data credibility is assured by economic incentives. In this world, the supervisor must examine the  conditions under which the market’s economic consensus is strong enough to guarantee the quality of the data contained in the distributed ledger. 
+
+[BIS Working Papers No 811 Embedded supervision: how to build regulation into blockchain finance by Raphael Auer](https://www.bis.org/publ/work811.pdf)
+
+> This challenge goes deeper than current discussions on under what circumstances cryptoassets should be considered as commodities, securities  or other asset classes. Rather, it is how to embed the concept of economic finality in today’s legal system, and the adjacent question of how to treat such assets on balance sheets.
+
+
 # 常用觀點連結
 
 ## 忒修斯之船（英語：ship of Theseus）

@@ -50,6 +50,12 @@ Agreement of Symmetric Keys Using Discrete Logarithm Cryptography, 1999
 - [TR-03111] BSI: Technical Guideline TR-03111: Elliptic Curve Cryptography, Version 2.0, 2012 
 - [RFC 2631] Rescorla, Eric: RFC 2631 Diffie-Hellman key agreement method, 1999 
 
+
+[Basic access control - Wikipedia](https://en.wikipedia.org/wiki/Basic_access_control)
+
+> There is a replay attack against the basic access control protocol that allows an individual passport to be traced.[3][4] The attack is based on being able to distinguish a failed nonce check from a failed MAC check and works against passports with randomized unique identifiers and hard to guess keys.The basic access control mechanism has been criticized as offering too little protection from unauthorized interception. Researchers claim [5] that because there are only limited numbers of passport issued, many theoretically possible passport numbers will not be in use in practice. The limited range of human age ranges further reduce the space of possibilities.In other words, the data used as an encryption key has low entropy, meaning that guessing the session key is possible via a modest brute force attack. 
+
+
 [Security by Politics - Why it will never work. Lukas Grunwald DN-Systems GmbH Germany DefCon 15 Las Vegas USA](https://docplayer.net/7643386-Security-by-politics-why-it-will-never-work-lukas-grunwald-dn-systems-gmbh-germany-defcon-15-las-vegas-usa.html)
 
 ```
