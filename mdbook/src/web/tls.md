@@ -1,4 +1,6 @@
-# TLS
+# Transport Layer Security (TLS)
+
+[Transport Layer Security - Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security)
 
 # TOC
 <!-- toc -->
@@ -31,3 +33,31 @@
   一、使用經第十一條核定或第十五條許可之憑證機構依法簽發之憑證。
   二、憑證尚屬有效並未逾使用範圍。
 ```
+
+# Tools
+
+- [Scapy: the Python-based interactive packet manipulation program & library. Supports Python 2 & Python 3.  scapy/doc/notebooks/tls at master · secdev/scapy](https://github.com/secdev/scapy/tree/master/doc/notebooks/tls)
+
+# TODO
+
+## TLS Session Key Log
+
+[NSS Key Log Format - Mozilla | MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/Key_Log_Format)
+
+> Key logs can be written by NSS so that external programs can decrypt TLS connections. Wireshark 1.6.0 and above can use these log files to decrypt packets. You can tell Wireshark where to find the key file via Edit→Preferences→Protocols→SSL→(Pre)-Master-Secret log filename.
+
+[Support for NSS's SSLKEYLOGFILE to be able to decrypt TLS traffic with TLS_ECDHE* ciphers · Issue #7795 · envoyproxy/envoy](https://github.com/envoyproxy/envoy/issues/7795)
+
+> OpenSSL/BoringSSL applications (browsers, curl, etc) often support logging the pre-master secrets into a file by setting the SSLKEYLOGFILE environment variable. The logfile can then be easily imported into tools like Wireshark to decrypt TLS on the fly.
+
+[Traffic tapping — envoy 1.12.0-dev-358793 documentation](https://www.envoyproxy.io/docs/envoy/latest/operations/traffic_tapping)
+
+> The tap transport socket supports both buffered and streaming, controlled by the streaming setting. When buffering, SocketBufferedTrace messages are emitted. When streaming, a series of SocketStreamedTraceSegment are emitted.
+
+- [Support dumping of crypto keys to an nss formated key log file · Issue #1043 · loadimpact/k6](https://github.com/loadimpact/k6/issues/1043)
+- [Disable BoringSSL TLS Key Logging SSLKEYLOGFILE · Issue #3479 · brave/brave-browser](https://github.com/brave/brave-browser/issues/3479)
+- [Add support for the SSLKEYLOGFILE environment variable by djc · Pull Request #171 · ctz/rustls](https://github.com/ctz/rustls/pull/171)
+- [No way to set ENABLE_SSLKEYLOGFILE · Issue #2210 · curl/curl](https://github.com/curl/curl/issues/2210)
+- [Feature Request: Log TLS Session Keys · Issue #632 · eclipse/mosquitto](https://github.com/eclipse/mosquitto/issues/632)
+
+

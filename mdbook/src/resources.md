@@ -17,6 +17,7 @@
 另外 github 上面收集學習資源的專案
 
 - [hyperledger/education-cryptomoji](https://github.com/hyperledger/education-cryptomoji)
+- [ learning material for blockchain, digital currency and digital assets learning material - Tari Labs University](https://tlu.tarilabs.com/preface/learning/introduction-to-learning.html)
 - [ChristopherA/Learning-Bitcoin-from-the-Command-Line](https://github.com/ChristopherA/Learning-Bitcoin-from-the-Command-Line)
 - [mycoralhealth/blockchain-tutorial: Write and publish your own blockchain in less than 200 lines of Go](https://github.com/mycoralhealth/blockchain-tutorial)
 - [sodium-friends/learntocrypto: Learn to crypto workshop](https://github.com/sodium-friends/learntocrypto)

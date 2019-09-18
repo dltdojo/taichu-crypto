@@ -3,7 +3,6 @@
 # TOC
 <!-- toc -->
 
-
 # DeFi - Ethereum
 
 [The DeFi Series — An overview of the ecosystem and major protocols](https://medium.com/alethio/the-defi-series-an-overview-of-the-ecosystem-and-major-protocols-da27d7b11191)
@@ -33,3 +32,6 @@
 
 [chainx-org/ChainX: Cross-chain hub for Crypto Asset on Polkadot](https://github.com/chainx-org/ChainX)
 
+# TODO
+
+- [*almost* Trustless Project Fundraising - AxiaLabs - Medium](https://medium.com/axialabs/trustless-fundaising-9a5fe3b76885)
