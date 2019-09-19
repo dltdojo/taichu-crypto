@@ -1,6 +1,7 @@
 # 第三新熵熱踢道場 
 
 - [DLTDOJO3](./README.md)
+- [k19.dltdojo](./k19.md)
 - [POC 概念驗證](./poc.md)
 - [POC TAICHU-RAW](./taichu-raw/README.md)
   - [HTTPS: Apache Big5](./taichu-raw/apache-big5.md)
@@ -20,6 +21,7 @@
   - [Hyperledger Sawtooth](./dlt/hl-sawtooth.md)
   - [HyperLedger Burrow](./dlt/hl-burrow.md)
   - [HyperLedger Besu](./dlt/hl-besu.md)
+  - [Polkadot](./dlt/polkadot.md)
   - [Libra](./dlt/libra19.md)
   - [lightning network](./dlt/lnrpc.md)
   - [exonum](./dlt/exonum.md)

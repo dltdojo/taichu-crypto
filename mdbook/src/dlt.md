@@ -16,12 +16,6 @@
 - [immutability-io/vault-ipfs: A Vault plugin for data management across IPFS](https://github.com/immutability-io/vault-ipfs)
 
 
-## Kusama Network
-
-- [Kusama — A canary network for Polkadot experiments](https://kusama.network/)
-- [telemetry.polkadot](https://telemetry.polkadot.io/)
-- [paritytech/substrate-telemetry](https://github.com/paritytech/substrate-telemetry)
-
 ## Protocol Buffers 小數據 ETL 練習 
 
 Protobufs-Markdown-Mdbook [Extract-Transform-Load ETL](https://zh.wikipedia.org/wiki/ETL) 練習

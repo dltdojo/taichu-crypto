@@ -32,6 +32,18 @@
 
 [chainx-org/ChainX: Cross-chain hub for Crypto Asset on Polkadot](https://github.com/chainx-org/ChainX)
 
+
+# Centrifuge Chain
+
+Centrifuge’s vision is to enable businesses worldwide to access and create the decentralized economy.
+
+- [centrifuge/centrifuge-chain: Implementation of the Centrifuge Chain](https://github.com/centrifuge/centrifuge-chain)
+- [Centrifuge Operating System | Centrifuge Developer](https://developer.centrifuge.io/cent-node/overview/introduction/)
+
+[Berlin and the EU support building the Centrifuge Chain with 1.4 Million €](https://medium.com/centrifuge/berlin-and-the-eu-support-building-the-centrifuge-chain-with-1-4-million-18636a81975c)
+
+> Even today our users experience the limitations of speed, throughput, and cost of the Ethereum blockchain, limiting the use of Centrifuge OS to very specific types of product lines, services, and transactions. Privacy-preserving features are not yet sufficiently available on Ethereum, additionally limiting business and enterprise use-cases.
+
 # TODO
 
 - [*almost* Trustless Project Fundraising - AxiaLabs - Medium](https://medium.com/axialabs/trustless-fundaising-9a5fe3b76885)

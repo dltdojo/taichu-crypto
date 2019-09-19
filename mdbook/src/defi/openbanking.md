@@ -16,7 +16,7 @@
 
 ## dukei/any-balance-providers
 
-[dukei/any-balance-providers: Collection of AnyBalance providers](https://github.com/dukei/any-balance-providers) 開源專案的一大堆各式奇怪的登入與抓取內容方式正是 Open Banking 想要用 API 解決的，下面列舉幾個抓取餘額解析的範例。
+[dukei/any-balance-providers: Collection of AnyBalance providers](https://github.com/dukei/any-balance-providers) 開源專案的一大堆各式奇怪的登入與抓取內容方式正是 Open Banking 想要用通用 API 解決的，下面列舉幾個抓取餘額解析的範例。
 
 - [ab-money-paypal](https://github.com/dukei/any-balance-providers/tree/master/providers/ab-money-paypal)
 - [ab-money-etherscan](https://github.com/dukei/any-balance-providers/blob/master/providers/ab-money-etherscan)
