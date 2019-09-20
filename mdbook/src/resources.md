@@ -40,7 +40,7 @@
 
 - [文組也該知道的區塊鏈技術知識 <2> 一次搞懂以太坊智慧合約如何運作](https://medium.com/pelith/howethsmartcontractwork-328bd8b9bb62)
 - [文組也該知道的區塊鏈技術知識 <3> 從染色幣到無頭合約的代幣演進史 《上篇》](https://medium.com/pelith/tokenhistory-dd67cf700b92)
-
+- [万历十五年到咸丰十年的密码学：维吉尼亚加密法_巴比特_服务于区块链创新者](https://www.8btc.com/article/483300)
 
 ## Github/Gitlab 區塊鏈相關開源專案
 

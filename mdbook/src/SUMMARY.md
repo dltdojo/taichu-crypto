@@ -8,7 +8,7 @@
   - [HTTPS: OpenAPI v3](./taichu-raw/openapiv3.md)
   - [其他](./taichu-raw/others.md)
 - [POC MAD-WHITE](./mad-white/README.md)
-  - [VS Code Server](./mad-white/code-server.md)
+  - [Code Server](./mad-white/code-server.md)
 - [POC MAD-RED](./mad-red/README.md)
   - [Veloren 多人RPG體素遊戲](./mad-red/veloren/README.md)
   - [聊天測試 BIP39](./mad-red/veloren/chat-dltdojo-bip39/README.md)

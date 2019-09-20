@@ -1,0 +1,44 @@
+#
+# https://hub.docker.com/r/codercom/code-server/tags
+#
+ARG CS_VER=v2
+FROM codercom/code-server:${CS_VER}
+USER root
+RUN apt-get update -yq \
+    && apt-get install curl gnupg -yq \
+    && curl -sL https://deb.nodesource.com/setup_10.x | bash \
+    && apt-get install nodejs -yq
+
+
+USER coder
+#
+# npm global install witout root
+# https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+#
+RUN npm config set prefix=/home/coder/.npm-packages \
+    && echo -e '\nexport PATH="/home/coder/.npm-packages/bin:$PATH"' >> /home/coder/.bashrc
+RUN npm install -g @vue/cli
+
+RUN set -eux  && \
+    code-server --install-extension ms-ceintl.vscode-language-pack-zh-hant && \
+    code-server --install-extension octref.vetur
+ARG PATH_SETTINGS=/home/coder/.local/share/code-server/User/settings.json
+ARG PATH_LOCALE=/home/coder/.local/share/code-server/User/locale.json
+# COPY settings.json ${PATH_SETTINGS}
+RUN echo '{ \n\
+    "terminal.integrated.shell.linux": "/bin/bash", \n\
+    "files.associations": { \n\
+        "[Dd]ockerfile*": "dockerfile", \n\
+        "docker-compose*": "yaml" \n\
+    } \n\
+}' > ${PATH_SETTINGS}
+
+# https://code.visualstudio.com/docs/getstarted/locales
+RUN echo '{ \n\
+    "locale": "zh-tw" \n\
+}' > ${PATH_LOCALE}
+#
+# docker build -t foo .
+# docker run -it --rm -v $PWD:/home/coder/project -p 8080-8099:8080-8099 foo 
+# http://localhost:8080/?folder=/home/coder/project/
+#

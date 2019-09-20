@@ -1,5 +1,7 @@
 # WebAssembly
+# TOC
 <!-- toc -->
+
 ## EVM ABI WebAssemble 
 
 - [WebAssembly Interface Types: Interoperate with All the Things!](https://hacks.mozilla.org/2019/08/webassembly-interface-types/)
@@ -48,6 +50,12 @@ test-contract-output-abi.json
     }
 ]
 ```
+
+## Wasm for Blockchain 2019
+
+[Wasm for Blockchain 2019 - NEAR Protocol - Medium](https://medium.com/nearprotocol/wasm-for-blockchain-2019-d093bfeb6133)
+
+> Wasmer opens discussion of unifying APIs of smart contracts, by presenting two approaches: the first one is the one suggested by Oasis in this blog post, where they emulate blockchain interface through POSIX-like imports available in standard WASI modules; the second approach is to either use imports without WASI (Ewasm approach) or have a special WASI module for blockchains. 
 
 ## Links
 

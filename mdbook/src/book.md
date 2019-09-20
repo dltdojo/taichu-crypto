@@ -3,8 +3,29 @@
 # TOC
 <!-- toc -->
 
-# 金融監管
+# 報告
 
+## Cambridge Judge Business School: Global Enterprise Blockchain Benchmarking Study
+　
+[Cambridge Judge Business School: 2nd Global Enterprise Blockchain Benchmarking Study](https://www.jbs.cam.ac.uk/faculty-research/centres/alternative-finance/publications/2nd-global-enterprise-blockchain-benchmarking-study/)
+
+> Hyperledger Fabric appears to be the platform of choice across all industries: Fourty-eight per cent of covered projects that are used in production have chosen Hyperledger Fabric as the core protocol framework underlying the network, followed by R3’s Corda platform (15 per cent) and Coin Sciences’ MultiChain framework (10 per cent).
+
+# 法案
+
+## US NDAA proposes blockchain for national defense
+
+[Text - H.R.2500 - 116th Congress (2019-2020): National Defense Authorization Act for Fiscal Year 2020 | Congress.gov | Library of Congress](https://www.congress.gov/bill/116th-congress/house-bill/2500/text)
+
+SEC. 255. Briefing on use of blockchain technology for defense purposes.
+
+- improve cybersecurity, beginning at the hardware level, of vulnerable assets such as energy, water and transport grids, through distributed versus centralized computing
+- reduce single points of failure in emergency and catastrophe decision-making by subjecting the decision to consensus validation through distributed ledger technologies
+- improve the efficiency of defense logistics and supply chain operations
+- enhance the transparency of procurement auditing
+- allow innovations to be adapted by the private sector for ancillary uses
+
+# 金融監管
 - 
 [区块链技术在证券领域的应用与监管研究 - 上海证券交易所 www.sse.com.cn › publication › actofcourt › law ](http://www.sse.com.cn/aboutus/publication/actofcourt/law/list/a/20190807/10c1f444867fc7b6c66d84f64452a5c3.pdf)
 

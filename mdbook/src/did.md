@@ -5,26 +5,8 @@
 # TOC
 <!-- toc -->
 
-# TODO
 
-## Hyperledgger Aries
-
-- [hyperledger/aries-cloudagent-python: Hyperledger Aries Cloud Agent Python (ACA-Py) is a foundation for building decentralized identity applications and services running in non-mobile environments.](https://github.com/hyperledger/aries-cloudagent-python)
-- [hyperledger/aries-framework-go: Hyperledger Aries Framework Go provides packages for building Agent / DIDComm services](https://github.com/hyperledger/aries-framework-go)
-
-## Sidetree page
-
-- [decentralized-identity/sidetree: Node.js implementation of the Sidetree protocol](https://github.com/decentralized-identity/sidetree)
-- [decentralized-identity/element: DID Method implementation using the Sidetree protocol on top of Ethereum and IPFS](https://github.com/decentralized-identity/element)
-- [decentralized-identity/ion: DID Method implementation using the Sidetree protocol on top of Bitcoin](https://github.com/decentralized-identity/ion)
-- [trustbloc/sidetree-fabric: Implementation of Sidetree with a backing Hyperledger Fabric ledger](https://github.com/trustbloc/sidetree-fabric)
-
-## DID Resolution
-
-- [DID Resolution work · Issue #101 · hyperledger/aries-rfcs](https://github.com/hyperledger/aries-rfcs/issues/101)
-- [did-exchange protocol using HTTPS as transport Framework Go v0.1.0 - Hyperledger Aries - Hyperledger Confluence](https://wiki.hyperledger.org/display/ARIES/Framework+Go+v0.1.0)
-
-## New eID
+# New eID
 
 - [ISO/IEC 14443 - 維基百科，自由的百科全書](https://zh.wikipedia.org/zh-tw/ISO/IEC_14443)
 - [Doc 9303 Machine Readable Travel Documents MRTD - ICAO](https://www.icao.int/publications/pages/publication.aspx?docnum=9303)
@@ -94,11 +76,35 @@ Contactless chip cards require additional security mechanisms. At least the foll
 - Eavesdropping: an attacker intercepts the communication between the chip and an authorised reader,
 - Location Tracking: an attacker generates person or card-specific movement profiles
 
-As mentioned above, BAC protects electronic passports against skimming attacks while, for example, the passport holder carries his passport in the pocket. During the border control procedure, the reading device optically scans the document and authenticates to the chip using keys derived from the MRZ printed on the data page. Some European countries, like the Netherlands and Sweden [15], adopted BAC in the specifications of their national ID cards where the MRZ is printed on the back of the card.
+As mentioned above, BAC protects electronic passports against skimming attacks while, for example, the passport holder carries his passport in the pocket. During the border control procedure, the reading device optically scans the document and authenticates to the chip using keys derived from the MRZ printed on the data page. Some European countries, like the Netherlands and Sweden, adopted BAC in the specifications of their national ID cards where the MRZ is printed on the back of the card.
 
-The BAC mechanism only weakly addresses the issue of eavesdropping and it does not prevent reading (or copying) the data of a lost passport [12][16][17]. However, in the second generation of European passports, this problem is addressed by the Extended Access Control (EAC) protocol which, besides the mutual authentication of card and reader, establishes a strongly encrypted communication channel [5]. Similar techniques, some of them adapted to internet-authentication use-cases, can be found in the specifications for the German eID card [6] and inclusion into the European Cititzen Card standard is currently under discussion [9][10].
+The BAC mechanism only weakly addresses the issue of eavesdropping and it does not prevent reading (or copying) the data of a lost passport. However, in the second generation of European passports, this problem is addressed by the Extended Access Control (EAC) protocol which, besides the mutual authentication of card and reader, establishes a strongly encrypted communication channel. Similar techniques, some of them adapted to internet-authentication use-cases, can be found in the specifications for the German eID card and inclusion into the European Cititzen Card standard is currently under discussion.
 
-Location tracking is an important privacy issue in contactless eID systems. An electronic passport with an RFID chip, if equipped with Basic Access Control, does not reveal any personal information of the passport holder as long as it is safely stored in a pocket and its MRZ is unknown to the attacker. However, the initialisation of wireless communication according to ISO 14443 requires the chip to send a unique identifier to the card reader. An attacker with several distributed reading devices (e.g. in door frames) could therefore distinguish the passport holder without actually having access to the files on the chip. Combined with other data sources, the attacker might be able to generate person or card-specific profiles. This particular attack is relatively easy to avoid – most electronic passports generate random UIDs for every session (see Supplement 9303, E11, [12]) but as a general rule, privacy- protecting RFID systems should be designed very carefully.
+Location tracking is an important privacy issue in contactless eID systems. An electronic passport with an RFID chip, if equipped with Basic Access Control, does not reveal any personal information of the passport holder as long as it is safely stored in a pocket and its MRZ is unknown to the attacker. However, the initialisation of wireless communication according to ISO 14443 requires the chip to send a unique identifier to the card reader. An attacker with several distributed reading devices (e.g. in door frames) could therefore distinguish the passport holder without actually having access to the files on the chip. Combined with other data sources, the attacker might be able to generate person or card-specific profiles. This particular attack is relatively easy to avoid – most electronic passports generate random UIDs for every session (see Supplement 9303, E11,) but as a general rule, privacy- protecting RFID systems should be designed very carefully.
+
+[林宗男、李忠憲／數位身分證的資安風險](https://talk.ltn.com.tw/article/paper/1318140)
+
+> 晶片的公私鑰雖然是在晶片內產製，但是需將公鑰資料讀出才能產生個人憑證申請檔（CSR）。公鑰能匯出當然私鑰也能匯出。但是內政部卻告訴國人無法匯出，明顯與事實不符。全體國民公私鑰key pair只有廠商知道如何產生，公務機關無法驗證，憑空製造國家安全的治理危機。我們呼籲政府應當採取分散式架構建構我國數位國家政策，放棄這個不當政策，正面回應民間及學術界「一卡一用」的主張。
+
+# TODO
+
+## Hyperledgger Aries
+
+- [hyperledger/aries-cloudagent-python: Hyperledger Aries Cloud Agent Python (ACA-Py) is a foundation for building decentralized identity applications and services running in non-mobile environments.](https://github.com/hyperledger/aries-cloudagent-python)
+- [hyperledger/aries-framework-go: Hyperledger Aries Framework Go provides packages for building Agent / DIDComm services](https://github.com/hyperledger/aries-framework-go)
+
+## Sidetree
+
+- [decentralized-identity/sidetree: Node.js implementation of the Sidetree protocol](https://github.com/decentralized-identity/sidetree)
+- [decentralized-identity/element: DID Method implementation using the Sidetree protocol on top of Ethereum and IPFS](https://github.com/decentralized-identity/element)
+- [decentralized-identity/ion: DID Method implementation using the Sidetree protocol on top of Bitcoin](https://github.com/decentralized-identity/ion)
+- [trustbloc/sidetree-fabric: Implementation of Sidetree with a backing Hyperledger Fabric ledger](https://github.com/trustbloc/sidetree-fabric)
+
+## DID Resolution
+
+- [DID Resolution work · Issue #101 · hyperledger/aries-rfcs](https://github.com/hyperledger/aries-rfcs/issues/101)
+- [did-exchange protocol using HTTPS as transport Framework Go v0.1.0 - Hyperledger Aries - Hyperledger Confluence](https://wiki.hyperledger.org/display/ARIES/Framework+Go+v0.1.0)
+
 
 ## 201909
 
