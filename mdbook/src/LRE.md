@@ -89,3 +89,16 @@ Storage | Durability
 [Chaos Engineering (混沌工程)](https://rickhw.github.io/2018/10/08/DevOps/Chaos-Engineering/)
 
 
+# Transactions Per Second (TPS)
+
+[中央銀行數位貨幣（CBDC）芻議 | 名家評論 - 工商時報](https://view.ctee.com.tw/monetary/11266.html)
+> 將區塊鏈的去中介化、去中心化除去，成為一個強大的中心化私有區塊鏈，因此，人行CBDC每秒可處理300,000筆交易；在去年的「光棍節」期間，中國所有交易的峰值交易量為每秒92,771筆交易，仍落在人行的規劃範圍之內。傳聞人行的CBDC將在今年11月11日「光棍節」上路，接受最嚴苛的檢驗。
+
+[Facebook announces Libra cryptocurrency: All you need to know | TechCrunch](https://techcrunch.com/2019/06/18/facebook-libra/)
+> Every Libra payment is permanently written into the Libra Blockchain — a cryptographically authenticated database that acts as a public online ledger designed to handle 1,000 transactions per second. 
+
+[Hedera Hashgraph, Touted as High-Speed Blockchain Alternative, Now Live - CoinDesk](https://www.coindesk.com/hedera-hashgraph-touted-as-high-speed-blockchain-alternative-goes-live)
+> Specifically, Hedera says the network can support up to 10,000 transactions per second, compared to 2.8 per second for bitcoin and 15 for ethereum, the two largest blockchains.
+
+[Hedera Hashgraph — Time for some FUD - Eric Wall - Medium](https://medium.com/@ercwl/hedera-hashgraph-time-for-some-fud-9e6653c11525)
+> A dapp requires smart contracts and since Hedera is currently throttling 10 transactions per second with smart contracts, then it doesn’t make this any more interesting than ethereum

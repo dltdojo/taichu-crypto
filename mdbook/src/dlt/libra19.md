@@ -1,5 +1,9 @@
 # Libra
 
+[Facebook releases plan for its Libra cryptocurrency to 'meet the daily financial needs of billions of people' - The Block](https://www.theblockcrypto.com/post/27667/facebook-libra-cryptocurrency-calibra-launch)
+
+> "The challenge is that as of today we do not believe that there is a proven solution that can deliver the scale, stability, and security needed to support billions of people and transactions across the globe through a permissionless network," the whitepaper notes, conservatively quoting a throughput capacity of 1,000 transactions per second and a 10-second finality upon launch.
+
 # TOC
 <!-- toc -->
 

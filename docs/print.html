@@ -1149,16 +1149,113 @@ $ cargo run --bin veloren-voxygen
 Polkadot</li>
 </ul>
 <h1><a class="header" href="#anonymity-enhanced-cryptocurrency-aec" id="anonymity-enhanced-cryptocurrency-aec">Anonymity-Enhanced Cryptocurrency (AEC)</a></h1>
+<p>採用 <a href="https://www.fatf-gafi.org/publications/fatfrecommendations/documents/guidance-rba-virtual-assets.html">2019 Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers - FATF</a> 指引 RBA-VA-VASPs 用詞 Anonymity-Enhanced Cryptocurrency (AEC) 的定義</p>
 <h1><a class="header" href="#toc-4" id="toc-4">TOC</a></h1>
 <ul>
 <li><a href="virtual-asset/aec.html#grin">Grin</a></li>
-<li><a href="virtual-asset/aec.html#gotts">Gotts</a></li>
+<li><a href="virtual-asset/aec.html#gotts">Gotts</a>
+<ul>
+<li><a href="virtual-asset/aec.html#how-to-ensure-a-stable-price">How to Ensure a Stable Price</a></li>
+<li><a href="virtual-asset/aec.html#oracle">oracle</a></li>
+<li><a href="virtual-asset/aec.html#stablecons">Stablecons</a></li>
 </ul>
-<h2><a class="header" href="#grin" id="grin">Grin</a></h2>
+</li>
+</ul>
+<h1><a class="header" href="#grin" id="grin">Grin</a></h1>
 <p><a href="https://github.com/mimblewimble/grin">mimblewimble/grin: Minimal implementation of the MimbleWimble protocol.</a></p>
-<h2><a class="header" href="#gotts" id="gotts">Gotts</a></h2>
-<p>MimbleWimble 系也出穩定幣(Decentralized non-collateralized stable-coins) 而且是 POW 鏈，如何保持穩定未知，倒是比 grin 的 TPS 可拉高 10 倍大概可以到 100。</p>
+<h1><a class="header" href="#gotts" id="gotts">Gotts</a></h1>
 <p><a href="https://github.com/gottstech/gotts">gottstech/gotts: A blockchain for non-collateralized stable-coins, follow MimbleWimble protocol but with explicit amount.</a></p>
+<p>MimbleWimble 系也出穩定幣(Decentralized non-collateralized stable-coins) 而且是 POW 鏈，宣稱可以無擔保維持幣值穩定，比 grin 的 TPS 可拉高 10 倍大概可以到 100。Gotts 的功能雖然用合約來寫也可，POW 系的穩定幣專用鏈是否可持續運轉有待觀察。</p>
+<h2><a class="header" href="#how-to-ensure-a-stable-price" id="how-to-ensure-a-stable-price">How to Ensure a Stable Price</a></h2>
+<p><a href="https://github.com/gottstech/gotts/blob/master/docs/intro.md#how-to-ensure-a-stable-price">How to Ensure a Stable Price · gottstech/gotts</a></p>
+<blockquote>
+<p>In fact, Gotts price will be volatile, just like any other cryptocurrencies. Gotts coin is not a stable coin.</p>
+</blockquote>
+<p>該鏈的原生代幣 Gotts coin 實際上會波動，並非穩定幣。</p>
+<blockquote>
+<p>Instead, in Gotts system, the stable coins are those on-chain assets, such as GOUS, GOEU, GOCN, etc.</p>
+</blockquote>
+<p>穩定幣是指鏈上資產</p>
+<pre><code>Total Value (US$) = M * R + N
+
+Where M is the total circulation of Gotts coins,
+N is the total circulation of GOUS stable-coins in the system,
+R is the current Gotts coin price in US$.
+</code></pre>
+<p>穩定幣部分只有 N，假設要將 N 取出 P 來換成實際法幣，這裡先考慮只有 US$/Gotts 交易對可用。</p>
+<pre><code>Input = P GOUS
+Output = Q Gotts
+
+where Q = P / R, R is the current Gotts coin price in US$.
+
+Total Value (US$) = (M + P/R)*R + (N-P) = M * R + N
+</code></pre>
+<p>N 減去 P 之後，本來的 M 位置變成 (M+P/R)</p>
+<blockquote>
+<p>So, this means, in any time, for any amount of stablecoin assets on Gotts chain, the chain 100% ensure its face value as the pegged asset such as USD, EUR, CNY, JPN, GBP, CAD and so on.</p>
+</blockquote>
+<table><thead><tr><th>ID</th><th>Date</th><th>M</th><th>R</th><th>N</th><th>Total</th><th>Note</th></tr></thead><tbody>
+<tr><td>101</td><td>2029-04-01</td><td>100</td><td>0.10</td><td>200</td><td>210</td><td>初始狀態</td></tr>
+<tr><td>102</td><td>2029-04-02</td><td>100</td><td>0.20</td><td>200</td><td>220</td><td>放著不動</td></tr>
+<tr><td>103</td><td>2029-04-03</td><td>180</td><td>0.25</td><td>180</td><td>225</td><td>N 轉出 20 剩 180, M 變成 (100 + 20/0.25)=180</td></tr>
+<tr><td>104</td><td>2029-04-04</td><td>0</td><td>0.20</td><td>216</td><td>216</td><td>穩定效果只有全部都是 N，將 M 清空後加上 180*0.2=36 到 N</td></tr>
+<tr><td>105</td><td>2029-04-05</td><td>0</td><td>0.10</td><td>216</td><td>216</td><td>穩定 N</td></tr>
+<tr><td>106</td><td>2029-04-06</td><td>720</td><td>0.30</td><td>0</td><td>216</td><td>清空 N</td></tr>
+<tr><td>107</td><td>2029-04-07</td><td>720</td><td>0.10</td><td>0</td><td>72</td><td></td></tr>
+<tr><td>108</td><td>2029-05-01</td><td>720</td><td>0.01</td><td>0</td><td>7.2</td><td></td></tr>
+</tbody></table>
+<blockquote>
+<p>This procedure is completely decentralized. Anybody can execute a conversion by him/her self at any time, just as simple as a normal transaction on the chain.</p>
+</blockquote>
+<p>簡單換算可以隨時發起交易進行資產轉換，不需要先找到對手方。</p>
+<blockquote>
+<p>It looks very like a crypto-collateralized stable-coins but actually it's NOT, here the crypto asset refers to the Gotts coin.</p>
+</blockquote>
+<p>看起來還是很像抵押兌換，其實沒有抵押資產只是轉換。</p>
+<blockquote>
+<p>The biggest risk to the crypto-collateralized stablecoin model is the volatility of the underlying collateral. So, normally it requires over-collateralization, moreover, once the collateral lose too much value, the liquidation procedure is forced to be enabled because under-collateralized.</p>
+</blockquote>
+<p>不像穩定的抵押池需要持續補倉或是斷頭來維持流動水位。</p>
+<blockquote>
+<p>For the stability, the ONLY risk is the event of the whole crypto crash, traders tend to exit to fiat currencies, not stablecoins and not Gotts coin. But that will be quite impossible once Gotts chain published, just like talking about shutdown of Bitcoin network.</p>
+</blockquote>
+<p>唯一風險是 R 歸零如上面 108 狀態，R 需要對手方來交換，很可能根本沒人要換如小幣。</p>
+<blockquote>
+<p>If user want to convert directly from one stablecoin to another one, for example converting GOUS to GOJP, there's no need to convert between them and Gotts coin, the chain native transaction can support these cross conversion directly among all these stablecoins.</p>
+</blockquote>
+<p>不用對手交易方的轉換可一個交易直接兌換不同穩定幣，不需先換回 GO 如 GOUS - GO - GOEU，而是直接換 GOUS - GOEU。 </p>
+<blockquote>
+<p>Similar as Maker DAI price feed oracles, Gotts also use whitelist for price feeding.</p>
+</blockquote>
+<p>關鍵在於外部 R 的寫入系統，類似 <a href="https://developer.makerdao.com/feeds/">Maker - Feeds price feed oracles</a> 與報價 <a href="https://makerdao.com/feeds/">Maker Feeds</a></p>
+<blockquote>
+<p>If a block reward is 60 Gotts, 10% of this reward will go to the price feed oracles, and 90% will go to the miner. And the penalty of the fault price feed (if have) will go to the miner as the additional reward.</p>
+</blockquote>
+<p>誠實報價獎勵經濟，這系統需要抵押的是 oracle 角色。</p>
+<blockquote>
+<p>More price feed oracles means more safe for Gotts, but we need store these price feed data on chain, and storing all these price feed data is too expensive for the chain. So, in Gotts, we only store 15 price feed oracles data, i.e. we limit the size of vector PriceFeed to 15.</p>
+</blockquote>
+<p>100 oracles 隨機選出 15 oracles </p>
+<h2><a class="header" href="#oracle" id="oracle">oracle</a></h2>
+<p><a href="https://github.com/gottstech/gotts-oracle">gottstech/gotts-oracle: Gotts Price Feed Oracle</a></p>
+<p>Gotts 的設計一開始只有USD, EUR, CNY, JPN, GBP, CAD法幣對應的穩定幣，主要是這類資料被大風吹的資率比較低，對 oracle 檢驗相對容易。</p>
+<ul>
+<li>GOUS (pegged to fiat US dollar)</li>
+<li>GOEU (pegged to fiat Euro)</li>
+<li>GOCN (pegged to fiat Chinese Yuan)</li>
+<li>GOJP (pegged to fiat Japanese Yen)</li>
+<li>GOUK (pegged to fiat British Pound)</li>
+<li>GOCA (pegged to fiat Canadian Dollar)</li>
+</ul>
+<h2><a class="header" href="#stablecons" id="stablecons">Stablecons</a></h2>
+<p><a href="https://blogs.imf.org/2019/09/19/digital-currencies-the-rise-of-stablecoins/">Digital Currencies: The Rise of Stablecoins – IMF Blog</a></p>
+<blockquote>
+<p>Adoption of new forms of money will depend on their attractiveness as a store of value and means of payment.</p>
+</blockquote>
+<p><a href="https://www.cbc.gov.tw/ct.asp?xItem=89992&amp;ctNode=302&amp;mp=1">FinTechs與BigTechs在支付領域之發展及影響</a></p>
+<blockquote>
+<p>電子貨幣機制與穩定幣類似，但價值穩定，未來在網路效應的推動下，可望日益普遍。IMF 甚至認為電子貨幣有可能會超越現金及銀行存款，成為民眾最常用的貨幣形式；此外，亦建議各國央行或可斟酌國情，考量透過公私部門合作方式，以中央銀行貨幣作為發行準備22，由電子貨幣機構對民眾發行「合成型 CBDC」(synthetic CBDC, sCBDC)。</p>
+</blockquote>
 <h1><a class="header" href="#dlt" id="dlt">DLT</a></h1>
 <ul>
 <li><a href="dlt.html#todo">TODO</a>
@@ -18629,6 +18726,10 @@ exec &quot;$JAVACMD&quot; &quot;$@&quot;
 <p>Initial Parachain Offering (IPCO) ?</p>
 <p><a href="https://medium.com/@longhashSG/preparing-for-your-first-parachain-auction-d965bfe2ac6e">Preparing for Your First Parachain Auction - LongHash incubator - Medium</a></p>
 <h1><a class="header" href="#libra" id="libra">Libra</a></h1>
+<p><a href="https://www.theblockcrypto.com/post/27667/facebook-libra-cryptocurrency-calibra-launch">Facebook releases plan for its Libra cryptocurrency to 'meet the daily financial needs of billions of people' - The Block</a></p>
+<blockquote>
+<p>&quot;The challenge is that as of today we do not believe that there is a proven solution that can deliver the scale, stability, and security needed to support billions of people and transactions across the globe through a permissionless network,&quot; the whitepaper notes, conservatively quoting a throughput capacity of 1,000 transactions per second and a 10-second finality upon launch.</p>
+</blockquote>
 <h1><a class="header" href="#toc-10" id="toc-10">TOC</a></h1>
 <ul>
 <li><a href="dlt/libra19.html#%E9%9A%A8%E6%83%B3">隨想</a>
@@ -36687,6 +36788,7 @@ message RatingWithID {
 <li><a href="dao.html#%E6%BF%80%E5%8B%B5%E5%8E%9F%E5%89%87-okrs-or-kpi">激勵原則 OKRs or KPI</a></li>
 </ul>
 </li>
+<li><a href="dao.html#%E5%BD%B1%E7%89%87">影片</a></li>
 <li><a href="dao.html#todo">TODO</a>
 <ul>
 <li><a href="dao.html#darkdao">DarkDAO</a></li>
@@ -36705,6 +36807,8 @@ message RatingWithID {
 <li>每群組</li>
 <li>個人</li>
 </ul>
+<h1><a class="header" href="#影片" id="影片">影片</a></h1>
+<p><a href="https://www.youtube.com/watch?v=eqgWphTaLgM&amp;fbclid=IwAR1oh-p2edYtjNhNqHvypAcoTbwYyqulHlze6usvQpC_S5Zhx5YDtEyoO_8">2018勞工影展 開幕片 《工人搞公司 Can We Do It Ourselves 》 - YouTube</a></p>
 <h1><a class="header" href="#todo-7" id="todo-7">TODO</a></h1>
 <ul>
 <li><a href="https://github.com/hicommonwealth">Commonwealth</a></li>
@@ -37005,6 +37109,7 @@ BAC And Traceability
 </ul>
 </li>
 <li><a href="LRE.html#chaos-engineering">Chaos Engineering</a></li>
+<li><a href="LRE.html#transactions-per-second-tps">Transactions Per Second (TPS)</a></li>
 </ul>
 <h1><a class="header" href="#ledger-reliability-engineering-lre" id="ledger-reliability-engineering-lre">Ledger Reliability Engineering (LRE)</a></h1>
 <p>Ledger Reliability Engineering (LRE) 與 Site Reliability Engineering (SRE) 應用的 DevOps 工具類似，差異在 dApp 的運作模式牽涉到與他人他社的共識互動機制，而且不太可能單一組織內所有應用都是 dApp，故 LRE 也需兼顧 App 維運需要。</p>
@@ -37089,6 +37194,23 @@ BAC And Traceability
 </ul>
 <h1><a class="header" href="#chaos-engineering" id="chaos-engineering">Chaos Engineering</a></h1>
 <p><a href="https://rickhw.github.io/2018/10/08/DevOps/Chaos-Engineering/">Chaos Engineering (混沌工程)</a></p>
+<h1><a class="header" href="#transactions-per-second-tps" id="transactions-per-second-tps">Transactions Per Second (TPS)</a></h1>
+<p><a href="https://view.ctee.com.tw/monetary/11266.html">中央銀行數位貨幣（CBDC）芻議 | 名家評論 - 工商時報</a></p>
+<blockquote>
+<p>將區塊鏈的去中介化、去中心化除去，成為一個強大的中心化私有區塊鏈，因此，人行CBDC每秒可處理300,000筆交易；在去年的「光棍節」期間，中國所有交易的峰值交易量為每秒92,771筆交易，仍落在人行的規劃範圍之內。傳聞人行的CBDC將在今年11月11日「光棍節」上路，接受最嚴苛的檢驗。</p>
+</blockquote>
+<p><a href="https://techcrunch.com/2019/06/18/facebook-libra/">Facebook announces Libra cryptocurrency: All you need to know | TechCrunch</a></p>
+<blockquote>
+<p>Every Libra payment is permanently written into the Libra Blockchain — a cryptographically authenticated database that acts as a public online ledger designed to handle 1,000 transactions per second. </p>
+</blockquote>
+<p><a href="https://www.coindesk.com/hedera-hashgraph-touted-as-high-speed-blockchain-alternative-goes-live">Hedera Hashgraph, Touted as High-Speed Blockchain Alternative, Now Live - CoinDesk</a></p>
+<blockquote>
+<p>Specifically, Hedera says the network can support up to 10,000 transactions per second, compared to 2.8 per second for bitcoin and 15 for ethereum, the two largest blockchains.</p>
+</blockquote>
+<p><a href="https://medium.com/@ercwl/hedera-hashgraph-time-for-some-fud-9e6653c11525">Hedera Hashgraph — Time for some FUD - Eric Wall - Medium</a></p>
+<blockquote>
+<p>A dapp requires smart contracts and since Hedera is currently throttling 10 transactions per second with smart contracts, then it doesn’t make this any more interesting than ethereum</p>
+</blockquote>
 <h1><a class="header" href="#web-tech" id="web-tech">Web Tech</a></h1>
 <h1><a class="header" href="#toc-20" id="toc-20">TOC</a></h1>
 <!-- toc -->

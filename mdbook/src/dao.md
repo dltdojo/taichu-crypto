@@ -15,6 +15,10 @@ DAO 績效分配參考[Live OKRs - Joystream - github](https://github.com/Joystr
 - 每群組
 - 個人
 
+# 影片
+
+[2018勞工影展 開幕片 《工人搞公司 Can We Do It Ourselves 》 - YouTube](https://www.youtube.com/watch?v=eqgWphTaLgM&fbclid=IwAR1oh-p2edYtjNhNqHvypAcoTbwYyqulHlze6usvQpC_S5Zhx5YDtEyoO_8)
+
 # TODO
 
 - [Commonwealth](https://github.com/hicommonwealth)
