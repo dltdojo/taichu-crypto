@@ -97,7 +97,7 @@ ID | Date       | M   |  R   |   N |  Total | Note
 
 [gottstech/gotts-oracle: Gotts Price Feed Oracle](https://github.com/gottstech/gotts-oracle)
 
-Gotts 的設計一開始只有USD, EUR, CNY, JPN, GBP, CAD法幣對應的穩定幣，主要是這類資料被大風吹的資率比較低，對 oracle 檢驗相對容易。
+Gotts 的設計一開始只有USD, EUR, CNY, JPN, GBP, CAD法幣對應的穩定幣，主要是這類資料被大風吹亂的機率較低，對 oracle 檢驗相對容易。
 
 - GOUS (pegged to fiat US dollar)
 - GOEU (pegged to fiat Euro)
@@ -112,7 +112,7 @@ Gotts 的設計一開始只有USD, EUR, CNY, JPN, GBP, CAD法幣對應的穩定�
 
 > Adoption of new forms of money will depend on their attractiveness as a store of value and means of payment.
  
-[FinTechs與BigTechs在支付領域之發展及影響](https://www.cbc.gov.tw/ct.asp?xItem=89992&ctNode=302&mp=1)
+[FinTechs與BigTechs在支付領域之發展及影響 - 9月19日央行理監事會後記者會參考資料](https://www.cbc.gov.tw/ct.asp?xItem=89992&ctNode=302&mp=1)
 
 > 電子貨幣機制與穩定幣類似，但價值穩定，未來在網路效應的推動下，可望日益普遍。IMF 甚至認為電子貨幣有可能會超越現金及銀行存款，成為民眾最常用的貨幣形式；此外，亦建議各國央行或可斟酌國情，考量透過公私部門合作方式，以中央銀行貨幣作為發行準備22，由電子貨幣機構對民眾發行「合成型 CBDC」(synthetic CBDC, sCBDC)。
 

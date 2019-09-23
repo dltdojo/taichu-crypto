@@ -38,6 +38,23 @@ SEC. 255. Briefing on use of blockchain technology for defense purposes.
 
 > This challenge goes deeper than current discussions on under what circumstances cryptoassets should be considered as commodities, securities  or other asset classes. Rather, it is how to embed the concept of economic finality in today’s legal system, and the adjacent question of how to treat such assets on balance sheets.
 
+# 經濟
+
+## The coming of external intelligence
+
+[Where is technology taking the economy? | McKinsey](https://www.mckinsey.com/business-functions/mckinsey-analytics/our-insights/where-is-technology-taking-the-economy)
+
+[经济学家 Brian Arthur：当工作先于凯恩斯的预测成了稀缺资源，我们的人生意义何在？ - 链闻 ChainNews](https://www.chainnews.com/articles/991116111661.htm)
+
+> 数字技术不仅仅是一种虚拟的经济体，也是外部化的智能。它极大地促进了这些领域的能力，却也在一点一点的抛弃人工劳作。
+
+## 数字货币因数字经济诞生
+
+[经济学家朱嘉明：数字货币因数字经济诞生，绝非传统货币的简单移植 - 链闻 ChainNews](https://www.chainnews.com/articles/323383360421.htm)
+
+> 我的结论是，如果说 21 世纪是人类社会和经济社会生活全方位极具复杂化的世纪，那么数字货币将是这种复杂化的核心所在。
+
+
 
 # 常用觀點連結
 

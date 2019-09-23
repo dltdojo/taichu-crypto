@@ -28,6 +28,12 @@
     locked up in outstanding loans, your withdrawal transaction will fail.
 ```
 
+[Compound Finance Audit Summary – OpenZeppelin blog](https://blog.openzeppelin.com/compound-finance-audit-summary/)
+
+> However, in the hands of a malicious or compromised administrator, these privileges contain the ability to trivially freeze markets, censor transactions or steal all assets from the system. Similarly, control of the price feed can be used to steal most, if not all, assets from the system. Currently, the same externally owned account is the administrator for all live markets.
+
+
+
 # ChainX
 
 [chainx-org/ChainX: Cross-chain hub for Crypto Asset on Polkadot](https://github.com/chainx-org/ChainX)

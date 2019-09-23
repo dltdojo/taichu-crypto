@@ -5,6 +5,24 @@
 
 # Code Server Docker 
 
+## rust + webassembly 開發環境 v2
+
+- [rustwasm/rust-webpack-template: Kickstart your Rust, WebAssembly, and Webpack project!](https://github.com/rustwasm/rust-webpack-template)
+- [rustwasm/wasm-pack: 📦✨ your favorite rust -> wasm workflow tool!](https://github.com/rustwasm/wasm-pack)
+
+效果跟 [wasdk/WebAssemblyStudio: Learn, Teach, Work and Play in the WebAssembly Studio](https://github.com/wasdk/WebAssemblyStudio) 差不多，只是多出 bash, cargo, nodejs, npm 可用。
+
+
+```dockerfile
+{{#include ../dockerfiles/Dockerfile-rust-wasm-v2.txt}}
+```
+
+## rust 開發環境 v2
+
+```dockerfile
+{{#include ../dockerfiles/Dockerfile-rust-v2.txt}}
+```
+
 ## code-server v2 正式版本加上 vue 開發環境
 
 ```dockerfile

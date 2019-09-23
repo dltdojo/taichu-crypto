@@ -1,0 +1,49 @@
+#
+# https://hub.docker.com/r/codercom/code-server/tags
+#
+ARG CS_VER=v2
+FROM codercom/code-server:${CS_VER}
+USER root
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        build-essential \
+        ca-certificates \
+        curl \
+        git \
+        ssh \
+        libssl-dev \
+        pkg-config && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+USER coder
+#
+# install rust
+#
+RUN curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
+ENV USER=coder
+RUN cat $HOME/.cargo/env && echo -e '\nexport PATH="/home/coder/.cargo/bin:$PATH"' >> /home/coder/.bashrc
+
+RUN set -eux  && \
+    code-server --install-extension ms-ceintl.vscode-language-pack-zh-hant
+ARG PATH_SETTINGS=/home/coder/.local/share/code-server/User/settings.json
+ARG PATH_LOCALE=/home/coder/.local/share/code-server/User/locale.json
+# COPY settings.json ${PATH_SETTINGS}
+RUN echo '{ \n\
+    "terminal.integrated.shell.linux": "/bin/bash", \n\
+    "files.associations": { \n\
+        "[Dd]ockerfile*": "dockerfile", \n\
+        "docker-compose*": "yaml" \n\
+    } \n\
+}' > ${PATH_SETTINGS}
+
+# https://code.visualstudio.com/docs/getstarted/locales
+RUN echo '{ \n\
+    "locale": "zh-tw" \n\
+}' > ${PATH_LOCALE}
+#
+# docker build -t foo .
+# docker run -it --rm -v $PWD:/home/coder/project -p 8080:8080 foo 
+# http://localhost:8080/?folder=/home/coder/project/
+# cargo new --bin hello-world 
+# cd hello-world && cargo run

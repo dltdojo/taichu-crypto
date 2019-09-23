@@ -27,3 +27,6 @@
 
 使用 [discourse/discourse: A platform for community discussion. Free, open, simple.](https://github.com/discourse/discourse) 既有的套裝開源論壇軟體缺點是使用者配置如果沒有經過串接會有獨立兩套的使用者資料，改成直接掛鏈論壇如 [Joystream/substrate-forum-module: An on-chain forum.](https://github.com/Joystream/substrate-forum-module) 除了使用者資料歸一處之外，另外好處是每筆發言編輯都有簽章為證，相反的掛鏈論壇缺點是小眾使用不適合高人氣網站的讀寫場景，也不像泛用型論壇軟體如 discourse 有現成美觀的 UI 介面，手機板也不用自己來寫。
 
+鏈上使用手冊或是使用規範作法可以同步到所有節點，這類資料改寫少適合用在組織裡面。 
+
+[testnet.joystream.org/acropolis/pioneer/#/forum/categories/4](https://testnet.joystream.org/acropolis/pioneer/#/forum/categories/4)

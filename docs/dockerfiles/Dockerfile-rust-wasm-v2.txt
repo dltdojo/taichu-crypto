@@ -1,0 +1,63 @@
+#
+# https://hub.docker.com/r/codercom/code-server/tags
+#
+ARG CS_VER=v2
+FROM codercom/code-server:${CS_VER}
+USER root
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        build-essential \
+        ca-certificates \
+        curl \
+        git \
+        ssh \
+        gnupg \
+        libssl-dev \
+        pkg-config && \
+    curl -sL https://deb.nodesource.com/setup_10.x | bash && \
+    apt-get install nodejs -yq && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+USER coder
+#
+# install rust
+#
+RUN curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
+ENV USER=coder
+RUN export PATH="/home/coder/.cargo/bin:$PATH" && \
+    curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh -s && \
+    cargo install cargo-generate
+#
+# npm global install witout root
+# https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+#
+RUN npm config set prefix=/home/coder/.npm-packages && \
+    echo '\nexport PATH="/home/coder/.npm-packages/bin:$PATH"' >> /home/coder/.bashrc && \
+    echo '\nexport PATH="/home/coder/.cargo/bin:$PATH"' >> /home/coder/.bashrc
+
+RUN set -eux  && \
+    code-server --install-extension ms-ceintl.vscode-language-pack-zh-hant
+ARG PATH_SETTINGS=/home/coder/.local/share/code-server/User/settings.json
+ARG PATH_LOCALE=/home/coder/.local/share/code-server/User/locale.json
+# COPY settings.json ${PATH_SETTINGS}
+RUN echo '{ \n\
+    "terminal.integrated.shell.linux": "/bin/bash", \n\
+    "files.associations": { \n\
+        "[Dd]ockerfile*": "dockerfile", \n\
+        "docker-compose*": "yaml" \n\
+    } \n\
+}' > ${PATH_SETTINGS}
+
+# https://code.visualstudio.com/docs/getstarted/locales
+RUN echo '{ \n\
+    "locale": "zh-tw" \n\
+}' > ${PATH_LOCALE}
+#
+# docker build -t foo .
+# docker run -it --rm -v $PWD:/home/coder/project -p 8080-8089:8080-8089 foo 
+# http://localhost:8080/?folder=/home/coder/project/
+#
+# npm init rust-webpack my-app
+# cd my-app && npm run start
+# You must give "--host 0.0.0.0" option to webpack-dev-server in the container 
