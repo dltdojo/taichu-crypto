@@ -154,6 +154,24 @@
 <h2><a class="header" href="#email-provider" id="email-provider">Email provider</a></h2>
 <p><a href="https://medium.com/@Negaihoshi/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%AF%84%E4%BF%A1%E6%9C%8D%E5%8B%99%E5%88%86%E6%9E%90-2ddd72009705">第三方寄信服務簡易分析 - 願い星 - Medium</a>
 <a href="https://documentation.mailgun.com/en/latest/quickstart-sending.html#send-via-smtp">How to start sending email — Mailgun API documentation</a></p>
+<h1><a class="header" href="#headless-browser" id="headless-browser">Headless Browser</a></h1>
+<ul>
+<li><a href="https://github.com/atroche/rust-headless-chrome">atroche/rust-headless-chrome</a></li>
+<li><a href="https://github.com/GoogleChrome/puppeteer">GoogleChrome/puppeteer: Headless Chrome Node.js API</a></li>
+<li><a href="https://newtoypia.blogspot.com/2019/02/puppeteer.html">玩具烏托邦: 網頁爬蟲終極武器： puppeteer</a></li>
+</ul>
+<p>puppeteer 可以截圖存證</p>
+<pre><code class="language-js">const puppeteer = require('puppeteer');
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto('https://example.com');
+  await page.screenshot({path: 'example.png'});
+
+  await browser.close();
+})();
+</code></pre>
 
                     </main>
 

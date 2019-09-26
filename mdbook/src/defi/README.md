@@ -70,6 +70,11 @@ Centrifuge’s vision is to enable businesses worldwide to access and create the
 
 [DeFi.WTF – Join the 1st DeFi Conf in Osaka.](https://www.defi.wtf/)
 
+# Resources
+
+- [橙皮书](https://orange.xyz/)
+- [一起定义区块链游戏 | DOGIgames](https://www.dogigames.com/cn/index)
+
 # TODO
 
 - [*almost* Trustless Project Fundraising - AxiaLabs - Medium](https://medium.com/axialabs/trustless-fundaising-9a5fe3b76885)

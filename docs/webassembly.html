@@ -152,6 +152,8 @@
 <li><a href="#wasm-for-blockchain-2019">Wasm for Blockchain 2019</a></li>
 <li><a href="#wasmtime">Wasmtime</a></li>
 <li><a href="#wasi-cowsay">WASI cowsay</a></li>
+<li><a href="#cloudflare-worker--wrangler--serverless-wasm">Cloudflare Worker , wrangler , Serverless Wasm</a></li>
+<li><a href="#wasm32-wasi">wasm32-wasi</a></li>
 <li><a href="#links">Links</a></li>
 </ul>
 <h2><a class="header" href="#evm-abi-webassemble" id="evm-abi-webassemble">EVM ABI WebAssemble</a></h2>
@@ -207,6 +209,32 @@
 <a href="https://github.com/wasmerio/wasmer/issues/142">relation to wasmtime? · Issue #142 · wasmerio/wasmer</a></p>
 <h2><a class="header" href="#wasi-cowsay" id="wasi-cowsay">WASI cowsay</a></h2>
 <p><a href="https://github.com/wapm-packages/cowsay">wapm-packages/cowsay: Cowsay in WebAssembly</a></p>
+<h2><a class="header" href="#cloudflare-worker--wrangler--serverless-wasm" id="cloudflare-worker--wrangler--serverless-wasm">Cloudflare Worker , wrangler , Serverless Wasm</a></h2>
+<ul>
+<li><a href="https://github.com/cloudflare/wrangler">cloudflare/wrangler: 🤠 wrangle your cloudflare workers</a></li>
+<li><a href="https://www.youtube.com/watch?v=CMB6AlE1QuI">Rust, WebAssembly, and the future of Serverless by Steve Klabnik - YouTube</a></li>
+<li><a href="https://www.smashingmagazine.com/2019/08/beyond-browser-serverless-webassembly/">Beyond The Browser: Getting Started With Serverless WebAssembly — Smashing Magazine</a></li>
+<li><a href="https://github.com/robertaboukhalil/fastq.bio-serverless/">robertaboukhalil/fastq.bio-serverless: An interactive web tool for quality control of DNA sequencing data, using Cloudflare workers running WebAssembly</a></li>
+<li><a href="https://crates.io/crates/pulldown-cmark">pulldown-cmark - crates.io: Rust Package Registry</a></li>
+<li><a href="https://www.youtube.com/watch?v=fh9WXPu0hw8">Bringing WebAssembly outside the web with WASI by Lin Clark - YouTube</a></li>
+</ul>
+<h2><a class="header" href="#wasm32-wasi" id="wasm32-wasi">wasm32-wasi</a></h2>
+<p>目前 wasi net 部份未支援</p>
+<ul>
+<li><a href="https://github.com/rust-lang/rust/tree/1.37.0/src/libstd/sys/wasi">rust/src/libstd/sys/wasi at 1.37.0 · rust-lang/rust</a></li>
+<li><a href="https://github.com/rust-lang/rust/tree/1.37.0/src/libstd/sys/sgx">rust/src/libstd/sys/sgx at 1.37.0 · rust-lang/rust</a></li>
+<li><a href="https://medium.com/nttlabs/wasi-6060b243ac90">コンテナ技術を捨て、 WASIを試す - nttlabs - Medium</a></li>
+</ul>
+<pre><pre class="playpen"><code class="language-rust">// 
+// cargo +nightly build --target wasm32-wasi
+// 
+fn main() {
+    println!(&quot;Hello, WASM/WASI world!&quot;);
+}
+</code></pre></pre>
+<pre><code class="language-shell">$ wasmer run target/wasm32-wasi/debug/hello-wasi.wasm
+Hello, WASM/WASI world!
+</code></pre>
 <h2><a class="header" href="#links" id="links">Links</a></h2>
 <ul>
 <li><a href="https://medium.com/@didil/practice-your-go-webassembly-with-a-game-7195dabbfc44">Practice your Go WebAssembly with a Game</a></li>

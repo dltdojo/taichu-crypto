@@ -5,6 +5,12 @@
 
 # Topics
 
+## Hyperledger Fabric Operator
+
+- [KompiTech/hyperledger-fabric-operator: Hyperledger Fabric Kubernetes operator - scale and automate management of Hyperledger fabric blockchain infrastructure](https://github.com/KompiTech/hyperledger-fabric-operator)
+- [GrapeBaBa/fabric-operator: Cloud native fabric operator](https://github.com/GrapeBaBa/fabric-operator)
+- [Hyperledger Fabric Operator: A Faster and Easier Way to Manage a Blockchain... Haodong Chen - YouTube](https://www.youtube.com/watch?v=tw3KJVNYng4)
+
 ## Cloud native deployment support
 
 [FAB-13582 Peer and Chaincode cloud native deployment support - Hyperledger JIRA](https://jira.hyperledger.org/browse/FAB-13582)
