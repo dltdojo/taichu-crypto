@@ -5,6 +5,12 @@
 
 # 報告
 
+## Blockchain Now And Tomorrow
+
+- [EU Policy Lab | #Blockchain4EU: Blockchain for Industrial Transformations](https://blogs.ec.europa.eu/eupolicylab/blockchain4eu/)
+- [Blockchain Now And Tomorrow | EU Science Hub](https://ec.europa.eu/jrc/en/publication/eur-scientific-and-technical-research-reports/blockchain-now-and-tomorrow)
+- 吹風機 [EU Policy Lab | Gigbliss _ #Blockchain4EU](https://blogs.ec.europa.eu/eupolicylab/blockchain4eu/gigbliss/)
+
 ## Cambridge Judge Business School: Global Enterprise Blockchain Benchmarking Study
 　
 [Cambridge Judge Business School: 2nd Global Enterprise Blockchain Benchmarking Study](https://www.jbs.cam.ac.uk/faculty-research/centres/alternative-finance/publications/2nd-global-enterprise-blockchain-benchmarking-study/)

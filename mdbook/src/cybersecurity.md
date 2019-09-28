@@ -38,8 +38,8 @@ Tracking
 
 yaml and json file base on 2018-04-16_framework_v1.1_core1.xlsx
 
-- [WIP nist-csf-1.1.yaml](../public/nist-csf-1.1.yaml)
-- [WIP nist-csf-1.1.json](../public/nist-csf-1.1.json)
+- [WIP nist-csf-1.1.yaml](public/nist-csf-1.1.yaml)
+- [WIP nist-csf-1.1.json](public/nist-csf-1.1.json)
 
 argo workflow hello world version of ID.RA-5
 
@@ -80,7 +80,7 @@ Tracking
 | yy-mm-dd     |        |        |        |        |        |           -            |
 
 
-- [WIP Protobuf Def](../public/proto/csf-wuqi.proto)
+- [WIP Protobuf Def](public/proto/csf-wuqi.proto)
 
 ## Resources
 
