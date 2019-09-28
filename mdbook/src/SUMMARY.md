@@ -48,6 +48,7 @@
   - [OpenSSL](./web/openssl.md)
 - [Kubernetes](./k8s.md)
 - [P2P](./p2p.md)
+- [Cybersecurity](./cybersecurity.md)
 - [Rust](./rust.md)
 - [Post-quantum cryptography](./post-quantum.md)
 - [PlantUML](./plantuml.md)
