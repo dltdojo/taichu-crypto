@@ -38153,7 +38153,7 @@ registry.get('fileproviders/ipfs').api,
 </ul>
 <p>Tracking</p>
 <table><thead><tr><th>Date</th><th align="center">KR#1</th><th align="center">KR#2</th><th align="center">KR#3</th><th align="center">KR#4</th><th align="center">KR#5</th><th>Comments</th></tr></thead><tbody>
-<tr><td>19-09-28</td><td align="center">0.20</td><td align="center">0.00</td><td align="center">0.00</td><td align="center">0.00</td><td align="center">0.00</td><td></td></tr>
+<tr><td>19-09-28</td><td align="center">0.20</td><td align="center">0.00</td><td align="center">0.05</td><td align="center">0.00</td><td align="center">0.00</td><td></td></tr>
 <tr><td>yy-mm-dd</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td>-</td></tr>
 </tbody></table>
 <p>yaml and json file base on 2018-04-16_framework_v1.1_core1.xlsx</p>
@@ -38174,6 +38174,57 @@ spec:
       image: docker/whalesay:latest
       command: [cowsay]
       args: [&quot;ID.RA-5 Threats, vulnerabilities, likelihoods, and impacts are used to determine risk.&quot;]
+</code></pre>
+<p>WIP: DAG workflow</p>
+<ul>
+<li>IDENTIFY (ID)</li>
+<li>PROTECT (PR)</li>
+<li>DETECT (DE)</li>
+<li>RESPOND (RS)</li>
+<li>RECOVER (RC)</li>
+</ul>
+<p><a href="https://argoproj.github.io/docs/argo/examples/readme.html#dag">Open source container-native workflow engine for Kubernetes. | argo</a></p>
+<pre><code class="language-yaml">apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: csf-wuqi-
+spec:
+  entrypoint: csf
+  templates:
+  - name: echo
+    inputs:
+      parameters:
+      - name: message
+    container:
+      image: alpine:3.7
+      command: [echo, &quot;{{inputs.parameters.message}}&quot;]
+  - name: csf
+    dag:
+      tasks:
+      - name: IDENTIFY
+        template: echo
+        arguments:
+          parameters: [{name: message, value: IDENTIFY}]
+      - name: PROTECT
+        dependencies: [IDENTIFY]
+        template: echo
+        arguments:
+          parameters: [{name: message, value: PROTECT}]
+      - name: DETECT
+        dependencies: [IDENTIFY]
+        template: echo
+        arguments:
+          parameters: [{name: message, value: DETECT}]
+      - name: RESPOND
+        dependencies: [PROTECT, DETECT]
+        template: echo
+        arguments:
+          parameters: [{name: message, value: RESPOND}]
+      - name: RECOVER
+        dependencies: [PESPOND]
+        template: echo
+        arguments:
+          parameters: [{name: message, value: RECOVER}]
 </code></pre>
 <h3><a class="header" href="#objective-introduce-a-minimum-viable-product-mvp-system" id="objective-introduce-a-minimum-viable-product-mvp-system">Objective: Introduce a minimum viable product (MVP) System</a></h3>
 <ul>

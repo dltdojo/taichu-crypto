@@ -33,7 +33,7 @@ Tracking
 
 |     Date     |  KR#1  |  KR#2  |  KR#3  |  KR#4  |  KR#5  |        Comments        |
 |--------------|:------:|:------:|:------:|:------:|:------:|------------------------|
-| 19-09-28     |  0.20  |  0.00  |  0.00  |  0.00  |  0.00  |                        |
+| 19-09-28     |  0.20  |  0.00  |  0.05  |  0.00  |  0.00  |                        |
 | yy-mm-dd     |        |        |        |        |        |           -            |
 
 yaml and json file base on 2018-04-16_framework_v1.1_core1.xlsx
@@ -58,6 +58,59 @@ spec:
       args: ["ID.RA-5 Threats, vulnerabilities, likelihoods, and impacts are used to determine risk."]
 ```
 
+WIP: DAG workflow
+
+- IDENTIFY (ID)
+- PROTECT (PR)
+- DETECT (DE)
+- RESPOND (RS)
+- RECOVER (RC)
+
+[Open source container-native workflow engine for Kubernetes. | argo](https://argoproj.github.io/docs/argo/examples/readme.html#dag)
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: csf-wuqi-
+spec:
+  entrypoint: csf
+  templates:
+  - name: echo
+    inputs:
+      parameters:
+      - name: message
+    container:
+      image: alpine:3.7
+      command: [echo, "{{inputs.parameters.message}}"]
+  - name: csf
+    dag:
+      tasks:
+      - name: IDENTIFY
+        template: echo
+        arguments:
+          parameters: [{name: message, value: IDENTIFY}]
+      - name: PROTECT
+        dependencies: [IDENTIFY]
+        template: echo
+        arguments:
+          parameters: [{name: message, value: PROTECT}]
+      - name: DETECT
+        dependencies: [IDENTIFY]
+        template: echo
+        arguments:
+          parameters: [{name: message, value: DETECT}]
+      - name: RESPOND
+        dependencies: [PROTECT, DETECT]
+        template: echo
+        arguments:
+          parameters: [{name: message, value: RESPOND}]
+      - name: RECOVER
+        dependencies: [PESPOND]
+        template: echo
+        arguments:
+          parameters: [{name: message, value: RECOVER}]
+```
 
 ###  Objective: Introduce a minimum viable product (MVP) System
 
