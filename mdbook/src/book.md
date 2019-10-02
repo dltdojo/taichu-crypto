@@ -5,6 +5,18 @@
 
 # 報告
 
+## ITU - Focus Group on Application of Distributed Ledger Technology
+
+[Focus Group on Application of Distributed Ledger Technology](https://www.itu.int/en/ITU-T/focusgroups/dlt/Pages/default.aspx)
+
+- Technical Specification / DLT terms and definitions 
+- Technical Specification / DLT reference architecture
+- Technical Specification / Assessment criteria for DLT platforms
+
+[ITU issues guidance on the adoption of blockchain - ITU News](https://news.itu.int/itu-issues-guidance-blockchain-adoption/)
+
+> These documents will support ITU standardization in working groups including Q22/16 (Distributed Ledger Technologies and e-Services) and Q14/17 (Security aspects of Distributed Ledger Technologies).
+
 ## Blockchain Now And Tomorrow
 
 - [EU Policy Lab | #Blockchain4EU: Blockchain for Industrial Transformations](https://blogs.ec.europa.eu/eupolicylab/blockchain4eu/)
