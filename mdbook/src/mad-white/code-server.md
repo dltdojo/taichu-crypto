@@ -5,6 +5,10 @@
 
 # Code Server Docker 
 
+- [codercom/code-server Tags - Docker Hub](https://hub.docker.com/r/codercom/code-server/tags)
+- [code-server/Dockerfile at 2.1523-vsc1.38.1 · cdr/code-server](https://github.com/cdr/code-server/blob/2.1523-vsc1.38.1/Dockerfile)
+- [microsoft/vscode-loc: VS Code Localization Extension](https://github.com/Microsoft/vscode-loc)
+
 ## rust + webassembly 開發環境 v2
 
 - [rustwasm/rust-webpack-template: Kickstart your Rust, WebAssembly, and Webpack project!](https://github.com/rustwasm/rust-webpack-template)
