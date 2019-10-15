@@ -47,6 +47,11 @@ SEC. 255. Briefing on use of blockchain technology for defense purposes.
 - 
 [区块链技术在证券领域的应用与监管研究 - 上海证券交易所 www.sse.com.cn › publication › actofcourt › law ](http://www.sse.com.cn/aboutus/publication/actofcourt/law/list/a/20190807/10c1f444867fc7b6c66d84f64452a5c3.pdf)
 
+## IRS 稅務指引
+
+[Virtual currency: IRS issues additional guidance on tax treatment and reminds taxpayers of reporting obligations | Internal Revenue Service](https://www.irs.gov/newsroom/virtual-currency-irs-issues-additional-guidance-on-tax-treatment-and-reminds-taxpayers-of-reporting-obligations)
+
+> The new revenue ruling addresses common questions by taxpayers and tax practitioners regarding the tax treatment of a cryptocurrency hard fork.
 
 ## Embedded supervision
 

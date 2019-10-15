@@ -1,7 +1,14 @@
 # HyperLedger Fabric
 
 # TOC
+
 <!-- toc -->
+# Tools
+
+## IBMBlockchain.ibm-blockchain-platform
+
+- [IBM Blockchain Platform - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=IBMBlockchain.ibm-blockchain-platform)
+- [Integrate a TypeScript smart contract with a React-based dashboard app – IBM Developer](https://developer.ibm.com/tutorials/integrate-typescript-smart-contract-with-react-based-dashboard-app/)
 
 # Topics
 

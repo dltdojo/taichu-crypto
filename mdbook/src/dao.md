@@ -22,6 +22,7 @@ DAO 績效分配參考[Live OKRs - Joystream - github](https://github.com/Joystr
 # TODO
 
 - [Commonwealth](https://github.com/hicommonwealth)
+- [Esther Duflo: Social experiments to fight poverty - YouTube](https://www.youtube.com/watch?v=0zvrGiPkVcs)
 
 ## DarkDAO
 

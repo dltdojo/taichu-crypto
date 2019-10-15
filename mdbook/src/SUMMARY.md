@@ -15,6 +15,7 @@
   - [Voxel 組件開發編輯](./mad-red/vox/README.md)
   - [Voxel 相關專案](./mad-red/vox/projects.md)
 - [Virtual Asset](./crypto-assets.md)
+  - [Ethereum](./virtual-asset/ethereum.md)
   - [Anonymity-Enhanced Cryptocurrency](./virtual-asset/aec.md)
 - [DLT](./dlt.md)
   - [Hyperledger Fabric](./dlt/hl-fabric.md)
