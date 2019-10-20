@@ -1,0 +1,38 @@
+# image size 508 MB (node/npm/yarn)
+# https://hub.docker.com/r/codercom/code-server/tags
+#
+ARG CS_VER=v2
+FROM codercom/code-server:${CS_VER}
+RUN ls -al /usr/local/bin
+COPY --from=node:10.16.3-buster /usr/local/bin/node /usr/local/bin/node
+# docker run --rm -it node:10.16.3-buster ls -al /usr/local/bin
+# docker run --rm -it node:10.16.3-buster ls /usr/local/lib/node_modules/npm/lib
+COPY --from=node:10.16.3-buster /usr/local/lib/node_modules /usr/local/lib/node_modules
+COPY --from=node:10.16.3-buster /opt/yarn-v1.17.3 /opt/yarn-v1.17.3
+USER root
+RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs && \
+    ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm && \
+    ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npx && \
+    ln -s /opt/yarn-v1.17.3/bin/yarn /usr/local/bin/yarn && \
+    ln -s /opt/yarn-v1.17.3/bin/yarnpkg /usr/local/bin/yarnpkg && \
+    ls -al /usr/local/bin && \
+    node --version && yarn --version && npm version
+
+USER coder
+#
+# npm global install witout root
+# https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+#
+RUN npm config set prefix=/home/coder/.npm-packages \
+    && echo '\nexport PATH="/home/coder/.npm-packages/bin:$PATH"' >> /home/coder/.bashrc
+
+RUN mkdir -p /home/coder/.local/share/code-server/User/
+ARG PATH_SETTINGS=/home/coder/.local/share/code-server/User/settings.json
+# COPY settings.json ${PATH_SETTINGS}
+RUN echo '{ \n\
+    "terminal.integrated.shell.linux": "/bin/bash", \n\
+    "files.associations": { \n\
+        "[Dd]ockerfile*": "dockerfile", \n\
+        "docker-compose*": "yaml" \n\
+    } \n\
+}' > ${PATH_SETTINGS}

@@ -150,6 +150,7 @@
 <ul>
 <li><a href="#code-server-docker">Code Server Docker</a>
 <ul>
+<li><a href="#nodenpmyarn-508-mb-%E7%89%88">Node/NPM/Yarn 508 MB 版</a></li>
 <li><a href="#rust--webassembly-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83-v2">rust + webassembly 開發環境 v2</a></li>
 <li><a href="#rust-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83-v2">rust 開發環境 v2</a></li>
 <li><a href="#code-server-v2-%E6%AD%A3%E5%BC%8F%E7%89%88%E6%9C%AC%E5%8A%A0%E4%B8%8A-vue-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83">code-server v2 正式版本加上 vue 開發環境</a></li>
@@ -167,10 +168,68 @@
 </ul>
 <h1><a class="header" href="#code-server-docker" id="code-server-docker">Code Server Docker</a></h1>
 <ul>
+<li><a href="https://github.com/cdr/code-server/blob/master/Dockerfile">code-server/Dockerfile at master · cdr/code-server</a></li>
 <li><a href="https://hub.docker.com/r/codercom/code-server/tags">codercom/code-server Tags - Docker Hub</a></li>
 <li><a href="https://github.com/cdr/code-server/blob/2.1523-vsc1.38.1/Dockerfile">code-server/Dockerfile at 2.1523-vsc1.38.1 · cdr/code-server</a></li>
 <li><a href="https://github.com/Microsoft/vscode-loc">microsoft/vscode-loc: VS Code Localization Extension</a></li>
 </ul>
+<h2><a class="header" href="#nodenpmyarn-508-mb-版" id="nodenpmyarn-508-mb-版">Node/NPM/Yarn 508 MB 版</a></h2>
+<p>目前 codercom/code-server:v2 計 146.17 MB 為 <code>FROM ubuntu:18.04</code> 製作。node/yarn 直接複製用 <code>COPY --from=node:10.16.3-buster</code> 還是 <code>COPY --from=node:10.16.3-jessie</code> 看起來差不多都是取自 <a href="https://nodejs.org/dist/latest-v10.x/">nodejs.org/dist/latest-v10.x/</a>。</p>
+<ul>
+<li><a href="https://github.com/nodejs/docker-node/blob/master/10/buster/Dockerfile">docker-node/Dockerfile at master · nodejs/docker-node</a></li>
+</ul>
+<pre><code>$ docker run --rm -it node:10.16.3-buster ls -al /usr/local/bin
+total 40192
+drwxrwxr-x  2 root root     4096 Oct 18 01:46 .
+drwxr-xr-x 20 root root     4096 Oct 18 01:46 ..
+-rwxrwxr-x  1 root root      116 Oct 18 01:46 docker-entrypoint.sh
+-rwxrwxr-x  1 root root 41142280 Aug 15 18:50 node
+lrwxrwxrwx  1 root root       19 Oct 18 01:46 nodejs -&gt; /usr/local/bin/node
+lrwxrwxrwx  1 root root       38 Aug 15 18:51 npm -&gt; ../lib/node_modules/npm/bin/npm-cli.js
+lrwxrwxrwx  1 root root       38 Aug 15 18:51 npx -&gt; ../lib/node_modules/npm/bin/npx-cli.js
+lrwxrwxrwx  1 root root       26 Oct 18 01:46 yarn -&gt; /opt/yarn-v1.17.3/bin/yarn
+lrwxrwxrwx  1 root root       29 Oct 18 01:46 yarnpkg -&gt; /opt/yarn-v1.17.3/bin/yarnpkg
+</code></pre>
+<p>Dockfile</p>
+<pre><code class="language-dockerfile"># image size 508 MB (node/npm/yarn)
+# https://hub.docker.com/r/codercom/code-server/tags
+#
+ARG CS_VER=v2
+FROM codercom/code-server:${CS_VER}
+RUN ls -al /usr/local/bin
+COPY --from=node:10.16.3-buster /usr/local/bin/node /usr/local/bin/node
+# docker run --rm -it node:10.16.3-buster ls -al /usr/local/bin
+# docker run --rm -it node:10.16.3-buster ls /usr/local/lib/node_modules/npm/lib
+COPY --from=node:10.16.3-buster /usr/local/lib/node_modules /usr/local/lib/node_modules
+COPY --from=node:10.16.3-buster /opt/yarn-v1.17.3 /opt/yarn-v1.17.3
+USER root
+RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs &amp;&amp; \
+    ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm &amp;&amp; \
+    ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npx &amp;&amp; \
+    ln -s /opt/yarn-v1.17.3/bin/yarn /usr/local/bin/yarn &amp;&amp; \
+    ln -s /opt/yarn-v1.17.3/bin/yarnpkg /usr/local/bin/yarnpkg &amp;&amp; \
+    ls -al /usr/local/bin &amp;&amp; \
+    node --version &amp;&amp; yarn --version &amp;&amp; npm version
+
+USER coder
+#
+# npm global install witout root
+# https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+#
+RUN npm config set prefix=/home/coder/.npm-packages \
+    &amp;&amp; echo '\nexport PATH=&quot;/home/coder/.npm-packages/bin:$PATH&quot;' &gt;&gt; /home/coder/.bashrc
+
+RUN mkdir -p /home/coder/.local/share/code-server/User/
+ARG PATH_SETTINGS=/home/coder/.local/share/code-server/User/settings.json
+# COPY settings.json ${PATH_SETTINGS}
+RUN echo '{ \n\
+    &quot;terminal.integrated.shell.linux&quot;: &quot;/bin/bash&quot;, \n\
+    &quot;files.associations&quot;: { \n\
+        &quot;[Dd]ockerfile*&quot;: &quot;dockerfile&quot;, \n\
+        &quot;docker-compose*&quot;: &quot;yaml&quot; \n\
+    } \n\
+}' &gt; ${PATH_SETTINGS}
+</code></pre>
 <h2><a class="header" href="#rust--webassembly-開發環境-v2" id="rust--webassembly-開發環境-v2">rust + webassembly 開發環境 v2</a></h2>
 <ul>
 <li><a href="https://github.com/rustwasm/rust-webpack-template">rustwasm/rust-webpack-template: Kickstart your Rust, WebAssembly, and Webpack project!</a></li>

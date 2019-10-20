@@ -5,9 +5,36 @@
 
 # Code Server Docker 
 
+- [code-server/Dockerfile at master · cdr/code-server](https://github.com/cdr/code-server/blob/master/Dockerfile)
 - [codercom/code-server Tags - Docker Hub](https://hub.docker.com/r/codercom/code-server/tags)
 - [code-server/Dockerfile at 2.1523-vsc1.38.1 · cdr/code-server](https://github.com/cdr/code-server/blob/2.1523-vsc1.38.1/Dockerfile)
 - [microsoft/vscode-loc: VS Code Localization Extension](https://github.com/Microsoft/vscode-loc)
+
+## Node/NPM/Yarn 508 MB 版
+
+目前 codercom/code-server:v2 計 146.17 MB 為 `FROM ubuntu:18.04` 製作。node/yarn 直接複製用 `COPY --from=node:10.16.3-buster` 還是 `COPY --from=node:10.16.3-jessie` 看起來差不多都是取自 [nodejs.org/dist/latest-v10.x/](https://nodejs.org/dist/latest-v10.x/)。
+
+- [docker-node/Dockerfile at master · nodejs/docker-node](https://github.com/nodejs/docker-node/blob/master/10/buster/Dockerfile)
+
+```
+$ docker run --rm -it node:10.16.3-buster ls -al /usr/local/bin
+total 40192
+drwxrwxr-x  2 root root     4096 Oct 18 01:46 .
+drwxr-xr-x 20 root root     4096 Oct 18 01:46 ..
+-rwxrwxr-x  1 root root      116 Oct 18 01:46 docker-entrypoint.sh
+-rwxrwxr-x  1 root root 41142280 Aug 15 18:50 node
+lrwxrwxrwx  1 root root       19 Oct 18 01:46 nodejs -> /usr/local/bin/node
+lrwxrwxrwx  1 root root       38 Aug 15 18:51 npm -> ../lib/node_modules/npm/bin/npm-cli.js
+lrwxrwxrwx  1 root root       38 Aug 15 18:51 npx -> ../lib/node_modules/npm/bin/npx-cli.js
+lrwxrwxrwx  1 root root       26 Oct 18 01:46 yarn -> /opt/yarn-v1.17.3/bin/yarn
+lrwxrwxrwx  1 root root       29 Oct 18 01:46 yarnpkg -> /opt/yarn-v1.17.3/bin/yarnpkg
+```
+
+Dockfile
+
+```dockerfile
+{{#include ../dockerfiles/Dockerfile-cs-yarn-v2.txt}}
+```
 
 ## rust + webassembly 開發環境 v2
 
