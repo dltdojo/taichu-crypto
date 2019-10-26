@@ -23,7 +23,7 @@
 {{#include ../dockerfiles/v191026/Dockerfile}}
 ```
 
-Getting started
+[Dockerfile](https://dltdojo.github.io/taichu-crypto/dockerfiles/v191026/Dockerfile)
 
 ```shell
 $ curl https://dltdojo.github.io/taichu-crypto/dockerfiles/v191026/Dockerfile -o Dockerfile
@@ -41,7 +41,7 @@ info      - To disable use `--auth none`
 info    - Not serving HTTPS
 ```
 
-kaniko job example
+[kaniko job example](https://dltdojo.github.io/taichu-crypto/dockerfiles/v191026/kaniko.yaml)
 
 ```yaml
 {{#include  ../dockerfiles/v191026/kaniko.yaml}}
