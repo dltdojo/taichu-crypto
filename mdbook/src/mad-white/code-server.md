@@ -11,9 +11,9 @@
 - [microsoft/vscode-loc: VS Code Localization Extension](https://github.com/Microsoft/vscode-loc)
 
 
-## [WIP] vscode-dltdojo3r1.vsix extension
+## WIP: vscode-dltdojo3r1.vsix extension
 
-![img](../images/vscode-dltdojo3-v191025.png)
+![vscode-dltdojo3-v191025.png](../images/vscode-dltdojo3-v191025.png)
 
 ## kubectl/helm/mdbook/vscode-yarm 191026 版 (707M)
 
