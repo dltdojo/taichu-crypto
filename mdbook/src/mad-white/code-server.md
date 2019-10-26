@@ -41,6 +41,13 @@ info      - To disable use `--auth none`
 info    - Not serving HTTPS
 ```
 
+kaniko job example
+
+```yaml
+{{#include  ../dockerfiles/v191026/kaniko.yaml}}
+```
+
+
 
 ## Node/NPM/Yarn 版 (508M)
 

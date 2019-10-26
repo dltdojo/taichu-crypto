@@ -1,0 +1,39 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kanikojob
+spec:
+  completions: 1
+  template:
+    metadata:
+      name: kanikojob
+    spec:
+      restartPolicy: Never
+      initContainers:
+      - name: init-context
+        image: curlimages/curl:latest
+        args:
+            - -sL
+            - https://dltdojo.github.io/taichu-crypto/dockerfiles/v191026/Dockerfile
+            - -o
+            - /context/Dockerfile
+        volumeMounts:
+        - name: context
+          mountPath: /context
+      containers:
+      # 
+      # Working with MicroK8s’ registry add-on
+      # registry.container-registry.svc.cluster.local:5000
+      # curl http://127.0.0.1:32000/v2/_catalog
+      #
+      - name: kaniko
+        image: gcr.io/kaniko-project/executor:latest
+        args: ["--dockerfile=/context/Dockerfile",
+              "--context=/context",
+              "--destination=registry.container-registry.svc.cluster.local:5000/dltdojo3/mad-white:v191026"]
+        volumeMounts:
+          - name: context
+            mountPath: /context
+      volumes:
+        - name: context
+          emptyDir: {}
