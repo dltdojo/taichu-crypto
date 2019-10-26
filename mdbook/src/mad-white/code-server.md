@@ -10,6 +10,11 @@
 - [code-server/Dockerfile at 2.1523-vsc1.38.1 · cdr/code-server](https://github.com/cdr/code-server/blob/2.1523-vsc1.38.1/Dockerfile)
 - [microsoft/vscode-loc: VS Code Localization Extension](https://github.com/Microsoft/vscode-loc)
 
+
+## [WIP] vscode-dltdojo3r1.vsix extension
+
+![img](../images/vscode-dltdojo3-v191025.png)
+
 ## kubectl/helm/mdbook/vscode-yarm 191026 版 (707M)
 
 - add kubectl and helm to image

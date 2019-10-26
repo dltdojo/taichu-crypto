@@ -1,5 +1,5 @@
 {
-	"name": "vscode-dltdojo3",
+	"name": "vscode-dltdojo3r1",
 	"displayName": "DLTDOJO3 Platform",
 	"description": "DLTDOJO3 Platform",
 	"version": "0.0.11",
@@ -96,7 +96,7 @@
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
-		"vsix": "vsce package -o dist/vscode-dltdojo3.vsix",
+		"vsix": "vsce package -o dist/vscode-dltdojo3r1.vsix",
 		"compile": "tsc -p ./",
 		"lint": "tslint -p ./",
 		"watch": "tsc -watch -p ./"
