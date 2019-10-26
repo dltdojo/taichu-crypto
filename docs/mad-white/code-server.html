@@ -150,7 +150,8 @@
 <ul>
 <li><a href="#code-server-docker">Code Server Docker</a>
 <ul>
-<li><a href="#nodenpmyarn-508-mb-%E7%89%88">Node/NPM/Yarn 508 MB 版</a></li>
+<li><a href="#kubectlhelmmdbookvscode-yarm-191026-%E7%89%88-707m">kubectl/helm/mdbook/vscode-yarm 191026 版 (707M)</a></li>
+<li><a href="#nodenpmyarn-%E7%89%88-508m">Node/NPM/Yarn 版 (508M)</a></li>
 <li><a href="#rust--webassembly-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83-v2">rust + webassembly 開發環境 v2</a></li>
 <li><a href="#rust-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83-v2">rust 開發環境 v2</a></li>
 <li><a href="#code-server-v2-%E6%AD%A3%E5%BC%8F%E7%89%88%E6%9C%AC%E5%8A%A0%E4%B8%8A-vue-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83">code-server v2 正式版本加上 vue 開發環境</a></li>
@@ -173,7 +174,135 @@
 <li><a href="https://github.com/cdr/code-server/blob/2.1523-vsc1.38.1/Dockerfile">code-server/Dockerfile at 2.1523-vsc1.38.1 · cdr/code-server</a></li>
 <li><a href="https://github.com/Microsoft/vscode-loc">microsoft/vscode-loc: VS Code Localization Extension</a></li>
 </ul>
-<h2><a class="header" href="#nodenpmyarn-508-mb-版" id="nodenpmyarn-508-mb-版">Node/NPM/Yarn 508 MB 版</a></h2>
+<h2><a class="header" href="#kubectlhelmmdbookvscode-yarm-191026-版-707m" id="kubectlhelmmdbookvscode-yarm-191026-版-707m">kubectl/helm/mdbook/vscode-yarm 191026 版 (707M)</a></h2>
+<ul>
+<li>add kubectl and helm to image</li>
+<li>add mdbook and mdbook-toc to image</li>
+<li>add redhat.vscode-yaml extension to image</li>
+<li>bump codercom/code-server version 2.1638-vsc1.39.2</li>
+<li>bump node version 10.17.0</li>
+<li>bump yarn version 1.19.1</li>
+</ul>
+<pre><code class="language-dockerfile"># https://hub.docker.com/r/codercom/code-server/tags
+# codercom/code-server:2.1638-vsc1.39.2 b0873f48b93a 439MB
+# 
+# node/npm/yarn/kubectl/helm/mdbook/vscode-yaml (707M)
+#
+FROM node:10.17.0-buster AS node-buster
+ARG CS_VER=2.1638-vsc1.39.2
+FROM codercom/code-server:2.1638-vsc1.39.2
+COPY --from=node-buster /usr/local/bin/node /usr/local/bin/node
+COPY --from=node-buster /usr/local/lib/node_modules /usr/local/lib/node_modules
+#
+# copy yarn
+#
+ENV YARN_VERSION v1.19.1
+COPY --from=node-buster /opt/yarn-$YARN_VERSION /opt/yarn-$YARN_VERSION
+USER root
+RUN ls -al /usr/local/bin &amp;&amp; \
+    ln -s /usr/local/bin/node /usr/local/bin/nodejs &amp;&amp; \
+    ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm &amp;&amp; \
+    ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npx &amp;&amp; \
+    ls -al /opt &amp;&amp; \
+    ln -s /opt/yarn-$YARN_VERSION/bin/yarn /usr/local/bin/yarn &amp;&amp; \
+    ln -s /opt/yarn-$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg &amp;&amp; \
+    node --version &amp;&amp; yarn --version &amp;&amp; npm version
+
+#
+# kubectl download 
+# https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-with-curl-on-linux
+# 
+ENV KUBECTL_VERSION=v1.15.3
+RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl &amp;&amp; \
+    chmod +x ./kubectl &amp;&amp; mv ./kubectl /usr/local/bin/kubectl &amp;&amp; kubectl version --client
+
+#
+# helm download 
+# 
+ENV HELM_VERSION=v2.14.3
+RUN curl -sL https://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz | tar -xvz &amp;&amp; \
+    mv linux-amd64/helm /usr/local/bin/ &amp;&amp; rm -rf linux-amd64 &amp;&amp; helm version --client
+
+#
+# mdbook download
+#
+ENV MDBOOK_VERSION=v0.3.1
+RUN curl -sL https://github.com/rust-lang-nursery/mdBook/releases/download/${MDBOOK_VERSION}/mdbook-${MDBOOK_VERSION}-x86_64-unknown-linux-gnu.tar.gz | tar -xvz &amp;&amp; \
+    mv mdbook /usr/local/bin/ &amp;&amp; mdbook --version
+#
+# mdbook-toc download
+#
+ENV MDBOOK_TOC_VERSION=0.2.2
+RUN curl -sL https://github.com/badboy/mdbook-toc/releases/download/${MDBOOK_TOC_VERSION}/mdbook-toc-${MDBOOK_TOC_VERSION}-x86_64-unknown-linux-gnu.tar.gz | tar -xvz &amp;&amp; \
+    mv mdbook-toc /usr/local/bin/ &amp;&amp; mdbook-toc --version
+
+#
+# redhat vscode yaml extension
+#
+RUN curl -sL https://github.com/redhat-developer/vscode-yaml/releases/download/0.5.2-beta/0.5.2-beta7.vsix \
+    -o /usr/local/share/vscode-yaml.vsix
+
+#
+# Hyperledger Fabric Binaries
+# [hyperledger/fabric-tools Tags - Docker Hub](https://hub.docker.com/r/hyperledger/fabric-tools/tags)
+# [hyperledger/fabric-ca Tags - Docker Hub](https://hub.docker.com/r/hyperledger/fabric-ca/tags)
+# [Commands Reference — hyperledger-fabricdocs master documentation](https://hyperledger-fabric.readthedocs.io/en/release-1.4/command_ref.html)
+#
+# COPY --from=docker.io/hyperledger/fabric-ca:1.4.3 /usr/local/bin/fabric-ca-client /usr/local/bin/
+# COPY --from=docker.io/hyperledger/fabric-tools:1.4.3 /usr/local/bin/peer /usr/local/bin/
+# COPY --from=docker.io/hyperledger/fabric-tools:1.4.3 /usr/local/bin/cryptogen /usr/local/bin/
+# COPY --from=docker.io/hyperledger/fabric-tools:1.4.3 /usr/local/bin/configtxgen /usr/local/bin/
+# COPY --from=docker.io/hyperledger/fabric-tools:1.4.3 /usr/local/bin/configtxlator /usr/local/bin/
+# RUN fabric-ca-client version &amp;&amp; cryptogen version &amp;&amp; configtxgen -version &amp;&amp; configtxlator version &amp;&amp; peer version
+
+
+USER coder
+#
+# npm global install witout root
+# https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+#
+RUN npm config set prefix=/home/coder/.npm-packages \
+    &amp;&amp; echo '\nexport PATH=&quot;/home/coder/.npm-packages/bin:$PATH&quot;' &gt;&gt; /home/coder/.bashrc
+
+RUN mkdir -p /home/coder/.local/share/code-server/User/
+ARG PATH_SETTINGS=/home/coder/.local/share/code-server/User/settings.json
+# COPY settings.json ${PATH_SETTINGS}
+RUN echo '{ \n\
+    &quot;terminal.integrated.shell.linux&quot;: &quot;/bin/bash&quot;, \n\
+    &quot;files.associations&quot;: { \n\
+        &quot;[Dd]ockerfile*&quot;: &quot;dockerfile&quot;, \n\
+        &quot;docker-compose*&quot;: &quot;yaml&quot; \n\
+    } \n\
+}' &gt; ${PATH_SETTINGS}
+
+RUN set -eux  &amp;&amp; \
+    code-server --install-extension /usr/local/share/vscode-yaml.vsix
+
+#
+# curl https://dltdojo.github.io/taichu-crypto/dockerfiles/v191026/Dockerfile  | docker build -t foo -
+# or download Dockerfile
+# curl https://dltdojo.github.io/taichu-crypto/dockerfiles/v191026/Dockerfile -o Dockerfile
+# docker build -t foo .
+# docker run -it --rm -v $PWD:/home/coder/project -p 8080:8080 foo 
+# http://localhost:8080/?folder=/home/coder/project/
+#
+</code></pre>
+<p>Getting started</p>
+<pre><code class="language-shell">$ curl https://dltdojo.github.io/taichu-crypto/dockerfiles/v191026/Dockerfile -o Dockerfile
+$ docker build -t foo .
+
+# or docker build from STDIN
+
+$ curl https://dltdojo.github.io/taichu-crypto/dockerfiles/v191026/Dockerfile  | docker build -t foo -
+$ docker run -it --rm -v $PWD:/home/coder/project -p 8080:8080 foo 
+
+info  Server listening on http://0.0.0.0:8080
+info    - Password is 1c578b76fcd86e7e4a68e178
+info      - To use your own password, set the PASSWORD environment variable
+info      - To disable use `--auth none`
+info    - Not serving HTTPS
+</code></pre>
+<h2><a class="header" href="#nodenpmyarn-版-508m" id="nodenpmyarn-版-508m">Node/NPM/Yarn 版 (508M)</a></h2>
 <p>目前 codercom/code-server:v2 計 146.17 MB 為 <code>FROM ubuntu:18.04</code> 製作。node/yarn 直接複製用 <code>COPY --from=node:10.16.3-buster</code> 還是 <code>COPY --from=node:10.16.3-jessie</code> 看起來差不多都是取自 <a href="https://nodejs.org/dist/latest-v10.x/">nodejs.org/dist/latest-v10.x/</a>。</p>
 <ul>
 <li><a href="https://github.com/nodejs/docker-node/blob/master/10/buster/Dockerfile">docker-node/Dockerfile at master · nodejs/docker-node</a></li>

@@ -10,7 +10,39 @@
 - [code-server/Dockerfile at 2.1523-vsc1.38.1 · cdr/code-server](https://github.com/cdr/code-server/blob/2.1523-vsc1.38.1/Dockerfile)
 - [microsoft/vscode-loc: VS Code Localization Extension](https://github.com/Microsoft/vscode-loc)
 
-## Node/NPM/Yarn 508 MB 版
+## kubectl/helm/mdbook/vscode-yarm 191026 版 (707M)
+
+- add kubectl and helm to image
+- add mdbook and mdbook-toc to image
+- add redhat.vscode-yaml extension to image
+- bump codercom/code-server version 2.1638-vsc1.39.2
+- bump node version 10.17.0
+- bump yarn version 1.19.1
+
+```dockerfile
+{{#include ../dockerfiles/v191026/Dockerfile}}
+```
+
+Getting started
+
+```shell
+$ curl https://dltdojo.github.io/taichu-crypto/dockerfiles/v191026/Dockerfile -o Dockerfile
+$ docker build -t foo .
+
+# or docker build from STDIN
+
+$ curl https://dltdojo.github.io/taichu-crypto/dockerfiles/v191026/Dockerfile  | docker build -t foo -
+$ docker run -it --rm -v $PWD:/home/coder/project -p 8080:8080 foo 
+
+info  Server listening on http://0.0.0.0:8080
+info    - Password is 1c578b76fcd86e7e4a68e178
+info      - To use your own password, set the PASSWORD environment variable
+info      - To disable use `--auth none`
+info    - Not serving HTTPS
+```
+
+
+## Node/NPM/Yarn 版 (508M)
 
 目前 codercom/code-server:v2 計 146.17 MB 為 `FROM ubuntu:18.04` 製作。node/yarn 直接複製用 `COPY --from=node:10.16.3-buster` 還是 `COPY --from=node:10.16.3-jessie` 看起來差不多都是取自 [nodejs.org/dist/latest-v10.x/](https://nodejs.org/dist/latest-v10.x/)。
 
