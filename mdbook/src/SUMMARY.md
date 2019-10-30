@@ -9,6 +9,7 @@
   - [其他](./taichu-raw/others.md)
 - [POC MAD-WHITE](./mad-white/README.md)
   - [Code Server](./mad-white/code-server.md)
+  - [DLTDOJO3R1](./mad-white/dltdojo3r1.md)
 - [POC MAD-RED](./mad-red/README.md)
   - [Veloren 多人RPG體素遊戲](./mad-red/veloren/README.md)
   - [聊天測試 BIP39](./mad-red/veloren/chat-dltdojo-bip39/README.md)
