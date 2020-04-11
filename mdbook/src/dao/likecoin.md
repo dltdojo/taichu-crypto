@@ -120,6 +120,21 @@ vue 樣板大概的樣子，如果要其他測試鏈可選就要將 likecoin.big
 </template>
 ```
 
+其實再查一下可以發現有個 view-bigdipper 內有輸出 likecoin.bigdipper.live 的變數可用，所以可以選擇直接用 view-bigdipper 或是引入該變數使用。
+
+- [Search · getUserInfo.cosmosWallet](https://github.com/likecoin/like-co/search?q=getUserInfo.cosmosWallet&unscoped_q=getUserInfo.cosmosWallet&type=Code)
+- [view-bigdipper like-co/history.vue · likecoin/like-co](https://github.com/likecoin/like-co/blob/1b02a3f8a9f1c855f56a28e40a6d1a19a6614a87/pages/in/tx/history.vue#L26)
+- [BIGDIPPER_HOST like-co/ViewBigdipper.vue · likecoin/like-co](https://github.com/likecoin/like-co/blob/1b02a3f8a9f1c855f56a28e40a6d1a19a6614a87/components/ViewBigdipper.vue#L18)
+
+用view-bigdipper最方便，只要引入使用的版面符合會建議使用這種方式。
+
+```
+<view-bigdipper
+  v-if="getUserInfo.cosmosWallet"
+  :address="getUserInfo.cosmosWallet"
+/>
+```
+
 打算要改之後先從 github fork 一版，然後改完按慣例是該加上測試再提 Pull Request(PR)，不過要問一下專案需求，在快速更替的 UI 開發中是否要做這測試。
 
 - [like-co/test/e2e/specs/user.js at likecoin/like-co](https://github.com/likecoin/like-co/blob/2007add3e2380a433bc4c0bf5bc83ef69c4360c3/test/e2e/specs/user.js)
