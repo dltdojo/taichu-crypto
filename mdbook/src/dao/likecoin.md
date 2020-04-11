@@ -91,3 +91,35 @@ additional-css = ["likebutton.css"]
 - [讚賞鍵 - LikeCoin](https://docs.like.co/v/zh/user-guide/likecoin-button)
 - [給Jekyll加上LikeButton賺錢錢 | PinGuの独り言](https://pingu.moe/2020/01/integrate-likebutton-with-jekyll/)
 - [LikeCoinButton-integration/web at master · likecoin/LikeCoinButton-integration](https://github.com/likecoin/LikeCoinButton-integration/tree/master/web#2iframe)
+
+# 探索心得
+
+LikeCoin 是個資訊混亂的小宇宙，很多頁面沒有提供幣圈 UI/UX 慣用的資訊，下面說明如何找到這類資訊的做法。
+
+## 如何取得帳號的LIKE歷史交易紀錄
+
+- 必須先找到LikeCoin 錢包地址(下面用cosmos123abc示意)，位置在 Liker ID 設定附近。
+- 開啟 https://likecoin.bigdipper.live/account/cosmos123abc
+
+## 如何在like.co/in/settings加上連結點擊查閱bigdipper功能
+
+先查是否有類似 issue 正在進行，沒有就可以先看看內容，可用「錢包地址」檢索會出現翻譯的字串「walletAddress」再找一次，目標 pages/in/settings/index.vue 就會出現，因為這只是前面文字，要修改的是內容 getUserInfo.cosmosWallet，要更動這個內容的工具可用 vue 的 JavaScript Expressions 支援與 JavaScript 的 Template literals。
+
+- [Github Search · 錢包地址](https://github.com/likecoin/like-co/search?q=%E9%8C%A2%E5%8C%85%E5%9C%B0%E5%9D%80&unscoped_q=%E9%8C%A2%E5%8C%85%E5%9C%B0%E5%9D%80)
+- [Github Search · walletAddress](https://github.com/likecoin/like-co/search?q=walletAddress&unscoped_q=walletAddress)
+- [like-co/index.vue at 1b02a3f8a9f1c855f56a28e40a6d1a19a6614a87 · likecoin/like-co](https://github.com/likecoin/like-co/blob/1b02a3f8a9f1c855f56a28e40a6d1a19a6614a87/pages/in/settings/index.vue#L81)
+- [like-co/index.vue at 1b02a3f8a9f1c855f56a28e40a6d1a19a6614a87 · likecoin/like-co](https://github.com/likecoin/like-co/blob/1b02a3f8a9f1c855f56a28e40a6d1a19a6614a87/pages/in/settings/index.vue#L87)
+- [VUE Using JavaScript Expressions](https://vuejs.org/v2/guide/syntax.html#Using-JavaScript-Expressions)
+- [Template literals (Template strings) - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+
+vue 樣板大概的樣子，如果要其他測試鏈可選就要將 likecoin.bigdipper.live 也換成變數。
+
+```html
+<template>
+  <h1>Account: <a :href="`https://likecoin.bigdipper.live/account/${123+4}`">{{123+4}}</a></h1>
+</template>
+```
+
+打算要改之後先從 github fork 一版，然後改完按慣例是該加上測試再提 Pull Request(PR)，不過要問一下專案需求，在快速更替的 UI 開發中是否要做這測試。
+
+- [like-co/test/e2e/specs/user.js at likecoin/like-co](https://github.com/likecoin/like-co/blob/2007add3e2380a433bc4c0bf5bc83ef69c4360c3/test/e2e/specs/user.js)
