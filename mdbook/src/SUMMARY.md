@@ -36,6 +36,7 @@
   - [Aragon](./dao/aragon.md)
   - [JoyStream](./dao/joystream.md)
   - [Edgeware](./dao/edgeware.md)
+  - [LikeCoin](./dao/likecoin.md)
 - [DID](./did.md)
 - [DeFi](./defi/README.md)
   - [Open Banking](./defi/openbanking.md)

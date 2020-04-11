@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="zh-TW" class="sidebar-visible no-js">
+<html lang="zh-TW" class="sidebar-visible no-js coal">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -31,14 +31,19 @@
 
         <!-- Custom theme stylesheets -->
         
+        <link rel="stylesheet" href="likebutton.css">
+        
 
         
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
     </head>
-    <body class="light">
+    <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -62,8 +67,11 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            document.body.className = theme;
-            document.querySelector('html').className = theme + ' js';
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
@@ -80,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> DLTDOJO3</a></li><li><a href="k19.html"><strong aria-hidden="true">2.</strong> k19.dltdojo</a></li><li><a href="poc.html"><strong aria-hidden="true">3.</strong> POC 概念驗證</a></li><li><a href="taichu-raw/index.html"><strong aria-hidden="true">4.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li><a href="taichu-raw/apache-big5.html"><strong aria-hidden="true">4.1.</strong> HTTPS: Apache Big5</a></li><li><a href="taichu-raw/openapiv3.html"><strong aria-hidden="true">4.2.</strong> HTTPS: OpenAPI v3</a></li><li><a href="taichu-raw/others.html"><strong aria-hidden="true">4.3.</strong> 其他</a></li></ol></li><li><a href="mad-white/index.html"><strong aria-hidden="true">5.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li><a href="mad-white/code-server.html"><strong aria-hidden="true">5.1.</strong> Code Server</a></li><li><a href="mad-white/dltdojo3r1.html"><strong aria-hidden="true">5.2.</strong> DLTDOJO3R1</a></li></ol></li><li><a href="mad-red/index.html"><strong aria-hidden="true">6.</strong> POC MAD-RED</a></li><li><ol class="section"><li><a href="mad-red/veloren/index.html"><strong aria-hidden="true">6.1.</strong> Veloren 多人RPG體素遊戲</a></li><li><a href="mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">6.2.</strong> 聊天測試 BIP39</a></li><li><a href="mad-red/vox/index.html"><strong aria-hidden="true">6.3.</strong> Voxel 組件開發編輯</a></li><li><a href="mad-red/vox/projects.html"><strong aria-hidden="true">6.4.</strong> Voxel 相關專案</a></li></ol></li><li><a href="crypto-assets.html"><strong aria-hidden="true">7.</strong> Virtual Asset</a></li><li><ol class="section"><li><a href="virtual-asset/ethereum.html"><strong aria-hidden="true">7.1.</strong> Ethereum</a></li><li><a href="virtual-asset/aec.html"><strong aria-hidden="true">7.2.</strong> Anonymity-Enhanced Cryptocurrency</a></li></ol></li><li><a href="dlt.html"><strong aria-hidden="true">8.</strong> DLT</a></li><li><ol class="section"><li><a href="dlt/hl-fabric.html"><strong aria-hidden="true">8.1.</strong> Hyperledger Fabric</a></li><li><a href="dlt/hl-sawtooth.html"><strong aria-hidden="true">8.2.</strong> Hyperledger Sawtooth</a></li><li><a href="dlt/hl-burrow.html"><strong aria-hidden="true">8.3.</strong> HyperLedger Burrow</a></li><li><a href="dlt/hl-besu.html"><strong aria-hidden="true">8.4.</strong> HyperLedger Besu</a></li><li><a href="dlt/hl-avalon.html"><strong aria-hidden="true">8.5.</strong> HyperLedger Avalon</a></li><li><a href="dlt/polkadot.html"><strong aria-hidden="true">8.6.</strong> Polkadot</a></li><li><a href="dlt/libra19.html"><strong aria-hidden="true">8.7.</strong> Libra</a></li><li><a href="dlt/lnrpc.html"><strong aria-hidden="true">8.8.</strong> lightning network</a></li><li><a href="dlt/exonum.html"><strong aria-hidden="true">8.9.</strong> exonum</a></li><li><a href="dlt/trisa.html"><strong aria-hidden="true">8.10.</strong> TRISA</a></li><li><a href="dlt/xuperchain.html"><strong aria-hidden="true">8.11.</strong> xuperchain</a></li><li><a href="dlt/trustwallet.html"><strong aria-hidden="true">8.12.</strong> TrustWallet</a></li><li><a href="dlt/openbazaar.html"><strong aria-hidden="true">8.13.</strong> OpenBazaar</a></li></ol></li><li><a href="dao.html"><strong aria-hidden="true">9.</strong> DAO</a></li><li><ol class="section"><li><a href="dao/aragon.html"><strong aria-hidden="true">9.1.</strong> Aragon</a></li><li><a href="dao/joystream.html"><strong aria-hidden="true">9.2.</strong> JoyStream</a></li><li><a href="dao/edgeware.html"><strong aria-hidden="true">9.3.</strong> Edgeware</a></li></ol></li><li><a href="did.html"><strong aria-hidden="true">10.</strong> DID</a></li><li><a href="defi/index.html"><strong aria-hidden="true">11.</strong> DeFi</a></li><li><ol class="section"><li><a href="defi/openbanking.html"><strong aria-hidden="true">11.1.</strong> Open Banking</a></li></ol></li><li><a href="services/index.html"><strong aria-hidden="true">12.</strong> Services</a></li><li><ol class="section"><li><a href="services/amazon-qldb.html"><strong aria-hidden="true">12.1.</strong> Amazon QLDB</a></li></ol></li><li><a href="LRE.html"><strong aria-hidden="true">13.</strong> Ledger Reliability Engineering(LRE)</a></li><li><a href="web/index.html"><strong aria-hidden="true">14.</strong> Web Tech</a></li><li><ol class="section"><li><a href="web/extensions.html"><strong aria-hidden="true">14.1.</strong> Browser Extensiions</a></li><li><a href="web/example-page.html"><strong aria-hidden="true">14.2.</strong> Example Pages</a></li><li><a href="web/tls.html"><strong aria-hidden="true">14.3.</strong> TLS</a></li><li><a href="webauthn.html"><strong aria-hidden="true">14.4.</strong> WebAuthn</a></li><li><a href="webassembly.html"><strong aria-hidden="true">14.5.</strong> WebAssembly</a></li><li><a href="web/openssl.html"><strong aria-hidden="true">14.6.</strong> OpenSSL</a></li></ol></li><li><a href="k8s.html"><strong aria-hidden="true">15.</strong> Kubernetes</a></li><li><a href="p2p.html"><strong aria-hidden="true">16.</strong> P2P</a></li><li><a href="cybersecurity.html"><strong aria-hidden="true">17.</strong> Cybersecurity</a></li><li><a href="rust.html"><strong aria-hidden="true">18.</strong> Rust</a></li><li><a href="artifact/index.html"><strong aria-hidden="true">19.</strong> Artifact</a></li><li><ol class="section"><li><a href="artifact/book-1984.html"><strong aria-hidden="true">19.1.</strong> 一九八四再生金鑰書</a></li><li><a href="artifact/dark-comm-group-2019.html"><strong aria-hidden="true">19.2.</strong> 暗黑通信團書鑰</a></li></ol></li><li><a href="post-quantum.html"><strong aria-hidden="true">20.</strong> Post-quantum cryptography</a></li><li><a href="plantuml.html"><strong aria-hidden="true">21.</strong> PlantUML</a></li><li><ol class="section"><li><a href="puml/hyperledger-fabric.html"><strong aria-hidden="true">21.1.</strong> Hyperledger Fabric</a></li><li><a href="puml/ethereum.html"><strong aria-hidden="true">21.2.</strong> Ethereum</a></li></ol></li><li><a href="messaging.html"><strong aria-hidden="true">22.</strong> Messaging</a></li><li><a href="mdbook/index.html"><strong aria-hidden="true">23.</strong> mdbook</a></li><li><ol class="section"><li><a href="mdbook/preprocessors.html"><strong aria-hidden="true">23.1.</strong> preprocessors</a></li><li><a href="mdbook/others.html"><strong aria-hidden="true">23.2.</strong> 其他</a></li></ol></li><li><a href="resources.html"><strong aria-hidden="true">24.</strong> 學習資源</a></li><li><a href="book.html"><strong aria-hidden="true">25.</strong> 書籍文獻與觀點</a></li><li><a href="job.html"><strong aria-hidden="true">26.</strong> 工作</a></li><li><a href="appendix.html"><strong aria-hidden="true">27.</strong> 附錄</a></li><li><ol class="section"><li><a href="cmd-help.html"><strong aria-hidden="true">27.1.</strong> 命令列 tc.sh</a></li><li><a href="license.html"><strong aria-hidden="true">27.2.</strong> 授權條款</a></li><li><a href="testpage.html"><strong aria-hidden="true">27.3.</strong> 測試頁面</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> DLTDOJO3</a></li><li class="chapter-item expanded "><a href="k19.html"><strong aria-hidden="true">2.</strong> k19.dltdojo</a></li><li class="chapter-item expanded "><a href="poc.html"><strong aria-hidden="true">3.</strong> POC 概念驗證</a></li><li class="chapter-item expanded "><a href="taichu-raw/index.html"><strong aria-hidden="true">4.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="taichu-raw/apache-big5.html"><strong aria-hidden="true">4.1.</strong> HTTPS: Apache Big5</a></li><li class="chapter-item expanded "><a href="taichu-raw/openapiv3.html"><strong aria-hidden="true">4.2.</strong> HTTPS: OpenAPI v3</a></li><li class="chapter-item expanded "><a href="taichu-raw/others.html"><strong aria-hidden="true">4.3.</strong> 其他</a></li></ol></li><li class="chapter-item expanded "><a href="mad-white/index.html"><strong aria-hidden="true">5.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="mad-white/code-server.html"><strong aria-hidden="true">5.1.</strong> Code Server</a></li><li class="chapter-item expanded "><a href="mad-white/dltdojo3r1.html"><strong aria-hidden="true">5.2.</strong> DLTDOJO3R1</a></li></ol></li><li class="chapter-item expanded "><a href="mad-red/index.html"><strong aria-hidden="true">6.</strong> POC MAD-RED</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="mad-red/veloren/index.html"><strong aria-hidden="true">6.1.</strong> Veloren 多人RPG體素遊戲</a></li><li class="chapter-item expanded "><a href="mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">6.2.</strong> 聊天測試 BIP39</a></li><li class="chapter-item expanded "><a href="mad-red/vox/index.html"><strong aria-hidden="true">6.3.</strong> Voxel 組件開發編輯</a></li><li class="chapter-item expanded "><a href="mad-red/vox/projects.html"><strong aria-hidden="true">6.4.</strong> Voxel 相關專案</a></li></ol></li><li class="chapter-item expanded "><a href="crypto-assets.html"><strong aria-hidden="true">7.</strong> Virtual Asset</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="virtual-asset/ethereum.html"><strong aria-hidden="true">7.1.</strong> Ethereum</a></li><li class="chapter-item expanded "><a href="virtual-asset/aec.html"><strong aria-hidden="true">7.2.</strong> Anonymity-Enhanced Cryptocurrency</a></li></ol></li><li class="chapter-item expanded "><a href="dlt.html"><strong aria-hidden="true">8.</strong> DLT</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dlt/hl-fabric.html"><strong aria-hidden="true">8.1.</strong> Hyperledger Fabric</a></li><li class="chapter-item expanded "><a href="dlt/hl-sawtooth.html"><strong aria-hidden="true">8.2.</strong> Hyperledger Sawtooth</a></li><li class="chapter-item expanded "><a href="dlt/hl-burrow.html"><strong aria-hidden="true">8.3.</strong> HyperLedger Burrow</a></li><li class="chapter-item expanded "><a href="dlt/hl-besu.html"><strong aria-hidden="true">8.4.</strong> HyperLedger Besu</a></li><li class="chapter-item expanded "><a href="dlt/hl-avalon.html"><strong aria-hidden="true">8.5.</strong> HyperLedger Avalon</a></li><li class="chapter-item expanded "><a href="dlt/polkadot.html"><strong aria-hidden="true">8.6.</strong> Polkadot</a></li><li class="chapter-item expanded "><a href="dlt/libra19.html"><strong aria-hidden="true">8.7.</strong> Libra</a></li><li class="chapter-item expanded "><a href="dlt/lnrpc.html"><strong aria-hidden="true">8.8.</strong> lightning network</a></li><li class="chapter-item expanded "><a href="dlt/exonum.html"><strong aria-hidden="true">8.9.</strong> exonum</a></li><li class="chapter-item expanded "><a href="dlt/trisa.html"><strong aria-hidden="true">8.10.</strong> TRISA</a></li><li class="chapter-item expanded "><a href="dlt/xuperchain.html"><strong aria-hidden="true">8.11.</strong> xuperchain</a></li><li class="chapter-item expanded "><a href="dlt/trustwallet.html"><strong aria-hidden="true">8.12.</strong> TrustWallet</a></li><li class="chapter-item expanded "><a href="dlt/openbazaar.html"><strong aria-hidden="true">8.13.</strong> OpenBazaar</a></li></ol></li><li class="chapter-item expanded "><a href="dao.html"><strong aria-hidden="true">9.</strong> DAO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dao/aragon.html"><strong aria-hidden="true">9.1.</strong> Aragon</a></li><li class="chapter-item expanded "><a href="dao/joystream.html"><strong aria-hidden="true">9.2.</strong> JoyStream</a></li><li class="chapter-item expanded "><a href="dao/edgeware.html"><strong aria-hidden="true">9.3.</strong> Edgeware</a></li><li class="chapter-item expanded "><a href="dao/likecoin.html"><strong aria-hidden="true">9.4.</strong> LikeCoin</a></li></ol></li><li class="chapter-item expanded "><a href="did.html"><strong aria-hidden="true">10.</strong> DID</a></li><li class="chapter-item expanded "><a href="defi/index.html"><strong aria-hidden="true">11.</strong> DeFi</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="defi/openbanking.html"><strong aria-hidden="true">11.1.</strong> Open Banking</a></li></ol></li><li class="chapter-item expanded "><a href="services/index.html"><strong aria-hidden="true">12.</strong> Services</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="services/amazon-qldb.html"><strong aria-hidden="true">12.1.</strong> Amazon QLDB</a></li></ol></li><li class="chapter-item expanded "><a href="LRE.html"><strong aria-hidden="true">13.</strong> Ledger Reliability Engineering(LRE)</a></li><li class="chapter-item expanded "><a href="web/index.html"><strong aria-hidden="true">14.</strong> Web Tech</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="web/extensions.html"><strong aria-hidden="true">14.1.</strong> Browser Extensiions</a></li><li class="chapter-item expanded "><a href="web/example-page.html"><strong aria-hidden="true">14.2.</strong> Example Pages</a></li><li class="chapter-item expanded "><a href="web/tls.html"><strong aria-hidden="true">14.3.</strong> TLS</a></li><li class="chapter-item expanded "><a href="webauthn.html"><strong aria-hidden="true">14.4.</strong> WebAuthn</a></li><li class="chapter-item expanded "><a href="webassembly.html"><strong aria-hidden="true">14.5.</strong> WebAssembly</a></li><li class="chapter-item expanded "><a href="web/openssl.html"><strong aria-hidden="true">14.6.</strong> OpenSSL</a></li></ol></li><li class="chapter-item expanded "><a href="k8s.html"><strong aria-hidden="true">15.</strong> Kubernetes</a></li><li class="chapter-item expanded "><a href="p2p.html"><strong aria-hidden="true">16.</strong> P2P</a></li><li class="chapter-item expanded "><a href="cybersecurity.html"><strong aria-hidden="true">17.</strong> Cybersecurity</a></li><li class="chapter-item expanded "><a href="rust.html"><strong aria-hidden="true">18.</strong> Rust</a></li><li class="chapter-item expanded "><a href="artifact/index.html"><strong aria-hidden="true">19.</strong> Artifact</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="artifact/book-1984.html"><strong aria-hidden="true">19.1.</strong> 一九八四再生金鑰書</a></li><li class="chapter-item expanded "><a href="artifact/dark-comm-group-2019.html"><strong aria-hidden="true">19.2.</strong> 暗黑通信團書鑰</a></li></ol></li><li class="chapter-item expanded "><a href="post-quantum.html"><strong aria-hidden="true">20.</strong> Post-quantum cryptography</a></li><li class="chapter-item expanded "><a href="plantuml.html"><strong aria-hidden="true">21.</strong> PlantUML</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="puml/hyperledger-fabric.html"><strong aria-hidden="true">21.1.</strong> Hyperledger Fabric</a></li><li class="chapter-item expanded "><a href="puml/ethereum.html"><strong aria-hidden="true">21.2.</strong> Ethereum</a></li></ol></li><li class="chapter-item expanded "><a href="messaging.html"><strong aria-hidden="true">22.</strong> Messaging</a></li><li class="chapter-item expanded "><a href="mdbook/index.html"><strong aria-hidden="true">23.</strong> mdbook</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="mdbook/preprocessors.html"><strong aria-hidden="true">23.1.</strong> preprocessors</a></li><li class="chapter-item expanded "><a href="mdbook/others.html"><strong aria-hidden="true">23.2.</strong> 其他</a></li></ol></li><li class="chapter-item expanded "><a href="resources.html"><strong aria-hidden="true">24.</strong> 學習資源</a></li><li class="chapter-item expanded "><a href="book.html"><strong aria-hidden="true">25.</strong> 書籍文獻與觀點</a></li><li class="chapter-item expanded "><a href="job.html"><strong aria-hidden="true">26.</strong> 工作</a></li><li class="chapter-item expanded "><a href="appendix.html"><strong aria-hidden="true">27.</strong> 附錄</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cmd-help.html"><strong aria-hidden="true">27.1.</strong> 命令列 tc.sh</a></li><li class="chapter-item expanded "><a href="license.html"><strong aria-hidden="true">27.2.</strong> 授權條款</a></li><li class="chapter-item expanded "><a href="testpage.html"><strong aria-hidden="true">27.3.</strong> 測試頁面</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -89,37 +97,36 @@
 
             <div class="page">
                 
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
 
-                        <h1 class="menu-title">DLTDOJO3 第三新熵熱踢道場</h1>
+                    <h1 class="menu-title">DLTDOJO3 第三新熵熱踢道場</h1>
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                        </div>
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -498,7 +505,6 @@ components:
           format: int32
         message:
           type: string
-
 </code></pre>
 <ul>
 <li><a href="taichu-raw/others.html#https-%E6%9C%8D%E5%8B%99%E5%9E%8B%E6%85%8B">HTTPS 服務型態</a>
@@ -695,7 +701,7 @@ RUN pwd &amp;&amp; tree /home/coder/dojos &amp;&amp; \
 <li><input disabled="" type="checkbox"/>
 <a href="https://hub.docker.com/r/codercom/code-server/tags">code-sever docker v2 test</a></li>
 <li><input disabled="" type="checkbox"/>
-<a href="https://github.com/cdr/code-server/pull/857">[v2] Rewrite code-server to use new web stuff</a></li>
+[[v2] Rewrite code-server to use new web stuff](https://github.com/cdr/code-server/pull/857)</li>
 </ul>
 <h1><a class="header" href="#vs-code-server" id="vs-code-server">VS Code Server</a></h1>
 <h1><a class="header" href="#toc-2" id="toc-2">TOC</a></h1>
@@ -1209,7 +1215,6 @@ RUN echo '{ \n\
 RUN echo '{ \n\
     &quot;locale&quot;: &quot;zh-tw&quot; \n\
 }' &gt; ${PATH_LOCALE}
-
 </code></pre>
 <h1><a class="header" href="#todo-2" id="todo-2">TODO</a></h1>
 <h2><a class="header" href="#link-to-localhost-site-or-github-pages" id="link-to-localhost-site-or-github-pages">link to localhost site or github pages</a></h2>
@@ -3335,7 +3340,7 @@ bash tc.sh --gen-proto-doc /tmp/src/hlf-protos /tmp/output.md
 </ul>
 <p><a name="peer/transaction.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peertransactionproto" id="peertransactionproto">peer/transaction.proto</a></h2>
+## peer/transaction.proto
 <p><a name="protos.ChaincodeActionPayload"></a></p>
 <h3><a class="header" href="#chaincodeactionpayload" id="chaincodeactionpayload">ChaincodeActionPayload</a></h3>
 <p>ChaincodeActionPayload is the message to be used for the TransactionAction's
@@ -3440,7 +3445,7 @@ header dictates the type of action to be applied to the ledger.</p>
 </tbody></table>
 <p><a name="peer/configuration.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peerconfigurationproto" id="peerconfigurationproto">peer/configuration.proto</a></h2>
+## peer/configuration.proto
 <p><a name="protos.ACLs"></a></p>
 <h3><a class="header" href="#acls" id="acls">ACLs</a></h3>
 <p>ACLs provides mappings for resources in a channel. APIResource encapsulates
@@ -3477,7 +3482,7 @@ port number and peer certificate.</p>
 </tbody></table>
 <p><a name="peer/signed_cc_dep_spec.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peersigned_cc_dep_specproto" id="peersigned_cc_dep_specproto">peer/signed_cc_dep_spec.proto</a></h2>
+## peer/signed_cc_dep_spec.proto
 <p><a name="protos.SignedChaincodeDeploymentSpec"></a></p>
 <h3><a class="header" href="#signedchaincodedeploymentspec" id="signedchaincodedeploymentspec">SignedChaincodeDeploymentSpec</a></h3>
 <p>SignedChaincodeDeploymentSpec carries the CDS along with endorsements</p>
@@ -3488,7 +3493,7 @@ port number and peer certificate.</p>
 </tbody></table>
 <p><a name="peer/chaincode.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peerchaincodeproto" id="peerchaincodeproto">peer/chaincode.proto</a></h2>
+## peer/chaincode.proto
 <p><a name="protos.CDSData"></a></p>
 <h3><a class="header" href="#cdsdata" id="cdsdata">CDSData</a></h3>
 <p>CDSData is data stored in the LSCC on instantiation of a CC
@@ -3584,7 +3589,7 @@ defining a chaincode.</p>
 </tbody></table>
 <p><a name="peer/proposal_response.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peerproposal_responseproto" id="peerproposal_responseproto">peer/proposal_response.proto</a></h2>
+## peer/proposal_response.proto
 <p><a name="protos.Endorsement"></a></p>
 <h3><a class="header" href="#endorsement" id="endorsement">Endorsement</a></h3>
 <p>An endorsement is a signature of an endorser over a proposal response.  By
@@ -3639,7 +3644,7 @@ be used within another message.</p>
 </tbody></table>
 <p><a name="peer/query.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peerqueryproto" id="peerqueryproto">peer/query.proto</a></h2>
+## peer/query.proto
 <p><a name="protos.ChaincodeInfo"></a></p>
 <h3><a class="header" href="#chaincodeinfo" id="chaincodeinfo">ChaincodeInfo</a></h3>
 <p>ChaincodeInfo contains general information about an installed/instantiated
@@ -3678,7 +3683,7 @@ given peer)</p>
 </tbody></table>
 <p><a name="peer/resources.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peerresourcesproto" id="peerresourcesproto">peer/resources.proto</a></h2>
+## peer/resources.proto
 <p><a name="protos.ChaincodeEndorsement"></a></p>
 <h3><a class="header" href="#chaincodeendorsement" id="chaincodeendorsement">ChaincodeEndorsement</a></h3>
 <p>ChaincodeEndorsement instructs the peer how transactions should be endorsed.  The only
@@ -3725,7 +3730,7 @@ argument field of the ChaincodeValidation message.</p>
 </tbody></table>
 <p><a name="peer/events.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peereventsproto" id="peereventsproto">peer/events.proto</a></h2>
+## peer/events.proto
 <p><a name="protos.BlockAndPrivateData"></a></p>
 <h3><a class="header" href="#blockandprivatedata" id="blockandprivatedata">BlockAndPrivateData</a></h3>
 <p>BlockAndPrivateData contains Block and a map from tx_seq_in_block to rwset.TxPvtReadWriteSet</p>
@@ -3789,7 +3794,7 @@ message from regular block</p>
 </tbody></table>
 <p><a name="peer/proposal.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peerproposalproto" id="peerproposalproto">peer/proposal.proto</a></h2>
+## peer/proposal.proto
 <p><a name="protos.ChaincodeAction"></a></p>
 <h3><a class="header" href="#chaincodeaction" id="chaincodeaction">ChaincodeAction</a></h3>
 <p>ChaincodeAction contains the actions the events generated by the execution
@@ -3885,7 +3890,7 @@ that it is allowed to transact with us (with respect to some ACLs);</li>
 </tbody></table>
 <p><a name="peer/policy.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peerpolicyproto" id="peerpolicyproto">peer/policy.proto</a></h2>
+## peer/policy.proto
 <p><a name="protos.ApplicationPolicy"></a></p>
 <h3><a class="header" href="#applicationpolicy" id="applicationpolicy">ApplicationPolicy</a></h3>
 <p>ApplicationPolicy captures the diffenrent policy types that
@@ -3896,7 +3901,7 @@ are set and evaluted at the application level.</p>
 </tbody></table>
 <p><a name="peer/lifecycle/chaincode_definition.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peerlifecyclechaincode_definitionproto" id="peerlifecyclechaincode_definitionproto">peer/lifecycle/chaincode_definition.proto</a></h2>
+## peer/lifecycle/chaincode_definition.proto
 <p><a name="lifecycle.ChaincodeEndorsementInfo"></a></p>
 <h3><a class="header" href="#chaincodeendorsementinfo" id="chaincodeendorsementinfo">ChaincodeEndorsementInfo</a></h3>
 <p>ChaincodeEndorsementInfo is (most) everything the peer needs to know in order
@@ -3916,7 +3921,7 @@ to validate a transaction</p>
 </tbody></table>
 <p><a name="peer/lifecycle/lifecycle.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peerlifecyclelifecycleproto" id="peerlifecyclelifecycleproto">peer/lifecycle/lifecycle.proto</a></h2>
+## peer/lifecycle/lifecycle.proto
 <p><a name="lifecycle.ApproveChaincodeDefinitionForMyOrgArgs"></a></p>
 <h3><a class="header" href="#approvechaincodedefinitionformyorgargs" id="approvechaincodedefinitionformyorgargs">ApproveChaincodeDefinitionForMyOrgArgs</a></h3>
 <p>ApproveChaincodeDefinitionForMyOrgArgs is the message used as arguments to
@@ -4150,7 +4155,7 @@ pairs of chaincode definitions that reference this chaincode package.</p>
 </tbody></table>
 <p><a name="peer/lifecycle/db.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peerlifecycledbproto" id="peerlifecycledbproto">peer/lifecycle/db.proto</a></h2>
+## peer/lifecycle/db.proto
 <p><a name="lifecycle.StateData"></a></p>
 <h3><a class="header" href="#statedata" id="statedata">StateData</a></h3>
 <p>StateData encodes a particular field of a datatype</p>
@@ -4170,7 +4175,7 @@ write.  Therefore we must track the keys in our namespace ourselves.</p>
 </tbody></table>
 <p><a name="peer/chaincode_event.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peerchaincode_eventproto" id="peerchaincode_eventproto">peer/chaincode_event.proto</a></h2>
+## peer/chaincode_event.proto
 <p><a name="protos.ChaincodeEvent"></a></p>
 <h3><a class="header" href="#chaincodeevent" id="chaincodeevent">ChaincodeEvent</a></h3>
 <p>ChaincodeEvent is used for events and registrations that are specific to chaincode
@@ -4183,7 +4188,7 @@ string type - &quot;chaincode&quot;</p>
 </tbody></table>
 <p><a name="peer/chaincode_shim.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peerchaincode_shimproto" id="peerchaincode_shimproto">peer/chaincode_shim.proto</a></h2>
+## peer/chaincode_shim.proto
 <p><a name="protos.ChaincodeMessage"></a></p>
 <h3><a class="header" href="#chaincodemessage" id="chaincodemessage">ChaincodeMessage</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -4360,7 +4365,7 @@ provides the context necessary for the server to respond appropriately.</p>
 </tbody></table>
 <p><a name="peer/peer.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#peerpeerproto" id="peerpeerproto">peer/peer.proto</a></h2>
+## peer/peer.proto
 <p><a name="protos.Endorser"></a></p>
 <h3><a class="header" href="#endorser" id="endorser">Endorser</a></h3>
 <table><thead><tr><th>Method Name</th><th>Request Type</th><th>Response Type</th><th>Description</th></tr></thead><tbody>
@@ -4368,7 +4373,7 @@ provides the context necessary for the server to respond appropriately.</p>
 </tbody></table>
 <p><a name="msp/msp_config.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#mspmsp_configproto" id="mspmsp_configproto">msp/msp_config.proto</a></h2>
+## msp/msp_config.proto
 <p><a name="msp.FabricCryptoConfig"></a></p>
 <h3><a class="header" href="#fabriccryptoconfig" id="fabriccryptoconfig">FabricCryptoConfig</a></h3>
 <p>FabricCryptoConfig contains configuration parameters
@@ -4473,7 +4478,7 @@ endorsements</p>
 </tbody></table>
 <p><a name="msp/msp_principal.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#mspmsp_principalproto" id="mspmsp_principalproto">msp/msp_principal.proto</a></h2>
+## msp/msp_principal.proto
 <p><a name="common.CombinedPrincipal"></a></p>
 <h3><a class="header" href="#combinedprincipal" id="combinedprincipal">CombinedPrincipal</a></h3>
 <p>CombinedPrincipal governs the organization of the Principal
@@ -4563,7 +4568,7 @@ are to be defined within a policy principal.</p>
 </tbody></table>
 <p><a name="msp/identities.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#mspidentitiesproto" id="mspidentitiesproto">msp/identities.proto</a></h2>
+## msp/identities.proto
 <p><a name="msp.SerializedIdemixIdentity"></a></p>
 <h3><a class="header" href="#serializedidemixidentity" id="serializedidemixidentity">SerializedIdemixIdentity</a></h3>
 <p>This struct represents an Idemix Identity
@@ -4588,7 +4593,7 @@ to serialize it and deserialize it</p>
 </tbody></table>
 <p><a name="ledger/rwset/rwset.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#ledgerrwsetrwsetproto" id="ledgerrwsetrwsetproto">ledger/rwset/rwset.proto</a></h2>
+## ledger/rwset/rwset.proto
 <p><a name="rwset.CollectionHashedReadWriteSet"></a></p>
 <h3><a class="header" href="#collectionhashedreadwriteset" id="collectionhashedreadwriteset">CollectionHashedReadWriteSet</a></h3>
 <p>CollectionHashedReadWriteSet encapsulate the hashed representation for the private read-write set for a collection</p>
@@ -4642,7 +4647,7 @@ ns_rwset field specifies a list of chaincode specific read-write set (one for ea
 </tbody></table>
 <p><a name="ledger/rwset/kvrwset/kv_rwset.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#ledgerrwsetkvrwsetkv_rwsetproto" id="ledgerrwsetkvrwsetkv_rwsetproto">ledger/rwset/kvrwset/kv_rwset.proto</a></h2>
+## ledger/rwset/kvrwset/kv_rwset.proto
 <p><a name="kvrwset.HashedRWSet"></a></p>
 <h3><a class="header" href="#hashedrwset" id="hashedrwset">HashedRWSet</a></h3>
 <p>HashedRWSet encapsulates hashed representation of a private read-write set for KV or Document data model</p>
@@ -4760,7 +4765,7 @@ The height is represenetd as a tuple &lt;blockNum, txNum&gt; where the txNum is 
 </tbody></table>
 <p><a name="ledger/queryresult/kv_query_result.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#ledgerqueryresultkv_query_resultproto" id="ledgerqueryresultkv_query_resultproto">ledger/queryresult/kv_query_result.proto</a></h2>
+## ledger/queryresult/kv_query_result.proto
 <p><a name="queryresult.KV"></a></p>
 <h3><a class="header" href="#kv" id="kv">KV</a></h3>
 <p>KV -- QueryResult for range/execute query. Holds a key and corresponding value.</p>
@@ -4781,7 +4786,7 @@ timestamp, and delete marker which resulted from a history query.</p>
 </tbody></table>
 <p><a name="discovery/protocol.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#discoveryprotocolproto" id="discoveryprotocolproto">discovery/protocol.proto</a></h2>
+## discovery/protocol.proto
 <p><a name="discovery.AuthInfo"></a></p>
 <h3><a class="header" href="#authinfo" id="authinfo">AuthInfo</a></h3>
 <p>AuthInfo aggregates authentication information that the server uses
@@ -4997,7 +5002,7 @@ like which peers, orderers, chaincodes, etc.</p>
 </tbody></table>
 <p><a name="orderer/configuration.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#ordererconfigurationproto" id="ordererconfigurationproto">orderer/configuration.proto</a></h2>
+## orderer/configuration.proto
 <p><a name="orderer.BatchSize"></a></p>
 <h3><a class="header" href="#batchsize" id="batchsize">BatchSize</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -5041,7 +5046,7 @@ MAINTENANCE is when the consensus-type can be changed.</p>
 </tbody></table>
 <p><a name="orderer/kafka.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#ordererkafkaproto" id="ordererkafkaproto">orderer/kafka.proto</a></h2>
+## orderer/kafka.proto
 <p><a name="orderer.KafkaMessage"></a></p>
 <h3><a class="header" href="#kafkamessage" id="kafkamessage">KafkaMessage</a></h3>
 <p>KafkaMessage is a wrapper type for the messages
@@ -5094,7 +5099,7 @@ Kafka-related metadata associated with this block.</p>
 </tbody></table>
 <p><a name="orderer/ab.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#ordererabproto" id="ordererabproto">orderer/ab.proto</a></h2>
+## orderer/ab.proto
 <p><a name="orderer.BroadcastResponse"></a></p>
 <h3><a class="header" href="#broadcastresponse" id="broadcastresponse">BroadcastResponse</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -5167,7 +5172,7 @@ In this case, set the SeekErrorResponse to BEST_EFFORT to ignore the consenter e
 </tbody></table>
 <p><a name="orderer/cluster.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#ordererclusterproto" id="ordererclusterproto">orderer/cluster.proto</a></h2>
+## orderer/cluster.proto
 <p><a name="orderer.ConsensusRequest"></a></p>
 <h3><a class="header" href="#consensusrequest" id="consensusrequest">ConsensusRequest</a></h3>
 <p>ConsensusRequest is a consensus specific message sent to a cluster member.</p>
@@ -5214,7 +5219,7 @@ or failure status to the sender.</p>
 </tbody></table>
 <p><a name="orderer/etcdraft/configuration.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#ordereretcdraftconfigurationproto" id="ordereretcdraftconfigurationproto">orderer/etcdraft/configuration.proto</a></h2>
+## orderer/etcdraft/configuration.proto
 <p><a name="etcdraft.ConfigMetadata"></a></p>
 <h3><a class="header" href="#configmetadata" id="configmetadata">ConfigMetadata</a></h3>
 <p>ConfigMetadata is serialized and set as the value of ConsensusType.Metadata in
@@ -5245,7 +5250,7 @@ per-channel basis.</p>
 </tbody></table>
 <p><a name="orderer/etcdraft/metadata.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#ordereretcdraftmetadataproto" id="ordereretcdraftmetadataproto">orderer/etcdraft/metadata.proto</a></h2>
+## orderer/etcdraft/metadata.proto
 <p><a name="etcdraft.BlockMetadata"></a></p>
 <h3><a class="header" href="#blockmetadata" id="blockmetadata">BlockMetadata</a></h3>
 <p>BlockMetadata stores data used by the Raft OSNs when
@@ -5264,7 +5269,7 @@ block meta dta field and used after failres and restarts.</p>
 </tbody></table>
 <p><a name="gossip/message.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#gossipmessageproto" id="gossipmessageproto">gossip/message.proto</a></h2>
+## gossip/message.proto
 <p><a name="gossip.Acknowledgement"></a></p>
 <h3><a class="header" href="#acknowledgement" id="acknowledgement">Acknowledgement</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -5590,7 +5595,7 @@ from a remote peer</p>
 </tbody></table>
 <p><a name="transientstore/transientstore.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#transientstoretransientstoreproto" id="transientstoretransientstoreproto">transientstore/transientstore.proto</a></h2>
+## transientstore/transientstore.proto
 <p><a name="transientstore.TxPvtReadWriteSetWithConfigInfo"></a></p>
 <h3><a class="header" href="#txpvtreadwritesetwithconfiginfo" id="txpvtreadwritesetwithconfiginfo">TxPvtReadWriteSetWithConfigInfo</a></h3>
 <p>TxPvtReadWriteSetWithConfigInfo encapsulates the transaction's private
@@ -5609,7 +5614,7 @@ the latest collection config when the transaction is simulated</p>
 </tbody></table>
 <p><a name="common/configuration.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#commonconfigurationproto" id="commonconfigurationproto">common/configuration.proto</a></h2>
+## common/configuration.proto
 <p><a name="common.BlockDataHashingStructure"></a></p>
 <h3><a class="header" href="#blockdatahashingstructure" id="blockdatahashingstructure">BlockDataHashingStructure</a></h3>
 <p>BlockDataHashingStructure is encoded into the configuration transaction as a configuration item of
@@ -5681,7 +5686,7 @@ with a Key of &quot;OrdererAddresses&quot; and a Value of OrdererAddresses as ma
 </tbody></table>
 <p><a name="common/ledger.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#commonledgerproto" id="commonledgerproto">common/ledger.proto</a></h2>
+## common/ledger.proto
 <p><a name="common.BlockchainInfo"></a></p>
 <h3><a class="header" href="#blockchaininfo" id="blockchaininfo">BlockchainInfo</a></h3>
 <p>Contains information about the blockchain ledger such as height, current
@@ -5693,7 +5698,7 @@ block hash, and previous block hash.</p>
 </tbody></table>
 <p><a name="common/policies.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#commonpoliciesproto" id="commonpoliciesproto">common/policies.proto</a></h2>
+## common/policies.proto
 <p><a name="common.ImplicitMetaPolicy"></a></p>
 <h3><a class="header" href="#implicitmetapolicy" id="implicitmetapolicy">ImplicitMetaPolicy</a></h3>
 <p>ImplicitMetaPolicy is a policy type which depends on the hierarchical nature of the configuration
@@ -5759,7 +5764,7 @@ and will be the CA for more traditional certificates</p>
 </tbody></table>
 <p><a name="common/configtx.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#commonconfigtxproto" id="commonconfigtxproto">common/configtx.proto</a></h2>
+## common/configtx.proto
 <p><a name="common.Config"></a></p>
 <h3><a class="header" href="#config" id="config">Config</a></h3>
 <p>Config represents the config for a particular channel</p>
@@ -5907,7 +5912,7 @@ If there is a mismatch in the read versions, then the config update fails and is
 <h3><a class="header" href="#configvalueschema" id="configvalueschema">ConfigValueSchema</a></h3>
 <p><a name="common/common.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#commoncommonproto" id="commoncommonproto">common/common.proto</a></h2>
+## common/common.proto
 <p><a name="common.Block"></a></p>
 <h3><a class="header" href="#block" id="block">Block</a></h3>
 <p>This is finalized block structure to be shared among the orderer and peer
@@ -6042,7 +6047,7 @@ over the ASN.1 encoding of the BlockHeader</p>
 </tbody></table>
 <p><a name="common/collection.proto"></a></p>
 <p align="right"><a href="dlt/hl-fabric.html#top">Top</a></p>
-<h2><a class="header" href="#commoncollectionproto" id="commoncollectionproto">common/collection.proto</a></h2>
+## common/collection.proto
 <p><a name="common.CollectionConfig"></a></p>
 <h3><a class="header" href="#collectionconfig" id="collectionconfig">CollectionConfig</a></h3>
 <p>CollectionConfig defines the configuration of a collection object;
@@ -10895,7 +10900,7 @@ bash tc.sh --gen-proto-doc /tmp/src/sawtooth/protos /tmp/output.md
 </ul>
 <p><a name="transaction.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#transactionproto" id="transactionproto">transaction.proto</a></h2>
+## transaction.proto
 <p><a name=".Transaction"></a></p>
 <h3><a class="header" href="#transaction-1" id="transaction-1">Transaction</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -10925,7 +10930,7 @@ it can be transmitted to a batcher.</p>
 </tbody></table>
 <p><a name="client_status.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#client_statusproto" id="client_statusproto">client_status.proto</a></h2>
+## client_status.proto
 <p><a name=".ClientStatusGetRequest"></a></p>
 <h3><a class="header" href="#clientstatusgetrequest" id="clientstatusgetrequest">ClientStatusGetRequest</a></h3>
 <p>A request to get miscellaneous information about the validator</p>
@@ -10952,7 +10957,7 @@ it can be transmitted to a batcher.</p>
 </tbody></table>
 <p><a name="validator.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#validatorproto" id="validatorproto">validator.proto</a></h2>
+## validator.proto
 <p><a name=".Message"></a></p>
 <h3><a class="header" href="#message" id="message">Message</a></h3>
 <p>The message passed between the validator and client, containing the
@@ -11093,7 +11098,7 @@ header fields and content.</p>
 </tbody></table>
 <p><a name="consensus.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#consensusproto" id="consensusproto">consensus.proto</a></h2>
+## consensus.proto
 <p><a name=".ConsensusBlock"></a></p>
 <h3><a class="header" href="#consensusblock" id="consensusblock">ConsensusBlock</a></h3>
 <p>All information about a block that is relevant to consensus</p>
@@ -11569,7 +11574,7 @@ contents.</p>
 </tbody></table>
 <p><a name="client_batch_submit.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#client_batch_submitproto" id="client_batch_submitproto">client_batch_submit.proto</a></h2>
+## client_batch_submit.proto
 <p><a name=".ClientBatchStatus"></a></p>
 <h3><a class="header" href="#clientbatchstatus" id="clientbatchstatus">ClientBatchStatus</a></h3>
 <p>Information about the status of a batch submitted to the validator.</p>
@@ -11668,7 +11673,7 @@ a full processing queue.  The batch may be submitted again.</li>
 </tbody></table>
 <p><a name="client_block.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#client_blockproto" id="client_blockproto">client_block.proto</a></h2>
+## client_block.proto
 <p><a name=".ClientBlockGetByBatchIdRequest"></a></p>
 <h3><a class="header" href="#clientblockgetbybatchidrequest" id="clientblockgetbybatchidrequest">ClientBlockGetByBatchIdRequest</a></h3>
 <p>A request to return a specific block from the validator. The block
@@ -11769,7 +11774,7 @@ and the oldest (genesis) block at the end.</p>
 </tbody></table>
 <p><a name="processor.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#processorproto" id="processorproto">processor.proto</a></h2>
+## processor.proto
 <p><a name=".TpProcessRequest"></a></p>
 <h3><a class="header" href="#tpprocessrequest" id="tpprocessrequest">TpProcessRequest</a></h3>
 <p>The request from the validator/executor of the transaction processor
@@ -11863,7 +11868,7 @@ validator.</p>
 </tbody></table>
 <p><a name="client_transaction.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#client_transactionproto" id="client_transactionproto">client_transaction.proto</a></h2>
+## client_transaction.proto
 <p><a name=".ClientTransactionGetRequest"></a></p>
 <h3><a class="header" href="#clienttransactiongetrequest" id="clienttransactiongetrequest">ClientTransactionGetRequest</a></h3>
 <p>Fetches a specific txn by its id (header_signature) from the blockchain.</p>
@@ -11938,7 +11943,7 @@ previous to that block on the chain. Filter with specific <code>transaction_ids<
 </tbody></table>
 <p><a name="client_list_control.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#client_list_controlproto" id="client_list_controlproto">client_list_control.proto</a></h2>
+## client_list_control.proto
 <p><a name=".ClientPagingControls"></a></p>
 <h3><a class="header" href="#clientpagingcontrols" id="clientpagingcontrols">ClientPagingControls</a></h3>
 <p>Paging controls to be sent with List requests.
@@ -11974,7 +11979,7 @@ reverse: Whether or not to reverse the sort (i.e. descending order)</p>
 </tbody></table>
 <p><a name="batch.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#batchproto" id="batchproto">batch.proto</a></h2>
+## batch.proto
 <p><a name=".Batch"></a></p>
 <h3><a class="header" href="#batch" id="batch">Batch</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -11996,7 +12001,7 @@ reverse: Whether or not to reverse the sort (i.e. descending order)</p>
 </tbody></table>
 <p><a name="events.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#eventsproto" id="eventsproto">events.proto</a></h2>
+## events.proto
 <p><a name=".Event"></a></p>
 <h3><a class="header" href="#event" id="event">Event</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -12040,7 +12045,7 @@ reverse: Whether or not to reverse the sort (i.e. descending order)</p>
 </tbody></table>
 <p><a name="identity.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#identityproto" id="identityproto">identity.proto</a></h2>
+## identity.proto
 <p><a name=".Policy"></a></p>
 <h3><a class="header" href="#policy-1" id="policy-1">Policy</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -12080,7 +12085,7 @@ reverse: Whether or not to reverse the sort (i.e. descending order)</p>
 </tbody></table>
 <p><a name="block.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#blockproto" id="blockproto">block.proto</a></h2>
+## block.proto
 <p><a name=".Block"></a></p>
 <h3><a class="header" href="#block-1" id="block-1">Block</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -12100,7 +12105,7 @@ reverse: Whether or not to reverse the sort (i.e. descending order)</p>
 </tbody></table>
 <p><a name="client_state.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#client_stateproto" id="client_stateproto">client_state.proto</a></h2>
+## client_state.proto
 <p><a name=".ClientStateGetRequest"></a></p>
 <h3><a class="header" href="#clientstategetrequest" id="clientstategetrequest">ClientStateGetRequest</a></h3>
 <p>A request from a client for a particular entry in global state.
@@ -12184,7 +12189,7 @@ further filtered by specifying a subtree with a partial address.</p>
 </tbody></table>
 <p><a name="client_event.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#client_eventproto" id="client_eventproto">client_event.proto</a></h2>
+## client_event.proto
 <p><a name=".ClientEventsGetRequest"></a></p>
 <h3><a class="header" href="#clienteventsgetrequest" id="clienteventsgetrequest">ClientEventsGetRequest</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -12242,7 +12247,7 @@ further filtered by specifying a subtree with a partial address.</p>
 </tbody></table>
 <p><a name="state_context.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#state_contextproto" id="state_contextproto">state_context.proto</a></h2>
+## state_context.proto
 <p><a name=".TpEventAddRequest"></a></p>
 <h3><a class="header" href="#tpeventaddrequest" id="tpeventaddrequest">TpEventAddRequest</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -12355,7 +12360,7 @@ data has been appended to a transaction receipt</p>
 </tbody></table>
 <p><a name="setting.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#settingproto" id="settingproto">setting.proto</a></h2>
+## setting.proto
 <p><a name=".Setting"></a></p>
 <h3><a class="header" href="#setting" id="setting">Setting</a></h3>
 <p>Setting Container for on-chain configuration key/value pairs</p>
@@ -12371,7 +12376,7 @@ data has been appended to a transaction receipt</p>
 </tbody></table>
 <p><a name="block_info.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#block_infoproto" id="block_infoproto">block_info.proto</a></h2>
+## block_info.proto
 <p><a name=".BlockInfo"></a></p>
 <h3><a class="header" href="#blockinfo" id="blockinfo">BlockInfo</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -12398,7 +12403,7 @@ data has been appended to a transaction receipt</p>
 </tbody></table>
 <p><a name="transaction_receipt.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#transaction_receiptproto" id="transaction_receiptproto">transaction_receipt.proto</a></h2>
+## transaction_receipt.proto
 <p><a name=".StateChange"></a></p>
 <h3><a class="header" href="#statechange" id="statechange">StateChange</a></h3>
 <p>StateChange objects have the type of SET, which is either an insert or
@@ -12431,7 +12436,7 @@ update, or DELETE. Items marked as a DELETE will have no byte value.</p>
 </tbody></table>
 <p><a name="client_batch.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#client_batchproto" id="client_batchproto">client_batch.proto</a></h2>
+## client_batch.proto
 <p><a name=".ClientBatchGetRequest"></a></p>
 <h3><a class="header" href="#clientbatchgetrequest" id="clientbatchgetrequest">ClientBatchGetRequest</a></h3>
 <p>Fetches a specific batch by its id (header_signature) from the blockchain.</p>
@@ -12506,7 +12511,7 @@ previous to that block on the chain. Filter with specific <code>batch_ids</code>
 </tbody></table>
 <p><a name="authorization.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#authorizationproto" id="authorizationproto">authorization.proto</a></h2>
+## authorization.proto
 <p><a name=".AuthorizationChallengeRequest"></a></p>
 <h3><a class="header" href="#authorizationchallengerequest" id="authorizationchallengerequest">AuthorizationChallengeRequest</a></h3>
 <p>Empty message sent to request a payload to sign</p>
@@ -12585,7 +12590,7 @@ previous to that block on the chain. Filter with specific <code>batch_ids</code>
 </tbody></table>
 <p><a name="genesis.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#genesisproto" id="genesisproto">genesis.proto</a></h2>
+## genesis.proto
 <p><a name=".GenesisData"></a></p>
 <h3><a class="header" href="#genesisdata" id="genesisdata">GenesisData</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -12593,7 +12598,7 @@ previous to that block on the chain. Filter with specific <code>batch_ids</code>
 </tbody></table>
 <p><a name="merkle.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#merkleproto" id="merkleproto">merkle.proto</a></h2>
+## merkle.proto
 <p><a name=".ChangeLogEntry"></a></p>
 <h3><a class="header" href="#changelogentry" id="changelogentry">ChangeLogEntry</a></h3>
 <p>An Entry in the change log for a given state root.</p>
@@ -12611,7 +12616,7 @@ previous to that block on the chain. Filter with specific <code>batch_ids</code>
 </tbody></table>
 <p><a name="network.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#networkproto" id="networkproto">network.proto</a></h2>
+## network.proto
 <p><a name=".DisconnectMessage"></a></p>
 <h3><a class="header" href="#disconnectmessage" id="disconnectmessage">DisconnectMessage</a></h3>
 <p>The disconnect message from a client to the server</p>
@@ -12698,7 +12703,7 @@ receipt</p>
 </tbody></table>
 <p><a name="client_peers.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#client_peersproto" id="client_peersproto">client_peers.proto</a></h2>
+## client_peers.proto
 <p><a name=".ClientPeersGetRequest"></a></p>
 <h3><a class="header" href="#clientpeersgetrequest" id="clientpeersgetrequest">ClientPeersGetRequest</a></h3>
 <p><a name=".ClientPeersGetResponse"></a></p>
@@ -12716,7 +12721,7 @@ receipt</p>
 </tbody></table>
 <p><a name="client_receipt.proto"></a></p>
 <p align="right"><a href="dlt/hl-sawtooth.html#top">Top</a></p>
-<h2><a class="header" href="#client_receiptproto" id="client_receiptproto">client_receipt.proto</a></h2>
+## client_receipt.proto
 <p><a name=".ClientReceiptGetRequest"></a></p>
 <h3><a class="header" href="#clientreceiptgetrequest" id="clientreceiptgetrequest">ClientReceiptGetRequest</a></h3>
 <p>Fetches a specific txn by its id (header_signature) from the blockchain.</p>
@@ -15943,7 +15948,7 @@ bash tc.sh --gen-proto-doc /tmp/src/burrow/protobuf /tmp/output.md
 </ul>
 <p><a name="balance.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#balanceproto" id="balanceproto">balance.proto</a></h2>
+## balance.proto
 <p><a name="balance.Balance"></a></p>
 <h3><a class="header" href="#balance" id="balance">Balance</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -15952,7 +15957,7 @@ bash tc.sh --gen-proto-doc /tmp/src/burrow/protobuf /tmp/output.md
 </tbody></table>
 <p><a name="exec.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#execproto" id="execproto">exec.proto</a></h2>
+## exec.proto
 <p><a name="exec.BeginBlock"></a></p>
 <h3><a class="header" href="#beginblock" id="beginblock">BeginBlock</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -16105,7 +16110,7 @@ bash tc.sh --gen-proto-doc /tmp/src/burrow/protobuf /tmp/output.md
 </tbody></table>
 <p><a name="names.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#namesproto" id="namesproto">names.proto</a></h2>
+## names.proto
 <p><a name="names.Entry"></a></p>
 <h3><a class="header" href="#entry" id="entry">Entry</a></h3>
 <p>NameReg provides a global key value store based on Name, Data pairs that are subject to expiry and ownership by an
@@ -16118,7 +16123,7 @@ account.</p>
 </tbody></table>
 <p><a name="encoding.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#encodingproto" id="encodingproto">encoding.proto</a></h2>
+## encoding.proto
 <p><a name="encoding.TestMessage"></a></p>
 <h3><a class="header" href="#testmessage" id="testmessage">TestMessage</a></h3>
 <p>For testing</p>
@@ -16128,7 +16133,7 @@ account.</p>
 </tbody></table>
 <p><a name="validator.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#validatorproto-1" id="validatorproto-1">validator.proto</a></h2>
+## validator.proto
 <p><a name="validator.Validator"></a></p>
 <h3><a class="header" href="#validator" id="validator">Validator</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -16138,7 +16143,7 @@ account.</p>
 </tbody></table>
 <p><a name="txs.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#txsproto" id="txsproto">txs.proto</a></h2>
+## txs.proto
 <p><a name="txs.Envelope"></a></p>
 <h3><a class="header" href="#envelope-2" id="envelope-2">Envelope</a></h3>
 <p>An envelope contains both the signable Tx and the signatures for each input (in signatories)</p>
@@ -16165,7 +16170,7 @@ account.</p>
 </tbody></table>
 <p><a name="rpctransact.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#rpctransactproto" id="rpctransactproto">rpctransact.proto</a></h2>
+## rpctransact.proto
 <p><a name="rpctransact.CallCodeParam"></a></p>
 <h3><a class="header" href="#callcodeparam" id="callcodeparam">CallCodeParam</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -16204,7 +16209,7 @@ account.</p>
 </tbody></table>
 <p><a name="github.com/tendermint/tendermint/abci/types/types.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#githubcomtenderminttendermintabcitypestypesproto" id="githubcomtenderminttendermintabcitypestypesproto">github.com/tendermint/tendermint/abci/types/types.proto</a></h2>
+## github.com/tendermint/tendermint/abci/types/types.proto
 <p><a name="types.BlockGossip"></a></p>
 <h3><a class="header" href="#blockgossip" id="blockgossip">BlockGossip</a></h3>
 <p>BlockGossip determine consensus critical
@@ -16508,7 +16513,7 @@ that can be adjusted by the abci app</p>
 </tbody></table>
 <p><a name="github.com/tendermint/tendermint/libs/common/types.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#githubcomtenderminttendermintlibscommontypesproto" id="githubcomtenderminttendermintlibscommontypesproto">github.com/tendermint/tendermint/libs/common/types.proto</a></h2>
+## github.com/tendermint/tendermint/libs/common/types.proto
 <p><a name="common.KI64Pair"></a></p>
 <h3><a class="header" href="#ki64pair" id="ki64pair">KI64Pair</a></h3>
 <p>Define these here for compatibility but use tmlibs/common.KI64Pair.</p>
@@ -16525,7 +16530,7 @@ that can be adjusted by the abci app</p>
 </tbody></table>
 <p><a name="permission.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#permissionproto" id="permissionproto">permission.proto</a></h2>
+## permission.proto
 <p><a name="permission.AccountPermissions"></a></p>
 <h3><a class="header" href="#accountpermissions" id="accountpermissions">AccountPermissions</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -16549,7 +16554,7 @@ that can be adjusted by the abci app</p>
 </tbody></table>
 <p><a name="acm.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#acmproto" id="acmproto">acm.proto</a></h2>
+## acm.proto
 <p><a name="acm.Account"></a></p>
 <h3><a class="header" href="#account" id="account">Account</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -16573,7 +16578,7 @@ that can be adjusted by the abci app</p>
 </tbody></table>
 <p><a name="rpcquery.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#rpcqueryproto" id="rpcqueryproto">rpcquery.proto</a></h2>
+## rpcquery.proto
 <p><a name="rpcquery.GetAccountParam"></a></p>
 <h3><a class="header" href="#getaccountparam" id="getaccountparam">GetAccountParam</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -16688,7 +16693,7 @@ that can be adjusted by the abci app</p>
 </tbody></table>
 <p><a name="tendermint.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#tendermintproto" id="tendermintproto">tendermint.proto</a></h2>
+## tendermint.proto
 <p>Needed to proto2 rather than proto3 to get pointer field for PermArg</p>
 <p><a name="tendermint.NodeInfo"></a></p>
 <h3><a class="header" href="#nodeinfo" id="nodeinfo">NodeInfo</a></h3>
@@ -16704,7 +16709,7 @@ that can be adjusted by the abci app</p>
 </tbody></table>
 <p><a name="crypto.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#cryptoproto" id="cryptoproto">crypto.proto</a></h2>
+## crypto.proto
 <p><a name="crypto.PrivateKey"></a></p>
 <h3><a class="header" href="#privatekey" id="privatekey">PrivateKey</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -16726,7 +16731,7 @@ that can be adjusted by the abci app</p>
 </tbody></table>
 <p><a name="storage.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#storageproto" id="storageproto">storage.proto</a></h2>
+## storage.proto
 <p><a name="storage.CommitID"></a></p>
 <h3><a class="header" href="#commitid" id="commitid">CommitID</a></h3>
 <p>This is the object that is stored in the leaves of the commitsTree - it captures the sub-tree hashes so that the
@@ -16737,7 +16742,7 @@ commitsTree's hash becomes a mixture of the hashes of all the sub-trees.</p>
 </tbody></table>
 <p><a name="payload.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#payloadproto" id="payloadproto">payload.proto</a></h2>
+## payload.proto
 <p><a name="payload.Any"></a></p>
 <h3><a class="header" href="#any" id="any">Any</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -16869,7 +16874,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="dump.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#dumpproto" id="dumpproto">dump.proto</a></h2>
+## dump.proto
 <p><a name="dump.AccountStorage"></a></p>
 <h3><a class="header" href="#accountstorage" id="accountstorage">AccountStorage</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -16901,7 +16906,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="rpcdump.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#rpcdumpproto" id="rpcdumpproto">rpcdump.proto</a></h2>
+## rpcdump.proto
 <p><a name="rpcdump.GetDumpParam"></a></p>
 <h3><a class="header" href="#getdumpparam" id="getdumpparam">GetDumpParam</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -16914,7 +16919,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="keys.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#keysproto" id="keysproto">keys.proto</a></h2>
+## keys.proto
 <p><a name="keys.AddNameRequest"></a></p>
 <h3><a class="header" href="#addnamerequest" id="addnamerequest">AddNameRequest</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -17054,7 +17059,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="errors.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#errorsproto" id="errorsproto">errors.proto</a></h2>
+## errors.proto
 <p><a name="errors.Exception"></a></p>
 <h3><a class="header" href="#exception" id="exception">Exception</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -17063,7 +17068,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="rpc.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#rpcproto" id="rpcproto">rpc.proto</a></h2>
+## rpc.proto
 <p>Needed to proto2 rather than proto3 to get pointer field for PermArg</p>
 <p><a name="rpc.ResultStatus"></a></p>
 <h3><a class="header" href="#resultstatus" id="resultstatus">ResultStatus</a></h3>
@@ -17079,7 +17084,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="rpcevents.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#rpceventsproto" id="rpceventsproto">rpcevents.proto</a></h2>
+## rpcevents.proto
 <p><a name="rpcevents.BlockRange"></a></p>
 <h3><a class="header" href="#blockrange" id="blockrange">BlockRange</a></h3>
 <p>An inclusive range of blocks to include in output</p>
@@ -17151,7 +17156,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="bcm.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#bcmproto" id="bcmproto">bcm.proto</a></h2>
+## bcm.proto
 <p>Needed to proto2 rather than proto3 to get pointer field for PermArg</p>
 <p><a name="bcm.PersistedState"></a></p>
 <h3><a class="header" href="#persistedstate" id="persistedstate">PersistedState</a></h3>
@@ -17173,7 +17178,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="spec.proto"></a></p>
 <p align="right"><a href="dlt/hl-burrow.html#top">Top</a></p>
-<h2><a class="header" href="#specproto" id="specproto">spec.proto</a></h2>
+## spec.proto
 <p><a name="spec.TemplateAccount"></a></p>
 <h3><a class="header" href="#templateaccount" id="templateaccount">TemplateAccount</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -19617,7 +19622,7 @@ bash tc.sh --gen-proto-doc /tmp/src/libra/types/src/proto /tmp/output.md
 </ul>
 <p><a name="transaction.proto"></a></p>
 <p align="right"><a href="dlt/libra19.html#top">Top</a></p>
-<h2><a class="header" href="#transactionproto-1" id="transactionproto-1">transaction.proto</a></h2>
+## transaction.proto
 <p><a name="types.AccountState"></a></p>
 <h3><a class="header" href="#accountstate" id="accountstate">AccountState</a></h3>
 <p>Account state as a whole.
@@ -19687,7 +19692,7 @@ verification will fail.</p>
 </tbody></table>
 <p><a name="transaction_info.proto"></a></p>
 <p align="right"><a href="dlt/libra19.html#top">Top</a></p>
-<h2><a class="header" href="#transaction_infoproto" id="transaction_infoproto">transaction_info.proto</a></h2>
+## transaction_info.proto
 <p><a name="types.TransactionInfo"></a></p>
 <h3><a class="header" href="#transactioninfo" id="transactioninfo">TransactionInfo</a></h3>
 <p><code>TransactionInfo</code> is the object we store in the transaction accumulator. It
@@ -19702,7 +19707,7 @@ validate the tree</p>
 </tbody></table>
 <p><a name="account_state_blob.proto"></a></p>
 <p align="right"><a href="dlt/libra19.html#top">Top</a></p>
-<h2><a class="header" href="#account_state_blobproto" id="account_state_blobproto">account_state_blob.proto</a></h2>
+## account_state_blob.proto
 <p><a name="types.AccountStateBlob"></a></p>
 <h3><a class="header" href="#accountstateblob" id="accountstateblob">AccountStateBlob</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -19717,7 +19722,7 @@ validate the tree</p>
 </tbody></table>
 <p><a name="events.proto"></a></p>
 <p align="right"><a href="dlt/libra19.html#top">Top</a></p>
-<h2><a class="header" href="#eventsproto-1" id="eventsproto-1">events.proto</a></h2>
+## events.proto
 <p><a name="types.Event"></a></p>
 <h3><a class="header" href="#event-2" id="event-2">Event</a></h3>
 <p>An event emitted from a smart contract</p>
@@ -19749,7 +19754,7 @@ validate the tree</p>
 </tbody></table>
 <p><a name="validator_public_keys.proto"></a></p>
 <p align="right"><a href="dlt/libra19.html#top">Top</a></p>
-<h2><a class="header" href="#validator_public_keysproto" id="validator_public_keysproto">validator_public_keys.proto</a></h2>
+## validator_public_keys.proto
 <p><a name="types.ValidatorPublicKeys"></a></p>
 <h3><a class="header" href="#validatorpublickeys" id="validatorpublickeys">ValidatorPublicKeys</a></h3>
 <p>Protobuf definition for the Rust struct ValidatorPublicKeys</p>
@@ -19761,7 +19766,7 @@ validate the tree</p>
 </tbody></table>
 <p><a name="vm_errors.proto"></a></p>
 <p align="right"><a href="dlt/libra19.html#top">Top</a></p>
-<h2><a class="header" href="#vm_errorsproto" id="vm_errorsproto">vm_errors.proto</a></h2>
+## vm_errors.proto
 <p><a name="types.VMStatus"></a></p>
 <h3><a class="header" href="#vmstatus" id="vmstatus">VMStatus</a></h3>
 <p>The statuses and errors produced by the VM can be categorized into a
@@ -19792,7 +19797,7 @@ the VM.</li>
 </tbody></table>
 <p><a name="validator_change.proto"></a></p>
 <p align="right"><a href="dlt/libra19.html#top">Top</a></p>
-<h2><a class="header" href="#validator_changeproto" id="validator_changeproto">validator_change.proto</a></h2>
+## validator_change.proto
 <p><a name="types.ValidatorChangeEventWithProof"></a></p>
 <h3><a class="header" href="#validatorchangeeventwithproof" id="validatorchangeeventwithproof">ValidatorChangeEventWithProof</a></h3>
 <p>This is used to prove validator changes.  When a validator is changing, it
@@ -19813,7 +19818,7 @@ corresponds to it</p>
 </tbody></table>
 <p><a name="language_storage.proto"></a></p>
 <p align="right"><a href="dlt/libra19.html#top">Top</a></p>
-<h2><a class="header" href="#language_storageproto" id="language_storageproto">language_storage.proto</a></h2>
+## language_storage.proto
 <p><a name="types.ModuleId"></a></p>
 <h3><a class="header" href="#moduleid" id="moduleid">ModuleId</a></h3>
 <p>The unique identifier for a module on the chain.</p>
@@ -19823,7 +19828,7 @@ corresponds to it</p>
 </tbody></table>
 <p><a name="validator_set.proto"></a></p>
 <p align="right"><a href="dlt/libra19.html#top">Top</a></p>
-<h2><a class="header" href="#validator_setproto" id="validator_setproto">validator_set.proto</a></h2>
+## validator_set.proto
 <p><a name="types.ValidatorSet"></a></p>
 <h3><a class="header" href="#validatorset-1" id="validatorset-1">ValidatorSet</a></h3>
 <p>Protobuf definition for the Rust struct ValidatorSet.</p>
@@ -19832,7 +19837,7 @@ corresponds to it</p>
 </tbody></table>
 <p><a name="ledger_info.proto"></a></p>
 <p align="right"><a href="dlt/libra19.html#top">Top</a></p>
-<h2><a class="header" href="#ledger_infoproto" id="ledger_infoproto">ledger_info.proto</a></h2>
+## ledger_info.proto
 <p><a name="types.LedgerInfo"></a></p>
 <h3><a class="header" href="#ledgerinfo" id="ledgerinfo">LedgerInfo</a></h3>
 <p>Even though we don't always need all hashes, we pass them in and return them
@@ -19885,7 +19890,7 @@ corresponds to it</p>
 </tbody></table>
 <p><a name="proof.proto"></a></p>
 <p align="right"><a href="dlt/libra19.html#top">Top</a></p>
-<h2><a class="header" href="#proofproto" id="proofproto">proof.proto</a></h2>
+## proof.proto
 <p><a name="types.AccountStateProof"></a></p>
 <h3><a class="header" href="#accountstateproof" id="accountstateproof">AccountStateProof</a></h3>
 <p>The complete proof used to authenticate an account state.</p>
@@ -19932,7 +19937,7 @@ corresponds to it</p>
 | non_default_siblings | <a href="dlt/libra19.html#bytes">bytes</a> | repeated | The non-default siblings. The ones near the root are at the beginning of the list. |</p>
 <p><a name="get_with_proof.proto"></a></p>
 <p align="right"><a href="dlt/libra19.html#top">Top</a></p>
-<h2><a class="header" href="#get_with_proofproto" id="get_with_proofproto">get_with_proof.proto</a></h2>
+## get_with_proof.proto
 <p>How to verify the response as a client:
 (Note that every response comes in the form of GetWithProofResponse which
 wraps the inner response elements that correspond to the specific request
@@ -20183,7 +20188,7 @@ list.</p>
 </tbody></table>
 <p><a name="access_path.proto"></a></p>
 <p align="right"><a href="dlt/libra19.html#top">Top</a></p>
-<h2><a class="header" href="#access_pathproto" id="access_pathproto">access_path.proto</a></h2>
+## access_path.proto
 <p><a name="types.AccessPath"></a></p>
 <h3><a class="header" href="#accesspath" id="accesspath">AccessPath</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -21846,7 +21851,7 @@ bash tc.sh --gen-proto-doc /tmp/src/lnd/lnrpc /tmp/output.md
 </ul>
 <p><a name="chainrpc/chainnotifier.proto"></a></p>
 <p align="right"><a href="dlt/lnrpc.html#top">Top</a></p>
-<h2><a class="header" href="#chainrpcchainnotifierproto" id="chainrpcchainnotifierproto">chainrpc/chainnotifier.proto</a></h2>
+## chainrpc/chainnotifier.proto
 <p><a name="chainrpc.BlockEpoch"></a></p>
 <h3><a class="header" href="#blockepoch" id="blockepoch">BlockEpoch</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -21918,7 +21923,7 @@ bash tc.sh --gen-proto-doc /tmp/src/lnd/lnrpc /tmp/output.md
 <p>A client can also request a historical backlog of blocks from a particular point. This allows clients to be idempotent by ensuring that they do not missing processing a single block within the chain. |</p>
 <p><a name="walletrpc/walletkit.proto"></a></p>
 <p align="right"><a href="dlt/lnrpc.html#top">Top</a></p>
-<h2><a class="header" href="#walletrpcwalletkitproto" id="walletrpcwalletkitproto">walletrpc/walletkit.proto</a></h2>
+## walletrpc/walletkit.proto
 <p><a name="walletrpc.AddrRequest"></a></p>
 <h3><a class="header" href="#addrrequest" id="addrrequest">AddrRequest</a></h3>
 <p>No fields, as we always give out a p2wkh address.</p>
@@ -22027,7 +22032,7 @@ bash tc.sh --gen-proto-doc /tmp/src/lnd/lnrpc /tmp/output.md
 <p>Note that this RPC currently doesn't perform any validation checks on the fee preference being provided. For now, the responsibility of ensuring that the new fee preference is sufficient is delegated to the user. |</p>
 <p><a name="autopilotrpc/autopilot.proto"></a></p>
 <p align="right"><a href="dlt/lnrpc.html#top">Top</a></p>
-<h2><a class="header" href="#autopilotrpcautopilotproto" id="autopilotrpcautopilotproto">autopilotrpc/autopilot.proto</a></h2>
+## autopilotrpc/autopilot.proto
 <p><a name="autopilotrpc.ModifyStatusRequest"></a></p>
 <h3><a class="header" href="#modifystatusrequest" id="modifystatusrequest">ModifyStatusRequest</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -22092,7 +22097,7 @@ that can be used when deciding where to open channels.</p>
 </tbody></table>
 <p><a name="invoicesrpc/invoices.proto"></a></p>
 <p align="right"><a href="dlt/lnrpc.html#top">Top</a></p>
-<h2><a class="header" href="#invoicesrpcinvoicesproto" id="invoicesrpcinvoicesproto">invoicesrpc/invoices.proto</a></h2>
+## invoicesrpc/invoices.proto
 <p><a name="invoicesrpc.AddHoldInvoiceRequest"></a></p>
 <h3><a class="header" href="#addholdinvoicerequest" id="addholdinvoicerequest">AddHoldInvoiceRequest</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -22142,7 +22147,7 @@ invoices.</p>
 </tbody></table>
 <p><a name="rpc.proto"></a></p>
 <p align="right"><a href="dlt/lnrpc.html#top">Top</a></p>
-<h2><a class="header" href="#rpcproto-1" id="rpcproto-1">rpc.proto</a></h2>
+## rpc.proto
 <p><a name="lnrpc.AbandonChannelRequest"></a></p>
 <h3><a class="header" href="#abandonchannelrequest" id="abandonchannelrequest">AbandonChannelRequest</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -23246,7 +23251,7 @@ lnd at first startup, and unlock a previously set up wallet.</p>
 | ChangePassword | <a href="dlt/lnrpc.html#lnrpc.ChangePasswordRequest">ChangePasswordRequest</a> | <a href="dlt/lnrpc.html#lnrpc.ChangePasswordResponse">ChangePasswordResponse</a> | lncli: <code>changepassword</code> ChangePassword changes the password of the encrypted wallet. This will automatically unlock the wallet database if successful. |</p>
 <p><a name="wtclientrpc/wtclient.proto"></a></p>
 <p align="right"><a href="dlt/lnrpc.html#top">Top</a></p>
-<h2><a class="header" href="#wtclientrpcwtclientproto" id="wtclientrpcwtclientproto">wtclientrpc/wtclient.proto</a></h2>
+## wtclientrpc/wtclient.proto
 <p><a name="wtclientrpc.AddTowerRequest"></a></p>
 <h3><a class="header" href="#addtowerrequest" id="addtowerrequest">AddTowerRequest</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -23327,7 +23332,7 @@ lnd at first startup, and unlock a previously set up wallet.</p>
 </tbody></table>
 <p><a name="routerrpc/router.proto"></a></p>
 <p align="right"><a href="dlt/lnrpc.html#top">Top</a></p>
-<h2><a class="header" href="#routerrpcrouterproto" id="routerrpcrouterproto">routerrpc/router.proto</a></h2>
+## routerrpc/router.proto
 <p><a name="routerrpc.ChannelUpdate"></a></p>
 <h3><a class="header" href="#channelupdate" id="channelupdate">ChannelUpdate</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -23494,7 +23499,7 @@ lnd at first startup, and unlock a previously set up wallet.</p>
 </tbody></table>
 <p><a name="watchtowerrpc/watchtower.proto"></a></p>
 <p align="right"><a href="dlt/lnrpc.html#top">Top</a></p>
-<h2><a class="header" href="#watchtowerrpcwatchtowerproto" id="watchtowerrpcwatchtowerproto">watchtowerrpc/watchtower.proto</a></h2>
+## watchtowerrpc/watchtower.proto
 <p><a name="watchtowerrpc.GetInfoRequest"></a></p>
 <h3><a class="header" href="#getinforequest-1" id="getinforequest-1">GetInfoRequest</a></h3>
 <p><a name="watchtowerrpc.GetInfoResponse"></a></p>
@@ -23511,7 +23516,7 @@ lnd at first startup, and unlock a previously set up wallet.</p>
 </tbody></table>
 <p><a name="signrpc/signer.proto"></a></p>
 <p align="right"><a href="dlt/lnrpc.html#top">Top</a></p>
-<h2><a class="header" href="#signrpcsignerproto" id="signrpcsignerproto">signrpc/signer.proto</a></h2>
+## signrpc/signer.proto
 <p><a name="signrpc.InputScript"></a></p>
 <h3><a class="header" href="#inputscript" id="inputscript">InputScript</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -27727,7 +27732,7 @@ bash tc.sh --gen-proto-doc /tmp/src/exonum/exonum/src/proto/schema/exonum /tmp/o
 </ul>
 <p><a name="tests.proto"></a></p>
 <p align="right"><a href="dlt/exonum.html#top">Top</a></p>
-<h2><a class="header" href="#testsproto" id="testsproto">tests.proto</a></h2>
+## tests.proto
 <p><a name="exonum.tests.BlockchainTestTxA"></a></p>
 <h3><a class="header" href="#blockchaintesttxa" id="blockchaintesttxa">BlockchainTestTxA</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -27866,7 +27871,7 @@ bash tc.sh --gen-proto-doc /tmp/src/exonum/exonum/src/proto/schema/exonum /tmp/o
 </tbody></table>
 <p><a name="doc_tests.proto"></a></p>
 <p align="right"><a href="dlt/exonum.html#top">Top</a></p>
-<h2><a class="header" href="#doc_testsproto" id="doc_testsproto">doc_tests.proto</a></h2>
+## doc_tests.proto
 <p><a name="exonum.doc_tests.CreateWallet"></a></p>
 <h3><a class="header" href="#createwallet-1" id="createwallet-1">CreateWallet</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -27904,7 +27909,7 @@ bash tc.sh --gen-proto-doc /tmp/src/exonum/exonum/src/proto/schema/exonum /tmp/o
 <p>...</p>
 <p><a name="helpers.proto"></a></p>
 <p align="right"><a href="dlt/exonum.html#top">Top</a></p>
-<h2><a class="header" href="#helpersproto" id="helpersproto">helpers.proto</a></h2>
+## helpers.proto
 <p><a name="exonum.BitVec"></a></p>
 <h3><a class="header" href="#bitvec" id="bitvec">BitVec</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -27928,7 +27933,7 @@ bash tc.sh --gen-proto-doc /tmp/src/exonum/exonum/src/proto/schema/exonum /tmp/o
 </tbody></table>
 <p><a name="storage.proto"></a></p>
 <p align="right"><a href="dlt/exonum.html#top">Top</a></p>
-<h2><a class="header" href="#storageproto-1" id="storageproto-1">storage.proto</a></h2>
+## storage.proto
 <p><a name="exonum.IndexMetadata"></a></p>
 <h3><a class="header" href="#indexmetadata" id="indexmetadata">IndexMetadata</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -27937,7 +27942,7 @@ bash tc.sh --gen-proto-doc /tmp/src/exonum/exonum/src/proto/schema/exonum /tmp/o
 </tbody></table>
 <p><a name="protocol.proto"></a></p>
 <p align="right"><a href="dlt/exonum.html#top">Top</a></p>
-<h2><a class="header" href="#protocolproto" id="protocolproto">protocol.proto</a></h2>
+## protocol.proto
 <p><a name="exonum.consensus.BlockRequest"></a></p>
 <h3><a class="header" href="#blockrequest" id="blockrequest">BlockRequest</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -28034,7 +28039,7 @@ bash tc.sh --gen-proto-doc /tmp/src/exonum/exonum/src/proto/schema/exonum /tmp/o
 </tbody></table>
 <p><a name="blockchain.proto"></a></p>
 <p align="right"><a href="dlt/exonum.html#top">Top</a></p>
-<h2><a class="header" href="#blockchainproto" id="blockchainproto">blockchain.proto</a></h2>
+## blockchain.proto
 <p><a name="exonum.Block"></a></p>
 <h3><a class="header" href="#block-2" id="block-2">Block</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -28595,7 +28600,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trisa/proto /tmp/output.md
 </ul>
 <p><a name="trisa/data/ethereum/v1alpha1/ethereum.proto"></a></p>
 <p align="right"><a href="dlt/trisa.html#top">Top</a></p>
-<h2><a class="header" href="#trisadataethereumv1alpha1ethereumproto" id="trisadataethereumv1alpha1ethereumproto">trisa/data/ethereum/v1alpha1/ethereum.proto</a></h2>
+## trisa/data/ethereum/v1alpha1/ethereum.proto
 <p><a name="trisa.data.ethereum.v1alpha1.Data"></a></p>
 <h3><a class="header" href="#data" id="data">Data</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -28605,7 +28610,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trisa/proto /tmp/output.md
 </tbody></table>
 <p><a name="trisa/data/bitcoin/v1alpha1/bitcoin.proto"></a></p>
 <p align="right"><a href="dlt/trisa.html#top">Top</a></p>
-<h2><a class="header" href="#trisadatabitcoinv1alpha1bitcoinproto" id="trisadatabitcoinv1alpha1bitcoinproto">trisa/data/bitcoin/v1alpha1/bitcoin.proto</a></h2>
+## trisa/data/bitcoin/v1alpha1/bitcoin.proto
 <p><a name="trisa.data.bitcoin.v1alpha1.Data"></a></p>
 <h3><a class="header" href="#data-1" id="data-1">Data</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -28615,7 +28620,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trisa/proto /tmp/output.md
 </tbody></table>
 <p><a name="trisa/protocol/v1alpha1/trisa.proto"></a></p>
 <p align="right"><a href="dlt/trisa.html#top">Top</a></p>
-<h2><a class="header" href="#trisaprotocolv1alpha1trisaproto" id="trisaprotocolv1alpha1trisaproto">trisa/protocol/v1alpha1/trisa.proto</a></h2>
+## trisa/protocol/v1alpha1/trisa.proto
 <p><a name="trisa.protocol.v1alpha1.Transaction"></a></p>
 <h3><a class="header" href="#transaction-4" id="transaction-4">Transaction</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -28640,7 +28645,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trisa/proto /tmp/output.md
 </tbody></table>
 <p><a name="trisa/identity/us/v1alpha1/identity.proto"></a></p>
 <p align="right"><a href="dlt/trisa.html#top">Top</a></p>
-<h2><a class="header" href="#trisaidentityusv1alpha1identityproto" id="trisaidentityusv1alpha1identityproto">trisa/identity/us/v1alpha1/identity.proto</a></h2>
+## trisa/identity/us/v1alpha1/identity.proto
 <p><a name="trisa.identity.us.v1alpha1.Identity"></a></p>
 <h3><a class="header" href="#identity" id="identity">Identity</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -28652,7 +28657,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trisa/proto /tmp/output.md
 </tbody></table>
 <p><a name="trisa/identity/be/v1alpha1/identity.proto"></a></p>
 <p align="right"><a href="dlt/trisa.html#top">Top</a></p>
-<h2><a class="header" href="#trisaidentitybev1alpha1identityproto" id="trisaidentitybev1alpha1identityproto">trisa/identity/be/v1alpha1/identity.proto</a></h2>
+## trisa/identity/be/v1alpha1/identity.proto
 <p><a name="trisa.identity.be.v1alpha1.Identity"></a></p>
 <h3><a class="header" href="#identity-1" id="identity-1">Identity</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -28663,7 +28668,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trisa/proto /tmp/output.md
 </tbody></table>
 <p><a name="tvca/discovery/discovery.proto"></a></p>
 <p align="right"><a href="dlt/trisa.html#top">Top</a></p>
-<h2><a class="header" href="#tvcadiscoverydiscoveryproto" id="tvcadiscoverydiscoveryproto">tvca/discovery/discovery.proto</a></h2>
+## tvca/discovery/discovery.proto
 <p><a name="trisa.tvca.discovery.CRLStore"></a></p>
 <h3><a class="header" href="#crlstore" id="crlstore">CRLStore</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -29259,7 +29264,7 @@ bash tc.sh --gen-proto-doc /tmp/src/xuperunion/pb /tmp/output.md
 </ul>
 <p><a name="chainedbft.proto"></a></p>
 <p align="right"><a href="dlt/xuperchain.html#top">Top</a></p>
-<h2><a class="header" href="#chainedbftproto" id="chainedbftproto">chainedbft.proto</a></h2>
+## chainedbft.proto
 <p><a name="pb.ChainedBftPhaseMessage"></a></p>
 <h3><a class="header" href="#chainedbftphasemessage" id="chainedbftphasemessage">ChainedBftPhaseMessage</a></h3>
 <p>ChainedBftPhaseMessage is the proposal message of the protocal.
@@ -29319,7 +29324,7 @@ Crypto lib support Threshold-Signatures.</p>
 </tbody></table>
 <p><a name="xcheck.proto"></a></p>
 <p align="right"><a href="dlt/xuperchain.html#top">Top</a></p>
-<h2><a class="header" href="#xcheckproto" id="xcheckproto">xcheck.proto</a></h2>
+## xcheck.proto
 <p><a name="pb.ComplianceCheckResponse"></a></p>
 <h3><a class="header" href="#compliancecheckresponse" id="compliancecheckresponse">ComplianceCheckResponse</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -29340,7 +29345,7 @@ Crypto lib support Threshold-Signatures.</p>
 </tbody></table>
 <p><a name="xchain_spv.proto"></a></p>
 <p align="right"><a href="dlt/xuperchain.html#top">Top</a></p>
-<h2><a class="header" href="#xchain_spvproto" id="xchain_spvproto">xchain_spv.proto</a></h2>
+## xchain_spv.proto
 <p><a name="pb.ECDSAAccount"></a></p>
 <h3><a class="header" href="#ecdsaaccount" id="ecdsaaccount">ECDSAAccount</a></h3>
 <p>助记词、私钥的json、公钥的json、钱包地址</p>
@@ -29442,7 +29447,7 @@ Crypto lib support Threshold-Signatures.</p>
 </tbody></table>
 <p><a name="xchain.proto"></a></p>
 <p align="right"><a href="dlt/xuperchain.html#top">Top</a></p>
-<h2><a class="header" href="#xchainproto" id="xchainproto">xchain.proto</a></h2>
+## xchain.proto
 <p><a name="pb.AK2AccountRequest"></a></p>
 <h3><a class="header" href="#ak2accountrequest" id="ak2accountrequest">AK2AccountRequest</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -31780,7 +31785,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </ul>
 <p><a name="Ethereum.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#ethereumproto" id="ethereumproto">Ethereum.proto</a></h2>
+## Ethereum.proto
 <p><a name="TW.Ethereum.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput" id="signinginput">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction.</p>
@@ -31805,7 +31810,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="Semux.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#semuxproto" id="semuxproto">Semux.proto</a></h2>
+## Semux.proto
 <p><a name="TW.Semux.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-1" id="signinginput-1">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction.</p>
@@ -31825,7 +31830,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="Aion.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#aionproto" id="aionproto">Aion.proto</a></h2>
+## Aion.proto
 <p><a name="TW.Aion.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-2" id="signinginput-2">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction.</p>
@@ -31847,7 +31852,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="Cosmos.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#cosmosproto" id="cosmosproto">Cosmos.proto</a></h2>
+## Cosmos.proto
 <p><a name="TW.Cosmos.Proto.Amount"></a></p>
 <h3><a class="header" href="#amount" id="amount">Amount</a></h3>
 <p>Amount</p>
@@ -31932,7 +31937,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="ARK.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#arkproto" id="arkproto">ARK.proto</a></h2>
+## ARK.proto
 <p><a name="TW.ARK.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-4" id="signinginput-4">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction.</p>
@@ -31957,7 +31962,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="IoTeX.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#iotexproto" id="iotexproto">IoTeX.proto</a></h2>
+## IoTeX.proto
 <p><a name="TW.IoTeX.Proto.Action"></a></p>
 <h3><a class="header" href="#action" id="action">Action</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -32010,7 +32015,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="Bitcoin.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#bitcoinproto" id="bitcoinproto">Bitcoin.proto</a></h2>
+## Bitcoin.proto
 <p><a name="TW.Bitcoin.Proto.OutPoint"></a></p>
 <h3><a class="header" href="#outpoint-2" id="outpoint-2">OutPoint</a></h3>
 <p>Bitcoin transaction out-point reference.</p>
@@ -32092,7 +32097,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="Decred.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#decredproto" id="decredproto">Decred.proto</a></h2>
+## Decred.proto
 <p><a name="TW.Decred.Proto.SigningOutput"></a></p>
 <h3><a class="header" href="#signingoutput-7" id="signingoutput-7">SigningOutput</a></h3>
 <p>Transaction signing output.</p>
@@ -32134,7 +32139,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="Zilliqa.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#zilliqaproto" id="zilliqaproto">Zilliqa.proto</a></h2>
+## Zilliqa.proto
 <p><a name="TW.Zilliqa.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-7" id="signinginput-7">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction.</p>
@@ -32157,7 +32162,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="Solana.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#solanaproto" id="solanaproto">Solana.proto</a></h2>
+## Solana.proto
 <p><a name="TW.Solana.Proto.DeactivateStake"></a></p>
 <h3><a class="header" href="#deactivatestake" id="deactivatestake">DeactivateStake</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -32204,7 +32209,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="Ontology.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#ontologyproto" id="ontologyproto">Ontology.proto</a></h2>
+## Ontology.proto
 <p><a name="TW.Ontology.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-9" id="signinginput-9">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction.</p>
@@ -32228,7 +32233,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="Stellar.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#stellarproto" id="stellarproto">Stellar.proto</a></h2>
+## Stellar.proto
 <p><a name="TW.Stellar.Proto.MemoHash"></a></p>
 <h3><a class="header" href="#memohash" id="memohash">MemoHash</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -32278,7 +32283,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="Waves.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#wavesproto" id="wavesproto">Waves.proto</a></h2>
+## Waves.proto
 <p><a name="TW.Waves.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-11" id="signinginput-11">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction.</p>
@@ -32301,7 +32306,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="Common.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#commonproto" id="commonproto">Common.proto</a></h2>
+## Common.proto
 <p><a name="TW.Proto.Result"></a></p>
 <h3><a class="header" href="#result-1" id="result-1">Result</a></h3>
 <p>Result type.</p>
@@ -32312,7 +32317,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="Ripple.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#rippleproto" id="rippleproto">Ripple.proto</a></h2>
+## Ripple.proto
 <p><a name="TW.Ripple.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-12" id="signinginput-12">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction.</p>
@@ -32335,7 +32340,7 @@ bash tc.sh --gen-proto-doc /tmp/src/trustwallet-core/src/proto /tmp/output.md
 </tbody></table>
 <p><a name="Binance.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#binanceproto" id="binanceproto">Binance.proto</a></h2>
+## Binance.proto
 <p><a name="TW.Binance.Proto.CancelTradeOrder"></a></p>
 <h3><a class="header" href="#canceltradeorder" id="canceltradeorder">CancelTradeOrder</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -32486,7 +32491,7 @@ bytes               // public key bytes</p>
 | data | <a href="dlt/trustwallet.html#bytes">bytes</a> |  | reserved for future use |</p>
 <p><a name="Icon.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#iconproto" id="iconproto">Icon.proto</a></h2>
+## Icon.proto
 <p><a name="TW.Icon.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-14" id="signinginput-14">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction.</p>
@@ -32509,7 +32514,7 @@ bytes               // public key bytes</p>
 </tbody></table>
 <p><a name="VeChain.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#vechainproto" id="vechainproto">VeChain.proto</a></h2>
+## VeChain.proto
 <p><a name="TW.VeChain.Proto.Clause"></a></p>
 <h3><a class="header" href="#clause" id="clause">Clause</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -32540,7 +32545,7 @@ bytes               // public key bytes</p>
 </tbody></table>
 <p><a name="Tezos.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#tezosproto" id="tezosproto">Tezos.proto</a></h2>
+## Tezos.proto
 <p><a name="TW.Tezos.Proto.DelegationOperationData"></a></p>
 <h3><a class="header" href="#delegationoperationdata" id="delegationoperationdata">DelegationOperationData</a></h3>
 <p>Delegation operation specific data.
@@ -32621,7 +32626,7 @@ Next field: 3</p>
 </tbody></table>
 <p><a name="Any.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#anyproto" id="anyproto">Any.proto</a></h2>
+## Any.proto
 <p><a name="TW.Any.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-17" id="signinginput-17">SigningInput</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -32644,7 +32649,7 @@ Next field: 3</p>
 </tbody></table>
 <p><a name="Nebulas.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#nebulasproto" id="nebulasproto">Nebulas.proto</a></h2>
+## Nebulas.proto
 <p><a name="TW.Nebulas.Proto.Data"></a></p>
 <h3><a class="header" href="#data-2" id="data-2">Data</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -32693,7 +32698,7 @@ Next field: 3</p>
 </tbody></table>
 <p><a name="Bravo.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#bravoproto" id="bravoproto">Bravo.proto</a></h2>
+## Bravo.proto
 <p><a name="TW.Bravo.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-19" id="signinginput-19">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction.</p>
@@ -32716,7 +32721,7 @@ Next field: 3</p>
 </tbody></table>
 <p><a name="Tron.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#tronproto" id="tronproto">Tron.proto</a></h2>
+## Tron.proto
 <p><a name="TW.Tron.Proto.BlockHeader"></a></p>
 <h3><a class="header" href="#blockheader-2" id="blockheader-2">BlockHeader</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -32833,7 +32838,7 @@ Next field: 3</p>
 </tbody></table>
 <p><a name="Theta.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#thetaproto" id="thetaproto">Theta.proto</a></h2>
+## Theta.proto
 <p><a name="TW.Theta.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-21" id="signinginput-21">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction</p>
@@ -32855,7 +32860,7 @@ Next field: 3</p>
 </tbody></table>
 <p><a name="Aeternity.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#aeternityproto" id="aeternityproto">Aeternity.proto</a></h2>
+## Aeternity.proto
 <p><a name="TW.Aeternity.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-22" id="signinginput-22">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction.</p>
@@ -32878,7 +32883,7 @@ Next field: 3</p>
 </tbody></table>
 <p><a name="Nimiq.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#nimiqproto" id="nimiqproto">Nimiq.proto</a></h2>
+## Nimiq.proto
 <p><a name="TW.Nimiq.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-23" id="signinginput-23">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction.</p>
@@ -32897,7 +32902,7 @@ Next field: 3</p>
 </tbody></table>
 <p><a name="Harmony.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#harmonyproto" id="harmonyproto">Harmony.proto</a></h2>
+## Harmony.proto
 <p><a name="TW.Harmony.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-24" id="signinginput-24">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction.</p>
@@ -32924,7 +32929,7 @@ Next field: 3</p>
 </tbody></table>
 <p><a name="EOS.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#eosproto" id="eosproto">EOS.proto</a></h2>
+## EOS.proto
 <p><a name="TW.EOS.Proto.Asset"></a></p>
 <h3><a class="header" href="#asset" id="asset">Asset</a></h3>
 <p>Values for an Asset object.</p>
@@ -32963,7 +32968,7 @@ Next field: 3</p>
 </tbody></table>
 <p><a name="Nano.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#nanoproto" id="nanoproto">Nano.proto</a></h2>
+## Nano.proto
 <p><a name="TW.Nano.Proto.SigningInput"></a></p>
 <h3><a class="header" href="#signinginput-26" id="signinginput-26">SigningInput</a></h3>
 <p>Input data necessary to create a signed transaction.</p>
@@ -32984,7 +32989,7 @@ Next field: 3</p>
 </tbody></table>
 <p><a name="IOST.proto"></a></p>
 <p align="right"><a href="dlt/trustwallet.html#top">Top</a></p>
-<h2><a class="header" href="#iostproto" id="iostproto">IOST.proto</a></h2>
+## IOST.proto
 <p><a name="TW.IOST.Proto.AccountInfo"></a></p>
 <h3><a class="header" href="#accountinfo" id="accountinfo">AccountInfo</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -35176,7 +35181,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </ul>
 <p><a name="contracts.proto"></a></p>
 <p align="right"><a href="dlt/openbazaar.html#top">Top</a></p>
-<h2><a class="header" href="#contractsproto" id="contractsproto">contracts.proto</a></h2>
+## contracts.proto
 <p><a name=".BitcoinSignature"></a></p>
 <h3><a class="header" href="#bitcoinsignature" id="bitcoinsignature">BitcoinSignature</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -35621,7 +35626,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </tbody></table>
 <p><a name="posts.proto"></a></p>
 <p align="right"><a href="dlt/openbazaar.html#top">Top</a></p>
-<h2><a class="header" href="#postsproto" id="postsproto">posts.proto</a></h2>
+## posts.proto
 <p><a name=".Post"></a></p>
 <h3><a class="header" href="#post" id="post">Post</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -35662,7 +35667,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </tbody></table>
 <p><a name="message.proto"></a></p>
 <p align="right"><a href="dlt/openbazaar.html#top">Top</a></p>
-<h2><a class="header" href="#messageproto" id="messageproto">message.proto</a></h2>
+## message.proto
 <p><a name=".Block"></a></p>
 <h3><a class="header" href="#block-4" id="block-4">Block</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -35764,7 +35769,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </tbody></table>
 <p><a name="countrycodes.proto"></a></p>
 <p align="right"><a href="dlt/openbazaar.html#top">Top</a></p>
-<h2><a class="header" href="#countrycodesproto" id="countrycodesproto">countrycodes.proto</a></h2>
+## countrycodes.proto
 <p><a name=".CountryCode"></a></p>
 <h3><a class="header" href="#countrycode" id="countrycode">CountryCode</a></h3>
 <table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
@@ -36029,7 +36034,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </tbody></table>
 <p><a name="profile.proto"></a></p>
 <p align="right"><a href="dlt/openbazaar.html#top">Top</a></p>
-<h2><a class="header" href="#profileproto" id="profileproto">profile.proto</a></h2>
+## profile.proto
 <p><a name=".Profile"></a></p>
 <h3><a class="header" href="#profile" id="profile">Profile</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -36097,7 +36102,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </tbody></table>
 <p><a name="moderator.proto"></a></p>
 <p align="right"><a href="dlt/openbazaar.html#top">Top</a></p>
-<h2><a class="header" href="#moderatorproto" id="moderatorproto">moderator.proto</a></h2>
+## moderator.proto
 <p><a name=".DisputeUpdate"></a></p>
 <h3><a class="header" href="#disputeupdate" id="disputeupdate">DisputeUpdate</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -36137,7 +36142,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </tbody></table>
 <p><a name="orders.proto"></a></p>
 <p align="right"><a href="dlt/openbazaar.html#top">Top</a></p>
-<h2><a class="header" href="#ordersproto" id="ordersproto">orders.proto</a></h2>
+## orders.proto
 <p><a name=".OrderState"></a></p>
 <h3><a class="header" href="#orderstate" id="orderstate">OrderState</a></h3>
 <table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
@@ -36159,7 +36164,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </tbody></table>
 <p><a name="api.proto"></a></p>
 <p align="right"><a href="dlt/openbazaar.html#top">Top</a></p>
-<h2><a class="header" href="#apiproto" id="apiproto">api.proto</a></h2>
+## api.proto
 <p><a name=".CaseRespApi"></a></p>
 <h3><a class="header" href="#caserespapi" id="caserespapi">CaseRespApi</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -37488,6 +37493,75 @@ OKRs</li>
 <li><a href="https://github.com/heystraightedge">Straightedge</a></li>
 <li><a href="https://medium.com/straightedge/reboot-e0c458f31e96">Reboot! - Straightedge - Medium</a></li>
 <li><a href="https://github.com/heystraightedge/straightedge-node/wiki/Validating">Validating · heystraightedge/straightedge-node Wiki</a></li>
+</ul>
+<h1><a class="header" href="#likecoin-button" id="likecoin-button">Likecoin Button</a></h1>
+<p>如何在 mdbook 的文章中加入讚賞鍵</p>
+<p>先註冊 <a href="https://liker.land/">Liker.Land</a> 取得 LikerID，續讀一下中文說明 <a href="https://docs.like.co/v/zh/">LikeCoin 是甚麼 - LikeCoin</a></p>
+<p>放入 mdbook 產出的 HTML 靜態文件的重點是需要使用 javascript 來動態產生下面 HTML 片段於瀏覽器之中。</p>
+<pre><code>&lt;div class=&quot;likecoin-embed likecoin-button&quot;&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;iframe scrolling=&quot;no&quot; frameborder=&quot;0&quot; 
+    src=&quot;https://button.like.co/in/embed/LikerID/button?referrer=http://yourhost/foo/page.html&quot;&gt;
+  &lt;/iframe&gt;
+&lt;/div&gt;
+</code></pre>
+<p>客製 mdbook 先新增 likebutton.js 於 book.toml 旁</p>
+<p>likebutton.js</p>
+<pre><code class="language-js">const LIKER_ID = &quot;dltdojo&quot;;//記得換成自己的
+let likeurl = `https://button.like.co/in/embed/${LIKER_ID}/button?referrer=${encodeURI(window.location.href)}`;
+let el = document.getElementsByClassName(&quot;likebutton&quot;)[0];
+if(el){
+    el.innerHTML = `&lt;div class=&quot;likecoin-embed likecoin-button&quot;&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;iframe scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;${likeurl}&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;`;
+}
+</code></pre>
+<p>並複製 <a href="https://github.com/likecoin/LikeCoinButton-integration/blob/master/web/style.css">LikeCoinButton-integration/style.css</a> 成為 likebutton.css</p>
+<pre><code class="language-css">.likecoin-button {
+  position: relative;
+  width: 100%;
+  max-width: 485px;
+  max-height: 240px;
+  margin: 0 auto;
+}
+.likecoin-button &gt; div {
+  padding-top: 49.48454%;
+}
+.likecoin-button &gt; iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</code></pre>
+<p>編輯 book.toml 的 output.html 段落加入 js 與 css </p>
+<pre><code class="language-toml">[output.html]
+default-theme = &quot;coal&quot;
+mathjax-support = true
+additional-js = [&quot;likebutton.js&quot;]
+additional-css = [&quot;likebutton.css&quot;]
+</code></pre>
+<p>最後就是看那一頁 md 裡面要加上按鈕就新增一個 div 後用 class 為 likebutton 來綁住輸出。</p>
+<pre><code>&lt;div class=&quot;likebutton&quot;/&gt;
+</code></pre>
+<p>上面寫在 md 內的 div 在經過 mdbook build 轉化成為 HTML 後輸出結果如下</p>
+<div class="likebutton"></div>
+目前只能限制一個 LikerID 使用，如要提供多用戶可以用 getElementsByClassName(LikerIDFoo) 來實做。
+<p>清明剛過，說到化讚為「賞」想到那個近千年前寫<a href="https://zh.wikipedia.org/zh-tw/%E5%AF%92%E9%A3%9F%E5%B8%96">寒食帖</a>的被貶者在年輕時寫的<a href="https://zh.wikisource.org/zh-hant/%E7%9C%81%E8%A9%A6%E5%88%91%E8%B3%9E%E5%BF%A0%E5%8E%9A%E4%B9%8B%E8%87%B3%E8%AB%96">刑賞忠厚之至論</a>。既然賞之過乎仁，也許哪天該小宇宙有個忠厚之至的<a href="https://zh.wikipedia.org/zh-tw/%E7%84%A1%E6%A2%9D%E4%BB%B6%E5%9F%BA%E6%9C%AC%E6%94%B6%E5%85%A5">無條件基本收入</a>給創作者無寒食之憂。</p>
+<pre><code>天下之善不勝賞，而爵祿不足以勸也；
+知天下之惡不勝刑，而刀鋸不足以裁也。
+是故疑則舉而歸之於仁，以君子長者之
+道待天下，使天下相率而歸於君子長者之道。
+
+故曰：忠厚之至也。
+</code></pre>
+<p>參考資訊</p>
+<ul>
+<li><a href="https://docs.like.co/v/zh/user-guide/likecoin-button">讚賞鍵 - LikeCoin</a></li>
+<li><a href="https://pingu.moe/2020/01/integrate-likebutton-with-jekyll/">給Jekyll加上LikeButton賺錢錢 | PinGuの独り言</a></li>
+<li><a href="https://github.com/likecoin/LikeCoinButton-integration/tree/master/web#2iframe">LikeCoinButton-integration/web at master · likecoin/LikeCoinButton-integration</a></li>
 </ul>
 <h1><a class="header" href="#did" id="did">DID</a></h1>
 <p><a href="https://w3c-ccg.github.io/did-spec/">Decentralized Identifiers (DIDs) v0.13</a></p>
@@ -39421,7 +39495,6 @@ BUDDHA -&gt; TV
 Camera --&gt; BUDDHA
 TV - Camera
 @enduml
-
 </code></pre>
 <p>引用</p>
 <pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-tv-buddha-v1.iuml
@@ -39509,7 +39582,6 @@ CI --&gt; Registry : 3. push
 CI &lt;-- Registry : 4. pull image
 
 @enduml
-
 </code></pre>
 <h1><a class="header" href="#狀態圖樣版-state-diagram-template" id="狀態圖樣版-state-diagram-template">狀態圖樣版 State Diagram Template</a></h1>
 <h2><a class="header" href="#tpl-state-machine-v1iuml" id="tpl-state-machine-v1iuml">tpl-state-machine-v1.iuml</a></h2>
@@ -39523,7 +39595,6 @@ Started --&gt; Finished : Finish
 Started --&gt; Suspended : Suspend
 Suspended --&gt; Started : Resume
 @enduml
-
 </code></pre>
 <p>引用</p>
 <pre><code>!include https://dltdojo.github.io/taichu-crypto/puml/tpl-state-machine-v1.iuml
@@ -39912,12 +39983,12 @@ mathjax-support = true
 <pre><code class="language-mathjax">\\( \mathbf y^2 = x^3 + ax + b\\) over \\(F_p\\)
 </code></pre>
 <p>呈現結果</p>
-<p>( \mathbf y^2 = x^3 + ax + b) over (F_p)</p>
+<p>\( \mathbf y^2 = x^3 + ax + b\) over \(F_p\)</p>
 <p><a href="https://en.bitcoin.it/wiki/Secp256k1">secp256k1</a></p>
 <pre><code class="language-mathjax">\\( \mathbf y^2 = x^3 + 7 \\) over \\(F_p\\)
 </code></pre>
 <p>呈現結果</p>
-<p>( \mathbf y^2 = x^3 + 7 ) over (F_p)</p>
+<p>\( \mathbf y^2 = x^3 + 7 \) over \(F_p\)</p>
 <p>不是人人都熟悉 mathjax 語法，如要測驗應該先提供參考語法。</p>
 <h1><a class="header" href="#學習資源-1" id="學習資源-1">學習資源</a></h1>
 <ul>
@@ -40532,7 +40603,6 @@ esac
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 </code></pre>
 <h1><a class="header" href="#測試頁面" id="測試頁面">測試頁面</a></h1>
 <ul>
@@ -40584,11 +40654,13 @@ fn main() {
         
 
         
-        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
         
 
         
@@ -40603,12 +40675,16 @@ fn main() {
 
         <!-- Custom JS scripts -->
         
+        <script type="text/javascript" src="likebutton.js"></script>
+        
 
         
         
         <script type="text/javascript">
         window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
         });
         </script>
         

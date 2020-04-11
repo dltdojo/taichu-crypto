@@ -5,8 +5,18 @@ multilingual = false
 src = "src"
 title = "DLTDOJO3 第三新熵熱踢道場"
 
+[build]
+build-dir = "../docs"
+create-missing = false
+
+[output.html]
+default-theme = "coal"
+mathjax-support = true
+additional-js = ["likebutton.js"]
+additional-css = ["likebutton.css"]
+
 [output.html.playpen]
-editable = true
+editable = false
 
 [preprocessor.toc]
 command = "mdbook-toc"
