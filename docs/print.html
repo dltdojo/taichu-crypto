@@ -37494,8 +37494,16 @@ OKRs</li>
 <li><a href="https://medium.com/straightedge/reboot-e0c458f31e96">Reboot! - Straightedge - Medium</a></li>
 <li><a href="https://github.com/heystraightedge/straightedge-node/wiki/Validating">Validating · heystraightedge/straightedge-node Wiki</a></li>
 </ul>
-<h1><a class="header" href="#likecoin-button" id="likecoin-button">Likecoin Button</a></h1>
-<p>如何在 mdbook 的文章中加入讚賞鍵</p>
+<h1><a class="header" href="#likecoin" id="likecoin">Likecoin</a></h1>
+<p>Likecoin 使用 Cosoms 架構，其 LIKE 代幣帳本與治理，創作者創作之後加上讚賞鍵，依照點擊的次數來分配 LIKE 數量。該專案的程式碼庫為<a href="https://github.com/likecoin">LikeCoin - Github</a>，可以先看看<a href="https://docs.like.co/v/zh/constitution">📜 憲法 - LikeCoin</a>。</p>
+<p>相關連結</p>
+<ul>
+<li><a href="https://github.com/cosmos/awesome">cosmos/awesome: Collection of Cosmos related resources</a></li>
+<li><a href="https://docs.cosmos.network/master/building-modules/intro.html">Introduction to SDK Modules | Cosmos SDK</a></li>
+<li><a href="https://github.com/cosmos/sdk-tutorials">cosmos/sdk-tutorials: Tutorials for building modules for the Cosmos SDK</a></li>
+<li><a href="https://matters.news/@ckxpress/%E7%AD%94%E5%AE%A2%E5%95%8F-%E7%82%BA%E7%94%9A%E9%BA%BC%E8%AE%9A%E8%B3%9E%E5%85%AC%E6%B0%91%E6%B2%92%E6%9C%89%E4%BB%98%E6%9B%B4%E5%A4%9A%E7%9A%84%E9%81%B8%E9%A0%85-%E8%AE%9A%E8%B3%9E%E5%85%AC%E6%B0%91%E6%89%80%E7%82%BA%E4%BD%95%E4%BA%8B-like-coin-%E6%9C%89%E4%BD%95%E9%9C%80%E6%B1%82-%E9%99%A4%E4%BA%86%E6%8F%9B%E6%88%90%E5%82%B3%E7%B5%B1%E8%B2%A8%E5%B9%A3-like-coin-%E9%82%84%E8%83%BD%E7%94%A8%E4%BE%86%E5%81%9A%E7%94%9A%E9%BA%BC-zdpuAnDeiQGtsgLpH5FaqccAyvyZZ9vpoFM2Eb1BDijsk4kfQ">答客問：為甚麼讚賞公民沒有付更多的選項 / 讚賞公民所為何事 / LikeCoin 有何需求 / 除了換成傳統貨幣 LikeCoin 還能用來做甚麼 - Matters</a></li>
+</ul>
+<h1><a class="header" href="#如何在-mdbook-的文章中加入讚賞鍵-likecoin-button" id="如何在-mdbook-的文章中加入讚賞鍵-likecoin-button">如何在 mdbook 的文章中加入讚賞鍵 Likecoin Button</a></h1>
 <p>先註冊 <a href="https://liker.land/">Liker.Land</a> 取得 LikerID，續讀一下中文說明 <a href="https://docs.like.co/v/zh/">LikeCoin 是甚麼 - LikeCoin</a></p>
 <p>放入 mdbook 產出的 HTML 靜態文件的重點是需要使用 javascript 來動態產生下面 HTML 片段於瀏覽器之中。</p>
 <pre><code>&lt;div class=&quot;likecoin-embed likecoin-button&quot;&gt;
@@ -37505,7 +37513,7 @@ OKRs</li>
   &lt;/iframe&gt;
 &lt;/div&gt;
 </code></pre>
-<p>客製 mdbook 先新增 likebutton.js 於 book.toml 旁</p>
+<p>客製 mdbook 先新增 likebutton.js 於 book.toml 旁，也可以使用 <a href="https://github.com/likecoin/likecoin-button-sdk">likecoin/likecoin-button-sdk</a> 的 sdk.js 原理類似。</p>
 <p>likebutton.js</p>
 <pre><code class="language-js">const LIKER_ID = &quot;dltdojo&quot;;//記得換成自己的
 let likeurl = `https://button.like.co/in/embed/${LIKER_ID}/button?referrer=${encodeURI(window.location.href)}`;
@@ -37566,6 +37574,7 @@ additional-css = [&quot;likebutton.css&quot;]
 <h1><a class="header" href="#探索心得" id="探索心得">探索心得</a></h1>
 <p>LikeCoin 是個資訊混亂的小宇宙，很多頁面沒有提供幣圈 UI/UX 慣用的資訊，下面說明如何找到這類資訊的做法。</p>
 <h2><a class="header" href="#如何取得帳號的like歷史交易紀錄" id="如何取得帳號的like歷史交易紀錄">如何取得帳號的LIKE歷史交易紀錄</a></h2>
+<p>查閱交易歷史的功能在手機 app 可以點擊顯示餘額的下方 bigdipper 按鈕，但在 like.co 找不到明顯可按的按鈕來查閱交易歷史紀錄。</p>
 <ul>
 <li>必須先找到LikeCoin 錢包地址(下面用cosmos123abc示意)，位置在 Liker ID 設定附近。</li>
 <li>開啟 https://likecoin.bigdipper.live/account/cosmos123abc</li>
@@ -37601,6 +37610,11 @@ additional-css = [&quot;likebutton.css&quot;]
 <ul>
 <li><a href="https://github.com/likecoin/like-co/blob/2007add3e2380a433bc4c0bf5bc83ef69c4360c3/test/e2e/specs/user.js">like-co/test/e2e/specs/user.js at likecoin/like-co</a></li>
 </ul>
+<h2><a class="header" href="#點讚交易查詢" id="點讚交易查詢">點讚交易查詢</a></h2>
+<p><a href="https://docs.like.co/v/zh/constitution">📜 憲法 - LikeCoin</a>有提到LIKE分配，但目前無相關計算實際範例可觀察來自行檢驗，造成讚賞公民自己對整個持有與交易歷史的狀態處於相當模糊的狀況。</p>
+<p>就帳本觀察每個讚賞公民會有兩個關鍵錢包地址，錢包地址A用來收發代幣，另一個用來發送點讚代幣的錢包地址B，差別在A公民收發，後者B只能點讚發，另外B地址一開始會有一筆約1000LIKE轉入應是五鎂月贊助換來。使用B地址帳本紀錄可觀察到點讚代幣交易歷史，不過B地址並沒顯示在讚賞公民設定或管理介面裡，也許是變動綁定地址非固定?</p>
+<p>問題回到讚賞公民點完讚就想立即看到這筆交易細節要如何查詢帳本?而不是被動等電郵的讚賞公民每日報告部分摘要。換句話說要去哪底查出B地址看帳本?關鍵是必須先有點讚對方的地址，在點讚之後馬上從對方的bigdipper反向看自己的B地址。可是第一步有對方 LikerID 會遇到 https://like.co/xxxx 看不到地址的問題。</p>
+<p>因為目前網頁設計 maskedWallet 遮起來 <a href="https://github.com/likecoin/like-co/blob/1b23c495878501990ee927bced9a52c773f8ba1e/pages/_id/index.vue#L334">like-co/index.vue at likecoin/like-co</a> 不方便查閱，可用兩種做法查出來對方地址，一個是用A錢包地址發送小額即可查出，二是記下對方地址前後部分觀察bigdipper的最新交易得出。</p>
 <h1><a class="header" href="#did" id="did">DID</a></h1>
 <p><a href="https://w3c-ccg.github.io/did-spec/">Decentralized Identifiers (DIDs) v0.13</a></p>
 <h1><a class="header" href="#toc-15" id="toc-15">TOC</a></h1>
