@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (1.0.1+r74)"
+   sodipodi:docname="ethuseless-raw.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="400"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1348"
+     inkscape:window-height="1016"
+     inkscape:window-x="72"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:38.77px;line-height:1.25;font-family:aoyagireisyo2;-inkscape-font-specification:'aoyagireisyo2, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.201927"
+       x="82.357895"
+       y="61.125744"
+       id="text12"><tspan
+         sodipodi:role="line"
+         id="tspan24"
+         x="82.357895"
+         y="61.125744"
+         style="stroke-width:0.201927">以</tspan><tspan
+         sodipodi:role="line"
+         id="tspan26"
+         x="82.357895"
+         y="109.58823"
+         style="stroke-width:0.201927">太</tspan><tspan
+         sodipodi:role="line"
+         id="tspan28"
+         x="82.357895"
+         y="158.05075"
+         style="stroke-width:0.201927">無</tspan><tspan
+         sodipodi:role="line"
+         id="tspan30"
+         x="82.357895"
+         y="206.51324"
+         style="stroke-width:0.201927">用</tspan><tspan
+         sodipodi:role="line"
+         id="tspan32"
+         x="82.357895"
+         y="254.97574"
+         style="stroke-width:0.201927">坊</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="5.75071"
+       y="280.58762"
+       id="text54"><tspan
+         sodipodi:role="line"
+         id="tspan52"
+         x="5.75071"
+         y="280.58762"
+         style="stroke-width:0.264583">https://opentype.jp/aoyagireisho.htm</tspan></text>
+  </g>
+</svg>
