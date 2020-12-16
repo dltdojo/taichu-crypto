@@ -5,22 +5,36 @@
         <meta charset="UTF-8">
         <title>OpenBazaar - DLTDOJO3 第三新熵熱踢道場</title>
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
         <link rel="shortcut icon" href="../favicon.png">
+        
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
+        
         <link rel="stylesheet" href="../css/print.css" media="print">
+        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
@@ -41,7 +55,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "coal";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -86,7 +100,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> DLTDOJO3</a></li><li class="chapter-item expanded "><a href="../k19.html"><strong aria-hidden="true">2.</strong> k19.dltdojo</a></li><li class="chapter-item expanded "><a href="../poc.html"><strong aria-hidden="true">3.</strong> POC 概念驗證</a></li><li class="chapter-item expanded "><a href="../taichu-raw/index.html"><strong aria-hidden="true">4.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../taichu-raw/apache-big5.html"><strong aria-hidden="true">4.1.</strong> HTTPS: Apache Big5</a></li><li class="chapter-item expanded "><a href="../taichu-raw/openapiv3.html"><strong aria-hidden="true">4.2.</strong> HTTPS: OpenAPI v3</a></li><li class="chapter-item expanded "><a href="../taichu-raw/others.html"><strong aria-hidden="true">4.3.</strong> 其他</a></li></ol></li><li class="chapter-item expanded "><a href="../mad-white/index.html"><strong aria-hidden="true">5.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mad-white/code-server.html"><strong aria-hidden="true">5.1.</strong> Code Server</a></li><li class="chapter-item expanded "><a href="../mad-white/dltdojo3r1.html"><strong aria-hidden="true">5.2.</strong> DLTDOJO3R1</a></li></ol></li><li class="chapter-item expanded "><a href="../mad-red/index.html"><strong aria-hidden="true">6.</strong> POC MAD-RED</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">6.1.</strong> Veloren 多人RPG體素遊戲</a></li><li class="chapter-item expanded "><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">6.2.</strong> 聊天測試 BIP39</a></li><li class="chapter-item expanded "><a href="../mad-red/vox/index.html"><strong aria-hidden="true">6.3.</strong> Voxel 組件開發編輯</a></li><li class="chapter-item expanded "><a href="../mad-red/vox/projects.html"><strong aria-hidden="true">6.4.</strong> Voxel 相關專案</a></li></ol></li><li class="chapter-item expanded "><a href="../crypto-assets.html"><strong aria-hidden="true">7.</strong> Virtual Asset</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../virtual-asset/ethereum.html"><strong aria-hidden="true">7.1.</strong> Ethereum</a></li><li class="chapter-item expanded "><a href="../virtual-asset/aec.html"><strong aria-hidden="true">7.2.</strong> Anonymity-Enhanced Cryptocurrency</a></li></ol></li><li class="chapter-item expanded "><a href="../dlt.html"><strong aria-hidden="true">8.</strong> DLT</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../dlt/hl-fabric.html"><strong aria-hidden="true">8.1.</strong> Hyperledger Fabric</a></li><li class="chapter-item expanded "><a href="../dlt/hl-sawtooth.html"><strong aria-hidden="true">8.2.</strong> Hyperledger Sawtooth</a></li><li class="chapter-item expanded "><a href="../dlt/hl-burrow.html"><strong aria-hidden="true">8.3.</strong> HyperLedger Burrow</a></li><li class="chapter-item expanded "><a href="../dlt/hl-besu.html"><strong aria-hidden="true">8.4.</strong> HyperLedger Besu</a></li><li class="chapter-item expanded "><a href="../dlt/hl-avalon.html"><strong aria-hidden="true">8.5.</strong> HyperLedger Avalon</a></li><li class="chapter-item expanded "><a href="../dlt/polkadot.html"><strong aria-hidden="true">8.6.</strong> Polkadot</a></li><li class="chapter-item expanded "><a href="../dlt/libra19.html"><strong aria-hidden="true">8.7.</strong> Libra</a></li><li class="chapter-item expanded "><a href="../dlt/lnrpc.html"><strong aria-hidden="true">8.8.</strong> lightning network</a></li><li class="chapter-item expanded "><a href="../dlt/exonum.html"><strong aria-hidden="true">8.9.</strong> exonum</a></li><li class="chapter-item expanded "><a href="../dlt/trisa.html"><strong aria-hidden="true">8.10.</strong> TRISA</a></li><li class="chapter-item expanded "><a href="../dlt/xuperchain.html"><strong aria-hidden="true">8.11.</strong> xuperchain</a></li><li class="chapter-item expanded "><a href="../dlt/trustwallet.html"><strong aria-hidden="true">8.12.</strong> TrustWallet</a></li><li class="chapter-item expanded "><a href="../dlt/openbazaar.html" class="active"><strong aria-hidden="true">8.13.</strong> OpenBazaar</a></li></ol></li><li class="chapter-item expanded "><a href="../dao.html"><strong aria-hidden="true">9.</strong> DAO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../dao/aragon.html"><strong aria-hidden="true">9.1.</strong> Aragon</a></li><li class="chapter-item expanded "><a href="../dao/joystream.html"><strong aria-hidden="true">9.2.</strong> JoyStream</a></li><li class="chapter-item expanded "><a href="../dao/edgeware.html"><strong aria-hidden="true">9.3.</strong> Edgeware</a></li><li class="chapter-item expanded "><a href="../dao/likecoin.html"><strong aria-hidden="true">9.4.</strong> LikeCoin</a></li></ol></li><li class="chapter-item expanded "><a href="../did.html"><strong aria-hidden="true">10.</strong> DID</a></li><li class="chapter-item expanded "><a href="../defi/index.html"><strong aria-hidden="true">11.</strong> DeFi</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../defi/openbanking.html"><strong aria-hidden="true">11.1.</strong> Open Banking</a></li></ol></li><li class="chapter-item expanded "><a href="../services/index.html"><strong aria-hidden="true">12.</strong> Services</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../services/amazon-qldb.html"><strong aria-hidden="true">12.1.</strong> Amazon QLDB</a></li></ol></li><li class="chapter-item expanded "><a href="../LRE.html"><strong aria-hidden="true">13.</strong> Ledger Reliability Engineering(LRE)</a></li><li class="chapter-item expanded "><a href="../web/index.html"><strong aria-hidden="true">14.</strong> Web Tech</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../web/extensions.html"><strong aria-hidden="true">14.1.</strong> Browser Extensiions</a></li><li class="chapter-item expanded "><a href="../web/example-page.html"><strong aria-hidden="true">14.2.</strong> Example Pages</a></li><li class="chapter-item expanded "><a href="../web/tls.html"><strong aria-hidden="true">14.3.</strong> TLS</a></li><li class="chapter-item expanded "><a href="../webauthn.html"><strong aria-hidden="true">14.4.</strong> WebAuthn</a></li><li class="chapter-item expanded "><a href="../webassembly.html"><strong aria-hidden="true">14.5.</strong> WebAssembly</a></li><li class="chapter-item expanded "><a href="../web/openssl.html"><strong aria-hidden="true">14.6.</strong> OpenSSL</a></li></ol></li><li class="chapter-item expanded "><a href="../k8s.html"><strong aria-hidden="true">15.</strong> Kubernetes</a></li><li class="chapter-item expanded "><a href="../p2p.html"><strong aria-hidden="true">16.</strong> P2P</a></li><li class="chapter-item expanded "><a href="../cybersecurity.html"><strong aria-hidden="true">17.</strong> Cybersecurity</a></li><li class="chapter-item expanded "><a href="../rust.html"><strong aria-hidden="true">18.</strong> Rust</a></li><li class="chapter-item expanded "><a href="../artifact/index.html"><strong aria-hidden="true">19.</strong> Artifact</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../artifact/book-1984.html"><strong aria-hidden="true">19.1.</strong> 一九八四再生金鑰書</a></li><li class="chapter-item expanded "><a href="../artifact/dark-comm-group-2019.html"><strong aria-hidden="true">19.2.</strong> 暗黑通信團書鑰</a></li></ol></li><li class="chapter-item expanded "><a href="../post-quantum.html"><strong aria-hidden="true">20.</strong> Post-quantum cryptography</a></li><li class="chapter-item expanded "><a href="../plantuml.html"><strong aria-hidden="true">21.</strong> PlantUML</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../puml/hyperledger-fabric.html"><strong aria-hidden="true">21.1.</strong> Hyperledger Fabric</a></li><li class="chapter-item expanded "><a href="../puml/ethereum.html"><strong aria-hidden="true">21.2.</strong> Ethereum</a></li></ol></li><li class="chapter-item expanded "><a href="../messaging.html"><strong aria-hidden="true">22.</strong> Messaging</a></li><li class="chapter-item expanded "><a href="../mdbook/index.html"><strong aria-hidden="true">23.</strong> mdbook</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mdbook/preprocessors.html"><strong aria-hidden="true">23.1.</strong> preprocessors</a></li><li class="chapter-item expanded "><a href="../mdbook/others.html"><strong aria-hidden="true">23.2.</strong> 其他</a></li></ol></li><li class="chapter-item expanded "><a href="../resources.html"><strong aria-hidden="true">24.</strong> 學習資源</a></li><li class="chapter-item expanded "><a href="../book.html"><strong aria-hidden="true">25.</strong> 書籍文獻與觀點</a></li><li class="chapter-item expanded "><a href="../job.html"><strong aria-hidden="true">26.</strong> 工作</a></li><li class="chapter-item expanded "><a href="../appendix.html"><strong aria-hidden="true">27.</strong> 附錄</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cmd-help.html"><strong aria-hidden="true">27.1.</strong> 命令列 tc.sh</a></li><li class="chapter-item expanded "><a href="../license.html"><strong aria-hidden="true">27.2.</strong> 授權條款</a></li><li class="chapter-item expanded "><a href="../testpage.html"><strong aria-hidden="true">27.3.</strong> 測試頁面</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> DLTDOJO3</a></li><li class="chapter-item expanded "><a href="../k19.html"><strong aria-hidden="true">2.</strong> k19.dltdojo</a></li><li class="chapter-item expanded "><a href="../poc.html"><strong aria-hidden="true">3.</strong> POC 概念驗證</a></li><li class="chapter-item expanded "><a href="../artifact/index.html"><strong aria-hidden="true">4.</strong> Artifact 書鑰</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../artifact/book-1984.html"><strong aria-hidden="true">4.1.</strong> 一九八四再生金鑰書</a></li><li class="chapter-item expanded "><a href="../artifact/dark-comm-group-2019.html"><strong aria-hidden="true">4.2.</strong> 暗黑通信團書鑰</a></li><li class="chapter-item expanded "><a href="../artifact/copyright1.html"><strong aria-hidden="true">4.3.</strong> 商業委託著作財產權</a></li></ol></li><li class="chapter-item expanded "><a href="../taichu-raw/index.html"><strong aria-hidden="true">5.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../taichu-raw/apache-big5.html"><strong aria-hidden="true">5.1.</strong> HTTPS: Apache Big5</a></li><li class="chapter-item expanded "><a href="../taichu-raw/openapiv3.html"><strong aria-hidden="true">5.2.</strong> HTTPS: OpenAPI v3</a></li><li class="chapter-item expanded "><a href="../taichu-raw/others.html"><strong aria-hidden="true">5.3.</strong> 其他</a></li></ol></li><li class="chapter-item expanded "><a href="../mad-white/index.html"><strong aria-hidden="true">6.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mad-white/code-server.html"><strong aria-hidden="true">6.1.</strong> Code Server</a></li><li class="chapter-item expanded "><a href="../mad-white/dltdojo3r1.html"><strong aria-hidden="true">6.2.</strong> DLTDOJO3R1</a></li></ol></li><li class="chapter-item expanded "><a href="../mad-red/index.html"><strong aria-hidden="true">7.</strong> POC MAD-RED</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">7.1.</strong> Veloren 多人RPG體素遊戲</a></li><li class="chapter-item expanded "><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">7.2.</strong> 聊天測試 BIP39</a></li><li class="chapter-item expanded "><a href="../mad-red/vox/index.html"><strong aria-hidden="true">7.3.</strong> Voxel 組件開發編輯</a></li><li class="chapter-item expanded "><a href="../mad-red/vox/projects.html"><strong aria-hidden="true">7.4.</strong> Voxel 相關專案</a></li></ol></li><li class="chapter-item expanded "><a href="../crypto-assets.html"><strong aria-hidden="true">8.</strong> Virtual Asset</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../virtual-asset/ethereum.html"><strong aria-hidden="true">8.1.</strong> Ethereum</a></li><li class="chapter-item expanded "><a href="../virtual-asset/aec.html"><strong aria-hidden="true">8.2.</strong> Anonymity-Enhanced Cryptocurrency</a></li></ol></li><li class="chapter-item expanded "><a href="../dlt.html"><strong aria-hidden="true">9.</strong> DLT</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../dlt/hl-fabric.html"><strong aria-hidden="true">9.1.</strong> Hyperledger Fabric</a></li><li class="chapter-item expanded "><a href="../dlt/hl-sawtooth.html"><strong aria-hidden="true">9.2.</strong> Hyperledger Sawtooth</a></li><li class="chapter-item expanded "><a href="../dlt/hl-burrow.html"><strong aria-hidden="true">9.3.</strong> HyperLedger Burrow</a></li><li class="chapter-item expanded "><a href="../dlt/hl-besu.html"><strong aria-hidden="true">9.4.</strong> HyperLedger Besu</a></li><li class="chapter-item expanded "><a href="../dlt/hl-avalon.html"><strong aria-hidden="true">9.5.</strong> HyperLedger Avalon</a></li><li class="chapter-item expanded "><a href="../dlt/polkadot.html"><strong aria-hidden="true">9.6.</strong> Polkadot</a></li><li class="chapter-item expanded "><a href="../dlt/libra19.html"><strong aria-hidden="true">9.7.</strong> Libra</a></li><li class="chapter-item expanded "><a href="../dlt/lnrpc.html"><strong aria-hidden="true">9.8.</strong> lightning network</a></li><li class="chapter-item expanded "><a href="../dlt/exonum.html"><strong aria-hidden="true">9.9.</strong> exonum</a></li><li class="chapter-item expanded "><a href="../dlt/trisa.html"><strong aria-hidden="true">9.10.</strong> TRISA</a></li><li class="chapter-item expanded "><a href="../dlt/xuperchain.html"><strong aria-hidden="true">9.11.</strong> xuperchain</a></li><li class="chapter-item expanded "><a href="../dlt/trustwallet.html"><strong aria-hidden="true">9.12.</strong> TrustWallet</a></li><li class="chapter-item expanded "><a href="../dlt/openbazaar.html" class="active"><strong aria-hidden="true">9.13.</strong> OpenBazaar</a></li></ol></li><li class="chapter-item expanded "><a href="../dao.html"><strong aria-hidden="true">10.</strong> DAO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../dao/aragon.html"><strong aria-hidden="true">10.1.</strong> Aragon</a></li><li class="chapter-item expanded "><a href="../dao/joystream.html"><strong aria-hidden="true">10.2.</strong> JoyStream</a></li><li class="chapter-item expanded "><a href="../dao/edgeware.html"><strong aria-hidden="true">10.3.</strong> Edgeware</a></li><li class="chapter-item expanded "><a href="../dao/likecoin.html"><strong aria-hidden="true">10.4.</strong> LikeCoin</a></li></ol></li><li class="chapter-item expanded "><a href="../did.html"><strong aria-hidden="true">11.</strong> DID</a></li><li class="chapter-item expanded "><a href="../defi/index.html"><strong aria-hidden="true">12.</strong> DeFi</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../defi/openbanking.html"><strong aria-hidden="true">12.1.</strong> Open Banking</a></li></ol></li><li class="chapter-item expanded "><a href="../services/index.html"><strong aria-hidden="true">13.</strong> Services</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../services/amazon-qldb.html"><strong aria-hidden="true">13.1.</strong> Amazon QLDB</a></li></ol></li><li class="chapter-item expanded "><a href="../LRE.html"><strong aria-hidden="true">14.</strong> Ledger Reliability Engineering(LRE)</a></li><li class="chapter-item expanded "><a href="../web/index.html"><strong aria-hidden="true">15.</strong> Web Tech</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../web/extensions.html"><strong aria-hidden="true">15.1.</strong> Browser Extensiions</a></li><li class="chapter-item expanded "><a href="../web/example-page.html"><strong aria-hidden="true">15.2.</strong> Example Pages</a></li><li class="chapter-item expanded "><a href="../web/tls.html"><strong aria-hidden="true">15.3.</strong> TLS</a></li><li class="chapter-item expanded "><a href="../webauthn.html"><strong aria-hidden="true">15.4.</strong> WebAuthn</a></li><li class="chapter-item expanded "><a href="../webassembly.html"><strong aria-hidden="true">15.5.</strong> WebAssembly</a></li><li class="chapter-item expanded "><a href="../web/openssl.html"><strong aria-hidden="true">15.6.</strong> OpenSSL</a></li></ol></li><li class="chapter-item expanded "><a href="../k8s.html"><strong aria-hidden="true">16.</strong> Kubernetes</a></li><li class="chapter-item expanded "><a href="../p2p.html"><strong aria-hidden="true">17.</strong> P2P</a></li><li class="chapter-item expanded "><a href="../cybersecurity.html"><strong aria-hidden="true">18.</strong> Cybersecurity</a></li><li class="chapter-item expanded "><a href="../rust.html"><strong aria-hidden="true">19.</strong> Rust</a></li><li class="chapter-item expanded "><a href="../post-quantum.html"><strong aria-hidden="true">20.</strong> Post-quantum cryptography</a></li><li class="chapter-item expanded "><a href="../plantuml.html"><strong aria-hidden="true">21.</strong> PlantUML</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../puml/hyperledger-fabric.html"><strong aria-hidden="true">21.1.</strong> Hyperledger Fabric</a></li><li class="chapter-item expanded "><a href="../puml/ethereum.html"><strong aria-hidden="true">21.2.</strong> Ethereum</a></li></ol></li><li class="chapter-item expanded "><a href="../messaging.html"><strong aria-hidden="true">22.</strong> Messaging</a></li><li class="chapter-item expanded "><a href="../mdbook/index.html"><strong aria-hidden="true">23.</strong> mdbook</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mdbook/preprocessors.html"><strong aria-hidden="true">23.1.</strong> preprocessors</a></li><li class="chapter-item expanded "><a href="../mdbook/others.html"><strong aria-hidden="true">23.2.</strong> 其他</a></li></ol></li><li class="chapter-item expanded "><a href="../resources.html"><strong aria-hidden="true">24.</strong> 學習資源</a></li><li class="chapter-item expanded "><a href="../book.html"><strong aria-hidden="true">25.</strong> 書籍文獻與觀點</a></li><li class="chapter-item expanded "><a href="../job.html"><strong aria-hidden="true">26.</strong> 工作</a></li><li class="chapter-item expanded "><a href="../appendix.html"><strong aria-hidden="true">27.</strong> 附錄</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cmd-help.html"><strong aria-hidden="true">27.1.</strong> 命令列 tc.sh</a></li><li class="chapter-item expanded "><a href="../license.html"><strong aria-hidden="true">27.2.</strong> 授權條款</a></li><li class="chapter-item expanded "><a href="../testpage.html"><strong aria-hidden="true">27.3.</strong> 測試頁面</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -121,9 +135,11 @@
                     <h1 class="menu-title">DLTDOJO3 第三新熵熱踢道場</h1>
 
                     <div class="right-buttons">
+                        
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+                        
                         
                     </div>
                 </div>
@@ -154,7 +170,147 @@
                     <main>
                         <h1><a class="header" href="#openbazaar" id="openbazaar">OpenBazaar</a></h1>
 <p><a href="https://github.com/OpenBazaar/openbazaar-go/tree/master/pb/protos">openbazaar-go/pb/protos at master · OpenBazaar/openbazaar-go</a></p>
-<!-- toc -->
+<ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90-google-protocol-buffers-%E6%96%87%E4%BB%B6">如何生成 Google Protocol Buffers 文件</a></li>
+<li><a href="#generated-date2019-09-12t1121430800">Generated Date:2019-09-12T11:21:43+08:00</a></li>
+<li><a href="#protocol-documentation">Protocol Documentation</a>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#contractsproto">contracts.proto</a>
+<ul>
+<li><a href="#bitcoinsignature">BitcoinSignature</a></li>
+<li><a href="#dispute">Dispute</a></li>
+<li><a href="#disputeacceptance">DisputeAcceptance</a></li>
+<li><a href="#disputeresolution">DisputeResolution</a></li>
+<li><a href="#disputeresolutionpayout">DisputeResolution.Payout</a></li>
+<li><a href="#disputeresolutionpayoutoutput">DisputeResolution.Payout.Output</a></li>
+<li><a href="#id">ID</a></li>
+<li><a href="#idpubkeys">ID.Pubkeys</a></li>
+<li><a href="#listing">Listing</a></li>
+<li><a href="#listingcoupon">Listing.Coupon</a></li>
+<li><a href="#listingitem">Listing.Item</a></li>
+<li><a href="#listingitemimage">Listing.Item.Image</a></li>
+<li><a href="#listingitemoption">Listing.Item.Option</a></li>
+<li><a href="#listingitemoptionvariant">Listing.Item.Option.Variant</a></li>
+<li><a href="#listingitemsku">Listing.Item.Sku</a></li>
+<li><a href="#listingmetadata">Listing.Metadata</a></li>
+<li><a href="#listingshippingoption">Listing.ShippingOption</a></li>
+<li><a href="#listingshippingoptionservice">Listing.ShippingOption.Service</a></li>
+<li><a href="#listingtax">Listing.Tax</a></li>
+<li><a href="#order">Order</a></li>
+<li><a href="#orderitem">Order.Item</a></li>
+<li><a href="#orderitemoption">Order.Item.Option</a></li>
+<li><a href="#orderitemshippingoption">Order.Item.ShippingOption</a></li>
+<li><a href="#orderpayment">Order.Payment</a></li>
+<li><a href="#ordershipping">Order.Shipping</a></li>
+<li><a href="#ordercompletion">OrderCompletion</a></li>
+<li><a href="#orderconfirmation">OrderConfirmation</a></li>
+<li><a href="#orderfulfillment">OrderFulfillment</a></li>
+<li><a href="#orderfulfillmentcryptocurrencydelivery">OrderFulfillment.CryptocurrencyDelivery</a></li>
+<li><a href="#orderfulfillmentdigitaldelivery">OrderFulfillment.DigitalDelivery</a></li>
+<li><a href="#orderfulfillmentpayout">OrderFulfillment.Payout</a></li>
+<li><a href="#orderfulfillmentphysicaldelivery">OrderFulfillment.PhysicalDelivery</a></li>
+<li><a href="#orderprocessingfailure">OrderProcessingFailure</a></li>
+<li><a href="#orderreject">OrderReject</a></li>
+<li><a href="#outpoint">Outpoint</a></li>
+<li><a href="#rating">Rating</a></li>
+<li><a href="#ratingratingdata">Rating.RatingData</a></li>
+<li><a href="#ratingsignature">RatingSignature</a></li>
+<li><a href="#ratingsignaturetransactionmetadata">RatingSignature.TransactionMetadata</a></li>
+<li><a href="#ratingsignaturetransactionmetadataimage">RatingSignature.TransactionMetadata.Image</a></li>
+<li><a href="#refund">Refund</a></li>
+<li><a href="#refundtransactioninfo">Refund.TransactionInfo</a></li>
+<li><a href="#ricardiancontract">RicardianContract</a></li>
+<li><a href="#signature">Signature</a></li>
+<li><a href="#signedlisting">SignedListing</a></li>
+<li><a href="#vendorfinalizedpayment">VendorFinalizedPayment</a></li>
+<li><a href="#listingmetadatacontracttype">Listing.Metadata.ContractType</a></li>
+<li><a href="#listingmetadataformat">Listing.Metadata.Format</a></li>
+<li><a href="#listingshippingoptionshippingtype">Listing.ShippingOption.ShippingType</a></li>
+<li><a href="#orderpaymentmethod">Order.Payment.Method</a></li>
+<li><a href="#signaturesection">Signature.Section</a></li>
+</ul>
+</li>
+<li><a href="#postsproto">posts.proto</a>
+<ul>
+<li><a href="#post">Post</a></li>
+<li><a href="#postimage">Post.Image</a></li>
+<li><a href="#signedpost">SignedPost</a></li>
+<li><a href="#postposttype">Post.PostType</a></li>
+</ul>
+</li>
+<li><a href="#messageproto">message.proto</a>
+<ul>
+<li><a href="#block">Block</a></li>
+<li><a href="#chat">Chat</a></li>
+<li><a href="#cidlist">CidList</a></li>
+<li><a href="#envelope">Envelope</a></li>
+<li><a href="#error">Error</a></li>
+<li><a href="#message">Message</a></li>
+<li><a href="#orderpaymenttxn">OrderPaymentTxn</a></li>
+<li><a href="#signeddata">SignedData</a></li>
+<li><a href="#signeddatacommand">SignedData.Command</a></li>
+<li><a href="#chatflag">Chat.Flag</a></li>
+<li><a href="#messagemessagetype">Message.MessageType</a></li>
+</ul>
+</li>
+<li><a href="#countrycodesproto">countrycodes.proto</a>
+<ul>
+<li><a href="#countrycode">CountryCode</a></li>
+</ul>
+</li>
+<li><a href="#profileproto">profile.proto</a>
+<ul>
+<li><a href="#profile">Profile</a></li>
+<li><a href="#profilecolors">Profile.Colors</a></li>
+<li><a href="#profilecontact">Profile.Contact</a></li>
+<li><a href="#profileimage">Profile.Image</a></li>
+<li><a href="#profilesocialaccount">Profile.SocialAccount</a></li>
+<li><a href="#profilestats">Profile.Stats</a></li>
+</ul>
+</li>
+<li><a href="#moderatorproto">moderator.proto</a>
+<ul>
+<li><a href="#disputeupdate">DisputeUpdate</a></li>
+<li><a href="#moderator">Moderator</a></li>
+<li><a href="#moderatorfee">Moderator.Fee</a></li>
+<li><a href="#moderatorprice">Moderator.Price</a></li>
+<li><a href="#moderatorfeefeetype">Moderator.Fee.FeeType</a></li>
+</ul>
+</li>
+<li><a href="#ordersproto">orders.proto</a>
+<ul>
+<li><a href="#orderstate">OrderState</a></li>
+</ul>
+</li>
+<li><a href="#apiproto">api.proto</a>
+<ul>
+<li><a href="#caserespapi">CaseRespApi</a></li>
+<li><a href="#coupon">Coupon</a></li>
+<li><a href="#orderrespapi">OrderRespApi</a></li>
+<li><a href="#peerandprofile">PeerAndProfile</a></li>
+<li><a href="#peerandprofilewithid">PeerAndProfileWithID</a></li>
+<li><a href="#ratingwithid">RatingWithID</a></li>
+<li><a href="#transactionrecord">TransactionRecord</a></li>
+</ul>
+</li>
+<li><a href="#scalar-value-types">Scalar Value Types</a></li>
+</ul>
+</li>
+<li><a href="#protos-file-tree">Protos File Tree</a></li>
+<li><a href="#protobuf-sources">Protobuf sources</a>
+<ul>
+<li><a href="#srccontractsproto">src:./contracts.proto</a></li>
+<li><a href="#srcpostsproto">src:./posts.proto</a></li>
+<li><a href="#srcmessageproto">src:./message.proto</a></li>
+<li><a href="#srccountrycodesproto">src:./countrycodes.proto</a></li>
+<li><a href="#srcprofileproto">src:./profile.proto</a></li>
+<li><a href="#srcmoderatorproto">src:./moderator.proto</a></li>
+<li><a href="#srcordersproto">src:./orders.proto</a></li>
+<li><a href="#srcapiproto">src:./api.proto</a></li>
+</ul>
+</li>
+</ul>
 <h1><a class="header" href="#如何生成-google-protocol-buffers-文件" id="如何生成-google-protocol-buffers-文件">如何生成 Google Protocol Buffers 文件</a></h1>
 <p><a href="https://github.com/pseudomuto/protoc-gen-doc">pseudomuto/protoc-gen-doc: Documentation generator plugin for Google Protocol Buffers</a></p>
 <pre><code class="language-shell">git clone https://github.com/OpenBazaar/openbazaar-go.git /tmp/src/openbazaar-go
@@ -439,7 +595,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </ul>
 <p><a name="contracts.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## contracts.proto
+<h2><a class="header" href="#contractsproto" id="contractsproto">contracts.proto</a></h2>
 <p><a name=".BitcoinSignature"></a></p>
 <h3><a class="header" href="#bitcoinsignature" id="bitcoinsignature">BitcoinSignature</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -884,7 +1040,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </tbody></table>
 <p><a name="posts.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## posts.proto
+<h2><a class="header" href="#postsproto" id="postsproto">posts.proto</a></h2>
 <p><a name=".Post"></a></p>
 <h3><a class="header" href="#post" id="post">Post</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -925,7 +1081,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </tbody></table>
 <p><a name="message.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## message.proto
+<h2><a class="header" href="#messageproto" id="messageproto">message.proto</a></h2>
 <p><a name=".Block"></a></p>
 <h3><a class="header" href="#block" id="block">Block</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -1027,7 +1183,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </tbody></table>
 <p><a name="countrycodes.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## countrycodes.proto
+<h2><a class="header" href="#countrycodesproto" id="countrycodesproto">countrycodes.proto</a></h2>
 <p><a name=".CountryCode"></a></p>
 <h3><a class="header" href="#countrycode" id="countrycode">CountryCode</a></h3>
 <table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
@@ -1292,7 +1448,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </tbody></table>
 <p><a name="profile.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## profile.proto
+<h2><a class="header" href="#profileproto" id="profileproto">profile.proto</a></h2>
 <p><a name=".Profile"></a></p>
 <h3><a class="header" href="#profile" id="profile">Profile</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -1360,7 +1516,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </tbody></table>
 <p><a name="moderator.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## moderator.proto
+<h2><a class="header" href="#moderatorproto" id="moderatorproto">moderator.proto</a></h2>
 <p><a name=".DisputeUpdate"></a></p>
 <h3><a class="header" href="#disputeupdate" id="disputeupdate">DisputeUpdate</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -1400,7 +1556,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </tbody></table>
 <p><a name="orders.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## orders.proto
+<h2><a class="header" href="#ordersproto" id="ordersproto">orders.proto</a></h2>
 <p><a name=".OrderState"></a></p>
 <h3><a class="header" href="#orderstate" id="orderstate">OrderState</a></h3>
 <table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody>
@@ -1422,7 +1578,7 @@ bash tc.sh --gen-proto-doc /tmp/src/openbazaar-go/pb/protos /tmp/output.md
 </tbody></table>
 <p><a name="api.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## api.proto
+<h2><a class="header" href="#apiproto" id="apiproto">api.proto</a></h2>
 <p><a name=".CaseRespApi"></a></p>
 <h3><a class="header" href="#caserespapi" id="caserespapi">CaseRespApi</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -2674,10 +2830,10 @@ message RatingWithID {
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 

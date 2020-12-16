@@ -5,22 +5,36 @@
         <meta charset="UTF-8">
         <title>HyperLedger Burrow - DLTDOJO3 第三新熵熱踢道場</title>
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
         <link rel="shortcut icon" href="../favicon.png">
+        
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
+        
         <link rel="stylesheet" href="../css/print.css" media="print">
+        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
@@ -41,7 +55,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "coal";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -86,7 +100,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> DLTDOJO3</a></li><li class="chapter-item expanded "><a href="../k19.html"><strong aria-hidden="true">2.</strong> k19.dltdojo</a></li><li class="chapter-item expanded "><a href="../poc.html"><strong aria-hidden="true">3.</strong> POC 概念驗證</a></li><li class="chapter-item expanded "><a href="../taichu-raw/index.html"><strong aria-hidden="true">4.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../taichu-raw/apache-big5.html"><strong aria-hidden="true">4.1.</strong> HTTPS: Apache Big5</a></li><li class="chapter-item expanded "><a href="../taichu-raw/openapiv3.html"><strong aria-hidden="true">4.2.</strong> HTTPS: OpenAPI v3</a></li><li class="chapter-item expanded "><a href="../taichu-raw/others.html"><strong aria-hidden="true">4.3.</strong> 其他</a></li></ol></li><li class="chapter-item expanded "><a href="../mad-white/index.html"><strong aria-hidden="true">5.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mad-white/code-server.html"><strong aria-hidden="true">5.1.</strong> Code Server</a></li><li class="chapter-item expanded "><a href="../mad-white/dltdojo3r1.html"><strong aria-hidden="true">5.2.</strong> DLTDOJO3R1</a></li></ol></li><li class="chapter-item expanded "><a href="../mad-red/index.html"><strong aria-hidden="true">6.</strong> POC MAD-RED</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">6.1.</strong> Veloren 多人RPG體素遊戲</a></li><li class="chapter-item expanded "><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">6.2.</strong> 聊天測試 BIP39</a></li><li class="chapter-item expanded "><a href="../mad-red/vox/index.html"><strong aria-hidden="true">6.3.</strong> Voxel 組件開發編輯</a></li><li class="chapter-item expanded "><a href="../mad-red/vox/projects.html"><strong aria-hidden="true">6.4.</strong> Voxel 相關專案</a></li></ol></li><li class="chapter-item expanded "><a href="../crypto-assets.html"><strong aria-hidden="true">7.</strong> Virtual Asset</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../virtual-asset/ethereum.html"><strong aria-hidden="true">7.1.</strong> Ethereum</a></li><li class="chapter-item expanded "><a href="../virtual-asset/aec.html"><strong aria-hidden="true">7.2.</strong> Anonymity-Enhanced Cryptocurrency</a></li></ol></li><li class="chapter-item expanded "><a href="../dlt.html"><strong aria-hidden="true">8.</strong> DLT</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../dlt/hl-fabric.html"><strong aria-hidden="true">8.1.</strong> Hyperledger Fabric</a></li><li class="chapter-item expanded "><a href="../dlt/hl-sawtooth.html"><strong aria-hidden="true">8.2.</strong> Hyperledger Sawtooth</a></li><li class="chapter-item expanded "><a href="../dlt/hl-burrow.html" class="active"><strong aria-hidden="true">8.3.</strong> HyperLedger Burrow</a></li><li class="chapter-item expanded "><a href="../dlt/hl-besu.html"><strong aria-hidden="true">8.4.</strong> HyperLedger Besu</a></li><li class="chapter-item expanded "><a href="../dlt/hl-avalon.html"><strong aria-hidden="true">8.5.</strong> HyperLedger Avalon</a></li><li class="chapter-item expanded "><a href="../dlt/polkadot.html"><strong aria-hidden="true">8.6.</strong> Polkadot</a></li><li class="chapter-item expanded "><a href="../dlt/libra19.html"><strong aria-hidden="true">8.7.</strong> Libra</a></li><li class="chapter-item expanded "><a href="../dlt/lnrpc.html"><strong aria-hidden="true">8.8.</strong> lightning network</a></li><li class="chapter-item expanded "><a href="../dlt/exonum.html"><strong aria-hidden="true">8.9.</strong> exonum</a></li><li class="chapter-item expanded "><a href="../dlt/trisa.html"><strong aria-hidden="true">8.10.</strong> TRISA</a></li><li class="chapter-item expanded "><a href="../dlt/xuperchain.html"><strong aria-hidden="true">8.11.</strong> xuperchain</a></li><li class="chapter-item expanded "><a href="../dlt/trustwallet.html"><strong aria-hidden="true">8.12.</strong> TrustWallet</a></li><li class="chapter-item expanded "><a href="../dlt/openbazaar.html"><strong aria-hidden="true">8.13.</strong> OpenBazaar</a></li></ol></li><li class="chapter-item expanded "><a href="../dao.html"><strong aria-hidden="true">9.</strong> DAO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../dao/aragon.html"><strong aria-hidden="true">9.1.</strong> Aragon</a></li><li class="chapter-item expanded "><a href="../dao/joystream.html"><strong aria-hidden="true">9.2.</strong> JoyStream</a></li><li class="chapter-item expanded "><a href="../dao/edgeware.html"><strong aria-hidden="true">9.3.</strong> Edgeware</a></li><li class="chapter-item expanded "><a href="../dao/likecoin.html"><strong aria-hidden="true">9.4.</strong> LikeCoin</a></li></ol></li><li class="chapter-item expanded "><a href="../did.html"><strong aria-hidden="true">10.</strong> DID</a></li><li class="chapter-item expanded "><a href="../defi/index.html"><strong aria-hidden="true">11.</strong> DeFi</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../defi/openbanking.html"><strong aria-hidden="true">11.1.</strong> Open Banking</a></li></ol></li><li class="chapter-item expanded "><a href="../services/index.html"><strong aria-hidden="true">12.</strong> Services</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../services/amazon-qldb.html"><strong aria-hidden="true">12.1.</strong> Amazon QLDB</a></li></ol></li><li class="chapter-item expanded "><a href="../LRE.html"><strong aria-hidden="true">13.</strong> Ledger Reliability Engineering(LRE)</a></li><li class="chapter-item expanded "><a href="../web/index.html"><strong aria-hidden="true">14.</strong> Web Tech</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../web/extensions.html"><strong aria-hidden="true">14.1.</strong> Browser Extensiions</a></li><li class="chapter-item expanded "><a href="../web/example-page.html"><strong aria-hidden="true">14.2.</strong> Example Pages</a></li><li class="chapter-item expanded "><a href="../web/tls.html"><strong aria-hidden="true">14.3.</strong> TLS</a></li><li class="chapter-item expanded "><a href="../webauthn.html"><strong aria-hidden="true">14.4.</strong> WebAuthn</a></li><li class="chapter-item expanded "><a href="../webassembly.html"><strong aria-hidden="true">14.5.</strong> WebAssembly</a></li><li class="chapter-item expanded "><a href="../web/openssl.html"><strong aria-hidden="true">14.6.</strong> OpenSSL</a></li></ol></li><li class="chapter-item expanded "><a href="../k8s.html"><strong aria-hidden="true">15.</strong> Kubernetes</a></li><li class="chapter-item expanded "><a href="../p2p.html"><strong aria-hidden="true">16.</strong> P2P</a></li><li class="chapter-item expanded "><a href="../cybersecurity.html"><strong aria-hidden="true">17.</strong> Cybersecurity</a></li><li class="chapter-item expanded "><a href="../rust.html"><strong aria-hidden="true">18.</strong> Rust</a></li><li class="chapter-item expanded "><a href="../artifact/index.html"><strong aria-hidden="true">19.</strong> Artifact</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../artifact/book-1984.html"><strong aria-hidden="true">19.1.</strong> 一九八四再生金鑰書</a></li><li class="chapter-item expanded "><a href="../artifact/dark-comm-group-2019.html"><strong aria-hidden="true">19.2.</strong> 暗黑通信團書鑰</a></li></ol></li><li class="chapter-item expanded "><a href="../post-quantum.html"><strong aria-hidden="true">20.</strong> Post-quantum cryptography</a></li><li class="chapter-item expanded "><a href="../plantuml.html"><strong aria-hidden="true">21.</strong> PlantUML</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../puml/hyperledger-fabric.html"><strong aria-hidden="true">21.1.</strong> Hyperledger Fabric</a></li><li class="chapter-item expanded "><a href="../puml/ethereum.html"><strong aria-hidden="true">21.2.</strong> Ethereum</a></li></ol></li><li class="chapter-item expanded "><a href="../messaging.html"><strong aria-hidden="true">22.</strong> Messaging</a></li><li class="chapter-item expanded "><a href="../mdbook/index.html"><strong aria-hidden="true">23.</strong> mdbook</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mdbook/preprocessors.html"><strong aria-hidden="true">23.1.</strong> preprocessors</a></li><li class="chapter-item expanded "><a href="../mdbook/others.html"><strong aria-hidden="true">23.2.</strong> 其他</a></li></ol></li><li class="chapter-item expanded "><a href="../resources.html"><strong aria-hidden="true">24.</strong> 學習資源</a></li><li class="chapter-item expanded "><a href="../book.html"><strong aria-hidden="true">25.</strong> 書籍文獻與觀點</a></li><li class="chapter-item expanded "><a href="../job.html"><strong aria-hidden="true">26.</strong> 工作</a></li><li class="chapter-item expanded "><a href="../appendix.html"><strong aria-hidden="true">27.</strong> 附錄</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cmd-help.html"><strong aria-hidden="true">27.1.</strong> 命令列 tc.sh</a></li><li class="chapter-item expanded "><a href="../license.html"><strong aria-hidden="true">27.2.</strong> 授權條款</a></li><li class="chapter-item expanded "><a href="../testpage.html"><strong aria-hidden="true">27.3.</strong> 測試頁面</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> DLTDOJO3</a></li><li class="chapter-item expanded "><a href="../k19.html"><strong aria-hidden="true">2.</strong> k19.dltdojo</a></li><li class="chapter-item expanded "><a href="../poc.html"><strong aria-hidden="true">3.</strong> POC 概念驗證</a></li><li class="chapter-item expanded "><a href="../artifact/index.html"><strong aria-hidden="true">4.</strong> Artifact 書鑰</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../artifact/book-1984.html"><strong aria-hidden="true">4.1.</strong> 一九八四再生金鑰書</a></li><li class="chapter-item expanded "><a href="../artifact/dark-comm-group-2019.html"><strong aria-hidden="true">4.2.</strong> 暗黑通信團書鑰</a></li><li class="chapter-item expanded "><a href="../artifact/copyright1.html"><strong aria-hidden="true">4.3.</strong> 商業委託著作財產權</a></li></ol></li><li class="chapter-item expanded "><a href="../taichu-raw/index.html"><strong aria-hidden="true">5.</strong> POC TAICHU-RAW</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../taichu-raw/apache-big5.html"><strong aria-hidden="true">5.1.</strong> HTTPS: Apache Big5</a></li><li class="chapter-item expanded "><a href="../taichu-raw/openapiv3.html"><strong aria-hidden="true">5.2.</strong> HTTPS: OpenAPI v3</a></li><li class="chapter-item expanded "><a href="../taichu-raw/others.html"><strong aria-hidden="true">5.3.</strong> 其他</a></li></ol></li><li class="chapter-item expanded "><a href="../mad-white/index.html"><strong aria-hidden="true">6.</strong> POC MAD-WHITE</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mad-white/code-server.html"><strong aria-hidden="true">6.1.</strong> Code Server</a></li><li class="chapter-item expanded "><a href="../mad-white/dltdojo3r1.html"><strong aria-hidden="true">6.2.</strong> DLTDOJO3R1</a></li></ol></li><li class="chapter-item expanded "><a href="../mad-red/index.html"><strong aria-hidden="true">7.</strong> POC MAD-RED</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mad-red/veloren/index.html"><strong aria-hidden="true">7.1.</strong> Veloren 多人RPG體素遊戲</a></li><li class="chapter-item expanded "><a href="../mad-red/veloren/chat-dltdojo-bip39/index.html"><strong aria-hidden="true">7.2.</strong> 聊天測試 BIP39</a></li><li class="chapter-item expanded "><a href="../mad-red/vox/index.html"><strong aria-hidden="true">7.3.</strong> Voxel 組件開發編輯</a></li><li class="chapter-item expanded "><a href="../mad-red/vox/projects.html"><strong aria-hidden="true">7.4.</strong> Voxel 相關專案</a></li></ol></li><li class="chapter-item expanded "><a href="../crypto-assets.html"><strong aria-hidden="true">8.</strong> Virtual Asset</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../virtual-asset/ethereum.html"><strong aria-hidden="true">8.1.</strong> Ethereum</a></li><li class="chapter-item expanded "><a href="../virtual-asset/aec.html"><strong aria-hidden="true">8.2.</strong> Anonymity-Enhanced Cryptocurrency</a></li></ol></li><li class="chapter-item expanded "><a href="../dlt.html"><strong aria-hidden="true">9.</strong> DLT</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../dlt/hl-fabric.html"><strong aria-hidden="true">9.1.</strong> Hyperledger Fabric</a></li><li class="chapter-item expanded "><a href="../dlt/hl-sawtooth.html"><strong aria-hidden="true">9.2.</strong> Hyperledger Sawtooth</a></li><li class="chapter-item expanded "><a href="../dlt/hl-burrow.html" class="active"><strong aria-hidden="true">9.3.</strong> HyperLedger Burrow</a></li><li class="chapter-item expanded "><a href="../dlt/hl-besu.html"><strong aria-hidden="true">9.4.</strong> HyperLedger Besu</a></li><li class="chapter-item expanded "><a href="../dlt/hl-avalon.html"><strong aria-hidden="true">9.5.</strong> HyperLedger Avalon</a></li><li class="chapter-item expanded "><a href="../dlt/polkadot.html"><strong aria-hidden="true">9.6.</strong> Polkadot</a></li><li class="chapter-item expanded "><a href="../dlt/libra19.html"><strong aria-hidden="true">9.7.</strong> Libra</a></li><li class="chapter-item expanded "><a href="../dlt/lnrpc.html"><strong aria-hidden="true">9.8.</strong> lightning network</a></li><li class="chapter-item expanded "><a href="../dlt/exonum.html"><strong aria-hidden="true">9.9.</strong> exonum</a></li><li class="chapter-item expanded "><a href="../dlt/trisa.html"><strong aria-hidden="true">9.10.</strong> TRISA</a></li><li class="chapter-item expanded "><a href="../dlt/xuperchain.html"><strong aria-hidden="true">9.11.</strong> xuperchain</a></li><li class="chapter-item expanded "><a href="../dlt/trustwallet.html"><strong aria-hidden="true">9.12.</strong> TrustWallet</a></li><li class="chapter-item expanded "><a href="../dlt/openbazaar.html"><strong aria-hidden="true">9.13.</strong> OpenBazaar</a></li></ol></li><li class="chapter-item expanded "><a href="../dao.html"><strong aria-hidden="true">10.</strong> DAO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../dao/aragon.html"><strong aria-hidden="true">10.1.</strong> Aragon</a></li><li class="chapter-item expanded "><a href="../dao/joystream.html"><strong aria-hidden="true">10.2.</strong> JoyStream</a></li><li class="chapter-item expanded "><a href="../dao/edgeware.html"><strong aria-hidden="true">10.3.</strong> Edgeware</a></li><li class="chapter-item expanded "><a href="../dao/likecoin.html"><strong aria-hidden="true">10.4.</strong> LikeCoin</a></li></ol></li><li class="chapter-item expanded "><a href="../did.html"><strong aria-hidden="true">11.</strong> DID</a></li><li class="chapter-item expanded "><a href="../defi/index.html"><strong aria-hidden="true">12.</strong> DeFi</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../defi/openbanking.html"><strong aria-hidden="true">12.1.</strong> Open Banking</a></li></ol></li><li class="chapter-item expanded "><a href="../services/index.html"><strong aria-hidden="true">13.</strong> Services</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../services/amazon-qldb.html"><strong aria-hidden="true">13.1.</strong> Amazon QLDB</a></li></ol></li><li class="chapter-item expanded "><a href="../LRE.html"><strong aria-hidden="true">14.</strong> Ledger Reliability Engineering(LRE)</a></li><li class="chapter-item expanded "><a href="../web/index.html"><strong aria-hidden="true">15.</strong> Web Tech</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../web/extensions.html"><strong aria-hidden="true">15.1.</strong> Browser Extensiions</a></li><li class="chapter-item expanded "><a href="../web/example-page.html"><strong aria-hidden="true">15.2.</strong> Example Pages</a></li><li class="chapter-item expanded "><a href="../web/tls.html"><strong aria-hidden="true">15.3.</strong> TLS</a></li><li class="chapter-item expanded "><a href="../webauthn.html"><strong aria-hidden="true">15.4.</strong> WebAuthn</a></li><li class="chapter-item expanded "><a href="../webassembly.html"><strong aria-hidden="true">15.5.</strong> WebAssembly</a></li><li class="chapter-item expanded "><a href="../web/openssl.html"><strong aria-hidden="true">15.6.</strong> OpenSSL</a></li></ol></li><li class="chapter-item expanded "><a href="../k8s.html"><strong aria-hidden="true">16.</strong> Kubernetes</a></li><li class="chapter-item expanded "><a href="../p2p.html"><strong aria-hidden="true">17.</strong> P2P</a></li><li class="chapter-item expanded "><a href="../cybersecurity.html"><strong aria-hidden="true">18.</strong> Cybersecurity</a></li><li class="chapter-item expanded "><a href="../rust.html"><strong aria-hidden="true">19.</strong> Rust</a></li><li class="chapter-item expanded "><a href="../post-quantum.html"><strong aria-hidden="true">20.</strong> Post-quantum cryptography</a></li><li class="chapter-item expanded "><a href="../plantuml.html"><strong aria-hidden="true">21.</strong> PlantUML</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../puml/hyperledger-fabric.html"><strong aria-hidden="true">21.1.</strong> Hyperledger Fabric</a></li><li class="chapter-item expanded "><a href="../puml/ethereum.html"><strong aria-hidden="true">21.2.</strong> Ethereum</a></li></ol></li><li class="chapter-item expanded "><a href="../messaging.html"><strong aria-hidden="true">22.</strong> Messaging</a></li><li class="chapter-item expanded "><a href="../mdbook/index.html"><strong aria-hidden="true">23.</strong> mdbook</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mdbook/preprocessors.html"><strong aria-hidden="true">23.1.</strong> preprocessors</a></li><li class="chapter-item expanded "><a href="../mdbook/others.html"><strong aria-hidden="true">23.2.</strong> 其他</a></li></ol></li><li class="chapter-item expanded "><a href="../resources.html"><strong aria-hidden="true">24.</strong> 學習資源</a></li><li class="chapter-item expanded "><a href="../book.html"><strong aria-hidden="true">25.</strong> 書籍文獻與觀點</a></li><li class="chapter-item expanded "><a href="../job.html"><strong aria-hidden="true">26.</strong> 工作</a></li><li class="chapter-item expanded "><a href="../appendix.html"><strong aria-hidden="true">27.</strong> 附錄</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cmd-help.html"><strong aria-hidden="true">27.1.</strong> 命令列 tc.sh</a></li><li class="chapter-item expanded "><a href="../license.html"><strong aria-hidden="true">27.2.</strong> 授權條款</a></li><li class="chapter-item expanded "><a href="../testpage.html"><strong aria-hidden="true">27.3.</strong> 測試頁面</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -121,9 +135,11 @@
                     <h1 class="menu-title">DLTDOJO3 第三新熵熱踢道場</h1>
 
                     <div class="right-buttons">
+                        
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+                        
                         
                     </div>
                 </div>
@@ -154,7 +170,304 @@
                     <main>
                         <h1><a class="header" href="#hyperledger-burrow" id="hyperledger-burrow">HyperLedger Burrow</a></h1>
 <h1><a class="header" href="#toc" id="toc">TOC</a></h1>
-<!-- toc -->
+<ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90-google-protocol-buffers-%E6%96%87%E4%BB%B6">如何生成 Google Protocol Buffers 文件</a></li>
+<li><a href="#generated-date2019-09-12t1423170800">Generated Date:2019-09-12T14:23:17+08:00</a></li>
+<li><a href="#protocol-documentation">Protocol Documentation</a>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#balanceproto">balance.proto</a>
+<ul>
+<li><a href="#balance">Balance</a></li>
+</ul>
+</li>
+<li><a href="#execproto">exec.proto</a>
+<ul>
+<li><a href="#beginblock">BeginBlock</a></li>
+<li><a href="#begintx">BeginTx</a></li>
+<li><a href="#blockexecution">BlockExecution</a></li>
+<li><a href="#calldata">CallData</a></li>
+<li><a href="#callevent">CallEvent</a></li>
+<li><a href="#endblock">EndBlock</a></li>
+<li><a href="#endtx">EndTx</a></li>
+<li><a href="#event">Event</a></li>
+<li><a href="#governaccountevent">GovernAccountEvent</a></li>
+<li><a href="#header">Header</a></li>
+<li><a href="#inputevent">InputEvent</a></li>
+<li><a href="#logevent">LogEvent</a></li>
+<li><a href="#origin">Origin</a></li>
+<li><a href="#outputevent">OutputEvent</a></li>
+<li><a href="#result">Result</a></li>
+<li><a href="#streamevent">StreamEvent</a></li>
+<li><a href="#streamevents">StreamEvents</a></li>
+<li><a href="#txexecution">TxExecution</a></li>
+<li><a href="#txexecutionkey">TxExecutionKey</a></li>
+<li><a href="#txheader">TxHeader</a></li>
+</ul>
+</li>
+<li><a href="#namesproto">names.proto</a>
+<ul>
+<li><a href="#entry">Entry</a></li>
+</ul>
+</li>
+<li><a href="#encodingproto">encoding.proto</a>
+<ul>
+<li><a href="#testmessage">TestMessage</a></li>
+</ul>
+</li>
+<li><a href="#validatorproto">validator.proto</a>
+<ul>
+<li><a href="#validator">Validator</a></li>
+</ul>
+</li>
+<li><a href="#txsproto">txs.proto</a>
+<ul>
+<li><a href="#envelope">Envelope</a></li>
+<li><a href="#receipt">Receipt</a></li>
+<li><a href="#signatory">Signatory</a></li>
+</ul>
+</li>
+<li><a href="#rpctransactproto">rpctransact.proto</a>
+<ul>
+<li><a href="#callcodeparam">CallCodeParam</a></li>
+<li><a href="#txenvelope">TxEnvelope</a></li>
+<li><a href="#txenvelopeparam">TxEnvelopeParam</a></li>
+<li><a href="#transact">Transact</a></li>
+</ul>
+</li>
+<li><a href="#githubcomtenderminttendermintabcitypestypesproto">github.com/tendermint/tendermint/abci/types/types.proto</a>
+<ul>
+<li><a href="#blockgossip">BlockGossip</a></li>
+<li><a href="#blockid">BlockID</a></li>
+<li><a href="#blocksize">BlockSize</a></li>
+<li><a href="#consensusparams">ConsensusParams</a></li>
+<li><a href="#evidence">Evidence</a></li>
+<li><a href="#header">Header</a></li>
+<li><a href="#lastcommitinfo">LastCommitInfo</a></li>
+<li><a href="#partsetheader">PartSetHeader</a></li>
+<li><a href="#pubkey">PubKey</a></li>
+<li><a href="#request">Request</a></li>
+<li><a href="#requestbeginblock">RequestBeginBlock</a></li>
+<li><a href="#requestchecktx">RequestCheckTx</a></li>
+<li><a href="#requestcommit">RequestCommit</a></li>
+<li><a href="#requestdelivertx">RequestDeliverTx</a></li>
+<li><a href="#requestecho">RequestEcho</a></li>
+<li><a href="#requestendblock">RequestEndBlock</a></li>
+<li><a href="#requestflush">RequestFlush</a></li>
+<li><a href="#requestinfo">RequestInfo</a></li>
+<li><a href="#requestinitchain">RequestInitChain</a></li>
+<li><a href="#requestquery">RequestQuery</a></li>
+<li><a href="#requestsetoption">RequestSetOption</a></li>
+<li><a href="#response">Response</a></li>
+<li><a href="#responsebeginblock">ResponseBeginBlock</a></li>
+<li><a href="#responsechecktx">ResponseCheckTx</a></li>
+<li><a href="#responsecommit">ResponseCommit</a></li>
+<li><a href="#responsedelivertx">ResponseDeliverTx</a></li>
+<li><a href="#responseecho">ResponseEcho</a></li>
+<li><a href="#responseendblock">ResponseEndBlock</a></li>
+<li><a href="#responseexception">ResponseException</a></li>
+<li><a href="#responseflush">ResponseFlush</a></li>
+<li><a href="#responseinfo">ResponseInfo</a></li>
+<li><a href="#responseinitchain">ResponseInitChain</a></li>
+<li><a href="#responsequery">ResponseQuery</a></li>
+<li><a href="#responsesetoption">ResponseSetOption</a></li>
+<li><a href="#txsize">TxSize</a></li>
+<li><a href="#validator">Validator</a></li>
+<li><a href="#validatorupdate">ValidatorUpdate</a></li>
+<li><a href="#voteinfo">VoteInfo</a></li>
+<li><a href="#abciapplication">ABCIApplication</a></li>
+</ul>
+</li>
+<li><a href="#githubcomtenderminttendermintlibscommontypesproto">github.com/tendermint/tendermint/libs/common/types.proto</a>
+<ul>
+<li><a href="#ki64pair">KI64Pair</a></li>
+<li><a href="#kvpair">KVPair</a></li>
+</ul>
+</li>
+<li><a href="#permissionproto">permission.proto</a>
+<ul>
+<li><a href="#accountpermissions">AccountPermissions</a></li>
+<li><a href="#basepermissions">BasePermissions</a></li>
+<li><a href="#permargs">PermArgs</a></li>
+</ul>
+</li>
+<li><a href="#acmproto">acm.proto</a>
+<ul>
+<li><a href="#account">Account</a></li>
+<li><a href="#contractmeta">ContractMeta</a></li>
+</ul>
+</li>
+<li><a href="#rpcqueryproto">rpcquery.proto</a>
+<ul>
+<li><a href="#getaccountparam">GetAccountParam</a></li>
+<li><a href="#getblockparam">GetBlockParam</a></li>
+<li><a href="#getmetadataparam">GetMetadataParam</a></li>
+<li><a href="#getnameparam">GetNameParam</a></li>
+<li><a href="#getproposalparam">GetProposalParam</a></li>
+<li><a href="#getstatsparam">GetStatsParam</a></li>
+<li><a href="#getstorageparam">GetStorageParam</a></li>
+<li><a href="#getvalidatorsethistoryparam">GetValidatorSetHistoryParam</a></li>
+<li><a href="#getvalidatorsetparam">GetValidatorSetParam</a></li>
+<li><a href="#listaccountsparam">ListAccountsParam</a></li>
+<li><a href="#listnamesparam">ListNamesParam</a></li>
+<li><a href="#listproposalsparam">ListProposalsParam</a></li>
+<li><a href="#metadataresult">MetadataResult</a></li>
+<li><a href="#proposalresult">ProposalResult</a></li>
+<li><a href="#stats">Stats</a></li>
+<li><a href="#statusparam">StatusParam</a></li>
+<li><a href="#storagevalue">StorageValue</a></li>
+<li><a href="#validatorset">ValidatorSet</a></li>
+<li><a href="#validatorsethistory">ValidatorSetHistory</a></li>
+<li><a href="#query">Query</a></li>
+</ul>
+</li>
+<li><a href="#tendermintproto">tendermint.proto</a>
+<ul>
+<li><a href="#nodeinfo">NodeInfo</a></li>
+</ul>
+</li>
+<li><a href="#cryptoproto">crypto.proto</a>
+<ul>
+<li><a href="#privatekey">PrivateKey</a></li>
+<li><a href="#publickey">PublicKey</a></li>
+<li><a href="#signature">Signature</a></li>
+</ul>
+</li>
+<li><a href="#storageproto">storage.proto</a>
+<ul>
+<li><a href="#commitid">CommitID</a></li>
+</ul>
+</li>
+<li><a href="#payloadproto">payload.proto</a>
+<ul>
+<li><a href="#any">Any</a></li>
+<li><a href="#ballot">Ballot</a></li>
+<li><a href="#batchtx">BatchTx</a></li>
+<li><a href="#bondtx">BondTx</a></li>
+<li><a href="#calltx">CallTx</a></li>
+<li><a href="#contractmeta">ContractMeta</a></li>
+<li><a href="#govtx">GovTx</a></li>
+<li><a href="#nametx">NameTx</a></li>
+<li><a href="#permstx">PermsTx</a></li>
+<li><a href="#proposal">Proposal</a></li>
+<li><a href="#proposaltx">ProposalTx</a></li>
+<li><a href="#sendtx">SendTx</a></li>
+<li><a href="#txinput">TxInput</a></li>
+<li><a href="#txoutput">TxOutput</a></li>
+<li><a href="#unbondtx">UnbondTx</a></li>
+<li><a href="#vote">Vote</a></li>
+<li><a href="#ballotproposalstate">Ballot.ProposalState</a></li>
+</ul>
+</li>
+<li><a href="#dumpproto">dump.proto</a>
+<ul>
+<li><a href="#accountstorage">AccountStorage</a></li>
+<li><a href="#dump">Dump</a></li>
+<li><a href="#evmevent">EVMEvent</a></li>
+<li><a href="#storage">Storage</a></li>
+</ul>
+</li>
+<li><a href="#rpcdumpproto">rpcdump.proto</a>
+<ul>
+<li><a href="#getdumpparam">GetDumpParam</a></li>
+<li><a href="#dump">Dump</a></li>
+</ul>
+</li>
+<li><a href="#keysproto">keys.proto</a>
+<ul>
+<li><a href="#addnamerequest">AddNameRequest</a></li>
+<li><a href="#addnameresponse">AddNameResponse</a></li>
+<li><a href="#exportrequest">ExportRequest</a></li>
+<li><a href="#exportresponse">ExportResponse</a></li>
+<li><a href="#genrequest">GenRequest</a></li>
+<li><a href="#genresponse">GenResponse</a></li>
+<li><a href="#hashrequest">HashRequest</a></li>
+<li><a href="#hashresponse">HashResponse</a></li>
+<li><a href="#importjsonrequest">ImportJSONRequest</a></li>
+<li><a href="#importrequest">ImportRequest</a></li>
+<li><a href="#importresponse">ImportResponse</a></li>
+<li><a href="#keyid">KeyID</a></li>
+<li><a href="#listrequest">ListRequest</a></li>
+<li><a href="#listresponse">ListResponse</a></li>
+<li><a href="#pubrequest">PubRequest</a></li>
+<li><a href="#pubresponse">PubResponse</a></li>
+<li><a href="#removenamerequest">RemoveNameRequest</a></li>
+<li><a href="#removenameresponse">RemoveNameResponse</a></li>
+<li><a href="#signrequest">SignRequest</a></li>
+<li><a href="#signresponse">SignResponse</a></li>
+<li><a href="#verifyrequest">VerifyRequest</a></li>
+<li><a href="#verifyresponse">VerifyResponse</a></li>
+<li><a href="#keys">Keys</a></li>
+</ul>
+</li>
+<li><a href="#errorsproto">errors.proto</a>
+<ul>
+<li><a href="#exception">Exception</a></li>
+</ul>
+</li>
+<li><a href="#rpcproto">rpc.proto</a>
+<ul>
+<li><a href="#resultstatus">ResultStatus</a></li>
+</ul>
+</li>
+<li><a href="#rpceventsproto">rpcevents.proto</a>
+<ul>
+<li><a href="#blockrange">BlockRange</a></li>
+<li><a href="#blocksrequest">BlocksRequest</a></li>
+<li><a href="#bound">Bound</a></li>
+<li><a href="#eventsresponse">EventsResponse</a></li>
+<li><a href="#getblockrequest">GetBlockRequest</a></li>
+<li><a href="#gettxsrequest">GetTxsRequest</a></li>
+<li><a href="#gettxsresponse">GetTxsResponse</a></li>
+<li><a href="#txrequest">TxRequest</a></li>
+<li><a href="#boundboundtype">Bound.BoundType</a></li>
+<li><a href="#executionevents">ExecutionEvents</a></li>
+</ul>
+</li>
+<li><a href="#bcmproto">bcm.proto</a>
+<ul>
+<li><a href="#persistedstate">PersistedState</a></li>
+<li><a href="#syncinfo">SyncInfo</a></li>
+</ul>
+</li>
+<li><a href="#specproto">spec.proto</a>
+<ul>
+<li><a href="#templateaccount">TemplateAccount</a></li>
+</ul>
+</li>
+<li><a href="#scalar-value-types">Scalar Value Types</a></li>
+</ul>
+</li>
+<li><a href="#protos-file-tree">Protos File Tree</a></li>
+<li><a href="#protobuf-sources">Protobuf sources</a>
+<ul>
+<li><a href="#srcbalanceproto">src:./balance.proto</a></li>
+<li><a href="#srcexecproto">src:./exec.proto</a></li>
+<li><a href="#srcnamesproto">src:./names.proto</a></li>
+<li><a href="#srcencodingproto">src:./encoding.proto</a></li>
+<li><a href="#srcvalidatorproto">src:./validator.proto</a></li>
+<li><a href="#srctxsproto">src:./txs.proto</a></li>
+<li><a href="#srcrpctransactproto">src:./rpctransact.proto</a></li>
+<li><a href="#srcgithubcomtenderminttendermintabcitypestypesproto">src:./github.com/tendermint/tendermint/abci/types/types.proto</a></li>
+<li><a href="#srcgithubcomtenderminttendermintlibscommontypesproto">src:./github.com/tendermint/tendermint/libs/common/types.proto</a></li>
+<li><a href="#srcpermissionproto">src:./permission.proto</a></li>
+<li><a href="#srcacmproto">src:./acm.proto</a></li>
+<li><a href="#srcrpcqueryproto">src:./rpcquery.proto</a></li>
+<li><a href="#srctendermintproto">src:./tendermint.proto</a></li>
+<li><a href="#srccryptoproto">src:./crypto.proto</a></li>
+<li><a href="#srcstorageproto">src:./storage.proto</a></li>
+<li><a href="#srcpayloadproto">src:./payload.proto</a></li>
+<li><a href="#srcdumpproto">src:./dump.proto</a></li>
+<li><a href="#srcrpcdumpproto">src:./rpcdump.proto</a></li>
+<li><a href="#srckeysproto">src:./keys.proto</a></li>
+<li><a href="#srcerrorsproto">src:./errors.proto</a></li>
+<li><a href="#srcrpcproto">src:./rpc.proto</a></li>
+<li><a href="#srcrpceventsproto">src:./rpcevents.proto</a></li>
+<li><a href="#srcbcmproto">src:./bcm.proto</a></li>
+<li><a href="#srcspecproto">src:./spec.proto</a></li>
+</ul>
+</li>
+</ul>
 <h1><a class="header" href="#如何生成-google-protocol-buffers-文件" id="如何生成-google-protocol-buffers-文件">如何生成 Google Protocol Buffers 文件</a></h1>
 <p><a href="https://github.com/hyperledger/burrow/tree/master/protobuf">burrow/protobuf at master · hyperledger/burrow</a></p>
 <pre><code class="language-shell">git clone https://github.com/hyperledger/burrow.git /tmp/src/burrow
@@ -684,7 +997,7 @@ bash tc.sh --gen-proto-doc /tmp/src/burrow/protobuf /tmp/output.md
 </ul>
 <p><a name="balance.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## balance.proto
+<h2><a class="header" href="#balanceproto" id="balanceproto">balance.proto</a></h2>
 <p><a name="balance.Balance"></a></p>
 <h3><a class="header" href="#balance" id="balance">Balance</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -693,7 +1006,7 @@ bash tc.sh --gen-proto-doc /tmp/src/burrow/protobuf /tmp/output.md
 </tbody></table>
 <p><a name="exec.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## exec.proto
+<h2><a class="header" href="#execproto" id="execproto">exec.proto</a></h2>
 <p><a name="exec.BeginBlock"></a></p>
 <h3><a class="header" href="#beginblock" id="beginblock">BeginBlock</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -846,7 +1159,7 @@ bash tc.sh --gen-proto-doc /tmp/src/burrow/protobuf /tmp/output.md
 </tbody></table>
 <p><a name="names.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## names.proto
+<h2><a class="header" href="#namesproto" id="namesproto">names.proto</a></h2>
 <p><a name="names.Entry"></a></p>
 <h3><a class="header" href="#entry" id="entry">Entry</a></h3>
 <p>NameReg provides a global key value store based on Name, Data pairs that are subject to expiry and ownership by an
@@ -859,7 +1172,7 @@ account.</p>
 </tbody></table>
 <p><a name="encoding.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## encoding.proto
+<h2><a class="header" href="#encodingproto" id="encodingproto">encoding.proto</a></h2>
 <p><a name="encoding.TestMessage"></a></p>
 <h3><a class="header" href="#testmessage" id="testmessage">TestMessage</a></h3>
 <p>For testing</p>
@@ -869,7 +1182,7 @@ account.</p>
 </tbody></table>
 <p><a name="validator.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## validator.proto
+<h2><a class="header" href="#validatorproto" id="validatorproto">validator.proto</a></h2>
 <p><a name="validator.Validator"></a></p>
 <h3><a class="header" href="#validator" id="validator">Validator</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -879,7 +1192,7 @@ account.</p>
 </tbody></table>
 <p><a name="txs.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## txs.proto
+<h2><a class="header" href="#txsproto" id="txsproto">txs.proto</a></h2>
 <p><a name="txs.Envelope"></a></p>
 <h3><a class="header" href="#envelope" id="envelope">Envelope</a></h3>
 <p>An envelope contains both the signable Tx and the signatures for each input (in signatories)</p>
@@ -906,7 +1219,7 @@ account.</p>
 </tbody></table>
 <p><a name="rpctransact.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## rpctransact.proto
+<h2><a class="header" href="#rpctransactproto" id="rpctransactproto">rpctransact.proto</a></h2>
 <p><a name="rpctransact.CallCodeParam"></a></p>
 <h3><a class="header" href="#callcodeparam" id="callcodeparam">CallCodeParam</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -945,7 +1258,7 @@ account.</p>
 </tbody></table>
 <p><a name="github.com/tendermint/tendermint/abci/types/types.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## github.com/tendermint/tendermint/abci/types/types.proto
+<h2><a class="header" href="#githubcomtenderminttendermintabcitypestypesproto" id="githubcomtenderminttendermintabcitypestypesproto">github.com/tendermint/tendermint/abci/types/types.proto</a></h2>
 <p><a name="types.BlockGossip"></a></p>
 <h3><a class="header" href="#blockgossip" id="blockgossip">BlockGossip</a></h3>
 <p>BlockGossip determine consensus critical
@@ -1249,7 +1562,7 @@ that can be adjusted by the abci app</p>
 </tbody></table>
 <p><a name="github.com/tendermint/tendermint/libs/common/types.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## github.com/tendermint/tendermint/libs/common/types.proto
+<h2><a class="header" href="#githubcomtenderminttendermintlibscommontypesproto" id="githubcomtenderminttendermintlibscommontypesproto">github.com/tendermint/tendermint/libs/common/types.proto</a></h2>
 <p><a name="common.KI64Pair"></a></p>
 <h3><a class="header" href="#ki64pair" id="ki64pair">KI64Pair</a></h3>
 <p>Define these here for compatibility but use tmlibs/common.KI64Pair.</p>
@@ -1266,7 +1579,7 @@ that can be adjusted by the abci app</p>
 </tbody></table>
 <p><a name="permission.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## permission.proto
+<h2><a class="header" href="#permissionproto" id="permissionproto">permission.proto</a></h2>
 <p><a name="permission.AccountPermissions"></a></p>
 <h3><a class="header" href="#accountpermissions" id="accountpermissions">AccountPermissions</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -1290,7 +1603,7 @@ that can be adjusted by the abci app</p>
 </tbody></table>
 <p><a name="acm.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## acm.proto
+<h2><a class="header" href="#acmproto" id="acmproto">acm.proto</a></h2>
 <p><a name="acm.Account"></a></p>
 <h3><a class="header" href="#account" id="account">Account</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -1314,7 +1627,7 @@ that can be adjusted by the abci app</p>
 </tbody></table>
 <p><a name="rpcquery.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## rpcquery.proto
+<h2><a class="header" href="#rpcqueryproto" id="rpcqueryproto">rpcquery.proto</a></h2>
 <p><a name="rpcquery.GetAccountParam"></a></p>
 <h3><a class="header" href="#getaccountparam" id="getaccountparam">GetAccountParam</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -1429,7 +1742,7 @@ that can be adjusted by the abci app</p>
 </tbody></table>
 <p><a name="tendermint.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## tendermint.proto
+<h2><a class="header" href="#tendermintproto" id="tendermintproto">tendermint.proto</a></h2>
 <p>Needed to proto2 rather than proto3 to get pointer field for PermArg</p>
 <p><a name="tendermint.NodeInfo"></a></p>
 <h3><a class="header" href="#nodeinfo" id="nodeinfo">NodeInfo</a></h3>
@@ -1445,7 +1758,7 @@ that can be adjusted by the abci app</p>
 </tbody></table>
 <p><a name="crypto.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## crypto.proto
+<h2><a class="header" href="#cryptoproto" id="cryptoproto">crypto.proto</a></h2>
 <p><a name="crypto.PrivateKey"></a></p>
 <h3><a class="header" href="#privatekey" id="privatekey">PrivateKey</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -1467,7 +1780,7 @@ that can be adjusted by the abci app</p>
 </tbody></table>
 <p><a name="storage.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## storage.proto
+<h2><a class="header" href="#storageproto" id="storageproto">storage.proto</a></h2>
 <p><a name="storage.CommitID"></a></p>
 <h3><a class="header" href="#commitid" id="commitid">CommitID</a></h3>
 <p>This is the object that is stored in the leaves of the commitsTree - it captures the sub-tree hashes so that the
@@ -1478,7 +1791,7 @@ commitsTree's hash becomes a mixture of the hashes of all the sub-trees.</p>
 </tbody></table>
 <p><a name="payload.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## payload.proto
+<h2><a class="header" href="#payloadproto" id="payloadproto">payload.proto</a></h2>
 <p><a name="payload.Any"></a></p>
 <h3><a class="header" href="#any" id="any">Any</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -1610,7 +1923,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="dump.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## dump.proto
+<h2><a class="header" href="#dumpproto" id="dumpproto">dump.proto</a></h2>
 <p><a name="dump.AccountStorage"></a></p>
 <h3><a class="header" href="#accountstorage" id="accountstorage">AccountStorage</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -1642,7 +1955,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="rpcdump.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## rpcdump.proto
+<h2><a class="header" href="#rpcdumpproto" id="rpcdumpproto">rpcdump.proto</a></h2>
 <p><a name="rpcdump.GetDumpParam"></a></p>
 <h3><a class="header" href="#getdumpparam" id="getdumpparam">GetDumpParam</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -1655,7 +1968,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="keys.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## keys.proto
+<h2><a class="header" href="#keysproto" id="keysproto">keys.proto</a></h2>
 <p><a name="keys.AddNameRequest"></a></p>
 <h3><a class="header" href="#addnamerequest" id="addnamerequest">AddNameRequest</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -1795,7 +2108,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="errors.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## errors.proto
+<h2><a class="header" href="#errorsproto" id="errorsproto">errors.proto</a></h2>
 <p><a name="errors.Exception"></a></p>
 <h3><a class="header" href="#exception" id="exception">Exception</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -1804,7 +2117,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="rpc.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## rpc.proto
+<h2><a class="header" href="#rpcproto" id="rpcproto">rpc.proto</a></h2>
 <p>Needed to proto2 rather than proto3 to get pointer field for PermArg</p>
 <p><a name="rpc.ResultStatus"></a></p>
 <h3><a class="header" href="#resultstatus" id="resultstatus">ResultStatus</a></h3>
@@ -1820,7 +2133,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="rpcevents.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## rpcevents.proto
+<h2><a class="header" href="#rpceventsproto" id="rpceventsproto">rpcevents.proto</a></h2>
 <p><a name="rpcevents.BlockRange"></a></p>
 <h3><a class="header" href="#blockrange" id="blockrange">BlockRange</a></h3>
 <p>An inclusive range of blocks to include in output</p>
@@ -1892,7 +2205,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="bcm.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## bcm.proto
+<h2><a class="header" href="#bcmproto" id="bcmproto">bcm.proto</a></h2>
 <p>Needed to proto2 rather than proto3 to get pointer field for PermArg</p>
 <p><a name="bcm.PersistedState"></a></p>
 <h3><a class="header" href="#persistedstate" id="persistedstate">PersistedState</a></h3>
@@ -1914,7 +2227,7 @@ that associated with the account at Address at the time of being received</p>
 </tbody></table>
 <p><a name="spec.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
-## spec.proto
+<h2><a class="header" href="#specproto" id="specproto">spec.proto</a></h2>
 <p><a name="spec.TemplateAccount"></a></p>
 <h3><a class="header" href="#templateaccount" id="templateaccount">TemplateAccount</a></h3>
 <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody>
@@ -3829,10 +4142,10 @@ message TemplateAccount {
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 
