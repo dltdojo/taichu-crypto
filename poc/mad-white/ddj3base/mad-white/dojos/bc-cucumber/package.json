@@ -16,7 +16,7 @@
     "mocha": "^6.2.0"
   },
   "dependencies": {
-    "bitcore-lib": "^8.6.0",
+    "bitcore-lib": "^8.25.40",
     "request": "^2.88.0",
     "secp256k1": "^3.7.1"
   }
