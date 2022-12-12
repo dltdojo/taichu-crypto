@@ -291,9 +291,9 @@ dependencies = [
 
 [[package]]
 name = "arc-swap"
-version = "0.4.2"
+version = "0.4.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "854ede29f7a0ce90519fb2439d030320c6201119b87dab0ee96044603e1130b9"
+checksum = "dabe5a181f83789739c194cbe5a897dde195078fac08568d09221fd6137a7ba8"
 
 [[package]]
 name = "atty"
